@@ -1,6 +1,8 @@
 production:
   class: \IvozProvider\Model\RoutingPatternGroupsRelPatterns
-  fields:
+  dto: Core\Application\DTO\RoutingPatternGroupsRelPatternDTO
+  entity: Core\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPattern
+  fields: 
     routingPatternId:
       title: _('Routing pattern id')
       type: select
@@ -8,12 +10,14 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\RoutingPatterns
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\RoutingPatterns
+          entity: \Core\Model\RoutingPattern\RoutingPattern
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name_${lang}
+          order:
+            RoutingPattern.name${ucLang}: asc
       default: true
     routingPatternGroupId:
       title: _('Routing pattern group id')
@@ -22,13 +26,15 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\RoutingPatternGroups
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\RoutingPatternGroups
+          entity: \Core\Model\RoutingPatternGroup\RoutingPatternGroup
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
-staging:
+          order:
+            RoutingPatternGroup.name: asc
+staging: 
   _extends: production
 testing:
   _extends: production

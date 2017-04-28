@@ -1,12 +1,15 @@
 production:
   class: \IvozProvider\Model\TargetPatterns
-  fields:
+  dto: Core\Application\DTO\TargetPatternDTO
+  entity: Core\Model\TargetPattern\TargetPattern
+  fields: 
     id:
       title: ngettext('Id', 'Ids', 1)
-      required: false
+      required: false 
     name:
       title: _('Name')
       type: text
+      isMultilang: true
       trim: both
       required: true
       maxLength: 55
@@ -14,6 +17,7 @@ production:
     description:
       title: _('Description')
       type: text
+      isMultilang: true
       trim: both
       maxLength: 300
     regExp:
@@ -27,20 +31,22 @@ production:
         icon: help
         text: _("Prefix must be numeric-only")
         label: _("Need help?")
-    brandId:
+    brand:
       title: ngettext('Brand', 'Brands', 1)
       type: select
       required: true
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Brands
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Brands
+          entity: \Core\Model\Brand\Brand
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
-staging:
+          order:
+            Brand.name: asc
+staging: 
   _extends: production
 testing:
   _extends: production

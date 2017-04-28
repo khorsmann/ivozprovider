@@ -1,12 +1,15 @@
 production:
   class: \IvozProvider\Model\PricingPlans
-  fields:
+  dto: Core\Application\DTO\PricingPlanDTO
+  entity: Core\Model\PricingPlan\PricingPlan
+  fields: 
     id:
       title: ngettext('Id', 'Ids', 1)
       required: false
     name:
       title: _('Name')
       type: text
+      isMultilang: true
       trim: both
       required: true
       maxLength: 55
@@ -14,6 +17,7 @@ production:
     description:
       title: _('Description')
       type: text
+      isMultilang: true
       trim: both
       maxLength: 300
     createdOn:
@@ -31,13 +35,15 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Brands
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Brands
+          entity: \Core\Model\Brand\Brand
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
-staging:
+          order:
+            Brand.name: asc
+staging: 
   _extends: production
 testing:
   _extends: production

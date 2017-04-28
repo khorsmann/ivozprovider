@@ -1,0 +1,44 @@
+production: 
+  class: \IvozProvider\Model\FeaturesRelBrands
+  dto: Core\Application\DTO\FeaturesRelBrandDTO
+  entity: Core\Model\FeaturesRelBrand\FeaturesRelBrand
+  fields: 
+    brand:
+      title: _('Brandid')
+      type: select
+      required: true
+      source: 
+        data: mapper
+        config: 
+#          mapperName: \IvozProvider\Mapper\Sql\Brands
+          entity: \Core\Model\Brand\Brand
+          fieldName: 
+            fields: 
+              - name
+            template: '%name%'
+          order:
+            Brand.name: asc
+      default: true
+    feature:
+      title: _('Featureid')
+      type: select
+      required: true
+      source: 
+        data: mapper
+        config: 
+#          mapperName: \IvozProvider\Mapper\Sql\Features
+          entity: \Core\Model\Terminal\Feature\Feature
+          fieldName: 
+            fields: 
+              - name
+            template: '%name%'
+          order:
+            Feature.name: asc
+staging: 
+  _extends: production
+testing: 
+  _extends: production
+development: 
+  _extends: production
+localdev: 
+  _extends: production

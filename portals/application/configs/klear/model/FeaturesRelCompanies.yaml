@@ -1,0 +1,44 @@
+production: 
+  class: \IvozProvider\Model\FeaturesRelCompanies
+  dto: Core\Application\DTO\FeaturesRelCompanyDTO
+  entity: Core\Model\FeaturesRelCompany\FeaturesRelCompany
+  fields: 
+    company:
+      title: _('Companyid')
+      type: select
+      required: true
+      source: 
+        data: mapper
+        config: 
+#          mapperName: \IvozProvider\Mapper\Sql\Companies
+          entity: \Core\Model\Company\Company
+          fieldName: 
+            fields: 
+              - name
+            template: '%name%'
+          order:
+            Company.name: asc
+      default: true
+    feature:
+      title: _('Featureid')
+      type: select
+      required: true
+      source: 
+        data: mapper
+        config: 
+#          mapperName: \IvozProvider\Mapper\Sql\Features
+          entity: \Core\Model\Terminal\Feature\Feature
+          fieldName: 
+            fields: 
+              - name
+            template: '%name%'
+          order:
+            Feature.name: asc
+staging: 
+  _extends: production
+testing: 
+  _extends: production
+development: 
+  _extends: production
+localdev: 
+  _extends: production

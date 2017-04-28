@@ -2,7 +2,9 @@
 
 production:
   class: \IvozProvider\Model\InvoiceTemplates
-  fields:
+  dto: Core\Application\DTO\InvoiceTemplateDTO
+  entity: Core\Model\InvoiceTemplate\InvoiceTemplate
+  fields: 
     name:
       title: _('Name')
       type: text
@@ -59,13 +61,15 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Brands
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Brands
+          entity: \Core\Model\Brand\Brand
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
-staging:
+          order:
+            Brand.name: asc
+staging: 
   _extends: production
 testing:
   _extends: production

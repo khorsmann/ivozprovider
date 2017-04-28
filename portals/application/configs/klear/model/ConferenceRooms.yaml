@@ -1,6 +1,8 @@
 production:
   class: \IvozProvider\Model\ConferenceRooms
-  fields:
+  dto: Core\Application\DTO\ConferenceRoomDTO
+  entity: Core\Model\ConferenceRoom\ConferenceRoom
+  fields: 
     companyId:
       title: ngettext('Company', 'Companies', 1)
       type: select
@@ -8,12 +10,14 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Companies
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Companies
+          entity: \Core\Model\Company\Company
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
+          order:
+            Company.name: asc
       default: true
     name:
       title: _('Name')

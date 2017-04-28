@@ -1,7 +1,9 @@
 production:
   class: \IvozProvider\Model\KamRtpproxy
-  fields:
-    setid:
+  dto: Core\Application\DTO\KamRtpproxyDTO
+  entity: Core\Model\KamRtpproxy\KamRtpproxy
+  fields: 
+    id:
       title: _('Setid')
       type: text
       trim: both
@@ -47,22 +49,24 @@ production:
         text: _("0 disables if more available, 2 gets double calls than 1, 3 gets triple calls than 1, etc.")
         label: _("Need help?")
     description:
-      title: _('Description')
+            title: _('Description')
       type: text
       trim: both
       maxLength: 200
-    mediaRelaySetsId:
+    mediaRelaySetId:
       title: ngettext('Media relay set', 'Media relay sets', 1)
       type: select
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\MediaRelaySets
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\MediaRelaySets
+          entity: \Core\Model\MediaRelaySet\MediaRelaySet
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
+          order:
+            MediaRelaySet.name: asc
         'null': _("Unassigned")
 staging:
   _extends: production

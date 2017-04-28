@@ -1,6 +1,8 @@
 production:
   class: \IvozProvider\Model\BrandOperators
-  fields:
+  dto: Core\Application\DTO\BrandOperatorDTO
+  entity: Core\Model\BrandOperator\BrandOperator
+  fields: 
     brandId:
       title: ngettext('Brand', 'Brands', 1)
       type: select
@@ -8,12 +10,14 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Brands
+#          mapperName: \IvozProvider\Mapper\Sql\Brands
+          entity: \Core\Model\Brand\Brand
           fieldName:
-            fields:
+            fields: 
               - name
             template: '%name%'
-          order: name
+          order:
+            Brand.name: asc
     username:
       title: _('Username')
       type: text
@@ -51,12 +55,14 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Timezones
+#          mapperName: \IvozProvider\Mapper\Sql\Timezones
+          entity: \Core\Model\Timezone\Timezone
           fieldName:
-            fields:
+            fields: 
               - tz
             template: '%tz%'
-          order: tz
+          order:
+            Timezone.tz: asc
     name:
       title: _('Name')
       type: text

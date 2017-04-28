@@ -1,19 +1,23 @@
 production:
   class: \IvozProvider\Model\Faxes
-  fields:
-    companyId:
+  dto: Core\Application\DTO\FaxDTO
+  entity: Core\Model\Fax\Fax
+  fields: 
+    company:
       title: ngettext('Company', 'Companies', 1)
       type: select
       required: true
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Companies
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Companies
+          entity: \Core\Model\Company\Company
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
+          order:
+            Company.name: asc
       default: true
     name:
       title: _('Name')
@@ -43,19 +47,21 @@ production:
             title: _("Yes")
             visualFilter:
               show: ["email"]
-    outgoingDDIId:
+    outgoingDDI:
       title: _('Outgoing DDI')
       type: select
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\DDIs
-          filterClass: IvozProvider_Klear_Filter_Company
-          fieldName:
-            fields:
-              - DDIE164
-            template: '+%DDIE164%'
-          order: DDIE164
+#          mapperName: \IvozProvider\Mapper\Sql\DDIs
+          entity: \Core\Model\DDI\DDI
+          filterclass: IvozProvider_Klear_Filter_Company
+          fieldName: 
+            fields: 
+              - ddie164
+            template: '+%ddie164%'
+          order:
+            DDI.ddie164: asc
         'null': _("Company's default")
 staging:
   _extends: production

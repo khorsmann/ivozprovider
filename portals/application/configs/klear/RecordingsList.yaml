@@ -11,9 +11,9 @@ production:
       controller: list
       order:
         field:
-          - calldate
-        type: desc
-      pagination:
+          - Recording.calldate
+        type: desc      
+      pagination: 
         items: 25
       <<: *Recordings
       class: ui-silk-text-list-bullets

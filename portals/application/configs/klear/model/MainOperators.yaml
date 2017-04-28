@@ -1,6 +1,8 @@
 production:
   class: \IvozProvider\Model\MainOperators
-  fields:
+  dto: Core\Application\DTO\MainOperatorDTO
+  entity: Core\Model\MainOperator\MainOperator
+  fields: 
     username:
       title: _('Username')
       type: text
@@ -46,13 +48,15 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Timezones
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Timezones
+          entity: \Core\Model\Timezone\Timezone
+          fieldName: 
+            fields: 
               - tz
             template: '%tz%'
-          order: tz
-staging:
+          order:
+            Timezone.tz: asc
+staging: 
   _extends: production
 testing:
   _extends: production

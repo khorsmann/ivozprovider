@@ -30,14 +30,14 @@ production:
           target: true
           scope: true
           pointsTo: true
-          brandId: true
-          companyId: true
+          brand: true
+          company: true
           description: true
         blacklist:
           scope: true
-          brandId: true
-          companyId: true
-      options:
+          brand: true
+          company: true
+      options: 
         title: _("Options")
         screens:
           domainsNew_screen: false
@@ -52,8 +52,8 @@ production:
           domain: true
           description: true
         blacklist:
-          companyId: true
-          brandId: true
+          company: true
+          brand: true
           target: true
         readOnly:
           scope: true
@@ -74,8 +74,8 @@ production:
           domain: true
           description: true
         blacklist:
-          companyId: true
-          brandId: true
+          company: true
+          brand: true
           scope: true
         readOnly:
           target: true

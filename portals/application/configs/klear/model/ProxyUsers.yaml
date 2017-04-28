@@ -1,6 +1,8 @@
 production:
   class: \IvozProvider\Model\ProxyUsers
-  fields:
+  dto: Core\Application\DTO\ProxyUserDTO
+  entity: Core\Model\ProxyUser\ProxyUser
+  fields: 
     name:
       title: _('Name')
       type: text

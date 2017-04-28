@@ -1,6 +1,8 @@
 production:
   class: \IvozProvider\Model\FixedCosts
-  fields:
+  dto: Core\Application\DTO\FixedCostDTO
+  entity: Core\Model\FixedCost\FixedCost
+  fields: 
     brandId:
       title: ngettext('Brand', 'Brands', 1)
       type: select
@@ -8,12 +10,14 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Brands
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Brands
+          entity: \Core\Model\Brand\Brand
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
+          order:
+            Brand.name: asc
       default: true
     name:
       title: _('Name')

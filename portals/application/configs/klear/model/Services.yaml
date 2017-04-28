@@ -1,5 +1,7 @@
 production:
   class: \IvozProvider\Model\Services
+  dto: Core\Application\DTO\ServiceDTO
+  entity: Core\Model\Service\Service
   fields:
     iden:
       title: ngettext('Iden', 'Idens', 1)
@@ -11,12 +13,14 @@ production:
     name:
       title: _('Name')
       type: text
+      isMultilang: true
       trim: both
       defaultValue:
       maxLength: 50
     description:
       title: _('Description')
       type: text
+      isMultilang: true
       trim: both
       defaultValue:
       maxLength: 255

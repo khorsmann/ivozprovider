@@ -1,19 +1,23 @@
 production:
   class: \IvozProvider\Model\IVRCustomEntries
+  dto: Core\Application\DTO\IVRCustomEntryDTO
+  entity: Core\Model\IVRCustomEntry\IVRCustomEntry
   fields:
-    IVRCustomId:
+    IVRCustom:
       title: ngettext('IVR Custom', 'IVRs Custom', 1)
       type: select
       required: true
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\IVRCustom
+#          mapperName: \IvozProvider\Mapper\Sql\IVRCustom
+          entity: \Core\Model\IVRCustom\IVRCustom
           fieldName:
             fields:
               - name
             template: '%name%'
-          order: name
+          order:
+            IVRCustom.name: asc
       default: true
     entry:
       title: _('Entry')
@@ -26,19 +30,21 @@ production:
         icon: help
         text: _("You can use regular expressions to define values this entry will match.")
         label: _("Need help?")
-    welcomeLocutionId:
+    welcomeLocution:
       title: _('Welcome locution')
       type: select
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Locutions
-          filterClass: IvozProvider_Klear_Filter_Company
+#          mapperName: \IvozProvider\Mapper\Sql\Locutions
+          entity: \Core\Model\Locution\Locution
+          filterclass: IvozProvider_Klear_Filter_Company
           fieldName:
             fields:
               - name
             template: '%name%'
-          order: name
+          order:
+            Locution.name: asc
         'null': _("Unassigned")
     targetType:
       title: _('Target type')
@@ -72,36 +78,40 @@ production:
       type: text
       trim: both
       required: true
-    targetExtensionId:
+    targetExtension:
       title: ngettext('Extension', 'Extensions', 1)
       type: select
       required: true
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Extensions
-          filterClass: IvozProvider_Klear_Filter_Company
+#          mapperName: \IvozProvider\Mapper\Sql\Extensions
+          entity: \Core\Model\Extension\Extension
+          filterclass: IvozProvider_Klear_Filter_Company
           fieldName:
             fields:
               - number
             template: '%number%'
-          order: number
+          order:
+            Extension.number: asc
         'null': _("Unassigned")
-    targetVoiceMailUserId:
+    targetVoiceMailUser:
       title: ngettext('Voicemail', 'Voicemails', 1)
       type: select
       required: true
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Users
-          filterClass: IvozProvider_Klear_Filter_Voicemail
+#          mapperName: \IvozProvider\Mapper\Sql\Users
+          entity: \Core\Model\User\User
+          filterclass: IvozProvider_Klear_Filter_Voicemail
           fieldName:
             fields:
               - name
               - lastname
             template: '%name% %lastname%'
-          order: name
+          order:
+            User.name: asc
         'null': _("Unassigned")
     targetConditionalRouteId:
       title: ngettext('Conditional Route', 'Conditional Routes', 1)

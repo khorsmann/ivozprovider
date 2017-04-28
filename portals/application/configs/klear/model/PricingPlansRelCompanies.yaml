@@ -1,6 +1,8 @@
 production:
   class: \IvozProvider\Model\PricingPlansRelCompanies
-  fields:
+  dto: Core\Application\DTO\PricingPlansRelCompanyDTO
+  entity: Core\Model\PricingPlansRelCompany\PricingPlansRelCompany
+  fields: 
     pricingPlanId:
       title: _('Pricing plan')
       type: select
@@ -8,13 +10,15 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\PricingPlans
-          filterClass: IvozProvider_Klear_Filter_Brand
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\PricingPlans
+          entity: \Core\Model\PricingPlan\PricingPlan
+          filterclass: IvozProvider_Klear_Filter_Brand
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
+          order:
+            PricingPlan.name: asc
       default: true
     companyId:
       title: ngettext('Company', 'Companies', 1)
@@ -23,12 +27,14 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Companies
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Companies
+          entity: \Core\Model\Company\Company
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
+          order:
+            Company.name: asc
     validFrom:
       title: _('Valid from')
       type: picker
@@ -64,13 +70,15 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Brands
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Brands
+          entity: \Core\Model\Brand\Brand
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
-staging:
+          order:
+            Brand.name: asc
+staging: 
   _extends: production
 testing:
   _extends: production

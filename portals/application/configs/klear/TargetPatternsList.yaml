@@ -81,15 +81,15 @@ production:
     <<: *pricingPlansRelTargetPatterns_screensLink
     pricingPlansRelTargetPatternsList_screen:
       <<: *pricingPlansRelTargetPatternsList_screenLink
-      filterField: targetPatternId
+      filterField: TargetPattern
       parentOptionCustomizer:
         - recordCount
     pricingPlansRelTargetPatternsNew_screen:
       <<: *pricingPlansRelTargetPatternsNew_screenLink
-      filterField: targetPatternId
+      filterField: targetPattern
     pricingPlansRelTargetPatternsEdit_screen:
       <<: *pricingPlansRelTargetPatternsEdit_screenLink
-      filterField: targetPatternId
+      filterField: targetPattern
 
     #PricingPlans:
     pricingPlansList_screen:
@@ -141,7 +141,6 @@ production:
 
   # pricingPlansRelTargetPatterns dialogs:
     <<: *pricingPlansRelTargetPatterns_dialogsLink
-
 
   commands:
     importPatternsFreeUpload_command:

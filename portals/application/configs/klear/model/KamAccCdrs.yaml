@@ -1,12 +1,14 @@
 production:
   class: \IvozProvider\Model\KamAccCdrs
-  fields:
+  dto: Core\Application\DTO\KamAccCdrDTO
+  entity: Core\Model\KamAccCdr\KamAccCdr
+  fields: 
     proxy:
       title: _('Proxy')
       type: text
       maxLength: 64
       default: true
-    start_time_utc:
+    startTimeUtc:
       title: _('Calldate')
       type: picker
       defaultValue: 2000-01-01 00:00:00
@@ -14,7 +16,7 @@ production:
         control: datetime
         settings:
           disabled: 'false'
-    end_time_utc:
+    endTimeUtc:
       title: _('End time utc')
       type: picker
       defaultValue: CURRENT_TIMESTAMP
@@ -22,7 +24,7 @@ production:
         control: datetime
         settings:
           disabled: 'false'
-    start_time:
+    startTime:
       title: _('Start time')
       type: picker
       defaultValue: 2000-01-01 00:00:00
@@ -30,7 +32,7 @@ production:
         control: datetime
         settings:
           disabled: 'false'
-    end_time:
+    endTime:
       title: _('End time')
       type: picker
       defaultValue: 2000-01-01 00:00:00
@@ -72,12 +74,14 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Companies
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Companies
+          entity: \Core\Model\Company\Company
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
+          order:
+            Company.name: asc
         'null': _("Unassigned")
     brandId:
       title: ngettext('Brand', 'Brands', 1)
@@ -85,12 +89,14 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Brands
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Brands
+          entity: \Core\Model\Brand\Brand
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
+          order:
+            Brand.name: asc
         'null': _("Unassigned")
     asIden:
       title: _('As iden')
@@ -122,18 +128,20 @@ production:
       title: _('Diversion')
       type: text
       maxLength: 64
-    peeringContractId:
+    peeringcontractId:
       title: _('Peering contract id')
       type: select
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\PeeringContracts
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\PeeringContracts
+          entity: \Core\Model\PeeringContract\PeeringContract
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
+          order:
+            PeeringContract.name: asc
         'null': _("Unassigned")
     externallyRated:
       title: _('Externally rated')
@@ -178,12 +186,14 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\PricingPlans
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\PricingPlans
+          entity: \Core\Model\PricingPlan\PricingPlan
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name_${lang}
+          order:
+            PricingPlan.name${ucLang}: asc
         'null': _("Unassigned")
     targetPatternId:
       title: _('Target pattern')
@@ -191,12 +201,14 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\TargetPatterns
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\TargetPatterns
+          entity: \Core\Model\TargetPattern\TargetPattern
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name_${lang}
+          order:
+            TargetPattern.name${ucLang}: asc
         'null': _("Unassigned")
       decorators:
         autocomplete:
@@ -215,12 +227,14 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Invoices
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Invoices
+          entity: \Core\Model\Invoice\Invoice
+          fieldName: 
+            fields: 
               - number
             template: '%number%'
-          order: number
+          order:
+            Invoice.number: asc
         'null': _("Unassigned")
     pricingPlan:
       title: _('Pricing plan')

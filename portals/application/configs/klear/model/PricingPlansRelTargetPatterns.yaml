@@ -1,6 +1,8 @@
 production:
   class: \IvozProvider\Model\PricingPlansRelTargetPatterns
-  fields:
+  dto: Core\Application\DTO\PricingPlansRelTargetPatternDTO
+  entity: Core\Model\PricingPlansRelTargetPattern\PricingPlansRelTargetPattern
+  fields:  
     id:
       title: ngettext('Id', 'Ids', 1)
       required: false
@@ -41,18 +43,18 @@ production:
         icon: help
         text: _("Use point as decimal delimiter - e.g. 0.02")
         label: _("Need help?")
-    metric:
-      title: _('Metric')
-      type: number
-      defaultValue: 10
-      source:
-        control: Spinner
-      info:
-        type: box
-        position: left
-        icon: help
-        text: _("In case that two patterns were matched pattern with lower metric will be applied.")
-        label: _("Need help?")
+#    metric:
+#      title: _('Metric')
+#      type: number
+#      defaultValue: 10
+#      source:
+#        control: Spinner
+#      info:
+#        type: box
+#        position: left
+#        icon: help
+#        text: _("In case that two patterns were matched pattern with lower metric will be applied.")
+#        label: _("Need help?")
     pricingPlanId:
       title: _('Pricing plan')
       type: select
@@ -60,12 +62,14 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\PricingPlans
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\PricingPlans
+          entity: \Core\Model\PricingPlan\PricingPlan
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
+          order:
+            PricingPlan.name: asc
     targetPatternId:
       title: _('Price pattern')
       type: select
@@ -73,18 +77,20 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\TargetPatterns
-          filterClass: IvozProvider_Klear_Filter_Brand
-          fieldName:
+#          mapperName: \IvozProvider\Mapper\Sql\TargetPatterns
+          entity: \Core\Model\TargetPattern\TargetPattern
+          filterclass: IvozProvider_Klear_Filter_Brand
+          fieldName: 
             fields:
               - name
               - regExp
             template: '%name% (%regExp%)'
-          order: name
+          order:
+            TargetPattern.name: asc
       decorators:
         autocomplete:
             command: targetPatternautocomplete_command
-    brandId:
+    brand:
       title: ngettext('Brand', 'Brands', 1)
       type: number
       required: true

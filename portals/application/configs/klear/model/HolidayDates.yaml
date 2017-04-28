@@ -1,6 +1,8 @@
 production:
   class: \IvozProvider\Model\HolidayDates
-  fields:
+  dto: Core\Application\DTO\HolidayDateDTO
+  entity: Core\Model\HolidayDate\HolidayDate
+  fields: 
     calendarId:
       title: _('Calendar')
       type: select
@@ -8,14 +10,16 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Calendars
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Calendars
+          entity: \Core\Model\Calendar\Calendar
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
+          order:
+            Calendar.name: asc
     name:
-      title: _('Name')
+      title: ngettext('Name', 'Names', 1)
       type: text
       trim: both
       required: true
@@ -35,13 +39,15 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Locutions
-          filterClass: IvozProvider_Klear_Filter_HolidayDateSelectLocution
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Locutions
+          entity: \Core\Model\Locution\Locution
+          filterclass: IvozProvider_Klear_Filter_HolidayDateSelectLocution
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: encodedFileMimeType
+          order:
+            Locution.encodedFileMimeType: asc
         'null': _("Unassigned")
 staging:
   _extends: production

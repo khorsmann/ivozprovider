@@ -1,6 +1,8 @@
 production:
   class: \IvozProvider\Model\CompanyAdmins
-  fields:
+  dto: Core\Application\DTO\CompanyAdminDTO
+  entity: Core\Model\CompanyAdmin\CompanyAdmin
+  fields: 
     companyId:
       title: ngettext('Company', 'Companies', 1)
       type: select
@@ -8,12 +10,14 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Companies
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Companies
+          entity: \Core\Model\Company\Company
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
+          order:
+            Company.name: asc
       default: true
     username:
       title: _('Username')
@@ -51,12 +55,14 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Timezones
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Timezones
+          entity: \Core\Model\Timezone\Timezone
+          fieldName: 
+            fields: 
               - tz
             template: '%tz%'
-          order: tz
+          order:
+            Timezone.tz: asc
     name:
       title: _('Name')
       type: text

@@ -25,7 +25,7 @@ production:
           email: true
           username: true
           pass: true
-          timezoneId: true
+          timezone: true
           name: true
           lastname: true
           active: true
@@ -34,8 +34,8 @@ production:
           pass: true
           name: true
           lastname: true
-          timezoneId: true
-      options:
+          timezone: true
+      options: 
         title: _("Options")
         screens:
           mainOperatorsNew_screen: true

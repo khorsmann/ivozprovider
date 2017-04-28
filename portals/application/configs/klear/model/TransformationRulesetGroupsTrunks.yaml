@@ -1,19 +1,23 @@
 production:
   class: \IvozProvider\Model\TransformationRulesetGroupsTrunks
-  fields:
-    brandId:
+  dto: Core\Application\DTO\TransformationRulesetGroupsTrunkDTO
+  entity: Core\Model\TransformationRulesetGroupsTrunk\TransformationRulesetGroupsTrunk
+  fields: 
+    brand:
       title: ngettext('Brand', 'Brands', 1)
       type: select
       required: true
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Brands
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Brands
+          entity: \Core\Model\Brand\Brand
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
+          order:
+            Brand.name: asc
       default: true
     name:
       title: _('Name')
@@ -21,22 +25,22 @@ production:
       trim: both
       required: true
       maxLength: 100
-    caller_in:
+    callerIn:
       title: _('Caller in')
       type: number
       source:
         control: Spinner
-    callee_in:
+    calleeIn:
       title: _('Callee in')
       type: number
       source:
         control: Spinner
-    caller_out:
+    callerOut:
       title: _('Caller out')
       type: number
       source:
         control: Spinner
-    callee_out:
+    calleeOut:
       title: _('Callee out')
       type: number
       source:
@@ -70,20 +74,22 @@ production:
         icon: help
         text: _("Will create default rules for a given country. This rules can be modified later.")
         label: _("Need help?")
-    countryId:
+    country:
       title: _('Country code')
       type: select
       required: true
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Countries
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Countries
+          entity: \Core\Model\Country\Country
+          fieldName: 
+            fields: 
               - name
-              - calling_code
-            template: '%name% (+%calling_code%)'
-          order: name_${lang}
+              - callingCode
+            template: '%name% (+%callingCode%)'
+          order:
+            Country.name${ucLang}: asc
       defaultValue: 70
     internationalCode:
       title: _('International Code')

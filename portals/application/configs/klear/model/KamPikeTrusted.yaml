@@ -1,7 +1,9 @@
 production:
   class: \IvozProvider\Model\KamPikeTrusted
-  fields:
-    src_ip:
+  dto: Core\Application\DTO\KamPikeTrustedDTO
+  entity: Core\Model\KamPikeTrusted\KamPikeTrusted
+  fields: 
+    srcIp:
       title: _('IP')
       type: text
       maxLength: 50
@@ -10,11 +12,11 @@ production:
       title: _('Proto')
       type: text
       maxLength: 4
-    from_pattern:
+    fromPattern:
       title: _('From pattern')
       type: text
       maxLength: 64
-    ruri_pattern:
+    ruriPattern:
       title: _('R-URI pattern')
       type: text
       maxLength: 64

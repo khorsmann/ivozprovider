@@ -1,6 +1,8 @@
 production:
   class: \IvozProvider\Model\ProxyTrunks
-  fields:
+  dto: Core\Application\DTO\ProxyTrunkDTO
+  entity: Core\Model\ProxyTrunk\ProxyTrunk
+  fields: 
     name:
       title: _('Name')
       type: text

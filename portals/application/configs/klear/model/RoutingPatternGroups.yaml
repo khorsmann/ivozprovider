@@ -1,6 +1,8 @@
 production:
   class: \IvozProvider\Model\RoutingPatternGroups
-  fields:
+  dto: Core\Application\DTO\RoutingPatternGroupDTO
+  entity: Core\Model\RoutingPatternGroup\RoutingPatternGroup
+  fields: 
     name:
       title: _('Name')
       type: text
@@ -11,29 +13,33 @@ production:
       title: _('Description')
       type: text
       maxLength: 55
-    brandId:
+    brand:
       title: ngettext('Brand', 'Brands', 1)
       type: select
       required: true
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Brands
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Brands
+          entity: \Core\Model\Brand\Brand
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
-    RoutingPatternGroupsRelPatterns:
+          order:
+            Brand.name: asc
+    relPatterns:
       title: _('Destination patterns')
       type: multiselect
       source:
         data: mapper
         config:
           extraDataAttributes:
-            brandId: brandId
-          relationMapper: \IvozProvider\Mapper\Sql\RoutingPatternGroupsRelPatterns
-          relatedMapperName: \IvozProvider\Mapper\Sql\RoutingPatterns
+            brand: brandId
+          relation:  \Core\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPattern
+          relationProperty: routingPatternGroup
+          relatedProperty: routingPattern
+          related: \Core\Model\RoutingPattern\RoutingPattern
           relatedFieldName:
             fields:
               - name

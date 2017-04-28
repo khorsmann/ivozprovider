@@ -75,17 +75,22 @@ production:
     callACLRelPatternsList_screen:
       <<: *callACLRelPatternsList_screenLink
       title: _("List of %s %2s", ngettext('Call ACL Pattern', 'Call ACL Pattern', 0), "[format| (%parent%)]")
-      filterField: CallACLId
+      filterField: CallACL
       parentOptionCustomizer:
         - recordCount
     callACLRelPatternsNew_screen:
       <<: *callACLRelPatternsNew_screenLink
       title: _("Add pattern to %2s", "[format| %parent%]")
-      filterField: CallACLId
+      filterField: CallACL
     callACLRelPatternsEdit_screen:
       <<: *callACLRelPatternsEdit_screenLink
+<<<<<<< HEAD
       filterField: CallACLId
       title: _("Edit pattern of %s", ngettext('Call ACL Pattern', 'Call ACL Pattern', 1))
+=======
+      filterField: CallACL
+      title: _("Edit pattern of %s", ngettext('Call ACL Rel rel pattern', 'Call ACL Rel rel pattern', 1))
+>>>>>>> Migration to symfony and doctrine
 
   dialogs: &callACL_dialogsLink
     callACLDel_dialog: &callACLDel_dialogLink

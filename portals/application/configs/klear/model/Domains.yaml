@@ -1,6 +1,8 @@
 production:
   class: \IvozProvider\Model\Domains
-  fields:
+  dto: Core\Application\DTO\DomainDTO
+  entity: Core\Model\Domain\Domain
+  fields: 
     domain:
       title: _('Domain')
       type: text
@@ -46,12 +48,14 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Brands
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Brands
+          entity: \Core\Model\Brand\Brand
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
+          order:
+            Brand.name: asc
     companyId:
       title: ngettext('Company', 'Companies', 1)
       type: select
@@ -59,13 +63,15 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Companies
-          fieldName:
-            fields:
+#          mapperName: \IvozProvider\Mapper\Sql\Companies
+          entity: \Core\Model\Company\Company
+          fieldName: 
+            fields: 
               - name
             template: '%name%'
-          order: name
-    descripton:
+          order:
+            Company.name: asc
+    description:
       title: _('Description')
       type: text
       trim: both

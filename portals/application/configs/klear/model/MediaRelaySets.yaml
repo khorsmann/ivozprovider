@@ -1,6 +1,8 @@
 production:
   class: \IvozProvider\Model\MediaRelaySets
-  fields:
+  dto: Core\Application\DTO\MediaRelaySetDTO
+  entity: Core\Model\MediaRelaySet\MediaRelaySet
+  fields: 
     name:
       title: _('Name')
       type: text
