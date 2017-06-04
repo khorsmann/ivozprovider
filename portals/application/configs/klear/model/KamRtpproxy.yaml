@@ -1,8 +1,7 @@
 production:
-  class: \IvozProvider\Model\KamRtpproxy
-  dto: Kam\Application\DTO\KamRtpproxyDTO
-  entity: Kam\Model\KamRtpproxy\KamRtpproxy
-  fields: 
+  class: \IvozProvider\Model\Rtpproxy
+  entity: Kam\Model\Rtpproxy\Rtpproxy
+  fields:
     id:
       title: _('Setid')
       type: text

@@ -1,8 +1,7 @@
 production:
-  class: \IvozProvider\Model\KamPikeTrusted
-  dto: Kam\Application\DTO\KamPikeTrustedDTO
-  entity: Kam\Model\KamPikeTrusted\KamPikeTrusted
-  fields: 
+  class: \IvozProvider\Model\PikeTrusted
+  entity: Kam\Model\PikeTrusted\PikeTrusted
+  fields:
     srcIp:
       title: _('IP')
       type: text
