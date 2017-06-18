@@ -1,6 +1,6 @@
 production:
   class: \IvozProvider\Model\GenericCallACLPatterns
-  entity: Core\Model\GenericCallACLPattern\GenericCallACLPattern
+  entity: Core\Domain\Model\GenericCallACLPattern\GenericCallACLPattern
   fields: 
     brand:
       title: ngettext('Brand', 'Brands', 1)
@@ -9,7 +9,8 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Brands
+#          mapperName: \IvozProvider\Mapper\Sql\Brands
+          entity: \Core\Domain\Model\Brand\Brand
           fieldName:
             fields:
               - name

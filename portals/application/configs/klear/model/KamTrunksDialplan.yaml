@@ -1,7 +1,7 @@
 production:
   class: \IvozProvider\Model\TrunksDialplan
-  entity: Kam\Model\TrunksDialplan\TrunksDialplan
-  fields:
+  entity: Kam\Domain\Model\TrunksDialplan\TrunksDialplan
+  fields: 
     dpid:
       title: _('Dpid')
       type: number
