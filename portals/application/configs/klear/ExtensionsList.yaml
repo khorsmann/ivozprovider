@@ -119,7 +119,7 @@ production:
       enclosure: '"'
       escape: "\\"
       forcedValues:
-        company: ${auth.companyId}
+        company: *forcedCompany
 
   commands:
     importExtensionsFreeUpload_command:
