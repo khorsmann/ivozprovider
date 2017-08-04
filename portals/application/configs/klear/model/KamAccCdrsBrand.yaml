@@ -128,7 +128,7 @@ production:
       title: _('Diversion')
       type: text
       maxLength: 64
-    peeringcontractid:
+    peeringContractId:
       title: _('Peering contract id')
       type: select
       source:
@@ -137,8 +137,8 @@ production:
 #          mapperName: \IvozProvider\Mapper\Sql\PeeringContracts
           entity: \Ivoz\Domain\Model\PeeringContract\PeeringContract
           filterclass: IvozProvider_Klear_Filter_Brand
-          fieldName: 
-            fields: 
+          fieldName:
+            fields:
               - name
             template: '%name%'
           order:
