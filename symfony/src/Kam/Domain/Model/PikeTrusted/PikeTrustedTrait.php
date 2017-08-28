@@ -1,10 +1,12 @@
 <?php
+
 namespace Kam\Domain\Model\PikeTrusted;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * PikeTrustedTrait
+ * @codeCoverageIgnore
  */
 trait PikeTrustedTrait
 {

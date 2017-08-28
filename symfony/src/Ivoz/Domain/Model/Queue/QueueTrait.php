@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\Queue;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * QueueTrait
+ * @codeCoverageIgnore
  */
 trait QueueTrait
 {

@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\PeerServer;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * PeerServerTrait
+ * @codeCoverageIgnore
  */
 trait PeerServerTrait
 {

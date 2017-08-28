@@ -1,4 +1,5 @@
 <?php
+
 namespace Kam\Domain\Model\Dispatcher;
 
 use Core\Application\DataTransferObjectInterface;

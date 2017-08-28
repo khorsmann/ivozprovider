@@ -2,21 +2,19 @@
 
 namespace Ivoz\Domain\Service\Invoice;
 
-use Core\Domain\Service\LifecycleEventHandlerInterface;
-use Core\Domain\Model\EntityInterface;
 use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\EntityManagerInterface;
 use Ivoz\Domain\Model\Invoice\Invoice;
+use Ivoz\Domain\Model\Invoice\InvoiceInterface;
 use Ivoz\Domain\Model\Invoice\InvoiceRepository;
-use Kam\Domain\Model\AccCdr\AccCdr;
 use Kam\Domain\Model\AccCdr\AccCdrRepository;
 
 /**
  * Class CheckValidity
  * @package Ivoz\Domain\Invoice\CompanyAdmin
- * @lifecycle invoice.pre_persist
+ * @lifecycle pre_persist
  */
-class CheckValidity implements LifecycleEventHandlerInterface
+class CheckValidity implements InvoiceLifecycleEventHandlerInterface
 {
     /**
      * @var EntityManagerInterface
@@ -44,10 +42,9 @@ class CheckValidity implements LifecycleEventHandlerInterface
     }
 
     /**
-     * @param Invoice $entity
      * @throws \Exception
      */
-    public function execute(EntityInterface $entity)
+    public function execute(InvoiceInterface $entity)
     {
         $tz = $entity
             ->getCompany()
@@ -106,7 +103,7 @@ class CheckValidity implements LifecycleEventHandlerInterface
         $where = array(
             "company" => $entity->getCompany()->getId(),
             "brand" => $entity->getBrand()->getId(),
-            Criteria::expr()->gt('outDate', $utcOutDate)),
+            Criteria::expr()->gt('outDate', $utcOutDate),
             Criteria::expr()->neq('id', $entity->getId())
         );
 

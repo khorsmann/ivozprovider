@@ -11,10 +11,9 @@ interface PricingPlansRelTargetPatternInterface extends EntityInterface
      *
      * @param string $connectionCharge
      *
-     * @return PricingPlansRelTargetPatternInterface
+     * @return self
      */
     public function setConnectionCharge($connectionCharge);
-
 
     /**
      * Get connectionCharge
@@ -23,16 +22,14 @@ interface PricingPlansRelTargetPatternInterface extends EntityInterface
      */
     public function getConnectionCharge();
 
-
     /**
      * Set periodTime
      *
      * @param integer $periodTime
      *
-     * @return PricingPlansRelTargetPatternInterface
+     * @return self
      */
     public function setPeriodTime($periodTime);
-
 
     /**
      * Get periodTime
@@ -41,16 +38,14 @@ interface PricingPlansRelTargetPatternInterface extends EntityInterface
      */
     public function getPeriodTime();
 
-
     /**
      * Set perPeriodCharge
      *
      * @param string $perPeriodCharge
      *
-     * @return PricingPlansRelTargetPatternInterface
+     * @return self
      */
     public function setPerPeriodCharge($perPeriodCharge);
-
 
     /**
      * Get perPeriodCharge
@@ -59,16 +54,14 @@ interface PricingPlansRelTargetPatternInterface extends EntityInterface
      */
     public function getPerPeriodCharge();
 
-
     /**
      * Set pricingPlan
      *
      * @param \Ivoz\Domain\Model\PricingPlan\PricingPlanInterface $pricingPlan
      *
-     * @return PricingPlansRelTargetPatternInterface
+     * @return self
      */
     public function setPricingPlan(\Ivoz\Domain\Model\PricingPlan\PricingPlanInterface $pricingPlan);
-
 
     /**
      * Get pricingPlan
@@ -77,16 +70,14 @@ interface PricingPlansRelTargetPatternInterface extends EntityInterface
      */
     public function getPricingPlan();
 
-
     /**
      * Set targetPattern
      *
      * @param \Ivoz\Domain\Model\TargetPattern\TargetPatternInterface $targetPattern
      *
-     * @return PricingPlansRelTargetPatternInterface
+     * @return self
      */
     public function setTargetPattern(\Ivoz\Domain\Model\TargetPattern\TargetPatternInterface $targetPattern);
-
 
     /**
      * Get targetPattern
@@ -95,16 +86,14 @@ interface PricingPlansRelTargetPatternInterface extends EntityInterface
      */
     public function getTargetPattern();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return PricingPlansRelTargetPatternInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand);
-
 
     /**
      * Get brand
@@ -112,8 +101,6 @@ interface PricingPlansRelTargetPatternInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Brand\BrandInterface
      */
     public function getBrand();
-
-
 
 }
 

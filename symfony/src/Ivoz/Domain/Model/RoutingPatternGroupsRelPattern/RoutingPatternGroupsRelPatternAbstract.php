@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\RoutingPatternGroupsRelPattern;
 
 use Assert\Assertion;
@@ -6,6 +7,7 @@ use Core\Application\DataTransferObjectInterface;
 
 /**
  * RoutingPatternGroupsRelPatternAbstract
+ * @codeCoverageIgnore
  */
 abstract class RoutingPatternGroupsRelPatternAbstract
 {

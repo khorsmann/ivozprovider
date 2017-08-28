@@ -1,4 +1,5 @@
 <?php
+
 namespace Kam\Domain\Model\UsersXcap;
 
 use Core\Application\DataTransferObjectInterface;

@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\Language;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * LanguageTrait
+ * @codeCoverageIgnore
  */
 trait LanguageTrait
 {

@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\Brand;
 
 use Core\Application\DataTransferObjectInterface;
@@ -7,6 +8,7 @@ use Doctrine\Common\Collections\Criteria;
 
 /**
  * BrandTrait
+ * @codeCoverageIgnore
  */
 trait BrandTrait
 {

@@ -1,10 +1,12 @@
 <?php
+
 namespace Kam\Domain\Model\TrunksDialplan;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * TrunksDialplanTrait
+ * @codeCoverageIgnore
  */
 trait TrunksDialplanTrait
 {

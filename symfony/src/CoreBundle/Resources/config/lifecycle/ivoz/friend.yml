@@ -4,6 +4,15 @@ services:
     public: false
 
   ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\Friend\FriendLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.friend.service_collection:
+    '@Ivoz\Domain\Service\Friend\FriendLifecycleServiceCollection'
+
+  ##################################
   ## pre_persist
   ##################################
   Ivoz\Domain\Service\Friend\SanitizeValues:

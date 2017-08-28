@@ -1,16 +1,15 @@
 <?php
+
 namespace Ivoz\Domain\Service\Extension;
 
-use Core\Domain\Service\LifecycleEventHandlerInterface;
-use Core\Domain\Model\EntityInterface;
-use Ivoz\Domain\Model\Extension\Extension;
+use Ivoz\Domain\Model\Extension\ExtensionInterface;
 
 /**
  * Class SanitizeValues
  * @package Ivoz\Domain\Service\Extension
- * @lifecycle extension.pre_persist
+ * @lifecycle pre_persist
  */
-class SanitizeValues implements LifecycleEventHandlerInterface
+class SanitizeValues implements ExtensionLifecycleEventHandlerInterface
 {
     /**
      * @var EntityPersisterInterface
@@ -24,14 +23,13 @@ class SanitizeValues implements LifecycleEventHandlerInterface
     }
 
     /**
-     * @param Extension $entity
      * @throws \Exception
      */
-    public function execute(EntityInterface $entity)
+    public function execute(ExtensionInterface $entity)
     {
         $nullableFields = array(
-            "IVRCommon"     => "IVRCommon",
-            "IVRCustom"     => "IVRCustom",
+            "IvrCommon"     => "IvrCommon",
+            "IvrCustom"     => "IvrCustom",
             "huntGroup"     => "huntGroup",
             "user"          => "user",
             "conferenceRoom" => "conferenceRoom",

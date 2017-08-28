@@ -11,10 +11,9 @@ interface PeeringContractInterface extends EntityInterface
      *
      * @param string $description
      *
-     * @return PeeringContractInterface
+     * @return self
      */
     public function setDescription($description);
-
 
     /**
      * Get description
@@ -23,16 +22,14 @@ interface PeeringContractInterface extends EntityInterface
      */
     public function getDescription();
 
-
     /**
      * Set name
      *
      * @param string $name
      *
-     * @return PeeringContractInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -41,16 +38,14 @@ interface PeeringContractInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set externallyRated
      *
      * @param boolean $externallyRated
      *
-     * @return PeeringContractInterface
+     * @return self
      */
     public function setExternallyRated($externallyRated = null);
-
 
     /**
      * Get externallyRated
@@ -59,16 +54,14 @@ interface PeeringContractInterface extends EntityInterface
      */
     public function getExternallyRated();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return PeeringContractInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand);
-
 
     /**
      * Get brand
@@ -77,16 +70,14 @@ interface PeeringContractInterface extends EntityInterface
      */
     public function getBrand();
 
-
     /**
      * Set transformationRulesetGroupsTrunk
      *
      * @param \Ivoz\Domain\Model\TransformationRulesetGroupsTrunk\TransformationRulesetGroupsTrunkInterface $transformationRulesetGroupsTrunk
      *
-     * @return PeeringContractInterface
+     * @return self
      */
     public function setTransformationRulesetGroupsTrunk(\Ivoz\Domain\Model\TransformationRulesetGroupsTrunk\TransformationRulesetGroupsTrunkInterface $transformationRulesetGroupsTrunk = null);
-
 
     /**
      * Get transformationRulesetGroupsTrunk
@@ -94,8 +85,6 @@ interface PeeringContractInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\TransformationRulesetGroupsTrunk\TransformationRulesetGroupsTrunkInterface
      */
     public function getTransformationRulesetGroupsTrunk();
-
-
 
 }
 

@@ -1,0 +1,18 @@
+Ivoz\Domain\Model\IvrCommon\IvrCommon:
+  repositoryClass: Ivoz\Infrastructure\Persistence\Doctrine\IvrCommonDoctrineRepository
+  type: entity
+  table: IVRCommon
+  id:
+    id:
+      type: integer
+      nullable: false
+      options:
+        unsigned: true
+      id: true
+      generator:
+        strategy: IDENTITY
+  oneToMany:
+    extensions:
+      targetEntity: Ivoz\Domain\Model\Extension\ExtensionInterface
+      mappedBy: IvrCommon
+  lifecycleCallbacks: {  }

@@ -1,10 +1,12 @@
 <?php
+
 namespace Kam\Domain\Model\UsersWatcher;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * UsersWatcherTrait
+ * @codeCoverageIgnore
  */
 trait UsersWatcherTrait
 {

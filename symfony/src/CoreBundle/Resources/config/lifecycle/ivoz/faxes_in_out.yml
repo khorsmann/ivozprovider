@@ -4,6 +4,15 @@ services:
     public: false
 
   ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\FaxesInOut\FaxesInOutLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.faxes_in_out.service_collection:
+    '@Ivoz\Domain\Service\FaxesInOut\FaxesInOutLifecycleServiceCollection'
+
+  ##################################
   ## post_persist
   ##################################
   Ivoz\Domain\Service\FaxesInOut\SendFaxFile:

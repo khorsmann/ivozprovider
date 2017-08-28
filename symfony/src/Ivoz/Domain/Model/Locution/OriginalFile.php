@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\Locution;
 
 use Assert\Assertion;
 
 /**
  * OriginalFile
+ * @codeCoverageIgnore
  */
 class OriginalFile
 {

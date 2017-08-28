@@ -7,14 +7,20 @@ use Core\Domain\Model\EntityInterface;
 interface DDIInterface extends EntityInterface
 {
     /**
+     * @return string Domain
+     */
+    public function getDomain();
+
+    public function getLanguageCode();
+
+    /**
      * Set ddi
      *
      * @param string $ddi
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setDdi($ddi);
-
 
     /**
      * Get ddi
@@ -23,16 +29,14 @@ interface DDIInterface extends EntityInterface
      */
     public function getDdi();
 
-
     /**
      * Set ddie164
      *
      * @param string $ddie164
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setDdie164($ddie164 = null);
-
 
     /**
      * Get ddie164
@@ -41,16 +45,14 @@ interface DDIInterface extends EntityInterface
      */
     public function getDdie164();
 
-
     /**
      * Set recordCalls
      *
      * @param string $recordCalls
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setRecordCalls($recordCalls);
-
 
     /**
      * Get recordCalls
@@ -59,16 +61,14 @@ interface DDIInterface extends EntityInterface
      */
     public function getRecordCalls();
 
-
     /**
      * Set displayName
      *
      * @param string $displayName
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setDisplayName($displayName = null);
-
 
     /**
      * Get displayName
@@ -77,16 +77,14 @@ interface DDIInterface extends EntityInterface
      */
     public function getDisplayName();
 
-
     /**
      * Set routeType
      *
      * @param string $routeType
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setRouteType($routeType = null);
-
 
     /**
      * Get routeType
@@ -95,16 +93,14 @@ interface DDIInterface extends EntityInterface
      */
     public function getRouteType();
 
-
     /**
      * Set billInboundCalls
      *
      * @param boolean $billInboundCalls
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setBillInboundCalls($billInboundCalls);
-
 
     /**
      * Get billInboundCalls
@@ -113,16 +109,14 @@ interface DDIInterface extends EntityInterface
      */
     public function getBillInboundCalls();
 
-
     /**
      * Set friendValue
      *
      * @param string $friendValue
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setFriendValue($friendValue = null);
-
 
     /**
      * Get friendValue
@@ -131,16 +125,14 @@ interface DDIInterface extends EntityInterface
      */
     public function getFriendValue();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company = null);
-
 
     /**
      * Get company
@@ -149,16 +141,14 @@ interface DDIInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand);
-
 
     /**
      * Get brand
@@ -167,16 +157,14 @@ interface DDIInterface extends EntityInterface
      */
     public function getBrand();
 
-
     /**
      * Set conferenceRoom
      *
      * @param \Ivoz\Domain\Model\ConferenceRoom\ConferenceRoomInterface $conferenceRoom
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setConferenceRoom(\Ivoz\Domain\Model\ConferenceRoom\ConferenceRoomInterface $conferenceRoom = null);
-
 
     /**
      * Get conferenceRoom
@@ -185,16 +173,14 @@ interface DDIInterface extends EntityInterface
      */
     public function getConferenceRoom();
 
-
     /**
      * Set language
      *
      * @param \Ivoz\Domain\Model\Language\LanguageInterface $language
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setLanguage(\Ivoz\Domain\Model\Language\LanguageInterface $language = null);
-
 
     /**
      * Get language
@@ -203,16 +189,14 @@ interface DDIInterface extends EntityInterface
      */
     public function getLanguage();
 
-
     /**
      * Set queue
      *
      * @param \Ivoz\Domain\Model\Queue\QueueInterface $queue
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setQueue(\Ivoz\Domain\Model\Queue\QueueInterface $queue = null);
-
 
     /**
      * Get queue
@@ -221,16 +205,14 @@ interface DDIInterface extends EntityInterface
      */
     public function getQueue();
 
-
     /**
      * Set externalCallFilter
      *
      * @param \Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface $externalCallFilter
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setExternalCallFilter(\Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface $externalCallFilter = null);
-
 
     /**
      * Get externalCallFilter
@@ -239,16 +221,14 @@ interface DDIInterface extends EntityInterface
      */
     public function getExternalCallFilter();
 
-
     /**
      * Set user
      *
      * @param \Ivoz\Domain\Model\User\UserInterface $user
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setUser(\Ivoz\Domain\Model\User\UserInterface $user = null);
-
 
     /**
      * Get user
@@ -257,52 +237,46 @@ interface DDIInterface extends EntityInterface
      */
     public function getUser();
 
+    /**
+     * Set ivrCommon
+     *
+     * @param \Ivoz\Domain\Model\IvrCommon\IvrCommonInterface $ivrCommon
+     *
+     * @return self
+     */
+    public function setIvrCommon(\Ivoz\Domain\Model\IvrCommon\IvrCommonInterface $ivrCommon = null);
 
     /**
-     * Set iVRCommon
+     * Get ivrCommon
      *
-     * @param \Ivoz\Domain\Model\IVRCommon\IVRCommonInterface $iVRCommon
-     *
-     * @return DDIInterface
+     * @return \Ivoz\Domain\Model\IvrCommon\IvrCommonInterface
      */
-    public function setIVRCommon(\Ivoz\Domain\Model\IVRCommon\IVRCommonInterface $iVRCommon = null);
-
+    public function getIvrCommon();
 
     /**
-     * Get iVRCommon
+     * Set ivrCustom
      *
-     * @return \Ivoz\Domain\Model\IVRCommon\IVRCommonInterface
+     * @param \Ivoz\Domain\Model\IvrCustom\IvrCustomInterface $ivrCustom
+     *
+     * @return self
      */
-    public function getIVRCommon();
-
+    public function setIvrCustom(\Ivoz\Domain\Model\IvrCustom\IvrCustomInterface $ivrCustom = null);
 
     /**
-     * Set iVRCustom
+     * Get ivrCustom
      *
-     * @param \Ivoz\Domain\Model\IVRCustom\IVRCustomInterface $iVRCustom
-     *
-     * @return DDIInterface
+     * @return \Ivoz\Domain\Model\IvrCustom\IvrCustomInterface
      */
-    public function setIVRCustom(\Ivoz\Domain\Model\IVRCustom\IVRCustomInterface $iVRCustom = null);
-
-
-    /**
-     * Get iVRCustom
-     *
-     * @return \Ivoz\Domain\Model\IVRCustom\IVRCustomInterface
-     */
-    public function getIVRCustom();
-
+    public function getIvrCustom();
 
     /**
      * Set huntGroup
      *
      * @param \Ivoz\Domain\Model\HuntGroup\HuntGroupInterface $huntGroup
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setHuntGroup(\Ivoz\Domain\Model\HuntGroup\HuntGroupInterface $huntGroup = null);
-
 
     /**
      * Get huntGroup
@@ -311,16 +285,14 @@ interface DDIInterface extends EntityInterface
      */
     public function getHuntGroup();
 
-
     /**
      * Set fax
      *
      * @param \Ivoz\Domain\Model\Fax\FaxInterface $fax
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setFax(\Ivoz\Domain\Model\Fax\FaxInterface $fax = null);
-
 
     /**
      * Get fax
@@ -329,16 +301,14 @@ interface DDIInterface extends EntityInterface
      */
     public function getFax();
 
-
     /**
      * Set peeringContract
      *
      * @param \Ivoz\Domain\Model\PeeringContract\PeeringContractInterface $peeringContract
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setPeeringContract(\Ivoz\Domain\Model\PeeringContract\PeeringContractInterface $peeringContract = null);
-
 
     /**
      * Get peeringContract
@@ -347,16 +317,14 @@ interface DDIInterface extends EntityInterface
      */
     public function getPeeringContract();
 
-
     /**
      * Set country
      *
      * @param \Ivoz\Domain\Model\Country\CountryInterface $country
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setCountry(\Ivoz\Domain\Model\Country\CountryInterface $country = null);
-
 
     /**
      * Get country
@@ -365,16 +333,14 @@ interface DDIInterface extends EntityInterface
      */
     public function getCountry();
 
-
     /**
      * Set retailAccount
      *
      * @param \Ivoz\Domain\Model\RetailAccount\RetailAccountInterface $retailAccount
      *
-     * @return DDIInterface
+     * @return self
      */
     public function setRetailAccount(\Ivoz\Domain\Model\RetailAccount\RetailAccountInterface $retailAccount = null);
-
 
     /**
      * Get retailAccount
@@ -382,8 +348,6 @@ interface DDIInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\RetailAccount\RetailAccountInterface
      */
     public function getRetailAccount();
-
-
 
 }
 

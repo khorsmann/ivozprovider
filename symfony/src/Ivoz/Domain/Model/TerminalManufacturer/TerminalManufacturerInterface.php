@@ -11,10 +11,9 @@ interface TerminalManufacturerInterface extends EntityInterface
      *
      * @param string $iden
      *
-     * @return TerminalManufacturerInterface
+     * @return self
      */
     public function setIden($iden);
-
 
     /**
      * Get iden
@@ -23,16 +22,14 @@ interface TerminalManufacturerInterface extends EntityInterface
      */
     public function getIden();
 
-
     /**
      * Set name
      *
      * @param string $name
      *
-     * @return TerminalManufacturerInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -41,16 +38,14 @@ interface TerminalManufacturerInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set description
      *
      * @param string $description
      *
-     * @return TerminalManufacturerInterface
+     * @return self
      */
     public function setDescription($description);
-
 
     /**
      * Get description
@@ -58,8 +53,6 @@ interface TerminalManufacturerInterface extends EntityInterface
      * @return string
      */
     public function getDescription();
-
-
 
 }
 

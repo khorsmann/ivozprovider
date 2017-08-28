@@ -255,10 +255,30 @@ public function <methodName>(<criteriaArgument>)
     protected function transformMetadata(ClassMetadataInfo $metadata)
     {
         foreach ($metadata->associationMappings as $key => $association) {
-            $metadata->associationMappings[$key]['targetEntity'] .= 'Interface';
+
+            $target = $metadata->associationMappings[$key]['targetEntity'];
+            if (strpos($target, 'Interface') === false) {
+                $metadata->associationMappings[$key]['targetEntity'] .= 'Interface';
+            }
         }
 
         return $metadata;
+    }
+
+    /**
+     * @param ClassMetadataInfo $metadata
+     *
+     * @return string
+     */
+    protected function generateEntityDocBlock(ClassMetadataInfo $metadata)
+    {
+        $lines = array();
+        $lines[] = '/**';
+        $lines[] = ' * ' . $this->getClassName($metadata);
+        $lines[] = ' * @codeCoverageIgnore';
+        $lines[] = ' */';
+
+        return implode("\n", $lines);
     }
 
     /**

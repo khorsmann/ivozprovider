@@ -1,8 +1,8 @@
 <?php
+
 namespace Ivoz\Domain\Service\CallForwardSetting;
 
-use Core\Domain\Service\LifecycleEventHandlerInterface;
-use Core\Domain\Model\EntityInterface;
+use Ivoz\Domain\Model\CallForwardSetting\CallForwardSettingInterface;
 use Ivoz\Domain\Model\CallForwardSetting\CallForwardSettingRepository;
 use Ivoz\Domain\Model\CallForwardSetting\CallForwardSetting;
 use Doctrine\Common\Collections\Criteria;
@@ -10,9 +10,9 @@ use Doctrine\Common\Collections\Criteria;
 /**
  * Class CheckValidity
  * @package Ivoz\Domain\Service\CallForwardSetting
- * @lifecycle brand.pre_persist
+ * @lifecycle pre_persist
  */
-class CheckValidity implements LifecycleEventHandlerInterface
+class CheckValidity implements CallForwardSettingLifecycleEventHandlerInterface
 {
     /**
      * @var CallForwardSettingRepository
@@ -25,10 +25,9 @@ class CheckValidity implements LifecycleEventHandlerInterface
     }
 
     /**
-     * @param CallForwardSetting $entity
      * @throws \Exception
      */
-    public function execute(EntityInterface $entity)
+    public function execute(CallForwardSettingInterface $entity)
     {
         $callTypeFilterConditions = array(
             $entity->getCallTypeFilter()

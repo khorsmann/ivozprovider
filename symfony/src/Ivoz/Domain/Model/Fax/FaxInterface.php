@@ -7,14 +7,18 @@ use Core\Domain\Model\EntityInterface;
 interface FaxInterface extends EntityInterface
 {
     /**
+     * {@inheritDoc}
+     */
+    public function getOutgoingDDI();
+
+    /**
      * Set name
      *
      * @param string $name
      *
-     * @return FaxInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +27,14 @@ interface FaxInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set email
      *
      * @param string $email
      *
-     * @return FaxInterface
+     * @return self
      */
     public function setEmail($email = null);
-
 
     /**
      * Get email
@@ -41,16 +43,14 @@ interface FaxInterface extends EntityInterface
      */
     public function getEmail();
 
-
     /**
      * Set sendByEmail
      *
      * @param boolean $sendByEmail
      *
-     * @return FaxInterface
+     * @return self
      */
     public function setSendByEmail($sendByEmail);
-
 
     /**
      * Get sendByEmail
@@ -59,16 +59,14 @@ interface FaxInterface extends EntityInterface
      */
     public function getSendByEmail();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return FaxInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company);
-
 
     /**
      * Get company
@@ -77,25 +75,14 @@ interface FaxInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set outgoingDDI
      *
      * @param \Ivoz\Domain\Model\DDI\DDIInterface $outgoingDDI
      *
-     * @return FaxInterface
+     * @return self
      */
     public function setOutgoingDDI(\Ivoz\Domain\Model\DDI\DDIInterface $outgoingDDI = null);
-
-
-    /**
-     * Get outgoingDDI
-     *
-     * @return \Ivoz\Domain\Model\DDI\DDIInterface
-     */
-    public function getOutgoingDDI();
-
-
 
 }
 

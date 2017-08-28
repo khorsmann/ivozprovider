@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\MainOperator;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * MainOperatorTrait
+ * @codeCoverageIgnore
  */
 trait MainOperatorTrait
 {

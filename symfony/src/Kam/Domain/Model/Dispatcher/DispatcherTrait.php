@@ -1,10 +1,12 @@
 <?php
+
 namespace Kam\Domain\Model\Dispatcher;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * DispatcherTrait
+ * @codeCoverageIgnore
  */
 trait DispatcherTrait
 {

@@ -11,10 +11,9 @@ interface LcrRuleTargetInterface extends EntityInterface
      *
      * @param integer $lcrId
      *
-     * @return LcrRuleTargetInterface
+     * @return self
      */
     public function setLcrId($lcrId);
-
 
     /**
      * Get lcrId
@@ -23,16 +22,14 @@ interface LcrRuleTargetInterface extends EntityInterface
      */
     public function getLcrId();
 
-
     /**
      * Set priority
      *
      * @param boolean $priority
      *
-     * @return LcrRuleTargetInterface
+     * @return self
      */
     public function setPriority($priority);
-
 
     /**
      * Get priority
@@ -41,16 +38,14 @@ interface LcrRuleTargetInterface extends EntityInterface
      */
     public function getPriority();
 
-
     /**
      * Set weight
      *
      * @param integer $weight
      *
-     * @return LcrRuleTargetInterface
+     * @return self
      */
     public function setWeight($weight);
-
 
     /**
      * Get weight
@@ -59,16 +54,14 @@ interface LcrRuleTargetInterface extends EntityInterface
      */
     public function getWeight();
 
-
     /**
      * Set rule
      *
      * @param \Ivoz\Domain\Model\LcrRule\LcrRuleInterface $rule
      *
-     * @return LcrRuleTargetInterface
+     * @return self
      */
     public function setRule(\Ivoz\Domain\Model\LcrRule\LcrRuleInterface $rule);
-
 
     /**
      * Get rule
@@ -77,16 +70,14 @@ interface LcrRuleTargetInterface extends EntityInterface
      */
     public function getRule();
 
-
     /**
      * Set gw
      *
      * @param \Ivoz\Domain\Model\LcrGateway\LcrGatewayInterface $gw
      *
-     * @return LcrRuleTargetInterface
+     * @return self
      */
     public function setGw(\Ivoz\Domain\Model\LcrGateway\LcrGatewayInterface $gw);
-
 
     /**
      * Get gw
@@ -95,16 +86,14 @@ interface LcrRuleTargetInterface extends EntityInterface
      */
     public function getGw();
 
-
     /**
      * Set outgoingRouting
      *
      * @param \Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface $outgoingRouting
      *
-     * @return LcrRuleTargetInterface
+     * @return self
      */
     public function setOutgoingRouting(\Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface $outgoingRouting);
-
 
     /**
      * Get outgoingRouting
@@ -112,8 +101,6 @@ interface LcrRuleTargetInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface
      */
     public function getOutgoingRouting();
-
-
 
 }
 

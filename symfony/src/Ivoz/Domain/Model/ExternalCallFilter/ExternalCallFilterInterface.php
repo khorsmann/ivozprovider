@@ -7,14 +7,37 @@ use Core\Domain\Model\EntityInterface;
 interface ExternalCallFilterInterface extends EntityInterface
 {
     /**
+     * Check if the given number matches External Filter black list
+     * @param string $origin in E164 form
+     * @return true if number matches, false otherwise
+     */
+    public function isBlackListed($origin);
+
+    /**
+     * Check if the given number matches External Filter white list
+     * @param string $origin in E164 form
+     * @return true if number matches, false otherwise
+     */
+    public function isWhitelisted($origin);
+
+    /**
+     * @return Null | HolidayDateInterface
+     */
+    public function getHolidayDateForToday();
+
+    /**
+     * @return bool scheduleMatched
+     */
+    public function isOutOfSchedule();
+
+    /**
      * Set name
      *
      * @param string $name
      *
-     * @return ExternalCallFilterInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +46,14 @@ interface ExternalCallFilterInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set holidayTargetType
      *
      * @param string $holidayTargetType
      *
-     * @return ExternalCallFilterInterface
+     * @return self
      */
     public function setHolidayTargetType($holidayTargetType = null);
-
 
     /**
      * Get holidayTargetType
@@ -41,16 +62,14 @@ interface ExternalCallFilterInterface extends EntityInterface
      */
     public function getHolidayTargetType();
 
-
     /**
      * Set holidayNumberValue
      *
      * @param string $holidayNumberValue
      *
-     * @return ExternalCallFilterInterface
+     * @return self
      */
     public function setHolidayNumberValue($holidayNumberValue = null);
-
 
     /**
      * Get holidayNumberValue
@@ -59,16 +78,14 @@ interface ExternalCallFilterInterface extends EntityInterface
      */
     public function getHolidayNumberValue();
 
-
     /**
      * Set outOfScheduleTargetType
      *
      * @param string $outOfScheduleTargetType
      *
-     * @return ExternalCallFilterInterface
+     * @return self
      */
     public function setOutOfScheduleTargetType($outOfScheduleTargetType = null);
-
 
     /**
      * Get outOfScheduleTargetType
@@ -77,16 +94,14 @@ interface ExternalCallFilterInterface extends EntityInterface
      */
     public function getOutOfScheduleTargetType();
 
-
     /**
      * Set outOfScheduleNumberValue
      *
      * @param string $outOfScheduleNumberValue
      *
-     * @return ExternalCallFilterInterface
+     * @return self
      */
     public function setOutOfScheduleNumberValue($outOfScheduleNumberValue = null);
-
 
     /**
      * Get outOfScheduleNumberValue
@@ -95,16 +110,14 @@ interface ExternalCallFilterInterface extends EntityInterface
      */
     public function getOutOfScheduleNumberValue();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return ExternalCallFilterInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company);
-
 
     /**
      * Get company
@@ -113,16 +126,14 @@ interface ExternalCallFilterInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set welcomeLocution
      *
      * @param \Ivoz\Domain\Model\Locution\LocutionInterface $welcomeLocution
      *
-     * @return ExternalCallFilterInterface
+     * @return self
      */
     public function setWelcomeLocution(\Ivoz\Domain\Model\Locution\LocutionInterface $welcomeLocution = null);
-
 
     /**
      * Get welcomeLocution
@@ -131,16 +142,14 @@ interface ExternalCallFilterInterface extends EntityInterface
      */
     public function getWelcomeLocution();
 
-
     /**
      * Set holidayLocution
      *
      * @param \Ivoz\Domain\Model\Locution\LocutionInterface $holidayLocution
      *
-     * @return ExternalCallFilterInterface
+     * @return self
      */
     public function setHolidayLocution(\Ivoz\Domain\Model\Locution\LocutionInterface $holidayLocution = null);
-
 
     /**
      * Get holidayLocution
@@ -149,16 +158,14 @@ interface ExternalCallFilterInterface extends EntityInterface
      */
     public function getHolidayLocution();
 
-
     /**
      * Set outOfScheduleLocution
      *
      * @param \Ivoz\Domain\Model\Locution\LocutionInterface $outOfScheduleLocution
      *
-     * @return ExternalCallFilterInterface
+     * @return self
      */
     public function setOutOfScheduleLocution(\Ivoz\Domain\Model\Locution\LocutionInterface $outOfScheduleLocution = null);
-
 
     /**
      * Get outOfScheduleLocution
@@ -167,16 +174,14 @@ interface ExternalCallFilterInterface extends EntityInterface
      */
     public function getOutOfScheduleLocution();
 
-
     /**
      * Set holidayExtension
      *
      * @param \Ivoz\Domain\Model\Extension\ExtensionInterface $holidayExtension
      *
-     * @return ExternalCallFilterInterface
+     * @return self
      */
     public function setHolidayExtension(\Ivoz\Domain\Model\Extension\ExtensionInterface $holidayExtension = null);
-
 
     /**
      * Get holidayExtension
@@ -185,16 +190,14 @@ interface ExternalCallFilterInterface extends EntityInterface
      */
     public function getHolidayExtension();
 
-
     /**
      * Set outOfScheduleExtension
      *
      * @param \Ivoz\Domain\Model\Extension\ExtensionInterface $outOfScheduleExtension
      *
-     * @return ExternalCallFilterInterface
+     * @return self
      */
     public function setOutOfScheduleExtension(\Ivoz\Domain\Model\Extension\ExtensionInterface $outOfScheduleExtension = null);
-
 
     /**
      * Get outOfScheduleExtension
@@ -203,16 +206,14 @@ interface ExternalCallFilterInterface extends EntityInterface
      */
     public function getOutOfScheduleExtension();
 
-
     /**
      * Set holidayVoiceMailUser
      *
      * @param \Ivoz\Domain\Model\User\UserInterface $holidayVoiceMailUser
      *
-     * @return ExternalCallFilterInterface
+     * @return self
      */
     public function setHolidayVoiceMailUser(\Ivoz\Domain\Model\User\UserInterface $holidayVoiceMailUser = null);
-
 
     /**
      * Get holidayVoiceMailUser
@@ -221,16 +222,14 @@ interface ExternalCallFilterInterface extends EntityInterface
      */
     public function getHolidayVoiceMailUser();
 
-
     /**
      * Set outOfScheduleVoiceMailUser
      *
      * @param \Ivoz\Domain\Model\User\UserInterface $outOfScheduleVoiceMailUser
      *
-     * @return ExternalCallFilterInterface
+     * @return self
      */
     public function setOutOfScheduleVoiceMailUser(\Ivoz\Domain\Model\User\UserInterface $outOfScheduleVoiceMailUser = null);
-
 
     /**
      * Get outOfScheduleVoiceMailUser
@@ -239,7 +238,129 @@ interface ExternalCallFilterInterface extends EntityInterface
      */
     public function getOutOfScheduleVoiceMailUser();
 
+    /**
+     * Add blackList
+     *
+     * @param \Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList $blackList
+     *
+     * @return ExternalCallFilterTrait
+     */
+    public function addBlackList(\Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList $blackList);
 
+    /**
+     * Remove blackList
+     *
+     * @param \Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList $blackList
+     */
+    public function removeBlackList(\Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList $blackList);
+
+    /**
+     * Replace blackLists
+     *
+     * @param \Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList[] $blackLists
+     * @return self
+     */
+    public function replaceBlackLists(array $blackLists);
+
+    /**
+     * Get blackLists
+     *
+     * @return array
+     */
+    public function getBlackLists(\Doctrine\Common\Collections\Criteria $criteria = null);
+
+    /**
+     * Add whiteList
+     *
+     * @param \Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteList $whiteList
+     *
+     * @return ExternalCallFilterTrait
+     */
+    public function addWhiteList(\Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteList $whiteList);
+
+    /**
+     * Remove whiteList
+     *
+     * @param \Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteList $whiteList
+     */
+    public function removeWhiteList(\Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteList $whiteList);
+
+    /**
+     * Replace whiteList
+     *
+     * @param \Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteList[] $whiteList
+     * @return self
+     */
+    public function replaceWhiteList(array $whiteList);
+
+    /**
+     * Get whiteList
+     *
+     * @return array
+     */
+    public function getWhiteList(\Doctrine\Common\Collections\Criteria $criteria = null);
+
+    /**
+     * Add schedule
+     *
+     * @param ExternalCallFilter $schedule
+     *
+     * @return ExternalCallFilterTrait
+     */
+    public function addSchedule(\Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilter $schedule);
+
+    /**
+     * Remove schedule
+     *
+     * @param ExternalCallFilter $schedule
+     */
+    public function removeSchedule(\Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilter $schedule);
+
+    /**
+     * Replace schedules
+     *
+     * @param \Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilter[] $schedules
+     * @return self
+     */
+    public function replaceSchedules(array $schedules);
+
+    /**
+     * Get schedules
+     *
+     * @return array
+     */
+    public function getSchedules(\Doctrine\Common\Collections\Criteria $criteria = null);
+
+    /**
+     * Add calendar
+     *
+     * @param \Ivoz\Domain\Model\Calendar\Calendar $calendar
+     *
+     * @return ExternalCallFilterTrait
+     */
+    public function addCalendar(\Ivoz\Domain\Model\Calendar\Calendar $calendar);
+
+    /**
+     * Remove calendar
+     *
+     * @param \Ivoz\Domain\Model\Calendar\Calendar $calendar
+     */
+    public function removeCalendar(\Ivoz\Domain\Model\Calendar\Calendar $calendar);
+
+    /**
+     * Replace calendars
+     *
+     * @param \Ivoz\Domain\Model\Calendar\Calendar[] $calendars
+     * @return self
+     */
+    public function replaceCalendars(array $calendars);
+
+    /**
+     * Get calendars
+     *
+     * @return array
+     */
+    public function getCalendars(\Doctrine\Common\Collections\Criteria $criteria = null);
 
 }
 

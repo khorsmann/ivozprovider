@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\ProxyTrunk;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * ProxyTrunkTrait
+ * @codeCoverageIgnore
  */
 trait ProxyTrunkTrait
 {

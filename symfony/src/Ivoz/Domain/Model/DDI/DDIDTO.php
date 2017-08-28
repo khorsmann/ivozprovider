@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\DDI;
 
 use Core\Application\DataTransferObjectInterface;
@@ -88,12 +89,12 @@ class DDIDTO implements DataTransferObjectInterface
     /**
      * @var mixed
      */
-    private $IVRCommonId;
+    private $IvrCommonId;
 
     /**
      * @var mixed
      */
-    private $IVRCustomId;
+    private $IvrCustomId;
 
     /**
      * @var mixed
@@ -158,12 +159,12 @@ class DDIDTO implements DataTransferObjectInterface
     /**
      * @var mixed
      */
-    private $IVRCommon;
+    private $IvrCommon;
 
     /**
      * @var mixed
      */
-    private $IVRCustom;
+    private $IvrCustom;
 
     /**
      * @var mixed
@@ -211,8 +212,8 @@ class DDIDTO implements DataTransferObjectInterface
             'queueId' => $this->getQueueId(),
             'externalCallFilterId' => $this->getExternalCallFilterId(),
             'userId' => $this->getUserId(),
-            'iVRCommonId' => $this->getIVRCommonId(),
-            'iVRCustomId' => $this->getIVRCustomId(),
+            'ivrCommonId' => $this->getIvrCommonId(),
+            'ivrCustomId' => $this->getIvrCustomId(),
             'huntGroupId' => $this->getHuntGroupId(),
             'faxId' => $this->getFaxId(),
             'peeringContractId' => $this->getPeeringContractId(),
@@ -233,8 +234,8 @@ class DDIDTO implements DataTransferObjectInterface
         $this->queue = $transformer->transform('Ivoz\\Domain\\Model\\Queue\\Queue', $this->getQueueId());
         $this->externalCallFilter = $transformer->transform('Ivoz\\Domain\\Model\\ExternalCallFilter\\ExternalCallFilter', $this->getExternalCallFilterId());
         $this->user = $transformer->transform('Ivoz\\Domain\\Model\\User\\User', $this->getUserId());
-        $this->iVRCommon = $transformer->transform('Ivoz\\Domain\\Model\\IVRCommon\\IVRCommon', $this->getIVRCommonId());
-        $this->iVRCustom = $transformer->transform('Ivoz\\Domain\\Model\\IVRCustom\\IVRCustom', $this->getIVRCustomId());
+        $this->ivrCommon = $transformer->transform('Ivoz\\Domain\\Model\\IvrCommon\\IvrCommon', $this->getIvrCommonId());
+        $this->ivrCustom = $transformer->transform('Ivoz\\Domain\\Model\\IvrCustom\\IvrCustom', $this->getIvrCustomId());
         $this->huntGroup = $transformer->transform('Ivoz\\Domain\\Model\\HuntGroup\\HuntGroup', $this->getHuntGroupId());
         $this->fax = $transformer->transform('Ivoz\\Domain\\Model\\Fax\\Fax', $this->getFaxId());
         $this->peeringContract = $transformer->transform('Ivoz\\Domain\\Model\\PeeringContract\\PeeringContract', $this->getPeeringContractId());
@@ -607,13 +608,13 @@ class DDIDTO implements DataTransferObjectInterface
     }
 
     /**
-     * @param integer $iVRCommonId
+     * @param integer $ivrCommonId
      *
      * @return DDIDTO
      */
-    public function setIVRCommonId($iVRCommonId)
+    public function setIvrCommonId($ivrCommonId)
     {
-        $this->IVRCommonId = $iVRCommonId;
+        $this->IvrCommonId = $ivrCommonId;
 
         return $this;
     }
@@ -621,27 +622,27 @@ class DDIDTO implements DataTransferObjectInterface
     /**
      * @return integer
      */
-    public function getIVRCommonId()
+    public function getIvrCommonId()
     {
-        return $this->IVRCommonId;
+        return $this->IvrCommonId;
     }
 
     /**
-     * @return \Ivoz\Domain\Model\IVRCommon\IVRCommon
+     * @return \Ivoz\Domain\Model\IvrCommon\IvrCommon
      */
-    public function getIVRCommon()
+    public function getIvrCommon()
     {
-        return $this->IVRCommon;
+        return $this->IvrCommon;
     }
 
     /**
-     * @param integer $iVRCustomId
+     * @param integer $ivrCustomId
      *
      * @return DDIDTO
      */
-    public function setIVRCustomId($iVRCustomId)
+    public function setIvrCustomId($ivrCustomId)
     {
-        $this->IVRCustomId = $iVRCustomId;
+        $this->IvrCustomId = $ivrCustomId;
 
         return $this;
     }
@@ -649,17 +650,17 @@ class DDIDTO implements DataTransferObjectInterface
     /**
      * @return integer
      */
-    public function getIVRCustomId()
+    public function getIvrCustomId()
     {
-        return $this->IVRCustomId;
+        return $this->IvrCustomId;
     }
 
     /**
-     * @return \Ivoz\Domain\Model\IVRCustom\IVRCustom
+     * @return \Ivoz\Domain\Model\IvrCustom\IvrCustom
      */
-    public function getIVRCustom()
+    public function getIvrCustom()
     {
-        return $this->IVRCustom;
+        return $this->IvrCustom;
     }
 
     /**

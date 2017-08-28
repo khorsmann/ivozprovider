@@ -1,10 +1,12 @@
 <?php
+
 namespace Ast\Domain\Model\Musiconhold;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * MusiconholdTrait
+ * @codeCoverageIgnore
  */
 trait MusiconholdTrait
 {

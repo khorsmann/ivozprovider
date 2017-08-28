@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\Domain;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * DomainTrait
+ * @codeCoverageIgnore
  */
 trait DomainTrait
 {

@@ -4,6 +4,15 @@ services:
     public: false
 
   ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\Extension\ExtensionLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.extension.service_collection:
+    '@Ivoz\Domain\Service\Extension\ExtensionLifecycleServiceCollection'
+
+  ##################################
   ## pre_persist
   ##################################
   Ivoz\Domain\Service\Extension\SanitizeValues:

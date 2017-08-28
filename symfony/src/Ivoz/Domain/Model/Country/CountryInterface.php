@@ -7,14 +7,37 @@ use Core\Domain\Model\EntityInterface;
 interface CountryInterface extends EntityInterface
 {
     /**
+     * Convert a dialed number to E164 form
+     *
+     * @param string $number
+     * @return string number in E164
+     */
+    public function preferredToE164($number, $areaCode = null);
+
+    /**
+     * Convert a received number to Company prefered format
+     *
+     * @param string $e164number
+     * @param string $areaCode
+     * @return string
+     */
+    public function E164ToPreferred($e164number, $areaCode = null);
+
+    /**
+     * Check if a country uses Area code
+     *
+     * return true if the country has area code in its e164 pattern
+     */
+    public function hasAreaCode();
+
+    /**
      * Set code
      *
      * @param string $code
      *
-     * @return CountryInterface
+     * @return self
      */
     public function setCode($code);
-
 
     /**
      * Get code
@@ -23,16 +46,14 @@ interface CountryInterface extends EntityInterface
      */
     public function getCode();
 
-
     /**
      * Set callingCode
      *
      * @param integer $callingCode
      *
-     * @return CountryInterface
+     * @return self
      */
     public function setCallingCode($callingCode = null);
-
 
     /**
      * Get callingCode
@@ -41,16 +62,14 @@ interface CountryInterface extends EntityInterface
      */
     public function getCallingCode();
 
-
     /**
      * Set intCode
      *
      * @param string $intCode
      *
-     * @return CountryInterface
+     * @return self
      */
     public function setIntCode($intCode = null);
-
 
     /**
      * Get intCode
@@ -59,16 +78,14 @@ interface CountryInterface extends EntityInterface
      */
     public function getIntCode();
 
-
     /**
      * Set e164Pattern
      *
      * @param string $e164Pattern
      *
-     * @return CountryInterface
+     * @return self
      */
     public function setE164Pattern($e164Pattern = null);
-
 
     /**
      * Get e164Pattern
@@ -77,16 +94,14 @@ interface CountryInterface extends EntityInterface
      */
     public function getE164Pattern();
 
-
     /**
      * Set nationalCC
      *
      * @param boolean $nationalCC
      *
-     * @return CountryInterface
+     * @return self
      */
     public function setNationalCC($nationalCC);
-
 
     /**
      * Get nationalCC
@@ -95,16 +110,14 @@ interface CountryInterface extends EntityInterface
      */
     public function getNationalCC();
 
-
     /**
      * Set name
      *
      * @param Name $name
      *
-     * @return CountryInterface
+     * @return self
      */
-    public function setName(Name $name);
-
+    public function setName(\Ivoz\Domain\Model\Country\Name $name);
 
     /**
      * Get name
@@ -113,16 +126,14 @@ interface CountryInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set zone
      *
      * @param Zone $zone
      *
-     * @return CountryInterface
+     * @return self
      */
-    public function setZone(Zone $zone);
-
+    public function setZone(\Ivoz\Domain\Model\Country\Zone $zone);
 
     /**
      * Get zone

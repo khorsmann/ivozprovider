@@ -11,10 +11,9 @@ interface DispatcherInterface extends EntityInterface
      *
      * @param integer $setid
      *
-     * @return DispatcherInterface
+     * @return self
      */
     public function setSetid($setid);
-
 
     /**
      * Get setid
@@ -23,16 +22,14 @@ interface DispatcherInterface extends EntityInterface
      */
     public function getSetid();
 
-
     /**
      * Set destination
      *
      * @param string $destination
      *
-     * @return DispatcherInterface
+     * @return self
      */
     public function setDestination($destination);
-
 
     /**
      * Get destination
@@ -41,16 +38,14 @@ interface DispatcherInterface extends EntityInterface
      */
     public function getDestination();
 
-
     /**
      * Set flags
      *
      * @param integer $flags
      *
-     * @return DispatcherInterface
+     * @return self
      */
     public function setFlags($flags);
-
 
     /**
      * Get flags
@@ -59,16 +54,14 @@ interface DispatcherInterface extends EntityInterface
      */
     public function getFlags();
 
-
     /**
      * Set priority
      *
      * @param integer $priority
      *
-     * @return DispatcherInterface
+     * @return self
      */
     public function setPriority($priority);
-
 
     /**
      * Get priority
@@ -77,16 +70,14 @@ interface DispatcherInterface extends EntityInterface
      */
     public function getPriority();
 
-
     /**
      * Set attrs
      *
      * @param string $attrs
      *
-     * @return DispatcherInterface
+     * @return self
      */
     public function setAttrs($attrs);
-
 
     /**
      * Get attrs
@@ -95,16 +86,14 @@ interface DispatcherInterface extends EntityInterface
      */
     public function getAttrs();
 
-
     /**
      * Set description
      *
      * @param string $description
      *
-     * @return DispatcherInterface
+     * @return self
      */
     public function setDescription($description);
-
 
     /**
      * Get description
@@ -113,16 +102,14 @@ interface DispatcherInterface extends EntityInterface
      */
     public function getDescription();
 
-
     /**
      * Set applicationServer
      *
      * @param \Ivoz\Domain\Model\ApplicationServer\ApplicationServerInterface $applicationServer
      *
-     * @return DispatcherInterface
+     * @return self
      */
     public function setApplicationServer(\Ivoz\Domain\Model\ApplicationServer\ApplicationServerInterface $applicationServer);
-
 
     /**
      * Get applicationServer
@@ -130,8 +117,6 @@ interface DispatcherInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\ApplicationServer\ApplicationServerInterface
      */
     public function getApplicationServer();
-
-
 
 }
 

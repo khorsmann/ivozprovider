@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\DDI;
 
 use Assert\Assertion;
@@ -6,6 +7,7 @@ use Core\Application\DataTransferObjectInterface;
 
 /**
  * DDIAbstract
+ * @codeCoverageIgnore
  */
 abstract class DDIAbstract
 {
@@ -82,14 +84,14 @@ abstract class DDIAbstract
     protected $user;
 
     /**
-     * @var \Ivoz\Domain\Model\IVRCommon\IVRCommonInterface
+     * @var \Ivoz\Domain\Model\IvrCommon\IvrCommonInterface
      */
-    protected $IVRCommon;
+    protected $IvrCommon;
 
     /**
-     * @var \Ivoz\Domain\Model\IVRCustom\IVRCustomInterface
+     * @var \Ivoz\Domain\Model\IvrCustom\IvrCustomInterface
      */
-    protected $IVRCustom;
+    protected $IvrCustom;
 
     /**
      * @var \Ivoz\Domain\Model\HuntGroup\HuntGroupInterface
@@ -205,8 +207,8 @@ abstract class DDIAbstract
             ->setQueue($dto->getQueue())
             ->setExternalCallFilter($dto->getExternalCallFilter())
             ->setUser($dto->getUser())
-            ->setIVRCommon($dto->getIVRCommon())
-            ->setIVRCustom($dto->getIVRCustom())
+            ->setIvrCommon($dto->getIvrCommon())
+            ->setIvrCustom($dto->getIvrCustom())
             ->setHuntGroup($dto->getHuntGroup())
             ->setFax($dto->getFax())
             ->setPeeringContract($dto->getPeeringContract())
@@ -241,8 +243,8 @@ abstract class DDIAbstract
             ->setQueue($dto->getQueue())
             ->setExternalCallFilter($dto->getExternalCallFilter())
             ->setUser($dto->getUser())
-            ->setIVRCommon($dto->getIVRCommon())
-            ->setIVRCustom($dto->getIVRCustom())
+            ->setIvrCommon($dto->getIvrCommon())
+            ->setIvrCustom($dto->getIvrCustom())
             ->setHuntGroup($dto->getHuntGroup())
             ->setFax($dto->getFax())
             ->setPeeringContract($dto->getPeeringContract())
@@ -273,8 +275,8 @@ abstract class DDIAbstract
             ->setQueueId($this->getQueue() ? $this->getQueue()->getId() : null)
             ->setExternalCallFilterId($this->getExternalCallFilter() ? $this->getExternalCallFilter()->getId() : null)
             ->setUserId($this->getUser() ? $this->getUser()->getId() : null)
-            ->setIVRCommonId($this->getIVRCommon() ? $this->getIVRCommon()->getId() : null)
-            ->setIVRCustomId($this->getIVRCustom() ? $this->getIVRCustom()->getId() : null)
+            ->setIvrCommonId($this->getIvrCommon() ? $this->getIvrCommon()->getId() : null)
+            ->setIvrCustomId($this->getIvrCustom() ? $this->getIvrCustom()->getId() : null)
             ->setHuntGroupId($this->getHuntGroup() ? $this->getHuntGroup()->getId() : null)
             ->setFaxId($this->getFax() ? $this->getFax()->getId() : null)
             ->setPeeringContractId($this->getPeeringContract() ? $this->getPeeringContract()->getId() : null)
@@ -302,8 +304,8 @@ abstract class DDIAbstract
             'queueId' => $this->getQueue() ? $this->getQueue()->getId() : null,
             'externalCallFilterId' => $this->getExternalCallFilter() ? $this->getExternalCallFilter()->getId() : null,
             'userId' => $this->getUser() ? $this->getUser()->getId() : null,
-            'iVRCommonId' => $this->getIVRCommon() ? $this->getIVRCommon()->getId() : null,
-            'iVRCustomId' => $this->getIVRCustom() ? $this->getIVRCustom()->getId() : null,
+            'ivrCommonId' => $this->getIvrCommon() ? $this->getIvrCommon()->getId() : null,
+            'ivrCustomId' => $this->getIvrCustom() ? $this->getIvrCustom()->getId() : null,
             'huntGroupId' => $this->getHuntGroup() ? $this->getHuntGroup()->getId() : null,
             'faxId' => $this->getFax() ? $this->getFax()->getId() : null,
             'peeringContractId' => $this->getPeeringContract() ? $this->getPeeringContract()->getId() : null,
@@ -694,51 +696,51 @@ abstract class DDIAbstract
     }
 
     /**
-     * Set iVRCommon
+     * Set ivrCommon
      *
-     * @param \Ivoz\Domain\Model\IVRCommon\IVRCommonInterface $iVRCommon
+     * @param \Ivoz\Domain\Model\IvrCommon\IvrCommonInterface $ivrCommon
      *
      * @return self
      */
-    public function setIVRCommon(\Ivoz\Domain\Model\IVRCommon\IVRCommonInterface $iVRCommon = null)
+    public function setIvrCommon(\Ivoz\Domain\Model\IvrCommon\IvrCommonInterface $ivrCommon = null)
     {
-        $this->IVRCommon = $iVRCommon;
+        $this->IvrCommon = $ivrCommon;
 
         return $this;
     }
 
     /**
-     * Get iVRCommon
+     * Get ivrCommon
      *
-     * @return \Ivoz\Domain\Model\IVRCommon\IVRCommonInterface
+     * @return \Ivoz\Domain\Model\IvrCommon\IvrCommonInterface
      */
-    public function getIVRCommon()
+    public function getIvrCommon()
     {
-        return $this->IVRCommon;
+        return $this->IvrCommon;
     }
 
     /**
-     * Set iVRCustom
+     * Set ivrCustom
      *
-     * @param \Ivoz\Domain\Model\IVRCustom\IVRCustomInterface $iVRCustom
+     * @param \Ivoz\Domain\Model\IvrCustom\IvrCustomInterface $ivrCustom
      *
      * @return self
      */
-    public function setIVRCustom(\Ivoz\Domain\Model\IVRCustom\IVRCustomInterface $iVRCustom = null)
+    public function setIvrCustom(\Ivoz\Domain\Model\IvrCustom\IvrCustomInterface $ivrCustom = null)
     {
-        $this->IVRCustom = $iVRCustom;
+        $this->IvrCustom = $ivrCustom;
 
         return $this;
     }
 
     /**
-     * Get iVRCustom
+     * Get ivrCustom
      *
-     * @return \Ivoz\Domain\Model\IVRCustom\IVRCustomInterface
+     * @return \Ivoz\Domain\Model\IvrCustom\IvrCustomInterface
      */
-    public function getIVRCustom()
+    public function getIvrCustom()
     {
-        return $this->IVRCustom;
+        return $this->IvrCustom;
     }
 
     /**

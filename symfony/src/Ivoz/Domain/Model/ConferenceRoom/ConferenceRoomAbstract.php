@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\ConferenceRoom;
 
 use Assert\Assertion;
@@ -6,6 +7,7 @@ use Core\Application\DataTransferObjectInterface;
 
 /**
  * ConferenceRoomAbstract
+ * @codeCoverageIgnore
  */
 abstract class ConferenceRoomAbstract
 {

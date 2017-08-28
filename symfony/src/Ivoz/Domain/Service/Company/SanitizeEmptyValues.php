@@ -1,19 +1,18 @@
 <?php
+
 namespace Ivoz\Domain\Service\Company;
 
 use Core\Domain\Service\EntityPersisterInterface;
-use Core\Domain\Service\LifecycleEventHandlerInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use Core\Domain\Model\EntityInterface;
-use Ivoz\Domain\Model\Company\Company;
 use Ivoz\Domain\Model\Company\CompanyDTO;
+use Ivoz\Domain\Model\Company\CompanyInterface;
 
 /**
  * Class SanitizeEmptyValues
  * @package Ivoz\Domain\Service\Company
- * @lifecycle company.pre_persist
+ * @lifecycle pre_persist
  */
-class SanitizeEmptyValues implements LifecycleEventHandlerInterface
+class SanitizeEmptyValues implements CompanyLifecycleEventHandlerInterface
 {
     /**
      * @var EntityManagerInterface
@@ -28,10 +27,7 @@ class SanitizeEmptyValues implements LifecycleEventHandlerInterface
         $this->entityPersister = $entityPersister;
     }
 
-    /**
-     * @param Company $entity
-     */
-    public function execute(EntityInterface $entity)
+    public function execute(CompanyInterface $entity)
     {
         $alreadyPersisted = $this->em->contains($entity);
         if ($alreadyPersisted) {

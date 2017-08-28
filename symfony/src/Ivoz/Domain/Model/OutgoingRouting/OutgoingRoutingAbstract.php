@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\OutgoingRouting;
 
 use Assert\Assertion;
@@ -6,6 +7,7 @@ use Core\Application\DataTransferObjectInterface;
 
 /**
  * OutgoingRoutingAbstract
+ * @codeCoverageIgnore
  */
 abstract class OutgoingRoutingAbstract
 {

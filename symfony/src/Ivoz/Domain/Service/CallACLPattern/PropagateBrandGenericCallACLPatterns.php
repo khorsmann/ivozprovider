@@ -1,21 +1,21 @@
 <?php
+
 namespace Ivoz\Domain\Service\CallACLPattern;
 
 use Core\Domain\Service\EntityPersisterInterface;
-use Core\Domain\Service\LifecycleEventHandlerInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use Core\Domain\Model\EntityInterface;
 use Ivoz\Domain\Model\Brand\Brand;
 use Ivoz\Domain\Model\CallACLPattern\CallACLPattern;
-use Ivoz\Domain\Model\Company\Company;
+use Ivoz\Domain\Model\Company\CompanyInterface;
 use Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPattern;
+use Ivoz\Domain\Service\Company\CompanyLifecycleEventHandlerInterface;
 
 /**
  * Class PropagateBrandGenericCallACLPatterns
  * @package Ivoz\Domain\Service\CallACLPattern
- * @lifecycle company.pre_persist
+ * @lifecycle pre_persist
  */
-class PropagateBrandGenericCallACLPatterns implements LifecycleEventHandlerInterface
+class PropagateBrandGenericCallACLPatterns implements CompanyLifecycleEventHandlerInterface
 {
     /**
      * @var EntityManagerInterface
@@ -36,10 +36,9 @@ class PropagateBrandGenericCallACLPatterns implements LifecycleEventHandlerInter
     }
 
     /**
-     * @param Company $entity
      * @throws \Exception
      */
-    public function execute(EntityInterface $entity)
+    public function execute(CompanyInterface $entity)
     {
         $alreadyPersisted = $this->em->contains($entity);
         if ($alreadyPersisted) {

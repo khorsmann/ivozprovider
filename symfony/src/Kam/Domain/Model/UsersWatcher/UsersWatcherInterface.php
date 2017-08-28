@@ -11,10 +11,9 @@ interface UsersWatcherInterface extends EntityInterface
      *
      * @param string $presentityUri
      *
-     * @return UsersWatcherInterface
+     * @return self
      */
     public function setPresentityUri($presentityUri);
-
 
     /**
      * Get presentityUri
@@ -23,16 +22,14 @@ interface UsersWatcherInterface extends EntityInterface
      */
     public function getPresentityUri();
 
-
     /**
      * Set watcherUsername
      *
      * @param string $watcherUsername
      *
-     * @return UsersWatcherInterface
+     * @return self
      */
     public function setWatcherUsername($watcherUsername);
-
 
     /**
      * Get watcherUsername
@@ -41,16 +38,14 @@ interface UsersWatcherInterface extends EntityInterface
      */
     public function getWatcherUsername();
 
-
     /**
      * Set watcherDomain
      *
      * @param string $watcherDomain
      *
-     * @return UsersWatcherInterface
+     * @return self
      */
     public function setWatcherDomain($watcherDomain);
-
 
     /**
      * Get watcherDomain
@@ -59,16 +54,14 @@ interface UsersWatcherInterface extends EntityInterface
      */
     public function getWatcherDomain();
 
-
     /**
      * Set event
      *
      * @param string $event
      *
-     * @return UsersWatcherInterface
+     * @return self
      */
     public function setEvent($event);
-
 
     /**
      * Get event
@@ -77,16 +70,14 @@ interface UsersWatcherInterface extends EntityInterface
      */
     public function getEvent();
 
-
     /**
      * Set status
      *
      * @param integer $status
      *
-     * @return UsersWatcherInterface
+     * @return self
      */
     public function setStatus($status);
-
 
     /**
      * Get status
@@ -95,16 +86,14 @@ interface UsersWatcherInterface extends EntityInterface
      */
     public function getStatus();
 
-
     /**
      * Set reason
      *
      * @param string $reason
      *
-     * @return UsersWatcherInterface
+     * @return self
      */
     public function setReason($reason = null);
-
 
     /**
      * Get reason
@@ -113,16 +102,14 @@ interface UsersWatcherInterface extends EntityInterface
      */
     public function getReason();
 
-
     /**
      * Set insertedTime
      *
      * @param integer $insertedTime
      *
-     * @return UsersWatcherInterface
+     * @return self
      */
     public function setInsertedTime($insertedTime);
-
 
     /**
      * Get insertedTime
@@ -130,8 +117,6 @@ interface UsersWatcherInterface extends EntityInterface
      * @return integer
      */
     public function getInsertedTime();
-
-
 
 }
 

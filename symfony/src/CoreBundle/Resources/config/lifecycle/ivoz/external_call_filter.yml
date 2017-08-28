@@ -4,6 +4,15 @@ services:
     public: false
 
   ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\ExternalCallFilter\ExternalCallFilterLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.external_call_filter.service_collection:
+    '@Ivoz\Domain\Service\ExternalCallFilter\ExternalCallFilterLifecycleServiceCollection'
+
+  ##################################
   ## pre_persist
   ##################################
   Ivoz\Domain\Service\ExternalCallFilter\SanitizeValues:

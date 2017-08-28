@@ -1,4 +1,5 @@
 <?php
+
 namespace Kam\Domain\Model\AccCdr;
 
 use Core\Application\DataTransferObjectInterface;

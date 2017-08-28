@@ -1,29 +1,28 @@
 <?php
+
 namespace Ivoz\Domain\Service\Domain;
 
 use Ast\Domain\Model\PsAor\PsAor;
-use Ast\Domain\Model\PsAor\PsAorDTO;
 use Ast\Domain\Model\PsEndpoint\PsEndpoint;
-use Core\Domain\Model\EntityInterface;
 use Core\Domain\Service\EntityPersisterInterface;
-use Core\Domain\Service\LifecycleEventHandlerInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Ivoz\Domain\Model\Company\Company;
+use Ivoz\Domain\Model\Company\CompanyInterface;
 use Ivoz\Domain\Model\Domain\Domain;
 use Ivoz\Domain\Model\Domain\DomainDTO;
 use Ivoz\Domain\Model\Domain\DomainInterface;
 use Ivoz\Domain\Model\Domain\DomainRepository;
 use Ivoz\Domain\Model\Friend\Friend;
-use Ivoz\Domain\Model\Friend\FriendDTO;
 use Ivoz\Domain\Model\Terminal\Terminal;
+use Ivoz\Domain\Service\Company\CompanyLifecycleEventHandlerInterface;
 
 /**
  * Class UpdateByCompany
  * @package Ivoz\Domain\Service\Domain
- * @lifecycle company.post_persist
+ * @lifecycle post_persist
  * @todo this could be partially merged with UpdateByBrand
  */
-class UpdateByCompany implements LifecycleEventHandlerInterface
+class UpdateByCompany implements CompanyLifecycleEventHandlerInterface
 {
     /**
      * @var EntityManagerInterface
@@ -50,10 +49,7 @@ class UpdateByCompany implements LifecycleEventHandlerInterface
         $this->domainRepository = $domainRepository;
     }
 
-    /**
-     * @param Company $entity
-     */
-    public function execute(EntityInterface $entity)
+    public function execute(CompanyInterface $entity)
     {
         $id = $entity->getId();
 

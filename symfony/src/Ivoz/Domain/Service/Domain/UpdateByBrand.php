@@ -1,22 +1,21 @@
 <?php
 namespace Ivoz\Domain\Service\Domain;
 
-use Core\Domain\Model\EntityInterface;
 use Core\Domain\Service\EntityPersisterInterface;
-use Core\Domain\Service\LifecycleEventHandlerInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use Ivoz\Domain\Model\Brand\Brand;
+use Ivoz\Domain\Model\Brand\BrandInterface;
 use Ivoz\Domain\Model\Domain\Domain;
 use Ivoz\Domain\Model\Domain\DomainDTO;
 use Ivoz\Domain\Model\Domain\DomainInterface;
 use Ivoz\Domain\Model\Domain\DomainRepository;
+use Ivoz\Domain\Service\Brand\BrandLifecycleEventHandlerInterface;
 
 /**
  * Class UpdateByBrand
  * @package Ivoz\Domain\Service\Domain
- * @lifecycle brand.post_persist
+ * @lifecycle post_persist
  */
-class UpdateByBrand implements LifecycleEventHandlerInterface
+class UpdateByBrand implements BrandLifecycleEventHandlerInterface
 {
     /**
      * @var EntityManagerInterface
@@ -43,10 +42,7 @@ class UpdateByBrand implements LifecycleEventHandlerInterface
         $this->domainRepository = $domainRepository;
     }
 
-    /**
-     * @param Brand $entity
-     */
-    public function execute(EntityInterface $entity)
+    public function execute(BrandInterface $entity)
     {
         $id = $entity->getId();
         $name = $entity->getDomainUsers();

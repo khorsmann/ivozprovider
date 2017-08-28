@@ -11,10 +11,9 @@ interface TrunksDomainAttrInterface extends EntityInterface
      *
      * @param string $did
      *
-     * @return TrunksDomainAttrInterface
+     * @return self
      */
     public function setDid($did);
-
 
     /**
      * Get did
@@ -23,16 +22,14 @@ interface TrunksDomainAttrInterface extends EntityInterface
      */
     public function getDid();
 
-
     /**
      * Set name
      *
      * @param string $name
      *
-     * @return TrunksDomainAttrInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -41,16 +38,14 @@ interface TrunksDomainAttrInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set type
      *
      * @param integer $type
      *
-     * @return TrunksDomainAttrInterface
+     * @return self
      */
     public function setType($type);
-
 
     /**
      * Get type
@@ -59,16 +54,14 @@ interface TrunksDomainAttrInterface extends EntityInterface
      */
     public function getType();
 
-
     /**
      * Set value
      *
      * @param string $value
      *
-     * @return TrunksDomainAttrInterface
+     * @return self
      */
     public function setValue($value);
-
 
     /**
      * Get value
@@ -77,16 +70,14 @@ interface TrunksDomainAttrInterface extends EntityInterface
      */
     public function getValue();
 
-
     /**
      * Set lastModified
      *
      * @param \DateTime $lastModified
      *
-     * @return TrunksDomainAttrInterface
+     * @return self
      */
     public function setLastModified($lastModified);
-
 
     /**
      * Get lastModified
@@ -94,8 +85,6 @@ interface TrunksDomainAttrInterface extends EntityInterface
      * @return \DateTime
      */
     public function getLastModified();
-
-
 
 }
 

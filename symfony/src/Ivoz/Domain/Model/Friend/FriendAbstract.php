@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\Friend;
 
 use Assert\Assertion;
@@ -6,6 +7,7 @@ use Core\Application\DataTransferObjectInterface;
 
 /**
  * FriendAbstract
+ * @codeCoverageIgnore
  */
 abstract class FriendAbstract
 {

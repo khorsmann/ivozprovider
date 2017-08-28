@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\ChangeHistory;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * ChangeHistoryTrait
+ * @codeCoverageIgnore
  */
 trait ChangeHistoryTrait
 {

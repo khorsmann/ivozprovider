@@ -1,33 +1,31 @@
 <?php
+
 namespace Ivoz\Domain\Service\DDI;
 
-use Core\Domain\Service\LifecycleEventHandlerInterface;
-use Core\Domain\Model\EntityInterface;
 use Ivoz\Domain\Model\Country\Country;
-use Ivoz\Domain\Model\DDI\DDI;
+use Ivoz\Domain\Model\DDI\DDIInterface;
 
 /**
  * Class SanitizeValues
  * @package Ivoz\Domain\Service\DDI
- * @lifecycle ddi.pre_persist
+ * @lifecycle pre_persist
  */
-class SanitizeValues implements LifecycleEventHandlerInterface
+class SanitizeValues implements DDILifecycleEventHandlerInterface
 {
     public function __construct() {}
 
     /**
-     * @param DDI $entity
      * @throws \Exception
      */
-    public function execute(EntityInterface $entity)
+    public function execute(DDIInterface $entity)
     {
         /**
          * @todo review this
          */
         $nullableFields = array(
             'user'          => 'userId',
-            'IVRCommon'     => 'IVRCommonId',
-            'IVRCustom'     => 'IVRCustomId',
+            'IvrCommon'     => 'IvrCommonId',
+            'IvrCustom'     => 'IvrCustomId',
             'huntGroup'     => 'huntGroupId',
             'fax'           => 'faxId',
             'friend'        => 'friendValue',

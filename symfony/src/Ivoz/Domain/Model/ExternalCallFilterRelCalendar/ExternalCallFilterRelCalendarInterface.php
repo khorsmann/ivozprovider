@@ -11,10 +11,9 @@ interface ExternalCallFilterRelCalendarInterface extends EntityInterface
      *
      * @param \Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface $filter
      *
-     * @return ExternalCallFilterRelCalendarInterface
+     * @return self
      */
     public function setFilter(\Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface $filter = null);
-
 
     /**
      * Get filter
@@ -23,16 +22,14 @@ interface ExternalCallFilterRelCalendarInterface extends EntityInterface
      */
     public function getFilter();
 
-
     /**
      * Set calendar
      *
      * @param \Ivoz\Domain\Model\Calendar\CalendarInterface $calendar
      *
-     * @return ExternalCallFilterRelCalendarInterface
+     * @return self
      */
     public function setCalendar(\Ivoz\Domain\Model\Calendar\CalendarInterface $calendar);
-
 
     /**
      * Get calendar
@@ -40,8 +37,6 @@ interface ExternalCallFilterRelCalendarInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Calendar\CalendarInterface
      */
     public function getCalendar();
-
-
 
 }
 

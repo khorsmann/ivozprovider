@@ -1,0 +1,22 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Core\Infrastructure\Application\DoctrineForeignKeyTransformer:
+    arguments:
+      - "@doctrine.orm.entity_manager"
+
+  core.doctrine_foreign_key_transformer:
+    '@Core\Infrastructure\Application\DoctrineForeignKeyTransformer'
+
+  Core\Infrastructure\Application\DoctrineCollectionTransformer:
+    arguments:
+      - "@doctrine.orm.entity_manager"
+
+  core.doctrine_collection_transformer:
+    '@Core\Infrastructure\Application\DoctrineCollectionTransformer'
+
+  Core\Infrastructure\Domain\Service\DoctrineEntityPersister:
+    public: true

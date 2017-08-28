@@ -11,10 +11,9 @@ interface TerminalModelInterface extends EntityInterface
      *
      * @param string $iden
      *
-     * @return TerminalModelInterface
+     * @return self
      */
     public function setIden($iden);
-
 
     /**
      * Get iden
@@ -23,16 +22,14 @@ interface TerminalModelInterface extends EntityInterface
      */
     public function getIden();
 
-
     /**
      * Set name
      *
      * @param string $name
      *
-     * @return TerminalModelInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -41,16 +38,14 @@ interface TerminalModelInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set description
      *
      * @param string $description
      *
-     * @return TerminalModelInterface
+     * @return self
      */
     public function setDescription($description);
-
 
     /**
      * Get description
@@ -59,16 +54,14 @@ interface TerminalModelInterface extends EntityInterface
      */
     public function getDescription();
 
-
     /**
      * Set genericTemplate
      *
      * @param string $genericTemplate
      *
-     * @return TerminalModelInterface
+     * @return self
      */
     public function setGenericTemplate($genericTemplate = null);
-
 
     /**
      * Get genericTemplate
@@ -77,16 +70,14 @@ interface TerminalModelInterface extends EntityInterface
      */
     public function getGenericTemplate();
 
-
     /**
      * Set specificTemplate
      *
      * @param string $specificTemplate
      *
-     * @return TerminalModelInterface
+     * @return self
      */
     public function setSpecificTemplate($specificTemplate = null);
-
 
     /**
      * Get specificTemplate
@@ -95,16 +86,14 @@ interface TerminalModelInterface extends EntityInterface
      */
     public function getSpecificTemplate();
 
-
     /**
      * Set genericUrlPattern
      *
      * @param string $genericUrlPattern
      *
-     * @return TerminalModelInterface
+     * @return self
      */
     public function setGenericUrlPattern($genericUrlPattern = null);
-
 
     /**
      * Get genericUrlPattern
@@ -113,16 +102,14 @@ interface TerminalModelInterface extends EntityInterface
      */
     public function getGenericUrlPattern();
 
-
     /**
      * Set specificUrlPattern
      *
      * @param string $specificUrlPattern
      *
-     * @return TerminalModelInterface
+     * @return self
      */
     public function setSpecificUrlPattern($specificUrlPattern = null);
-
 
     /**
      * Get specificUrlPattern
@@ -131,16 +118,14 @@ interface TerminalModelInterface extends EntityInterface
      */
     public function getSpecificUrlPattern();
 
-
     /**
      * Set terminalManufacturer
      *
      * @param \Ivoz\Domain\Model\TerminalManufacturer\TerminalManufacturerInterface $terminalManufacturer
      *
-     * @return TerminalModelInterface
+     * @return self
      */
     public function setTerminalManufacturer(\Ivoz\Domain\Model\TerminalManufacturer\TerminalManufacturerInterface $terminalManufacturer);
-
 
     /**
      * Get terminalManufacturer
@@ -148,8 +133,6 @@ interface TerminalModelInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\TerminalManufacturer\TerminalManufacturerInterface
      */
     public function getTerminalManufacturer();
-
-
 
 }
 

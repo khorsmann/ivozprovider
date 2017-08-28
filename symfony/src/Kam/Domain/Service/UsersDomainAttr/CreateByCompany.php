@@ -1,21 +1,18 @@
 <?php
+
 namespace Kam\Domain\Service\UsersDomainAttr;
 
-use Core\Domain\Model\EntityInterface;
-use Core\Domain\Service\LifecycleEventHandlerInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use Ivoz\Domain\Model\Brand\Brand;
-use Ivoz\Domain\Model\Company\Company;
-use Kam\Domain\Model\UsersDomainAttr\UsersDomainAttrRepository;
+use Ivoz\Domain\Model\Company\CompanyInterface;
+use Ivoz\Domain\Service\Company\CompanyLifecycleEventHandlerInterface;
 use Kam\Domain\Model\UsersDomainAttr\UsersDomainAttr;
-use Kam\Domain\Model\UsersDomainAttr\UsersDomainAttrDTO;
 
 /**
  * Class UpdateByBrand
  * @package Kam\Domain\Service\UsersDomainAttr
- * @lifecycle company.post_persist
+ * @lifecycle post_persist
  */
-class CreateByCompany implements LifecycleEventHandlerInterface
+class CreateByCompany implements CompanyLifecycleEventHandlerInterface
 {
     /**
      * @var EntityManagerInterface
@@ -35,10 +32,7 @@ class CreateByCompany implements LifecycleEventHandlerInterface
         $this->entityPersister = $entityPersister;
     }
 
-    /**
-     * @param Company $entity
-     */
-    public function execute(EntityInterface $entity)
+    public function execute(CompanyInterface $entity)
     {
         if (!$entity->hasChanged('id')) {
             // Do nothing if this is not a new entity

@@ -11,10 +11,9 @@ interface LcrRuleInterface extends EntityInterface
      *
      * @param integer $lcrId
      *
-     * @return LcrRuleInterface
+     * @return self
      */
     public function setLcrId($lcrId);
-
 
     /**
      * Get lcrId
@@ -23,16 +22,14 @@ interface LcrRuleInterface extends EntityInterface
      */
     public function getLcrId();
 
-
     /**
      * Set prefix
      *
      * @param string $prefix
      *
-     * @return LcrRuleInterface
+     * @return self
      */
     public function setPrefix($prefix = null);
-
 
     /**
      * Get prefix
@@ -41,16 +38,14 @@ interface LcrRuleInterface extends EntityInterface
      */
     public function getPrefix();
 
-
     /**
      * Set fromUri
      *
      * @param string $fromUri
      *
-     * @return LcrRuleInterface
+     * @return self
      */
     public function setFromUri($fromUri = null);
-
 
     /**
      * Get fromUri
@@ -59,16 +54,14 @@ interface LcrRuleInterface extends EntityInterface
      */
     public function getFromUri();
 
-
     /**
      * Set requestUri
      *
      * @param string $requestUri
      *
-     * @return LcrRuleInterface
+     * @return self
      */
     public function setRequestUri($requestUri = null);
-
 
     /**
      * Get requestUri
@@ -77,16 +70,14 @@ interface LcrRuleInterface extends EntityInterface
      */
     public function getRequestUri();
 
-
     /**
      * Set stopper
      *
      * @param integer $stopper
      *
-     * @return LcrRuleInterface
+     * @return self
      */
     public function setStopper($stopper);
-
 
     /**
      * Get stopper
@@ -95,16 +86,14 @@ interface LcrRuleInterface extends EntityInterface
      */
     public function getStopper();
 
-
     /**
      * Set enabled
      *
      * @param integer $enabled
      *
-     * @return LcrRuleInterface
+     * @return self
      */
     public function setEnabled($enabled);
-
 
     /**
      * Get enabled
@@ -113,16 +102,14 @@ interface LcrRuleInterface extends EntityInterface
      */
     public function getEnabled();
 
-
     /**
      * Set tag
      *
      * @param string $tag
      *
-     * @return LcrRuleInterface
+     * @return self
      */
     public function setTag($tag);
-
 
     /**
      * Get tag
@@ -131,16 +118,14 @@ interface LcrRuleInterface extends EntityInterface
      */
     public function getTag();
 
-
     /**
      * Set description
      *
      * @param string $description
      *
-     * @return LcrRuleInterface
+     * @return self
      */
     public function setDescription($description);
-
 
     /**
      * Get description
@@ -149,16 +134,14 @@ interface LcrRuleInterface extends EntityInterface
      */
     public function getDescription();
 
-
     /**
      * Set routingPattern
      *
      * @param \Ivoz\Domain\Model\RoutingPattern\RoutingPatternInterface $routingPattern
      *
-     * @return LcrRuleInterface
+     * @return self
      */
     public function setRoutingPattern(\Ivoz\Domain\Model\RoutingPattern\RoutingPatternInterface $routingPattern = null);
-
 
     /**
      * Get routingPattern
@@ -167,16 +150,14 @@ interface LcrRuleInterface extends EntityInterface
      */
     public function getRoutingPattern();
 
-
     /**
      * Set outgoingRouting
      *
      * @param \Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface $outgoingRouting
      *
-     * @return LcrRuleInterface
+     * @return self
      */
     public function setOutgoingRouting(\Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface $outgoingRouting);
-
 
     /**
      * Get outgoingRouting
@@ -184,8 +165,6 @@ interface LcrRuleInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface
      */
     public function getOutgoingRouting();
-
-
 
 }
 

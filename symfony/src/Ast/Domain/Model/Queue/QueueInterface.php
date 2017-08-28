@@ -11,10 +11,9 @@ interface QueueInterface extends EntityInterface
      *
      * @param string $periodicAnnounce
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setPeriodicAnnounce($periodicAnnounce = null);
-
 
     /**
      * Get periodicAnnounce
@@ -23,16 +22,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getPeriodicAnnounce();
 
-
     /**
      * Set periodicAnnounceFrequency
      *
      * @param integer $periodicAnnounceFrequency
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setPeriodicAnnounceFrequency($periodicAnnounceFrequency = null);
-
 
     /**
      * Get periodicAnnounceFrequency
@@ -41,16 +38,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getPeriodicAnnounceFrequency();
 
-
     /**
      * Set timeout
      *
      * @param integer $timeout
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setTimeout($timeout = null);
-
 
     /**
      * Get timeout
@@ -59,16 +54,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getTimeout();
 
-
     /**
      * Set autopause
      *
      * @param string $autopause
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setAutopause($autopause);
-
 
     /**
      * Get autopause
@@ -77,16 +70,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getAutopause();
 
-
     /**
      * Set ringinuse
      *
      * @param string $ringinuse
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setRinginuse($ringinuse);
-
 
     /**
      * Get ringinuse
@@ -95,16 +86,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getRinginuse();
 
-
     /**
      * Set wrapuptime
      *
      * @param integer $wrapuptime
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setWrapuptime($wrapuptime = null);
-
 
     /**
      * Get wrapuptime
@@ -113,16 +102,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getWrapuptime();
 
-
     /**
      * Set maxlen
      *
      * @param integer $maxlen
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setMaxlen($maxlen = null);
-
 
     /**
      * Get maxlen
@@ -131,16 +118,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getMaxlen();
 
-
     /**
      * Set strategy
      *
      * @param string $strategy
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setStrategy($strategy = null);
-
 
     /**
      * Get strategy
@@ -149,16 +134,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getStrategy();
 
-
     /**
      * Set weight
      *
      * @param integer $weight
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setWeight($weight = null);
-
 
     /**
      * Get weight
@@ -167,16 +150,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getWeight();
 
-
     /**
      * Set queue
      *
      * @param \Ivoz\Domain\Model\Queue\QueueInterface $queue
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setQueue(\Ivoz\Domain\Model\Queue\QueueInterface $queue);
-
 
     /**
      * Get queue
@@ -184,8 +165,6 @@ interface QueueInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Queue\QueueInterface
      */
     public function getQueue();
-
-
 
 }
 

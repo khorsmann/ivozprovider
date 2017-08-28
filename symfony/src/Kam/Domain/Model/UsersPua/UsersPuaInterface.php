@@ -11,10 +11,9 @@ interface UsersPuaInterface extends EntityInterface
      *
      * @param string $presUri
      *
-     * @return UsersPuaInterface
+     * @return self
      */
     public function setPresUri($presUri);
-
 
     /**
      * Get presUri
@@ -23,16 +22,14 @@ interface UsersPuaInterface extends EntityInterface
      */
     public function getPresUri();
 
-
     /**
      * Set presId
      *
      * @param string $presId
      *
-     * @return UsersPuaInterface
+     * @return self
      */
     public function setPresId($presId);
-
 
     /**
      * Get presId
@@ -41,16 +38,14 @@ interface UsersPuaInterface extends EntityInterface
      */
     public function getPresId();
 
-
     /**
      * Set event
      *
      * @param integer $event
      *
-     * @return UsersPuaInterface
+     * @return self
      */
     public function setEvent($event);
-
 
     /**
      * Get event
@@ -59,16 +54,14 @@ interface UsersPuaInterface extends EntityInterface
      */
     public function getEvent();
 
-
     /**
      * Set expires
      *
      * @param integer $expires
      *
-     * @return UsersPuaInterface
+     * @return self
      */
     public function setExpires($expires);
-
 
     /**
      * Get expires
@@ -77,16 +70,14 @@ interface UsersPuaInterface extends EntityInterface
      */
     public function getExpires();
 
-
     /**
      * Set desiredExpires
      *
      * @param integer $desiredExpires
      *
-     * @return UsersPuaInterface
+     * @return self
      */
     public function setDesiredExpires($desiredExpires);
-
 
     /**
      * Get desiredExpires
@@ -95,16 +86,14 @@ interface UsersPuaInterface extends EntityInterface
      */
     public function getDesiredExpires();
 
-
     /**
      * Set flag
      *
      * @param integer $flag
      *
-     * @return UsersPuaInterface
+     * @return self
      */
     public function setFlag($flag);
-
 
     /**
      * Get flag
@@ -113,16 +102,14 @@ interface UsersPuaInterface extends EntityInterface
      */
     public function getFlag();
 
-
     /**
      * Set etag
      *
      * @param string $etag
      *
-     * @return UsersPuaInterface
+     * @return self
      */
     public function setEtag($etag);
-
 
     /**
      * Get etag
@@ -131,16 +118,14 @@ interface UsersPuaInterface extends EntityInterface
      */
     public function getEtag();
 
-
     /**
      * Set tupleId
      *
      * @param string $tupleId
      *
-     * @return UsersPuaInterface
+     * @return self
      */
     public function setTupleId($tupleId = null);
-
 
     /**
      * Get tupleId
@@ -149,16 +134,14 @@ interface UsersPuaInterface extends EntityInterface
      */
     public function getTupleId();
 
-
     /**
      * Set watcherUri
      *
      * @param string $watcherUri
      *
-     * @return UsersPuaInterface
+     * @return self
      */
     public function setWatcherUri($watcherUri);
-
 
     /**
      * Get watcherUri
@@ -167,16 +150,14 @@ interface UsersPuaInterface extends EntityInterface
      */
     public function getWatcherUri();
 
-
     /**
      * Set callId
      *
      * @param string $callId
      *
-     * @return UsersPuaInterface
+     * @return self
      */
     public function setCallId($callId);
-
 
     /**
      * Get callId
@@ -185,16 +166,14 @@ interface UsersPuaInterface extends EntityInterface
      */
     public function getCallId();
 
-
     /**
      * Set toTag
      *
      * @param string $toTag
      *
-     * @return UsersPuaInterface
+     * @return self
      */
     public function setToTag($toTag);
-
 
     /**
      * Get toTag
@@ -203,16 +182,14 @@ interface UsersPuaInterface extends EntityInterface
      */
     public function getToTag();
 
-
     /**
      * Set fromTag
      *
      * @param string $fromTag
      *
-     * @return UsersPuaInterface
+     * @return self
      */
     public function setFromTag($fromTag);
-
 
     /**
      * Get fromTag
@@ -221,16 +198,14 @@ interface UsersPuaInterface extends EntityInterface
      */
     public function getFromTag();
 
-
     /**
      * Set cseq
      *
      * @param integer $cseq
      *
-     * @return UsersPuaInterface
+     * @return self
      */
     public function setCseq($cseq);
-
 
     /**
      * Get cseq
@@ -239,16 +214,14 @@ interface UsersPuaInterface extends EntityInterface
      */
     public function getCseq();
 
-
     /**
      * Set recordRoute
      *
      * @param string $recordRoute
      *
-     * @return UsersPuaInterface
+     * @return self
      */
     public function setRecordRoute($recordRoute = null);
-
 
     /**
      * Get recordRoute
@@ -257,16 +230,14 @@ interface UsersPuaInterface extends EntityInterface
      */
     public function getRecordRoute();
 
-
     /**
      * Set contact
      *
      * @param string $contact
      *
-     * @return UsersPuaInterface
+     * @return self
      */
     public function setContact($contact);
-
 
     /**
      * Get contact
@@ -275,16 +246,14 @@ interface UsersPuaInterface extends EntityInterface
      */
     public function getContact();
 
-
     /**
      * Set remoteContact
      *
      * @param string $remoteContact
      *
-     * @return UsersPuaInterface
+     * @return self
      */
     public function setRemoteContact($remoteContact);
-
 
     /**
      * Get remoteContact
@@ -293,16 +262,14 @@ interface UsersPuaInterface extends EntityInterface
      */
     public function getRemoteContact();
 
-
     /**
      * Set version
      *
      * @param integer $version
      *
-     * @return UsersPuaInterface
+     * @return self
      */
     public function setVersion($version);
-
 
     /**
      * Get version
@@ -311,16 +278,14 @@ interface UsersPuaInterface extends EntityInterface
      */
     public function getVersion();
 
-
     /**
      * Set extraHeaders
      *
      * @param string $extraHeaders
      *
-     * @return UsersPuaInterface
+     * @return self
      */
     public function setExtraHeaders($extraHeaders);
-
 
     /**
      * Get extraHeaders
@@ -328,8 +293,6 @@ interface UsersPuaInterface extends EntityInterface
      * @return string
      */
     public function getExtraHeaders();
-
-
 
 }
 

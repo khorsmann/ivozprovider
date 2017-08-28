@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\Brand;
 
 use Assert\Assertion;
 
 /**
  * Logo
+ * @codeCoverageIgnore
  */
 class Logo
 {

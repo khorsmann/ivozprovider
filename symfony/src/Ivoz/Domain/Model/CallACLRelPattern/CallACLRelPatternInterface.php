@@ -11,10 +11,9 @@ interface CallACLRelPatternInterface extends EntityInterface
      *
      * @param integer $priority
      *
-     * @return CallACLRelPatternInterface
+     * @return self
      */
     public function setPriority($priority);
-
 
     /**
      * Get priority
@@ -23,16 +22,14 @@ interface CallACLRelPatternInterface extends EntityInterface
      */
     public function getPriority();
 
-
     /**
      * Set policy
      *
      * @param string $policy
      *
-     * @return CallACLRelPatternInterface
+     * @return self
      */
     public function setPolicy($policy);
-
 
     /**
      * Get policy
@@ -41,16 +38,14 @@ interface CallACLRelPatternInterface extends EntityInterface
      */
     public function getPolicy();
 
-
     /**
      * Set callACL
      *
      * @param \Ivoz\Domain\Model\CallACL\CallACLInterface $callACL
      *
-     * @return CallACLRelPatternInterface
+     * @return self
      */
     public function setCallACL(\Ivoz\Domain\Model\CallACL\CallACLInterface $callACL = null);
-
 
     /**
      * Get callACL
@@ -59,16 +54,14 @@ interface CallACLRelPatternInterface extends EntityInterface
      */
     public function getCallACL();
 
-
     /**
      * Set callACLPattern
      *
      * @param \Ivoz\Domain\Model\CallACLPattern\CallACLPatternInterface $callACLPattern
      *
-     * @return CallACLRelPatternInterface
+     * @return self
      */
     public function setCallACLPattern(\Ivoz\Domain\Model\CallACLPattern\CallACLPatternInterface $callACLPattern);
-
 
     /**
      * Get callACLPattern
@@ -76,8 +69,6 @@ interface CallACLRelPatternInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\CallACLPattern\CallACLPatternInterface
      */
     public function getCallACLPattern();
-
-
 
 }
 

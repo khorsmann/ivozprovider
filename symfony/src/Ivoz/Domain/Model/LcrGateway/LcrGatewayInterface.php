@@ -11,10 +11,9 @@ interface LcrGatewayInterface extends EntityInterface
      *
      * @param integer $lcrId
      *
-     * @return LcrGatewayInterface
+     * @return self
      */
     public function setLcrId($lcrId);
-
 
     /**
      * Get lcrId
@@ -23,16 +22,14 @@ interface LcrGatewayInterface extends EntityInterface
      */
     public function getLcrId();
 
-
     /**
      * Set gwName
      *
      * @param string $gwName
      *
-     * @return LcrGatewayInterface
+     * @return self
      */
     public function setGwName($gwName);
-
 
     /**
      * Get gwName
@@ -41,16 +38,14 @@ interface LcrGatewayInterface extends EntityInterface
      */
     public function getGwName();
 
-
     /**
      * Set ip
      *
      * @param string $ip
      *
-     * @return LcrGatewayInterface
+     * @return self
      */
     public function setIp($ip = null);
-
 
     /**
      * Get ip
@@ -59,16 +54,14 @@ interface LcrGatewayInterface extends EntityInterface
      */
     public function getIp();
 
-
     /**
      * Set hostname
      *
      * @param string $hostname
      *
-     * @return LcrGatewayInterface
+     * @return self
      */
     public function setHostname($hostname = null);
-
 
     /**
      * Get hostname
@@ -77,16 +70,14 @@ interface LcrGatewayInterface extends EntityInterface
      */
     public function getHostname();
 
-
     /**
      * Set port
      *
      * @param integer $port
      *
-     * @return LcrGatewayInterface
+     * @return self
      */
     public function setPort($port = null);
-
 
     /**
      * Get port
@@ -95,16 +86,14 @@ interface LcrGatewayInterface extends EntityInterface
      */
     public function getPort();
 
-
     /**
      * Set params
      *
      * @param string $params
      *
-     * @return LcrGatewayInterface
+     * @return self
      */
     public function setParams($params = null);
-
 
     /**
      * Get params
@@ -113,16 +102,14 @@ interface LcrGatewayInterface extends EntityInterface
      */
     public function getParams();
 
-
     /**
      * Set uriScheme
      *
      * @param boolean $uriScheme
      *
-     * @return LcrGatewayInterface
+     * @return self
      */
     public function setUriScheme($uriScheme = null);
-
 
     /**
      * Get uriScheme
@@ -131,16 +118,14 @@ interface LcrGatewayInterface extends EntityInterface
      */
     public function getUriScheme();
 
-
     /**
      * Set transport
      *
      * @param boolean $transport
      *
-     * @return LcrGatewayInterface
+     * @return self
      */
     public function setTransport($transport = null);
-
 
     /**
      * Get transport
@@ -149,16 +134,14 @@ interface LcrGatewayInterface extends EntityInterface
      */
     public function getTransport();
 
-
     /**
      * Set strip
      *
      * @param boolean $strip
      *
-     * @return LcrGatewayInterface
+     * @return self
      */
     public function setStrip($strip = null);
-
 
     /**
      * Get strip
@@ -167,16 +150,14 @@ interface LcrGatewayInterface extends EntityInterface
      */
     public function getStrip();
 
-
     /**
      * Set prefix
      *
      * @param string $prefix
      *
-     * @return LcrGatewayInterface
+     * @return self
      */
     public function setPrefix($prefix = null);
-
 
     /**
      * Get prefix
@@ -185,16 +166,14 @@ interface LcrGatewayInterface extends EntityInterface
      */
     public function getPrefix();
 
-
     /**
      * Set tag
      *
      * @param string $tag
      *
-     * @return LcrGatewayInterface
+     * @return self
      */
     public function setTag($tag = null);
-
 
     /**
      * Get tag
@@ -203,16 +182,14 @@ interface LcrGatewayInterface extends EntityInterface
      */
     public function getTag();
 
-
     /**
      * Set flags
      *
      * @param integer $flags
      *
-     * @return LcrGatewayInterface
+     * @return self
      */
     public function setFlags($flags);
-
 
     /**
      * Get flags
@@ -221,16 +198,14 @@ interface LcrGatewayInterface extends EntityInterface
      */
     public function getFlags();
 
-
     /**
      * Set defunct
      *
      * @param integer $defunct
      *
-     * @return LcrGatewayInterface
+     * @return self
      */
     public function setDefunct($defunct = null);
-
 
     /**
      * Get defunct
@@ -239,16 +214,14 @@ interface LcrGatewayInterface extends EntityInterface
      */
     public function getDefunct();
 
-
     /**
      * Set peerServer
      *
      * @param \Ivoz\Domain\Model\PeerServer\PeerServerInterface $peerServer
      *
-     * @return LcrGatewayInterface
+     * @return self
      */
     public function setPeerServer(\Ivoz\Domain\Model\PeerServer\PeerServerInterface $peerServer);
-
 
     /**
      * Get peerServer
@@ -256,8 +229,6 @@ interface LcrGatewayInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\PeerServer\PeerServerInterface
      */
     public function getPeerServer();
-
-
 
 }
 

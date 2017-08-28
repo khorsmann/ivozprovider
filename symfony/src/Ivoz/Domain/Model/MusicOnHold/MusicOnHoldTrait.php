@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\MusicOnHold;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * MusicOnHoldTrait
+ * @codeCoverageIgnore
  */
 trait MusicOnHoldTrait
 {

@@ -1,18 +1,18 @@
 <?php
+
 namespace Ivoz\Domain\Service\CompanyAdmin;
 
-use Core\Domain\Service\LifecycleEventHandlerInterface;
-use Core\Domain\Model\EntityInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use Ivoz\Domain\Model\CompanyAdmin\CompanyAdmin;
+use Ivoz\Domain\Model\CompanyAdmin\CompanyAdminInterface;
 use Ivoz\Domain\Model\CompanyAdmin\CompanyAdminRepository;
+use Ivoz\Domain\Service\CompanyAdmin\CompanyAdminLifecycleEventHandlerInterface;
 
 /**
  * Class CheckValidity
  * @package Ivoz\Domain\Service\CompanyAdmin
- * @lifecycle company_admin.pre_persist
+ * @lifecycle pre_persist
  */
-class CheckValidity implements LifecycleEventHandlerInterface
+class CheckValidity implements CompanyAdminLifecycleEventHandlerInterface
 {
     /**
      * @var EntityManagerInterface
@@ -34,10 +34,9 @@ class CheckValidity implements LifecycleEventHandlerInterface
     }
 
     /**
-     * @param CompanyAdmin $entity
      * @throws \Exception
      */
-    public function execute(EntityInterface $entity)
+    public function execute(CompanyAdminInterface $entity)
     {
         $isNew = $this->em->contains($entity);
         if (!$isNew) {
@@ -58,6 +57,7 @@ class CheckValidity implements LifecycleEventHandlerInterface
                 $entity->getUsername(),
                 $company->getName()
             );
+
             throw new \Exception($error_msg);
         }
     }

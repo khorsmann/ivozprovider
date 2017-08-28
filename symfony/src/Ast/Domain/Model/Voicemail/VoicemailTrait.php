@@ -1,10 +1,12 @@
 <?php
+
 namespace Ast\Domain\Model\Voicemail;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * VoicemailTrait
+ * @codeCoverageIgnore
  */
 trait VoicemailTrait
 {

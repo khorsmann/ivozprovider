@@ -7,7 +7,7 @@ Ivoz\Domain\Model\Extension\ExtensionAbstract:
     IVRCommonId:
       columns:
         - IVRCommonId
-    IVRCustomId:
+    IvrCustomId:
       columns:
         - IVRCustomId
     huntGroupId:
@@ -69,24 +69,24 @@ Ivoz\Domain\Model\Extension\ExtensionAbstract:
           referencedColumnName: id
           nullable: false
       orphanRemoval: false
-    IVRCommon:
-      targetEntity: \Ivoz\Domain\Model\IVRCommon\IVRCommonInterface
+    IvrCommon:
+      targetEntity: \Ivoz\Domain\Model\IvrCommon\IvrCommonInterface
       cascade: {  }
       fetch: LAZY
       mappedBy: null
-      inversedBy: null
+      inversedBy: extensions
       joinColumns:
         IVRCommonId:
           referencedColumnName: id
       orphanRemoval: false
-    IVRCustom:
-      targetEntity: \Ivoz\Domain\Model\IVRCustom\IVRCustomInterface
+    IvrCustom:
+      targetEntity: \Ivoz\Domain\Model\IvrCustom\IvrCustomInterface
       cascade: {  }
       fetch: LAZY
       mappedBy: null
       inversedBy: null
       joinColumns:
-        IVRCustomId:
+        IvrCustomId:
           referencedColumnName: id
       orphanRemoval: false
     huntGroup:

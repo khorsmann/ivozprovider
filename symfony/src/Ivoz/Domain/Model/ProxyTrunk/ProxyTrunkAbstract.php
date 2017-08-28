@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\ProxyTrunk;
 
 use Assert\Assertion;
@@ -6,6 +7,7 @@ use Core\Application\DataTransferObjectInterface;
 
 /**
  * ProxyTrunkAbstract
+ * @codeCoverageIgnore
  */
 abstract class ProxyTrunkAbstract
 {

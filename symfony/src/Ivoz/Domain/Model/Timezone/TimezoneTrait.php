@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\Timezone;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * TimezoneTrait
+ * @codeCoverageIgnore
  */
 trait TimezoneTrait
 {

@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\PricingPlan;
 
 use Assert\Assertion;
 
 /**
  * Name
+ * @codeCoverageIgnore
  */
 class Name
 {

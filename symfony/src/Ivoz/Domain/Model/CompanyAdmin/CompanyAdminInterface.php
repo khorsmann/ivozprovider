@@ -11,10 +11,9 @@ interface CompanyAdminInterface extends EntityInterface
      *
      * @param string $username
      *
-     * @return CompanyAdminInterface
+     * @return self
      */
     public function setUsername($username);
-
 
     /**
      * Get username
@@ -23,16 +22,14 @@ interface CompanyAdminInterface extends EntityInterface
      */
     public function getUsername();
 
-
     /**
      * Set pass
      *
      * @param string $pass
      *
-     * @return CompanyAdminInterface
+     * @return self
      */
     public function setPass($pass);
-
 
     /**
      * Get pass
@@ -41,16 +38,14 @@ interface CompanyAdminInterface extends EntityInterface
      */
     public function getPass();
 
-
     /**
      * Set email
      *
      * @param string $email
      *
-     * @return CompanyAdminInterface
+     * @return self
      */
     public function setEmail($email);
-
 
     /**
      * Get email
@@ -59,16 +54,14 @@ interface CompanyAdminInterface extends EntityInterface
      */
     public function getEmail();
 
-
     /**
      * Set active
      *
      * @param boolean $active
      *
-     * @return CompanyAdminInterface
+     * @return self
      */
     public function setActive($active);
-
 
     /**
      * Get active
@@ -77,16 +70,14 @@ interface CompanyAdminInterface extends EntityInterface
      */
     public function getActive();
 
-
     /**
      * Set name
      *
      * @param string $name
      *
-     * @return CompanyAdminInterface
+     * @return self
      */
     public function setName($name = null);
-
 
     /**
      * Get name
@@ -95,16 +86,14 @@ interface CompanyAdminInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set lastname
      *
      * @param string $lastname
      *
-     * @return CompanyAdminInterface
+     * @return self
      */
     public function setLastname($lastname = null);
-
 
     /**
      * Get lastname
@@ -113,16 +102,14 @@ interface CompanyAdminInterface extends EntityInterface
      */
     public function getLastname();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return CompanyAdminInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company);
-
 
     /**
      * Get company
@@ -131,16 +118,14 @@ interface CompanyAdminInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set timezone
      *
      * @param \Ivoz\Domain\Model\Timezone\TimezoneInterface $timezone
      *
-     * @return CompanyAdminInterface
+     * @return self
      */
     public function setTimezone(\Ivoz\Domain\Model\Timezone\TimezoneInterface $timezone = null);
-
 
     /**
      * Get timezone
@@ -148,8 +133,6 @@ interface CompanyAdminInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Timezone\TimezoneInterface
      */
     public function getTimezone();
-
-
 
 }
 

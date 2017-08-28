@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\InvoiceTemplate;
 
 use Assert\Assertion;
@@ -6,6 +7,7 @@ use Core\Application\DataTransferObjectInterface;
 
 /**
  * InvoiceTemplateAbstract
+ * @codeCoverageIgnore
  */
 abstract class InvoiceTemplateAbstract
 {

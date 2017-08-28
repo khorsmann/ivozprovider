@@ -11,10 +11,9 @@ interface ScheduleInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return ScheduleInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface ScheduleInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set timeIn
      *
      * @param \DateTime $timeIn
      *
-     * @return ScheduleInterface
+     * @return self
      */
     public function setTimeIn($timeIn);
-
 
     /**
      * Get timeIn
@@ -41,16 +38,14 @@ interface ScheduleInterface extends EntityInterface
      */
     public function getTimeIn();
 
-
     /**
      * Set timeout
      *
      * @param \DateTime $timeout
      *
-     * @return ScheduleInterface
+     * @return self
      */
     public function setTimeout($timeout);
-
 
     /**
      * Get timeout
@@ -59,16 +54,14 @@ interface ScheduleInterface extends EntityInterface
      */
     public function getTimeout();
 
-
     /**
      * Set monday
      *
      * @param boolean $monday
      *
-     * @return ScheduleInterface
+     * @return self
      */
     public function setMonday($monday = null);
-
 
     /**
      * Get monday
@@ -77,16 +70,14 @@ interface ScheduleInterface extends EntityInterface
      */
     public function getMonday();
 
-
     /**
      * Set tuesday
      *
      * @param boolean $tuesday
      *
-     * @return ScheduleInterface
+     * @return self
      */
     public function setTuesday($tuesday = null);
-
 
     /**
      * Get tuesday
@@ -95,16 +86,14 @@ interface ScheduleInterface extends EntityInterface
      */
     public function getTuesday();
 
-
     /**
      * Set wednesday
      *
      * @param boolean $wednesday
      *
-     * @return ScheduleInterface
+     * @return self
      */
     public function setWednesday($wednesday = null);
-
 
     /**
      * Get wednesday
@@ -113,16 +102,14 @@ interface ScheduleInterface extends EntityInterface
      */
     public function getWednesday();
 
-
     /**
      * Set thursday
      *
      * @param boolean $thursday
      *
-     * @return ScheduleInterface
+     * @return self
      */
     public function setThursday($thursday = null);
-
 
     /**
      * Get thursday
@@ -131,16 +118,14 @@ interface ScheduleInterface extends EntityInterface
      */
     public function getThursday();
 
-
     /**
      * Set friday
      *
      * @param boolean $friday
      *
-     * @return ScheduleInterface
+     * @return self
      */
     public function setFriday($friday = null);
-
 
     /**
      * Get friday
@@ -149,16 +134,14 @@ interface ScheduleInterface extends EntityInterface
      */
     public function getFriday();
 
-
     /**
      * Set saturday
      *
      * @param boolean $saturday
      *
-     * @return ScheduleInterface
+     * @return self
      */
     public function setSaturday($saturday = null);
-
 
     /**
      * Get saturday
@@ -167,16 +150,14 @@ interface ScheduleInterface extends EntityInterface
      */
     public function getSaturday();
 
-
     /**
      * Set sunday
      *
      * @param boolean $sunday
      *
-     * @return ScheduleInterface
+     * @return self
      */
     public function setSunday($sunday = null);
-
 
     /**
      * Get sunday
@@ -185,16 +166,14 @@ interface ScheduleInterface extends EntityInterface
      */
     public function getSunday();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return ScheduleInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company);
-
 
     /**
      * Get company
@@ -202,8 +181,6 @@ interface ScheduleInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Company\CompanyInterface
      */
     public function getCompany();
-
-
 
 }
 

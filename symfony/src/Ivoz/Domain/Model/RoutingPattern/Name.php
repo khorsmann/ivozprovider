@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\RoutingPattern;
 
 use Assert\Assertion;
 
 /**
  * Name
+ * @codeCoverageIgnore
  */
 class Name
 {

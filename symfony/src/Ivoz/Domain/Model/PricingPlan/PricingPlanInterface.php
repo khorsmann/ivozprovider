@@ -11,10 +11,9 @@ interface PricingPlanInterface extends EntityInterface
      *
      * @param \DateTime $createdOn
      *
-     * @return PricingPlanInterface
+     * @return self
      */
     public function setCreatedOn($createdOn);
-
 
     /**
      * Get createdOn
@@ -23,16 +22,14 @@ interface PricingPlanInterface extends EntityInterface
      */
     public function getCreatedOn();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return PricingPlanInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand);
-
 
     /**
      * Get brand
@@ -41,16 +38,14 @@ interface PricingPlanInterface extends EntityInterface
      */
     public function getBrand();
 
-
     /**
      * Set name
      *
      * @param Name $name
      *
-     * @return PricingPlanInterface
+     * @return self
      */
-    public function setName(Name $name);
-
+    public function setName(\Ivoz\Domain\Model\PricingPlan\Name $name);
 
     /**
      * Get name
@@ -59,16 +54,14 @@ interface PricingPlanInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set description
      *
      * @param Description $description
      *
-     * @return PricingPlanInterface
+     * @return self
      */
-    public function setDescription(Description $description);
-
+    public function setDescription(\Ivoz\Domain\Model\PricingPlan\Description $description);
 
     /**
      * Get description

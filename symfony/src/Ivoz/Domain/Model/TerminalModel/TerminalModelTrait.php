@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\TerminalModel;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * TerminalModelTrait
+ * @codeCoverageIgnore
  */
 trait TerminalModelTrait
 {

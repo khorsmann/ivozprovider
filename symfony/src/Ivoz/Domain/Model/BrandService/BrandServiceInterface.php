@@ -11,10 +11,9 @@ interface BrandServiceInterface extends EntityInterface
      *
      * @param string $code
      *
-     * @return BrandServiceInterface
+     * @return self
      */
     public function setCode($code);
-
 
     /**
      * Get code
@@ -23,16 +22,14 @@ interface BrandServiceInterface extends EntityInterface
      */
     public function getCode();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return BrandServiceInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand = null);
-
 
     /**
      * Get brand
@@ -41,16 +38,14 @@ interface BrandServiceInterface extends EntityInterface
      */
     public function getBrand();
 
-
     /**
      * Set service
      *
      * @param \Ivoz\Domain\Model\Service\ServiceInterface $service
      *
-     * @return BrandServiceInterface
+     * @return self
      */
     public function setService(\Ivoz\Domain\Model\Service\ServiceInterface $service);
-
 
     /**
      * Get service
@@ -58,8 +53,6 @@ interface BrandServiceInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Service\ServiceInterface
      */
     public function getService();
-
-
 
 }
 

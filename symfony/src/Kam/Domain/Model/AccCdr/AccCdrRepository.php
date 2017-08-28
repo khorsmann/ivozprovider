@@ -16,5 +16,7 @@ interface AccCdrRepository extends ObjectRepository, Selectable
      * @return Collection
      */
     public function fetchTarificableList(array $criteria, array $orderBy = null, $limit = null, $offset = null);
+
+    public function countTarificableByQuery(array $criteria);
 }
 

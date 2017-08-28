@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\OutgoingDDIRulesPattern;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * OutgoingDDIRulesPatternTrait
+ * @codeCoverageIgnore
  */
 trait OutgoingDDIRulesPatternTrait
 {

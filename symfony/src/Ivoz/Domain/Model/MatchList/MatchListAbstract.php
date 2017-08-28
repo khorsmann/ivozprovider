@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\MatchList;
 
 use Assert\Assertion;
@@ -6,6 +7,7 @@ use Core\Application\DataTransferObjectInterface;
 
 /**
  * MatchListAbstract
+ * @codeCoverageIgnore
  */
 abstract class MatchListAbstract
 {

@@ -11,10 +11,9 @@ interface BrandOperatorInterface extends EntityInterface
      *
      * @param string $username
      *
-     * @return BrandOperatorInterface
+     * @return self
      */
     public function setUsername($username);
-
 
     /**
      * Get username
@@ -23,16 +22,14 @@ interface BrandOperatorInterface extends EntityInterface
      */
     public function getUsername();
 
-
     /**
      * Set pass
      *
      * @param string $pass
      *
-     * @return BrandOperatorInterface
+     * @return self
      */
     public function setPass($pass);
-
 
     /**
      * Get pass
@@ -41,16 +38,14 @@ interface BrandOperatorInterface extends EntityInterface
      */
     public function getPass();
 
-
     /**
      * Set email
      *
      * @param string $email
      *
-     * @return BrandOperatorInterface
+     * @return self
      */
     public function setEmail($email);
-
 
     /**
      * Get email
@@ -59,16 +54,14 @@ interface BrandOperatorInterface extends EntityInterface
      */
     public function getEmail();
 
-
     /**
      * Set active
      *
      * @param boolean $active
      *
-     * @return BrandOperatorInterface
+     * @return self
      */
     public function setActive($active);
-
 
     /**
      * Get active
@@ -77,16 +70,14 @@ interface BrandOperatorInterface extends EntityInterface
      */
     public function getActive();
 
-
     /**
      * Set name
      *
      * @param string $name
      *
-     * @return BrandOperatorInterface
+     * @return self
      */
     public function setName($name = null);
-
 
     /**
      * Get name
@@ -95,16 +86,14 @@ interface BrandOperatorInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set lastname
      *
      * @param string $lastname
      *
-     * @return BrandOperatorInterface
+     * @return self
      */
     public function setLastname($lastname = null);
-
 
     /**
      * Get lastname
@@ -113,16 +102,14 @@ interface BrandOperatorInterface extends EntityInterface
      */
     public function getLastname();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return BrandOperatorInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand = null);
-
 
     /**
      * Get brand
@@ -131,16 +118,14 @@ interface BrandOperatorInterface extends EntityInterface
      */
     public function getBrand();
 
-
     /**
      * Set timezone
      *
      * @param \Ivoz\Domain\Model\Timezone\TimezoneInterface $timezone
      *
-     * @return BrandOperatorInterface
+     * @return self
      */
     public function setTimezone(\Ivoz\Domain\Model\Timezone\TimezoneInterface $timezone = null);
-
 
     /**
      * Get timezone
@@ -148,8 +133,6 @@ interface BrandOperatorInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Timezone\TimezoneInterface
      */
     public function getTimezone();
-
-
 
 }
 

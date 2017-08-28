@@ -11,10 +11,9 @@ interface HuntGroupsRelUserInterface extends EntityInterface
      *
      * @param integer $timeoutTime
      *
-     * @return HuntGroupsRelUserInterface
+     * @return self
      */
     public function setTimeoutTime($timeoutTime = null);
-
 
     /**
      * Get timeoutTime
@@ -23,16 +22,14 @@ interface HuntGroupsRelUserInterface extends EntityInterface
      */
     public function getTimeoutTime();
 
-
     /**
      * Set priority
      *
      * @param integer $priority
      *
-     * @return HuntGroupsRelUserInterface
+     * @return self
      */
     public function setPriority($priority = null);
-
 
     /**
      * Get priority
@@ -41,16 +38,14 @@ interface HuntGroupsRelUserInterface extends EntityInterface
      */
     public function getPriority();
 
-
     /**
      * Set huntGroup
      *
      * @param \Ivoz\Domain\Model\HuntGroup\HuntGroupInterface $huntGroup
      *
-     * @return HuntGroupsRelUserInterface
+     * @return self
      */
     public function setHuntGroup(\Ivoz\Domain\Model\HuntGroup\HuntGroupInterface $huntGroup = null);
-
 
     /**
      * Get huntGroup
@@ -59,16 +54,14 @@ interface HuntGroupsRelUserInterface extends EntityInterface
      */
     public function getHuntGroup();
 
-
     /**
      * Set user
      *
      * @param \Ivoz\Domain\Model\User\UserInterface $user
      *
-     * @return HuntGroupsRelUserInterface
+     * @return self
      */
     public function setUser(\Ivoz\Domain\Model\User\UserInterface $user);
-
 
     /**
      * Get user
@@ -76,8 +69,6 @@ interface HuntGroupsRelUserInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\User\UserInterface
      */
     public function getUser();
-
-
 
 }
 

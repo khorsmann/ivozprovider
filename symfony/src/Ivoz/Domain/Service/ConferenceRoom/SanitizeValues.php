@@ -1,23 +1,20 @@
 <?php
+
 namespace Ivoz\Domain\Service\ConferenceRoom;
 
-use Core\Domain\Service\LifecycleEventHandlerInterface;
-use Core\Domain\Model\EntityInterface;
-use Ivoz\Domain\Model\ConferenceRoom\ConferenceRoom;
+use Ivoz\Domain\Model\ConferenceRoom\ConferenceRoomInterface;
+
 
 /**
  * Class SanitizeValues
  * @package Ivoz\Domain\Service\ConferenceRoom
- * @lifecycle conference_room.pre_persist
+ * @lifecycle pre_persist
  */
-class SanitizeValues implements LifecycleEventHandlerInterface
+class SanitizeValues implements ConferenceRoomLifecycleEventHandlerInterface
 {
     public function __construct() {}
 
-    /**
-     * @param ConferenceRoom $entity
-     */
-    public function execute(EntityInterface $entity)
+    public function execute(ConferenceRoomInterface $entity)
     {
         if (!$entity->getPinProtected()) {
             $entity->setPinCode(null);

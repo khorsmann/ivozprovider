@@ -11,10 +11,9 @@ interface TimezoneInterface extends EntityInterface
      *
      * @param string $tz
      *
-     * @return TimezoneInterface
+     * @return self
      */
     public function setTz($tz);
-
 
     /**
      * Get tz
@@ -23,16 +22,14 @@ interface TimezoneInterface extends EntityInterface
      */
     public function getTz();
 
-
     /**
      * Set comment
      *
      * @param string $comment
      *
-     * @return TimezoneInterface
+     * @return self
      */
     public function setComment($comment = null);
-
 
     /**
      * Get comment
@@ -41,16 +38,14 @@ interface TimezoneInterface extends EntityInterface
      */
     public function getComment();
 
-
     /**
      * Set country
      *
      * @param \Ivoz\Domain\Model\Country\CountryInterface $country
      *
-     * @return TimezoneInterface
+     * @return self
      */
     public function setCountry(\Ivoz\Domain\Model\Country\CountryInterface $country = null);
-
 
     /**
      * Get country
@@ -59,16 +54,14 @@ interface TimezoneInterface extends EntityInterface
      */
     public function getCountry();
 
-
     /**
      * Set label
      *
      * @param Label $label
      *
-     * @return TimezoneInterface
+     * @return self
      */
-    public function setLabel(Label $label);
-
+    public function setLabel(\Ivoz\Domain\Model\Timezone\Label $label);
 
     /**
      * Get label

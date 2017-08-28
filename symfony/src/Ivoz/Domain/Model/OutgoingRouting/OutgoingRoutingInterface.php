@@ -11,10 +11,9 @@ interface OutgoingRoutingInterface extends EntityInterface
      *
      * @param string $type
      *
-     * @return OutgoingRoutingInterface
+     * @return self
      */
     public function setType($type = null);
-
 
     /**
      * Get type
@@ -23,16 +22,14 @@ interface OutgoingRoutingInterface extends EntityInterface
      */
     public function getType();
 
-
     /**
      * Set priority
      *
      * @param boolean $priority
      *
-     * @return OutgoingRoutingInterface
+     * @return self
      */
     public function setPriority($priority);
-
 
     /**
      * Get priority
@@ -41,16 +38,14 @@ interface OutgoingRoutingInterface extends EntityInterface
      */
     public function getPriority();
 
-
     /**
      * Set weight
      *
      * @param integer $weight
      *
-     * @return OutgoingRoutingInterface
+     * @return self
      */
     public function setWeight($weight);
-
 
     /**
      * Get weight
@@ -59,16 +54,14 @@ interface OutgoingRoutingInterface extends EntityInterface
      */
     public function getWeight();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return OutgoingRoutingInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand);
-
 
     /**
      * Get brand
@@ -77,16 +70,14 @@ interface OutgoingRoutingInterface extends EntityInterface
      */
     public function getBrand();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return OutgoingRoutingInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company = null);
-
 
     /**
      * Get company
@@ -95,16 +86,14 @@ interface OutgoingRoutingInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set peeringContract
      *
      * @param \Ivoz\Domain\Model\PeeringContract\PeeringContractInterface $peeringContract
      *
-     * @return OutgoingRoutingInterface
+     * @return self
      */
     public function setPeeringContract(\Ivoz\Domain\Model\PeeringContract\PeeringContractInterface $peeringContract);
-
 
     /**
      * Get peeringContract
@@ -113,16 +102,14 @@ interface OutgoingRoutingInterface extends EntityInterface
      */
     public function getPeeringContract();
 
-
     /**
      * Set routingPattern
      *
      * @param \Ivoz\Domain\Model\RoutingPattern\RoutingPatternInterface $routingPattern
      *
-     * @return OutgoingRoutingInterface
+     * @return self
      */
     public function setRoutingPattern(\Ivoz\Domain\Model\RoutingPattern\RoutingPatternInterface $routingPattern = null);
-
 
     /**
      * Get routingPattern
@@ -131,16 +118,14 @@ interface OutgoingRoutingInterface extends EntityInterface
      */
     public function getRoutingPattern();
 
-
     /**
      * Set routingPatternGroup
      *
      * @param \Ivoz\Domain\Model\RoutingPatternGroup\RoutingPatternGroupInterface $routingPatternGroup
      *
-     * @return OutgoingRoutingInterface
+     * @return self
      */
     public function setRoutingPatternGroup(\Ivoz\Domain\Model\RoutingPatternGroup\RoutingPatternGroupInterface $routingPatternGroup = null);
-
 
     /**
      * Get routingPatternGroup
@@ -148,8 +133,6 @@ interface OutgoingRoutingInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\RoutingPatternGroup\RoutingPatternGroupInterface
      */
     public function getRoutingPatternGroup();
-
-
 
 }
 

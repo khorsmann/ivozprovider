@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\Recording;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * RecordingTrait
+ * @codeCoverageIgnore
  */
 trait RecordingTrait
 {

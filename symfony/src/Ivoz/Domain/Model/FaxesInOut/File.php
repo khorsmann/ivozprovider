@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\FaxesInOut;
 
 use Assert\Assertion;
 
 /**
  * File
+ * @codeCoverageIgnore
  */
 class File
 {

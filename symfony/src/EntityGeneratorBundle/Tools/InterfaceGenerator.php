@@ -33,28 +33,10 @@ class InterfaceGenerator extends ParentGenerator
     /**
      * @var string
      */
-    protected static $setMethodTemplate =
-'/**
- * <description>
- *
- * @param <variableType> $<variableName>
- *
- * @return <entity>
- */
-<visibility> function <methodName>(<methodTypeHint>$<variableName><variableDefault>);
+    protected static $customMethodTemplate =
+        '<docComment><spaces>public function <methodName>(<methodArguments>);
 ';
 
-    /**
-     * @var string
-     */
-    protected static $getMethodTemplate =
-        '/**
- * <description>
- *
- * @return <variableType>
- */
-public function <methodName>(<criteriaArgument>);
-';
 
     protected function transformMetadata(ClassMetadataInfo $metadata)
     {
@@ -122,51 +104,66 @@ public function <methodName>(<criteriaArgument>);
         return implode("\n", $code);
     }
 
+
     /**
      * {@inheritDoc}
      */
-    protected function generateEntityStubMethod(ClassMetadataInfo $metadata, $type, $fieldName, $typeHint = null,  $defaultValue = null)
+    protected function generateEntityStubMethods(ClassMetadataInfo $metadata)
     {
-        $currentField = null;
-        $isNullable = false;
-        $visibility = 'public';
+        $entityInterfaceMethods = get_class_methods('Core\\Domain\\Model\\EntityInterface');
 
-        if (array_key_exists($fieldName, $metadata->fieldMappings)) {
-            $currentField = (object) $metadata->fieldMappings[$fieldName];
-            $isNullable = isset($currentField->nullable) && $currentField->nullable;
-        }
+        $response = [];
 
-        if (is_null($defaultValue) && $isNullable) {
-            $defaultValue = 'null';
-        }
+        $className = str_replace('Interface', '', $metadata->getName());
+        $reflectionClass = new \ReflectionClass($className);
+        $publicMethods = $reflectionClass->getMethods(\ReflectionMethod::IS_PUBLIC);
 
-        $parentResponse = parent::generateEntityStubMethod($metadata, $type, $fieldName, $typeHint,  $defaultValue);
-        $replacements = [];
+        foreach ($publicMethods as $publicMethod) {
 
-        if (array_key_exists($fieldName, $metadata->associationMappings)) {
-
-            $field = (object) $metadata->associationMappings[$fieldName];
-            $isOneToMany = ($field->type == ClassMetadataInfo::ONE_TO_MANY);
-
-            if ($field->inversedBy && $type === 'set') {
-                $visibility = 'public';
+            if ($publicMethod->isConstructor()) {
+                continue;
             }
 
-            if ($isOneToMany && !in_array($type, ['set', 'get'])) {
-                $replacements['<mappedBy>'] = ucFirst($field->mappedBy);
+            $methodName = $publicMethod->getName();
+            if (in_array($methodName, $entityInterfaceMethods)) {
+                continue;
             }
+
+            $docComment = $publicMethod->getDocComment()
+                ? $this->spaces . $publicMethod->getDocComment() . "\n"
+                : '';
+
+            $methodParameters = $publicMethod->getParameters();
+
+            $methodParameterArray = [];
+            foreach ($methodParameters as $methodParameter) {
+
+                $str = '';
+                if ($methodParameter->getClass()) {
+                    $str = '\\' . $methodParameter->getClass()->getName() . ' ';
+                } else if ($methodParameter->isArray()) {
+                    $str = 'array ';
+                }
+
+                $str .= '$' . $methodParameter->getName();
+                if ($methodParameter->isOptional()  && $methodParameter->getDefaultValue()) {
+                    $str .= " = '" . $methodParameter->getDefaultValue() . "'";
+                } else if ($methodParameter->isOptional()) {
+                    $str .= " = null";
+                }
+
+                $methodParameterArray[] = $str;
+            }
+
+            $methodParameterStr = implode(', ', $methodParameterArray);
+
+            $response[$methodName] = str_replace(
+                ['<docComment>', '<methodName>', '<methodArguments>'],
+                [$docComment, $methodName, $methodParameterStr],
+                self::$customMethodTemplate
+            );
         }
 
-        if ($visibility !== 'public') {
-            return '';
-        }
-
-        $response = str_replace(
-            array_keys($replacements),
-            array_values($replacements),
-            $parentResponse
-        );
-
-        return $response;
+        return implode("\n", $response);
     }
 }

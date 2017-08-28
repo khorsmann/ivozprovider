@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\OutgoingRouting;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * OutgoingRoutingTrait
+ * @codeCoverageIgnore
  */
 trait OutgoingRoutingTrait
 {

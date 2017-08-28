@@ -11,10 +11,9 @@ interface BrandURLInterface extends EntityInterface
      *
      * @param string $url
      *
-     * @return BrandURLInterface
+     * @return self
      */
     public function setUrl($url);
-
 
     /**
      * Get url
@@ -23,16 +22,14 @@ interface BrandURLInterface extends EntityInterface
      */
     public function getUrl();
 
-
     /**
      * Set klearTheme
      *
      * @param string $klearTheme
      *
-     * @return BrandURLInterface
+     * @return self
      */
     public function setKlearTheme($klearTheme = null);
-
 
     /**
      * Get klearTheme
@@ -41,16 +38,14 @@ interface BrandURLInterface extends EntityInterface
      */
     public function getKlearTheme();
 
-
     /**
      * Set urlType
      *
      * @param string $urlType
      *
-     * @return BrandURLInterface
+     * @return self
      */
     public function setUrlType($urlType);
-
 
     /**
      * Get urlType
@@ -59,16 +54,14 @@ interface BrandURLInterface extends EntityInterface
      */
     public function getUrlType();
 
-
     /**
      * Set name
      *
      * @param string $name
      *
-     * @return BrandURLInterface
+     * @return self
      */
     public function setName($name = null);
-
 
     /**
      * Get name
@@ -77,16 +70,14 @@ interface BrandURLInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set userTheme
      *
      * @param string $userTheme
      *
-     * @return BrandURLInterface
+     * @return self
      */
     public function setUserTheme($userTheme = null);
-
 
     /**
      * Get userTheme
@@ -95,16 +86,14 @@ interface BrandURLInterface extends EntityInterface
      */
     public function getUserTheme();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return BrandURLInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand = null);
-
 
     /**
      * Get brand
@@ -113,16 +102,14 @@ interface BrandURLInterface extends EntityInterface
      */
     public function getBrand();
 
-
     /**
      * Set logo
      *
      * @param Logo $logo
      *
-     * @return BrandURLInterface
+     * @return self
      */
-    public function setLogo(Logo $logo);
-
+    public function setLogo(\Ivoz\Domain\Model\BrandURL\Logo $logo);
 
     /**
      * Get logo

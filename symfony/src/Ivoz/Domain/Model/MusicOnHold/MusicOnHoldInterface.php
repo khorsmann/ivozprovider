@@ -11,10 +11,9 @@ interface MusicOnHoldInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return MusicOnHoldInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface MusicOnHoldInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set status
      *
      * @param string $status
      *
-     * @return MusicOnHoldInterface
+     * @return self
      */
     public function setStatus($status = null);
-
 
     /**
      * Get status
@@ -41,16 +38,14 @@ interface MusicOnHoldInterface extends EntityInterface
      */
     public function getStatus();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return MusicOnHoldInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company = null);
-
 
     /**
      * Get company
@@ -59,16 +54,14 @@ interface MusicOnHoldInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set originalFile
      *
      * @param OriginalFile $originalFile
      *
-     * @return MusicOnHoldInterface
+     * @return self
      */
-    public function setOriginalFile(OriginalFile $originalFile);
-
+    public function setOriginalFile(\Ivoz\Domain\Model\MusicOnHold\OriginalFile $originalFile);
 
     /**
      * Get originalFile
@@ -77,16 +70,14 @@ interface MusicOnHoldInterface extends EntityInterface
      */
     public function getOriginalFile();
 
-
     /**
      * Set encodedFile
      *
      * @param EncodedFile $encodedFile
      *
-     * @return MusicOnHoldInterface
+     * @return self
      */
-    public function setEncodedFile(EncodedFile $encodedFile);
-
+    public function setEncodedFile(\Ivoz\Domain\Model\MusicOnHold\EncodedFile $encodedFile);
 
     /**
      * Get encodedFile

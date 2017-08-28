@@ -11,10 +11,9 @@ interface QueueMemberInterface extends EntityInterface
      *
      * @param string $queueName
      *
-     * @return QueueMemberInterface
+     * @return self
      */
     public function setQueueName($queueName);
-
 
     /**
      * Get queueName
@@ -23,16 +22,14 @@ interface QueueMemberInterface extends EntityInterface
      */
     public function getQueueName();
 
-
     /**
      * Set interface
      *
      * @param string $interface
      *
-     * @return QueueMemberInterface
+     * @return self
      */
     public function setInterface($interface);
-
 
     /**
      * Get interface
@@ -41,16 +38,14 @@ interface QueueMemberInterface extends EntityInterface
      */
     public function getInterface();
 
-
     /**
      * Set membername
      *
      * @param string $membername
      *
-     * @return QueueMemberInterface
+     * @return self
      */
     public function setMembername($membername = null);
-
 
     /**
      * Get membername
@@ -59,16 +54,14 @@ interface QueueMemberInterface extends EntityInterface
      */
     public function getMembername();
 
-
     /**
      * Set stateInterface
      *
      * @param string $stateInterface
      *
-     * @return QueueMemberInterface
+     * @return self
      */
     public function setStateInterface($stateInterface = null);
-
 
     /**
      * Get stateInterface
@@ -77,16 +70,14 @@ interface QueueMemberInterface extends EntityInterface
      */
     public function getStateInterface();
 
-
     /**
      * Set penalty
      *
      * @param integer $penalty
      *
-     * @return QueueMemberInterface
+     * @return self
      */
     public function setPenalty($penalty = null);
-
 
     /**
      * Get penalty
@@ -95,16 +86,14 @@ interface QueueMemberInterface extends EntityInterface
      */
     public function getPenalty();
 
-
     /**
      * Set paused
      *
      * @param integer $paused
      *
-     * @return QueueMemberInterface
+     * @return self
      */
     public function setPaused($paused = null);
-
 
     /**
      * Get paused
@@ -113,16 +102,14 @@ interface QueueMemberInterface extends EntityInterface
      */
     public function getPaused();
 
-
     /**
      * Set queueMember
      *
      * @param \Ivoz\Domain\Model\QueueMember\QueueMemberInterface $queueMember
      *
-     * @return QueueMemberInterface
+     * @return self
      */
     public function setQueueMember(\Ivoz\Domain\Model\QueueMember\QueueMemberInterface $queueMember = null);
-
 
     /**
      * Get queueMember
@@ -130,8 +117,6 @@ interface QueueMemberInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\QueueMember\QueueMemberInterface
      */
     public function getQueueMember();
-
-
 
 }
 

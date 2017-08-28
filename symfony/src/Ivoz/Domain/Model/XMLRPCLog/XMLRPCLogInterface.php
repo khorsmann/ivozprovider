@@ -11,10 +11,9 @@ interface XMLRPCLogInterface extends EntityInterface
      *
      * @param string $proxy
      *
-     * @return XMLRPCLogInterface
+     * @return self
      */
     public function setProxy($proxy);
-
 
     /**
      * Get proxy
@@ -23,16 +22,14 @@ interface XMLRPCLogInterface extends EntityInterface
      */
     public function getProxy();
 
-
     /**
      * Set module
      *
      * @param string $module
      *
-     * @return XMLRPCLogInterface
+     * @return self
      */
     public function setModule($module);
-
 
     /**
      * Get module
@@ -41,16 +38,14 @@ interface XMLRPCLogInterface extends EntityInterface
      */
     public function getModule();
 
-
     /**
      * Set method
      *
      * @param string $method
      *
-     * @return XMLRPCLogInterface
+     * @return self
      */
     public function setMethod($method);
-
 
     /**
      * Get method
@@ -59,16 +54,14 @@ interface XMLRPCLogInterface extends EntityInterface
      */
     public function getMethod();
 
-
     /**
      * Set mapperName
      *
      * @param string $mapperName
      *
-     * @return XMLRPCLogInterface
+     * @return self
      */
     public function setMapperName($mapperName);
-
 
     /**
      * Get mapperName
@@ -77,16 +70,14 @@ interface XMLRPCLogInterface extends EntityInterface
      */
     public function getMapperName();
 
-
     /**
      * Set startDate
      *
      * @param \DateTime $startDate
      *
-     * @return XMLRPCLogInterface
+     * @return self
      */
     public function setStartDate($startDate);
-
 
     /**
      * Get startDate
@@ -95,16 +86,14 @@ interface XMLRPCLogInterface extends EntityInterface
      */
     public function getStartDate();
 
-
     /**
      * Set execDate
      *
      * @param \DateTime $execDate
      *
-     * @return XMLRPCLogInterface
+     * @return self
      */
     public function setExecDate($execDate = null);
-
 
     /**
      * Get execDate
@@ -113,16 +102,14 @@ interface XMLRPCLogInterface extends EntityInterface
      */
     public function getExecDate();
 
-
     /**
      * Set finishDate
      *
      * @param \DateTime $finishDate
      *
-     * @return XMLRPCLogInterface
+     * @return self
      */
     public function setFinishDate($finishDate = null);
-
 
     /**
      * Get finishDate
@@ -130,8 +117,6 @@ interface XMLRPCLogInterface extends EntityInterface
      * @return \DateTime
      */
     public function getFinishDate();
-
-
 
 }
 

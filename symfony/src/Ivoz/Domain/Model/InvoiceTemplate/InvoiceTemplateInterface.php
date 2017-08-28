@@ -11,10 +11,9 @@ interface InvoiceTemplateInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return InvoiceTemplateInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface InvoiceTemplateInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set description
      *
      * @param string $description
      *
-     * @return InvoiceTemplateInterface
+     * @return self
      */
     public function setDescription($description = null);
-
 
     /**
      * Get description
@@ -41,16 +38,14 @@ interface InvoiceTemplateInterface extends EntityInterface
      */
     public function getDescription();
 
-
     /**
      * Set template
      *
      * @param string $template
      *
-     * @return InvoiceTemplateInterface
+     * @return self
      */
     public function setTemplate($template);
-
 
     /**
      * Get template
@@ -59,16 +54,14 @@ interface InvoiceTemplateInterface extends EntityInterface
      */
     public function getTemplate();
 
-
     /**
      * Set templateHeader
      *
      * @param string $templateHeader
      *
-     * @return InvoiceTemplateInterface
+     * @return self
      */
     public function setTemplateHeader($templateHeader = null);
-
 
     /**
      * Get templateHeader
@@ -77,16 +70,14 @@ interface InvoiceTemplateInterface extends EntityInterface
      */
     public function getTemplateHeader();
 
-
     /**
      * Set templateFooter
      *
      * @param string $templateFooter
      *
-     * @return InvoiceTemplateInterface
+     * @return self
      */
     public function setTemplateFooter($templateFooter = null);
-
 
     /**
      * Get templateFooter
@@ -95,16 +86,14 @@ interface InvoiceTemplateInterface extends EntityInterface
      */
     public function getTemplateFooter();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return InvoiceTemplateInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand);
-
 
     /**
      * Get brand
@@ -112,8 +101,6 @@ interface InvoiceTemplateInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Brand\BrandInterface
      */
     public function getBrand();
-
-
 
 }
 

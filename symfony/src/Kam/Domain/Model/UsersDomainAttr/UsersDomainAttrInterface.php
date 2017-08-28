@@ -11,10 +11,9 @@ interface UsersDomainAttrInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return UsersDomainAttrInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface UsersDomainAttrInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set type
      *
      * @param integer $type
      *
-     * @return UsersDomainAttrInterface
+     * @return self
      */
     public function setType($type);
-
 
     /**
      * Get type
@@ -41,16 +38,14 @@ interface UsersDomainAttrInterface extends EntityInterface
      */
     public function getType();
 
-
     /**
      * Set value
      *
      * @param string $value
      *
-     * @return UsersDomainAttrInterface
+     * @return self
      */
     public function setValue($value);
-
 
     /**
      * Get value
@@ -59,16 +54,14 @@ interface UsersDomainAttrInterface extends EntityInterface
      */
     public function getValue();
 
-
     /**
      * Set lastModified
      *
      * @param \DateTime $lastModified
      *
-     * @return UsersDomainAttrInterface
+     * @return self
      */
     public function setLastModified($lastModified);
-
 
     /**
      * Get lastModified
@@ -77,16 +70,14 @@ interface UsersDomainAttrInterface extends EntityInterface
      */
     public function getLastModified();
 
-
     /**
      * Set did
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $did
      *
-     * @return UsersDomainAttrInterface
+     * @return self
      */
     public function setDid(\Ivoz\Domain\Model\Company\CompanyInterface $did);
-
 
     /**
      * Get did
@@ -94,8 +85,6 @@ interface UsersDomainAttrInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Company\CompanyInterface
      */
     public function getDid();
-
-
 
 }
 

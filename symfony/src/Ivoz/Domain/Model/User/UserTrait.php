@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\User;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * UserTrait
+ * @codeCoverageIgnore
  */
 trait UserTrait
 {

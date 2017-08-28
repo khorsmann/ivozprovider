@@ -1,21 +1,20 @@
 <?php
+
 namespace Ivoz\Domain\Service\CompanyService;
 
 use Core\Domain\Service\EntityPersisterInterface;
-use Core\Domain\Service\LifecycleEventHandlerInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use Core\Domain\Model\EntityInterface;
 use Ivoz\Domain\Model\BrandService\BrandService;
 use Ivoz\Domain\Model\BrandService\BrandServiceRepository;
-use Ivoz\Domain\Model\Company\Company;
+use Ivoz\Domain\Model\Company\CompanyInterface;
 use Ivoz\Domain\Model\CompanyService\CompanyService;
+use Ivoz\Domain\Service\Company\CompanyLifecycleEventHandlerInterface;
 
 /**
  * Class PropagateBrandServices
- * @package Ivoz\Domain\Service\CompanyService
- * @lifecycle company.post_persist
+ * @lifecycle post_persist
  */
-class PropagateBrandServices implements LifecycleEventHandlerInterface
+class PropagateBrandServices implements CompanyLifecycleEventHandlerInterface
 {
     /**
      * @var EntityManagerInterface
@@ -43,10 +42,9 @@ class PropagateBrandServices implements LifecycleEventHandlerInterface
     }
 
     /**
-     * @param Company $entity
      * @throws \Exception
      */
-    public function execute(EntityInterface $entity)
+    public function execute(CompanyInterface $entity)
     {
         if (!$entity->hasChanged('id')) {
             // Do nothing if this is not a new entity

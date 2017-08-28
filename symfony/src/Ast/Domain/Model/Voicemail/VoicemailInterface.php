@@ -11,10 +11,9 @@ interface VoicemailInterface extends EntityInterface
      *
      * @param string $context
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setContext($context);
-
 
     /**
      * Get context
@@ -23,16 +22,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getContext();
 
-
     /**
      * Set mailbox
      *
      * @param string $mailbox
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setMailbox($mailbox);
-
 
     /**
      * Get mailbox
@@ -41,16 +38,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getMailbox();
 
-
     /**
      * Set password
      *
      * @param string $password
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setPassword($password = null);
-
 
     /**
      * Get password
@@ -59,16 +54,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getPassword();
 
-
     /**
      * Set fullname
      *
      * @param string $fullname
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setFullname($fullname = null);
-
 
     /**
      * Get fullname
@@ -77,16 +70,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getFullname();
 
-
     /**
      * Set alias
      *
      * @param string $alias
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setAlias($alias = null);
-
 
     /**
      * Get alias
@@ -95,16 +86,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getAlias();
 
-
     /**
      * Set email
      *
      * @param string $email
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setEmail($email = null);
-
 
     /**
      * Get email
@@ -113,16 +102,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getEmail();
 
-
     /**
      * Set pager
      *
      * @param string $pager
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setPager($pager = null);
-
 
     /**
      * Get pager
@@ -131,16 +118,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getPager();
 
-
     /**
      * Set attach
      *
      * @param string $attach
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setAttach($attach = null);
-
 
     /**
      * Get attach
@@ -149,16 +134,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getAttach();
 
-
     /**
      * Set attachfmt
      *
      * @param string $attachfmt
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setAttachfmt($attachfmt = null);
-
 
     /**
      * Get attachfmt
@@ -167,16 +150,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getAttachfmt();
 
-
     /**
      * Set serveremail
      *
      * @param string $serveremail
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setServeremail($serveremail = null);
-
 
     /**
      * Get serveremail
@@ -185,16 +166,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getServeremail();
 
-
     /**
      * Set language
      *
      * @param string $language
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setLanguage($language = null);
-
 
     /**
      * Get language
@@ -203,16 +182,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getLanguage();
 
-
     /**
      * Set tz
      *
      * @param string $tz
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setTz($tz = null);
-
 
     /**
      * Get tz
@@ -221,16 +198,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getTz();
 
-
     /**
      * Set deleteVoicemail
      *
      * @param string $deleteVoicemail
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setDeleteVoicemail($deleteVoicemail = null);
-
 
     /**
      * Get deleteVoicemail
@@ -239,16 +214,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getDeleteVoicemail();
 
-
     /**
      * Set saycid
      *
      * @param string $saycid
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setSaycid($saycid = null);
-
 
     /**
      * Get saycid
@@ -257,16 +230,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getSaycid();
 
-
     /**
      * Set sendVoicemail
      *
      * @param string $sendVoicemail
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setSendVoicemail($sendVoicemail = null);
-
 
     /**
      * Get sendVoicemail
@@ -275,16 +246,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getSendVoicemail();
 
-
     /**
      * Set review
      *
      * @param string $review
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setReview($review = null);
-
 
     /**
      * Get review
@@ -293,16 +262,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getReview();
 
-
     /**
      * Set tempgreetwarn
      *
      * @param string $tempgreetwarn
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setTempgreetwarn($tempgreetwarn = null);
-
 
     /**
      * Get tempgreetwarn
@@ -311,16 +278,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getTempgreetwarn();
 
-
     /**
      * Set operator
      *
      * @param string $operator
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setOperator($operator = null);
-
 
     /**
      * Get operator
@@ -329,16 +294,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getOperator();
 
-
     /**
      * Set envelope
      *
      * @param string $envelope
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setEnvelope($envelope = null);
-
 
     /**
      * Get envelope
@@ -347,16 +310,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getEnvelope();
 
-
     /**
      * Set sayduration
      *
      * @param integer $sayduration
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setSayduration($sayduration = null);
-
 
     /**
      * Get sayduration
@@ -365,16 +326,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getSayduration();
 
-
     /**
      * Set forcename
      *
      * @param string $forcename
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setForcename($forcename = null);
-
 
     /**
      * Get forcename
@@ -383,16 +342,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getForcename();
 
-
     /**
      * Set forcegreetings
      *
      * @param string $forcegreetings
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setForcegreetings($forcegreetings = null);
-
 
     /**
      * Get forcegreetings
@@ -401,16 +358,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getForcegreetings();
 
-
     /**
      * Set callback
      *
      * @param string $callback
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setCallback($callback = null);
-
 
     /**
      * Get callback
@@ -419,16 +374,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getCallback();
 
-
     /**
      * Set dialout
      *
      * @param string $dialout
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setDialout($dialout = null);
-
 
     /**
      * Get dialout
@@ -437,16 +390,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getDialout();
 
-
     /**
      * Set exitcontext
      *
      * @param string $exitcontext
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setExitcontext($exitcontext = null);
-
 
     /**
      * Get exitcontext
@@ -455,16 +406,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getExitcontext();
 
-
     /**
      * Set maxmsg
      *
      * @param integer $maxmsg
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setMaxmsg($maxmsg = null);
-
 
     /**
      * Get maxmsg
@@ -473,16 +422,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getMaxmsg();
 
-
     /**
      * Set volgain
      *
      * @param string $volgain
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setVolgain($volgain = null);
-
 
     /**
      * Get volgain
@@ -491,16 +438,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getVolgain();
 
-
     /**
      * Set imapuser
      *
      * @param string $imapuser
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setImapuser($imapuser = null);
-
 
     /**
      * Get imapuser
@@ -509,16 +454,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getImapuser();
 
-
     /**
      * Set imappassword
      *
      * @param string $imappassword
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setImappassword($imappassword = null);
-
 
     /**
      * Get imappassword
@@ -527,16 +470,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getImappassword();
 
-
     /**
      * Set imapserver
      *
      * @param string $imapserver
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setImapserver($imapserver = null);
-
 
     /**
      * Get imapserver
@@ -545,16 +486,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getImapserver();
 
-
     /**
      * Set imapport
      *
      * @param string $imapport
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setImapport($imapport = null);
-
 
     /**
      * Get imapport
@@ -563,16 +502,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getImapport();
 
-
     /**
      * Set imapflags
      *
      * @param string $imapflags
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setImapflags($imapflags = null);
-
 
     /**
      * Get imapflags
@@ -581,16 +518,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getImapflags();
 
-
     /**
      * Set stamp
      *
      * @param \DateTime $stamp
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setStamp($stamp = null);
-
 
     /**
      * Get stamp
@@ -599,16 +534,14 @@ interface VoicemailInterface extends EntityInterface
      */
     public function getStamp();
 
-
     /**
      * Set user
      *
      * @param \Ivoz\Domain\Model\User\UserInterface $user
      *
-     * @return VoicemailInterface
+     * @return self
      */
     public function setUser(\Ivoz\Domain\Model\User\UserInterface $user = null);
-
 
     /**
      * Get user
@@ -616,8 +549,6 @@ interface VoicemailInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\User\UserInterface
      */
     public function getUser();
-
-
 
 }
 

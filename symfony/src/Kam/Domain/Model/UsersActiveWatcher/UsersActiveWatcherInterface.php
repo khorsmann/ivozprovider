@@ -11,10 +11,9 @@ interface UsersActiveWatcherInterface extends EntityInterface
      *
      * @param string $presentityUri
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setPresentityUri($presentityUri);
-
 
     /**
      * Get presentityUri
@@ -23,16 +22,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getPresentityUri();
 
-
     /**
      * Set watcherUsername
      *
      * @param string $watcherUsername
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setWatcherUsername($watcherUsername);
-
 
     /**
      * Get watcherUsername
@@ -41,16 +38,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getWatcherUsername();
 
-
     /**
      * Set watcherDomain
      *
      * @param string $watcherDomain
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setWatcherDomain($watcherDomain);
-
 
     /**
      * Get watcherDomain
@@ -59,16 +54,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getWatcherDomain();
 
-
     /**
      * Set toUser
      *
      * @param string $toUser
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setToUser($toUser);
-
 
     /**
      * Get toUser
@@ -77,16 +70,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getToUser();
 
-
     /**
      * Set toDomain
      *
      * @param string $toDomain
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setToDomain($toDomain);
-
 
     /**
      * Get toDomain
@@ -95,16 +86,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getToDomain();
 
-
     /**
      * Set event
      *
      * @param string $event
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setEvent($event);
-
 
     /**
      * Get event
@@ -113,16 +102,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getEvent();
 
-
     /**
      * Set eventId
      *
      * @param string $eventId
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setEventId($eventId = null);
-
 
     /**
      * Get eventId
@@ -131,16 +118,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getEventId();
 
-
     /**
      * Set toTag
      *
      * @param string $toTag
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setToTag($toTag);
-
 
     /**
      * Get toTag
@@ -149,16 +134,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getToTag();
 
-
     /**
      * Set fromTag
      *
      * @param string $fromTag
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setFromTag($fromTag);
-
 
     /**
      * Get fromTag
@@ -167,16 +150,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getFromTag();
 
-
     /**
      * Set callid
      *
      * @param string $callid
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setCallid($callid);
-
 
     /**
      * Get callid
@@ -185,16 +166,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getCallid();
 
-
     /**
      * Set localCseq
      *
      * @param integer $localCseq
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setLocalCseq($localCseq);
-
 
     /**
      * Get localCseq
@@ -203,16 +182,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getLocalCseq();
 
-
     /**
      * Set remoteCseq
      *
      * @param integer $remoteCseq
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setRemoteCseq($remoteCseq);
-
 
     /**
      * Get remoteCseq
@@ -221,16 +198,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getRemoteCseq();
 
-
     /**
      * Set contact
      *
      * @param string $contact
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setContact($contact);
-
 
     /**
      * Get contact
@@ -239,16 +214,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getContact();
 
-
     /**
      * Set recordRoute
      *
      * @param string $recordRoute
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setRecordRoute($recordRoute = null);
-
 
     /**
      * Get recordRoute
@@ -257,16 +230,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getRecordRoute();
 
-
     /**
      * Set expires
      *
      * @param integer $expires
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setExpires($expires);
-
 
     /**
      * Get expires
@@ -275,16 +246,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getExpires();
 
-
     /**
      * Set status
      *
      * @param integer $status
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setStatus($status);
-
 
     /**
      * Get status
@@ -293,16 +262,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getStatus();
 
-
     /**
      * Set reason
      *
      * @param string $reason
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setReason($reason);
-
 
     /**
      * Get reason
@@ -311,16 +278,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getReason();
 
-
     /**
      * Set version
      *
      * @param integer $version
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setVersion($version);
-
 
     /**
      * Get version
@@ -329,16 +294,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getVersion();
 
-
     /**
      * Set socketInfo
      *
      * @param string $socketInfo
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setSocketInfo($socketInfo);
-
 
     /**
      * Get socketInfo
@@ -347,16 +310,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getSocketInfo();
 
-
     /**
      * Set localContact
      *
      * @param string $localContact
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setLocalContact($localContact);
-
 
     /**
      * Get localContact
@@ -365,16 +326,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getLocalContact();
 
-
     /**
      * Set fromUser
      *
      * @param string $fromUser
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setFromUser($fromUser);
-
 
     /**
      * Get fromUser
@@ -383,16 +342,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getFromUser();
 
-
     /**
      * Set fromDomain
      *
      * @param string $fromDomain
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setFromDomain($fromDomain);
-
 
     /**
      * Get fromDomain
@@ -401,16 +358,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getFromDomain();
 
-
     /**
      * Set updated
      *
      * @param integer $updated
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setUpdated($updated);
-
 
     /**
      * Get updated
@@ -419,16 +374,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getUpdated();
 
-
     /**
      * Set updatedWinfo
      *
      * @param integer $updatedWinfo
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setUpdatedWinfo($updatedWinfo);
-
 
     /**
      * Get updatedWinfo
@@ -437,16 +390,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getUpdatedWinfo();
 
-
     /**
      * Set flags
      *
      * @param integer $flags
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setFlags($flags);
-
 
     /**
      * Get flags
@@ -455,16 +406,14 @@ interface UsersActiveWatcherInterface extends EntityInterface
      */
     public function getFlags();
 
-
     /**
      * Set userAgent
      *
      * @param string $userAgent
      *
-     * @return UsersActiveWatcherInterface
+     * @return self
      */
     public function setUserAgent($userAgent);
-
 
     /**
      * Get userAgent
@@ -472,8 +421,6 @@ interface UsersActiveWatcherInterface extends EntityInterface
      * @return string
      */
     public function getUserAgent();
-
-
 
 }
 

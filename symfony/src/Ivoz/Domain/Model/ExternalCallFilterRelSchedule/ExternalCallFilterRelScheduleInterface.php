@@ -11,10 +11,9 @@ interface ExternalCallFilterRelScheduleInterface extends EntityInterface
      *
      * @param \Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface $filter
      *
-     * @return ExternalCallFilterRelScheduleInterface
+     * @return self
      */
     public function setFilter(\Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface $filter = null);
-
 
     /**
      * Get filter
@@ -23,16 +22,14 @@ interface ExternalCallFilterRelScheduleInterface extends EntityInterface
      */
     public function getFilter();
 
-
     /**
      * Set schedule
      *
      * @param \Ivoz\Domain\Model\Schedule\ScheduleInterface $schedule
      *
-     * @return ExternalCallFilterRelScheduleInterface
+     * @return self
      */
     public function setSchedule(\Ivoz\Domain\Model\Schedule\ScheduleInterface $schedule);
-
 
     /**
      * Get schedule
@@ -40,8 +37,6 @@ interface ExternalCallFilterRelScheduleInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Schedule\ScheduleInterface
      */
     public function getSchedule();
-
-
 
 }
 

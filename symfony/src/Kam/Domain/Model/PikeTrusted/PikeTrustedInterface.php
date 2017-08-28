@@ -11,10 +11,9 @@ interface PikeTrustedInterface extends EntityInterface
      *
      * @param string $srcIp
      *
-     * @return PikeTrustedInterface
+     * @return self
      */
     public function setSrcIp($srcIp = null);
-
 
     /**
      * Get srcIp
@@ -23,16 +22,14 @@ interface PikeTrustedInterface extends EntityInterface
      */
     public function getSrcIp();
 
-
     /**
      * Set proto
      *
      * @param string $proto
      *
-     * @return PikeTrustedInterface
+     * @return self
      */
     public function setProto($proto = null);
-
 
     /**
      * Get proto
@@ -41,16 +38,14 @@ interface PikeTrustedInterface extends EntityInterface
      */
     public function getProto();
 
-
     /**
      * Set fromPattern
      *
      * @param string $fromPattern
      *
-     * @return PikeTrustedInterface
+     * @return self
      */
     public function setFromPattern($fromPattern = null);
-
 
     /**
      * Get fromPattern
@@ -59,16 +54,14 @@ interface PikeTrustedInterface extends EntityInterface
      */
     public function getFromPattern();
 
-
     /**
      * Set ruriPattern
      *
      * @param string $ruriPattern
      *
-     * @return PikeTrustedInterface
+     * @return self
      */
     public function setRuriPattern($ruriPattern = null);
-
 
     /**
      * Get ruriPattern
@@ -77,16 +70,14 @@ interface PikeTrustedInterface extends EntityInterface
      */
     public function getRuriPattern();
 
-
     /**
      * Set tag
      *
      * @param string $tag
      *
-     * @return PikeTrustedInterface
+     * @return self
      */
     public function setTag($tag = null);
-
 
     /**
      * Get tag
@@ -95,16 +86,14 @@ interface PikeTrustedInterface extends EntityInterface
      */
     public function getTag();
 
-
     /**
      * Set priority
      *
      * @param integer $priority
      *
-     * @return PikeTrustedInterface
+     * @return self
      */
     public function setPriority($priority);
-
 
     /**
      * Get priority
@@ -112,8 +101,6 @@ interface PikeTrustedInterface extends EntityInterface
      * @return integer
      */
     public function getPriority();
-
-
 
 }
 

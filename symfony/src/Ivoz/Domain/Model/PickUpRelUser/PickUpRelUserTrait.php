@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\PickUpRelUser;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * PickUpRelUserTrait
+ * @codeCoverageIgnore
  */
 trait PickUpRelUserTrait
 {

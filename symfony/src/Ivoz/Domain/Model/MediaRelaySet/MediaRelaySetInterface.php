@@ -11,10 +11,9 @@ interface MediaRelaySetInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return MediaRelaySetInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface MediaRelaySetInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set description
      *
      * @param string $description
      *
-     * @return MediaRelaySetInterface
+     * @return self
      */
     public function setDescription($description = null);
-
 
     /**
      * Get description
@@ -40,8 +37,6 @@ interface MediaRelaySetInterface extends EntityInterface
      * @return string
      */
     public function getDescription();
-
-
 
 }
 

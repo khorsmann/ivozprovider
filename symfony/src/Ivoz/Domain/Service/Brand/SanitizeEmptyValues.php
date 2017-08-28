@@ -2,18 +2,16 @@
 namespace Ivoz\Domain\Service\Brand;
 
 use Core\Domain\Service\EntityPersisterInterface;
-use Core\Domain\Service\LifecycleEventHandlerInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use Ivoz\Domain\Model\Brand\Brand;
 use Ivoz\Domain\Model\Brand\BrandDTO;
-use Core\Domain\Model\EntityInterface;
+use Ivoz\Domain\Model\Brand\BrandInterface;
 
 /**
  * Class SanitizeEmptyValues
  * @package Ivoz\Domain\Service\Brand
- * @lifecycle brand.pre_persist
+ * @lifecycle pre_persist
  */
-class SanitizeEmptyValues implements LifecycleEventHandlerInterface
+class SanitizeEmptyValues implements BrandLifecycleEventHandlerInterface
 {
     /**
      * @var EntityManagerInterface
@@ -34,9 +32,9 @@ class SanitizeEmptyValues implements LifecycleEventHandlerInterface
     }
 
     /**
-     * @param Brand $entity
+     * @param BrandInterface $entity
      */
-    public function execute(EntityInterface $entity)
+    public function execute(BrandInterface $entity)
     {
         $alreadyPersisted = $this->em->contains($entity);
         if ($alreadyPersisted) {
@@ -49,6 +47,9 @@ class SanitizeEmptyValues implements LifecycleEventHandlerInterface
         $dto = $entity->toDTO();
         // Create sane defaults for hidden fields
 
+        /**
+         * @todo
+         */
 //        if (!$model->hasChange('nif')) $model->setNif('12345678-Z');
 //        if (!$model->hasChange('postalAddress')) $model->setPostalAddress('Postal address');
 //        if (!$model->hasChange('postalCode')) $model->setPostalCode('ZIP');

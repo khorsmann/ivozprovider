@@ -11,10 +11,9 @@ interface FeaturesRelCompanyInterface extends EntityInterface
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return FeaturesRelCompanyInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company);
-
 
     /**
      * Get company
@@ -23,16 +22,14 @@ interface FeaturesRelCompanyInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set feature
      *
      * @param \Ivoz\Domain\Model\Feature\FeatureInterface $feature
      *
-     * @return FeaturesRelCompanyInterface
+     * @return self
      */
     public function setFeature(\Ivoz\Domain\Model\Feature\FeatureInterface $feature = null);
-
 
     /**
      * Get feature
@@ -40,8 +37,6 @@ interface FeaturesRelCompanyInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Feature\FeatureInterface
      */
     public function getFeature();
-
-
 
 }
 

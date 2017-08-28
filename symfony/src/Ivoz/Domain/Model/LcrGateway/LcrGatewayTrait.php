@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\LcrGateway;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * LcrGatewayTrait
+ * @codeCoverageIgnore
  */
 trait LcrGatewayTrait
 {

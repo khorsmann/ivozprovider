@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\PricingPlan;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * PricingPlanTrait
+ * @codeCoverageIgnore
  */
 trait PricingPlanTrait
 {

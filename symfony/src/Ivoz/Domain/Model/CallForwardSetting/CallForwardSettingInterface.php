@@ -6,15 +6,16 @@ use Core\Domain\Model\EntityInterface;
 
 interface CallForwardSettingInterface extends EntityInterface
 {
+    public function toArrayPortal();
+
     /**
      * Set callTypeFilter
      *
      * @param string $callTypeFilter
      *
-     * @return CallForwardSettingInterface
+     * @return self
      */
     public function setCallTypeFilter($callTypeFilter);
-
 
     /**
      * Get callTypeFilter
@@ -23,16 +24,14 @@ interface CallForwardSettingInterface extends EntityInterface
      */
     public function getCallTypeFilter();
 
-
     /**
      * Set callForwardType
      *
      * @param string $callForwardType
      *
-     * @return CallForwardSettingInterface
+     * @return self
      */
     public function setCallForwardType($callForwardType);
-
 
     /**
      * Get callForwardType
@@ -41,16 +40,14 @@ interface CallForwardSettingInterface extends EntityInterface
      */
     public function getCallForwardType();
 
-
     /**
      * Set targetType
      *
      * @param string $targetType
      *
-     * @return CallForwardSettingInterface
+     * @return self
      */
     public function setTargetType($targetType);
-
 
     /**
      * Get targetType
@@ -59,16 +56,14 @@ interface CallForwardSettingInterface extends EntityInterface
      */
     public function getTargetType();
 
-
     /**
      * Set numberValue
      *
      * @param string $numberValue
      *
-     * @return CallForwardSettingInterface
+     * @return self
      */
     public function setNumberValue($numberValue = null);
-
 
     /**
      * Get numberValue
@@ -77,16 +72,14 @@ interface CallForwardSettingInterface extends EntityInterface
      */
     public function getNumberValue();
 
-
     /**
      * Set noAnswerTimeout
      *
      * @param integer $noAnswerTimeout
      *
-     * @return CallForwardSettingInterface
+     * @return self
      */
     public function setNoAnswerTimeout($noAnswerTimeout);
-
 
     /**
      * Get noAnswerTimeout
@@ -95,16 +88,14 @@ interface CallForwardSettingInterface extends EntityInterface
      */
     public function getNoAnswerTimeout();
 
-
     /**
      * Set user
      *
      * @param \Ivoz\Domain\Model\User\UserInterface $user
      *
-     * @return CallForwardSettingInterface
+     * @return self
      */
     public function setUser(\Ivoz\Domain\Model\User\UserInterface $user);
-
 
     /**
      * Get user
@@ -113,16 +104,14 @@ interface CallForwardSettingInterface extends EntityInterface
      */
     public function getUser();
 
-
     /**
      * Set extension
      *
      * @param \Ivoz\Domain\Model\Extension\ExtensionInterface $extension
      *
-     * @return CallForwardSettingInterface
+     * @return self
      */
     public function setExtension(\Ivoz\Domain\Model\Extension\ExtensionInterface $extension = null);
-
 
     /**
      * Get extension
@@ -131,16 +120,14 @@ interface CallForwardSettingInterface extends EntityInterface
      */
     public function getExtension();
 
-
     /**
      * Set voiceMailUser
      *
      * @param \Ivoz\Domain\Model\User\UserInterface $voiceMailUser
      *
-     * @return CallForwardSettingInterface
+     * @return self
      */
     public function setVoiceMailUser(\Ivoz\Domain\Model\User\UserInterface $voiceMailUser = null);
-
 
     /**
      * Get voiceMailUser
@@ -148,8 +135,6 @@ interface CallForwardSettingInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\User\UserInterface
      */
     public function getVoiceMailUser();
-
-
 
 }
 

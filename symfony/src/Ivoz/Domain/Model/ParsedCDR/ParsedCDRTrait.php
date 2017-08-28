@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\ParsedCDR;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * ParsedCDRTrait
+ * @codeCoverageIgnore
  */
 trait ParsedCDRTrait
 {

@@ -1,31 +1,5 @@
 @@ MAPPERS @@
 
-ApplicationServers
-BrandServices
-Brands
-CallForwardSettings
-Companies
-CompanyAdmins
-ConferenceRooms
-DDIs
-Domains
-Extensions
-ExternalCallFilters
-Faxes
-FaxesInOut
-Friends
-GenericMusicOnHold
-HuntGroupCallForwardSettings
-HuntGroups
-IVRCommon
-IVRCustom
-IVRCustomEntries
-InvoiceTemplates
-Invoices
-AccCdrs
-PikeTrusted
-Rtpproxy
-TrunksDialplan
 TrunksUacreg
 UsersAddress
 Locutions

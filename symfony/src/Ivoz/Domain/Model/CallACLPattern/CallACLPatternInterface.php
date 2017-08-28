@@ -11,10 +11,9 @@ interface CallACLPatternInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return CallACLPatternInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface CallACLPatternInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set regExp
      *
      * @param string $regExp
      *
-     * @return CallACLPatternInterface
+     * @return self
      */
     public function setRegExp($regExp);
-
 
     /**
      * Get regExp
@@ -41,16 +38,14 @@ interface CallACLPatternInterface extends EntityInterface
      */
     public function getRegExp();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return CallACLPatternInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company = null);
-
 
     /**
      * Get company
@@ -58,8 +53,6 @@ interface CallACLPatternInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Company\CompanyInterface
      */
     public function getCompany();
-
-
 
 }
 

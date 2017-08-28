@@ -1,19 +1,19 @@
 <?php
+
 namespace Ivoz\Domain\Service\User;
 
 use Core\Domain\Service\EntityPersisterInterface;
-use Core\Domain\Service\LifecycleEventHandlerInterface;
-use Core\Domain\Model\EntityInterface;
-use Ivoz\Domain\Model\Extension\Extension;
+use Ivoz\Domain\Model\Extension\ExtensionInterface;
 use Ivoz\Domain\Model\User\User;
 use Ivoz\Domain\Model\User\UserRepository;
+use Ivoz\Domain\Service\Extension\ExtensionLifecycleEventHandlerInterface;
 
 /**
  * Class SanitizeExtension
  * @package Ivoz\Domain\Service\User
- * @lifecycle extension.pre_persist
+ * @lifecycle pre_persist
  */
-class UpdateByExtension implements LifecycleEventHandlerInterface
+class UpdateByExtension implements ExtensionLifecycleEventHandlerInterface
 {
     /**
      * @var UserRepository
@@ -34,10 +34,9 @@ class UpdateByExtension implements LifecycleEventHandlerInterface
     }
 
     /**
-     * @param Extension $entity
      * @throws \Exception
      */
-    public function execute(EntityInterface $entity)
+    public function execute(ExtensionInterface $entity)
     {
         $changedUserId = $entity->hasChanged('userId');
 

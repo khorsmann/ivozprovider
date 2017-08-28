@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\CompanyService;
 
 use Assert\Assertion;
@@ -6,6 +7,7 @@ use Core\Application\DataTransferObjectInterface;
 
 /**
  * CompanyServiceAbstract
+ * @codeCoverageIgnore
  */
 abstract class CompanyServiceAbstract
 {

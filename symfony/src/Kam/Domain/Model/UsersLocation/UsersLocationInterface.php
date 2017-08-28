@@ -11,10 +11,9 @@ interface UsersLocationInterface extends EntityInterface
      *
      * @param string $ruid
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setRuid($ruid);
-
 
     /**
      * Get ruid
@@ -23,16 +22,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getRuid();
 
-
     /**
      * Set username
      *
      * @param string $username
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setUsername($username);
-
 
     /**
      * Get username
@@ -41,16 +38,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getUsername();
 
-
     /**
      * Set domain
      *
      * @param string $domain
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setDomain($domain = null);
-
 
     /**
      * Get domain
@@ -59,16 +54,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getDomain();
 
-
     /**
      * Set contact
      *
      * @param string $contact
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setContact($contact);
-
 
     /**
      * Get contact
@@ -77,16 +70,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getContact();
 
-
     /**
      * Set received
      *
      * @param string $received
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setReceived($received = null);
-
 
     /**
      * Get received
@@ -95,16 +86,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getReceived();
 
-
     /**
      * Set path
      *
      * @param string $path
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setPath($path = null);
-
 
     /**
      * Get path
@@ -113,16 +102,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getPath();
 
-
     /**
      * Set expires
      *
      * @param \DateTime $expires
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setExpires($expires);
-
 
     /**
      * Get expires
@@ -131,16 +118,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getExpires();
 
-
     /**
      * Set q
      *
      * @param float $q
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setQ($q);
-
 
     /**
      * Get q
@@ -149,16 +134,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getQ();
 
-
     /**
      * Set callid
      *
      * @param string $callid
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setCallid($callid);
-
 
     /**
      * Get callid
@@ -167,16 +150,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getCallid();
 
-
     /**
      * Set cseq
      *
      * @param integer $cseq
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setCseq($cseq);
-
 
     /**
      * Get cseq
@@ -185,16 +166,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getCseq();
 
-
     /**
      * Set lastModified
      *
      * @param \DateTime $lastModified
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setLastModified($lastModified);
-
 
     /**
      * Get lastModified
@@ -203,16 +182,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getLastModified();
 
-
     /**
      * Set flags
      *
      * @param integer $flags
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setFlags($flags);
-
 
     /**
      * Get flags
@@ -221,16 +198,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getFlags();
 
-
     /**
      * Set cflags
      *
      * @param integer $cflags
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setCflags($cflags);
-
 
     /**
      * Get cflags
@@ -239,16 +214,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getCflags();
 
-
     /**
      * Set userAgent
      *
      * @param string $userAgent
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setUserAgent($userAgent);
-
 
     /**
      * Get userAgent
@@ -257,16 +230,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getUserAgent();
 
-
     /**
      * Set socket
      *
      * @param string $socket
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setSocket($socket = null);
-
 
     /**
      * Get socket
@@ -275,16 +246,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getSocket();
 
-
     /**
      * Set methods
      *
      * @param integer $methods
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setMethods($methods = null);
-
 
     /**
      * Get methods
@@ -293,16 +262,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getMethods();
 
-
     /**
      * Set instance
      *
      * @param string $instance
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setInstance($instance = null);
-
 
     /**
      * Get instance
@@ -311,16 +278,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getInstance();
 
-
     /**
      * Set regId
      *
      * @param integer $regId
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setRegId($regId);
-
 
     /**
      * Get regId
@@ -329,16 +294,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getRegId();
 
-
     /**
      * Set serverId
      *
      * @param integer $serverId
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setServerId($serverId);
-
 
     /**
      * Get serverId
@@ -347,16 +310,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getServerId();
 
-
     /**
      * Set connectionId
      *
      * @param integer $connectionId
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setConnectionId($connectionId);
-
 
     /**
      * Get connectionId
@@ -365,16 +326,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getConnectionId();
 
-
     /**
      * Set keepalive
      *
      * @param integer $keepalive
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setKeepalive($keepalive);
-
 
     /**
      * Get keepalive
@@ -383,16 +342,14 @@ interface UsersLocationInterface extends EntityInterface
      */
     public function getKeepalive();
 
-
     /**
      * Set partition
      *
      * @param integer $partition
      *
-     * @return UsersLocationInterface
+     * @return self
      */
     public function setPartition($partition);
-
 
     /**
      * Get partition
@@ -400,8 +357,6 @@ interface UsersLocationInterface extends EntityInterface
      * @return integer
      */
     public function getPartition();
-
-
 
 }
 

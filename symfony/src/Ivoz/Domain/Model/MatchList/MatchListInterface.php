@@ -11,10 +11,9 @@ interface MatchListInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return MatchListInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface MatchListInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return MatchListInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company);
-
 
     /**
      * Get company
@@ -40,8 +37,6 @@ interface MatchListInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Company\CompanyInterface
      */
     public function getCompany();
-
-
 
 }
 

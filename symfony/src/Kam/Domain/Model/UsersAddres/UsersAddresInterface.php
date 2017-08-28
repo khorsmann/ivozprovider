@@ -11,10 +11,9 @@ interface UsersAddresInterface extends EntityInterface
      *
      * @param string $sourceAddress
      *
-     * @return UsersAddresInterface
+     * @return self
      */
     public function setSourceAddress($sourceAddress);
-
 
     /**
      * Get sourceAddress
@@ -23,16 +22,14 @@ interface UsersAddresInterface extends EntityInterface
      */
     public function getSourceAddress();
 
-
     /**
      * Set ipAddr
      *
      * @param string $ipAddr
      *
-     * @return UsersAddresInterface
+     * @return self
      */
     public function setIpAddr($ipAddr = null);
-
 
     /**
      * Get ipAddr
@@ -41,16 +38,14 @@ interface UsersAddresInterface extends EntityInterface
      */
     public function getIpAddr();
 
-
     /**
      * Set mask
      *
      * @param integer $mask
      *
-     * @return UsersAddresInterface
+     * @return self
      */
     public function setMask($mask);
-
 
     /**
      * Get mask
@@ -59,16 +54,14 @@ interface UsersAddresInterface extends EntityInterface
      */
     public function getMask();
 
-
     /**
      * Set port
      *
      * @param integer $port
      *
-     * @return UsersAddresInterface
+     * @return self
      */
     public function setPort($port);
-
 
     /**
      * Get port
@@ -77,16 +70,14 @@ interface UsersAddresInterface extends EntityInterface
      */
     public function getPort();
 
-
     /**
      * Set tag
      *
      * @param string $tag
      *
-     * @return UsersAddresInterface
+     * @return self
      */
     public function setTag($tag = null);
-
 
     /**
      * Get tag
@@ -95,16 +86,14 @@ interface UsersAddresInterface extends EntityInterface
      */
     public function getTag();
 
-
     /**
      * Set description
      *
      * @param string $description
      *
-     * @return UsersAddresInterface
+     * @return self
      */
     public function setDescription($description = null);
-
 
     /**
      * Get description
@@ -113,16 +102,14 @@ interface UsersAddresInterface extends EntityInterface
      */
     public function getDescription();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return UsersAddresInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company);
-
 
     /**
      * Get company
@@ -130,8 +117,6 @@ interface UsersAddresInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Company\CompanyInterface
      */
     public function getCompany();
-
-
 
 }
 

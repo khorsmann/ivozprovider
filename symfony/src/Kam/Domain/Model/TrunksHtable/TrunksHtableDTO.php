@@ -1,4 +1,5 @@
 <?php
+
 namespace Kam\Domain\Model\TrunksHtable;
 
 use Core\Application\DataTransferObjectInterface;

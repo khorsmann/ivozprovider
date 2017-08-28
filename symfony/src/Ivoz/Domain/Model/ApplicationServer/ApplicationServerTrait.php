@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\ApplicationServer;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * ApplicationServerTrait
+ * @codeCoverageIgnore
  */
 trait ApplicationServerTrait
 {

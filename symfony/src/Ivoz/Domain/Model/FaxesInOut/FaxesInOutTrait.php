@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\FaxesInOut;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * FaxesInOutTrait
+ * @codeCoverageIgnore
  */
 trait FaxesInOutTrait
 {

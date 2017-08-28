@@ -1,10 +1,12 @@
 <?php
+
 namespace Kam\Domain\Model\UsersMissedCall;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * UsersMissedCallTrait
+ * @codeCoverageIgnore
  */
 trait UsersMissedCallTrait
 {

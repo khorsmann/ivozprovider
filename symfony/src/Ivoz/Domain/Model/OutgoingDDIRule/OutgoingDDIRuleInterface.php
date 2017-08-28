@@ -11,10 +11,9 @@ interface OutgoingDDIRuleInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return OutgoingDDIRuleInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface OutgoingDDIRuleInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set defaultAction
      *
      * @param string $defaultAction
      *
-     * @return OutgoingDDIRuleInterface
+     * @return self
      */
     public function setDefaultAction($defaultAction);
-
 
     /**
      * Get defaultAction
@@ -41,16 +38,14 @@ interface OutgoingDDIRuleInterface extends EntityInterface
      */
     public function getDefaultAction();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return OutgoingDDIRuleInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company = null);
-
 
     /**
      * Get company
@@ -59,16 +54,14 @@ interface OutgoingDDIRuleInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set forcedDDI
      *
      * @param \Ivoz\Domain\Model\DDI\DDIInterface $forcedDDI
      *
-     * @return OutgoingDDIRuleInterface
+     * @return self
      */
     public function setForcedDDI(\Ivoz\Domain\Model\DDI\DDIInterface $forcedDDI = null);
-
 
     /**
      * Get forcedDDI
@@ -76,8 +69,6 @@ interface OutgoingDDIRuleInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\DDI\DDIInterface
      */
     public function getForcedDDI();
-
-
 
 }
 

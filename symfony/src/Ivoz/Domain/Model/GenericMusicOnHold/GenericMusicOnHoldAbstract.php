@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\GenericMusicOnHold;
 
 use Assert\Assertion;
@@ -6,6 +7,7 @@ use Core\Application\DataTransferObjectInterface;
 
 /**
  * GenericMusicOnHoldAbstract
+ * @codeCoverageIgnore
  */
 abstract class GenericMusicOnHoldAbstract
 {

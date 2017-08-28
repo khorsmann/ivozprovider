@@ -11,10 +11,9 @@ interface ExternalCallFilterBlackListInterface extends EntityInterface
      *
      * @param \Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface $filter
      *
-     * @return ExternalCallFilterBlackListInterface
+     * @return self
      */
     public function setFilter(\Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface $filter = null);
-
 
     /**
      * Get filter
@@ -23,16 +22,14 @@ interface ExternalCallFilterBlackListInterface extends EntityInterface
      */
     public function getFilter();
 
-
     /**
      * Set matchList
      *
      * @param \Ivoz\Domain\Model\MatchList\MatchListInterface $matchList
      *
-     * @return ExternalCallFilterBlackListInterface
+     * @return self
      */
     public function setMatchList(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchList);
-
 
     /**
      * Get matchList
@@ -40,8 +37,6 @@ interface ExternalCallFilterBlackListInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\MatchList\MatchListInterface
      */
     public function getMatchList();
-
-
 
 }
 

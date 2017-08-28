@@ -11,10 +11,9 @@ interface LanguageInterface extends EntityInterface
      *
      * @param string $iden
      *
-     * @return LanguageInterface
+     * @return self
      */
     public function setIden($iden);
-
 
     /**
      * Get iden
@@ -23,16 +22,14 @@ interface LanguageInterface extends EntityInterface
      */
     public function getIden();
 
-
     /**
      * Set name
      *
      * @param Name $name
      *
-     * @return LanguageInterface
+     * @return self
      */
-    public function setName(Name $name);
-
+    public function setName(\Ivoz\Domain\Model\Language\Name $name);
 
     /**
      * Get name

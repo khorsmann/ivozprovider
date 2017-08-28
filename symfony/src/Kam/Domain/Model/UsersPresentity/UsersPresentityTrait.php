@@ -1,10 +1,12 @@
 <?php
+
 namespace Kam\Domain\Model\UsersPresentity;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * UsersPresentityTrait
+ * @codeCoverageIgnore
  */
 trait UsersPresentityTrait
 {

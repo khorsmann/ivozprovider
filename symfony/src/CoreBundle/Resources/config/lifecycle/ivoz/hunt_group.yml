@@ -4,6 +4,15 @@ services:
     public: false
 
   ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\HuntGroup\HuntGroupLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.hunt_group.service_collection:
+    '@Ivoz\Domain\Service\HuntGroup\HuntGroupLifecycleServiceCollection'
+
+  ##################################
   ## pre_persist
   ##################################
   Ivoz\Domain\Service\HuntGroup\SanitizeValues:

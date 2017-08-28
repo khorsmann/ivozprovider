@@ -11,10 +11,9 @@ interface PickUpGroupInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return PickUpGroupInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface PickUpGroupInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return PickUpGroupInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company);
-
 
     /**
      * Get company
@@ -40,8 +37,6 @@ interface PickUpGroupInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Company\CompanyInterface
      */
     public function getCompany();
-
-
 
 }
 

@@ -1,10 +1,9 @@
 <?php
 namespace Kam\Domain\Service\UsersDomainAttr;
 
-use Core\Domain\Model\EntityInterface;
-use Core\Domain\Service\LifecycleEventHandlerInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use Ivoz\Domain\Model\Brand\Brand;
+use Ivoz\Domain\Model\Brand\BrandInterface;
+use Ivoz\Domain\Service\Brand\BrandLifecycleEventHandlerInterface;
 use Kam\Domain\Model\UsersDomainAttr\UsersDomainAttrRepository;
 use Kam\Domain\Model\UsersDomainAttr\UsersDomainAttr;
 use Kam\Domain\Model\UsersDomainAttr\UsersDomainAttrDTO;
@@ -12,9 +11,9 @@ use Kam\Domain\Model\UsersDomainAttr\UsersDomainAttrDTO;
 /**
  * Class UpdateByBrand
  * @package Kam\Domain\Service\UsersDomainAttr
- * @lifecycle brand.post_persist
+ * @lifecycle post_persist
  */
-class UpdateByBrand implements LifecycleEventHandlerInterface
+class UpdateByBrand implements BrandLifecycleEventHandlerInterface
 {
     /**
      * @var EntityManagerInterface
@@ -35,10 +34,7 @@ class UpdateByBrand implements LifecycleEventHandlerInterface
         $this->usersDomainAttrRepository = $usersDomainAttrRepository;
     }
 
-    /**
-     * @param Brand $entity
-     */
-    public function execute(EntityInterface $entity)
+    public function execute(BrandInterface $entity)
     {
         $domainName = $entity->getDomainUsers();
 

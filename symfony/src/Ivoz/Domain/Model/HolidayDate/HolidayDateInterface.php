@@ -11,10 +11,9 @@ interface HolidayDateInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return HolidayDateInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface HolidayDateInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set eventDate
      *
      * @param \DateTime $eventDate
      *
-     * @return HolidayDateInterface
+     * @return self
      */
     public function setEventDate($eventDate);
-
 
     /**
      * Get eventDate
@@ -41,16 +38,14 @@ interface HolidayDateInterface extends EntityInterface
      */
     public function getEventDate();
 
-
     /**
      * Set calendar
      *
      * @param \Ivoz\Domain\Model\Calendar\CalendarInterface $calendar
      *
-     * @return HolidayDateInterface
+     * @return self
      */
     public function setCalendar(\Ivoz\Domain\Model\Calendar\CalendarInterface $calendar = null);
-
 
     /**
      * Get calendar
@@ -59,16 +54,14 @@ interface HolidayDateInterface extends EntityInterface
      */
     public function getCalendar();
 
-
     /**
      * Set locution
      *
      * @param \Ivoz\Domain\Model\Locution\LocutionInterface $locution
      *
-     * @return HolidayDateInterface
+     * @return self
      */
     public function setLocution(\Ivoz\Domain\Model\Locution\LocutionInterface $locution = null);
-
 
     /**
      * Get locution
@@ -76,8 +69,6 @@ interface HolidayDateInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Locution\LocutionInterface
      */
     public function getLocution();
-
-
 
 }
 

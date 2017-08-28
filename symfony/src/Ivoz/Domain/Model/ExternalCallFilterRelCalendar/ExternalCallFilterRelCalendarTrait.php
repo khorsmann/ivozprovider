@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\ExternalCallFilterRelCalendar;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * ExternalCallFilterRelCalendarTrait
+ * @codeCoverageIgnore
  */
 trait ExternalCallFilterRelCalendarTrait
 {

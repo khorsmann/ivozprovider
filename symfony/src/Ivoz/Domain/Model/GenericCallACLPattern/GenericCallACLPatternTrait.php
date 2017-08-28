@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\GenericCallACLPattern;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * GenericCallACLPatternTrait
+ * @codeCoverageIgnore
  */
 trait GenericCallACLPatternTrait
 {

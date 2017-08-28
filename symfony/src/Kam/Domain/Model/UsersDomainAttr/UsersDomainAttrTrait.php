@@ -1,10 +1,12 @@
 <?php
+
 namespace Kam\Domain\Model\UsersDomainAttr;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * UsersDomainAttrTrait
+ * @codeCoverageIgnore
  */
 trait UsersDomainAttrTrait
 {

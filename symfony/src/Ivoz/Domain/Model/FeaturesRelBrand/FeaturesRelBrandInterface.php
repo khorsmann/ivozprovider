@@ -11,10 +11,9 @@ interface FeaturesRelBrandInterface extends EntityInterface
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return FeaturesRelBrandInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand = null);
-
 
     /**
      * Get brand
@@ -23,16 +22,14 @@ interface FeaturesRelBrandInterface extends EntityInterface
      */
     public function getBrand();
 
-
     /**
      * Set feature
      *
      * @param \Ivoz\Domain\Model\Feature\FeatureInterface $feature
      *
-     * @return FeaturesRelBrandInterface
+     * @return self
      */
     public function setFeature(\Ivoz\Domain\Model\Feature\FeatureInterface $feature);
-
 
     /**
      * Get feature
@@ -40,8 +37,6 @@ interface FeaturesRelBrandInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Feature\FeatureInterface
      */
     public function getFeature();
-
-
 
 }
 

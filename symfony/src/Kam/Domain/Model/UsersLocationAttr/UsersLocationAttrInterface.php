@@ -11,10 +11,9 @@ interface UsersLocationAttrInterface extends EntityInterface
      *
      * @param string $ruid
      *
-     * @return UsersLocationAttrInterface
+     * @return self
      */
     public function setRuid($ruid);
-
 
     /**
      * Get ruid
@@ -23,16 +22,14 @@ interface UsersLocationAttrInterface extends EntityInterface
      */
     public function getRuid();
 
-
     /**
      * Set username
      *
      * @param string $username
      *
-     * @return UsersLocationAttrInterface
+     * @return self
      */
     public function setUsername($username);
-
 
     /**
      * Get username
@@ -41,16 +38,14 @@ interface UsersLocationAttrInterface extends EntityInterface
      */
     public function getUsername();
 
-
     /**
      * Set domain
      *
      * @param string $domain
      *
-     * @return UsersLocationAttrInterface
+     * @return self
      */
     public function setDomain($domain = null);
-
 
     /**
      * Get domain
@@ -59,16 +54,14 @@ interface UsersLocationAttrInterface extends EntityInterface
      */
     public function getDomain();
 
-
     /**
      * Set aname
      *
      * @param string $aname
      *
-     * @return UsersLocationAttrInterface
+     * @return self
      */
     public function setAname($aname);
-
 
     /**
      * Get aname
@@ -77,16 +70,14 @@ interface UsersLocationAttrInterface extends EntityInterface
      */
     public function getAname();
 
-
     /**
      * Set atype
      *
      * @param integer $atype
      *
-     * @return UsersLocationAttrInterface
+     * @return self
      */
     public function setAtype($atype);
-
 
     /**
      * Get atype
@@ -95,16 +86,14 @@ interface UsersLocationAttrInterface extends EntityInterface
      */
     public function getAtype();
 
-
     /**
      * Set avalue
      *
      * @param string $avalue
      *
-     * @return UsersLocationAttrInterface
+     * @return self
      */
     public function setAvalue($avalue);
-
 
     /**
      * Get avalue
@@ -113,16 +102,14 @@ interface UsersLocationAttrInterface extends EntityInterface
      */
     public function getAvalue();
 
-
     /**
      * Set lastModified
      *
      * @param \DateTime $lastModified
      *
-     * @return UsersLocationAttrInterface
+     * @return self
      */
     public function setLastModified($lastModified);
-
 
     /**
      * Get lastModified
@@ -130,8 +117,6 @@ interface UsersLocationAttrInterface extends EntityInterface
      * @return \DateTime
      */
     public function getLastModified();
-
-
 
 }
 

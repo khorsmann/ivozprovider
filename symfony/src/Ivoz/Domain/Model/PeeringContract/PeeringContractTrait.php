@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\PeeringContract;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * PeeringContractTrait
+ * @codeCoverageIgnore
  */
 trait PeeringContractTrait
 {

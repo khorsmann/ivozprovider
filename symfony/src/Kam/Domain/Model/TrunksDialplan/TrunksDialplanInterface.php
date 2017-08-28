@@ -11,10 +11,9 @@ interface TrunksDialplanInterface extends EntityInterface
      *
      * @param integer $dpid
      *
-     * @return TrunksDialplanInterface
+     * @return self
      */
     public function setDpid($dpid);
-
 
     /**
      * Get dpid
@@ -23,16 +22,14 @@ interface TrunksDialplanInterface extends EntityInterface
      */
     public function getDpid();
 
-
     /**
      * Set pr
      *
      * @param integer $pr
      *
-     * @return TrunksDialplanInterface
+     * @return self
      */
     public function setPr($pr);
-
 
     /**
      * Get pr
@@ -41,16 +38,14 @@ interface TrunksDialplanInterface extends EntityInterface
      */
     public function getPr();
 
-
     /**
      * Set matchOp
      *
      * @param integer $matchOp
      *
-     * @return TrunksDialplanInterface
+     * @return self
      */
     public function setMatchOp($matchOp);
-
 
     /**
      * Get matchOp
@@ -59,16 +54,14 @@ interface TrunksDialplanInterface extends EntityInterface
      */
     public function getMatchOp();
 
-
     /**
      * Set matchExp
      *
      * @param string $matchExp
      *
-     * @return TrunksDialplanInterface
+     * @return self
      */
     public function setMatchExp($matchExp);
-
 
     /**
      * Get matchExp
@@ -77,16 +70,14 @@ interface TrunksDialplanInterface extends EntityInterface
      */
     public function getMatchExp();
 
-
     /**
      * Set matchLen
      *
      * @param integer $matchLen
      *
-     * @return TrunksDialplanInterface
+     * @return self
      */
     public function setMatchLen($matchLen);
-
 
     /**
      * Get matchLen
@@ -95,16 +86,14 @@ interface TrunksDialplanInterface extends EntityInterface
      */
     public function getMatchLen();
 
-
     /**
      * Set substExp
      *
      * @param string $substExp
      *
-     * @return TrunksDialplanInterface
+     * @return self
      */
     public function setSubstExp($substExp);
-
 
     /**
      * Get substExp
@@ -113,16 +102,14 @@ interface TrunksDialplanInterface extends EntityInterface
      */
     public function getSubstExp();
 
-
     /**
      * Set replExp
      *
      * @param string $replExp
      *
-     * @return TrunksDialplanInterface
+     * @return self
      */
     public function setReplExp($replExp);
-
 
     /**
      * Get replExp
@@ -131,16 +118,14 @@ interface TrunksDialplanInterface extends EntityInterface
      */
     public function getReplExp();
 
-
     /**
      * Set attrs
      *
      * @param string $attrs
      *
-     * @return TrunksDialplanInterface
+     * @return self
      */
     public function setAttrs($attrs);
-
 
     /**
      * Get attrs
@@ -149,16 +134,14 @@ interface TrunksDialplanInterface extends EntityInterface
      */
     public function getAttrs();
 
-
     /**
      * Set transformationRulesetGroupsTrunk
      *
      * @param \Ivoz\Domain\Model\TransformationRulesetGroupsTrunk\TransformationRulesetGroupsTrunkInterface $transformationRulesetGroupsTrunk
      *
-     * @return TrunksDialplanInterface
+     * @return self
      */
     public function setTransformationRulesetGroupsTrunk(\Ivoz\Domain\Model\TransformationRulesetGroupsTrunk\TransformationRulesetGroupsTrunkInterface $transformationRulesetGroupsTrunk);
-
 
     /**
      * Get transformationRulesetGroupsTrunk
@@ -166,8 +149,6 @@ interface TrunksDialplanInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\TransformationRulesetGroupsTrunk\TransformationRulesetGroupsTrunkInterface
      */
     public function getTransformationRulesetGroupsTrunk();
-
-
 
 }
 

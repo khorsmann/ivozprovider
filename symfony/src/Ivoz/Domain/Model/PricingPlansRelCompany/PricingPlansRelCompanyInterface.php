@@ -11,10 +11,9 @@ interface PricingPlansRelCompanyInterface extends EntityInterface
      *
      * @param \DateTime $validFrom
      *
-     * @return PricingPlansRelCompanyInterface
+     * @return self
      */
     public function setValidFrom($validFrom);
-
 
     /**
      * Get validFrom
@@ -23,16 +22,14 @@ interface PricingPlansRelCompanyInterface extends EntityInterface
      */
     public function getValidFrom();
 
-
     /**
      * Set validTo
      *
      * @param \DateTime $validTo
      *
-     * @return PricingPlansRelCompanyInterface
+     * @return self
      */
     public function setValidTo($validTo);
-
 
     /**
      * Get validTo
@@ -41,16 +38,14 @@ interface PricingPlansRelCompanyInterface extends EntityInterface
      */
     public function getValidTo();
 
-
     /**
      * Set metric
      *
      * @param integer $metric
      *
-     * @return PricingPlansRelCompanyInterface
+     * @return self
      */
     public function setMetric($metric);
-
 
     /**
      * Get metric
@@ -59,16 +54,14 @@ interface PricingPlansRelCompanyInterface extends EntityInterface
      */
     public function getMetric();
 
-
     /**
      * Set pricingPlan
      *
      * @param \Ivoz\Domain\Model\PricingPlan\PricingPlanInterface $pricingPlan
      *
-     * @return PricingPlansRelCompanyInterface
+     * @return self
      */
     public function setPricingPlan(\Ivoz\Domain\Model\PricingPlan\PricingPlanInterface $pricingPlan);
-
 
     /**
      * Get pricingPlan
@@ -77,16 +70,14 @@ interface PricingPlansRelCompanyInterface extends EntityInterface
      */
     public function getPricingPlan();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return PricingPlansRelCompanyInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company = null);
-
 
     /**
      * Get company
@@ -95,16 +86,14 @@ interface PricingPlansRelCompanyInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return PricingPlansRelCompanyInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand);
-
 
     /**
      * Get brand
@@ -112,8 +101,6 @@ interface PricingPlansRelCompanyInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Brand\BrandInterface
      */
     public function getBrand();
-
-
 
 }
 

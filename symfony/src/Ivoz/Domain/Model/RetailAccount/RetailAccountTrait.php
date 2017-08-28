@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\RetailAccount;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * RetailAccountTrait
+ * @codeCoverageIgnore
  */
 trait RetailAccountTrait
 {

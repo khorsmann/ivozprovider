@@ -4,6 +4,15 @@ services:
     public: false
 
   ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\ConferenceRoom\ConferenceRoomLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.conference_room.service_collection:
+    '@Ivoz\Domain\Service\ConferenceRoom\ConferenceRoomLifecycleServiceCollection'
+
+  ##################################
   ## pre_persist
   ##################################
   Ivoz\Domain\Service\ConferenceRoom\SanitizeValues:

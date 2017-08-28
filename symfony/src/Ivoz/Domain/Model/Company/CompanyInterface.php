@@ -7,14 +7,110 @@ use Core\Domain\Model\EntityInterface;
 interface CompanyInterface extends EntityInterface
 {
     /**
+     *
+     * @param string $exten
+     * @return string
+     */
+    public function getTypeCall($exten);
+
+    public function getExtension($exten);
+
+    public function getDDI($ddieE164);
+
+    public function getFriend($exten);
+
+    public function getService($exten);
+
+    public function getTerminal($name);
+
+    public function getCompanyActivePricingPlan($date = null);
+
+    public function getLanguageCode();
+
+    /**
+     * @brief Get musicclass for given company
+     *
+     * If no specific company music on hold is found, brand music will be used.
+     * If no specific brand music  on hold is found, dafault music will be sued.
+     *
+     */
+    public function getMusicClass();
+
+    /**
+     * Ensures valid domain value
+     * @param string $data
+     * @return \IvozProvider\Model\Raw\Companies
+     * @throws \Exception
+     */
+    public function setDomainUsers($domainUsers = null);
+
+    /**
+     * Get associated user domain for this company
+     */
+    public function getDomain();
+
+    /**
+     *
+     * @param string $number
+     * @return bool tarificable
+     */
+    public function isDstTarificable($number);
+
+    /**
+     * Convert a company dialed number to E164 form
+     *
+     * param string $number
+     * return string number in E164
+     */
+    public function preferredToE164($prefnumber);
+
+    /**
+     * Convert a received number to Company prefered format
+     *
+     * @param unknown $number
+     */
+    public function E164ToPreferred($e164number);
+
+    /**
+     * Gets company area code if company country uses area code
+     *
+     * @return string
+     */
+    public function getAreaCodeValue();
+
+    public function removeOutboundPrefix($number);
+
+    public function addOutboundPrefix($number);
+
+    public function getOutgoingRoutings();
+
+    /**
+     * Get the size in bytes used by the recordings on this company
+     */
+    public function getRecordingsDiskUsage();
+
+    /**
+     * Get the size in bytes for disk usage limit on this company
+     */
+    public function getRecordingsLimit();
+
+    public function hasFeature($featureId);
+
+    /**
+     * Get On demand recording code DTMFs
+     */
+    public function getOnDemandRecordDTMFs();
+
+    public function getFeatures();
+
+    /**
      * Set type
      *
      * @param string $type
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setType($type);
-
 
     /**
      * Get type
@@ -23,16 +119,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getType();
 
-
     /**
      * Set name
      *
      * @param string $name
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -41,17 +135,6 @@ interface CompanyInterface extends EntityInterface
      */
     public function getName();
 
-
-    /**
-     * Set domainUsers
-     *
-     * @param string $domainUsers
-     *
-     * @return CompanyInterface
-     */
-    public function setDomainUsers($domainUsers = null);
-
-
     /**
      * Get domainUsers
      *
@@ -59,16 +142,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getDomainUsers();
 
-
     /**
      * Set nif
      *
      * @param string $nif
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setNif($nif);
-
 
     /**
      * Get nif
@@ -77,16 +158,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getNif();
 
-
     /**
      * Set externalMaxCalls
      *
      * @param integer $externalMaxCalls
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setExternalMaxCalls($externalMaxCalls);
-
 
     /**
      * Get externalMaxCalls
@@ -95,16 +174,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getExternalMaxCalls();
 
-
     /**
      * Set postalAddress
      *
      * @param string $postalAddress
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setPostalAddress($postalAddress);
-
 
     /**
      * Get postalAddress
@@ -113,16 +190,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getPostalAddress();
 
-
     /**
      * Set postalCode
      *
      * @param string $postalCode
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setPostalCode($postalCode);
-
 
     /**
      * Get postalCode
@@ -131,16 +206,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getPostalCode();
 
-
     /**
      * Set town
      *
      * @param string $town
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setTown($town);
-
 
     /**
      * Get town
@@ -149,16 +222,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getTown();
 
-
     /**
      * Set province
      *
      * @param string $province
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setProvince($province);
-
 
     /**
      * Get province
@@ -167,16 +238,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getProvince();
 
-
     /**
      * Set countryName
      *
      * @param string $countryName
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setCountryName($countryName);
-
 
     /**
      * Get countryName
@@ -185,16 +254,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getCountryName();
 
-
     /**
      * Set outboundPrefix
      *
      * @param string $outboundPrefix
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setOutboundPrefix($outboundPrefix = null);
-
 
     /**
      * Get outboundPrefix
@@ -203,16 +270,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getOutboundPrefix();
 
-
     /**
      * Set ipfilter
      *
      * @param boolean $ipfilter
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setIpfilter($ipfilter = null);
-
 
     /**
      * Get ipfilter
@@ -221,16 +286,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getIpfilter();
 
-
     /**
      * Set onDemandRecord
      *
      * @param boolean $onDemandRecord
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setOnDemandRecord($onDemandRecord = null);
-
 
     /**
      * Get onDemandRecord
@@ -239,16 +302,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getOnDemandRecord();
 
-
     /**
      * Set onDemandRecordCode
      *
      * @param string $onDemandRecordCode
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setOnDemandRecordCode($onDemandRecordCode = null);
-
 
     /**
      * Get onDemandRecordCode
@@ -257,16 +318,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getOnDemandRecordCode();
 
-
     /**
      * Set areaCode
      *
      * @param string $areaCode
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setAreaCode($areaCode = null);
-
 
     /**
      * Get areaCode
@@ -275,16 +334,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getAreaCode();
 
-
     /**
      * Set externallyextraopts
      *
      * @param string $externallyextraopts
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setExternallyextraopts($externallyextraopts = null);
-
 
     /**
      * Get externallyextraopts
@@ -293,16 +350,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getExternallyextraopts();
 
-
     /**
      * Set recordingsLimitMB
      *
      * @param integer $recordingsLimitMB
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setRecordingsLimitMB($recordingsLimitMB = null);
-
 
     /**
      * Get recordingsLimitMB
@@ -311,16 +366,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getRecordingsLimitMB();
 
-
     /**
      * Set recordingsLimitEmail
      *
      * @param string $recordingsLimitEmail
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setRecordingsLimitEmail($recordingsLimitEmail = null);
-
 
     /**
      * Get recordingsLimitEmail
@@ -329,16 +382,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getRecordingsLimitEmail();
 
-
     /**
      * Set language
      *
      * @param \Ivoz\Domain\Model\Language\LanguageInterface $language
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setLanguage(\Ivoz\Domain\Model\Language\LanguageInterface $language = null);
-
 
     /**
      * Get language
@@ -347,16 +398,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getLanguage();
 
-
     /**
      * Set mediaRelaySets
      *
      * @param \Ivoz\Domain\Model\MediaRelaySet\MediaRelaySetInterface $mediaRelaySets
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setMediaRelaySets(\Ivoz\Domain\Model\MediaRelaySet\MediaRelaySetInterface $mediaRelaySets = null);
-
 
     /**
      * Get mediaRelaySets
@@ -365,16 +414,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getMediaRelaySets();
 
-
     /**
      * Set defaultTimezone
      *
      * @param \Ivoz\Domain\Model\Timezone\TimezoneInterface $defaultTimezone
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setDefaultTimezone(\Ivoz\Domain\Model\Timezone\TimezoneInterface $defaultTimezone = null);
-
 
     /**
      * Get defaultTimezone
@@ -383,16 +430,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getDefaultTimezone();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand = null);
-
 
     /**
      * Get brand
@@ -401,16 +446,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getBrand();
 
-
     /**
      * Set applicationServer
      *
      * @param \Ivoz\Domain\Model\ApplicationServer\ApplicationServerInterface $applicationServer
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setApplicationServer(\Ivoz\Domain\Model\ApplicationServer\ApplicationServerInterface $applicationServer = null);
-
 
     /**
      * Get applicationServer
@@ -419,16 +462,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getApplicationServer();
 
-
     /**
      * Set country
      *
      * @param \Ivoz\Domain\Model\Country\CountryInterface $country
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setCountry(\Ivoz\Domain\Model\Country\CountryInterface $country = null);
-
 
     /**
      * Get country
@@ -437,16 +478,14 @@ interface CompanyInterface extends EntityInterface
      */
     public function getCountry();
 
-
     /**
      * Set outgoingDDI
      *
      * @param \Ivoz\Domain\Model\DDI\DDIInterface $outgoingDDI
      *
-     * @return CompanyInterface
+     * @return self
      */
     public function setOutgoingDDI(\Ivoz\Domain\Model\DDI\DDIInterface $outgoingDDI = null);
-
 
     /**
      * Get outgoingDDI
@@ -455,7 +494,346 @@ interface CompanyInterface extends EntityInterface
      */
     public function getOutgoingDDI();
 
+    /**
+     * Add extension
+     *
+     * @param \Ivoz\Domain\Model\Extension\Extension $extension
+     *
+     * @return CompanyTrait
+     */
+    public function addExtension(\Ivoz\Domain\Model\Extension\Extension $extension);
 
+    /**
+     * Remove extension
+     *
+     * @param \Ivoz\Domain\Model\Extension\Extension $extension
+     */
+    public function removeExtension(\Ivoz\Domain\Model\Extension\Extension $extension);
+
+    /**
+     * Replace extensions
+     *
+     * @param \Ivoz\Domain\Model\Extension\Extension[] $extensions
+     * @return self
+     */
+    public function replaceExtensions(array $extensions);
+
+    /**
+     * Get extensions
+     *
+     * @return array
+     */
+    public function getExtensions(\Doctrine\Common\Collections\Criteria $criteria = null);
+
+    /**
+     * Add ddi
+     *
+     * @param \Ivoz\Domain\Model\DDI\DDI $ddi
+     *
+     * @return CompanyTrait
+     */
+    public function addDdi(\Ivoz\Domain\Model\DDI\DDI $ddi);
+
+    /**
+     * Remove ddi
+     *
+     * @param \Ivoz\Domain\Model\DDI\DDI $ddi
+     */
+    public function removeDdi(\Ivoz\Domain\Model\DDI\DDI $ddi);
+
+    /**
+     * Replace ddis
+     *
+     * @param \Ivoz\Domain\Model\DDI\DDI[] $ddis
+     * @return self
+     */
+    public function replaceDdis(array $ddis);
+
+    /**
+     * Get ddis
+     *
+     * @return array
+     */
+    public function getDdis(\Doctrine\Common\Collections\Criteria $criteria = null);
+
+    /**
+     * Add friend
+     *
+     * @param \Ivoz\Domain\Model\Friend\Friend $friend
+     *
+     * @return CompanyTrait
+     */
+    public function addFriend(\Ivoz\Domain\Model\Friend\Friend $friend);
+
+    /**
+     * Remove friend
+     *
+     * @param \Ivoz\Domain\Model\Friend\Friend $friend
+     */
+    public function removeFriend(\Ivoz\Domain\Model\Friend\Friend $friend);
+
+    /**
+     * Replace friends
+     *
+     * @param \Ivoz\Domain\Model\Friend\Friend[] $friends
+     * @return self
+     */
+    public function replaceFriends(array $friends);
+
+    /**
+     * Get friends
+     *
+     * @return array
+     */
+    public function getFriends(\Doctrine\Common\Collections\Criteria $criteria = null);
+
+    /**
+     * Add companyService
+     *
+     * @param \Ivoz\Domain\Model\CompanyService\CompanyService $companyService
+     *
+     * @return CompanyTrait
+     */
+    public function addCompanyService(\Ivoz\Domain\Model\CompanyService\CompanyService $companyService);
+
+    /**
+     * Remove companyService
+     *
+     * @param \Ivoz\Domain\Model\CompanyService\CompanyService $companyService
+     */
+    public function removeCompanyService(\Ivoz\Domain\Model\CompanyService\CompanyService $companyService);
+
+    /**
+     * Replace companyServices
+     *
+     * @param \Ivoz\Domain\Model\CompanyService\CompanyService[] $companyServices
+     * @return self
+     */
+    public function replaceCompanyServices(array $companyServices);
+
+    /**
+     * Get companyServices
+     *
+     * @return array
+     */
+    public function getCompanyServices(\Doctrine\Common\Collections\Criteria $criteria = null);
+
+    /**
+     * Add terminal
+     *
+     * @param \Ivoz\Domain\Model\Terminal\Terminal $terminal
+     *
+     * @return CompanyTrait
+     */
+    public function addTerminal(\Ivoz\Domain\Model\Terminal\Terminal $terminal);
+
+    /**
+     * Remove terminal
+     *
+     * @param \Ivoz\Domain\Model\Terminal\Terminal $terminal
+     */
+    public function removeTerminal(\Ivoz\Domain\Model\Terminal\Terminal $terminal);
+
+    /**
+     * Replace terminals
+     *
+     * @param \Ivoz\Domain\Model\Terminal\Terminal[] $terminals
+     * @return self
+     */
+    public function replaceTerminals(array $terminals);
+
+    /**
+     * Get terminals
+     *
+     * @return array
+     */
+    public function getTerminals(\Doctrine\Common\Collections\Criteria $criteria = null);
+
+    /**
+     * Add relPricingPlan
+     *
+     * @param \Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompany $relPricingPlan
+     *
+     * @return CompanyTrait
+     */
+    public function addRelPricingPlan(\Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompany $relPricingPlan);
+
+    /**
+     * Remove relPricingPlan
+     *
+     * @param \Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompany $relPricingPlan
+     */
+    public function removeRelPricingPlan(\Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompany $relPricingPlan);
+
+    /**
+     * Replace relPricingPlans
+     *
+     * @param \Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompany[] $relPricingPlans
+     * @return self
+     */
+    public function replaceRelPricingPlans(array $relPricingPlans);
+
+    /**
+     * Get relPricingPlans
+     *
+     * @return array
+     */
+    public function getRelPricingPlans(\Doctrine\Common\Collections\Criteria $criteria = null);
+
+    /**
+     * Add musicsOnHold
+     *
+     * @param \Ivoz\Domain\Model\MusicOnHold\MusicOnHold $musicsOnHold
+     *
+     * @return CompanyTrait
+     */
+    public function addMusicsOnHold(\Ivoz\Domain\Model\MusicOnHold\MusicOnHold $musicsOnHold);
+
+    /**
+     * Remove musicsOnHold
+     *
+     * @param \Ivoz\Domain\Model\MusicOnHold\MusicOnHold $musicsOnHold
+     */
+    public function removeMusicsOnHold(\Ivoz\Domain\Model\MusicOnHold\MusicOnHold $musicsOnHold);
+
+    /**
+     * Replace musicsOnHold
+     *
+     * @param \Ivoz\Domain\Model\MusicOnHold\MusicOnHold[] $musicsOnHold
+     * @return self
+     */
+    public function replaceMusicsOnHold(array $musicsOnHold);
+
+    /**
+     * Get musicsOnHold
+     *
+     * @return array
+     */
+    public function getMusicsOnHold(\Doctrine\Common\Collections\Criteria $criteria = null);
+
+    /**
+     * Add recording
+     *
+     * @param \Ivoz\Domain\Model\Recording\Recording $recording
+     *
+     * @return CompanyTrait
+     */
+    public function addRecording(\Ivoz\Domain\Model\Recording\Recording $recording);
+
+    /**
+     * Remove recording
+     *
+     * @param \Ivoz\Domain\Model\Recording\Recording $recording
+     */
+    public function removeRecording(\Ivoz\Domain\Model\Recording\Recording $recording);
+
+    /**
+     * Replace recordings
+     *
+     * @param \Ivoz\Domain\Model\Recording\Recording[] $recordings
+     * @return self
+     */
+    public function replaceRecordings(array $recordings);
+
+    /**
+     * Get recordings
+     *
+     * @return array
+     */
+    public function getRecordings(\Doctrine\Common\Collections\Criteria $criteria = null);
+
+    /**
+     * Add relFeature
+     *
+     * @param \Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompany $relFeature
+     *
+     * @return CompanyTrait
+     */
+    public function addRelFeature(\Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompany $relFeature);
+
+    /**
+     * Remove relFeature
+     *
+     * @param \Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompany $relFeature
+     */
+    public function removeRelFeature(\Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompany $relFeature);
+
+    /**
+     * Replace relFeatures
+     *
+     * @param \Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompany[] $relFeatures
+     * @return self
+     */
+    public function replaceRelFeatures(array $relFeatures);
+
+    /**
+     * Get relFeatures
+     *
+     * @return array
+     */
+    public function getRelFeatures(\Doctrine\Common\Collections\Criteria $criteria = null);
+
+    /**
+     * Add callACLPattern
+     *
+     * @param \Ivoz\Domain\Model\CallACLPattern\CallACLPattern $callACLPattern
+     *
+     * @return CompanyTrait
+     */
+    public function addCallACLPattern(\Ivoz\Domain\Model\CallACLPattern\CallACLPattern $callACLPattern);
+
+    /**
+     * Remove callACLPattern
+     *
+     * @param \Ivoz\Domain\Model\CallACLPattern\CallACLPattern $callACLPattern
+     */
+    public function removeCallACLPattern(\Ivoz\Domain\Model\CallACLPattern\CallACLPattern $callACLPattern);
+
+    /**
+     * Replace callACLPatterns
+     *
+     * @param \Ivoz\Domain\Model\CallACLPattern\CallACLPattern[] $callACLPatterns
+     * @return self
+     */
+    public function replaceCallACLPatterns(array $callACLPatterns);
+
+    /**
+     * Get callACLPatterns
+     *
+     * @return array
+     */
+    public function getCallACLPatterns(\Doctrine\Common\Collections\Criteria $criteria = null);
+
+    /**
+     * Add domain
+     *
+     * @param \Ivoz\Domain\Model\Domain\Domain $domain
+     *
+     * @return CompanyTrait
+     */
+    public function addDomain(\Ivoz\Domain\Model\Domain\Domain $domain);
+
+    /**
+     * Remove domain
+     *
+     * @param \Ivoz\Domain\Model\Domain\Domain $domain
+     */
+    public function removeDomain(\Ivoz\Domain\Model\Domain\Domain $domain);
+
+    /**
+     * Replace domains
+     *
+     * @param \Ivoz\Domain\Model\Domain\Domain[] $domains
+     * @return self
+     */
+    public function replaceDomains(array $domains);
+
+    /**
+     * Get domains
+     *
+     * @return array
+     */
+    public function getDomains(\Doctrine\Common\Collections\Criteria $criteria = null);
 
 }
 

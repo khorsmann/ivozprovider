@@ -11,10 +11,9 @@ interface EtagVersionInterface extends EntityInterface
      *
      * @param string $table
      *
-     * @return EtagVersionInterface
+     * @return self
      */
     public function setTable($table = null);
-
 
     /**
      * Get table
@@ -23,16 +22,14 @@ interface EtagVersionInterface extends EntityInterface
      */
     public function getTable();
 
-
     /**
      * Set etag
      *
      * @param string $etag
      *
-     * @return EtagVersionInterface
+     * @return self
      */
     public function setEtag($etag = null);
-
 
     /**
      * Get etag
@@ -41,16 +38,14 @@ interface EtagVersionInterface extends EntityInterface
      */
     public function getEtag();
 
-
     /**
      * Set lastChange
      *
      * @param \DateTime $lastChange
      *
-     * @return EtagVersionInterface
+     * @return self
      */
     public function setLastChange($lastChange = null);
-
 
     /**
      * Get lastChange
@@ -58,8 +53,6 @@ interface EtagVersionInterface extends EntityInterface
      * @return \DateTime
      */
     public function getLastChange();
-
-
 
 }
 

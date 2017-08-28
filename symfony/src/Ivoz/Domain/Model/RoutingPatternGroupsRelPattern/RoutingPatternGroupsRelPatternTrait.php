@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\RoutingPatternGroupsRelPattern;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * RoutingPatternGroupsRelPatternTrait
+ * @codeCoverageIgnore
  */
 trait RoutingPatternGroupsRelPatternTrait
 {

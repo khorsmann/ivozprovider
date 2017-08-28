@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\XMLRPCLog;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * XMLRPCLogTrait
+ * @codeCoverageIgnore
  */
 trait XMLRPCLogTrait
 {

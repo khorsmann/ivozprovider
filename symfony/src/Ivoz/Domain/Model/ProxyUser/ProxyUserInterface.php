@@ -11,10 +11,9 @@ interface ProxyUserInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return ProxyUserInterface
+     * @return self
      */
     public function setName($name = null);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface ProxyUserInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set ip
      *
      * @param string $ip
      *
-     * @return ProxyUserInterface
+     * @return self
      */
     public function setIp($ip = null);
-
 
     /**
      * Get ip
@@ -40,8 +37,6 @@ interface ProxyUserInterface extends EntityInterface
      * @return string
      */
     public function getIp();
-
-
 
 }
 

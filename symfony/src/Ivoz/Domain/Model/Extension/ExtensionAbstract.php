@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\Extension;
 
 use Assert\Assertion;
@@ -6,6 +7,7 @@ use Core\Application\DataTransferObjectInterface;
 
 /**
  * ExtensionAbstract
+ * @codeCoverageIgnore
  */
 abstract class ExtensionAbstract
 {
@@ -36,14 +38,14 @@ abstract class ExtensionAbstract
     protected $company;
 
     /**
-     * @var \Ivoz\Domain\Model\IVRCommon\IVRCommonInterface
+     * @var \Ivoz\Domain\Model\IvrCommon\IvrCommonInterface
      */
-    protected $IVRCommon;
+    protected $IvrCommon;
 
     /**
-     * @var \Ivoz\Domain\Model\IVRCustom\IVRCustomInterface
+     * @var \Ivoz\Domain\Model\IvrCustom\IvrCustomInterface
      */
-    protected $IVRCustom;
+    protected $IvrCustom;
 
     /**
      * @var \Ivoz\Domain\Model\HuntGroup\HuntGroupInterface
@@ -143,8 +145,8 @@ abstract class ExtensionAbstract
             ->setNumberValue($dto->getNumberValue())
             ->setFriendValue($dto->getFriendValue())
             ->setCompany($dto->getCompany())
-            ->setIVRCommon($dto->getIVRCommon())
-            ->setIVRCustom($dto->getIVRCustom())
+            ->setIvrCommon($dto->getIvrCommon())
+            ->setIvrCustom($dto->getIvrCustom())
             ->setHuntGroup($dto->getHuntGroup())
             ->setConferenceRoom($dto->getConferenceRoom())
             ->setUser($dto->getUser())
@@ -169,8 +171,8 @@ abstract class ExtensionAbstract
             ->setNumberValue($dto->getNumberValue())
             ->setFriendValue($dto->getFriendValue())
             ->setCompany($dto->getCompany())
-            ->setIVRCommon($dto->getIVRCommon())
-            ->setIVRCustom($dto->getIVRCustom())
+            ->setIvrCommon($dto->getIvrCommon())
+            ->setIvrCustom($dto->getIvrCustom())
             ->setHuntGroup($dto->getHuntGroup())
             ->setConferenceRoom($dto->getConferenceRoom())
             ->setUser($dto->getUser())
@@ -191,8 +193,8 @@ abstract class ExtensionAbstract
             ->setNumberValue($this->getNumberValue())
             ->setFriendValue($this->getFriendValue())
             ->setCompanyId($this->getCompany() ? $this->getCompany()->getId() : null)
-            ->setIVRCommonId($this->getIVRCommon() ? $this->getIVRCommon()->getId() : null)
-            ->setIVRCustomId($this->getIVRCustom() ? $this->getIVRCustom()->getId() : null)
+            ->setIvrCommonId($this->getIvrCommon() ? $this->getIvrCommon()->getId() : null)
+            ->setIvrCustomId($this->getIvrCustom() ? $this->getIvrCustom()->getId() : null)
             ->setHuntGroupId($this->getHuntGroup() ? $this->getHuntGroup()->getId() : null)
             ->setConferenceRoomId($this->getConferenceRoom() ? $this->getConferenceRoom()->getId() : null)
             ->setUserId($this->getUser() ? $this->getUser()->getId() : null)
@@ -210,8 +212,8 @@ abstract class ExtensionAbstract
             'numberValue' => $this->getNumberValue(),
             'friendValue' => $this->getFriendValue(),
             'companyId' => $this->getCompany() ? $this->getCompany()->getId() : null,
-            'iVRCommonId' => $this->getIVRCommon() ? $this->getIVRCommon()->getId() : null,
-            'iVRCustomId' => $this->getIVRCustom() ? $this->getIVRCustom()->getId() : null,
+            'ivrCommonId' => $this->getIvrCommon() ? $this->getIvrCommon()->getId() : null,
+            'ivrCustomId' => $this->getIvrCustom() ? $this->getIvrCustom()->getId() : null,
             'huntGroupId' => $this->getHuntGroup() ? $this->getHuntGroup()->getId() : null,
             'conferenceRoomId' => $this->getConferenceRoom() ? $this->getConferenceRoom()->getId() : null,
             'userId' => $this->getUser() ? $this->getUser()->getId() : null,
@@ -368,51 +370,51 @@ abstract class ExtensionAbstract
     }
 
     /**
-     * Set iVRCommon
+     * Set ivrCommon
      *
-     * @param \Ivoz\Domain\Model\IVRCommon\IVRCommonInterface $iVRCommon
+     * @param \Ivoz\Domain\Model\IvrCommon\IvrCommonInterface $ivrCommon
      *
      * @return self
      */
-    public function setIVRCommon(\Ivoz\Domain\Model\IVRCommon\IVRCommonInterface $iVRCommon = null)
+    public function setIvrCommon(\Ivoz\Domain\Model\IvrCommon\IvrCommonInterface $ivrCommon = null)
     {
-        $this->IVRCommon = $iVRCommon;
+        $this->IvrCommon = $ivrCommon;
 
         return $this;
     }
 
     /**
-     * Get iVRCommon
+     * Get ivrCommon
      *
-     * @return \Ivoz\Domain\Model\IVRCommon\IVRCommonInterface
+     * @return \Ivoz\Domain\Model\IvrCommon\IvrCommonInterface
      */
-    public function getIVRCommon()
+    public function getIvrCommon()
     {
-        return $this->IVRCommon;
+        return $this->IvrCommon;
     }
 
     /**
-     * Set iVRCustom
+     * Set ivrCustom
      *
-     * @param \Ivoz\Domain\Model\IVRCustom\IVRCustomInterface $iVRCustom
+     * @param \Ivoz\Domain\Model\IvrCustom\IvrCustomInterface $ivrCustom
      *
      * @return self
      */
-    public function setIVRCustom(\Ivoz\Domain\Model\IVRCustom\IVRCustomInterface $iVRCustom = null)
+    public function setIvrCustom(\Ivoz\Domain\Model\IvrCustom\IvrCustomInterface $ivrCustom = null)
     {
-        $this->IVRCustom = $iVRCustom;
+        $this->IvrCustom = $ivrCustom;
 
         return $this;
     }
 
     /**
-     * Get iVRCustom
+     * Get ivrCustom
      *
-     * @return \Ivoz\Domain\Model\IVRCustom\IVRCustomInterface
+     * @return \Ivoz\Domain\Model\IvrCustom\IvrCustomInterface
      */
-    public function getIVRCustom()
+    public function getIvrCustom()
     {
-        return $this->IVRCustom;
+        return $this->IvrCustom;
     }
 
     /**

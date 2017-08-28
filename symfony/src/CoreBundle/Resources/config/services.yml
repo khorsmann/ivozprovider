@@ -1,36 +1,44 @@
 imports:
   - { resource: "@CoreBundle/Resources/config/legacy.yml" }
   - { resource: "@CoreBundle/Resources/config/asterisk.yml" }
+  - { resource: "@CoreBundle/Resources/config/doctrine.yml" }
   - { resource: "@CoreBundle/Resources/config/lifecycle.yml" }
 
 services:
-
   _defaults:
     autowire: true
     autoconfigure: true
     public: false
 
+  Core\Infrastructure\Application\DoctrineForeignKeyTransformer:
+    arguments:
+      - "@doctrine.orm.entity_manager"
+
   core.doctrine_foreign_key_transformer:
-    class: Core\Infrastructure\Application\DoctrineForeignKeyTransformer
+    '@Core\Infrastructure\Application\DoctrineForeignKeyTransformer'
+
+  Core\Infrastructure\Application\DoctrineCollectionTransformer:
     arguments:
       - "@doctrine.orm.entity_manager"
 
   core.doctrine_collection_transformer:
-    class: Core\Infrastructure\Application\DoctrineCollectionTransformer
+    '@Core\Infrastructure\Application\DoctrineCollectionTransformer'
+
+  Core\Application\Command\CreateEntityFromDTO:
     arguments:
-      - "@doctrine.orm.entity_manager"
+      - "@core.doctrine_foreign_key_transformer"
+      - "@core.doctrine_collection_transformer"
 
   core.create_entity_from_dto:
-      class: Core\Application\Command\CreateEntityFromDTO
-      arguments:
-        - "@core.doctrine_foreign_key_transformer"
-        - "@core.doctrine_collection_transformer"
+    class: Core\Application\Command\CreateEntityFromDTO
+
+  Core\Application\Command\UpdateEntityFromDTO:
+    arguments:
+      - "@core.doctrine_foreign_key_transformer"
+      - "@core.doctrine_collection_transformer"
 
   core.update_entity_from_dto:
-      class: Core\Application\Command\UpdateEntityFromDTO
-      arguments:
-        - "@core.doctrine_foreign_key_transformer"
-        - "@core.doctrine_collection_transformer"
+    class: Core\Application\Command\UpdateEntityFromDTO
 
   Core\Infrastructure\Domain\Service\DoctrineEntityPersister:
     public: true

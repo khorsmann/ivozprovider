@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\Schedule;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * ScheduleTrait
+ * @codeCoverageIgnore
  */
 trait ScheduleTrait
 {

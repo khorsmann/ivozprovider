@@ -17,11 +17,38 @@ class AccCdrDoctrineRepository extends EntityRepository implements AccCdrReposit
 
     public function fetchTarificableList(array $criteria, array $orderBy = null, $limit = null, $offset = null)
     {
-        $criteria += [
-            Criteria::expr()->neq('peeringContract' , null),
-            Criteria::expr()->neq('peeringContract' , '')
-        ];
+        $criteria += $this->getEmptyPeeringContractFilterCriteria();
 
+        /**
+         * @todo ensure that criteria arguments are handled properly
+         */
         return $this->findBy($criteria, $orderBy, $limit, $offset);
+    }
+
+    public function countTarificableByQuery(array $criteria)
+    {
+        $criteria += $this->getEmptyPeeringContractFilterCriteria();
+
+        /**
+         * @todo ensure that criteria arguments are handled properly
+         */
+        $qb = $this->createQueryBuilder('accCdr');
+        $qb->select('count(accCdr)')
+            ->addCriteria(new Criteria($criteria));
+
+        return $qb
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
+    /**
+     * @return array
+     */
+    public function getEmptyPeeringContractFilterCriteria()
+    {
+        return [
+            Criteria::expr()->neq('peeringContract', null),
+            Criteria::expr()->neq('peeringContract', '')
+        ];
     }
 }

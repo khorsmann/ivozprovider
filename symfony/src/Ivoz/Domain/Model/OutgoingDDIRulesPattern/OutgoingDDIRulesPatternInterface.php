@@ -11,10 +11,9 @@ interface OutgoingDDIRulesPatternInterface extends EntityInterface
      *
      * @param string $action
      *
-     * @return OutgoingDDIRulesPatternInterface
+     * @return self
      */
     public function setAction($action);
-
 
     /**
      * Get action
@@ -23,16 +22,14 @@ interface OutgoingDDIRulesPatternInterface extends EntityInterface
      */
     public function getAction();
 
-
     /**
      * Set priority
      *
      * @param integer $priority
      *
-     * @return OutgoingDDIRulesPatternInterface
+     * @return self
      */
     public function setPriority($priority);
-
 
     /**
      * Get priority
@@ -41,34 +38,30 @@ interface OutgoingDDIRulesPatternInterface extends EntityInterface
      */
     public function getPriority();
 
-
     /**
      * Set outgoingDDIRuleId
      *
-     * @param \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterfaceInterface $outgoingDDIRuleId
+     * @param \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRuleId
      *
-     * @return OutgoingDDIRulesPatternInterface
+     * @return self
      */
-    public function setOutgoingDDIRuleId(\Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterfaceInterface $outgoingDDIRuleId = null);
-
+    public function setOutgoingDDIRuleId(\Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRuleId = null);
 
     /**
      * Get outgoingDDIRuleId
      *
-     * @return \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterfaceInterface
+     * @return \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
      */
     public function getOutgoingDDIRuleId();
-
 
     /**
      * Set matchListId
      *
      * @param \Ivoz\Domain\Model\MatchList\MatchListInterface $matchListId
      *
-     * @return OutgoingDDIRulesPatternInterface
+     * @return self
      */
     public function setMatchListId(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchListId = null);
-
 
     /**
      * Get matchListId
@@ -77,16 +70,14 @@ interface OutgoingDDIRulesPatternInterface extends EntityInterface
      */
     public function getMatchListId();
 
-
     /**
      * Set forcedDDIId
      *
      * @param \Ivoz\Domain\Model\DDI\DDIInterface $forcedDDIId
      *
-     * @return OutgoingDDIRulesPatternInterface
+     * @return self
      */
     public function setForcedDDIId(\Ivoz\Domain\Model\DDI\DDIInterface $forcedDDIId = null);
-
 
     /**
      * Get forcedDDIId
@@ -94,8 +85,6 @@ interface OutgoingDDIRulesPatternInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\DDI\DDIInterface
      */
     public function getForcedDDIId();
-
-
 
 }
 

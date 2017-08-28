@@ -11,10 +11,9 @@ interface ConferenceRoomInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return ConferenceRoomInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface ConferenceRoomInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set pinProtected
      *
      * @param boolean $pinProtected
      *
-     * @return ConferenceRoomInterface
+     * @return self
      */
     public function setPinProtected($pinProtected);
-
 
     /**
      * Get pinProtected
@@ -41,16 +38,14 @@ interface ConferenceRoomInterface extends EntityInterface
      */
     public function getPinProtected();
 
-
     /**
      * Set pinCode
      *
      * @param string $pinCode
      *
-     * @return ConferenceRoomInterface
+     * @return self
      */
     public function setPinCode($pinCode = null);
-
 
     /**
      * Get pinCode
@@ -59,16 +54,14 @@ interface ConferenceRoomInterface extends EntityInterface
      */
     public function getPinCode();
 
-
     /**
      * Set maxMembers
      *
      * @param boolean $maxMembers
      *
-     * @return ConferenceRoomInterface
+     * @return self
      */
     public function setMaxMembers($maxMembers);
-
 
     /**
      * Get maxMembers
@@ -77,16 +70,14 @@ interface ConferenceRoomInterface extends EntityInterface
      */
     public function getMaxMembers();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return ConferenceRoomInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company);
-
 
     /**
      * Get company
@@ -94,8 +85,6 @@ interface ConferenceRoomInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Company\CompanyInterface
      */
     public function getCompany();
-
-
 
 }
 

@@ -11,10 +11,9 @@ interface RoutingPatternGroupsRelPatternInterface extends EntityInterface
      *
      * @param \Ivoz\Domain\Model\RoutingPattern\RoutingPatternInterface $routingPattern
      *
-     * @return RoutingPatternGroupsRelPatternInterface
+     * @return self
      */
     public function setRoutingPattern(\Ivoz\Domain\Model\RoutingPattern\RoutingPatternInterface $routingPattern);
-
 
     /**
      * Get routingPattern
@@ -23,16 +22,14 @@ interface RoutingPatternGroupsRelPatternInterface extends EntityInterface
      */
     public function getRoutingPattern();
 
-
     /**
      * Set routingPatternGroup
      *
      * @param \Ivoz\Domain\Model\RoutingPatternGroup\RoutingPatternGroupInterface $routingPatternGroup
      *
-     * @return RoutingPatternGroupsRelPatternInterface
+     * @return self
      */
     public function setRoutingPatternGroup(\Ivoz\Domain\Model\RoutingPatternGroup\RoutingPatternGroupInterface $routingPatternGroup = null);
-
 
     /**
      * Get routingPatternGroup
@@ -40,8 +37,6 @@ interface RoutingPatternGroupsRelPatternInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\RoutingPatternGroup\RoutingPatternGroupInterface
      */
     public function getRoutingPatternGroup();
-
-
 
 }
 

@@ -4,6 +4,15 @@ services:
     public: false
 
   ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\Company\CompanyLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.company.service_collection:
+    '@Ivoz\Domain\Service\Company\CompanyLifecycleServiceCollection'
+
+  ##################################
   ## pre_persist
   ##################################
   Ivoz\Domain\Service\Company\SanitizeEmptyValues:
@@ -42,4 +51,14 @@ services:
       $brandServiceRepository:
         '@=service("doctrine.orm.entity_manager").getRepository("Ivoz\\Domain\\Model\\BrandService\\BrandService")'
 
-  # services with priority 40 & 41 & 42 in lifecycle/xml_rpc.yml
+  Ivoz\Domain\Service\Company\PersistedSendXmlRcp:
+    tags:
+      - { name: ivoz.lifecycle.company.post_persist, priority: 40 }
+
+  ##################################
+  ## post_remove
+  ##################################
+
+  Ivoz\Domain\Service\Company\RemovedSendXmlRcp:
+    tags:
+      - { name: ivoz.lifecycle.company.post_remove, priority: 10 }

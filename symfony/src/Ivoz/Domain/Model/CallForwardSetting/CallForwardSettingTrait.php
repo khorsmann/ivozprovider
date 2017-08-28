@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\CallForwardSetting;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * CallForwardSettingTrait
+ * @codeCoverageIgnore
  */
 trait CallForwardSettingTrait
 {

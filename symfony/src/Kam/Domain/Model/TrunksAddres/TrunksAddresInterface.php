@@ -11,10 +11,9 @@ interface TrunksAddresInterface extends EntityInterface
      *
      * @param integer $grp
      *
-     * @return TrunksAddresInterface
+     * @return self
      */
     public function setGrp($grp);
-
 
     /**
      * Get grp
@@ -23,16 +22,14 @@ interface TrunksAddresInterface extends EntityInterface
      */
     public function getGrp();
 
-
     /**
      * Set ipAddr
      *
      * @param string $ipAddr
      *
-     * @return TrunksAddresInterface
+     * @return self
      */
     public function setIpAddr($ipAddr = null);
-
 
     /**
      * Get ipAddr
@@ -41,16 +38,14 @@ interface TrunksAddresInterface extends EntityInterface
      */
     public function getIpAddr();
 
-
     /**
      * Set mask
      *
      * @param integer $mask
      *
-     * @return TrunksAddresInterface
+     * @return self
      */
     public function setMask($mask);
-
 
     /**
      * Get mask
@@ -59,16 +54,14 @@ interface TrunksAddresInterface extends EntityInterface
      */
     public function getMask();
 
-
     /**
      * Set port
      *
      * @param integer $port
      *
-     * @return TrunksAddresInterface
+     * @return self
      */
     public function setPort($port);
-
 
     /**
      * Get port
@@ -77,16 +70,14 @@ interface TrunksAddresInterface extends EntityInterface
      */
     public function getPort();
 
-
     /**
      * Set tag
      *
      * @param string $tag
      *
-     * @return TrunksAddresInterface
+     * @return self
      */
     public function setTag($tag = null);
-
 
     /**
      * Get tag
@@ -94,8 +85,6 @@ interface TrunksAddresInterface extends EntityInterface
      * @return string
      */
     public function getTag();
-
-
 
 }
 

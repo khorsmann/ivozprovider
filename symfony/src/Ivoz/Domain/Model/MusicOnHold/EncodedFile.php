@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\MusicOnHold;
 
 use Assert\Assertion;
 
 /**
  * EncodedFile
+ * @codeCoverageIgnore
  */
 class EncodedFile
 {

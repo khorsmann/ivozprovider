@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\LcrRuleTarget;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * LcrRuleTargetTrait
+ * @codeCoverageIgnore
  */
 trait LcrRuleTargetTrait
 {

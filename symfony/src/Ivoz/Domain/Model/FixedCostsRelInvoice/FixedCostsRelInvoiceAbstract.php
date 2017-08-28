@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\FixedCostsRelInvoice;
 
 use Assert\Assertion;
@@ -6,6 +7,7 @@ use Core\Application\DataTransferObjectInterface;
 
 /**
  * FixedCostsRelInvoiceAbstract
+ * @codeCoverageIgnore
  */
 abstract class FixedCostsRelInvoiceAbstract
 {

@@ -26,8 +26,8 @@ production:
             extensionsDel_dialog: true
           default: extensionsEdit_screen
         blacklist:
-          IVRCommon: true
-          IVRCustom: true
+          IvrCommon: true
+          IvrCustom: true
           huntGroup: true
           user: true
           conferenceRoom: true
@@ -68,8 +68,8 @@ production:
           colsPerRow: 3
           fields:
             routeType: 2
-            IVRCommon: 1
-            IVRCustom: 1
+            IvrCommon: 1
+            IvrCustom: 1
             huntGroup: 1
             conferenceRoom: 1
             user: 1

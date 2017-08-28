@@ -11,10 +11,9 @@ interface FriendsPatternInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return FriendsPatternInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface FriendsPatternInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set regExp
      *
      * @param string $regExp
      *
-     * @return FriendsPatternInterface
+     * @return self
      */
     public function setRegExp($regExp);
-
 
     /**
      * Get regExp
@@ -41,16 +38,14 @@ interface FriendsPatternInterface extends EntityInterface
      */
     public function getRegExp();
 
-
     /**
      * Set friend
      *
      * @param \Ivoz\Domain\Model\Friend\FriendInterface $friend
      *
-     * @return FriendsPatternInterface
+     * @return self
      */
     public function setFriend(\Ivoz\Domain\Model\Friend\FriendInterface $friend = null);
-
 
     /**
      * Get friend
@@ -58,8 +53,6 @@ interface FriendsPatternInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Friend\FriendInterface
      */
     public function getFriend();
-
-
 
 }
 

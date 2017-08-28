@@ -4,6 +4,15 @@ services:
     public: false
 
   ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\CompanyAdmin\CompanyAdminLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.company_admin.service_collection:
+    '@Ivoz\Domain\Service\CompanyAdmin\CompanyAdminLifecycleServiceCollection'
+
+  ##################################
   ## pre_persist
   ##################################
   Ivoz\Domain\Service\CompanyAdmin\CheckValidity:

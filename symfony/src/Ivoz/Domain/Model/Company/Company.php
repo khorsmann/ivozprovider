@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\Company;
 
 /**
@@ -150,11 +151,10 @@ class Company extends CompanyAbstract implements CompanyInterface
          * @var Company $this
          */
         if (is_null($date)) {
-            $date = new \Zend_Date();
-            $date->setTimezone("UTC");
+            $date = new \DateTime();
+            $date->setTimezone(new \DateTimeZone('UTC'));
         }
-
-        $dateTime = $date->toString('yyyy-MM-dd HH:mm:ss');
+        $dateTime = $date->format('Y-m-d H:i:s');
 
         $criteria = Criteria::create();
         $criteria
@@ -266,20 +266,23 @@ class Company extends CompanyAbstract implements CompanyInterface
     public function isDstTarificable($number)
     {
         /**
+         * @todo this is not migrated yet. Called from ExternalCallAction
+         * This should be a service
          * @var Company $this
          */
-        $call = new \IvozProvider\Model\KamAccCdrs();
-
-        $call->setCallee($number)
-            ->setCompanyId($this->getId())
-            ->setBrandId($this->getBrand()->getId())
-            ->setStartTimeUtc(new \Zend_Date());
-
-        $result = $call->tarificate();
-        if (! is_null($result)) {
-            return $result->getPricingPlan();
-        }
-        return null;
+        throw new \Exception('Not implemented yet');
+//        $call = new \IvozProvider\Model\KamAccCdrs();
+//
+//        $call->setCallee($number)
+//            ->setCompanyId($this->getId())
+//            ->setBrandId($this->getBrand()->getId())
+//            ->setStartTimeUtc(new \Zend_Date());
+//
+//        $result = $call->tarificate();
+//        if (! is_null($result)) {
+//            return $result->getPricingPlan();
+//        }
+//        return null;
     }
 
     /**

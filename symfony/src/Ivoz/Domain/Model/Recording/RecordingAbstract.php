@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\Recording;
 
 use Assert\Assertion;
@@ -6,6 +7,7 @@ use Core\Application\DataTransferObjectInterface;
 
 /**
  * RecordingAbstract
+ * @codeCoverageIgnore
  */
 abstract class RecordingAbstract
 {

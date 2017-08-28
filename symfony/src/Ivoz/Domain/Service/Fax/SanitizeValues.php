@@ -1,23 +1,19 @@
 <?php
+
 namespace Ivoz\Domain\Service\Fax;
 
-use Core\Domain\Service\LifecycleEventHandlerInterface;
-use Core\Domain\Model\EntityInterface;
-use Ivoz\Domain\Model\Fax\Fax;
+use Ivoz\Domain\Model\Fax\FaxInterface;
 
 /**
  * Class SanitizeValues
  * @package Ivoz\Domain\Service\Fax
- * @lifecycle fax.pre_persist
+ * @lifecycle pre_persist
  */
-class SanitizeValues implements LifecycleEventHandlerInterface
+class SanitizeValues implements FaxLifecycleEventHandlerInterface
 {
     public function __construct() {}
 
-    /**
-     * @param Fax $entity
-     */
-    public function execute(EntityInterface $entity)
+    public function execute(FaxInterface $entity)
     {
         // @todo move this to the entity
         if ($entity->getSendByEmail() == 0) {

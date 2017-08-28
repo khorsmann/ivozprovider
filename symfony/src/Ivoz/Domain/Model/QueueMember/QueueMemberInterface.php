@@ -11,10 +11,9 @@ interface QueueMemberInterface extends EntityInterface
      *
      * @param integer $penalty
      *
-     * @return QueueMemberInterface
+     * @return self
      */
     public function setPenalty($penalty = null);
-
 
     /**
      * Get penalty
@@ -23,16 +22,14 @@ interface QueueMemberInterface extends EntityInterface
      */
     public function getPenalty();
 
-
     /**
      * Set queue
      *
      * @param \Ivoz\Domain\Model\Queue\QueueInterface $queue
      *
-     * @return QueueMemberInterface
+     * @return self
      */
     public function setQueue(\Ivoz\Domain\Model\Queue\QueueInterface $queue = null);
-
 
     /**
      * Get queue
@@ -41,16 +38,14 @@ interface QueueMemberInterface extends EntityInterface
      */
     public function getQueue();
 
-
     /**
      * Set user
      *
      * @param \Ivoz\Domain\Model\User\UserInterface $user
      *
-     * @return QueueMemberInterface
+     * @return self
      */
     public function setUser(\Ivoz\Domain\Model\User\UserInterface $user = null);
-
 
     /**
      * Get user
@@ -58,8 +53,6 @@ interface QueueMemberInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\User\UserInterface
      */
     public function getUser();
-
-
 
 }
 

@@ -6,7 +6,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
-use Core\Infrastructure\Domain\Model\Lifecycle\HandlerChain;
+use Core\Domain\Service\LifecycleEventListener;
 
 class LifecycleCompiler implements CompilerPassInterface
 {
@@ -19,23 +19,30 @@ class LifecycleCompiler implements CompilerPassInterface
     {
         $this->container = $container;
 
-        // check if the primary service is defined
-        if (!$container->has(HandlerChain::class)) {
-            throw new \Exception('HandlerChain must be registered service');
-        }
-
         $events = $this->getLifecycleServices();
-
         foreach ($events as $tag => $services) {
 
-            $tagHandler = $this->container->autowire($tag, HandlerChain::class);
-            $tagHandler->setPublic(true);
+            $lifeCycleCollectionClassName = $this->getLifeCycleCollectionClass($tag);
+            $lifeCycleCollection = $this->container->autowire($tag, $lifeCycleCollectionClassName);
+            $lifeCycleCollection->setPublic(true);
 
-            foreach ($services as $class) {
-                // add the service to the HandlerChain service
-                $tagHandler->addMethodCall('addService', array(new Reference($class)));
+            foreach ($services as $key => $class) {
+                $services[$key] = new Reference($class);
             }
+
+            $lifeCycleCollection->addMethodCall('setServices', [$services]);
         }
+    }
+
+    protected function getLifeCycleCollectionClass($serviceTag)
+    {
+        $tagSegments = explode('.', $serviceTag);
+        array_pop($tagSegments);
+        $sharedAliasPrefix = implode('.', $tagSegments);
+        $collectionAlias = $sharedAliasPrefix . '.service_collection';
+        $definition = $this->container->findDefinition($collectionAlias);
+
+        return $definition->getClass();
     }
 
     protected function getLifecycleServices()
@@ -66,7 +73,6 @@ class LifecycleCompiler implements CompilerPassInterface
 
         return $services;
     }
-
 
     protected function getServicesByTag($tag)
     {

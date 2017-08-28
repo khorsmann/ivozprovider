@@ -1,23 +1,19 @@
 <?php
+
 namespace Ivoz\Domain\Service\GenericMusicOnHold;
 
-use Core\Domain\Service\LifecycleEventHandlerInterface;
-use Core\Domain\Model\EntityInterface;
-use Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHold;
+use Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHoldInterface;
 
 /**
  * Class SanitizeValues
  * @package Ivoz\Domain\Service\GenericMusicOnHold
- * @lifecycle generic_music_on_hold.pre_persist
+ * @lifecycle pre_persist
  */
-class SanitizeValues implements LifecycleEventHandlerInterface
+class SanitizeValues implements GenericMusicOnHoldLifecycleEventHandlerInterface
 {
     public function __construct() {}
 
-    /**
-     * @param GenericMusicOnHold $entity
-     */
-    public function execute(EntityInterface $entity)
+    public function execute(GenericMusicOnHoldInterface $entity)
     {
         throw new \Exception('Not implemented yet');
 

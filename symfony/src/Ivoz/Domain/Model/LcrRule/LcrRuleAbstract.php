@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\LcrRule;
 
 use Assert\Assertion;
@@ -6,6 +7,7 @@ use Core\Application\DataTransferObjectInterface;
 
 /**
  * LcrRuleAbstract
+ * @codeCoverageIgnore
  */
 abstract class LcrRuleAbstract
 {

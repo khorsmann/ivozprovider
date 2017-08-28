@@ -11,10 +11,9 @@ interface CompanyServiceInterface extends EntityInterface
      *
      * @param string $code
      *
-     * @return CompanyServiceInterface
+     * @return self
      */
     public function setCode($code);
-
 
     /**
      * Get code
@@ -23,16 +22,14 @@ interface CompanyServiceInterface extends EntityInterface
      */
     public function getCode();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return CompanyServiceInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company = null);
-
 
     /**
      * Get company
@@ -41,16 +38,14 @@ interface CompanyServiceInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set service
      *
      * @param \Ivoz\Domain\Model\Service\ServiceInterface $service
      *
-     * @return CompanyServiceInterface
+     * @return self
      */
     public function setService(\Ivoz\Domain\Model\Service\ServiceInterface $service);
-
 
     /**
      * Get service
@@ -58,8 +53,6 @@ interface CompanyServiceInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Service\ServiceInterface
      */
     public function getService();
-
-
 
 }
 

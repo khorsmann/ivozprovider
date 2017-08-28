@@ -7,14 +7,20 @@ use Core\Domain\Model\EntityInterface;
 interface PsEndpointInterface extends EntityInterface
 {
     /**
+     * @deprecated
+     * @todo
+     * @throws \Exception
+     */
+    public function getAstPsAor();
+
+    /**
      * Set sorceryId
      *
      * @param string $sorceryId
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setSorceryId($sorceryId);
-
 
     /**
      * Get sorceryId
@@ -23,16 +29,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getSorceryId();
 
-
     /**
      * Set fromDomain
      *
      * @param string $fromDomain
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setFromDomain($fromDomain = null);
-
 
     /**
      * Get fromDomain
@@ -41,16 +45,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getFromDomain();
 
-
     /**
      * Set aors
      *
      * @param string $aors
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setAors($aors = null);
-
 
     /**
      * Get aors
@@ -59,16 +61,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getAors();
 
-
     /**
      * Set callerid
      *
      * @param string $callerid
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setCallerid($callerid = null);
-
 
     /**
      * Get callerid
@@ -77,16 +77,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getCallerid();
 
-
     /**
      * Set context
      *
      * @param string $context
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setContext($context);
-
 
     /**
      * Get context
@@ -95,16 +93,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getContext();
 
-
     /**
      * Set disallow
      *
      * @param string $disallow
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setDisallow($disallow);
-
 
     /**
      * Get disallow
@@ -113,16 +109,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getDisallow();
 
-
     /**
      * Set allow
      *
      * @param string $allow
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setAllow($allow);
-
 
     /**
      * Get allow
@@ -131,16 +125,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getAllow();
 
-
     /**
      * Set directMedia
      *
      * @param string $directMedia
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setDirectMedia($directMedia = null);
-
 
     /**
      * Get directMedia
@@ -149,16 +141,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getDirectMedia();
 
-
     /**
      * Set directMediaMethod
      *
      * @param string $directMediaMethod
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setDirectMediaMethod($directMediaMethod = null);
-
 
     /**
      * Get directMediaMethod
@@ -167,16 +157,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getDirectMediaMethod();
 
-
     /**
      * Set mailboxes
      *
      * @param string $mailboxes
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setMailboxes($mailboxes = null);
-
 
     /**
      * Get mailboxes
@@ -185,16 +173,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getMailboxes();
 
-
     /**
      * Set pickupGroup
      *
      * @param string $pickupGroup
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setPickupGroup($pickupGroup = null);
-
 
     /**
      * Get pickupGroup
@@ -203,16 +189,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getPickupGroup();
 
-
     /**
      * Set sendDiversion
      *
      * @param string $sendDiversion
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setSendDiversion($sendDiversion = null);
-
 
     /**
      * Get sendDiversion
@@ -221,16 +205,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getSendDiversion();
 
-
     /**
      * Set sendPai
      *
      * @param string $sendPai
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setSendPai($sendPai = null);
-
 
     /**
      * Get sendPai
@@ -239,16 +221,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getSendPai();
 
-
     /**
      * Set subscribecontext
      *
      * @param string $subscribecontext
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setSubscribecontext($subscribecontext);
-
 
     /**
      * Get subscribecontext
@@ -257,16 +237,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getSubscribecontext();
 
-
     /**
      * Set oneHundredRel
      *
      * @param string $oneHundredRel
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setOneHundredRel($oneHundredRel);
-
 
     /**
      * Get oneHundredRel
@@ -275,16 +253,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getOneHundredRel();
 
-
     /**
      * Set outboundProxy
      *
      * @param string $outboundProxy
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setOutboundProxy($outboundProxy = null);
-
 
     /**
      * Get outboundProxy
@@ -293,16 +269,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getOutboundProxy();
 
-
     /**
      * Set trustIdInbound
      *
      * @param string $trustIdInbound
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setTrustIdInbound($trustIdInbound = null);
-
 
     /**
      * Get trustIdInbound
@@ -311,16 +285,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getTrustIdInbound();
 
-
     /**
      * Set terminal
      *
      * @param \Ivoz\Domain\Model\Terminal\TerminalInterface $terminal
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setTerminal(\Ivoz\Domain\Model\Terminal\TerminalInterface $terminal = null);
-
 
     /**
      * Get terminal
@@ -329,16 +301,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getTerminal();
 
-
     /**
      * Set friend
      *
      * @param \Ivoz\Domain\Model\Friend\FriendInterface $friend
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setFriend(\Ivoz\Domain\Model\Friend\FriendInterface $friend = null);
-
 
     /**
      * Get friend
@@ -347,16 +317,14 @@ interface PsEndpointInterface extends EntityInterface
      */
     public function getFriend();
 
-
     /**
      * Set retailAccount
      *
      * @param \Ivoz\Domain\Model\RetailAccount\RetailAccountInterface $retailAccount
      *
-     * @return PsEndpointInterface
+     * @return self
      */
     public function setRetailAccount(\Ivoz\Domain\Model\RetailAccount\RetailAccountInterface $retailAccount = null);
-
 
     /**
      * Get retailAccount
@@ -364,8 +332,6 @@ interface PsEndpointInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\RetailAccount\RetailAccountInterface
      */
     public function getRetailAccount();
-
-
 
 }
 

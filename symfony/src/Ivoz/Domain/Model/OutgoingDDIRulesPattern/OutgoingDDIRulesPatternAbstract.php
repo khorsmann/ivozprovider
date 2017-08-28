@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\OutgoingDDIRulesPattern;
 
 use Assert\Assertion;
@@ -6,6 +7,7 @@ use Core\Application\DataTransferObjectInterface;
 
 /**
  * OutgoingDDIRulesPatternAbstract
+ * @codeCoverageIgnore
  */
 abstract class OutgoingDDIRulesPatternAbstract
 {
@@ -21,7 +23,7 @@ abstract class OutgoingDDIRulesPatternAbstract
     protected $priority = '1';
 
     /**
-     * @var \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterfaceInterface
+     * @var \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
      */
     protected $outgoingDDIRuleId;
 
@@ -230,11 +232,11 @@ abstract class OutgoingDDIRulesPatternAbstract
     /**
      * Set outgoingDDIRuleId
      *
-     * @param \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterfaceInterface $outgoingDDIRuleId
+     * @param \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRuleId
      *
      * @return self
      */
-    public function setOutgoingDDIRuleId(\Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterfaceInterface $outgoingDDIRuleId = null)
+    public function setOutgoingDDIRuleId(\Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRuleId = null)
     {
         $this->outgoingDDIRuleId = $outgoingDDIRuleId;
 
@@ -244,7 +246,7 @@ abstract class OutgoingDDIRulesPatternAbstract
     /**
      * Get outgoingDDIRuleId
      *
-     * @return \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterfaceInterface
+     * @return \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
      */
     public function getOutgoingDDIRuleId()
     {

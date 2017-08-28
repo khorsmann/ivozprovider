@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\HolidayDate;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * HolidayDateTrait
+ * @codeCoverageIgnore
  */
 trait HolidayDateTrait
 {

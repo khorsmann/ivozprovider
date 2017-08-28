@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\Domain;
 
 use Assert\Assertion;
@@ -6,6 +7,7 @@ use Core\Application\DataTransferObjectInterface;
 
 /**
  * DomainAbstract
+ * @codeCoverageIgnore
  */
 abstract class DomainAbstract
 {

@@ -1,33 +1,19 @@
 imports:
-  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/xml_rpc.yml" }
-  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/application_server.yml" }
-  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/brand.yml" }
-  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/brand_service.yml" }
-  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/call_forward_setting.yml" }
-  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/company.yml" }
-  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/company_admin.yml" }
-  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/conference_room.yml" }
-  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/ddi.yml" }
-  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/domain.yml" }
-  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/extension.yml" }
-  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/external_call_filter.yml" }
-  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/faxes.yml" }
-  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/faxes_in_out.yml" }
-  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/friend.yml" }
-  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/generic_music_on_hold.yml" }
-  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/hunt_group.yml" }
-  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/invoice.yml" }
+  - { resource: "@CoreBundle/Resources/config/lifecycle/core/xml_rpc.yml" }
+  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz.yml" }
+  - { resource: "@CoreBundle/Resources/config/lifecycle/kam.yml" }
 
 services:
   _defaults:
     autowire: true
     public: false
 
-  Core\Infrastructure\Domain\Model\Lifecycle\DoctrineSubscriber:
+  Core\Infrastructure\Domain\Service\Lifecycle\DoctrineEventSubscriber:
       arguments:
         - "@service_container"
       tags:
         - { name: doctrine.event_subscriber }
 
-  Core\Infrastructure\Domain\Model\Lifecycle\HandlerChain:
+  Core\Domain\Service\LifecycleEventListener:
     public: true
+

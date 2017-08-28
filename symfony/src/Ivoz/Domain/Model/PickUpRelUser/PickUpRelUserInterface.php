@@ -11,10 +11,9 @@ interface PickUpRelUserInterface extends EntityInterface
      *
      * @param \Ivoz\Domain\Model\PickUpGroup\PickUpGroupInterface $pickUpGroup
      *
-     * @return PickUpRelUserInterface
+     * @return self
      */
     public function setPickUpGroup(\Ivoz\Domain\Model\PickUpGroup\PickUpGroupInterface $pickUpGroup);
-
 
     /**
      * Get pickUpGroup
@@ -23,16 +22,14 @@ interface PickUpRelUserInterface extends EntityInterface
      */
     public function getPickUpGroup();
 
-
     /**
      * Set user
      *
      * @param \Ivoz\Domain\Model\User\UserInterface $user
      *
-     * @return PickUpRelUserInterface
+     * @return self
      */
     public function setUser(\Ivoz\Domain\Model\User\UserInterface $user);
-
 
     /**
      * Get user
@@ -40,8 +37,6 @@ interface PickUpRelUserInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\User\UserInterface
      */
     public function getUser();
-
-
 
 }
 

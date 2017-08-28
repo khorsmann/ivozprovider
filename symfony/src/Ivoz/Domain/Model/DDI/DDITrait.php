@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\DDI;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * DDITrait
+ * @codeCoverageIgnore
  */
 trait DDITrait
 {

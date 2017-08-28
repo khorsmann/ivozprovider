@@ -11,10 +11,9 @@ interface TrunksUacregInterface extends EntityInterface
      *
      * @param string $lUuid
      *
-     * @return TrunksUacregInterface
+     * @return self
      */
     public function setLUuid($lUuid);
-
 
     /**
      * Get lUuid
@@ -23,16 +22,14 @@ interface TrunksUacregInterface extends EntityInterface
      */
     public function getLUuid();
 
-
     /**
      * Set lUsername
      *
      * @param string $lUsername
      *
-     * @return TrunksUacregInterface
+     * @return self
      */
     public function setLUsername($lUsername);
-
 
     /**
      * Get lUsername
@@ -41,16 +38,14 @@ interface TrunksUacregInterface extends EntityInterface
      */
     public function getLUsername();
 
-
     /**
      * Set lDomain
      *
      * @param string $lDomain
      *
-     * @return TrunksUacregInterface
+     * @return self
      */
     public function setLDomain($lDomain);
-
 
     /**
      * Get lDomain
@@ -59,16 +54,14 @@ interface TrunksUacregInterface extends EntityInterface
      */
     public function getLDomain();
 
-
     /**
      * Set rUsername
      *
      * @param string $rUsername
      *
-     * @return TrunksUacregInterface
+     * @return self
      */
     public function setRUsername($rUsername);
-
 
     /**
      * Get rUsername
@@ -77,16 +70,14 @@ interface TrunksUacregInterface extends EntityInterface
      */
     public function getRUsername();
 
-
     /**
      * Set rDomain
      *
      * @param string $rDomain
      *
-     * @return TrunksUacregInterface
+     * @return self
      */
     public function setRDomain($rDomain);
-
 
     /**
      * Get rDomain
@@ -95,16 +86,14 @@ interface TrunksUacregInterface extends EntityInterface
      */
     public function getRDomain();
 
-
     /**
      * Set realm
      *
      * @param string $realm
      *
-     * @return TrunksUacregInterface
+     * @return self
      */
     public function setRealm($realm);
-
 
     /**
      * Get realm
@@ -113,16 +102,14 @@ interface TrunksUacregInterface extends EntityInterface
      */
     public function getRealm();
 
-
     /**
      * Set authUsername
      *
      * @param string $authUsername
      *
-     * @return TrunksUacregInterface
+     * @return self
      */
     public function setAuthUsername($authUsername);
-
 
     /**
      * Get authUsername
@@ -131,16 +118,14 @@ interface TrunksUacregInterface extends EntityInterface
      */
     public function getAuthUsername();
 
-
     /**
      * Set authPassword
      *
      * @param string $authPassword
      *
-     * @return TrunksUacregInterface
+     * @return self
      */
     public function setAuthPassword($authPassword);
-
 
     /**
      * Get authPassword
@@ -149,16 +134,14 @@ interface TrunksUacregInterface extends EntityInterface
      */
     public function getAuthPassword();
 
-
     /**
      * Set authProxy
      *
      * @param string $authProxy
      *
-     * @return TrunksUacregInterface
+     * @return self
      */
     public function setAuthProxy($authProxy);
-
 
     /**
      * Get authProxy
@@ -167,16 +150,14 @@ interface TrunksUacregInterface extends EntityInterface
      */
     public function getAuthProxy();
 
-
     /**
      * Set expires
      *
      * @param integer $expires
      *
-     * @return TrunksUacregInterface
+     * @return self
      */
     public function setExpires($expires);
-
 
     /**
      * Get expires
@@ -185,16 +166,14 @@ interface TrunksUacregInterface extends EntityInterface
      */
     public function getExpires();
 
-
     /**
      * Set flags
      *
      * @param integer $flags
      *
-     * @return TrunksUacregInterface
+     * @return self
      */
     public function setFlags($flags);
-
 
     /**
      * Get flags
@@ -203,16 +182,14 @@ interface TrunksUacregInterface extends EntityInterface
      */
     public function getFlags();
 
-
     /**
      * Set regDelay
      *
      * @param integer $regDelay
      *
-     * @return TrunksUacregInterface
+     * @return self
      */
     public function setRegDelay($regDelay);
-
 
     /**
      * Get regDelay
@@ -221,16 +198,14 @@ interface TrunksUacregInterface extends EntityInterface
      */
     public function getRegDelay();
 
-
     /**
      * Set multiddi
      *
      * @param boolean $multiddi
      *
-     * @return TrunksUacregInterface
+     * @return self
      */
     public function setMultiddi($multiddi);
-
 
     /**
      * Get multiddi
@@ -239,16 +214,14 @@ interface TrunksUacregInterface extends EntityInterface
      */
     public function getMultiddi();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return TrunksUacregInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand);
-
 
     /**
      * Get brand
@@ -257,16 +230,14 @@ interface TrunksUacregInterface extends EntityInterface
      */
     public function getBrand();
 
-
     /**
      * Set peeringContract
      *
      * @param \Ivoz\Domain\Model\PeeringContract\PeeringContractInterface $peeringContract
      *
-     * @return TrunksUacregInterface
+     * @return self
      */
     public function setPeeringContract(\Ivoz\Domain\Model\PeeringContract\PeeringContractInterface $peeringContract);
-
 
     /**
      * Get peeringContract
@@ -274,8 +245,6 @@ interface TrunksUacregInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\PeeringContract\PeeringContractInterface
      */
     public function getPeeringContract();
-
-
 
 }
 

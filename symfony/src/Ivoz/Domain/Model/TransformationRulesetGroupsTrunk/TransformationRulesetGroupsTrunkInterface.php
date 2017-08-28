@@ -11,10 +11,9 @@ interface TransformationRulesetGroupsTrunkInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return TransformationRulesetGroupsTrunkInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface TransformationRulesetGroupsTrunkInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set callerIn
      *
      * @param integer $callerIn
      *
-     * @return TransformationRulesetGroupsTrunkInterface
+     * @return self
      */
     public function setCallerIn($callerIn = null);
-
 
     /**
      * Get callerIn
@@ -41,16 +38,14 @@ interface TransformationRulesetGroupsTrunkInterface extends EntityInterface
      */
     public function getCallerIn();
 
-
     /**
      * Set calleeIn
      *
      * @param integer $calleeIn
      *
-     * @return TransformationRulesetGroupsTrunkInterface
+     * @return self
      */
     public function setCalleeIn($calleeIn = null);
-
 
     /**
      * Get calleeIn
@@ -59,16 +54,14 @@ interface TransformationRulesetGroupsTrunkInterface extends EntityInterface
      */
     public function getCalleeIn();
 
-
     /**
      * Set callerOut
      *
      * @param integer $callerOut
      *
-     * @return TransformationRulesetGroupsTrunkInterface
+     * @return self
      */
     public function setCallerOut($callerOut = null);
-
 
     /**
      * Get callerOut
@@ -77,16 +70,14 @@ interface TransformationRulesetGroupsTrunkInterface extends EntityInterface
      */
     public function getCallerOut();
 
-
     /**
      * Set calleeOut
      *
      * @param integer $calleeOut
      *
-     * @return TransformationRulesetGroupsTrunkInterface
+     * @return self
      */
     public function setCalleeOut($calleeOut = null);
-
 
     /**
      * Get calleeOut
@@ -95,16 +86,14 @@ interface TransformationRulesetGroupsTrunkInterface extends EntityInterface
      */
     public function getCalleeOut();
 
-
     /**
      * Set description
      *
      * @param string $description
      *
-     * @return TransformationRulesetGroupsTrunkInterface
+     * @return self
      */
     public function setDescription($description);
-
 
     /**
      * Get description
@@ -113,16 +102,14 @@ interface TransformationRulesetGroupsTrunkInterface extends EntityInterface
      */
     public function getDescription();
 
-
     /**
      * Set automatic
      *
      * @param boolean $automatic
      *
-     * @return TransformationRulesetGroupsTrunkInterface
+     * @return self
      */
     public function setAutomatic($automatic);
-
 
     /**
      * Get automatic
@@ -131,16 +118,14 @@ interface TransformationRulesetGroupsTrunkInterface extends EntityInterface
      */
     public function getAutomatic();
 
-
     /**
      * Set internationalCode
      *
      * @param string $internationalCode
      *
-     * @return TransformationRulesetGroupsTrunkInterface
+     * @return self
      */
     public function setInternationalCode($internationalCode = null);
-
 
     /**
      * Get internationalCode
@@ -149,16 +134,14 @@ interface TransformationRulesetGroupsTrunkInterface extends EntityInterface
      */
     public function getInternationalCode();
 
-
     /**
      * Set nationalNumLength
      *
      * @param integer $nationalNumLength
      *
-     * @return TransformationRulesetGroupsTrunkInterface
+     * @return self
      */
     public function setNationalNumLength($nationalNumLength = null);
-
 
     /**
      * Get nationalNumLength
@@ -167,16 +150,14 @@ interface TransformationRulesetGroupsTrunkInterface extends EntityInterface
      */
     public function getNationalNumLength();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return TransformationRulesetGroupsTrunkInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand);
-
 
     /**
      * Get brand
@@ -185,16 +166,14 @@ interface TransformationRulesetGroupsTrunkInterface extends EntityInterface
      */
     public function getBrand();
 
-
     /**
      * Set country
      *
      * @param \Ivoz\Domain\Model\Country\CountryInterface $country
      *
-     * @return TransformationRulesetGroupsTrunkInterface
+     * @return self
      */
     public function setCountry(\Ivoz\Domain\Model\Country\CountryInterface $country = null);
-
 
     /**
      * Get country
@@ -202,8 +181,6 @@ interface TransformationRulesetGroupsTrunkInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Country\CountryInterface
      */
     public function getCountry();
-
-
 
 }
 

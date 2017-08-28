@@ -4,6 +4,15 @@ services:
     public: false
 
   ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\ApplicationServer\ApplicationServerLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.application_server.service_collection:
+    '@Ivoz\Domain\Service\ApplicationServer\ApplicationServerLifecycleServiceCollection'
+
+  ##################################
   ## post_persist
   ##################################
   Kam\Domain\Service\Dispatcher\UpdateByApplicationServer:
@@ -15,4 +24,14 @@ services:
       $dispatcherRepository:
         '@=service("doctrine.orm.entity_manager").getRepository("Kam\\Domain\\Model\\Dispatcher\\Dispatcher")'
 
-  # services with priority 20 & 21 in lifecycle/xml_rpc.yml
+  Ivoz\Domain\Service\ApplicationServer\PersistedSendXmlRcp:
+    tags:
+      - { name: ivoz.lifecycle.application_server.post_persist, priority: 20 }
+
+  ##################################
+  ## post_remove
+  ##################################
+
+  Ivoz\Domain\Service\ApplicationServer\RemovedSendXmlRcp:
+    tags:
+      - { name: ivoz.lifecycle.application_server.post_remove, priority: 10 }

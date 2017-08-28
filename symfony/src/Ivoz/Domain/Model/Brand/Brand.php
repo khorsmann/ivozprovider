@@ -1,5 +1,8 @@
 <?php
+
 namespace Ivoz\Domain\Model\Brand;
+
+use Ivoz\Domain\Model\Company\CompanyInterface;
 
 /**
  * Brand

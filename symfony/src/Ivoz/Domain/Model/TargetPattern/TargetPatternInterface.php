@@ -11,10 +11,9 @@ interface TargetPatternInterface extends EntityInterface
      *
      * @param string $regExp
      *
-     * @return TargetPatternInterface
+     * @return self
      */
     public function setRegExp($regExp);
-
 
     /**
      * Get regExp
@@ -23,16 +22,14 @@ interface TargetPatternInterface extends EntityInterface
      */
     public function getRegExp();
 
-
     /**
      * Set name
      *
      * @param Name $name
      *
-     * @return TargetPatternInterface
+     * @return self
      */
-    public function setName(Name $name);
-
+    public function setName(\Ivoz\Domain\Model\TargetPattern\Name $name);
 
     /**
      * Get name
@@ -41,16 +38,14 @@ interface TargetPatternInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set description
      *
      * @param Description $description
      *
-     * @return TargetPatternInterface
+     * @return self
      */
-    public function setDescription(Description $description);
-
+    public function setDescription(\Ivoz\Domain\Model\TargetPattern\Description $description);
 
     /**
      * Get description

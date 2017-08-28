@@ -4,11 +4,20 @@ services:
     public: false
 
   ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\CallForwardSetting\CallForwardSettingLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.call_forward_setting.service_collection:
+    '@Ivoz\Domain\Service\CallForwardSetting\CallForwardSettingLifecycleServiceCollection'
+
+  ##################################
   ## pre_persist
   ##################################
   Ivoz\Domain\Service\CallForwardSetting\CheckValidity:
     tags:
-      - { name: ivoz.lifecycle.brand.pre_persist, priority: 10 }
+      - { name: ivoz.lifecycle.call_forward_setting.pre_persist, priority: 10 }
     arguments:
       $callForwardSettingRepository:
         '@=service("doctrine.orm.entity_manager").getRepository("Ivoz\\Domain\\Model\\CallForwardSetting\\CallForwardSetting")'

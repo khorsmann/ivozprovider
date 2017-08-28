@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\Country;
 
 use Assert\Assertion;
 
 /**
  * Zone
+ * @codeCoverageIgnore
  */
 class Zone
 {

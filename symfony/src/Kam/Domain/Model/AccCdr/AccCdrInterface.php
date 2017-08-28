@@ -7,14 +7,23 @@ use Core\Domain\Model\EntityInterface;
 interface AccCdrInterface extends EntityInterface
 {
     /**
+     * @todo move this to its own service
+     */
+    public function tarificate($plan = null);
+
+    /**
+     * @return bool
+     */
+    public function isBounced();
+
+    /**
      * Set proxy
      *
      * @param string $proxy
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setProxy($proxy = null);
-
 
     /**
      * Get proxy
@@ -23,16 +32,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getProxy();
 
-
     /**
      * Set startTimeUtc
      *
      * @param \DateTime $startTimeUtc
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setStartTimeUtc($startTimeUtc);
-
 
     /**
      * Get startTimeUtc
@@ -41,16 +48,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getStartTimeUtc();
 
-
     /**
      * Set endTimeUtc
      *
      * @param \DateTime $endTimeUtc
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setEndTimeUtc($endTimeUtc);
-
 
     /**
      * Get endTimeUtc
@@ -59,16 +64,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getEndTimeUtc();
 
-
     /**
      * Set startTime
      *
      * @param \DateTime $startTime
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setStartTime($startTime);
-
 
     /**
      * Get startTime
@@ -77,16 +80,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getStartTime();
 
-
     /**
      * Set endTime
      *
      * @param \DateTime $endTime
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setEndTime($endTime);
-
 
     /**
      * Get endTime
@@ -95,16 +96,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getEndTime();
 
-
     /**
      * Set duration
      *
      * @param float $duration
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setDuration($duration);
-
 
     /**
      * Get duration
@@ -113,16 +112,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getDuration();
 
-
     /**
      * Set caller
      *
      * @param string $caller
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setCaller($caller = null);
-
 
     /**
      * Get caller
@@ -131,16 +128,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getCaller();
 
-
     /**
      * Set callee
      *
      * @param string $callee
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setCallee($callee = null);
-
 
     /**
      * Get callee
@@ -149,16 +144,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getCallee();
 
-
     /**
      * Set referee
      *
      * @param string $referee
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setReferee($referee = null);
-
 
     /**
      * Get referee
@@ -167,16 +160,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getReferee();
 
-
     /**
      * Set referrer
      *
      * @param string $referrer
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setReferrer($referrer = null);
-
 
     /**
      * Get referrer
@@ -185,16 +176,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getReferrer();
 
-
     /**
      * Set asiden
      *
      * @param string $asiden
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setAsiden($asiden = null);
-
 
     /**
      * Get asiden
@@ -203,16 +192,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getAsiden();
 
-
     /**
      * Set asaddress
      *
      * @param string $asaddress
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setAsaddress($asaddress = null);
-
 
     /**
      * Get asaddress
@@ -221,16 +208,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getAsaddress();
 
-
     /**
      * Set callid
      *
      * @param string $callid
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setCallid($callid = null);
-
 
     /**
      * Get callid
@@ -239,16 +224,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getCallid();
 
-
     /**
      * Set callidhash
      *
      * @param string $callidhash
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setCallidhash($callidhash = null);
-
 
     /**
      * Get callidhash
@@ -257,16 +240,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getCallidhash();
 
-
     /**
      * Set xcallid
      *
      * @param string $xcallid
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setXcallid($xcallid = null);
-
 
     /**
      * Get xcallid
@@ -275,16 +256,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getXcallid();
 
-
     /**
      * Set parsed
      *
      * @param string $parsed
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setParsed($parsed = null);
-
 
     /**
      * Get parsed
@@ -293,16 +272,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getParsed();
 
-
     /**
      * Set diversion
      *
      * @param string $diversion
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setDiversion($diversion = null);
-
 
     /**
      * Get diversion
@@ -311,16 +288,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getDiversion();
 
-
     /**
      * Set peeringcontractid
      *
      * @param string $peeringcontractid
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setPeeringcontractid($peeringcontractid = null);
-
 
     /**
      * Get peeringcontractid
@@ -329,16 +304,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getPeeringcontractid();
 
-
     /**
      * Set bounced
      *
      * @param string $bounced
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setBounced($bounced);
-
 
     /**
      * Get bounced
@@ -347,16 +320,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getBounced();
 
-
     /**
      * Set externallyrated
      *
      * @param boolean $externallyrated
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setExternallyrated($externallyrated = null);
-
 
     /**
      * Get externallyrated
@@ -365,16 +336,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getExternallyrated();
 
-
     /**
      * Set metered
      *
      * @param boolean $metered
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setMetered($metered = null);
-
 
     /**
      * Get metered
@@ -383,16 +352,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getMetered();
 
-
     /**
      * Set meteringdate
      *
      * @param \DateTime $meteringdate
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setMeteringdate($meteringdate = null);
-
 
     /**
      * Get meteringdate
@@ -401,16 +368,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getMeteringdate();
 
-
     /**
      * Set pricingplanname
      *
      * @param string $pricingplanname
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setPricingplanname($pricingplanname = null);
-
 
     /**
      * Get pricingplanname
@@ -419,16 +384,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getPricingplanname();
 
-
     /**
      * Set targetpatternname
      *
      * @param string $targetpatternname
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setTargetpatternname($targetpatternname = null);
-
 
     /**
      * Get targetpatternname
@@ -437,16 +400,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getTargetpatternname();
 
-
     /**
      * Set price
      *
      * @param string $price
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setPrice($price = null);
-
 
     /**
      * Get price
@@ -455,16 +416,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getPrice();
 
-
     /**
      * Set pricingplandetails
      *
      * @param string $pricingplandetails
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setPricingplandetails($pricingplandetails = null);
-
 
     /**
      * Get pricingplandetails
@@ -473,16 +432,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getPricingplandetails();
 
-
     /**
      * Set direction
      *
      * @param string $direction
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setDirection($direction = null);
-
 
     /**
      * Get direction
@@ -491,16 +448,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getDirection();
 
-
     /**
      * Set remeteringdate
      *
      * @param \DateTime $remeteringdate
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setRemeteringdate($remeteringdate = null);
-
 
     /**
      * Get remeteringdate
@@ -509,16 +464,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getRemeteringdate();
 
-
     /**
      * Set pricingPlan
      *
      * @param \Ivoz\Domain\Model\PricingPlan\PricingPlanInterface $pricingPlan
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setPricingPlan(\Ivoz\Domain\Model\PricingPlan\PricingPlanInterface $pricingPlan = null);
-
 
     /**
      * Get pricingPlan
@@ -527,16 +480,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getPricingPlan();
 
-
     /**
      * Set targetPattern
      *
      * @param \Ivoz\Domain\Model\TargetPattern\TargetPatternInterface $targetPattern
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setTargetPattern(\Ivoz\Domain\Model\TargetPattern\TargetPatternInterface $targetPattern = null);
-
 
     /**
      * Get targetPattern
@@ -545,16 +496,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getTargetPattern();
 
-
     /**
      * Set invoice
      *
      * @param \Ivoz\Domain\Model\Invoice\InvoiceInterface $invoice
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setInvoice(\Ivoz\Domain\Model\Invoice\InvoiceInterface $invoice = null);
-
 
     /**
      * Get invoice
@@ -563,16 +512,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getInvoice();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand = null);
-
 
     /**
      * Get brand
@@ -581,16 +528,14 @@ interface AccCdrInterface extends EntityInterface
      */
     public function getBrand();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return AccCdrInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company = null);
-
 
     /**
      * Get company
@@ -598,8 +543,6 @@ interface AccCdrInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Company\CompanyInterface
      */
     public function getCompany();
-
-
 
 }
 

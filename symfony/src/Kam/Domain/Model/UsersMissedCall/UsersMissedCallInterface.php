@@ -11,10 +11,9 @@ interface UsersMissedCallInterface extends EntityInterface
      *
      * @param string $method
      *
-     * @return UsersMissedCallInterface
+     * @return self
      */
     public function setMethod($method);
-
 
     /**
      * Get method
@@ -23,16 +22,14 @@ interface UsersMissedCallInterface extends EntityInterface
      */
     public function getMethod();
 
-
     /**
      * Set fromTag
      *
      * @param string $fromTag
      *
-     * @return UsersMissedCallInterface
+     * @return self
      */
     public function setFromTag($fromTag);
-
 
     /**
      * Get fromTag
@@ -41,16 +38,14 @@ interface UsersMissedCallInterface extends EntityInterface
      */
     public function getFromTag();
 
-
     /**
      * Set toTag
      *
      * @param string $toTag
      *
-     * @return UsersMissedCallInterface
+     * @return self
      */
     public function setToTag($toTag);
-
 
     /**
      * Get toTag
@@ -59,16 +54,14 @@ interface UsersMissedCallInterface extends EntityInterface
      */
     public function getToTag();
 
-
     /**
      * Set callid
      *
      * @param string $callid
      *
-     * @return UsersMissedCallInterface
+     * @return self
      */
     public function setCallid($callid);
-
 
     /**
      * Get callid
@@ -77,16 +70,14 @@ interface UsersMissedCallInterface extends EntityInterface
      */
     public function getCallid();
 
-
     /**
      * Set sipCode
      *
      * @param string $sipCode
      *
-     * @return UsersMissedCallInterface
+     * @return self
      */
     public function setSipCode($sipCode);
-
 
     /**
      * Get sipCode
@@ -95,16 +86,14 @@ interface UsersMissedCallInterface extends EntityInterface
      */
     public function getSipCode();
 
-
     /**
      * Set sipReason
      *
      * @param string $sipReason
      *
-     * @return UsersMissedCallInterface
+     * @return self
      */
     public function setSipReason($sipReason);
-
 
     /**
      * Get sipReason
@@ -113,16 +102,14 @@ interface UsersMissedCallInterface extends EntityInterface
      */
     public function getSipReason();
 
-
     /**
      * Set srcIp
      *
      * @param string $srcIp
      *
-     * @return UsersMissedCallInterface
+     * @return self
      */
     public function setSrcIp($srcIp = null);
-
 
     /**
      * Get srcIp
@@ -131,16 +118,14 @@ interface UsersMissedCallInterface extends EntityInterface
      */
     public function getSrcIp();
 
-
     /**
      * Set fromUser
      *
      * @param string $fromUser
      *
-     * @return UsersMissedCallInterface
+     * @return self
      */
     public function setFromUser($fromUser = null);
-
 
     /**
      * Get fromUser
@@ -149,16 +134,14 @@ interface UsersMissedCallInterface extends EntityInterface
      */
     public function getFromUser();
 
-
     /**
      * Set fromDomain
      *
      * @param string $fromDomain
      *
-     * @return UsersMissedCallInterface
+     * @return self
      */
     public function setFromDomain($fromDomain = null);
-
 
     /**
      * Get fromDomain
@@ -167,16 +150,14 @@ interface UsersMissedCallInterface extends EntityInterface
      */
     public function getFromDomain();
 
-
     /**
      * Set ruriUser
      *
      * @param string $ruriUser
      *
-     * @return UsersMissedCallInterface
+     * @return self
      */
     public function setRuriUser($ruriUser = null);
-
 
     /**
      * Get ruriUser
@@ -185,16 +166,14 @@ interface UsersMissedCallInterface extends EntityInterface
      */
     public function getRuriUser();
 
-
     /**
      * Set ruriDomain
      *
      * @param string $ruriDomain
      *
-     * @return UsersMissedCallInterface
+     * @return self
      */
     public function setRuriDomain($ruriDomain = null);
-
 
     /**
      * Get ruriDomain
@@ -203,16 +182,14 @@ interface UsersMissedCallInterface extends EntityInterface
      */
     public function getRuriDomain();
 
-
     /**
      * Set cseq
      *
      * @param integer $cseq
      *
-     * @return UsersMissedCallInterface
+     * @return self
      */
     public function setCseq($cseq = null);
-
 
     /**
      * Get cseq
@@ -221,16 +198,14 @@ interface UsersMissedCallInterface extends EntityInterface
      */
     public function getCseq();
 
-
     /**
      * Set localtime
      *
      * @param \DateTime $localtime
      *
-     * @return UsersMissedCallInterface
+     * @return self
      */
     public function setLocaltime($localtime);
-
 
     /**
      * Get localtime
@@ -239,16 +214,14 @@ interface UsersMissedCallInterface extends EntityInterface
      */
     public function getLocaltime();
 
-
     /**
      * Set utctime
      *
      * @param string $utctime
      *
-     * @return UsersMissedCallInterface
+     * @return self
      */
     public function setUtctime($utctime = null);
-
 
     /**
      * Get utctime
@@ -256,8 +229,6 @@ interface UsersMissedCallInterface extends EntityInterface
      * @return string
      */
     public function getUtctime();
-
-
 
 }
 

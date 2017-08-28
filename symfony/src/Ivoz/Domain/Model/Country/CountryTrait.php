@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\Country;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * CountryTrait
+ * @codeCoverageIgnore
  */
 trait CountryTrait
 {

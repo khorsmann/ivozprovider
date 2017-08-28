@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\ExternalCallFilter;
 
 use Core\Application\DataTransferObjectInterface;
@@ -7,6 +8,7 @@ use Doctrine\Common\Collections\Criteria;
 
 /**
  * ExternalCallFilterTrait
+ * @codeCoverageIgnore
  */
 trait ExternalCallFilterTrait
 {

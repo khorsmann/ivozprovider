@@ -11,10 +11,9 @@ interface UserInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return UserInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface UserInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set lastname
      *
      * @param string $lastname
      *
-     * @return UserInterface
+     * @return self
      */
     public function setLastname($lastname);
-
 
     /**
      * Get lastname
@@ -41,16 +38,14 @@ interface UserInterface extends EntityInterface
      */
     public function getLastname();
 
-
     /**
      * Set email
      *
      * @param string $email
      *
-     * @return UserInterface
+     * @return self
      */
     public function setEmail($email = null);
-
 
     /**
      * Get email
@@ -59,16 +54,14 @@ interface UserInterface extends EntityInterface
      */
     public function getEmail();
 
-
     /**
      * Set pass
      *
      * @param string $pass
      *
-     * @return UserInterface
+     * @return self
      */
     public function setPass($pass = null);
-
 
     /**
      * Get pass
@@ -77,16 +70,14 @@ interface UserInterface extends EntityInterface
      */
     public function getPass();
 
-
     /**
      * Set doNotDisturb
      *
      * @param boolean $doNotDisturb
      *
-     * @return UserInterface
+     * @return self
      */
     public function setDoNotDisturb($doNotDisturb);
-
 
     /**
      * Get doNotDisturb
@@ -95,16 +86,14 @@ interface UserInterface extends EntityInterface
      */
     public function getDoNotDisturb();
 
-
     /**
      * Set isBoss
      *
      * @param boolean $isBoss
      *
-     * @return UserInterface
+     * @return self
      */
     public function setIsBoss($isBoss);
-
 
     /**
      * Get isBoss
@@ -113,16 +102,14 @@ interface UserInterface extends EntityInterface
      */
     public function getIsBoss();
 
-
     /**
      * Set exceptionBoosAssistantRegExp
      *
      * @param string $exceptionBoosAssistantRegExp
      *
-     * @return UserInterface
+     * @return self
      */
     public function setExceptionBoosAssistantRegExp($exceptionBoosAssistantRegExp = null);
-
 
     /**
      * Get exceptionBoosAssistantRegExp
@@ -131,16 +118,14 @@ interface UserInterface extends EntityInterface
      */
     public function getExceptionBoosAssistantRegExp();
 
-
     /**
      * Set active
      *
      * @param boolean $active
      *
-     * @return UserInterface
+     * @return self
      */
     public function setActive($active);
-
 
     /**
      * Get active
@@ -149,16 +134,14 @@ interface UserInterface extends EntityInterface
      */
     public function getActive();
 
-
     /**
      * Set maxCalls
      *
      * @param integer $maxCalls
      *
-     * @return UserInterface
+     * @return self
      */
     public function setMaxCalls($maxCalls);
-
 
     /**
      * Get maxCalls
@@ -167,16 +150,14 @@ interface UserInterface extends EntityInterface
      */
     public function getMaxCalls();
 
-
     /**
      * Set externalIpCalls
      *
      * @param boolean $externalIpCalls
      *
-     * @return UserInterface
+     * @return self
      */
     public function setExternalIpCalls($externalIpCalls);
-
 
     /**
      * Get externalIpCalls
@@ -185,16 +166,14 @@ interface UserInterface extends EntityInterface
      */
     public function getExternalIpCalls();
 
-
     /**
      * Set voicemailEnabled
      *
      * @param boolean $voicemailEnabled
      *
-     * @return UserInterface
+     * @return self
      */
     public function setVoicemailEnabled($voicemailEnabled);
-
 
     /**
      * Get voicemailEnabled
@@ -203,16 +182,14 @@ interface UserInterface extends EntityInterface
      */
     public function getVoicemailEnabled();
 
-
     /**
      * Set voicemailSendMail
      *
      * @param boolean $voicemailSendMail
      *
-     * @return UserInterface
+     * @return self
      */
     public function setVoicemailSendMail($voicemailSendMail);
-
 
     /**
      * Get voicemailSendMail
@@ -221,16 +198,14 @@ interface UserInterface extends EntityInterface
      */
     public function getVoicemailSendMail();
 
-
     /**
      * Set voicemailAttachSound
      *
      * @param boolean $voicemailAttachSound
      *
-     * @return UserInterface
+     * @return self
      */
     public function setVoicemailAttachSound($voicemailAttachSound);
-
 
     /**
      * Get voicemailAttachSound
@@ -239,16 +214,14 @@ interface UserInterface extends EntityInterface
      */
     public function getVoicemailAttachSound();
 
-
     /**
      * Set tokenKey
      *
      * @param string $tokenKey
      *
-     * @return UserInterface
+     * @return self
      */
     public function setTokenKey($tokenKey = null);
-
 
     /**
      * Get tokenKey
@@ -257,16 +230,14 @@ interface UserInterface extends EntityInterface
      */
     public function getTokenKey();
 
-
     /**
      * Set areaCode
      *
      * @param string $areaCode
      *
-     * @return UserInterface
+     * @return self
      */
     public function setAreaCode($areaCode = null);
-
 
     /**
      * Get areaCode
@@ -275,16 +246,14 @@ interface UserInterface extends EntityInterface
      */
     public function getAreaCode();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return UserInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company);
-
 
     /**
      * Get company
@@ -293,16 +262,14 @@ interface UserInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set callACL
      *
      * @param \Ivoz\Domain\Model\CallACL\CallACLInterface $callACL
      *
-     * @return UserInterface
+     * @return self
      */
     public function setCallACL(\Ivoz\Domain\Model\CallACL\CallACLInterface $callACL = null);
-
 
     /**
      * Get callACL
@@ -311,16 +278,14 @@ interface UserInterface extends EntityInterface
      */
     public function getCallACL();
 
-
     /**
      * Set bossAssistant
      *
      * @param UserInterface $bossAssistant
      *
-     * @return UserInterface
+     * @return self
      */
-    public function setBossAssistant(UserInterface $bossAssistant = null);
-
+    public function setBossAssistant(\Ivoz\Domain\Model\User\UserInterface $bossAssistant = null);
 
     /**
      * Get bossAssistant
@@ -329,16 +294,14 @@ interface UserInterface extends EntityInterface
      */
     public function getBossAssistant();
 
-
     /**
      * Set country
      *
      * @param \Ivoz\Domain\Model\Country\CountryInterface $country
      *
-     * @return UserInterface
+     * @return self
      */
     public function setCountry(\Ivoz\Domain\Model\Country\CountryInterface $country = null);
-
 
     /**
      * Get country
@@ -347,16 +310,14 @@ interface UserInterface extends EntityInterface
      */
     public function getCountry();
 
-
     /**
      * Set language
      *
      * @param \Ivoz\Domain\Model\Language\LanguageInterface $language
      *
-     * @return UserInterface
+     * @return self
      */
     public function setLanguage(\Ivoz\Domain\Model\Language\LanguageInterface $language = null);
-
 
     /**
      * Get language
@@ -365,16 +326,14 @@ interface UserInterface extends EntityInterface
      */
     public function getLanguage();
 
-
     /**
      * Set terminal
      *
      * @param \Ivoz\Domain\Model\Terminal\TerminalInterface $terminal
      *
-     * @return UserInterface
+     * @return self
      */
     public function setTerminal(\Ivoz\Domain\Model\Terminal\TerminalInterface $terminal = null);
-
 
     /**
      * Get terminal
@@ -383,16 +342,14 @@ interface UserInterface extends EntityInterface
      */
     public function getTerminal();
 
-
     /**
      * Set extension
      *
      * @param \Ivoz\Domain\Model\Extension\ExtensionInterface $extension
      *
-     * @return UserInterface
+     * @return self
      */
     public function setExtension(\Ivoz\Domain\Model\Extension\ExtensionInterface $extension = null);
-
 
     /**
      * Get extension
@@ -401,16 +358,14 @@ interface UserInterface extends EntityInterface
      */
     public function getExtension();
 
-
     /**
      * Set timezone
      *
      * @param \Ivoz\Domain\Model\Timezone\TimezoneInterface $timezone
      *
-     * @return UserInterface
+     * @return self
      */
     public function setTimezone(\Ivoz\Domain\Model\Timezone\TimezoneInterface $timezone = null);
-
 
     /**
      * Get timezone
@@ -419,16 +374,14 @@ interface UserInterface extends EntityInterface
      */
     public function getTimezone();
 
-
     /**
      * Set outgoingDDI
      *
      * @param \Ivoz\Domain\Model\DDI\DDIInterface $outgoingDDI
      *
-     * @return UserInterface
+     * @return self
      */
     public function setOutgoingDDI(\Ivoz\Domain\Model\DDI\DDIInterface $outgoingDDI = null);
-
 
     /**
      * Get outgoingDDI
@@ -436,8 +389,6 @@ interface UserInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\DDI\DDIInterface
      */
     public function getOutgoingDDI();
-
-
 
 }
 

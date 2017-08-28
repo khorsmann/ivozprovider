@@ -2,23 +2,18 @@
 
 namespace Ivoz\Domain\Service\HuntGroup;
 
-use Core\Domain\Service\LifecycleEventHandlerInterface;
-use Core\Domain\Model\EntityInterface;
-use Ivoz\Domain\Model\HuntGroup\HuntGroup;
+use Ivoz\Domain\Model\HuntGroup\HuntGroupInterface;
 
 /**
  * Class SanitizeValues
  * @package Ivoz\Domain\Service\HuntGroup
- * @lifecycle hunt_group.pre_persist
+ * @lifecycle pre_persist
  */
-class SanitizeValues implements LifecycleEventHandlerInterface
+class SanitizeValues implements HuntGroupLifecycleEventHandlerInterface
 {
     public function __construct() {}
 
-    /**
-     * @param HuntGroup $entity
-     */
-    public function execute(EntityInterface $entity)
+    public function execute(HuntGroupInterface $entity)
     {
         $nullableFields = array(
             'number' => 'noAnswerNumberValue',

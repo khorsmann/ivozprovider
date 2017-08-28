@@ -4,6 +4,15 @@ services:
     public: false
 
   ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\GenericMusicOnHold\GenericMusicOnHoldLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.generic_music_on_hold.service_collection:
+    '@Ivoz\Domain\Service\GenericMusicOnHold\GenericMusicOnHoldLifecycleServiceCollection'
+
+  ##################################
   ## pre_persist
   ##################################
   Ivoz\Domain\Service\GenericMusicOnHold\SanitizeValues:

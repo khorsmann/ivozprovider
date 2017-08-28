@@ -11,10 +11,9 @@ interface FeatureInterface extends EntityInterface
      *
      * @param string $iden
      *
-     * @return FeatureInterface
+     * @return self
      */
     public function setIden($iden);
-
 
     /**
      * Get iden
@@ -23,16 +22,14 @@ interface FeatureInterface extends EntityInterface
      */
     public function getIden();
 
-
     /**
      * Set name
      *
      * @param string $name
      *
-     * @return FeatureInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -41,16 +38,14 @@ interface FeatureInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set nameEn
      *
      * @param string $nameEn
      *
-     * @return FeatureInterface
+     * @return self
      */
     public function setNameEn($nameEn);
-
 
     /**
      * Get nameEn
@@ -59,16 +54,14 @@ interface FeatureInterface extends EntityInterface
      */
     public function getNameEn();
 
-
     /**
      * Set nameEs
      *
      * @param string $nameEs
      *
-     * @return FeatureInterface
+     * @return self
      */
     public function setNameEs($nameEs);
-
 
     /**
      * Get nameEs
@@ -76,8 +69,6 @@ interface FeatureInterface extends EntityInterface
      * @return string
      */
     public function getNameEs();
-
-
 
 }
 

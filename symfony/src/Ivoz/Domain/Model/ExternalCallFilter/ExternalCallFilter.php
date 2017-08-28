@@ -1,10 +1,13 @@
 <?php
+
 namespace Ivoz\Domain\Model\ExternalCallFilter;
+
 use Ivoz\Domain\Model\Calendar\Calendar;
 use Ivoz\Domain\Model\Calendar\CalendarInterface;
 use Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList;
 use Ivoz\Domain\Model\ExternalCallFilterRelCalendar\ExternalCallFilterRelCalendar;
 use Ivoz\Domain\Model\ExternalCallFilterRelSchedule\ExternalCallFilterRelSchedule;
+use Ivoz\Domain\Model\HolidayDate\HolidayDateInterface;
 use Ivoz\Domain\Model\MatchList\MatchList;
 use Doctrine\Common\Collections\Criteria;
 
@@ -65,7 +68,7 @@ class ExternalCallFilter extends ExternalCallFilterAbstract implements ExternalC
     }
 
     /**
-     * @return \IvozProvider\Model\Raw\holidayDates or false
+     * @return Null | HolidayDateInterface
      */
     public function getHolidayDateForToday()
     {
@@ -75,10 +78,7 @@ class ExternalCallFilter extends ExternalCallFilterAbstract implements ExternalC
             return null;
         }
 
-        /**
-         * @todo remove Datetime and use something mockable instead
-         */
-        $datetime = new \DateTime("now");
+        $datetime = new \DateTime('now');
         $date = $datetime->format('Y-m-d');
 
         /**

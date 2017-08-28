@@ -1,20 +1,20 @@
 <?php
+
 namespace Kam\Domain\Service\Dispatcher;
 
-use Core\Domain\Model\EntityInterface;
 use Core\Domain\Service\EntityPersisterInterface;
+use Ivoz\Domain\Service\ApplicationServer\ApplicationServerLifecycleEventHandlerInterface;
 use Kam\Domain\Model\Dispatcher\Dispatcher as KamDispatcher;
 use Kam\Domain\Model\Dispatcher\DispatcherRepository as KamDispatcherRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Ivoz\Domain\Model\ApplicationServer\ApplicationServerInterface;
-use Core\Domain\Service\LifecycleEventHandlerInterface;
 
 /**
  * Class UpdateByApplicationServer
  * @package Kam\Domain\Service\Dispatcher
- * @lifecycle application_server.post_persist
+ * @lifecycle post_persist
  */
-class UpdateByApplicationServer implements LifecycleEventHandlerInterface
+class UpdateByApplicationServer implements ApplicationServerLifecycleEventHandlerInterface
 {
     /**
      * @var EntityManagerInterface
@@ -41,10 +41,7 @@ class UpdateByApplicationServer implements LifecycleEventHandlerInterface
         $this->dispatcherRepository = $dispatcherRepository;
     }
 
-    /**
-     * @var ApplicationServerInterface $entity
-     */
-    public function execute(EntityInterface $entity)
+    public function execute(ApplicationServerInterface $entity)
     {
         /**
          * Replicate ApplicationServer IP into kam_dispatcher

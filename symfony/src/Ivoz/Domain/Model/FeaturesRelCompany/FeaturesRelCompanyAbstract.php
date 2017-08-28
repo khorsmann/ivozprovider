@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\FeaturesRelCompany;
 
 use Assert\Assertion;
@@ -6,6 +7,7 @@ use Core\Application\DataTransferObjectInterface;
 
 /**
  * FeaturesRelCompanyAbstract
+ * @codeCoverageIgnore
  */
 abstract class FeaturesRelCompanyAbstract
 {

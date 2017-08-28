@@ -11,10 +11,9 @@ interface MusiconholdInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return MusiconholdInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface MusiconholdInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set mode
      *
      * @param string $mode
      *
-     * @return MusiconholdInterface
+     * @return self
      */
     public function setMode($mode = null);
-
 
     /**
      * Get mode
@@ -41,16 +38,14 @@ interface MusiconholdInterface extends EntityInterface
      */
     public function getMode();
 
-
     /**
      * Set directory
      *
      * @param string $directory
      *
-     * @return MusiconholdInterface
+     * @return self
      */
     public function setDirectory($directory = null);
-
 
     /**
      * Get directory
@@ -59,16 +54,14 @@ interface MusiconholdInterface extends EntityInterface
      */
     public function getDirectory();
 
-
     /**
      * Set application
      *
      * @param string $application
      *
-     * @return MusiconholdInterface
+     * @return self
      */
     public function setApplication($application = null);
-
 
     /**
      * Get application
@@ -77,16 +70,14 @@ interface MusiconholdInterface extends EntityInterface
      */
     public function getApplication();
 
-
     /**
      * Set digit
      *
      * @param string $digit
      *
-     * @return MusiconholdInterface
+     * @return self
      */
     public function setDigit($digit = null);
-
 
     /**
      * Get digit
@@ -95,16 +86,14 @@ interface MusiconholdInterface extends EntityInterface
      */
     public function getDigit();
 
-
     /**
      * Set sort
      *
      * @param string $sort
      *
-     * @return MusiconholdInterface
+     * @return self
      */
     public function setSort($sort = null);
-
 
     /**
      * Get sort
@@ -113,16 +102,14 @@ interface MusiconholdInterface extends EntityInterface
      */
     public function getSort();
 
-
     /**
      * Set format
      *
      * @param string $format
      *
-     * @return MusiconholdInterface
+     * @return self
      */
     public function setFormat($format = null);
-
 
     /**
      * Get format
@@ -131,16 +118,14 @@ interface MusiconholdInterface extends EntityInterface
      */
     public function getFormat();
 
-
     /**
      * Set stamp
      *
      * @param \DateTime $stamp
      *
-     * @return MusiconholdInterface
+     * @return self
      */
     public function setStamp($stamp = null);
-
 
     /**
      * Get stamp
@@ -148,8 +133,6 @@ interface MusiconholdInterface extends EntityInterface
      * @return \DateTime
      */
     public function getStamp();
-
-
 
 }
 

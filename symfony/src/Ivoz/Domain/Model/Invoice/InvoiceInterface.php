@@ -11,10 +11,9 @@ interface InvoiceInterface extends EntityInterface
      *
      * @param string $number
      *
-     * @return InvoiceInterface
+     * @return self
      */
     public function setNumber($number);
-
 
     /**
      * Get number
@@ -23,16 +22,14 @@ interface InvoiceInterface extends EntityInterface
      */
     public function getNumber();
 
-
     /**
      * Set inDate
      *
      * @param \DateTime $inDate
      *
-     * @return InvoiceInterface
+     * @return self
      */
     public function setInDate($inDate = null);
-
 
     /**
      * Get inDate
@@ -41,16 +38,14 @@ interface InvoiceInterface extends EntityInterface
      */
     public function getInDate();
 
-
     /**
      * Set outDate
      *
      * @param \DateTime $outDate
      *
-     * @return InvoiceInterface
+     * @return self
      */
     public function setOutDate($outDate = null);
-
 
     /**
      * Get outDate
@@ -59,16 +54,14 @@ interface InvoiceInterface extends EntityInterface
      */
     public function getOutDate();
 
-
     /**
      * Set total
      *
      * @param string $total
      *
-     * @return InvoiceInterface
+     * @return self
      */
     public function setTotal($total = null);
-
 
     /**
      * Get total
@@ -77,16 +70,14 @@ interface InvoiceInterface extends EntityInterface
      */
     public function getTotal();
 
-
     /**
      * Set taxRate
      *
      * @param string $taxRate
      *
-     * @return InvoiceInterface
+     * @return self
      */
     public function setTaxRate($taxRate = null);
-
 
     /**
      * Get taxRate
@@ -95,16 +86,14 @@ interface InvoiceInterface extends EntityInterface
      */
     public function getTaxRate();
 
-
     /**
      * Set totalWithTax
      *
      * @param string $totalWithTax
      *
-     * @return InvoiceInterface
+     * @return self
      */
     public function setTotalWithTax($totalWithTax = null);
-
 
     /**
      * Get totalWithTax
@@ -113,16 +102,14 @@ interface InvoiceInterface extends EntityInterface
      */
     public function getTotalWithTax();
 
-
     /**
      * Set status
      *
      * @param string $status
      *
-     * @return InvoiceInterface
+     * @return self
      */
     public function setStatus($status = null);
-
 
     /**
      * Get status
@@ -131,16 +118,14 @@ interface InvoiceInterface extends EntityInterface
      */
     public function getStatus();
 
-
     /**
      * Set invoiceTemplate
      *
      * @param \Ivoz\Domain\Model\InvoiceTemplate\InvoiceTemplateInterface $invoiceTemplate
      *
-     * @return InvoiceInterface
+     * @return self
      */
     public function setInvoiceTemplate(\Ivoz\Domain\Model\InvoiceTemplate\InvoiceTemplateInterface $invoiceTemplate = null);
-
 
     /**
      * Get invoiceTemplate
@@ -149,16 +134,14 @@ interface InvoiceInterface extends EntityInterface
      */
     public function getInvoiceTemplate();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return InvoiceInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand);
-
 
     /**
      * Get brand
@@ -167,16 +150,14 @@ interface InvoiceInterface extends EntityInterface
      */
     public function getBrand();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return InvoiceInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company);
-
 
     /**
      * Get company
@@ -185,16 +166,14 @@ interface InvoiceInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set pdf
      *
      * @param Pdf $pdf
      *
-     * @return InvoiceInterface
+     * @return self
      */
-    public function setPdf(Pdf $pdf);
-
+    public function setPdf(\Ivoz\Domain\Model\Invoice\Pdf $pdf);
 
     /**
      * Get pdf

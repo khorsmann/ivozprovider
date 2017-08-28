@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\Invoice;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * InvoiceTrait
+ * @codeCoverageIgnore
  */
 trait InvoiceTrait
 {

@@ -1,0 +1,21 @@
+services:
+  _defaults:
+    autowire: true
+    public: false
+
+  ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\IvrCustom\IvrCustomLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.ivr_custom.service_collection:
+    '@Ivoz\Domain\Service\IvrCustom\IvrCustomLifecycleServiceCollection'
+
+  ##################################
+  ## pre_persist
+  ##################################
+  Ivoz\Domain\Service\IvrCustom\SanitizeValues:
+    tags:
+      - { name: ivoz.lifecycle.ivr_custom.pre_persist, priority: 10 }
+    arguments: ~

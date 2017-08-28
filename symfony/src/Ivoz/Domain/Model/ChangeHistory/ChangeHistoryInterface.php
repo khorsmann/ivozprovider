@@ -11,10 +11,9 @@ interface ChangeHistoryInterface extends EntityInterface
      *
      * @param string $user
      *
-     * @return ChangeHistoryInterface
+     * @return self
      */
     public function setUser($user);
-
 
     /**
      * Get user
@@ -23,16 +22,14 @@ interface ChangeHistoryInterface extends EntityInterface
      */
     public function getUser();
 
-
     /**
      * Set date
      *
      * @param \DateTime $date
      *
-     * @return ChangeHistoryInterface
+     * @return self
      */
     public function setDate($date);
-
 
     /**
      * Get date
@@ -41,16 +38,14 @@ interface ChangeHistoryInterface extends EntityInterface
      */
     public function getDate();
 
-
     /**
      * Set action
      *
      * @param string $action
      *
-     * @return ChangeHistoryInterface
+     * @return self
      */
     public function setAction($action);
-
 
     /**
      * Get action
@@ -59,16 +54,14 @@ interface ChangeHistoryInterface extends EntityInterface
      */
     public function getAction();
 
-
     /**
      * Set table
      *
      * @param string $table
      *
-     * @return ChangeHistoryInterface
+     * @return self
      */
     public function setTable($table);
-
 
     /**
      * Get table
@@ -77,16 +70,14 @@ interface ChangeHistoryInterface extends EntityInterface
      */
     public function getTable();
 
-
     /**
      * Set objid
      *
      * @param integer $objid
      *
-     * @return ChangeHistoryInterface
+     * @return self
      */
     public function setObjid($objid);
-
 
     /**
      * Get objid
@@ -95,16 +86,14 @@ interface ChangeHistoryInterface extends EntityInterface
      */
     public function getObjid();
 
-
     /**
      * Set field
      *
      * @param string $field
      *
-     * @return ChangeHistoryInterface
+     * @return self
      */
     public function setField($field);
-
 
     /**
      * Get field
@@ -113,16 +102,14 @@ interface ChangeHistoryInterface extends EntityInterface
      */
     public function getField();
 
-
     /**
      * Set oldValue
      *
      * @param string $oldValue
      *
-     * @return ChangeHistoryInterface
+     * @return self
      */
     public function setOldValue($oldValue = null);
-
 
     /**
      * Get oldValue
@@ -131,16 +118,14 @@ interface ChangeHistoryInterface extends EntityInterface
      */
     public function getOldValue();
 
-
     /**
      * Set newValue
      *
      * @param string $newValue
      *
-     * @return ChangeHistoryInterface
+     * @return self
      */
     public function setNewValue($newValue = null);
-
 
     /**
      * Get newValue
@@ -148,8 +133,6 @@ interface ChangeHistoryInterface extends EntityInterface
      * @return string
      */
     public function getNewValue();
-
-
 
 }
 

@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\Invoice;
 
 use Assert\Assertion;
 
 /**
  * Pdf
+ * @codeCoverageIgnore
  */
 class Pdf
 {

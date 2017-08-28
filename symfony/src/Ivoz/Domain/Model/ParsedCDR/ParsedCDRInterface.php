@@ -11,10 +11,9 @@ interface ParsedCDRInterface extends EntityInterface
      *
      * @param integer $statId
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setStatId($statId = null);
-
 
     /**
      * Get statId
@@ -23,16 +22,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getStatId();
 
-
     /**
      * Set xstatId
      *
      * @param integer $xstatId
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setXstatId($xstatId = null);
-
 
     /**
      * Get xstatId
@@ -41,16 +38,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getXstatId();
 
-
     /**
      * Set statType
      *
      * @param string $statType
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setStatType($statType = null);
-
 
     /**
      * Get statType
@@ -59,16 +54,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getStatType();
 
-
     /**
      * Set initialLeg
      *
      * @param string $initialLeg
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setInitialLeg($initialLeg = null);
-
 
     /**
      * Get initialLeg
@@ -77,16 +70,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getInitialLeg();
 
-
     /**
      * Set initialLegHash
      *
      * @param string $initialLegHash
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setInitialLegHash($initialLegHash = null);
-
 
     /**
      * Get initialLegHash
@@ -95,16 +86,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getInitialLegHash();
 
-
     /**
      * Set cid
      *
      * @param string $cid
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setCid($cid = null);
-
 
     /**
      * Get cid
@@ -113,16 +102,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getCid();
 
-
     /**
      * Set cidHash
      *
      * @param string $cidHash
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setCidHash($cidHash = null);
-
 
     /**
      * Get cidHash
@@ -131,16 +118,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getCidHash();
 
-
     /**
      * Set xcid
      *
      * @param string $xcid
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setXcid($xcid = null);
-
 
     /**
      * Get xcid
@@ -149,16 +134,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getXcid();
 
-
     /**
      * Set xcidHash
      *
      * @param string $xcidHash
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setXcidHash($xcidHash = null);
-
 
     /**
      * Get xcidHash
@@ -167,16 +150,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getXcidHash();
 
-
     /**
      * Set proxies
      *
      * @param string $proxies
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setProxies($proxies = null);
-
 
     /**
      * Get proxies
@@ -185,16 +166,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getProxies();
 
-
     /**
      * Set type
      *
      * @param string $type
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setType($type = null);
-
 
     /**
      * Get type
@@ -203,16 +182,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getType();
 
-
     /**
      * Set subtype
      *
      * @param string $subtype
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setSubtype($subtype = null);
-
 
     /**
      * Get subtype
@@ -221,16 +198,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getSubtype();
 
-
     /**
      * Set calldate
      *
      * @param \DateTime $calldate
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setCalldate($calldate);
-
 
     /**
      * Get calldate
@@ -239,16 +214,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getCalldate();
 
-
     /**
      * Set duration
      *
      * @param integer $duration
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setDuration($duration = null);
-
 
     /**
      * Get duration
@@ -257,16 +230,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getDuration();
 
-
     /**
      * Set aParty
      *
      * @param string $aParty
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setAParty($aParty = null);
-
 
     /**
      * Get aParty
@@ -275,16 +246,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getAParty();
 
-
     /**
      * Set bParty
      *
      * @param string $bParty
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setBParty($bParty = null);
-
 
     /**
      * Get bParty
@@ -293,16 +262,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getBParty();
 
-
     /**
      * Set caller
      *
      * @param string $caller
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setCaller($caller = null);
-
 
     /**
      * Get caller
@@ -311,16 +278,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getCaller();
 
-
     /**
      * Set callee
      *
      * @param string $callee
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setCallee($callee = null);
-
 
     /**
      * Get callee
@@ -329,16 +294,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getCallee();
 
-
     /**
      * Set xCaller
      *
      * @param string $xCaller
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setXCaller($xCaller = null);
-
 
     /**
      * Get xCaller
@@ -347,16 +310,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getXCaller();
 
-
     /**
      * Set xCallee
      *
      * @param string $xCallee
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setXCallee($xCallee = null);
-
 
     /**
      * Get xCallee
@@ -365,16 +326,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getXCallee();
 
-
     /**
      * Set initialReferrer
      *
      * @param string $initialReferrer
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setInitialReferrer($initialReferrer = null);
-
 
     /**
      * Get initialReferrer
@@ -383,16 +342,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getInitialReferrer();
 
-
     /**
      * Set referrer
      *
      * @param string $referrer
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setReferrer($referrer = null);
-
 
     /**
      * Get referrer
@@ -401,16 +358,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getReferrer();
 
-
     /**
      * Set referee
      *
      * @param string $referee
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setReferee($referee = null);
-
 
     /**
      * Get referee
@@ -419,16 +374,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getReferee();
 
-
     /**
      * Set lastForwarder
      *
      * @param string $lastForwarder
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setLastForwarder($lastForwarder = null);
-
 
     /**
      * Get lastForwarder
@@ -437,16 +390,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getLastForwarder();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand = null);
-
 
     /**
      * Get brand
@@ -455,16 +406,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getBrand();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company = null);
-
 
     /**
      * Get company
@@ -473,16 +422,14 @@ interface ParsedCDRInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set peeringContract
      *
      * @param \Ivoz\Domain\Model\PeeringContract\PeeringContractInterface $peeringContract
      *
-     * @return ParsedCDRInterface
+     * @return self
      */
     public function setPeeringContract(\Ivoz\Domain\Model\PeeringContract\PeeringContractInterface $peeringContract = null);
-
 
     /**
      * Get peeringContract
@@ -490,8 +437,6 @@ interface ParsedCDRInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\PeeringContract\PeeringContractInterface
      */
     public function getPeeringContract();
-
-
 
 }
 

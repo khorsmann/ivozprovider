@@ -1,14 +1,13 @@
 <?php
 namespace Ivoz\Domain\Service\RetailAccount;
 
-use Core\Domain\Model\EntityInterface;
 use Core\Domain\Service\EntityPersisterInterface;
-use Core\Domain\Service\LifecycleEventHandlerInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use Ivoz\Domain\Model\Brand\Brand;
+use Ivoz\Domain\Model\Brand\BrandInterface;
 use Ivoz\Domain\Model\RetailAccount\RetailAccountDTO;
+use Ivoz\Domain\Service\Brand\BrandLifecycleEventHandlerInterface;
 
-class UpdateByBrand implements LifecycleEventHandlerInterface
+class UpdateByBrand implements BrandLifecycleEventHandlerInterface
 {
     /**
      * @var EntityManagerInterface
@@ -33,10 +32,7 @@ class UpdateByBrand implements LifecycleEventHandlerInterface
         $this->entityPersister = $entityPersister;
     }
 
-    /**
-     * @param Brand $entity
-     */
-    public function execute(EntityInterface $entity)
+    public function execute(BrandInterface $entity)
     {
         $retails = $entity->getRetailAccounts();
         foreach ($retails as $retail) {
@@ -50,7 +46,7 @@ class UpdateByBrand implements LifecycleEventHandlerInterface
                 $entity->getDomainUsers()
             );
 
-            $$this->entityPersister->persist($retailDto, $retail);
+            $this->entityPersister->persist($retailDto, $retail);
         }
     }
 }

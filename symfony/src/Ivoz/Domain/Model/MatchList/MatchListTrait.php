@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\MatchList;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * MatchListTrait
+ * @codeCoverageIgnore
  */
 trait MatchListTrait
 {

@@ -13,4 +13,18 @@ use Ivoz\Domain\Model\TransformationRulesetGroupsTrunk\TransformationRulesetGrou
  */
 class TransformationRulesetGroupsTrunkDoctrineRepository extends EntityRepository implements TransformationRulesetGroupsTrunkRepository
 {
+
+    public function countByCriteria(array $criteria)
+    {
+        /**
+         * @todo ensure that criteria arguments are handled properly
+         */
+        $qb = $this->createQueryBuilder('TransformationRulesetGroupsTrunk');
+        $qb->select('count(TransformationRulesetGroupsTrunk)')
+            ->addCriteria(new Criteria($criteria));
+
+        return $qb
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
 }

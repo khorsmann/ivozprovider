@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\ExternalCallFilterWhiteList;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * ExternalCallFilterWhiteListTrait
+ * @codeCoverageIgnore
  */
 trait ExternalCallFilterWhiteListTrait
 {

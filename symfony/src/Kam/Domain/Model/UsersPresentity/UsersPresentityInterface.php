@@ -11,10 +11,9 @@ interface UsersPresentityInterface extends EntityInterface
      *
      * @param string $username
      *
-     * @return UsersPresentityInterface
+     * @return self
      */
     public function setUsername($username);
-
 
     /**
      * Get username
@@ -23,16 +22,14 @@ interface UsersPresentityInterface extends EntityInterface
      */
     public function getUsername();
 
-
     /**
      * Set domain
      *
      * @param string $domain
      *
-     * @return UsersPresentityInterface
+     * @return self
      */
     public function setDomain($domain);
-
 
     /**
      * Get domain
@@ -41,16 +38,14 @@ interface UsersPresentityInterface extends EntityInterface
      */
     public function getDomain();
 
-
     /**
      * Set event
      *
      * @param string $event
      *
-     * @return UsersPresentityInterface
+     * @return self
      */
     public function setEvent($event);
-
 
     /**
      * Get event
@@ -59,16 +54,14 @@ interface UsersPresentityInterface extends EntityInterface
      */
     public function getEvent();
 
-
     /**
      * Set etag
      *
      * @param string $etag
      *
-     * @return UsersPresentityInterface
+     * @return self
      */
     public function setEtag($etag);
-
 
     /**
      * Get etag
@@ -77,16 +70,14 @@ interface UsersPresentityInterface extends EntityInterface
      */
     public function getEtag();
 
-
     /**
      * Set expires
      *
      * @param integer $expires
      *
-     * @return UsersPresentityInterface
+     * @return self
      */
     public function setExpires($expires);
-
 
     /**
      * Get expires
@@ -95,16 +86,14 @@ interface UsersPresentityInterface extends EntityInterface
      */
     public function getExpires();
 
-
     /**
      * Set receivedTime
      *
      * @param integer $receivedTime
      *
-     * @return UsersPresentityInterface
+     * @return self
      */
     public function setReceivedTime($receivedTime);
-
 
     /**
      * Get receivedTime
@@ -113,16 +102,14 @@ interface UsersPresentityInterface extends EntityInterface
      */
     public function getReceivedTime();
 
-
     /**
      * Set body
      *
      * @param string $body
      *
-     * @return UsersPresentityInterface
+     * @return self
      */
     public function setBody($body);
-
 
     /**
      * Get body
@@ -131,16 +118,14 @@ interface UsersPresentityInterface extends EntityInterface
      */
     public function getBody();
 
-
     /**
      * Set sender
      *
      * @param string $sender
      *
-     * @return UsersPresentityInterface
+     * @return self
      */
     public function setSender($sender);
-
 
     /**
      * Get sender
@@ -149,16 +134,14 @@ interface UsersPresentityInterface extends EntityInterface
      */
     public function getSender();
 
-
     /**
      * Set priority
      *
      * @param integer $priority
      *
-     * @return UsersPresentityInterface
+     * @return self
      */
     public function setPriority($priority);
-
 
     /**
      * Get priority
@@ -166,8 +149,6 @@ interface UsersPresentityInterface extends EntityInterface
      * @return integer
      */
     public function getPriority();
-
-
 
 }
 

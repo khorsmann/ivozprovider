@@ -1,11 +1,9 @@
 <?php
 namespace Ivoz\Domain\Service\RoutingPatternGroup;
 
-use Core\Domain\Model\EntityInterface;
 use Core\Domain\Service\EntityPersisterInterface;
-use Core\Domain\Service\LifecycleEventHandlerInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use Ivoz\Domain\Model\Brand\Brand;
+use Ivoz\Domain\Model\Brand\BrandInterface;
 use Ivoz\Domain\Model\RoutingPatternGroup\RoutingPatternGroupDTO;
 use Ivoz\Domain\Model\RoutingPatternGroup\RoutingPatternGroup;
 use Ivoz\Domain\Model\Country\Country;
@@ -15,13 +13,14 @@ use Ivoz\Domain\Model\RoutingPattern\RoutingPatternDTO;
 use Ivoz\Domain\Model\RoutingPattern\RoutingPattern;
 use Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPattern;
 use Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPatternDTO;
+use Ivoz\Domain\Service\Brand\BrandLifecycleEventHandlerInterface;
 
 /**
  * Class UpdateByBrand
  * @package Ivoz\Domain\Service\RoutingPatternGroup
- * @lifecycle brand.post_persist
+ * @lifecycle post_persist
  */
-class UpdateByBrand implements LifecycleEventHandlerInterface
+class UpdateByBrand implements BrandLifecycleEventHandlerInterface
 {
     /**
      * @var EntityManagerInterface
@@ -55,10 +54,7 @@ class UpdateByBrand implements LifecycleEventHandlerInterface
         $this->countryRepository = $countryRepository;
     }
 
-    /**
-     * @param Brand $entity
-     */
-    public function execute(EntityInterface $entity)
+    public function execute(BrandInterface $entity)
     {
         $isNew = $this->em->contains($entity);
         if (!$isNew) {

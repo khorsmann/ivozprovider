@@ -1,10 +1,12 @@
 <?php
+
 namespace Ast\Domain\Model\QueueMember;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * QueueMemberTrait
+ * @codeCoverageIgnore
  */
 trait QueueMemberTrait
 {

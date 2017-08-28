@@ -11,10 +11,9 @@ interface QueueInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setName($name = null);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set maxWaitTime
      *
      * @param integer $maxWaitTime
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setMaxWaitTime($maxWaitTime = null);
-
 
     /**
      * Get maxWaitTime
@@ -41,16 +38,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getMaxWaitTime();
 
-
     /**
      * Set timeoutTargetType
      *
      * @param string $timeoutTargetType
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setTimeoutTargetType($timeoutTargetType = null);
-
 
     /**
      * Get timeoutTargetType
@@ -59,16 +54,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getTimeoutTargetType();
 
-
     /**
      * Set timeoutNumberValue
      *
      * @param string $timeoutNumberValue
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setTimeoutNumberValue($timeoutNumberValue = null);
-
 
     /**
      * Get timeoutNumberValue
@@ -77,16 +70,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getTimeoutNumberValue();
 
-
     /**
      * Set maxlen
      *
      * @param integer $maxlen
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setMaxlen($maxlen = null);
-
 
     /**
      * Get maxlen
@@ -95,16 +86,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getMaxlen();
 
-
     /**
      * Set fullTargetType
      *
      * @param string $fullTargetType
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setFullTargetType($fullTargetType = null);
-
 
     /**
      * Get fullTargetType
@@ -113,16 +102,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getFullTargetType();
 
-
     /**
      * Set fullNumberValue
      *
      * @param string $fullNumberValue
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setFullNumberValue($fullNumberValue = null);
-
 
     /**
      * Get fullNumberValue
@@ -131,16 +118,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getFullNumberValue();
 
-
     /**
      * Set periodicAnnounceFrequency
      *
      * @param integer $periodicAnnounceFrequency
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setPeriodicAnnounceFrequency($periodicAnnounceFrequency = null);
-
 
     /**
      * Get periodicAnnounceFrequency
@@ -149,16 +134,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getPeriodicAnnounceFrequency();
 
-
     /**
      * Set memberCallRest
      *
      * @param integer $memberCallRest
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setMemberCallRest($memberCallRest = null);
-
 
     /**
      * Get memberCallRest
@@ -167,16 +150,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getMemberCallRest();
 
-
     /**
      * Set memberCallTimeout
      *
      * @param integer $memberCallTimeout
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setMemberCallTimeout($memberCallTimeout = null);
-
 
     /**
      * Get memberCallTimeout
@@ -185,16 +166,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getMemberCallTimeout();
 
-
     /**
      * Set strategy
      *
      * @param string $strategy
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setStrategy($strategy = null);
-
 
     /**
      * Get strategy
@@ -203,16 +182,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getStrategy();
 
-
     /**
      * Set weight
      *
      * @param integer $weight
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setWeight($weight = null);
-
 
     /**
      * Get weight
@@ -221,16 +198,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getWeight();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company);
-
 
     /**
      * Get company
@@ -239,16 +214,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set periodicAnnounceLocution
      *
      * @param \Ivoz\Domain\Model\Locution\LocutionInterface $periodicAnnounceLocution
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setPeriodicAnnounceLocution(\Ivoz\Domain\Model\Locution\LocutionInterface $periodicAnnounceLocution = null);
-
 
     /**
      * Get periodicAnnounceLocution
@@ -257,16 +230,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getPeriodicAnnounceLocution();
 
-
     /**
      * Set timeoutLocution
      *
      * @param \Ivoz\Domain\Model\Locution\LocutionInterface $timeoutLocution
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setTimeoutLocution(\Ivoz\Domain\Model\Locution\LocutionInterface $timeoutLocution = null);
-
 
     /**
      * Get timeoutLocution
@@ -275,16 +246,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getTimeoutLocution();
 
-
     /**
      * Set timeoutExtension
      *
      * @param \Ivoz\Domain\Model\Extension\ExtensionInterface $timeoutExtension
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setTimeoutExtension(\Ivoz\Domain\Model\Extension\ExtensionInterface $timeoutExtension = null);
-
 
     /**
      * Get timeoutExtension
@@ -293,16 +262,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getTimeoutExtension();
 
-
     /**
      * Set timeoutVoiceMailUser
      *
      * @param \Ivoz\Domain\Model\User\UserInterface $timeoutVoiceMailUser
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setTimeoutVoiceMailUser(\Ivoz\Domain\Model\User\UserInterface $timeoutVoiceMailUser = null);
-
 
     /**
      * Get timeoutVoiceMailUser
@@ -311,16 +278,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getTimeoutVoiceMailUser();
 
-
     /**
      * Set fullLocution
      *
      * @param \Ivoz\Domain\Model\Locution\LocutionInterface $fullLocution
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setFullLocution(\Ivoz\Domain\Model\Locution\LocutionInterface $fullLocution = null);
-
 
     /**
      * Get fullLocution
@@ -329,16 +294,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getFullLocution();
 
-
     /**
      * Set fullExtension
      *
      * @param \Ivoz\Domain\Model\Extension\ExtensionInterface $fullExtension
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setFullExtension(\Ivoz\Domain\Model\Extension\ExtensionInterface $fullExtension = null);
-
 
     /**
      * Get fullExtension
@@ -347,16 +310,14 @@ interface QueueInterface extends EntityInterface
      */
     public function getFullExtension();
 
-
     /**
      * Set fullVoiceMailUser
      *
      * @param \Ivoz\Domain\Model\User\UserInterface $fullVoiceMailUser
      *
-     * @return QueueInterface
+     * @return self
      */
     public function setFullVoiceMailUser(\Ivoz\Domain\Model\User\UserInterface $fullVoiceMailUser = null);
-
 
     /**
      * Get fullVoiceMailUser
@@ -364,8 +325,6 @@ interface QueueInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\User\UserInterface
      */
     public function getFullVoiceMailUser();
-
-
 
 }
 

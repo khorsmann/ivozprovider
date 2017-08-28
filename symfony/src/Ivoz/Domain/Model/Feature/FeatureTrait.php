@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\Feature;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * FeatureTrait
+ * @codeCoverageIgnore
  */
 trait FeatureTrait
 {

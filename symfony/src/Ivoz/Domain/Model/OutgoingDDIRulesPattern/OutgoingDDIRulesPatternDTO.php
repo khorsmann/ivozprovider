@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\OutgoingDDIRulesPattern;
 
 use Core\Application\DataTransferObjectInterface;

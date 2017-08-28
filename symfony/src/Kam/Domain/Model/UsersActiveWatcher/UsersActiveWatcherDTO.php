@@ -1,4 +1,5 @@
 <?php
+
 namespace Kam\Domain\Model\UsersActiveWatcher;
 
 use Core\Application\DataTransferObjectInterface;

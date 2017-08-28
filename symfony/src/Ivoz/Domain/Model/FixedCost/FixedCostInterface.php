@@ -11,10 +11,9 @@ interface FixedCostInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return FixedCostInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface FixedCostInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set description
      *
      * @param string $description
      *
-     * @return FixedCostInterface
+     * @return self
      */
     public function setDescription($description = null);
-
 
     /**
      * Get description
@@ -41,16 +38,14 @@ interface FixedCostInterface extends EntityInterface
      */
     public function getDescription();
 
-
     /**
      * Set cost
      *
      * @param string $cost
      *
-     * @return FixedCostInterface
+     * @return self
      */
     public function setCost($cost = null);
-
 
     /**
      * Get cost
@@ -59,16 +54,14 @@ interface FixedCostInterface extends EntityInterface
      */
     public function getCost();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return FixedCostInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand);
-
 
     /**
      * Get brand
@@ -76,8 +69,6 @@ interface FixedCostInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Brand\BrandInterface
      */
     public function getBrand();
-
-
 
 }
 

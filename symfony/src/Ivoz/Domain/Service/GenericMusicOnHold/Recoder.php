@@ -1,17 +1,19 @@
 <?php
+
 namespace Ivoz\Domain\Service\GenericMusicOnHold;
 
 use Core\Domain\Service\LifecycleEventHandlerInterface;
 use Core\Domain\Model\EntityInterface;
 use Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHold;
+use Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHoldInterface;
 use \IvozProvider\Gearmand\Jobs;
 
 /**
  * Class Recoder
  * @package Ivoz\Domain\Service\GenericMusicOnHold
- * @lifecycle generic_music_on_hold.post_persist
+ * @lifecycle post_persist
  */
-class Recoder implements LifecycleEventHandlerInterface
+class Recoder implements GenericMusicOnHoldLifecycleEventHandlerInterface
 {
     /**
      * @var Jobs\Recoder
@@ -24,11 +26,11 @@ class Recoder implements LifecycleEventHandlerInterface
         $this->recoder = $recoder;
     }
 
-    /**
-     * @param GenericMusicOnHold $entity
-     */
-    public function execute(EntityInterface $entity)
+    public function execute(GenericMusicOnHoldInterface $entity)
     {
+        /**
+         * @todo
+         */
         throw new \Exception('Not implemented yet');
 
         $mustRecode = false;

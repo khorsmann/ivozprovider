@@ -11,10 +11,9 @@ interface TrunksHtableInterface extends EntityInterface
      *
      * @param string $keyName
      *
-     * @return TrunksHtableInterface
+     * @return self
      */
     public function setKeyName($keyName);
-
 
     /**
      * Get keyName
@@ -23,16 +22,14 @@ interface TrunksHtableInterface extends EntityInterface
      */
     public function getKeyName();
 
-
     /**
      * Set keyType
      *
      * @param integer $keyType
      *
-     * @return TrunksHtableInterface
+     * @return self
      */
     public function setKeyType($keyType);
-
 
     /**
      * Get keyType
@@ -41,16 +38,14 @@ interface TrunksHtableInterface extends EntityInterface
      */
     public function getKeyType();
 
-
     /**
      * Set valueType
      *
      * @param integer $valueType
      *
-     * @return TrunksHtableInterface
+     * @return self
      */
     public function setValueType($valueType);
-
 
     /**
      * Get valueType
@@ -59,16 +54,14 @@ interface TrunksHtableInterface extends EntityInterface
      */
     public function getValueType();
 
-
     /**
      * Set keyValue
      *
      * @param string $keyValue
      *
-     * @return TrunksHtableInterface
+     * @return self
      */
     public function setKeyValue($keyValue);
-
 
     /**
      * Get keyValue
@@ -77,16 +70,14 @@ interface TrunksHtableInterface extends EntityInterface
      */
     public function getKeyValue();
 
-
     /**
      * Set expires
      *
      * @param integer $expires
      *
-     * @return TrunksHtableInterface
+     * @return self
      */
     public function setExpires($expires);
-
 
     /**
      * Get expires
@@ -94,8 +85,6 @@ interface TrunksHtableInterface extends EntityInterface
      * @return integer
      */
     public function getExpires();
-
-
 
 }
 

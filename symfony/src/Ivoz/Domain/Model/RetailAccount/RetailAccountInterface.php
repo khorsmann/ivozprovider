@@ -11,10 +11,9 @@ interface RetailAccountInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set domain
      *
      * @param string $domain
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setDomain($domain = null);
-
 
     /**
      * Get domain
@@ -41,16 +38,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getDomain();
 
-
     /**
      * Set description
      *
      * @param string $description
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setDescription($description);
-
 
     /**
      * Get description
@@ -59,16 +54,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getDescription();
 
-
     /**
      * Set transport
      *
      * @param string $transport
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setTransport($transport);
-
 
     /**
      * Get transport
@@ -77,16 +70,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getTransport();
 
-
     /**
      * Set ip
      *
      * @param string $ip
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setIp($ip = null);
-
 
     /**
      * Get ip
@@ -95,16 +86,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getIp();
 
-
     /**
      * Set port
      *
      * @param integer $port
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setPort($port = null);
-
 
     /**
      * Get port
@@ -113,16 +102,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getPort();
 
-
     /**
      * Set authNeeded
      *
      * @param string $authNeeded
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setAuthNeeded($authNeeded);
-
 
     /**
      * Get authNeeded
@@ -131,16 +118,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getAuthNeeded();
 
-
     /**
      * Set password
      *
      * @param string $password
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setPassword($password = null);
-
 
     /**
      * Get password
@@ -149,16 +134,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getPassword();
 
-
     /**
      * Set areaCode
      *
      * @param string $areaCode
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setAreaCode($areaCode = null);
-
 
     /**
      * Get areaCode
@@ -167,16 +150,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getAreaCode();
 
-
     /**
      * Set disallow
      *
      * @param string $disallow
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setDisallow($disallow);
-
 
     /**
      * Get disallow
@@ -185,16 +166,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getDisallow();
 
-
     /**
      * Set allow
      *
      * @param string $allow
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setAllow($allow);
-
 
     /**
      * Get allow
@@ -203,16 +182,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getAllow();
 
-
     /**
      * Set directMediaMethod
      *
      * @param string $directMediaMethod
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setDirectMediaMethod($directMediaMethod);
-
 
     /**
      * Get directMediaMethod
@@ -221,16 +198,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getDirectMediaMethod();
 
-
     /**
      * Set calleridUpdateHeader
      *
      * @param string $calleridUpdateHeader
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setCalleridUpdateHeader($calleridUpdateHeader);
-
 
     /**
      * Get calleridUpdateHeader
@@ -239,16 +214,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getCalleridUpdateHeader();
 
-
     /**
      * Set updateCallerid
      *
      * @param string $updateCallerid
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setUpdateCallerid($updateCallerid);
-
 
     /**
      * Get updateCallerid
@@ -257,16 +230,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getUpdateCallerid();
 
-
     /**
      * Set fromDomain
      *
      * @param string $fromDomain
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setFromDomain($fromDomain = null);
-
 
     /**
      * Get fromDomain
@@ -275,16 +246,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getFromDomain();
 
-
     /**
      * Set directConnectivity
      *
      * @param string $directConnectivity
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setDirectConnectivity($directConnectivity);
-
 
     /**
      * Get directConnectivity
@@ -293,16 +262,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getDirectConnectivity();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand);
-
 
     /**
      * Get brand
@@ -311,16 +278,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getBrand();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company);
-
 
     /**
      * Get company
@@ -329,16 +294,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set country
      *
      * @param \Ivoz\Domain\Model\Country\CountryInterface $country
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setCountry(\Ivoz\Domain\Model\Country\CountryInterface $country = null);
-
 
     /**
      * Get country
@@ -347,16 +310,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getCountry();
 
-
     /**
      * Set outgoingDDI
      *
      * @param \Ivoz\Domain\Model\DDI\DDIInterface $outgoingDDI
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setOutgoingDDI(\Ivoz\Domain\Model\DDI\DDIInterface $outgoingDDI = null);
-
 
     /**
      * Get outgoingDDI
@@ -365,16 +326,14 @@ interface RetailAccountInterface extends EntityInterface
      */
     public function getOutgoingDDI();
 
-
     /**
      * Set language
      *
      * @param \Ivoz\Domain\Model\Language\LanguageInterface $language
      *
-     * @return RetailAccountInterface
+     * @return self
      */
     public function setLanguage(\Ivoz\Domain\Model\Language\LanguageInterface $language = null);
-
 
     /**
      * Get language
@@ -382,8 +341,6 @@ interface RetailAccountInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Language\LanguageInterface
      */
     public function getLanguage();
-
-
 
 }
 

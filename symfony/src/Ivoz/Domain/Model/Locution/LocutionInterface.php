@@ -11,10 +11,9 @@ interface LocutionInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return LocutionInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface LocutionInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set status
      *
      * @param string $status
      *
-     * @return LocutionInterface
+     * @return self
      */
     public function setStatus($status = null);
-
 
     /**
      * Get status
@@ -41,16 +38,14 @@ interface LocutionInterface extends EntityInterface
      */
     public function getStatus();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return LocutionInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company);
-
 
     /**
      * Get company
@@ -59,16 +54,14 @@ interface LocutionInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set encodedFile
      *
      * @param EncodedFile $encodedFile
      *
-     * @return LocutionInterface
+     * @return self
      */
-    public function setEncodedFile(EncodedFile $encodedFile);
-
+    public function setEncodedFile(\Ivoz\Domain\Model\Locution\EncodedFile $encodedFile);
 
     /**
      * Get encodedFile
@@ -77,16 +70,14 @@ interface LocutionInterface extends EntityInterface
      */
     public function getEncodedFile();
 
-
     /**
      * Set originalFile
      *
      * @param OriginalFile $originalFile
      *
-     * @return LocutionInterface
+     * @return self
      */
-    public function setOriginalFile(OriginalFile $originalFile);
-
+    public function setOriginalFile(\Ivoz\Domain\Model\Locution\OriginalFile $originalFile);
 
     /**
      * Get originalFile

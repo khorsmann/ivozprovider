@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\TargetPattern;
 
 use Assert\Assertion;
 
 /**
  * Description
+ * @codeCoverageIgnore
  */
 class Description
 {

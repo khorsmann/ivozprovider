@@ -11,10 +11,9 @@ interface DomainInterface extends EntityInterface
      *
      * @param string $domain
      *
-     * @return DomainInterface
+     * @return self
      */
     public function setDomain($domain);
-
 
     /**
      * Get domain
@@ -23,16 +22,14 @@ interface DomainInterface extends EntityInterface
      */
     public function getDomain();
 
-
     /**
      * Set scope
      *
      * @param string $scope
      *
-     * @return DomainInterface
+     * @return self
      */
     public function setScope($scope);
-
 
     /**
      * Get scope
@@ -41,16 +38,14 @@ interface DomainInterface extends EntityInterface
      */
     public function getScope();
 
-
     /**
      * Set pointsTo
      *
      * @param string $pointsTo
      *
-     * @return DomainInterface
+     * @return self
      */
     public function setPointsTo($pointsTo);
-
 
     /**
      * Get pointsTo
@@ -59,16 +54,14 @@ interface DomainInterface extends EntityInterface
      */
     public function getPointsTo();
 
-
     /**
      * Set description
      *
      * @param string $description
      *
-     * @return DomainInterface
+     * @return self
      */
     public function setDescription($description = null);
-
 
     /**
      * Get description
@@ -77,16 +70,14 @@ interface DomainInterface extends EntityInterface
      */
     public function getDescription();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return DomainInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company = null);
-
 
     /**
      * Get company
@@ -95,16 +86,14 @@ interface DomainInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return DomainInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand = null);
-
 
     /**
      * Get brand
@@ -112,8 +101,6 @@ interface DomainInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Brand\BrandInterface
      */
     public function getBrand();
-
-
 
 }
 

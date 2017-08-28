@@ -1,10 +1,12 @@
 <?php
+
 namespace Kam\Domain\Model\TrunksUacreg;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * TrunksUacregTrait
+ * @codeCoverageIgnore
  */
 trait TrunksUacregTrait
 {

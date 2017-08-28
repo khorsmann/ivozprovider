@@ -11,10 +11,9 @@ interface FaxesInOutInterface extends EntityInterface
      *
      * @param \DateTime $calldate
      *
-     * @return FaxesInOutInterface
+     * @return self
      */
     public function setCalldate($calldate);
-
 
     /**
      * Get calldate
@@ -23,16 +22,14 @@ interface FaxesInOutInterface extends EntityInterface
      */
     public function getCalldate();
 
-
     /**
      * Set src
      *
      * @param string $src
      *
-     * @return FaxesInOutInterface
+     * @return self
      */
     public function setSrc($src = null);
-
 
     /**
      * Get src
@@ -41,16 +38,14 @@ interface FaxesInOutInterface extends EntityInterface
      */
     public function getSrc();
 
-
     /**
      * Set dst
      *
      * @param string $dst
      *
-     * @return FaxesInOutInterface
+     * @return self
      */
     public function setDst($dst = null);
-
 
     /**
      * Get dst
@@ -59,16 +54,14 @@ interface FaxesInOutInterface extends EntityInterface
      */
     public function getDst();
 
-
     /**
      * Set type
      *
      * @param string $type
      *
-     * @return FaxesInOutInterface
+     * @return self
      */
     public function setType($type = null);
-
 
     /**
      * Get type
@@ -77,16 +70,14 @@ interface FaxesInOutInterface extends EntityInterface
      */
     public function getType();
 
-
     /**
      * Set pages
      *
      * @param string $pages
      *
-     * @return FaxesInOutInterface
+     * @return self
      */
     public function setPages($pages = null);
-
 
     /**
      * Get pages
@@ -95,16 +86,14 @@ interface FaxesInOutInterface extends EntityInterface
      */
     public function getPages();
 
-
     /**
      * Set status
      *
      * @param string $status
      *
-     * @return FaxesInOutInterface
+     * @return self
      */
     public function setStatus($status = null);
-
 
     /**
      * Get status
@@ -113,16 +102,14 @@ interface FaxesInOutInterface extends EntityInterface
      */
     public function getStatus();
 
-
     /**
      * Set fax
      *
      * @param \Ivoz\Domain\Model\Fax\FaxInterface $fax
      *
-     * @return FaxesInOutInterface
+     * @return self
      */
     public function setFax(\Ivoz\Domain\Model\Fax\FaxInterface $fax);
-
 
     /**
      * Get fax
@@ -131,16 +118,14 @@ interface FaxesInOutInterface extends EntityInterface
      */
     public function getFax();
 
-
     /**
      * Set file
      *
      * @param File $file
      *
-     * @return FaxesInOutInterface
+     * @return self
      */
-    public function setFile(File $file);
-
+    public function setFile(\Ivoz\Domain\Model\FaxesInOut\File $file);
 
     /**
      * Get file

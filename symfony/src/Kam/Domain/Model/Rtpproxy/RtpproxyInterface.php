@@ -11,10 +11,9 @@ interface RtpproxyInterface extends EntityInterface
      *
      * @param string $setid
      *
-     * @return RtpproxyInterface
+     * @return self
      */
     public function setSetid($setid);
-
 
     /**
      * Get setid
@@ -23,16 +22,14 @@ interface RtpproxyInterface extends EntityInterface
      */
     public function getSetid();
 
-
     /**
      * Set url
      *
      * @param string $url
      *
-     * @return RtpproxyInterface
+     * @return self
      */
     public function setUrl($url);
-
 
     /**
      * Get url
@@ -41,16 +38,14 @@ interface RtpproxyInterface extends EntityInterface
      */
     public function getUrl();
 
-
     /**
      * Set flags
      *
      * @param integer $flags
      *
-     * @return RtpproxyInterface
+     * @return self
      */
     public function setFlags($flags);
-
 
     /**
      * Get flags
@@ -59,16 +54,14 @@ interface RtpproxyInterface extends EntityInterface
      */
     public function getFlags();
 
-
     /**
      * Set weight
      *
      * @param integer $weight
      *
-     * @return RtpproxyInterface
+     * @return self
      */
     public function setWeight($weight);
-
 
     /**
      * Get weight
@@ -77,16 +70,14 @@ interface RtpproxyInterface extends EntityInterface
      */
     public function getWeight();
 
-
     /**
      * Set description
      *
      * @param string $description
      *
-     * @return RtpproxyInterface
+     * @return self
      */
     public function setDescription($description = null);
-
 
     /**
      * Get description
@@ -95,16 +86,14 @@ interface RtpproxyInterface extends EntityInterface
      */
     public function getDescription();
 
-
     /**
      * Set mediaRelaySet
      *
      * @param \Ivoz\Domain\Model\MediaRelaySet\MediaRelaySetInterface $mediaRelaySet
      *
-     * @return RtpproxyInterface
+     * @return self
      */
     public function setMediaRelaySet(\Ivoz\Domain\Model\MediaRelaySet\MediaRelaySetInterface $mediaRelaySet = null);
-
 
     /**
      * Get mediaRelaySet
@@ -112,8 +101,6 @@ interface RtpproxyInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\MediaRelaySet\MediaRelaySetInterface
      */
     public function getMediaRelaySet();
-
-
 
 }
 

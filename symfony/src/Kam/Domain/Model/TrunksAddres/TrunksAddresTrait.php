@@ -1,10 +1,12 @@
 <?php
+
 namespace Kam\Domain\Model\TrunksAddres;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * TrunksAddresTrait
+ * @codeCoverageIgnore
  */
 trait TrunksAddresTrait
 {

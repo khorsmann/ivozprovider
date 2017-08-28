@@ -11,10 +11,9 @@ interface PeerServerInterface extends EntityInterface
      *
      * @param string $ip
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setIp($ip = null);
-
 
     /**
      * Get ip
@@ -23,16 +22,14 @@ interface PeerServerInterface extends EntityInterface
      */
     public function getIp();
 
-
     /**
      * Set hostname
      *
      * @param string $hostname
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setHostname($hostname = null);
-
 
     /**
      * Get hostname
@@ -41,16 +38,14 @@ interface PeerServerInterface extends EntityInterface
      */
     public function getHostname();
 
-
     /**
      * Set port
      *
      * @param integer $port
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setPort($port = null);
-
 
     /**
      * Get port
@@ -59,16 +54,14 @@ interface PeerServerInterface extends EntityInterface
      */
     public function getPort();
 
-
     /**
      * Set params
      *
      * @param string $params
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setParams($params = null);
-
 
     /**
      * Get params
@@ -77,16 +70,14 @@ interface PeerServerInterface extends EntityInterface
      */
     public function getParams();
 
-
     /**
      * Set uriScheme
      *
      * @param boolean $uriScheme
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setUriScheme($uriScheme = null);
-
 
     /**
      * Get uriScheme
@@ -95,16 +86,14 @@ interface PeerServerInterface extends EntityInterface
      */
     public function getUriScheme();
 
-
     /**
      * Set transport
      *
      * @param boolean $transport
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setTransport($transport = null);
-
 
     /**
      * Get transport
@@ -113,16 +102,14 @@ interface PeerServerInterface extends EntityInterface
      */
     public function getTransport();
 
-
     /**
      * Set strip
      *
      * @param boolean $strip
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setStrip($strip = null);
-
 
     /**
      * Get strip
@@ -131,16 +118,14 @@ interface PeerServerInterface extends EntityInterface
      */
     public function getStrip();
 
-
     /**
      * Set prefix
      *
      * @param string $prefix
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setPrefix($prefix = null);
-
 
     /**
      * Get prefix
@@ -149,16 +134,14 @@ interface PeerServerInterface extends EntityInterface
      */
     public function getPrefix();
 
-
     /**
      * Set sendPAI
      *
      * @param boolean $sendPAI
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setSendPAI($sendPAI = null);
-
 
     /**
      * Get sendPAI
@@ -167,16 +150,14 @@ interface PeerServerInterface extends EntityInterface
      */
     public function getSendPAI();
 
-
     /**
      * Set sendRPID
      *
      * @param boolean $sendRPID
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setSendRPID($sendRPID = null);
-
 
     /**
      * Get sendRPID
@@ -185,16 +166,14 @@ interface PeerServerInterface extends EntityInterface
      */
     public function getSendRPID();
 
-
     /**
      * Set authNeeded
      *
      * @param string $authNeeded
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setAuthNeeded($authNeeded);
-
 
     /**
      * Get authNeeded
@@ -203,16 +182,14 @@ interface PeerServerInterface extends EntityInterface
      */
     public function getAuthNeeded();
 
-
     /**
      * Set authUser
      *
      * @param string $authUser
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setAuthUser($authUser = null);
-
 
     /**
      * Get authUser
@@ -221,16 +198,14 @@ interface PeerServerInterface extends EntityInterface
      */
     public function getAuthUser();
 
-
     /**
      * Set authPassword
      *
      * @param string $authPassword
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setAuthPassword($authPassword = null);
-
 
     /**
      * Get authPassword
@@ -239,16 +214,14 @@ interface PeerServerInterface extends EntityInterface
      */
     public function getAuthPassword();
 
-
     /**
      * Set sipProxy
      *
      * @param string $sipProxy
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setSipProxy($sipProxy = null);
-
 
     /**
      * Get sipProxy
@@ -257,16 +230,14 @@ interface PeerServerInterface extends EntityInterface
      */
     public function getSipProxy();
 
-
     /**
      * Set outboundProxy
      *
      * @param string $outboundProxy
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setOutboundProxy($outboundProxy = null);
-
 
     /**
      * Get outboundProxy
@@ -275,16 +246,14 @@ interface PeerServerInterface extends EntityInterface
      */
     public function getOutboundProxy();
 
-
     /**
      * Set fromUser
      *
      * @param string $fromUser
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setFromUser($fromUser = null);
-
 
     /**
      * Get fromUser
@@ -293,16 +262,14 @@ interface PeerServerInterface extends EntityInterface
      */
     public function getFromUser();
 
-
     /**
      * Set fromDomain
      *
      * @param string $fromDomain
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setFromDomain($fromDomain = null);
-
 
     /**
      * Get fromDomain
@@ -311,16 +278,14 @@ interface PeerServerInterface extends EntityInterface
      */
     public function getFromDomain();
 
-
     /**
      * Set peeringContract
      *
      * @param \Ivoz\Domain\Model\PeeringContract\PeeringContractInterface $peeringContract
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setPeeringContract(\Ivoz\Domain\Model\PeeringContract\PeeringContractInterface $peeringContract);
-
 
     /**
      * Get peeringContract
@@ -329,16 +294,14 @@ interface PeerServerInterface extends EntityInterface
      */
     public function getPeeringContract();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return PeerServerInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand);
-
 
     /**
      * Get brand
@@ -346,8 +309,6 @@ interface PeerServerInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Brand\BrandInterface
      */
     public function getBrand();
-
-
 
 }
 

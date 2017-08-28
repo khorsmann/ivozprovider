@@ -11,10 +11,9 @@ interface MatchListPatternInterface extends EntityInterface
      *
      * @param string $description
      *
-     * @return MatchListPatternInterface
+     * @return self
      */
     public function setDescription($description = null);
-
 
     /**
      * Get description
@@ -23,16 +22,14 @@ interface MatchListPatternInterface extends EntityInterface
      */
     public function getDescription();
 
-
     /**
      * Set type
      *
      * @param string $type
      *
-     * @return MatchListPatternInterface
+     * @return self
      */
     public function setType($type);
-
 
     /**
      * Get type
@@ -41,16 +38,14 @@ interface MatchListPatternInterface extends EntityInterface
      */
     public function getType();
 
-
     /**
      * Set regexp
      *
      * @param string $regexp
      *
-     * @return MatchListPatternInterface
+     * @return self
      */
     public function setRegexp($regexp = null);
-
 
     /**
      * Get regexp
@@ -59,16 +54,14 @@ interface MatchListPatternInterface extends EntityInterface
      */
     public function getRegexp();
 
-
     /**
      * Set numbervalue
      *
      * @param string $numbervalue
      *
-     * @return MatchListPatternInterface
+     * @return self
      */
     public function setNumbervalue($numbervalue = null);
-
 
     /**
      * Get numbervalue
@@ -77,16 +70,14 @@ interface MatchListPatternInterface extends EntityInterface
      */
     public function getNumbervalue();
 
-
     /**
      * Set matchList
      *
      * @param \Ivoz\Domain\Model\MatchList\MatchListInterface $matchList
      *
-     * @return MatchListPatternInterface
+     * @return self
      */
     public function setMatchList(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchList);
-
 
     /**
      * Get matchList
@@ -95,16 +86,14 @@ interface MatchListPatternInterface extends EntityInterface
      */
     public function getMatchList();
 
-
     /**
      * Set matchListPattern
      *
      * @param \Ivoz\Domain\Model\Country\CountryInterface $matchListPattern
      *
-     * @return MatchListPatternInterface
+     * @return self
      */
     public function setMatchListPattern(\Ivoz\Domain\Model\Country\CountryInterface $matchListPattern = null);
-
 
     /**
      * Get matchListPattern
@@ -112,8 +101,6 @@ interface MatchListPatternInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Country\CountryInterface
      */
     public function getMatchListPattern();
-
-
 
 }
 

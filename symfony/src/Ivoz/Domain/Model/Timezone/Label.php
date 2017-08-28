@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\Timezone;
 
 use Assert\Assertion;
 
 /**
  * Label
+ * @codeCoverageIgnore
  */
 class Label
 {

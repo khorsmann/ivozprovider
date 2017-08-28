@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\BrandURL;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * BrandURLTrait
+ * @codeCoverageIgnore
  */
 trait BrandURLTrait
 {

@@ -1,24 +1,22 @@
 <?php
+
 namespace Ivoz\Domain\Service\ExternalCallFilter;
 
-use Core\Domain\Service\LifecycleEventHandlerInterface;
-use Core\Domain\Model\EntityInterface;
-use Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilter;
+use Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface;
 
 /**
  * Class SanitizeValues
  * @package Ivoz\Domain\Service\Extension
- * @lifecycle extension.pre_persist
+ * @lifecycle pre_persist
  */
-class SanitizeValues implements LifecycleEventHandlerInterface
+class SanitizeValues implements ExternalCallFilterLifecycleEventHandlerInterface
 {
     public function __construct() {}
 
     /**
-     * @param ExternalCallFilter $entity
      * @throws \Exception
      */
-    public function execute(EntityInterface $entity)
+    public function execute(ExternalCallFilterInterface $entity)
     {
         $holidayNullableFields = array(
             "number" => "holidayNumberValue",

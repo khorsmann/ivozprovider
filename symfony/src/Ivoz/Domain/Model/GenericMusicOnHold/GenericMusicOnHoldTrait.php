@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\GenericMusicOnHold;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * GenericMusicOnHoldTrait
+ * @codeCoverageIgnore
  */
 trait GenericMusicOnHoldTrait
 {

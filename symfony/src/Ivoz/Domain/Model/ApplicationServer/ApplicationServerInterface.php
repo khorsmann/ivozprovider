@@ -11,10 +11,9 @@ interface ApplicationServerInterface extends EntityInterface
      *
      * @param string $ip
      *
-     * @return ApplicationServerInterface
+     * @return self
      */
     public function setIp($ip);
-
 
     /**
      * Get ip
@@ -23,16 +22,14 @@ interface ApplicationServerInterface extends EntityInterface
      */
     public function getIp();
 
-
     /**
      * Set name
      *
      * @param string $name
      *
-     * @return ApplicationServerInterface
+     * @return self
      */
     public function setName($name = null);
-
 
     /**
      * Get name
@@ -40,8 +37,6 @@ interface ApplicationServerInterface extends EntityInterface
      * @return string
      */
     public function getName();
-
-
 
 }
 

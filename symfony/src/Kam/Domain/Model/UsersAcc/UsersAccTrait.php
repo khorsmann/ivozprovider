@@ -1,10 +1,12 @@
 <?php
+
 namespace Kam\Domain\Model\UsersAcc;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * UsersAccTrait
+ * @codeCoverageIgnore
  */
 trait UsersAccTrait
 {

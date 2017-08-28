@@ -4,6 +4,15 @@ services:
     public: false
 
   ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\Brand\BrandLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.brand.service_collection:
+    '@Ivoz\Domain\Service\Brand\BrandLifecycleServiceCollection'
+
+  ##################################
   ## pre_persist
   ##################################
   Ivoz\Domain\Service\Brand\SanitizeEmptyValues:
@@ -15,14 +24,14 @@ services:
   ##################################
   Ivoz\Domain\Service\Domain\UpdateByBrand:
     tags:
-      - { name: ivoz.lifecycle.brand.post_persist, priority: 20 }
+      - { name: ivoz.lifecycle.brand.post_persist, priority: 10 }
     arguments:
       $domainRepository:
         '@=service("doctrine.orm.entity_manager").getRepository("Ivoz\\Domain\\Model\\Domain\\Domain")'
 
   Kam\Domain\Service\UsersDomainAttr\UpdateByBrand:
     tags:
-      - { name: ivoz.lifecycle.brand.post_persist, priority: 30 }
+      - { name: ivoz.lifecycle.brand.post_persist, priority: 20 }
     arguments:
       $entityPersister:
         '@Core\Infrastructure\Domain\Service\DoctrineEntityPersister'
@@ -31,11 +40,21 @@ services:
 
   Ivoz\Domain\Service\RoutingPatternGroup\UpdateByBrand:
     tags:
-      - { name: ivoz.lifecycle.brand.post_persist, priority: 40 }
+      - { name: ivoz.lifecycle.brand.post_persist, priority: 30 }
     arguments:
       $routingPatternGroupRepository:
         '@=service("doctrine.orm.entity_manager").getRepository("Ivoz\\Domain\\Model\\RoutingPatternGroup\\RoutingPatternGroup")'
       $countryRepository:
         '@=service("doctrine.orm.entity_manager").getRepository("Ivoz\\Domain\\Model\\Country\\Country")'
 
-  # services with priority 50 & 51 in lifecycle/xml_rpc.yml
+  Ivoz\Domain\Service\Brand\PersistedSendXmlRcp:
+    tags:
+      - { name: ivoz.lifecycle.brand.post_persist, priority: 40 }
+
+  ##################################
+  ## post_remove
+  ##################################
+
+  Ivoz\Domain\Service\Brand\RemovedSendXmlRcp:
+    tags:
+      - { name: ivoz.lifecycle.brand.post_remove, priority: 10 }

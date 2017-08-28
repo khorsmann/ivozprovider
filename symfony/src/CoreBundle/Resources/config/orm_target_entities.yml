@@ -50,9 +50,9 @@ doctrine:
       Ivoz\Domain\Model\HuntGroupRelUser\HuntGroupRelUserInterface: Ivoz\Domain\Model\HuntGroupRelUser\HuntGroupRelUser
       Ivoz\Domain\Model\Invoice\InvoiceInterface: Ivoz\Domain\Model\Invoice\Invoice
       Ivoz\Domain\Model\InvoiceTemplate\InvoiceTemplateInterface: Ivoz\Domain\Model\InvoiceTemplate\InvoiceTemplate
-      Ivoz\Domain\Model\IVRCommon\IVRCommonInterface: Ivoz\Domain\Model\IVRCommon\IVRCommon
-      Ivoz\Domain\Model\IVRCustomEntry\IVRCustomEntryInterface: Ivoz\Domain\Model\IVRCustomEntry\IVRCustomEntry
-      Ivoz\Domain\Model\IVRCustom\IVRCustomInterface: Ivoz\Domain\Model\IVRCustom\IVRCustom
+      Ivoz\Domain\Model\IvrCommon\IvrCommonInterface: Ivoz\Domain\Model\IvrCommon\IvrCommon
+      Ivoz\Domain\Model\IvrCustomEntry\IvrCustomEntryInterface: Ivoz\Domain\Model\IvrCustomEntry\IvrCustomEntry
+      Ivoz\Domain\Model\IvrCustom\IvrCustomInterface: Ivoz\Domain\Model\IvrCustom\IvrCustom
       Ivoz\Domain\Model\Language\LanguageInterface: Ivoz\Domain\Model\Language\Language
       Ivoz\Domain\Model\LcrGateway\LcrGatewayInterface: Ivoz\Domain\Model\LcrGateway\LcrGateway
       Ivoz\Domain\Model\LcrRule\LcrRuleInterface: Ivoz\Domain\Model\LcrRule\LcrRule

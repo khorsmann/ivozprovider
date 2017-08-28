@@ -1,0 +1,35 @@
+services:
+  _defaults:
+    autowire: true
+    public: false
+
+  ##################################
+  ## Service collection
+  ##################################
+  Kam\Domain\Service\TrunksUacreg\TrunksUacregLifecycleServiceCollection:
+    public: true
+
+  kam.lifecycle.trunks_uacreg.service_collection:
+    '@Kam\Domain\Service\TrunksUacreg\TrunksUacregLifecycleServiceCollection'
+
+  ##################################
+  ## pre_persist
+  ##################################
+  Kam\Domain\Service\TrunksUacreg\SanitizeValues:
+    tags:
+      - { name: kam.lifecycle.trunks_uacreg.pre_persist, priority: 10 }
+    arguments: ~
+
+  ##################################
+  ## post_persist
+  ##################################
+  Kam\Domain\Service\TrunksUacreg\PersistedSendXmlRcp:
+    tags:
+      - { name: kam.lifecycle.trunks_uacreg.post_persist, priority: 10 }
+
+  ##################################
+  ## post_remove
+  ##################################
+  Kam\Domain\Service\TrunksUacreg\RemovedSendXmlRcp:
+    tags:
+      - { name: kam.lifecycle.trunks_uacreg.post_remove, priority: 20 }

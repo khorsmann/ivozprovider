@@ -6,15 +6,16 @@ use Core\Domain\Model\EntityInterface;
 
 interface CallACLInterface extends EntityInterface
 {
+    public function dstIsCallable($dst);
+
     /**
      * Set name
      *
      * @param string $name
      *
-     * @return CallACLInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +24,14 @@ interface CallACLInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set defaultPolicy
      *
      * @param string $defaultPolicy
      *
-     * @return CallACLInterface
+     * @return self
      */
     public function setDefaultPolicy($defaultPolicy);
-
 
     /**
      * Get defaultPolicy
@@ -41,16 +40,14 @@ interface CallACLInterface extends EntityInterface
      */
     public function getDefaultPolicy();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return CallACLInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company);
-
 
     /**
      * Get company
@@ -59,7 +56,36 @@ interface CallACLInterface extends EntityInterface
      */
     public function getCompany();
 
+    /**
+     * Add relPattern
+     *
+     * @param \Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPattern $relPattern
+     *
+     * @return CallACLTrait
+     */
+    public function addRelPattern(\Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPattern $relPattern);
 
+    /**
+     * Remove relPattern
+     *
+     * @param \Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPattern $relPattern
+     */
+    public function removeRelPattern(\Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPattern $relPattern);
+
+    /**
+     * Replace relPatterns
+     *
+     * @param \Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPattern[] $relPatterns
+     * @return self
+     */
+    public function replaceRelPatterns(array $relPatterns);
+
+    /**
+     * Get relPatterns
+     *
+     * @return array
+     */
+    public function getRelPatterns(\Doctrine\Common\Collections\Criteria $criteria = null);
 
 }
 

@@ -11,10 +11,9 @@ interface ServiceInterface extends EntityInterface
      *
      * @param string $iden
      *
-     * @return ServiceInterface
+     * @return self
      */
     public function setIden($iden);
-
 
     /**
      * Get iden
@@ -23,16 +22,14 @@ interface ServiceInterface extends EntityInterface
      */
     public function getIden();
 
-
     /**
      * Set defaultCode
      *
      * @param string $defaultCode
      *
-     * @return ServiceInterface
+     * @return self
      */
     public function setDefaultCode($defaultCode);
-
 
     /**
      * Get defaultCode
@@ -41,16 +38,14 @@ interface ServiceInterface extends EntityInterface
      */
     public function getDefaultCode();
 
-
     /**
      * Set extraArgs
      *
      * @param boolean $extraArgs
      *
-     * @return ServiceInterface
+     * @return self
      */
     public function setExtraArgs($extraArgs);
-
 
     /**
      * Get extraArgs
@@ -59,16 +54,14 @@ interface ServiceInterface extends EntityInterface
      */
     public function getExtraArgs();
 
-
     /**
      * Set name
      *
      * @param Name $name
      *
-     * @return ServiceInterface
+     * @return self
      */
-    public function setName(Name $name);
-
+    public function setName(\Ivoz\Domain\Model\Service\Name $name);
 
     /**
      * Get name
@@ -77,16 +70,14 @@ interface ServiceInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set description
      *
      * @param Description $description
      *
-     * @return ServiceInterface
+     * @return self
      */
-    public function setDescription(Description $description);
-
+    public function setDescription(\Ivoz\Domain\Model\Service\Description $description);
 
     /**
      * Get description

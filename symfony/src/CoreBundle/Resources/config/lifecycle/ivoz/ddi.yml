@@ -4,6 +4,15 @@ services:
     public: false
 
   ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\DDI\DDILifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.ddi.service_collection:
+    '@Ivoz\Domain\Service\DDI\DDILifecycleServiceCollection'
+
+  ##################################
   ## pre_persist
   ##################################
   Ivoz\Domain\Service\DDI\SanitizeValues:

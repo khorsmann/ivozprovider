@@ -16,6 +16,20 @@ interface EntityInterface
     public function initChangelog();
 
     /**
+     * @param string $fieldName
+     * @return boolean
+     * @throws \Exception
+     */
+    public function hasChanged($fieldName);
+
+    /**
+     * @param string $fieldName
+     * @return mixed
+     * @throws \Exception
+     */
+    public function getInitialValue($fieldName);
+
+    /**
      * Factory method
      * @param DataTransferObjectInterface $dto
      */
@@ -29,7 +43,6 @@ interface EntityInterface
     /**
      * DTO casting
      * @return DataTransferObjectInterface
-     * @refactor rename this to __toDTO
      */
     public function toDTO();
 
@@ -37,4 +50,6 @@ interface EntityInterface
      * @return DataTransferObjectInterface
      */
     public static function createDTO();
+
+    public function __wakeup();
 }

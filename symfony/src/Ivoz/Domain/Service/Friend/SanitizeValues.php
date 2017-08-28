@@ -1,23 +1,19 @@
 <?php
+
 namespace Ivoz\Domain\Service\Friend;
 
-use Core\Domain\Service\LifecycleEventHandlerInterface;
-use Core\Domain\Model\EntityInterface;
-use Ivoz\Domain\Model\Friend\Friend;
+use Ivoz\Domain\Model\Friend\FriendInterface;
 
 /**
  * Class SanitizeValues
  * @package Ivoz\Domain\Service\Friend
- * @lifecycle friend.pre_persist
+ * @lifecycle pre_persist
  */
-class SanitizeValues implements LifecycleEventHandlerInterface
+class SanitizeValues implements FriendLifecycleEventHandlerInterface
 {
     public function __construct() {}
 
-    /**
-     * @param Friend $entity
-     */
-    public function execute(EntityInterface $entity)
+    public function execute(FriendInterface $entity)
     {
         $entity->setDomain(
             $entity

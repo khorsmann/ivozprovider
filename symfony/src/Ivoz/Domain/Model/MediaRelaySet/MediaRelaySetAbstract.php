@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\MediaRelaySet;
 
 use Assert\Assertion;
@@ -6,6 +7,7 @@ use Core\Application\DataTransferObjectInterface;
 
 /**
  * MediaRelaySetAbstract
+ * @codeCoverageIgnore
  */
 abstract class MediaRelaySetAbstract
 {

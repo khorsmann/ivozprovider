@@ -11,10 +11,9 @@ interface UsersXcapInterface extends EntityInterface
      *
      * @param string $username
      *
-     * @return UsersXcapInterface
+     * @return self
      */
     public function setUsername($username);
-
 
     /**
      * Get username
@@ -23,16 +22,14 @@ interface UsersXcapInterface extends EntityInterface
      */
     public function getUsername();
 
-
     /**
      * Set domain
      *
      * @param string $domain
      *
-     * @return UsersXcapInterface
+     * @return self
      */
     public function setDomain($domain);
-
 
     /**
      * Get domain
@@ -41,16 +38,14 @@ interface UsersXcapInterface extends EntityInterface
      */
     public function getDomain();
 
-
     /**
      * Set doc
      *
      * @param string $doc
      *
-     * @return UsersXcapInterface
+     * @return self
      */
     public function setDoc($doc);
-
 
     /**
      * Get doc
@@ -59,16 +54,14 @@ interface UsersXcapInterface extends EntityInterface
      */
     public function getDoc();
 
-
     /**
      * Set docType
      *
      * @param integer $docType
      *
-     * @return UsersXcapInterface
+     * @return self
      */
     public function setDocType($docType);
-
 
     /**
      * Get docType
@@ -77,16 +70,14 @@ interface UsersXcapInterface extends EntityInterface
      */
     public function getDocType();
 
-
     /**
      * Set etag
      *
      * @param string $etag
      *
-     * @return UsersXcapInterface
+     * @return self
      */
     public function setEtag($etag);
-
 
     /**
      * Get etag
@@ -95,16 +86,14 @@ interface UsersXcapInterface extends EntityInterface
      */
     public function getEtag();
 
-
     /**
      * Set source
      *
      * @param integer $source
      *
-     * @return UsersXcapInterface
+     * @return self
      */
     public function setSource($source);
-
 
     /**
      * Get source
@@ -113,16 +102,14 @@ interface UsersXcapInterface extends EntityInterface
      */
     public function getSource();
 
-
     /**
      * Set docUri
      *
      * @param string $docUri
      *
-     * @return UsersXcapInterface
+     * @return self
      */
     public function setDocUri($docUri);
-
 
     /**
      * Get docUri
@@ -131,16 +118,14 @@ interface UsersXcapInterface extends EntityInterface
      */
     public function getDocUri();
 
-
     /**
      * Set port
      *
      * @param integer $port
      *
-     * @return UsersXcapInterface
+     * @return self
      */
     public function setPort($port);
-
 
     /**
      * Get port
@@ -148,8 +133,6 @@ interface UsersXcapInterface extends EntityInterface
      * @return integer
      */
     public function getPort();
-
-
 
 }
 

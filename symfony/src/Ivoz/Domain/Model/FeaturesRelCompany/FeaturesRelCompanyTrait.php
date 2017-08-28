@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\FeaturesRelCompany;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * FeaturesRelCompanyTrait
+ * @codeCoverageIgnore
  */
 trait FeaturesRelCompanyTrait
 {

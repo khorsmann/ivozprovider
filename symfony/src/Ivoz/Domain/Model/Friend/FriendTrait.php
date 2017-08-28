@@ -1,4 +1,5 @@
 <?php
+
 namespace Ivoz\Domain\Model\Friend;
 
 use Core\Application\DataTransferObjectInterface;
@@ -7,6 +8,7 @@ use Doctrine\Common\Collections\Criteria;
 
 /**
  * FriendTrait
+ * @codeCoverageIgnore
  */
 trait FriendTrait
 {

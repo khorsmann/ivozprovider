@@ -11,10 +11,9 @@ interface RecordingInterface extends EntityInterface
      *
      * @param string $callid
      *
-     * @return RecordingInterface
+     * @return self
      */
     public function setCallid($callid = null);
-
 
     /**
      * Get callid
@@ -23,16 +22,14 @@ interface RecordingInterface extends EntityInterface
      */
     public function getCallid();
 
-
     /**
      * Set calldate
      *
      * @param \DateTime $calldate
      *
-     * @return RecordingInterface
+     * @return self
      */
     public function setCalldate($calldate);
-
 
     /**
      * Get calldate
@@ -41,16 +38,14 @@ interface RecordingInterface extends EntityInterface
      */
     public function getCalldate();
 
-
     /**
      * Set type
      *
      * @param string $type
      *
-     * @return RecordingInterface
+     * @return self
      */
     public function setType($type);
-
 
     /**
      * Get type
@@ -59,16 +54,14 @@ interface RecordingInterface extends EntityInterface
      */
     public function getType();
 
-
     /**
      * Set duration
      *
      * @param float $duration
      *
-     * @return RecordingInterface
+     * @return self
      */
     public function setDuration($duration);
-
 
     /**
      * Get duration
@@ -77,16 +70,14 @@ interface RecordingInterface extends EntityInterface
      */
     public function getDuration();
 
-
     /**
      * Set caller
      *
      * @param string $caller
      *
-     * @return RecordingInterface
+     * @return self
      */
     public function setCaller($caller = null);
-
 
     /**
      * Get caller
@@ -95,16 +86,14 @@ interface RecordingInterface extends EntityInterface
      */
     public function getCaller();
 
-
     /**
      * Set callee
      *
      * @param string $callee
      *
-     * @return RecordingInterface
+     * @return self
      */
     public function setCallee($callee = null);
-
 
     /**
      * Get callee
@@ -113,16 +102,14 @@ interface RecordingInterface extends EntityInterface
      */
     public function getCallee();
 
-
     /**
      * Set recorder
      *
      * @param string $recorder
      *
-     * @return RecordingInterface
+     * @return self
      */
     public function setRecorder($recorder = null);
-
 
     /**
      * Get recorder
@@ -131,16 +118,14 @@ interface RecordingInterface extends EntityInterface
      */
     public function getRecorder();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return RecordingInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company = null);
-
 
     /**
      * Get company
@@ -149,16 +134,14 @@ interface RecordingInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set recordedFile
      *
      * @param RecordedFile $recordedFile
      *
-     * @return RecordingInterface
+     * @return self
      */
-    public function setRecordedFile(RecordedFile $recordedFile);
-
+    public function setRecordedFile(\Ivoz\Domain\Model\Recording\RecordedFile $recordedFile);
 
     /**
      * Get recordedFile

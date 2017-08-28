@@ -11,10 +11,9 @@ interface GenericCallACLPatternInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return GenericCallACLPatternInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface GenericCallACLPatternInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set regExp
      *
      * @param string $regExp
      *
-     * @return GenericCallACLPatternInterface
+     * @return self
      */
     public function setRegExp($regExp);
-
 
     /**
      * Get regExp
@@ -41,16 +38,14 @@ interface GenericCallACLPatternInterface extends EntityInterface
      */
     public function getRegExp();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return GenericCallACLPatternInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand = null);
-
 
     /**
      * Get brand
@@ -58,8 +53,6 @@ interface GenericCallACLPatternInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Brand\BrandInterface
      */
     public function getBrand();
-
-
 
 }
 

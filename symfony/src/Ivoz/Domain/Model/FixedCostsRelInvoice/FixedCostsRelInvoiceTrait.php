@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\FixedCostsRelInvoice;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * FixedCostsRelInvoiceTrait
+ * @codeCoverageIgnore
  */
 trait FixedCostsRelInvoiceTrait
 {

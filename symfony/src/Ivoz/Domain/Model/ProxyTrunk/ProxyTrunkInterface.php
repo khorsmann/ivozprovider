@@ -11,10 +11,9 @@ interface ProxyTrunkInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return ProxyTrunkInterface
+     * @return self
      */
     public function setName($name = null);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface ProxyTrunkInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set ip
      *
      * @param string $ip
      *
-     * @return ProxyTrunkInterface
+     * @return self
      */
     public function setIp($ip);
-
 
     /**
      * Get ip
@@ -40,8 +37,6 @@ interface ProxyTrunkInterface extends EntityInterface
      * @return string
      */
     public function getIp();
-
-
 
 }
 

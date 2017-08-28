@@ -11,10 +11,9 @@ interface RoutingPatternGroupInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return RoutingPatternGroupInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface RoutingPatternGroupInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set description
      *
      * @param string $description
      *
-     * @return RoutingPatternGroupInterface
+     * @return self
      */
     public function setDescription($description = null);
-
 
     /**
      * Get description
@@ -41,16 +38,14 @@ interface RoutingPatternGroupInterface extends EntityInterface
      */
     public function getDescription();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return RoutingPatternGroupInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand);
-
 
     /**
      * Get brand
@@ -59,7 +54,36 @@ interface RoutingPatternGroupInterface extends EntityInterface
      */
     public function getBrand();
 
+    /**
+     * Add relPattern
+     *
+     * @param \Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPattern $relPattern
+     *
+     * @return RoutingPatternGroupTrait
+     */
+    public function addRelPattern(\Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPattern $relPattern);
 
+    /**
+     * Remove relPattern
+     *
+     * @param \Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPattern $relPattern
+     */
+    public function removeRelPattern(\Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPattern $relPattern);
+
+    /**
+     * Replace relPatterns
+     *
+     * @param \Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPattern[] $relPatterns
+     * @return self
+     */
+    public function replaceRelPatterns(array $relPatterns);
+
+    /**
+     * Get relPatterns
+     *
+     * @return array
+     */
+    public function getRelPatterns(\Doctrine\Common\Collections\Criteria $criteria = null);
 
 }
 

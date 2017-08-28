@@ -6,15 +6,16 @@ use Core\Domain\Model\EntityInterface;
 
 interface ExtensionInterface extends EntityInterface
 {
+    public function toArrayPortal();
+
     /**
      * Set number
      *
      * @param string $number
      *
-     * @return ExtensionInterface
+     * @return self
      */
     public function setNumber($number);
-
 
     /**
      * Get number
@@ -23,16 +24,14 @@ interface ExtensionInterface extends EntityInterface
      */
     public function getNumber();
 
-
     /**
      * Set routeType
      *
      * @param string $routeType
      *
-     * @return ExtensionInterface
+     * @return self
      */
     public function setRouteType($routeType = null);
-
 
     /**
      * Get routeType
@@ -41,16 +40,14 @@ interface ExtensionInterface extends EntityInterface
      */
     public function getRouteType();
 
-
     /**
      * Set numberValue
      *
      * @param string $numberValue
      *
-     * @return ExtensionInterface
+     * @return self
      */
     public function setNumberValue($numberValue = null);
-
 
     /**
      * Get numberValue
@@ -59,16 +56,14 @@ interface ExtensionInterface extends EntityInterface
      */
     public function getNumberValue();
 
-
     /**
      * Set friendValue
      *
      * @param string $friendValue
      *
-     * @return ExtensionInterface
+     * @return self
      */
     public function setFriendValue($friendValue = null);
-
 
     /**
      * Get friendValue
@@ -77,16 +72,14 @@ interface ExtensionInterface extends EntityInterface
      */
     public function getFriendValue();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return ExtensionInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company = null);
-
 
     /**
      * Get company
@@ -95,52 +88,46 @@ interface ExtensionInterface extends EntityInterface
      */
     public function getCompany();
 
+    /**
+     * Set ivrCommon
+     *
+     * @param \Ivoz\Domain\Model\IvrCommon\IvrCommonInterface $ivrCommon
+     *
+     * @return self
+     */
+    public function setIvrCommon(\Ivoz\Domain\Model\IvrCommon\IvrCommonInterface $ivrCommon = null);
 
     /**
-     * Set iVRCommon
+     * Get ivrCommon
      *
-     * @param \Ivoz\Domain\Model\IVRCommon\IVRCommonInterface $iVRCommon
-     *
-     * @return ExtensionInterface
+     * @return \Ivoz\Domain\Model\IvrCommon\IvrCommonInterface
      */
-    public function setIVRCommon(\Ivoz\Domain\Model\IVRCommon\IVRCommonInterface $iVRCommon = null);
-
+    public function getIvrCommon();
 
     /**
-     * Get iVRCommon
+     * Set ivrCustom
      *
-     * @return \Ivoz\Domain\Model\IVRCommon\IVRCommonInterface
+     * @param \Ivoz\Domain\Model\IvrCustom\IvrCustomInterface $ivrCustom
+     *
+     * @return self
      */
-    public function getIVRCommon();
-
+    public function setIvrCustom(\Ivoz\Domain\Model\IvrCustom\IvrCustomInterface $ivrCustom = null);
 
     /**
-     * Set iVRCustom
+     * Get ivrCustom
      *
-     * @param \Ivoz\Domain\Model\IVRCustom\IVRCustomInterface $iVRCustom
-     *
-     * @return ExtensionInterface
+     * @return \Ivoz\Domain\Model\IvrCustom\IvrCustomInterface
      */
-    public function setIVRCustom(\Ivoz\Domain\Model\IVRCustom\IVRCustomInterface $iVRCustom = null);
-
-
-    /**
-     * Get iVRCustom
-     *
-     * @return \Ivoz\Domain\Model\IVRCustom\IVRCustomInterface
-     */
-    public function getIVRCustom();
-
+    public function getIvrCustom();
 
     /**
      * Set huntGroup
      *
      * @param \Ivoz\Domain\Model\HuntGroup\HuntGroupInterface $huntGroup
      *
-     * @return ExtensionInterface
+     * @return self
      */
     public function setHuntGroup(\Ivoz\Domain\Model\HuntGroup\HuntGroupInterface $huntGroup = null);
-
 
     /**
      * Get huntGroup
@@ -149,16 +136,14 @@ interface ExtensionInterface extends EntityInterface
      */
     public function getHuntGroup();
 
-
     /**
      * Set conferenceRoom
      *
      * @param \Ivoz\Domain\Model\ConferenceRoom\ConferenceRoomInterface $conferenceRoom
      *
-     * @return ExtensionInterface
+     * @return self
      */
     public function setConferenceRoom(\Ivoz\Domain\Model\ConferenceRoom\ConferenceRoomInterface $conferenceRoom = null);
-
 
     /**
      * Get conferenceRoom
@@ -167,16 +152,14 @@ interface ExtensionInterface extends EntityInterface
      */
     public function getConferenceRoom();
 
-
     /**
      * Set user
      *
      * @param \Ivoz\Domain\Model\User\UserInterface $user
      *
-     * @return ExtensionInterface
+     * @return self
      */
     public function setUser(\Ivoz\Domain\Model\User\UserInterface $user = null);
-
 
     /**
      * Get user
@@ -185,16 +168,14 @@ interface ExtensionInterface extends EntityInterface
      */
     public function getUser();
 
-
     /**
      * Set queue
      *
      * @param \Ivoz\Domain\Model\Queue\QueueInterface $queue
      *
-     * @return ExtensionInterface
+     * @return self
      */
     public function setQueue(\Ivoz\Domain\Model\Queue\QueueInterface $queue = null);
-
 
     /**
      * Get queue
@@ -202,8 +183,6 @@ interface ExtensionInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Queue\QueueInterface
      */
     public function getQueue();
-
-
 
 }
 

@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\ExternalCallFilterRelSchedule;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * ExternalCallFilterRelScheduleTrait
+ * @codeCoverageIgnore
  */
 trait ExternalCallFilterRelScheduleTrait
 {

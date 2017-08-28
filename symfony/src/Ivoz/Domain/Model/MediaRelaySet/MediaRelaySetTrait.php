@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\MediaRelaySet;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * MediaRelaySetTrait
+ * @codeCoverageIgnore
  */
 trait MediaRelaySetTrait
 {

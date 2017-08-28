@@ -1,10 +1,12 @@
 <?php
+
 namespace Ivoz\Domain\Model\Recording;
 
 use Assert\Assertion;
 
 /**
  * RecordedFile
+ * @codeCoverageIgnore
  */
 class RecordedFile
 {

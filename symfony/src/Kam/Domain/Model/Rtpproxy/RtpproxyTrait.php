@@ -1,10 +1,12 @@
 <?php
+
 namespace Kam\Domain\Model\Rtpproxy;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * RtpproxyTrait
+ * @codeCoverageIgnore
  */
 trait RtpproxyTrait
 {

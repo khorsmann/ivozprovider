@@ -11,10 +11,9 @@ interface CalendarInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return CalendarInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface CalendarInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return CalendarInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company);
-
 
     /**
      * Get company
@@ -41,7 +38,36 @@ interface CalendarInterface extends EntityInterface
      */
     public function getCompany();
 
+    /**
+     * Add holidayDate
+     *
+     * @param \Ivoz\Domain\Model\HolidayDate\HolidayDate $holidayDate
+     *
+     * @return CalendarTrait
+     */
+    public function addHolidayDate(\Ivoz\Domain\Model\HolidayDate\HolidayDate $holidayDate);
 
+    /**
+     * Remove holidayDate
+     *
+     * @param \Ivoz\Domain\Model\HolidayDate\HolidayDate $holidayDate
+     */
+    public function removeHolidayDate(\Ivoz\Domain\Model\HolidayDate\HolidayDate $holidayDate);
+
+    /**
+     * Replace holidayDates
+     *
+     * @param \Ivoz\Domain\Model\HolidayDate\HolidayDate[] $holidayDates
+     * @return self
+     */
+    public function replaceHolidayDates(array $holidayDates);
+
+    /**
+     * Get holidayDates
+     *
+     * @return array
+     */
+    public function getHolidayDates(\Doctrine\Common\Collections\Criteria $criteria = null);
 
 }
 

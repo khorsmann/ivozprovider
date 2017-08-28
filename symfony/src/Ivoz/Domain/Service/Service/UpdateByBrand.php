@@ -1,16 +1,15 @@
 <?php
 namespace Ivoz\Domain\Service\Service;
 
-use Core\Domain\Model\EntityInterface;
 use Core\Domain\Service\EntityPersisterInterface;
-use Core\Domain\Service\LifecycleEventHandlerInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use Ivoz\Domain\Model\Brand\Brand;
+use Ivoz\Domain\Model\Brand\BrandInterface;
 use Ivoz\Domain\Model\Service\Service;
 use Ivoz\Domain\Model\BrandService\BrandService;
 use Ivoz\Domain\Model\Service\ServiceRepository;
+use Ivoz\Domain\Service\Brand\BrandLifecycleEventHandlerInterface;
 
-class UpdateByBrand implements LifecycleEventHandlerInterface
+class UpdateByBrand implements BrandLifecycleEventHandlerInterface
 {
     /**
      * @var EntityManagerInterface
@@ -37,10 +36,7 @@ class UpdateByBrand implements LifecycleEventHandlerInterface
         $this->serviceRepository = $serviceRepository;
     }
 
-    /**
-     * @param Brand $entity
-     */
-    public function execute(EntityInterface $entity)
+    public function execute(BrandInterface $entity)
     {
         $isNew = $this->em->contains($entity);
         if (!$isNew) {

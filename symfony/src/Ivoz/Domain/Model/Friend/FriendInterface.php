@@ -6,15 +6,65 @@ use Core\Domain\Model\EntityInterface;
 
 interface FriendInterface extends EntityInterface
 {
+    public function getContact();
+
+    public function getSorcery();
+
+    public function checkExtension($exten);
+
+    /**
+     * @param string $exten
+     * @return bool canCall
+     */
+    public function isAllowedToCall($exten);
+
+    /**
+     * @brief Return Friend country or company if null
+     */
+    public function getCountry();
+
+    /**
+     * Convert a user dialed number to E164 form
+     *
+     * param string $number
+     * return string number in E164
+     */
+    public function preferredToE164($prefNumber);
+
+    /**
+     * Convert a received number to User prefered format
+     *
+     * @param unknown $number
+     */
+    public function E164ToPreferred($e164number);
+
+    public function getRequestDirectUri($callee);
+
+    /**
+     * Obtain content for X-Info-Friend header
+     *
+     * @param called $number
+     */
+    public function getRequestUri($callee);
+
+    public function getAstPsEndpoint();
+
+    public function getLanguageCode();
+
+    /**
+     * Get Friend outgoingDDI
+     * If no DDI is assigned, retrieve company's default DDI
+     */
+    public function getOutgoingDDI();
+
     /**
      * Set name
      *
      * @param string $name
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setName($name);
-
 
     /**
      * Get name
@@ -23,16 +73,14 @@ interface FriendInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set domain
      *
      * @param string $domain
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setDomain($domain = null);
-
 
     /**
      * Get domain
@@ -41,16 +89,14 @@ interface FriendInterface extends EntityInterface
      */
     public function getDomain();
 
-
     /**
      * Set description
      *
      * @param string $description
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setDescription($description);
-
 
     /**
      * Get description
@@ -59,16 +105,14 @@ interface FriendInterface extends EntityInterface
      */
     public function getDescription();
 
-
     /**
      * Set transport
      *
      * @param string $transport
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setTransport($transport);
-
 
     /**
      * Get transport
@@ -77,16 +121,14 @@ interface FriendInterface extends EntityInterface
      */
     public function getTransport();
 
-
     /**
      * Set ip
      *
      * @param string $ip
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setIp($ip = null);
-
 
     /**
      * Get ip
@@ -95,16 +137,14 @@ interface FriendInterface extends EntityInterface
      */
     public function getIp();
 
-
     /**
      * Set port
      *
      * @param integer $port
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setPort($port = null);
-
 
     /**
      * Get port
@@ -113,16 +153,14 @@ interface FriendInterface extends EntityInterface
      */
     public function getPort();
 
-
     /**
      * Set authNeeded
      *
      * @param string $authNeeded
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setAuthNeeded($authNeeded);
-
 
     /**
      * Get authNeeded
@@ -131,16 +169,14 @@ interface FriendInterface extends EntityInterface
      */
     public function getAuthNeeded();
 
-
     /**
      * Set password
      *
      * @param string $password
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setPassword($password = null);
-
 
     /**
      * Get password
@@ -149,16 +185,14 @@ interface FriendInterface extends EntityInterface
      */
     public function getPassword();
 
-
     /**
      * Set areaCode
      *
      * @param string $areaCode
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setAreaCode($areaCode = null);
-
 
     /**
      * Get areaCode
@@ -167,16 +201,14 @@ interface FriendInterface extends EntityInterface
      */
     public function getAreaCode();
 
-
     /**
      * Set priority
      *
      * @param integer $priority
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setPriority($priority);
-
 
     /**
      * Get priority
@@ -185,16 +217,14 @@ interface FriendInterface extends EntityInterface
      */
     public function getPriority();
 
-
     /**
      * Set disallow
      *
      * @param string $disallow
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setDisallow($disallow);
-
 
     /**
      * Get disallow
@@ -203,16 +233,14 @@ interface FriendInterface extends EntityInterface
      */
     public function getDisallow();
 
-
     /**
      * Set allow
      *
      * @param string $allow
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setAllow($allow);
-
 
     /**
      * Get allow
@@ -221,16 +249,14 @@ interface FriendInterface extends EntityInterface
      */
     public function getAllow();
 
-
     /**
      * Set directMediaMethod
      *
      * @param string $directMediaMethod
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setDirectMediaMethod($directMediaMethod);
-
 
     /**
      * Get directMediaMethod
@@ -239,16 +265,14 @@ interface FriendInterface extends EntityInterface
      */
     public function getDirectMediaMethod();
 
-
     /**
      * Set calleridUpdateHeader
      *
      * @param string $calleridUpdateHeader
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setCalleridUpdateHeader($calleridUpdateHeader);
-
 
     /**
      * Get calleridUpdateHeader
@@ -257,16 +281,14 @@ interface FriendInterface extends EntityInterface
      */
     public function getCalleridUpdateHeader();
 
-
     /**
      * Set updateCallerid
      *
      * @param string $updateCallerid
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setUpdateCallerid($updateCallerid);
-
 
     /**
      * Get updateCallerid
@@ -275,16 +297,14 @@ interface FriendInterface extends EntityInterface
      */
     public function getUpdateCallerid();
 
-
     /**
      * Set fromDomain
      *
      * @param string $fromDomain
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setFromDomain($fromDomain = null);
-
 
     /**
      * Get fromDomain
@@ -293,16 +313,14 @@ interface FriendInterface extends EntityInterface
      */
     public function getFromDomain();
 
-
     /**
      * Set directConnectivity
      *
      * @param string $directConnectivity
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setDirectConnectivity($directConnectivity);
-
 
     /**
      * Get directConnectivity
@@ -311,16 +329,14 @@ interface FriendInterface extends EntityInterface
      */
     public function getDirectConnectivity();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company = null);
-
 
     /**
      * Get company
@@ -329,34 +345,23 @@ interface FriendInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set country
      *
      * @param \Ivoz\Domain\Model\Country\CountryInterface $country
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setCountry(\Ivoz\Domain\Model\Country\CountryInterface $country = null);
-
-
-    /**
-     * Get country
-     *
-     * @return \Ivoz\Domain\Model\Country\CountryInterface
-     */
-    public function getCountry();
-
 
     /**
      * Set callACL
      *
      * @param \Ivoz\Domain\Model\CallACL\CallACLInterface $callACL
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setCallACL(\Ivoz\Domain\Model\CallACL\CallACLInterface $callACL = null);
-
 
     /**
      * Get callACL
@@ -365,34 +370,23 @@ interface FriendInterface extends EntityInterface
      */
     public function getCallACL();
 
-
     /**
      * Set outgoingDDI
      *
      * @param \Ivoz\Domain\Model\DDI\DDIInterface $outgoingDDI
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setOutgoingDDI(\Ivoz\Domain\Model\DDI\DDIInterface $outgoingDDI = null);
-
-
-    /**
-     * Get outgoingDDI
-     *
-     * @return \Ivoz\Domain\Model\DDI\DDIInterface
-     */
-    public function getOutgoingDDI();
-
 
     /**
      * Set language
      *
      * @param \Ivoz\Domain\Model\Language\LanguageInterface $language
      *
-     * @return FriendInterface
+     * @return self
      */
     public function setLanguage(\Ivoz\Domain\Model\Language\LanguageInterface $language = null);
-
 
     /**
      * Get language
@@ -401,7 +395,67 @@ interface FriendInterface extends EntityInterface
      */
     public function getLanguage();
 
+    /**
+     * Add psEndpoint
+     *
+     * @param \Ast\Domain\Model\PsEndpoint\PsEndpoint $psEndpoint
+     *
+     * @return FriendTrait
+     */
+    public function addPsEndpoint(\Ast\Domain\Model\PsEndpoint\PsEndpoint $psEndpoint);
 
+    /**
+     * Remove psEndpoint
+     *
+     * @param \Ast\Domain\Model\PsEndpoint\PsEndpoint $psEndpoint
+     */
+    public function removePsEndpoint(\Ast\Domain\Model\PsEndpoint\PsEndpoint $psEndpoint);
+
+    /**
+     * Replace psEndpoints
+     *
+     * @param \Ast\Domain\Model\PsEndpoint\PsEndpoint[] $psEndpoints
+     * @return self
+     */
+    public function replacePsEndpoints(array $psEndpoints);
+
+    /**
+     * Get psEndpoints
+     *
+     * @return array
+     */
+    public function getPsEndpoints(\Doctrine\Common\Collections\Criteria $criteria = null);
+
+    /**
+     * Add pattern
+     *
+     * @param \Ivoz\Domain\Model\FriendsPattern\FriendsPattern $pattern
+     *
+     * @return FriendTrait
+     */
+    public function addPattern(\Ivoz\Domain\Model\FriendsPattern\FriendsPattern $pattern);
+
+    /**
+     * Remove pattern
+     *
+     * @param \Ivoz\Domain\Model\FriendsPattern\FriendsPattern $pattern
+     */
+    public function removePattern(\Ivoz\Domain\Model\FriendsPattern\FriendsPattern $pattern);
+
+    /**
+     * Replace patterns
+     *
+     * @param \Ivoz\Domain\Model\FriendsPattern\FriendsPattern[] $patterns
+     * @return self
+     */
+    public function replacePatterns(array $patterns);
+
+    /**
+     * Get patterns
+     *
+     * @return array
+     */
+    public function getPatterns(\Doctrine\Common\Collections\Criteria $criteria = null);
 
 }
 

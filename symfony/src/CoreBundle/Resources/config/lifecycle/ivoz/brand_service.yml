@@ -4,6 +4,15 @@ services:
     public: false
 
   ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\CompanyService\CompanyServiceLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.brand_service.service_collection:
+    '@Ivoz\Domain\Service\CompanyService\CompanyServiceLifecycleServiceCollection'
+
+  ##################################
   ## post
   ##################################
   Ivoz\Domain\Service\CompanyService\RemoveByBrandService:

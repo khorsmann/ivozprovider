@@ -1,10 +1,12 @@
 <?php
+
 namespace Kam\Domain\Model\TrunksDomainAttr;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
  * TrunksDomainAttrTrait
+ * @codeCoverageIgnore
  */
 trait TrunksDomainAttrTrait
 {

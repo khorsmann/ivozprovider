@@ -11,10 +11,9 @@ interface TerminalInterface extends EntityInterface
      *
      * @param string $name
      *
-     * @return TerminalInterface
+     * @return self
      */
     public function setName($name = null);
-
 
     /**
      * Get name
@@ -23,16 +22,14 @@ interface TerminalInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set domain
      *
      * @param string $domain
      *
-     * @return TerminalInterface
+     * @return self
      */
     public function setDomain($domain = null);
-
 
     /**
      * Get domain
@@ -41,16 +38,14 @@ interface TerminalInterface extends EntityInterface
      */
     public function getDomain();
 
-
     /**
      * Set disallow
      *
      * @param string $disallow
      *
-     * @return TerminalInterface
+     * @return self
      */
     public function setDisallow($disallow);
-
 
     /**
      * Get disallow
@@ -59,16 +54,14 @@ interface TerminalInterface extends EntityInterface
      */
     public function getDisallow();
 
-
     /**
      * Set allowAudio
      *
      * @param string $allowAudio
      *
-     * @return TerminalInterface
+     * @return self
      */
     public function setAllowAudio($allowAudio);
-
 
     /**
      * Get allowAudio
@@ -77,16 +70,14 @@ interface TerminalInterface extends EntityInterface
      */
     public function getAllowAudio();
 
-
     /**
      * Set allowVideo
      *
      * @param string $allowVideo
      *
-     * @return TerminalInterface
+     * @return self
      */
     public function setAllowVideo($allowVideo = null);
-
 
     /**
      * Get allowVideo
@@ -95,16 +86,14 @@ interface TerminalInterface extends EntityInterface
      */
     public function getAllowVideo();
 
-
     /**
      * Set directMediaMethod
      *
      * @param string $directMediaMethod
      *
-     * @return TerminalInterface
+     * @return self
      */
     public function setDirectMediaMethod($directMediaMethod);
-
 
     /**
      * Get directMediaMethod
@@ -113,16 +102,14 @@ interface TerminalInterface extends EntityInterface
      */
     public function getDirectMediaMethod();
 
-
     /**
      * Set password
      *
      * @param string $password
      *
-     * @return TerminalInterface
+     * @return self
      */
     public function setPassword($password);
-
 
     /**
      * Get password
@@ -131,16 +118,14 @@ interface TerminalInterface extends EntityInterface
      */
     public function getPassword();
 
-
     /**
      * Set mac
      *
      * @param string $mac
      *
-     * @return TerminalInterface
+     * @return self
      */
     public function setMac($mac = null);
-
 
     /**
      * Get mac
@@ -149,16 +134,14 @@ interface TerminalInterface extends EntityInterface
      */
     public function getMac();
 
-
     /**
      * Set lastProvisionDate
      *
      * @param \DateTime $lastProvisionDate
      *
-     * @return TerminalInterface
+     * @return self
      */
     public function setLastProvisionDate($lastProvisionDate = null);
-
 
     /**
      * Get lastProvisionDate
@@ -167,16 +150,14 @@ interface TerminalInterface extends EntityInterface
      */
     public function getLastProvisionDate();
 
-
     /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
-     * @return TerminalInterface
+     * @return self
      */
     public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company = null);
-
 
     /**
      * Get company
@@ -185,16 +166,14 @@ interface TerminalInterface extends EntityInterface
      */
     public function getCompany();
 
-
     /**
      * Set terminalModel
      *
      * @param \Ivoz\Domain\Model\TerminalModel\TerminalModelInterface $terminalModel
      *
-     * @return TerminalInterface
+     * @return self
      */
     public function setTerminalModel(\Ivoz\Domain\Model\TerminalModel\TerminalModelInterface $terminalModel = null);
-
 
     /**
      * Get terminalModel
@@ -203,7 +182,36 @@ interface TerminalInterface extends EntityInterface
      */
     public function getTerminalModel();
 
+    /**
+     * Add astPsEndpoint
+     *
+     * @param \Ast\Domain\Model\PsEndpoint\PsEndpoint $astPsEndpoint
+     *
+     * @return TerminalTrait
+     */
+    public function addAstPsEndpoint(\Ast\Domain\Model\PsEndpoint\PsEndpoint $astPsEndpoint);
 
+    /**
+     * Remove astPsEndpoint
+     *
+     * @param \Ast\Domain\Model\PsEndpoint\PsEndpoint $astPsEndpoint
+     */
+    public function removeAstPsEndpoint(\Ast\Domain\Model\PsEndpoint\PsEndpoint $astPsEndpoint);
+
+    /**
+     * Replace astPsEndpoints
+     *
+     * @param \Ast\Domain\Model\PsEndpoint\PsEndpoint[] $astPsEndpoints
+     * @return self
+     */
+    public function replaceAstPsEndpoints(array $astPsEndpoints);
+
+    /**
+     * Get astPsEndpoints
+     *
+     * @return array
+     */
+    public function getAstPsEndpoints(\Doctrine\Common\Collections\Criteria $criteria = null);
 
 }
 

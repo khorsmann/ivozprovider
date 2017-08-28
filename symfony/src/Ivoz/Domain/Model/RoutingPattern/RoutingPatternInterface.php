@@ -11,10 +11,9 @@ interface RoutingPatternInterface extends EntityInterface
      *
      * @param string $regExp
      *
-     * @return RoutingPatternInterface
+     * @return self
      */
     public function setRegExp($regExp);
-
 
     /**
      * Get regExp
@@ -23,16 +22,14 @@ interface RoutingPatternInterface extends EntityInterface
      */
     public function getRegExp();
 
-
     /**
      * Set brand
      *
      * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
      *
-     * @return RoutingPatternInterface
+     * @return self
      */
     public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand);
-
 
     /**
      * Get brand
@@ -41,16 +38,14 @@ interface RoutingPatternInterface extends EntityInterface
      */
     public function getBrand();
 
-
     /**
      * Set name
      *
      * @param Name $name
      *
-     * @return RoutingPatternInterface
+     * @return self
      */
-    public function setName(Name $name);
-
+    public function setName(\Ivoz\Domain\Model\RoutingPattern\Name $name);
 
     /**
      * Get name
@@ -59,16 +54,14 @@ interface RoutingPatternInterface extends EntityInterface
      */
     public function getName();
 
-
     /**
      * Set description
      *
      * @param Description $description
      *
-     * @return RoutingPatternInterface
+     * @return self
      */
-    public function setDescription(Description $description);
-
+    public function setDescription(\Ivoz\Domain\Model\RoutingPattern\Description $description);
 
     /**
      * Get description

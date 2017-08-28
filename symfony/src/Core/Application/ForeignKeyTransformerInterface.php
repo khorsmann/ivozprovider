@@ -1,4 +1,5 @@
 <?php
+
 namespace Core\Application;
 
 use Core\Domain\Model\EntityInterface;
