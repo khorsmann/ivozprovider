@@ -1,5 +1,6 @@
 production:
   class: \IvozProvider\Model\ConditionalRoutesConditions
+  entity: Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesCondition
   fields:
     conditionalRouteId:
       title: _('Conditional Route')

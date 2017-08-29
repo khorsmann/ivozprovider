@@ -1,0 +1,169 @@
+Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionAbstract:
+  type: mappedSuperclass
+  indexes:
+    locutionId:
+      columns:
+        - locutionId
+    IVRCommonId:
+      columns:
+        - IVRCommonId
+    IVRCustomId:
+      columns:
+        - IVRCustomId
+    huntGroupId:
+      columns:
+        - huntGroupId
+    voiceMailUserId:
+      columns:
+        - voiceMailUserId
+    userId:
+      columns:
+        - userId
+    queueId:
+      columns:
+        - queueId
+    conferenceRoomId:
+      columns:
+        - conferenceRoomId
+    extensionId:
+      columns:
+        - extensionId
+    IDX_425473C99E2CE667:
+      columns:
+        - conditionalRouteId
+  uniqueConstraints:
+    conditionalRouteId:
+      columns:
+        - conditionalRouteId
+        - priority
+  fields:
+    priority:
+      type: smallint
+      nullable: false
+      options:
+        unsigned: false
+        default: '1'
+    routeType:
+      type: string
+      nullable: true
+      length: 25
+      options:
+        fixed: false
+        comment: '[enum:user|number|IVRCommon|IVRCustom|huntGroup|voicemail|friend|queue|conferenceRoom|extension]'
+      column: routeType
+    numberValue:
+      type: string
+      nullable: true
+      length: 25
+      options:
+        fixed: false
+      column: numberValue
+    friendValue:
+      type: string
+      nullable: true
+      length: 25
+      options:
+        fixed: false
+      column: friendValue
+  manyToOne:
+    conditionalRoute:
+      targetEntity: Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        conditionalRouteId:
+          referencedColumnName: id
+      orphanRemoval: false
+    ivrCommon:
+      targetEntity: Ivoz\Domain\Model\IvrCommon\IvrCommonInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        IVRCommonId:
+          referencedColumnName: id
+      orphanRemoval: false
+    ivrCustom:
+      targetEntity: Ivoz\Domain\Model\IvrCustom\IvrCustomInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        IVRCustomId:
+          referencedColumnName: id
+      orphanRemoval: false
+    huntGroup:
+      targetEntity: Ivoz\Domain\Model\HuntGroup\HuntGroupInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        huntGroupId:
+          referencedColumnName: id
+      orphanRemoval: false
+    voicemailUser:
+      targetEntity: Ivoz\Domain\Model\User\UserInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        voiceMailUserId:
+          referencedColumnName: id
+      orphanRemoval: false
+    user:
+      targetEntity: Ivoz\Domain\Model\User\UserInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        userId:
+          referencedColumnName: id
+      orphanRemoval: false
+    queue:
+      targetEntity: Ivoz\Domain\Model\Queue\QueueInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        queueId:
+          referencedColumnName: id
+      orphanRemoval: false
+    locution:
+      targetEntity: Ivoz\Domain\Model\Locution\LocutionInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        locutionId:
+          referencedColumnName: id
+      orphanRemoval: false
+    conferenceRoom:
+      targetEntity: Ivoz\Domain\Model\ConferenceRoom\ConferenceRoomInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        conferenceRoomId:
+          referencedColumnName: id
+      orphanRemoval: false
+    extension:
+      targetEntity: Ivoz\Domain\Model\Extension\ExtensionInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        extensionId:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

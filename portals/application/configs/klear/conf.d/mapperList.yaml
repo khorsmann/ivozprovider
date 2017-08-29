@@ -59,6 +59,31 @@ mappers:
         modelFile: ChangeHistory,
         entity: 'Ivoz\\Domain\\Model\\ChangeHistory\\ChangeHistory'
     }
+  - &ConditionalRoutes {
+        mapper: \IvozProvider\Mapper\Sql\ConditionalRoutes,
+        modelFile: ConditionalRoutes,
+        entity: 'Ivoz\\Domain\\Model\\ConditionalRoute\\ConditionalRoute'
+    }
+  - &ConditionalRoutesConditions {
+        mapper: \IvozProvider\Mapper\Sql\ConditionalRoutesConditions,
+        modelFile: ConditionalRoutesConditions,
+        entity: 'Ivoz\\Domain\\Model\\ConditionalRoutesCondition\\ConditionalRoutesCondition'
+    }
+  - &ConditionalRoutesConditionsRelMatchLists {
+        mapper: \IvozProvider\Mapper\Sql\ConditionalRoutesConditionsRelMatchLists,
+        modelFile: ConditionalRoutesConditionsRelMatchLists,
+        entity: 'Ivoz\\Domain\\Model\\ConditionalRoutesConditionsRelMatchList\\ConditionalRoutesConditionsRelMatchList'
+    }
+  - &ConditionalRoutesConditionsRelSchedules {
+        mapper: \IvozProvider\Mapper\Sql\ConditionalRoutesConditionsRelSchedules,
+        modelFile: ConditionalRoutesConditionsRelSchedules,
+        entity: 'Ivoz\\Domain\\Model\\ConditionalRoutesConditionsRelSchedule\\ConditionalRoutesConditionsRelSchedule'
+    }
+  - &ConferenceRooms {
+        mapper: \IvozProvider\Mapper\Sql\ConferenceRooms,
+        modelFile: ConferenceRoom,
+        entity: 'Ivoz\\Domain\\Model\\ConferenceRoom\\ConferenceRoom'
+    }
   - &Companies {
         mapper: \IvozProvider\Mapper\Sql\Companies,
         modelFile: Companies,

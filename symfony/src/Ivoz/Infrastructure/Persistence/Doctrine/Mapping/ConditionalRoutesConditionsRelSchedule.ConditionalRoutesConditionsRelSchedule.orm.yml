@@ -1,0 +1,14 @@
+Ivoz\Domain\Model\ConditionalRoutesConditionsRelSchedule\ConditionalRoutesConditionsRelSchedule:
+  repositoryClass: Ivoz\Infrastructure\Persistence\Doctrine\ConditionalRoutesConditionsRelScheduleDoctrineRepository
+  type: entity
+  table: ConditionalRoutesConditionsRelSchedules
+  id:
+    id:
+      type: integer
+      nullable: false
+      options:
+        unsigned: true
+      id: true
+      generator:
+        strategy: IDENTITY
+  lifecycleCallbacks: {  }

@@ -139,8 +139,15 @@ class InterfaceGenerator extends ParentGenerator
             foreach ($methodParameters as $methodParameter) {
 
                 $str = '';
-                if ($methodParameter->getClass()) {
-                    $str = '\\' . $methodParameter->getClass()->getName() . ' ';
+                try {
+                    $parameterClass = $methodParameter->getClass();
+                } catch (\Exception $e) {
+                    // Interface does not exist yet
+                    continue;
+                }
+
+                if ($parameterClass) {
+                    $str = '\\' . $parameterClass->getName() . ' ';
                 } else if ($methodParameter->isArray()) {
                     $str = 'array ';
                 }

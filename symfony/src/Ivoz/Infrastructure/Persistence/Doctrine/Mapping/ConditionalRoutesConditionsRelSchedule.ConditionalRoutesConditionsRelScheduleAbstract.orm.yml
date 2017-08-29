@@ -1,0 +1,31 @@
+Ivoz\Domain\Model\ConditionalRoutesConditionsRelSchedule\ConditionalRoutesConditionsRelScheduleAbstract:
+  type: mappedSuperclass
+  indexes:
+    conditionId:
+      columns:
+        - conditionId
+    scheduleId:
+      columns:
+        - scheduleId
+  manyToOne:
+    condition:
+      targetEntity: Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        conditionId:
+          referencedColumnName: id
+      orphanRemoval: false
+    schedule:
+      targetEntity: Ivoz\Domain\Model\Schedule\ScheduleInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        scheduleId:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

@@ -10,13 +10,8 @@ production:
       controller: list
       pagination:
         items: 25
-<<<<<<< HEAD:portals/application/configs/klear/IVRCommonList.yaml
-      <<: *IVRCommon
-      title: _("List of %s %2s", ngettext('IVR Common', 'IVRs Common', 0), "[format| (%parent%)]")
-=======
       <<: *IvrCommon
-      title: _("List of %s %2s", ngettext('I v r common', 'I v r common(s)', 0), "[format| (%parent%)]")
->>>>>>> Migrated PsEndpoints-IVRCustom logic:portals/application/configs/klear/IvrCommonList.yaml
+      title: _("List of %s %2s", ngettext('IVR Common', 'IVRs Common', 0), "[format| (%parent%)]")
       forcedValues:
         <<: *forcedCompany
       fields:

@@ -1,118 +1,243 @@
 doctrine:
   orm:
     resolve_target_entities:
-      Ast\Domain\Model\Hint\HintInterface: Ast\Domain\Model\Hint\Hint
-      Ast\Domain\Model\PsAor\PsAorInterface: Ast\Domain\Model\PsAor\PsAor
-      Ast\Domain\Model\PsEndpoint\PsEndpointInterface: Ast\Domain\Model\PsEndpoint\PsEndpoint
-      Ast\Domain\Model\QueueMember\QueueMemberInterface: Ast\Domain\Model\QueueMember\QueueMember
-      Ast\Domain\Model\Queue\QueueInterface: Ast\Domain\Model\Queue\Queue
-      Ivoz\Domain\Model\ApplicationServer\ApplicationServerInterface: Ivoz\Domain\Model\ApplicationServer\ApplicationServer
-      Ivoz\Domain\Model\BillableCall\BillableCallInterface: Ivoz\Domain\Model\BillableCall\BillableCall
-      Ivoz\Domain\Model\Brand\BrandInterface: Ivoz\Domain\Model\Brand\Brand
-      Ivoz\Domain\Model\BrandOperator\BrandOperatorInterface: Ivoz\Domain\Model\BrandOperator\BrandOperator
-      Ivoz\Domain\Model\BrandService\BrandServiceInterface: Ivoz\Domain\Model\BrandService\BrandService
-      Ivoz\Domain\Model\BrandURL\BrandURLInterface: Ivoz\Domain\Model\BrandURL\BrandURL
-      Ivoz\Domain\Model\BrandURL\BrandURLInterface: Ivoz\Domain\Model\BrandURL\BrandURL
-      Ivoz\Domain\Model\Calendar\CalendarInterface: Ivoz\Domain\Model\Calendar\Calendar
-      Ivoz\Domain\Model\CallACL\CallACLInterface: Ivoz\Domain\Model\CallACL\CallACL
-      Ivoz\Domain\Model\CallACLPattern\CallACLPatternInterface: Ivoz\Domain\Model\CallACLPattern\CallACLPattern
-      Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPatternInterface: Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPattern
-      Ivoz\Domain\Model\CallForwardSetting\CallForwardSettingInterface: Ivoz\Domain\Model\CallForwardSetting\CallForwardSetting
-      Ivoz\Domain\Model\ChangeHistory\ChangeHistoryInterface: Ivoz\Domain\Model\ChangeHistory\ChangeHistory
-      Ivoz\Domain\Model\Changelog\ChangelogInterface: Ivoz\Domain\Model\Changelog\Changelog
-      Ivoz\Domain\Model\CompanyAdmin\CompanyAdminInterface: Ivoz\Domain\Model\CompanyAdmin\CompanyAdmin
-      Ivoz\Domain\Model\Company\CompanyInterface: Ivoz\Domain\Model\Company\Company
-      Ivoz\Domain\Model\CompanyService\CompanyServiceInterface: Ivoz\Domain\Model\CompanyService\CompanyService
-      Ivoz\Domain\Model\ConferenceRoom\ConferenceRoomInterface: Ivoz\Domain\Model\ConferenceRoom\ConferenceRoom
-      Ivoz\Domain\Model\Country\CountryInterface: Ivoz\Domain\Model\Country\Country
-      Ivoz\Domain\Model\DDI\DDIInterface: Ivoz\Domain\Model\DDI\DDI
-      Ivoz\Domain\Model\Domain\DomainInterface: Ivoz\Domain\Model\Domain\Domain
-      Ivoz\Domain\Model\EtagVersion\EtagVersionInterface: Ivoz\Domain\Model\EtagVersion\EtagVersion
-      Ivoz\Domain\Model\Extension\ExtensionInterface: Ivoz\Domain\Model\Extension\Extension
-      Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface: Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilter
-      Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackListInterface: Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList
-      Ivoz\Domain\Model\ExternalCallFilterRelCalendar\ExternalCallFilterRelCalendarInterface: Ivoz\Domain\Model\ExternalCallFilterRelCalendar\ExternalCallFilterRelCalendar
-      Ivoz\Domain\Model\ExternalCallFilterRelSchedule\ExternalCallFilterRelScheduleInterface: Ivoz\Domain\Model\ExternalCallFilterRelSchedule\ExternalCallFilterRelSchedule
-      Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteListInterface: Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteList
-      Ivoz\Domain\Model\FaxesInOut\FaxesInOutInterface: Ivoz\Domain\Model\FaxesInOut\FaxesInOut
-      Ivoz\Domain\Model\Fax\FaxInterface: Ivoz\Domain\Model\Fax\Fax
-      Ivoz\Domain\Model\Feature\FeatureInterface: Ivoz\Domain\Model\Feature\Feature
-      Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrandInterface: Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrand
-      Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompanyInterface: Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompany
-      Ivoz\Domain\Model\FixedCost\FixedCostInterface: Ivoz\Domain\Model\FixedCost\FixedCost
-      Ivoz\Domain\Model\FixedCostsRelInvoice\FixedCostsRelInvoiceInterface: Ivoz\Domain\Model\FixedCostsRelInvoice\FixedCostsRelInvoice
-      Ivoz\Domain\Model\Friend\FriendInterface: Ivoz\Domain\Model\Friend\Friend
-      Ivoz\Domain\Model\FriendsPattern\FriendsPatternInterface: Ivoz\Domain\Model\FriendsPattern\FriendsPattern
-      Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPatternInterface: Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPattern
-      Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHoldInterface: Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHold
-      Ivoz\Domain\Model\HolidayDate\HolidayDateInterface: Ivoz\Domain\Model\HolidayDate\HolidayDate
-      Ivoz\Domain\Model\HuntGroup\HuntGroupInterface: Ivoz\Domain\Model\HuntGroup\HuntGroup
-      Ivoz\Domain\Model\HuntGroupRelUser\HuntGroupRelUserInterface: Ivoz\Domain\Model\HuntGroupRelUser\HuntGroupRelUser
-      Ivoz\Domain\Model\Invoice\InvoiceInterface: Ivoz\Domain\Model\Invoice\Invoice
-      Ivoz\Domain\Model\InvoiceTemplate\InvoiceTemplateInterface: Ivoz\Domain\Model\InvoiceTemplate\InvoiceTemplate
-      Ivoz\Domain\Model\IvrCommon\IvrCommonInterface: Ivoz\Domain\Model\IvrCommon\IvrCommon
-      Ivoz\Domain\Model\IvrCustomEntry\IvrCustomEntryInterface: Ivoz\Domain\Model\IvrCustomEntry\IvrCustomEntry
-      Ivoz\Domain\Model\IvrCustom\IvrCustomInterface: Ivoz\Domain\Model\IvrCustom\IvrCustom
-      Ivoz\Domain\Model\Language\LanguageInterface: Ivoz\Domain\Model\Language\Language
-      Ivoz\Domain\Model\LcrGateway\LcrGatewayInterface: Ivoz\Domain\Model\LcrGateway\LcrGateway
-      Ivoz\Domain\Model\LcrRule\LcrRuleInterface: Ivoz\Domain\Model\LcrRule\LcrRule
-      Ivoz\Domain\Model\LcrRuleTarget\LcrRuleTargetInterface: Ivoz\Domain\Model\LcrRuleTarget\LcrRuleTarget
-      Ivoz\Domain\Model\Locution\LocutionInterface: Ivoz\Domain\Model\Locution\Locution
-      Ivoz\Domain\Model\MainOperator\MainOperatorInterface: Ivoz\Domain\Model\MainOperator\MainOperator
-      Ivoz\Domain\Model\MatchList\MatchListInterface: Ivoz\Domain\Model\MatchList\MatchList
-      Ivoz\Domain\Model\MatchListPattern\MatchListPatternInterface: Ivoz\Domain\Model\MatchListPattern\MatchListPattern
-      Ivoz\Domain\Model\MediaRelaySet\MediaRelaySetInterface: Ivoz\Domain\Model\MediaRelaySet\MediaRelaySet
-      Ivoz\Domain\Model\Musiconhold\MusiconholdInterface: Ivoz\Domain\Model\Musiconhold\Musiconhold
-      Ivoz\Domain\Model\MusicOnHold\MusicOnHoldInterface: Ivoz\Domain\Model\MusicOnHold\MusicOnHold
-      Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface: Ivoz\Domain\Model\OutgoingRouting\OutgoingRouting
-      Ivoz\Domain\Model\ParsedCDR\ParsedCDRInterface: Ivoz\Domain\Model\ParsedCDR\ParsedCDR
-      Ivoz\Domain\Model\ParsedCDRsGod\ParsedCDRsGodInterface: Ivoz\Domain\Model\ParsedCDRsGod\ParsedCDRsGod
-      Ivoz\Domain\Model\PeeringContract\PeeringContractInterface: Ivoz\Domain\Model\PeeringContract\PeeringContract
-      Ivoz\Domain\Model\PeerServer\PeerServerInterface: Ivoz\Domain\Model\PeerServer\PeerServer
-      Ivoz\Domain\Model\PickUpGroup\PickUpGroupInterface: Ivoz\Domain\Model\PickUpGroup\PickUpGroup
-      Ivoz\Domain\Model\PickUpRelUser\PickUpRelUserInterface: Ivoz\Domain\Model\PickUpRelUser\PickUpRelUser
-      Ivoz\Domain\Model\PricingPlan\PricingPlanInterface: Ivoz\Domain\Model\PricingPlan\PricingPlan
-      Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompanyInterface: Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompany
-      Ivoz\Domain\Model\PricingPlansRelTargetPattern\PricingPlansRelTargetPatternInterface: Ivoz\Domain\Model\PricingPlansRelTargetPattern\PricingPlansRelTargetPattern
-      Ivoz\Domain\Model\ProxyTrunk\ProxyTrunkInterface: Ivoz\Domain\Model\ProxyTrunk\ProxyTrunk
-      Ivoz\Domain\Model\ProxyUser\ProxyUserInterface: Ivoz\Domain\Model\ProxyUser\ProxyUser
-      Ivoz\Domain\Model\QueueMember\QueueMemberInterface: Ivoz\Domain\Model\QueueMember\QueueMember
-      Ivoz\Domain\Model\Queue\QueueInterface: Ivoz\Domain\Model\Queue\Queue
-      Ivoz\Domain\Model\Recording\RecordingInterface: Ivoz\Domain\Model\Recording\Recording
-      Ivoz\Domain\Model\RetailAccount\RetailAccountInterface: Ivoz\Domain\Model\RetailAccount\RetailAccount
-      Ivoz\Domain\Model\RoutingPatternGroup\RoutingPatternGroupInterface: Ivoz\Domain\Model\RoutingPatternGroup\RoutingPatternGroup
-      Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPatternInterface: Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPattern
-      Ivoz\Domain\Model\RoutingPattern\RoutingPatternInterface: Ivoz\Domain\Model\RoutingPattern\RoutingPattern
-      Ivoz\Domain\Model\Schedule\ScheduleInterface: Ivoz\Domain\Model\Schedule\Schedule
-      Ivoz\Domain\Model\Service\ServiceInterface: Ivoz\Domain\Model\Service\Service
-      Ivoz\Domain\Model\TargetPattern\TargetPatternInterface: Ivoz\Domain\Model\TargetPattern\TargetPattern
-      Ivoz\Domain\Model\TerminalManufacturer\TerminalManufacturerInterface: Ivoz\Domain\Model\TerminalManufacturer\TerminalManufacturer
-      Ivoz\Domain\Model\TerminalModel\TerminalModelInterface: Ivoz\Domain\Model\TerminalModel\TerminalModel
-      Ivoz\Domain\Model\Terminal\TerminalInterface: Ivoz\Domain\Model\Terminal\Terminal
-      Ivoz\Domain\Model\Timezone\TimezoneInterface: Ivoz\Domain\Model\Timezone\Timezone
-      Ivoz\Domain\Model\TransformationRulesetGroupsTrunk\TransformationRulesetGroupsTrunkInterface: Ivoz\Domain\Model\TransformationRulesetGroupsTrunk\TransformationRulesetGroupsTrunk
-      Ivoz\Domain\Model\TrunksDialplan\TrunksDialplanInterface: Ivoz\Domain\Model\TrunksDialplan\TrunksDialplan
-      Ivoz\Domain\Model\TrunksHtable\TrunksHtableInterface: Ivoz\Domain\Model\TrunksHtable\TrunksHtable
-      Ivoz\Domain\Model\TrunksUacreg\TrunksUacregInterface: Ivoz\Domain\Model\TrunksUacreg\TrunksUacreg
-      Ivoz\Domain\Model\UsersAcc\UsersAccInterface: Ivoz\Domain\Model\UsersAcc\UsersAcc
-      Ivoz\Domain\Model\UsersHtable\UsersHtableInterface: Ivoz\Domain\Model\UsersHtable\UsersHtable
-      Ivoz\Domain\Model\UsersLocation\UsersLocationInterface: Ivoz\Domain\Model\UsersLocation\UsersLocation
-      Ivoz\Domain\Model\User\UserInterface: Ivoz\Domain\Model\User\User
-      Ivoz\Domain\Model\Voicemail\VoicemailInterface: Ivoz\Domain\Model\Voicemail\Voicemail
-      Ivoz\Domain\Model\XMLRPCLog\XMLRPCLogInterface: Ivoz\Domain\Model\XMLRPCLog\XMLRPCLog
-      Kam\Domain\Model\AccCdr\AccCdrInterface: Kam\Domain\Model\AccCdr\AccCdr
-      Kam\Domain\Model\AccCdrsBrand\AccCdrsBrandInterface: Kam\Domain\Model\AccCdrsBrand\AccCdrsBrand
-      Kam\Domain\Model\Dispatcher\DispatcherInterface: Kam\Domain\Model\Dispatcher\Dispatcher
-      Kam\Domain\Model\PikeTrusted\PikeTrustedInterface: Kam\Domain\Model\PikeTrusted\PikeTrusted
-      Kam\Domain\Model\Rtpproxy\RtpproxyInterface: Kam\Domain\Model\Rtpproxy\Rtpproxy
-      Kam\Domain\Model\TrunksAcc\TrunksAccInterface: Kam\Domain\Model\TrunksAcc\TrunksAcc
-      Kam\Domain\Model\TrunksAddress\TrunksAddressInterface: Kam\Domain\Model\TrunksAddress\TrunksAddress
-      Kam\Domain\Model\TrunksDomainAttr\TrunksDomainAttrInterface: Kam\Domain\Model\TrunksDomainAttr\TrunksDomainAttr
-      Kam\Domain\Model\TrunksDomain\TrunksDomainInterface: Kam\Domain\Model\TrunksDomain\TrunksDomain
-      Kam\Domain\Model\UsersAddress\UsersAddressInterface: Kam\Domain\Model\UsersAddress\UsersAddress
-      Kam\Domain\Model\UsersDomainAttr\UsersDomainAttrInterface: Kam\Domain\Model\UsersDomainAttr\UsersDomainAttr
-      Kam\Domain\Model\UsersDomain\UsersDomainInterface: Kam\Domain\Model\UsersDomain\UsersDomain
-      Kam\Domain\Model\UsersLocationAttr\UsersLocationAttrInterface: Kam\Domain\Model\UsersLocationAttr\UsersLocationAttr
-      Kam\Domain\Model\UsersMissedCalls\UsersMissedCallsInterface: Kam\Domain\Model\UsersMissedCalls\UsersMissedCalls
-      Kam\Domain\Model\User\UserInterface: Kam\Domain\Model\User\User
-      Kam\Domain\Model\Version\VersionInterface: Kam\Domain\Model\Version\Version
+      Ast\Domain\Model\Hint\HintInterface:
+        Ast\Domain\Model\Hint\Hint
+      Ast\Domain\Model\PsAor\PsAorInterface:
+        Ast\Domain\Model\PsAor\PsAor
+      Ast\Domain\Model\PsEndpoint\PsEndpointInterface:
+        Ast\Domain\Model\PsEndpoint\PsEndpoint
+      Ast\Domain\Model\QueueMember\QueueMemberInterface:
+        Ast\Domain\Model\QueueMember\QueueMember
+      Ast\Domain\Model\Queue\QueueInterface:
+        Ast\Domain\Model\Queue\Queue
+      Ivoz\Domain\Model\ApplicationServer\ApplicationServerInterface:
+        Ivoz\Domain\Model\ApplicationServer\ApplicationServer
+      Ivoz\Domain\Model\BillableCall\BillableCallInterface:
+        Ivoz\Domain\Model\BillableCall\BillableCall
+      Ivoz\Domain\Model\Brand\BrandInterface:
+        Ivoz\Domain\Model\Brand\Brand
+      Ivoz\Domain\Model\BrandOperator\BrandOperatorInterface:
+        Ivoz\Domain\Model\BrandOperator\BrandOperator
+      Ivoz\Domain\Model\BrandService\BrandServiceInterface:
+        Ivoz\Domain\Model\BrandService\BrandService
+      Ivoz\Domain\Model\BrandURL\BrandURLInterface:
+        Ivoz\Domain\Model\BrandURL\BrandURL
+      Ivoz\Domain\Model\BrandURL\BrandURLInterface:
+        Ivoz\Domain\Model\BrandURL\BrandURL
+      Ivoz\Domain\Model\Calendar\CalendarInterface:
+        Ivoz\Domain\Model\Calendar\Calendar
+      Ivoz\Domain\Model\CallACL\CallACLInterface:
+        Ivoz\Domain\Model\CallACL\CallACL
+      Ivoz\Domain\Model\CallACLPattern\CallACLPatternInterface:
+        Ivoz\Domain\Model\CallACLPattern\CallACLPattern
+      Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPatternInterface:
+        Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPattern
+      Ivoz\Domain\Model\CallForwardSetting\CallForwardSettingInterface:
+        Ivoz\Domain\Model\CallForwardSetting\CallForwardSetting
+      Ivoz\Domain\Model\ChangeHistory\ChangeHistoryInterface:
+        Ivoz\Domain\Model\ChangeHistory\ChangeHistory
+      Ivoz\Domain\Model\Changelog\ChangelogInterface:
+        Ivoz\Domain\Model\Changelog\Changelog
+      Ivoz\Domain\Model\CompanyAdmin\CompanyAdminInterface:
+        Ivoz\Domain\Model\CompanyAdmin\CompanyAdmin
+      Ivoz\Domain\Model\Company\CompanyInterface:
+        Ivoz\Domain\Model\Company\Company
+      Ivoz\Domain\Model\CompanyService\CompanyServiceInterface:
+        Ivoz\Domain\Model\CompanyService\CompanyService
+      Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface:
+        Ivoz\Domain\Model\ConditionalRoute\ConditionalRoute
+      Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionInterface:
+        Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesCondition
+      Ivoz\Domain\Model\ConditionalRoutesConditionsRelMatchList\ConditionalRoutesConditionsRelMatchListInterface:
+        Ivoz\Domain\Model\ConditionalRoutesConditionsRelMatchList\ConditionalRoutesConditionsRelMatchList
+      Ivoz\Domain\Model\ConditionalRoutesConditionsRelSchedule\ConditionalRoutesConditionsRelScheduleInterface:
+        Ivoz\Domain\Model\ConditionalRoutesConditionsRelSchedule\ConditionalRoutesConditionsRelSchedule
+      Ivoz\Domain\Model\ConditionalRoutesConditionsRelCalendar\ConditionalRoutesConditionsRelCalendarInterface:
+        Ivoz\Domain\Model\ConditionalRoutesConditionsRelCalendar\ConditionalRoutesConditionsRelCalendar
+      Ivoz\Domain\Model\ConferenceRoom\ConferenceRoomInterface:
+        Ivoz\Domain\Model\ConferenceRoom\ConferenceRoom
+      Ivoz\Domain\Model\Country\CountryInterface:
+        Ivoz\Domain\Model\Country\Country
+      Ivoz\Domain\Model\DDI\DDIInterface:
+        Ivoz\Domain\Model\DDI\DDI
+      Ivoz\Domain\Model\Domain\DomainInterface:
+        Ivoz\Domain\Model\Domain\Domain
+      Ivoz\Domain\Model\EtagVersion\EtagVersionInterface:
+        Ivoz\Domain\Model\EtagVersion\EtagVersion
+      Ivoz\Domain\Model\Extension\ExtensionInterface:
+        Ivoz\Domain\Model\Extension\Extension
+      Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface:
+        Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilter
+      Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackListInterface:
+        Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList
+      Ivoz\Domain\Model\ExternalCallFilterRelCalendar\ExternalCallFilterRelCalendarInterface:
+        Ivoz\Domain\Model\ExternalCallFilterRelCalendar\ExternalCallFilterRelCalendar
+      Ivoz\Domain\Model\ExternalCallFilterRelSchedule\ExternalCallFilterRelScheduleInterface:
+        Ivoz\Domain\Model\ExternalCallFilterRelSchedule\ExternalCallFilterRelSchedule
+      Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteListInterface:
+        Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteList
+      Ivoz\Domain\Model\FaxesInOut\FaxesInOutInterface:
+        Ivoz\Domain\Model\FaxesInOut\FaxesInOut
+      Ivoz\Domain\Model\Fax\FaxInterface:
+        Ivoz\Domain\Model\Fax\Fax
+      Ivoz\Domain\Model\Feature\FeatureInterface:
+        Ivoz\Domain\Model\Feature\Feature
+      Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrandInterface:
+        Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrand
+      Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompanyInterface:
+        Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompany
+      Ivoz\Domain\Model\FixedCost\FixedCostInterface:
+        Ivoz\Domain\Model\FixedCost\FixedCost
+      Ivoz\Domain\Model\FixedCostsRelInvoice\FixedCostsRelInvoiceInterface:
+        Ivoz\Domain\Model\FixedCostsRelInvoice\FixedCostsRelInvoice
+      Ivoz\Domain\Model\Friend\FriendInterface:
+        Ivoz\Domain\Model\Friend\Friend
+      Ivoz\Domain\Model\FriendsPattern\FriendsPatternInterface:
+        Ivoz\Domain\Model\FriendsPattern\FriendsPattern
+      Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPatternInterface:
+        Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPattern
+      Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHoldInterface:
+        Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHold
+      Ivoz\Domain\Model\HolidayDate\HolidayDateInterface:
+        Ivoz\Domain\Model\HolidayDate\HolidayDate
+      Ivoz\Domain\Model\HuntGroup\HuntGroupInterface:
+        Ivoz\Domain\Model\HuntGroup\HuntGroup
+      Ivoz\Domain\Model\HuntGroupRelUser\HuntGroupRelUserInterface:
+        Ivoz\Domain\Model\HuntGroupRelUser\HuntGroupRelUser
+      Ivoz\Domain\Model\Invoice\InvoiceInterface:
+        Ivoz\Domain\Model\Invoice\Invoice
+      Ivoz\Domain\Model\InvoiceTemplate\InvoiceTemplateInterface:
+        Ivoz\Domain\Model\InvoiceTemplate\InvoiceTemplate
+      Ivoz\Domain\Model\IvrCommon\IvrCommonInterface:
+        Ivoz\Domain\Model\IvrCommon\IvrCommon
+      Ivoz\Domain\Model\IvrCustomEntry\IvrCustomEntryInterface:
+        Ivoz\Domain\Model\IvrCustomEntry\IvrCustomEntry
+      Ivoz\Domain\Model\IvrCustom\IvrCustomInterface:
+        Ivoz\Domain\Model\IvrCustom\IvrCustom
+      Ivoz\Domain\Model\Language\LanguageInterface:
+        Ivoz\Domain\Model\Language\Language
+      Ivoz\Domain\Model\LcrGateway\LcrGatewayInterface:
+        Ivoz\Domain\Model\LcrGateway\LcrGateway
+      Ivoz\Domain\Model\LcrRule\LcrRuleInterface:
+        Ivoz\Domain\Model\LcrRule\LcrRule
+      Ivoz\Domain\Model\LcrRuleTarget\LcrRuleTargetInterface:
+        Ivoz\Domain\Model\LcrRuleTarget\LcrRuleTarget
+      Ivoz\Domain\Model\Locution\LocutionInterface:
+        Ivoz\Domain\Model\Locution\Locution
+      Ivoz\Domain\Model\MainOperator\MainOperatorInterface:
+        Ivoz\Domain\Model\MainOperator\MainOperator
+      Ivoz\Domain\Model\MatchList\MatchListInterface:
+        Ivoz\Domain\Model\MatchList\MatchList
+      Ivoz\Domain\Model\MatchListPattern\MatchListPatternInterface:
+        Ivoz\Domain\Model\MatchListPattern\MatchListPattern
+      Ivoz\Domain\Model\MediaRelaySet\MediaRelaySetInterface:
+        Ivoz\Domain\Model\MediaRelaySet\MediaRelaySet
+      Ivoz\Domain\Model\Musiconhold\MusiconholdInterface:
+        Ivoz\Domain\Model\Musiconhold\Musiconhold
+      Ivoz\Domain\Model\MusicOnHold\MusicOnHoldInterface:
+        Ivoz\Domain\Model\MusicOnHold\MusicOnHold
+      Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface:
+        Ivoz\Domain\Model\OutgoingRouting\OutgoingRouting
+      Ivoz\Domain\Model\ParsedCDR\ParsedCDRInterface:
+        Ivoz\Domain\Model\ParsedCDR\ParsedCDR
+      Ivoz\Domain\Model\ParsedCDRsGod\ParsedCDRsGodInterface:
+        Ivoz\Domain\Model\ParsedCDRsGod\ParsedCDRsGod
+      Ivoz\Domain\Model\PeeringContract\PeeringContractInterface:
+        Ivoz\Domain\Model\PeeringContract\PeeringContract
+      Ivoz\Domain\Model\PeerServer\PeerServerInterface:
+        Ivoz\Domain\Model\PeerServer\PeerServer
+      Ivoz\Domain\Model\PickUpGroup\PickUpGroupInterface:
+        Ivoz\Domain\Model\PickUpGroup\PickUpGroup
+      Ivoz\Domain\Model\PickUpRelUser\PickUpRelUserInterface:
+        Ivoz\Domain\Model\PickUpRelUser\PickUpRelUser
+      Ivoz\Domain\Model\PricingPlan\PricingPlanInterface:
+        Ivoz\Domain\Model\PricingPlan\PricingPlan
+      Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompanyInterface:
+        Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompany
+      Ivoz\Domain\Model\PricingPlansRelTargetPattern\PricingPlansRelTargetPatternInterface:
+        Ivoz\Domain\Model\PricingPlansRelTargetPattern\PricingPlansRelTargetPattern
+      Ivoz\Domain\Model\ProxyTrunk\ProxyTrunkInterface:
+        Ivoz\Domain\Model\ProxyTrunk\ProxyTrunk
+      Ivoz\Domain\Model\ProxyUser\ProxyUserInterface:
+        Ivoz\Domain\Model\ProxyUser\ProxyUser
+      Ivoz\Domain\Model\QueueMember\QueueMemberInterface:
+        Ivoz\Domain\Model\QueueMember\QueueMember
+      Ivoz\Domain\Model\Queue\QueueInterface:
+        Ivoz\Domain\Model\Queue\Queue
+      Ivoz\Domain\Model\Recording\RecordingInterface:
+        Ivoz\Domain\Model\Recording\Recording
+      Ivoz\Domain\Model\RetailAccount\RetailAccountInterface:
+        Ivoz\Domain\Model\RetailAccount\RetailAccount
+      Ivoz\Domain\Model\RoutingPatternGroup\RoutingPatternGroupInterface:
+        Ivoz\Domain\Model\RoutingPatternGroup\RoutingPatternGroup
+      Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPatternInterface:
+        Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPattern
+      Ivoz\Domain\Model\RoutingPattern\RoutingPatternInterface:
+        Ivoz\Domain\Model\RoutingPattern\RoutingPattern
+      Ivoz\Domain\Model\Schedule\ScheduleInterface:
+        Ivoz\Domain\Model\Schedule\Schedule
+      Ivoz\Domain\Model\Service\ServiceInterface:
+        Ivoz\Domain\Model\Service\Service
+      Ivoz\Domain\Model\TargetPattern\TargetPatternInterface:
+        Ivoz\Domain\Model\TargetPattern\TargetPattern
+      Ivoz\Domain\Model\TerminalManufacturer\TerminalManufacturerInterface:
+        Ivoz\Domain\Model\TerminalManufacturer\TerminalManufacturer
+      Ivoz\Domain\Model\TerminalModel\TerminalModelInterface:
+        Ivoz\Domain\Model\TerminalModel\TerminalModel
+      Ivoz\Domain\Model\Terminal\TerminalInterface:
+        Ivoz\Domain\Model\Terminal\Terminal
+      Ivoz\Domain\Model\Timezone\TimezoneInterface:
+        Ivoz\Domain\Model\Timezone\Timezone
+      Ivoz\Domain\Model\TransformationRulesetGroupsTrunk\TransformationRulesetGroupsTrunkInterface:
+        Ivoz\Domain\Model\TransformationRulesetGroupsTrunk\TransformationRulesetGroupsTrunk
+      Ivoz\Domain\Model\TrunksDialplan\TrunksDialplanInterface:
+        Ivoz\Domain\Model\TrunksDialplan\TrunksDialplan
+      Ivoz\Domain\Model\TrunksHtable\TrunksHtableInterface:
+        Ivoz\Domain\Model\TrunksHtable\TrunksHtable
+      Ivoz\Domain\Model\TrunksUacreg\TrunksUacregInterface:
+        Ivoz\Domain\Model\TrunksUacreg\TrunksUacreg
+      Ivoz\Domain\Model\UsersAcc\UsersAccInterface:
+        Ivoz\Domain\Model\UsersAcc\UsersAcc
+      Ivoz\Domain\Model\UsersHtable\UsersHtableInterface:
+        Ivoz\Domain\Model\UsersHtable\UsersHtable
+      Ivoz\Domain\Model\UsersLocation\UsersLocationInterface:
+        Ivoz\Domain\Model\UsersLocation\UsersLocation
+      Ivoz\Domain\Model\User\UserInterface:
+        Ivoz\Domain\Model\User\User
+      Ivoz\Domain\Model\Voicemail\VoicemailInterface:
+        Ivoz\Domain\Model\Voicemail\Voicemail
+      Ivoz\Domain\Model\XMLRPCLog\XMLRPCLogInterface:
+        Ivoz\Domain\Model\XMLRPCLog\XMLRPCLog
+      Kam\Domain\Model\AccCdr\AccCdrInterface:
+        Kam\Domain\Model\AccCdr\AccCdr
+      Kam\Domain\Model\AccCdrsBrand\AccCdrsBrandInterface:
+        Kam\Domain\Model\AccCdrsBrand\AccCdrsBrand
+      Kam\Domain\Model\Dispatcher\DispatcherInterface:
+        Kam\Domain\Model\Dispatcher\Dispatcher
+      Kam\Domain\Model\PikeTrusted\PikeTrustedInterface:
+        Kam\Domain\Model\PikeTrusted\PikeTrusted
+      Kam\Domain\Model\Rtpproxy\RtpproxyInterface:
+        Kam\Domain\Model\Rtpproxy\Rtpproxy
+      Kam\Domain\Model\TrunksAcc\TrunksAccInterface:
+        Kam\Domain\Model\TrunksAcc\TrunksAcc
+      Kam\Domain\Model\TrunksAddress\TrunksAddressInterface:
+        Kam\Domain\Model\TrunksAddress\TrunksAddress
+      Kam\Domain\Model\TrunksDomainAttr\TrunksDomainAttrInterface:
+        Kam\Domain\Model\TrunksDomainAttr\TrunksDomainAttr
+      Kam\Domain\Model\TrunksDomain\TrunksDomainInterface:
+        Kam\Domain\Model\TrunksDomain\TrunksDomain
+      Kam\Domain\Model\UsersAddress\UsersAddressInterface:
+        Kam\Domain\Model\UsersAddress\UsersAddress
+      Kam\Domain\Model\UsersDomainAttr\UsersDomainAttrInterface:
+        Kam\Domain\Model\UsersDomainAttr\UsersDomainAttr
+      Kam\Domain\Model\UsersDomain\UsersDomainInterface:
+        Kam\Domain\Model\UsersDomain\UsersDomain
+      Kam\Domain\Model\UsersLocationAttr\UsersLocationAttrInterface:
+        Kam\Domain\Model\UsersLocationAttr\UsersLocationAttr
+      Kam\Domain\Model\UsersMissedCalls\UsersMissedCallsInterface:
+        Kam\Domain\Model\UsersMissedCalls\UsersMissedCalls
+      Kam\Domain\Model\User\UserInterface:
+        Kam\Domain\Model\User\User
+      Kam\Domain\Model\Version\VersionInterface:
+        Kam\Domain\Model\Version\Version

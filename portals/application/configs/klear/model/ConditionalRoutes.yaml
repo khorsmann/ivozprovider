@@ -1,5 +1,6 @@
 production:
   class: \IvozProvider\Model\ConditionalRoutes
+  entity: Ivoz\Domain\Model\ConditionalRoute\ConditionalRoute
   fields:
     companyId:
       title: ngettext('Company', 'Companies', 1)

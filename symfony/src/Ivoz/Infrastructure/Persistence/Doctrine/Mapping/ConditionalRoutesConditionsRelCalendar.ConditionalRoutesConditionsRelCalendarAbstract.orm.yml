@@ -1,0 +1,31 @@
+Ivoz\Domain\Model\ConditionalRoutesConditionsRelCalendar\ConditionalRoutesConditionsRelCalendarAbstract:
+  type: mappedSuperclass
+  indexes:
+    conditionId:
+      columns:
+        - conditionId
+    calendarId:
+      columns:
+        - calendarId
+  manyToOne:
+    condition:
+      targetEntity: Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        conditionId:
+          referencedColumnName: id
+      orphanRemoval: false
+    calendar:
+      targetEntity: Ivoz\Domain\Model\Calendar\CalendarInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        calendarId:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }
