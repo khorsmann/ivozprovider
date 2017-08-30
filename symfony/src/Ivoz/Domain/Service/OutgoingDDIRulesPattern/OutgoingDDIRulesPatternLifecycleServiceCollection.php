@@ -1,11 +1,11 @@
 <?php
 
-namespace Ivoz\Domain\Service\OutgoingDDIRule;
+namespace Ivoz\Domain\Service\OutgoingDDIRulesPattern;
 
 use Core\Domain\Service\LifecycleServiceCollectionInterface;
 use Core\Domain\Service\LifecycleServiceCollectionTrait;
 
-class OutgoingDDIRuleLifecycleServiceCollection implements LifecycleServiceCollectionInterface
+class OutgoingDDIRulesPatternLifecycleServiceCollection implements LifecycleServiceCollectionInterface
 {
     use LifecycleServiceCollectionTrait;
 

@@ -23,14 +23,14 @@ class SanitizeValues implements DDILifecycleEventHandlerInterface
          * @todo review this
          */
         $nullableFields = array(
-            'user'          => 'userId',
-            'IvrCommon'     => 'IvrCommonId',
-            'IvrCustom'     => 'IvrCustomId',
-            'huntGroup'     => 'huntGroupId',
-            'fax'           => 'faxId',
+            'user'          => 'user',
+            'IvrCommon'     => 'IvrCommon',
+            'IvrCustom'     => 'IvrCustom',
+            'huntGroup'     => 'huntGroup',
+            'fax'           => 'fax',
             'friend'        => 'friendValue',
-            'conferenceRoom' => 'conferenceRoomId',
-            'queue'         => 'queueId',
+            'conferenceRoom' => 'conferenceRoom',
+            'queue'         => 'queue',
         );
 
         $routeType = $entity->getRouteType();

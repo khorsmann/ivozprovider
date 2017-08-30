@@ -24,4 +24,5 @@ imports:
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/matchList_pattern.yml" }
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/music_on_hold.yml" }
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/outgoing_ddi_rule.yml" }
+  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/outgoing_ddi_rules_pattern.yml" }
 

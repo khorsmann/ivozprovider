@@ -18,8 +18,8 @@ class SanitizeValues implements IvrCustomLifecycleEventHandlerInterface
     {
         $nullableFields =[
             'number' => 'timeoutNumberValue',
-            'extension' => 'timeoutExtensionId',
-            'voicemail' => 'timeoutVoiceMailUserId'
+            'extension' => 'timeoutExtension',
+            'voicemail' => 'timeoutVoiceMailUser'
         ];
 
         $routeType = $entity->getTimeoutTargetType();
@@ -33,8 +33,8 @@ class SanitizeValues implements IvrCustomLifecycleEventHandlerInterface
 
         $nullableErrorFields = [
             'number' => 'errorNumberValue',
-            'extension' => 'errorExtensionId',
-            'voicemail' => 'errorVoiceMailUserId'
+            'extension' => 'errorExtension',
+            'voicemail' => 'errorVoiceMailUser'
         ];
 
         $routeErrorType = $entity->getErrorTargetType();

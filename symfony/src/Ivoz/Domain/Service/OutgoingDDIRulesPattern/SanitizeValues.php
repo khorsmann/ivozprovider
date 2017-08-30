@@ -1,24 +1,24 @@
 <?php
 
-namespace Ivoz\Domain\Service\OutgoingDDIRule;
+namespace Ivoz\Domain\Service\OutgoingDDIRulesPattern;
 
-use Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface;
+use Ivoz\Domain\Model\OutgoingDDIRulesPattern\OutgoingDDIRulesPatternInterface;
 
 /**
  * Class SanitizeValues
- * @package Ivoz\Domain\Service\OutgoingDDIRule
+ * @package Ivoz\Domain\Service\OutgoingDDIRulesPattern
  * @lifecycle pre_persist
  */
 class SanitizeValues implements OutgoingDDIRulesPatternLifecycleEventHandlerInterface
 {
     public function __construct() {}
 
-    public function execute(OutgoingDDIRuleInterface $entity)
+    public function execute(OutgoingDDIRulesPatternInterface $entity)
     {
         $nullableFields = [
             'force' => 'forcedDDI',
         ];
-        $defaultAction = $entity->getDefaultAction();
+        $defaultAction = $entity->getAction();
 
         foreach ($nullableFields as $type => $fieldName) {
             if ($defaultAction == $type) {
