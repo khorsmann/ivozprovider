@@ -9,7 +9,7 @@ use Doctrine\Common\Util\Inflector;
 
 /**
  * Description of DTOGenerator
- *
+ * @codeCoverageIgnore
  * @author Mikel Madariaga <mikel@irontec.com>
  */
 class DTOGenerator extends ParentGenerator

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping\ClassMetadataInfo;
 
 /**
  * Description of EntityGenerator
- *
+ * @codeCoverageIgnore
  * @author Mikel Madariaga <mikel@irontec.com>
  */
 class EntityGenerator extends AbstractEntityGenerator

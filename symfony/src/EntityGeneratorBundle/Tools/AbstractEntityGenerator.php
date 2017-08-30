@@ -9,7 +9,7 @@ use Doctrine\Common\Util\Inflector;
 
 /**
  * Description of EntityGenerator
- *
+ * @codeCoverageIgnore
  * @author Mikel Madariaga <mikel@irontec.com>
  */
 class AbstractEntityGenerator extends ParentGenerator

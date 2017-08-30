@@ -10,7 +10,7 @@ use EntityGeneratorBundle\Tools\InterfaceGenerator;
 
 /**
  * Generate entity classes from mapping information
- *
+ * @codeCoverageIgnore
  * @author Mikel Madariaga <mikel@irontec.com>
  */
 class GenerateInterfacesCommand extends ParentCommand

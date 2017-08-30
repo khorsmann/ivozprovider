@@ -4,7 +4,7 @@ namespace EntityGeneratorBundle\Tools;
 
 /**
  * Description of EntityGenerator
- *
+ * @codeCoverageIgnore
  * @author Mikel Madariaga <mikel@irontec.com>
  */
 class AssertionGenerator

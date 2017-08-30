@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping\ClassMetadataInfo;
 
 /**
  * Description of DTOGenerator
- *
+ * @codeCoverageIgnore
  * @author Mikel Madariaga <mikel@irontec.com>
  */
 class InterfaceGenerator extends ParentGenerator

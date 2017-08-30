@@ -9,7 +9,7 @@ use Symfony\Component\Console\Input\InputOption;
 
 /**
  * Generate entity classes from mapping information
- *
+ * @codeCoverageIgnore
  * @author Mikel Madariaga <mikel@irontec.com>
  */
 class GenerateEntitiesCommand extends ParentCommand

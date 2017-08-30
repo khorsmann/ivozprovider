@@ -10,7 +10,7 @@ use EntityGeneratorBundle\Tools\DTOGenerator;
 
 /**
  * Generate entity classes from mapping information
- *
+ * @codeCoverageIgnore
  * @author Mikel Madariaga <mikel@irontec.com>
  */
 class GenerateDTOCommand extends ParentCommand

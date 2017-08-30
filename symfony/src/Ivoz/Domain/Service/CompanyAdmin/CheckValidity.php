@@ -38,8 +38,8 @@ class CheckValidity implements CompanyAdminLifecycleEventHandlerInterface
      */
     public function execute(CompanyAdminInterface $entity)
     {
-        $isNew = $this->em->contains($entity);
-        if (!$isNew) {
+        $alreadyPersisted = $this->em->contains($entity);
+        if ($alreadyPersisted) {
             return;
         }
 

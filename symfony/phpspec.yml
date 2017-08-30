@@ -1,2 +1,4 @@
-#extensions:
-#  LeanPHP\PhpSpec\CodeCoverage\CodeCoverageExtension: ~
+extensions:
+  LeanPHP\PhpSpec\CodeCoverage\CodeCoverageExtension:
+    output:
+      html: spec/coverage

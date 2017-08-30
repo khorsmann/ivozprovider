@@ -11,6 +11,7 @@ use Doctrine\ORM\Mapping\MappingException;
 
 /**
  * {@inheritDoc}
+ * @codeCoverageIgnore
  */
 class MetadataFactory extends DisconnectedMetadataFactory
 {

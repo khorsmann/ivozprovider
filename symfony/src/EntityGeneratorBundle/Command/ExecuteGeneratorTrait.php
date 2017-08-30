@@ -6,6 +6,9 @@ use Symfony\Component\Console\Input\InputInterface;
 use Doctrine\ORM\Tools\EntityRepositoryGenerator;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * @codeCoverageIgnore
+ */
 trait ExecuteGeneratorTrait
 {
     protected $skipEmbedded;
