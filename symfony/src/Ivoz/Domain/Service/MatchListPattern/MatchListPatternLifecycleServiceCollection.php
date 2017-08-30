@@ -1,11 +1,11 @@
 <?php
 
-namespace Ivoz\Domain\Service\Locution;
+namespace Ivoz\Domain\Service\MatchListPattern;
 
 use Core\Domain\Service\LifecycleServiceCollectionInterface;
 use Core\Domain\Service\LifecycleServiceCollectionTrait;
 
-class LocutionLifecycleServiceCollection implements LifecycleServiceCollectionInterface
+class MatchListPatternLifecycleServiceCollection implements LifecycleServiceCollectionInterface
 {
     use LifecycleServiceCollectionTrait;
 

@@ -47,7 +47,7 @@ Ivoz\Domain\Model\MatchListPattern\MatchListPatternAbstract:
           referencedColumnName: id
           nullable: false
       orphanRemoval: false
-    MatchListPattern:
+    numberCountry:
       targetEntity: \Ivoz\Domain\Model\Country\CountryInterface
       cascade: {  }
       fetch: LAZY

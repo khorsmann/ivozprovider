@@ -6,6 +6,8 @@ use Core\Domain\Model\EntityInterface;
 
 interface LocutionInterface extends EntityInterface
 {
+    public function getLocutionPath();
+
     /**
      * Set name
      *

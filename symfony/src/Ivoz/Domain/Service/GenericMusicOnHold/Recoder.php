@@ -2,9 +2,6 @@
 
 namespace Ivoz\Domain\Service\GenericMusicOnHold;
 
-use Core\Domain\Service\LifecycleEventHandlerInterface;
-use Core\Domain\Model\EntityInterface;
-use Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHold;
 use Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHoldInterface;
 use \IvozProvider\Gearmand\Jobs;
 

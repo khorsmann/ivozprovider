@@ -7,6 +7,12 @@ use Core\Domain\Model\EntityInterface;
 interface MatchListPatternInterface extends EntityInterface
 {
     /**
+     * Get Number value in E.164 format
+     * @param $prefix string
+     */
+    public function getNumberE164($prefix = null);
+
+    /**
      * Set description
      *
      * @param string $description
@@ -87,20 +93,20 @@ interface MatchListPatternInterface extends EntityInterface
     public function getMatchList();
 
     /**
-     * Set matchListPattern
+     * Set numberCountry
      *
-     * @param \Ivoz\Domain\Model\Country\CountryInterface $matchListPattern
+     * @param \Ivoz\Domain\Model\Country\CountryInterface $numberCountry
      *
      * @return self
      */
-    public function setMatchListPattern(\Ivoz\Domain\Model\Country\CountryInterface $matchListPattern = null);
+    public function setNumberCountry(\Ivoz\Domain\Model\Country\CountryInterface $numberCountry = null);
 
     /**
-     * Get matchListPattern
+     * Get numberCountry
      *
      * @return \Ivoz\Domain\Model\Country\CountryInterface
      */
-    public function getMatchListPattern();
+    public function getNumberCountry();
 
 }
 

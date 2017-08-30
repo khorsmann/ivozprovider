@@ -2,7 +2,6 @@
 
 namespace Ivoz\Domain\Service\IvrCommon;
 
-use Core\Domain\Service\LifecycleEventHandlerInterface;
 use Ivoz\Domain\Model\IvrCommon\IvrCommonInterface;
 
 /**

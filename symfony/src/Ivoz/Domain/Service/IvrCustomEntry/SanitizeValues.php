@@ -2,7 +2,6 @@
 
 namespace Ivoz\Domain\Service\IvrCustomEntry;
 
-use Core\Domain\Service\LifecycleEventHandlerInterface;
 use Ivoz\Domain\Model\IvrCustomEntry\IvrCustomEntryInterface;
 
 /**

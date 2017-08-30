@@ -40,7 +40,7 @@ abstract class MatchListPatternAbstract
     /**
      * @var \Ivoz\Domain\Model\Country\CountryInterface
      */
-    protected $MatchListPattern;
+    protected $numberCountry;
 
 
     /**
@@ -120,7 +120,7 @@ abstract class MatchListPatternAbstract
             ->setRegexp($dto->getRegexp())
             ->setNumbervalue($dto->getNumbervalue())
             ->setMatchList($dto->getMatchList())
-            ->setMatchListPattern($dto->getMatchListPattern())
+            ->setNumberCountry($dto->getNumberCountry())
         ;
     }
 
@@ -141,7 +141,7 @@ abstract class MatchListPatternAbstract
             ->setRegexp($dto->getRegexp())
             ->setNumbervalue($dto->getNumbervalue())
             ->setMatchList($dto->getMatchList())
-            ->setMatchListPattern($dto->getMatchListPattern());
+            ->setNumberCountry($dto->getNumberCountry());
 
 
         return $this;
@@ -158,7 +158,7 @@ abstract class MatchListPatternAbstract
             ->setRegexp($this->getRegexp())
             ->setNumbervalue($this->getNumbervalue())
             ->setMatchListId($this->getMatchList() ? $this->getMatchList()->getId() : null)
-            ->setMatchListPatternId($this->getMatchListPattern() ? $this->getMatchListPattern()->getId() : null);
+            ->setNumberCountryId($this->getNumberCountry() ? $this->getNumberCountry()->getId() : null);
     }
 
     /**
@@ -172,7 +172,7 @@ abstract class MatchListPatternAbstract
             'regexp' => $this->getRegexp(),
             'numbervalue' => $this->getNumbervalue(),
             'matchListId' => $this->getMatchList() ? $this->getMatchList()->getId() : null,
-            'matchListPatternId' => $this->getMatchListPattern() ? $this->getMatchListPattern()->getId() : null
+            'numberCountryId' => $this->getNumberCountry() ? $this->getNumberCountry()->getId() : null
         ];
     }
 
@@ -319,27 +319,27 @@ abstract class MatchListPatternAbstract
     }
 
     /**
-     * Set matchListPattern
+     * Set numberCountry
      *
-     * @param \Ivoz\Domain\Model\Country\CountryInterface $matchListPattern
+     * @param \Ivoz\Domain\Model\Country\CountryInterface $numberCountry
      *
      * @return self
      */
-    public function setMatchListPattern(\Ivoz\Domain\Model\Country\CountryInterface $matchListPattern = null)
+    public function setNumberCountry(\Ivoz\Domain\Model\Country\CountryInterface $numberCountry = null)
     {
-        $this->MatchListPattern = $matchListPattern;
+        $this->numberCountry = $numberCountry;
 
         return $this;
     }
 
     /**
-     * Get matchListPattern
+     * Get numberCountry
      *
      * @return \Ivoz\Domain\Model\Country\CountryInterface
      */
-    public function getMatchListPattern()
+    public function getNumberCountry()
     {
-        return $this->MatchListPattern;
+        return $this->numberCountry;
     }
 
 

@@ -17,6 +17,12 @@ interface AccCdrInterface extends EntityInterface
     public function isBounced();
 
     /**
+     * @param array $data
+     * @return AccCdrInterface
+     */
+    public function setPricingPlanDetailsFromArray(array $data);
+
+    /**
      * Set proxy
      *
      * @param string $proxy

@@ -44,7 +44,7 @@ class MatchListPatternDTO implements DataTransferObjectInterface
     /**
      * @var mixed
      */
-    private $MatchListPatternId;
+    private $numberCountryId;
 
     /**
      * @var mixed
@@ -54,7 +54,7 @@ class MatchListPatternDTO implements DataTransferObjectInterface
     /**
      * @var mixed
      */
-    private $MatchListPattern;
+    private $numberCountry;
 
     /**
      * @return array
@@ -68,7 +68,7 @@ class MatchListPatternDTO implements DataTransferObjectInterface
             'numbervalue' => $this->getNumbervalue(),
             'id' => $this->getId(),
             'matchListId' => $this->getMatchListId(),
-            'matchListPatternId' => $this->getMatchListPatternId()
+            'numberCountryId' => $this->getNumberCountryId()
         ];
     }
 
@@ -78,7 +78,7 @@ class MatchListPatternDTO implements DataTransferObjectInterface
     public function transformForeignKeys(ForeignKeyTransformerInterface $transformer)
     {
         $this->matchList = $transformer->transform('Ivoz\\Domain\\Model\\MatchList\\MatchList', $this->getMatchListId());
-        $this->matchListPattern = $transformer->transform('Ivoz\\Domain\\Model\\Country\\Country', $this->getMatchListPatternId());
+        $this->numberCountry = $transformer->transform('Ivoz\\Domain\\Model\\Country\\Country', $this->getNumberCountryId());
     }
 
     /**
@@ -218,13 +218,13 @@ class MatchListPatternDTO implements DataTransferObjectInterface
     }
 
     /**
-     * @param integer $matchListPatternId
+     * @param integer $numberCountryId
      *
      * @return MatchListPatternDTO
      */
-    public function setMatchListPatternId($matchListPatternId)
+    public function setNumberCountryId($numberCountryId)
     {
-        $this->MatchListPatternId = $matchListPatternId;
+        $this->numberCountryId = $numberCountryId;
 
         return $this;
     }
@@ -232,17 +232,17 @@ class MatchListPatternDTO implements DataTransferObjectInterface
     /**
      * @return integer
      */
-    public function getMatchListPatternId()
+    public function getNumberCountryId()
     {
-        return $this->MatchListPatternId;
+        return $this->numberCountryId;
     }
 
     /**
      * @return \Ivoz\Domain\Model\Country\Country
      */
-    public function getMatchListPattern()
+    public function getNumberCountry()
     {
-        return $this->MatchListPattern;
+        return $this->numberCountry;
     }
 }
 

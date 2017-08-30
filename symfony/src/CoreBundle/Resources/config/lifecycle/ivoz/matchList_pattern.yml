@@ -1,0 +1,21 @@
+services:
+  _defaults:
+    autowire: true
+    public: false
+
+  ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\MatchListPattern\MatchListPatternLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.matchList_pattern.service_collection:
+    '@Ivoz\Domain\Service\MatchListPattern\MatchListPatternLifecycleServiceCollection'
+
+  ##################################
+  ## pre_persist
+  ##################################
+  Ivoz\Domain\Service\MatchListPattern\SanitizeValues:
+    tags:
+      - { name: ivoz.lifecycle.matchList_pattern.pre_persist, priority: 10 }
+    arguments: ~

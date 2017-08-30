@@ -2,7 +2,6 @@
 
 namespace Ivoz\Domain\Service\Locution;
 
-use Core\Domain\Service\LifecycleEventHandlerInterface;
 use Ivoz\Domain\Model\Locution\LocutionInterface;
 
 /**
@@ -10,7 +9,7 @@ use Ivoz\Domain\Model\Locution\LocutionInterface;
  * @package Ivoz\Domain\Service\Locution
  * @lifecycle pre_persist
  */
-class SanitizeValues implements LocutionLifecycleEventHandlerInterface
+class SanitizeValues implements MatchListPatternLifecycleEventHandlerInterface
 {
     public function __construct() {}
 
