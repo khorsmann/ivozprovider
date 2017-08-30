@@ -1,6 +1,6 @@
 <?php
 
-namespace Ivoz\Domain\Service\Brand;
+namespace Ivoz\Infrastructure\Domain\Service\Brand;
 
 use Core\Infrastructure\Domain\Service\XmlRpc\RequestProxyTrunksLcrReloadTrait;
 use Ivoz\Domain\Model\Brand\BrandInterface;
@@ -10,7 +10,7 @@ use Ivoz\Domain\Model\Brand\BrandInterface;
  * @package Ivoz\Domain\Service\Brand
  * @lifecycle post_persist
  */
-class PersistedSendXmlRcp extends AbstractSendXmlRcp
+class PersistedSendXmlRpc extends AbstractSendXmlRpc
 {
     public function execute(BrandInterface $entity)
     {

@@ -16,7 +16,7 @@ services:
   ## post_persist
   ##################################
 
-  Ivoz\Domain\Service\Domain\PersistedSendXmlRcp:
+  Ivoz\Infrastructure\Domain\Service\Domain\PersistedSendXmlRpc:
     tags:
       - { name: ivoz.lifecycle.domain.post_persist, priority: 10 }
 
@@ -24,6 +24,6 @@ services:
   ## post_remove
   ##################################
 
-  Ivoz\Domain\Service\Domain\RemovedSendXmlRcp:
+  Ivoz\Infrastructure\Domain\Service\Domain\RemovedSendXmlRpc:
     tags:
       - { name: ivoz.lifecycle.domain.post_remove, priority: 10 }

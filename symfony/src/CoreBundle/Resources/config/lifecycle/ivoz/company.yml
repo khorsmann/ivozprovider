@@ -51,7 +51,7 @@ services:
       $brandServiceRepository:
         '@=service("doctrine.orm.entity_manager").getRepository("Ivoz\\Domain\\Model\\BrandService\\BrandService")'
 
-  Ivoz\Domain\Service\Company\PersistedSendXmlRcp:
+  Ivoz\Infrastructure\Domain\Service\Company\PersistedSendXmlRpc:
     tags:
       - { name: ivoz.lifecycle.company.post_persist, priority: 40 }
 
@@ -59,6 +59,6 @@ services:
   ## post_remove
   ##################################
 
-  Ivoz\Domain\Service\Company\RemovedSendXmlRcp:
+  Ivoz\Infrastructure\Domain\Service\Company\RemovedSendXmlRpc:
     tags:
       - { name: ivoz.lifecycle.company.post_remove, priority: 10 }

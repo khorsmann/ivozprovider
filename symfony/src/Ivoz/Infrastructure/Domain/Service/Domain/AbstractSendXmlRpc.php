@@ -1,11 +1,12 @@
 <?php
 
-namespace Ivoz\Domain\Service\Domain;
+namespace Ivoz\Infrastructure\Domain\Service\Domain;
 
 use Core\Infrastructure\Domain\Service\XmlRpc\RequestProxyUsersDomainReload;
 use Ivoz\Domain\Model\Domain\DomainInterface;
+use Ivoz\Domain\Service\ApplicationServer\ApplicationServerLifecycleEventHandlerInterface;
 
-abstract class AbstractSendXmlRcp implements ApplicationServerLifecycleEventHandlerInterface
+abstract class AbstractSendXmlRpc implements ApplicationServerLifecycleEventHandlerInterface
 {
     protected $domainReload;
 

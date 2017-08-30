@@ -1,11 +1,12 @@
 <?php
 
-namespace Kam\Domain\Service\TrunksUacreg;
+namespace Kam\Infrastructure\Domain\Service\TrunksUacreg;
 
 use Core\Infrastructure\Domain\Service\XmlRpc\RequestProxyTrunksUacRegReload;
 use Kam\Domain\Model\TrunksUacreg\TrunksUacregInterface;
+use Kam\Domain\Service\TrunksUacreg\TrunksUacregLifecycleEventHandlerInterface;
 
-abstract class AbstractSendXmlRcp implements TrunksUacregLifecycleEventHandlerInterface
+abstract class AbstractSendXmlRpc implements TrunksUacregLifecycleEventHandlerInterface
 {
     protected $trunksUacRegReload;
 

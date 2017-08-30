@@ -1,12 +1,13 @@
 <?php
 
-namespace Ivoz\Domain\Service\Brand;
+namespace Ivoz\Infrastructure\Domain\Service\Brand;
 
 use Core\Infrastructure\Domain\Service\XmlRpc\RequestProxyTrunksLcrReload;
 use Core\Infrastructure\Domain\Service\XmlRpc\RequestProxyUsersDomainReload;
 use Ivoz\Domain\Model\Brand\BrandInterface;
+use Ivoz\Domain\Service\Brand\BrandLifecycleEventHandlerInterface;
 
-abstract class AbstractSendXmlRcp implements BrandLifecycleEventHandlerInterface
+abstract class AbstractSendXmlRpc implements BrandLifecycleEventHandlerInterface
 {
     protected $lcrReload;
     protected $domainReload;

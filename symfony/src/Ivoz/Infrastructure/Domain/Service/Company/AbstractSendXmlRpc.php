@@ -1,13 +1,14 @@
 <?php
 
-namespace Ivoz\Domain\Service\Company;
+namespace Ivoz\Infrastructure\Domain\Service\Company;
 
 use Core\Infrastructure\Domain\Service\XmlRpc\RequestProxyTrunksLcrReload;
 use Core\Infrastructure\Domain\Service\XmlRpc\RequestProxyUsersDomainReload;
 use Core\Infrastructure\Domain\Service\XmlRpc\RequestProxyUsersPermissionsAddressReload;
 use Ivoz\Domain\Model\Company\CompanyInterface;
+use Ivoz\Domain\Service\Company\CompanyLifecycleEventHandlerInterface;
 
-abstract class AbstractSendXmlRcp implements CompanyLifecycleEventHandlerInterface
+abstract class AbstractSendXmlRpc implements CompanyLifecycleEventHandlerInterface
 {
     protected $lcrReload;
     protected $domainReload;

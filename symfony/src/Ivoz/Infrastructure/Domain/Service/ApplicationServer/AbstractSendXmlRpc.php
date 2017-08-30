@@ -1,12 +1,13 @@
 <?php
 
-namespace Ivoz\Domain\Service\ApplicationServer;
+namespace Ivoz\Infrastructure\Domain\Service\ApplicationServer;
 
 use Core\Infrastructure\Domain\Service\XmlRpc\RequestProxyTrunksDispatcherReload;
 use Core\Infrastructure\Domain\Service\XmlRpc\RequestProxyUsersDispatcherReload;
 use Ivoz\Domain\Model\ApplicationServer\ApplicationServerInterface;
+use Ivoz\Domain\Service\ApplicationServer\ApplicationServerLifecycleEventHandlerInterface;
 
-abstract class AbstractSendXmlRcp implements ApplicationServerLifecycleEventHandlerInterface
+abstract class AbstractSendXmlRpc implements ApplicationServerLifecycleEventHandlerInterface
 {
     protected $trunksDispatcherReload;
     protected $usersDispatcherReload;

@@ -1,11 +1,12 @@
 <?php
 
-namespace Kam\Domain\Service\TrunksDialplan;
+namespace Kam\Infrastructure\Domain\Service\TrunksDialplan;
 
 use Core\Infrastructure\Domain\Service\XmlRpc\RequestProxyTrunksDialplanReload;
 use Kam\Domain\Model\TrunksDialplan\TrunksDialplanInterface;
+use Kam\Domain\Service\TrunksDialplan\TrunksDialplanLifecycleEventHandlerInterface;
 
-abstract class AbstractSendXmlRcp implements TrunksDialplanLifecycleEventHandlerInterface
+abstract class AbstractSendXmlRpc implements TrunksDialplanLifecycleEventHandlerInterface
 {
     protected $trunksDialplanReload;
 

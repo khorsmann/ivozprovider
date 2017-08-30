@@ -22,13 +22,13 @@ services:
   ##################################
   ## post_persist
   ##################################
-  Kam\Domain\Service\PikeTrusted\PersistedSendXmlRcp:
+  Kam\Infrastructure\Domain\Service\PikeTrusted\PersistedSendXmlRpc:
     tags:
       - { name: kam.lifecycle.pike_trusted.post_persist, priority: 10 }
 
   ##################################
   ## post_remove
   ##################################
-  Kam\Domain\Service\PikeTrusted\RemovedSendXmlRcp:
+  Kam\Domain\Service\PikeTrusted\RemovedSendXmlRpc:
     tags:
       - { name: kam.lifecycle.pike_trusted.post_remove, priority: 10 }

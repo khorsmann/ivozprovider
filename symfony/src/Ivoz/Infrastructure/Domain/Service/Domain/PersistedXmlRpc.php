@@ -1,23 +1,24 @@
 <?php
 
-namespace Ivoz\Domain\Service\Company;
+namespace Ivoz\Infrastructure\Domain\Service\Domain;
 
 use Core\Infrastructure\Domain\Service\XmlRpc\RequestProxyTrunksLcrReloadTrait;
 use Ivoz\Domain\Model\Company\CompanyInterface;
+use Ivoz\Domain\Model\Domain\DomainInterface;
 
 /**
  * Class PersistedSendXmlRcp
- * @package Ivoz\Domain\Service\Company
+ * @package Ivoz\Domain\Service\Domain
  * @lifecycle post_persist
  */
-class PersistedSendXmlRcp extends AbstractSendXmlRcp
+class PersistedSendXmlRpc extends AbstractSendXmlRpc
 {
-    public function execute(CompanyInterface $entity)
+    public function execute(DomainInterface $entity)
     {
         try {
             parent::execute($entity);
         } catch (\Exception $e) {
-            $message = $e->getMessage() . '<p>Company may have been saved.</p>';
+            $message = $e->getMessage() . '<p>Domain may have been saved.</p>';
             throw new \Exception($message);
         }
     }

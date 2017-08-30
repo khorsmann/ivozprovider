@@ -1,6 +1,6 @@
 <?php
 
-namespace Ivoz\Domain\Service\Company;
+namespace Ivoz\Infrastructure\Domain\Service\Company;
 
 use Core\Infrastructure\Domain\Service\XmlRpc\RequestProxyTrunksLcrReloadTrait;
 use Ivoz\Domain\Model\Company\CompanyInterface;
@@ -10,7 +10,7 @@ use Ivoz\Domain\Model\Company\CompanyInterface;
  * @package Ivoz\Domain\Service\Company
  * @lifecycle post_remove
  */
-class RemovedSendXmlRcp extends AbstractSendXmlRcp
+class RemovedSendXmlRpc extends AbstractSendXmlRpc
 {
     public function execute(CompanyInterface $entity)
     {
