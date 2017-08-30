@@ -9,7 +9,7 @@ class IvrCustomLifecycleServiceCollection implements LifecycleServiceCollectionI
 {
     use LifecycleServiceCollectionTrait;
 
-    protected function addService(LocutionLifecycleEventHandlerInterface $service)
+    protected function addService(IvrCustomLifecycleEventHandlerInterface $service)
     {
         $this->services[] = $service;
     }

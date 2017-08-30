@@ -32,6 +32,11 @@ class MatchListDTO implements DataTransferObjectInterface
     private $company;
 
     /**
+     * @var array|null
+     */
+    private $patterns = null;
+
+    /**
      * @return array
      */
     public function __toArray()
@@ -39,7 +44,8 @@ class MatchListDTO implements DataTransferObjectInterface
         return [
             'name' => $this->getName(),
             'id' => $this->getId(),
-            'companyId' => $this->getCompanyId()
+            'companyId' => $this->getCompanyId(),
+            'patternsId' => $this->getPatternsId()
         ];
     }
 
@@ -49,6 +55,15 @@ class MatchListDTO implements DataTransferObjectInterface
     public function transformForeignKeys(ForeignKeyTransformerInterface $transformer)
     {
         $this->company = $transformer->transform('Ivoz\\Domain\\Model\\Company\\Company', $this->getCompanyId());
+        $items = $this->getPatterns();
+        $this->patterns = [];
+        foreach ($items as $item) {
+            $this->patterns[] = $transformer->transform(
+                'Ivoz\\Domain\\Model\\MatchListPattern\\MatchListPattern',
+                $item
+            );
+        }
+
     }
 
     /**
@@ -56,7 +71,10 @@ class MatchListDTO implements DataTransferObjectInterface
      */
     public function transformCollections(CollectionTransformerInterface $transformer)
     {
-
+        $this->patterns = $transformer->transform(
+            'Ivoz\\Domain\\Model\\MatchListPattern\\MatchListPattern',
+            $this->patterns
+        );
     }
 
     /**
@@ -125,6 +143,26 @@ class MatchListDTO implements DataTransferObjectInterface
     public function getCompany()
     {
         return $this->company;
+    }
+
+    /**
+     * @param array $patterns
+     *
+     * @return MatchListDTO
+     */
+    public function setPatterns($patterns)
+    {
+        $this->patterns = $patterns;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPatterns()
+    {
+        return $this->patterns;
     }
 }
 

@@ -2,6 +2,7 @@
 
 namespace Ivoz\Domain\Service\IvrCustom;
 
+use Core\Domain\Service\LifecycleEventHandlerInterface;
 use Ivoz\Domain\Model\IvrCustom\IvrCustomInterface;
 
 /**
@@ -9,7 +10,7 @@ use Ivoz\Domain\Model\IvrCustom\IvrCustomInterface;
  * @package Ivoz\Domain\Service\IvrCustom
  * @lifecycle pre_persist
  */
-class SanitizeValues implements LocutionLifecycleEventHandlerInterface
+class SanitizeValues implements IvrCustomLifecycleEventHandlerInterface
 {
     public function __construct() {}
 

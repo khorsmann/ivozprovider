@@ -83,7 +83,7 @@ interface MatchListPatternInterface extends EntityInterface
      *
      * @return self
      */
-    public function setMatchList(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchList);
+    public function setMatchList(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchList = null);
 
     /**
      * Get matchList

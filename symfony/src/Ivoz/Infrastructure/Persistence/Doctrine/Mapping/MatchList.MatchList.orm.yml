@@ -10,4 +10,8 @@ Ivoz\Domain\Model\MatchList\MatchList:
       id: true
       generator:
         strategy: IDENTITY
+  oneToMany:
+    patterns:
+      targetEntity: Ivoz\Domain\Model\MatchListPattern\MatchListPatternInterface
+      mappedBy: matchList
 lifecycleCallbacks: {  }

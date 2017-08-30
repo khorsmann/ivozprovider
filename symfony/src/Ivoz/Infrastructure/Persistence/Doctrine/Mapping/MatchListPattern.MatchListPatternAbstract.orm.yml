@@ -41,7 +41,7 @@ Ivoz\Domain\Model\MatchListPattern\MatchListPatternAbstract:
       cascade: {  }
       fetch: LAZY
       mappedBy: null
-      inversedBy: null
+      inversedBy: patterns
       joinColumns:
         matchListId:
           referencedColumnName: id

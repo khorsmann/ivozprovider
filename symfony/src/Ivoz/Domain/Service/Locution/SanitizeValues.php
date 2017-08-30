@@ -9,7 +9,7 @@ use Ivoz\Domain\Model\Locution\LocutionInterface;
  * @package Ivoz\Domain\Service\Locution
  * @lifecycle pre_persist
  */
-class SanitizeValues implements MatchListPatternLifecycleEventHandlerInterface
+class SanitizeValues implements LocutionLifecycleEventHandlerInterface
 {
     public function __construct() {}
 

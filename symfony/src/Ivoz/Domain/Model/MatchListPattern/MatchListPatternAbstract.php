@@ -301,7 +301,7 @@ abstract class MatchListPatternAbstract
      *
      * @return self
      */
-    public function setMatchList(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchList)
+    public function setMatchList(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchList = null)
     {
         $this->matchList = $matchList;
 

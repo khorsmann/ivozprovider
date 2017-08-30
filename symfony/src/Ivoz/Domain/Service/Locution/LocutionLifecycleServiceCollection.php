@@ -9,7 +9,7 @@ class LocutionLifecycleServiceCollection implements LifecycleServiceCollectionIn
 {
     use LifecycleServiceCollectionTrait;
 
-    protected function addService(MatchListPatternLifecycleEventHandlerInterface $service)
+    protected function addService(LocutionLifecycleEventHandlerInterface $service)
     {
         $this->services[] = $service;
     }
