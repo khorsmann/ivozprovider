@@ -1,13 +1,13 @@
 <?php
 
-namespace Kam\Domain\Service\trustedReload;
+namespace Kam\Domain\Service\TrunksDialplan;
 
 use Core\Infrastructure\Domain\Service\XmlRpc\RequestProxyTrunksLcrReloadTrait;
 use Kam\Domain\Model\TrunksDialplan\TrunksDialplanInterface;
 
 /**
  * Class PersistedSendXmlRcp
- * @package Kam\Domain\Service\trustedReload
+ * @package Kam\Domain\Service\TrunksDialplan
  * @lifecycle post_persist
  */
 class PersistedSendXmlRcp extends AbstractSendXmlRcp

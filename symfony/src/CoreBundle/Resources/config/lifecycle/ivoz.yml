@@ -20,3 +20,4 @@ imports:
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/ivr_common.yml" }
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/ivr_custom.yml" }
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/ivr_custom_entry.yml" }
+  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/locution.yml" }

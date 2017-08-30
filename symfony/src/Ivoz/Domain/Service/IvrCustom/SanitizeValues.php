@@ -10,7 +10,7 @@ use Ivoz\Domain\Model\IvrCustom\IvrCustomInterface;
  * @package Ivoz\Domain\Service\IvrCustom
  * @lifecycle pre_persist
  */
-class SanitizeValues implements IvrCustomLifecycleEventHandlerInterface
+class SanitizeValues implements LocutionLifecycleEventHandlerInterface
 {
     public function __construct() {}
 

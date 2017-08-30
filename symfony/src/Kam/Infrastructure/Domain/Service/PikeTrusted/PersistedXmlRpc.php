@@ -1,13 +1,13 @@
 <?php
 
-namespace Kam\Domain\Service\trustedReload;
+namespace Kam\Domain\Service\PikeTrusted;
 
 use Core\Infrastructure\Domain\Service\XmlRpc\RequestProxyTrunksLcrReloadTrait;
 use Kam\Domain\Model\PikeTrusted\PikeTrustedInterface;
 
 /**
  * Class PersistedSendXmlRcp
- * @package Kam\Domain\Service\trustedReload
+ * @package Kam\Domain\Service\PikeTrusted
  * @lifecycle post_persist
  */
 class PersistedSendXmlRcp extends AbstractSendXmlRcp

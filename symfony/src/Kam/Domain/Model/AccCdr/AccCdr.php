@@ -28,5 +28,26 @@ class AccCdr extends AccCdrAbstract implements AccCdrInterface
 
         return false;
     }
+
+    /**
+     * @param array $data
+     * @return AccCdrInterface
+     */
+    public function setPricingPlanDetailsFromArray(array $data)
+    {
+        $pricingPlanDetails = array();
+
+        if ($this->getPricingPlanDetails() && (strpos($this->getPricingPlanDetails(), '[') !== false)) {
+            $pricingPlanDetails = json_decode($this->getPricingPlanDetails());
+        } else if ($this->getPricingPlanDetails()) {
+            $pricingPlanDetails = array(json_encode($this->getPricingPlanDetails()));
+        }
+
+        $data['meteringDate'] = $this->getMeteringDate();
+        $pricingPlanDetails[count($pricingPlanDetails)] = $data;
+        $data = json_encode($pricingPlanDetails);
+
+        return $this->setPricingPlanDetails($data);
+    }
 }
 
