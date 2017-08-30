@@ -29,21 +29,6 @@ class OutgoingDDIRulesPatternDTO implements DataTransferObjectInterface
     /**
      * @var mixed
      */
-    private $outgoingDDIRuleIdId;
-
-    /**
-     * @var mixed
-     */
-    private $matchListIdId;
-
-    /**
-     * @var mixed
-     */
-    private $forcedDDIIdId;
-
-    /**
-     * @var mixed
-     */
     private $outgoingDDIRuleId;
 
     /**
@@ -57,6 +42,21 @@ class OutgoingDDIRulesPatternDTO implements DataTransferObjectInterface
     private $forcedDDIId;
 
     /**
+     * @var mixed
+     */
+    private $outgoingDDIRule;
+
+    /**
+     * @var mixed
+     */
+    private $matchList;
+
+    /**
+     * @var mixed
+     */
+    private $forcedDDI;
+
+    /**
      * @return array
      */
     public function __toArray()
@@ -65,9 +65,9 @@ class OutgoingDDIRulesPatternDTO implements DataTransferObjectInterface
             'action' => $this->getAction(),
             'priority' => $this->getPriority(),
             'id' => $this->getId(),
-            'outgoingDDIRuleIdId' => $this->getOutgoingDDIRuleIdId(),
-            'matchListIdId' => $this->getMatchListIdId(),
-            'forcedDDIIdId' => $this->getForcedDDIIdId()
+            'outgoingDDIRuleId' => $this->getOutgoingDDIRuleId(),
+            'matchListId' => $this->getMatchListId(),
+            'forcedDDIId' => $this->getForcedDDIId()
         ];
     }
 
@@ -76,9 +76,9 @@ class OutgoingDDIRulesPatternDTO implements DataTransferObjectInterface
      */
     public function transformForeignKeys(ForeignKeyTransformerInterface $transformer)
     {
-        $this->outgoingDDIRuleId = $transformer->transform('Ivoz\\Domain\\Model\\OutgoingDDIRule\\OutgoingDDIRuleInterface', $this->getOutgoingDDIRuleIdId());
-        $this->matchListId = $transformer->transform('Ivoz\\Domain\\Model\\MatchList\\MatchList', $this->getMatchListIdId());
-        $this->forcedDDIId = $transformer->transform('Ivoz\\Domain\\Model\\DDI\\DDI', $this->getForcedDDIIdId());
+        $this->outgoingDDIRule = $transformer->transform('Ivoz\\Domain\\Model\\OutgoingDDIRule\\OutgoingDDIRuleInterface', $this->getOutgoingDDIRuleId());
+        $this->matchList = $transformer->transform('Ivoz\\Domain\\Model\\MatchList\\MatchList', $this->getMatchListId());
+        $this->forcedDDI = $transformer->transform('Ivoz\\Domain\\Model\\DDI\\DDI', $this->getForcedDDIId());
     }
 
     /**
@@ -150,27 +150,19 @@ class OutgoingDDIRulesPatternDTO implements DataTransferObjectInterface
     }
 
     /**
-     * @param integer $outgoingDDIRuleIdId
+     * @param integer $outgoingDDIRuleId
      *
      * @return OutgoingDDIRulesPatternDTO
      */
-    public function setOutgoingDDIRuleIdId($outgoingDDIRuleIdId)
+    public function setOutgoingDDIRuleId($outgoingDDIRuleId)
     {
-        $this->outgoingDDIRuleIdId = $outgoingDDIRuleIdId;
+        $this->outgoingDDIRuleId = $outgoingDDIRuleId;
 
         return $this;
     }
 
     /**
      * @return integer
-     */
-    public function getOutgoingDDIRuleIdId()
-    {
-        return $this->outgoingDDIRuleIdId;
-    }
-
-    /**
-     * @return \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
      */
     public function getOutgoingDDIRuleId()
     {
@@ -178,27 +170,27 @@ class OutgoingDDIRulesPatternDTO implements DataTransferObjectInterface
     }
 
     /**
-     * @param integer $matchListIdId
+     * @return \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
+     */
+    public function getOutgoingDDIRule()
+    {
+        return $this->outgoingDDIRule;
+    }
+
+    /**
+     * @param integer $matchListId
      *
      * @return OutgoingDDIRulesPatternDTO
      */
-    public function setMatchListIdId($matchListIdId)
+    public function setMatchListId($matchListId)
     {
-        $this->matchListIdId = $matchListIdId;
+        $this->matchListId = $matchListId;
 
         return $this;
     }
 
     /**
      * @return integer
-     */
-    public function getMatchListIdId()
-    {
-        return $this->matchListIdId;
-    }
-
-    /**
-     * @return \Ivoz\Domain\Model\MatchList\MatchList
      */
     public function getMatchListId()
     {
@@ -206,13 +198,21 @@ class OutgoingDDIRulesPatternDTO implements DataTransferObjectInterface
     }
 
     /**
-     * @param integer $forcedDDIIdId
+     * @return \Ivoz\Domain\Model\MatchList\MatchList
+     */
+    public function getMatchList()
+    {
+        return $this->matchList;
+    }
+
+    /**
+     * @param integer $forcedDDIId
      *
      * @return OutgoingDDIRulesPatternDTO
      */
-    public function setForcedDDIIdId($forcedDDIIdId)
+    public function setForcedDDIId($forcedDDIId)
     {
-        $this->forcedDDIIdId = $forcedDDIIdId;
+        $this->forcedDDIId = $forcedDDIId;
 
         return $this;
     }
@@ -220,17 +220,17 @@ class OutgoingDDIRulesPatternDTO implements DataTransferObjectInterface
     /**
      * @return integer
      */
-    public function getForcedDDIIdId()
+    public function getForcedDDIId()
     {
-        return $this->forcedDDIIdId;
+        return $this->forcedDDIId;
     }
 
     /**
      * @return \Ivoz\Domain\Model\DDI\DDI
      */
-    public function getForcedDDIId()
+    public function getForcedDDI()
     {
-        return $this->forcedDDIId;
+        return $this->forcedDDI;
     }
 }
 

@@ -30,17 +30,17 @@ Ivoz\Domain\Model\OutgoingDDIRulesPattern\OutgoingDDIRulesPatternAbstract:
         unsigned: false
         default: '1'
   manyToOne:
-    outgoingDDIRuleId:
+    outgoingDDIRule:
       targetEntity: Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
       cascade: {  }
       fetch: LAZY
       mappedBy: null
-      inversedBy: null
+      inversedBy: patterns
       joinColumns:
         outgoingDDIRuleId:
           referencedColumnName: id
       orphanRemoval: false
-    matchListId:
+    matchList:
       targetEntity: Ivoz\Domain\Model\MatchList\MatchListInterface
       cascade: {  }
       fetch: LAZY
@@ -50,7 +50,7 @@ Ivoz\Domain\Model\OutgoingDDIRulesPattern\OutgoingDDIRulesPatternAbstract:
         matchListId:
           referencedColumnName: id
       orphanRemoval: false
-    forcedDDIId:
+    forcedDDI:
       targetEntity: Ivoz\Domain\Model\DDI\DDIInterface
       cascade: {  }
       fetch: LAZY

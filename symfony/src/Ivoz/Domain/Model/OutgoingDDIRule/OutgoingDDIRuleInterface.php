@@ -7,6 +7,18 @@ use Core\Domain\Model\EntityInterface;
 interface OutgoingDDIRuleInterface extends EntityInterface
 {
     /**
+     * Return forced DDI for this rule
+     * @return \Ivoz\Domain\Model\DDI\DDIInterface
+     */
+    public function getForcedDDI();
+
+    /**
+     * Check final outgoing DDI presentation for given destination
+     * @return \Ivoz\Domain\Model\DDI\DDIInterface
+     */
+    public function getOutgoingDDI($originalDDI, $e164destination);
+
+    /**
      * Set name
      *
      * @param string $name
@@ -64,11 +76,35 @@ interface OutgoingDDIRuleInterface extends EntityInterface
     public function setForcedDDI(\Ivoz\Domain\Model\DDI\DDIInterface $forcedDDI = null);
 
     /**
-     * Get forcedDDI
+     * Add pattern
      *
-     * @return \Ivoz\Domain\Model\DDI\DDIInterface
+     * @param \Ivoz\Domain\Model\OutgoingDDIRulesPattern\OutgoingDDIRulesPatternInterface $pattern
+     *
+     * @return OutgoingDDIRuleTrait
      */
-    public function getForcedDDI();
+    public function addPattern(\Ivoz\Domain\Model\OutgoingDDIRulesPattern\OutgoingDDIRulesPatternInterface $pattern);
+
+    /**
+     * Remove pattern
+     *
+     * @param \Ivoz\Domain\Model\OutgoingDDIRulesPattern\OutgoingDDIRulesPatternInterface $pattern
+     */
+    public function removePattern(\Ivoz\Domain\Model\OutgoingDDIRulesPattern\OutgoingDDIRulesPatternInterface $pattern);
+
+    /**
+     * Replace patterns
+     *
+     * @param \Ivoz\Domain\Model\OutgoingDDIRulesPattern\OutgoingDDIRulesPatternInterface[] $patterns
+     * @return self
+     */
+    public function replacePatterns(array $patterns);
+
+    /**
+     * Get patterns
+     *
+     * @return array
+     */
+    public function getPatterns(\Doctrine\Common\Collections\Criteria $criteria = null);
 
 }
 

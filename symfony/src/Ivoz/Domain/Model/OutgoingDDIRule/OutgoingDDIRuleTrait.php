@@ -3,6 +3,8 @@
 namespace Ivoz\Domain\Model\OutgoingDDIRule;
 
 use Core\Application\DataTransferObjectInterface;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Criteria;
 
 /**
  * OutgoingDDIRuleTrait
@@ -15,6 +17,11 @@ trait OutgoingDDIRuleTrait
      */
     protected $id;
 
+    /**
+     * @var ArrayCollection
+     */
+    protected $patterns;
+
 
     /**
      * Constructor
@@ -22,7 +29,7 @@ trait OutgoingDDIRuleTrait
     public function __construct()
     {
         parent::__construct(...func_get_args());
-
+        $this->patterns = new ArrayCollection();
     }
 
     public function __wakeup()
@@ -53,7 +60,9 @@ trait OutgoingDDIRuleTrait
          */
         $self = parent::fromDTO($dto);
 
-        return $self;
+        return $self
+            ->replacePatterns($dto->getPatterns())
+        ;
     }
 
     /**
@@ -67,7 +76,10 @@ trait OutgoingDDIRuleTrait
          */
         parent::updateFromDTO($dto);
 
-        
+        $this
+            ->replacePatterns($dto->getPatterns());
+
+
         return $this;
     }
 
@@ -78,7 +90,8 @@ trait OutgoingDDIRuleTrait
     {
         $dto = parent::toDTO();
         return $dto
-            ->setId($this->getId());
+            ->setId($this->getId())
+            ->setPatterns($this->getPatterns());
     }
 
     /**
@@ -100,6 +113,78 @@ trait OutgoingDDIRuleTrait
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Add pattern
+     *
+     * @param \Ivoz\Domain\Model\OutgoingDDIRulesPattern\OutgoingDDIRulesPatternInterface $pattern
+     *
+     * @return OutgoingDDIRuleTrait
+     */
+    public function addPattern(\Ivoz\Domain\Model\OutgoingDDIRulesPattern\OutgoingDDIRulesPatternInterface $pattern)
+    {
+        $this->patterns[] = $pattern;
+
+        return $this;
+    }
+
+    /**
+     * Remove pattern
+     *
+     * @param \Ivoz\Domain\Model\OutgoingDDIRulesPattern\OutgoingDDIRulesPatternInterface $pattern
+     */
+    public function removePattern(\Ivoz\Domain\Model\OutgoingDDIRulesPattern\OutgoingDDIRulesPatternInterface $pattern)
+    {
+        $this->patterns->removeElement($pattern);
+    }
+
+    /**
+     * Replace patterns
+     *
+     * @param \Ivoz\Domain\Model\OutgoingDDIRulesPattern\OutgoingDDIRulesPatternInterface[] $patterns
+     * @return self
+     */
+    public function replacePatterns(array $patterns)
+    {
+        $updatedEntities = [];
+        $fallBackId = -1;
+        foreach ($patterns as $entity) {
+            $index = $entity->getId() ? $entity->getId() : $fallBackId--;
+            $updatedEntities[$index] = $entity;
+            $entity->setOutgoingDDIRule($this);
+        }
+        $updatedEntityKeys = array_keys($updatedEntities);
+
+        foreach ($this->patterns as $key => $entity) {
+            $identity = $entity->getId();
+            if (in_array($identity, $updatedEntityKeys)) {
+                $this->patterns[$key] = $updatedEntities[$identity];
+            } else {
+                $this->removePattern($key);
+            }
+            unset($updatedEntities[$identity]);
+        }
+
+        foreach ($updatedEntities as $entity) {
+            $this->addPattern($entity);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get patterns
+     *
+     * @return array
+     */
+    public function getPatterns(Criteria $criteria = null)
+    {
+        if (!is_null($criteria)) {
+            return $this->patterns->matching($criteria)->toArray();
+        }
+
+        return $this->patterns->toArray();
     }
 
 

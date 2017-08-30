@@ -7,6 +7,11 @@ use Core\Domain\Model\EntityInterface;
 interface MusicOnHoldInterface extends EntityInterface
 {
     /**
+     * @return string
+     */
+    public function getOwner();
+
+    /**
      * Set name
      *
      * @param string $name

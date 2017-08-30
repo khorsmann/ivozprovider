@@ -22,3 +22,6 @@ imports:
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/ivr_custom_entry.yml" }
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/locution.yml" }
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/matchList_pattern.yml" }
+  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/music_on_hold.yml" }
+  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/outgoing_ddi_rule.yml" }
+

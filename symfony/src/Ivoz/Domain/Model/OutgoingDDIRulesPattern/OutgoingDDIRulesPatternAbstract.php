@@ -25,17 +25,17 @@ abstract class OutgoingDDIRulesPatternAbstract
     /**
      * @var \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
      */
-    protected $outgoingDDIRuleId;
+    protected $outgoingDDIRule;
 
     /**
      * @var \Ivoz\Domain\Model\MatchList\MatchListInterface
      */
-    protected $matchListId;
+    protected $matchList;
 
     /**
      * @var \Ivoz\Domain\Model\DDI\DDIInterface
      */
-    protected $forcedDDIId;
+    protected $forcedDDI;
 
 
     /**
@@ -113,9 +113,9 @@ abstract class OutgoingDDIRulesPatternAbstract
             $dto->getPriority());
 
         return $self
-            ->setOutgoingDDIRuleId($dto->getOutgoingDDIRuleId())
-            ->setMatchListId($dto->getMatchListId())
-            ->setForcedDDIId($dto->getForcedDDIId())
+            ->setOutgoingDDIRule($dto->getOutgoingDDIRule())
+            ->setMatchList($dto->getMatchList())
+            ->setForcedDDI($dto->getForcedDDI())
         ;
     }
 
@@ -133,9 +133,9 @@ abstract class OutgoingDDIRulesPatternAbstract
         $this
             ->setAction($dto->getAction())
             ->setPriority($dto->getPriority())
-            ->setOutgoingDDIRuleId($dto->getOutgoingDDIRuleId())
-            ->setMatchListId($dto->getMatchListId())
-            ->setForcedDDIId($dto->getForcedDDIId());
+            ->setOutgoingDDIRule($dto->getOutgoingDDIRule())
+            ->setMatchList($dto->getMatchList())
+            ->setForcedDDI($dto->getForcedDDI());
 
 
         return $this;
@@ -149,9 +149,9 @@ abstract class OutgoingDDIRulesPatternAbstract
         return self::createDTO()
             ->setAction($this->getAction())
             ->setPriority($this->getPriority())
-            ->setOutgoingDDIRuleIdId($this->getOutgoingDDIRuleId() ? $this->getOutgoingDDIRuleId()->getId() : null)
-            ->setMatchListIdId($this->getMatchListId() ? $this->getMatchListId()->getId() : null)
-            ->setForcedDDIIdId($this->getForcedDDIId() ? $this->getForcedDDIId()->getId() : null);
+            ->setOutgoingDDIRuleId($this->getOutgoingDDIRule() ? $this->getOutgoingDDIRule()->getId() : null)
+            ->setMatchListId($this->getMatchList() ? $this->getMatchList()->getId() : null)
+            ->setForcedDDIId($this->getForcedDDI() ? $this->getForcedDDI()->getId() : null);
     }
 
     /**
@@ -162,9 +162,9 @@ abstract class OutgoingDDIRulesPatternAbstract
         return [
             'action' => $this->getAction(),
             'priority' => $this->getPriority(),
-            'outgoingDDIRuleIdId' => $this->getOutgoingDDIRuleId() ? $this->getOutgoingDDIRuleId()->getId() : null,
-            'matchListIdId' => $this->getMatchListId() ? $this->getMatchListId()->getId() : null,
-            'forcedDDIIdId' => $this->getForcedDDIId() ? $this->getForcedDDIId()->getId() : null
+            'outgoingDDIRuleId' => $this->getOutgoingDDIRule() ? $this->getOutgoingDDIRule()->getId() : null,
+            'matchListId' => $this->getMatchList() ? $this->getMatchList()->getId() : null,
+            'forcedDDIId' => $this->getForcedDDI() ? $this->getForcedDDI()->getId() : null
         ];
     }
 
@@ -230,75 +230,75 @@ abstract class OutgoingDDIRulesPatternAbstract
     }
 
     /**
-     * Set outgoingDDIRuleId
+     * Set outgoingDDIRule
      *
-     * @param \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRuleId
+     * @param \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRule
      *
      * @return self
      */
-    public function setOutgoingDDIRuleId(\Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRuleId = null)
+    public function setOutgoingDDIRule(\Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRule = null)
     {
-        $this->outgoingDDIRuleId = $outgoingDDIRuleId;
+        $this->outgoingDDIRule = $outgoingDDIRule;
 
         return $this;
     }
 
     /**
-     * Get outgoingDDIRuleId
+     * Get outgoingDDIRule
      *
      * @return \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
      */
-    public function getOutgoingDDIRuleId()
+    public function getOutgoingDDIRule()
     {
-        return $this->outgoingDDIRuleId;
+        return $this->outgoingDDIRule;
     }
 
     /**
-     * Set matchListId
+     * Set matchList
      *
-     * @param \Ivoz\Domain\Model\MatchList\MatchListInterface $matchListId
+     * @param \Ivoz\Domain\Model\MatchList\MatchListInterface $matchList
      *
      * @return self
      */
-    public function setMatchListId(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchListId = null)
+    public function setMatchList(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchList = null)
     {
-        $this->matchListId = $matchListId;
+        $this->matchList = $matchList;
 
         return $this;
     }
 
     /**
-     * Get matchListId
+     * Get matchList
      *
      * @return \Ivoz\Domain\Model\MatchList\MatchListInterface
      */
-    public function getMatchListId()
+    public function getMatchList()
     {
-        return $this->matchListId;
+        return $this->matchList;
     }
 
     /**
-     * Set forcedDDIId
+     * Set forcedDDI
      *
-     * @param \Ivoz\Domain\Model\DDI\DDIInterface $forcedDDIId
+     * @param \Ivoz\Domain\Model\DDI\DDIInterface $forcedDDI
      *
      * @return self
      */
-    public function setForcedDDIId(\Ivoz\Domain\Model\DDI\DDIInterface $forcedDDIId = null)
+    public function setForcedDDI(\Ivoz\Domain\Model\DDI\DDIInterface $forcedDDI = null)
     {
-        $this->forcedDDIId = $forcedDDIId;
+        $this->forcedDDI = $forcedDDI;
 
         return $this;
     }
 
     /**
-     * Get forcedDDIId
+     * Get forcedDDI
      *
      * @return \Ivoz\Domain\Model\DDI\DDIInterface
      */
-    public function getForcedDDIId()
+    public function getForcedDDI()
     {
-        return $this->forcedDDIId;
+        return $this->forcedDDI;
     }
 
 

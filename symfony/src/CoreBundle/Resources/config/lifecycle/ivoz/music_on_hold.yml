@@ -1,0 +1,21 @@
+services:
+  _defaults:
+    autowire: true
+    public: false
+
+  ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\MusicOnHold\MusicOnHoldLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.music_on_hold.service_collection:
+    '@Ivoz\Domain\Service\MusicOnHold\MusicOnHoldLifecycleServiceCollection'
+
+  ##################################
+  ## pre_persist
+  ##################################
+  Ivoz\Domain\Service\MusicOnHold\SanitizeValues:
+    tags:
+      - { name: ivoz.lifecycle.music_on_hold.pre_persist, priority: 10 }
+    arguments: ~

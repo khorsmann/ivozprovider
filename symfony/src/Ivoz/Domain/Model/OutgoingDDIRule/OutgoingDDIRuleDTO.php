@@ -47,6 +47,11 @@ class OutgoingDDIRuleDTO implements DataTransferObjectInterface
     private $forcedDDI;
 
     /**
+     * @var array|null
+     */
+    private $patterns = null;
+
+    /**
      * @return array
      */
     public function __toArray()
@@ -56,7 +61,8 @@ class OutgoingDDIRuleDTO implements DataTransferObjectInterface
             'defaultAction' => $this->getDefaultAction(),
             'id' => $this->getId(),
             'companyId' => $this->getCompanyId(),
-            'forcedDDIId' => $this->getForcedDDIId()
+            'forcedDDIId' => $this->getForcedDDIId(),
+            'patternsId' => $this->getPatternsId()
         ];
     }
 
@@ -67,6 +73,15 @@ class OutgoingDDIRuleDTO implements DataTransferObjectInterface
     {
         $this->company = $transformer->transform('Ivoz\\Domain\\Model\\Company\\Company', $this->getCompanyId());
         $this->forcedDDI = $transformer->transform('Ivoz\\Domain\\Model\\DDI\\DDI', $this->getForcedDDIId());
+        $items = $this->getPatterns();
+        $this->patterns = [];
+        foreach ($items as $item) {
+            $this->patterns[] = $transformer->transform(
+                'Ivoz\\Domain\\Model\\OutgoingDDIRulesPattern\\OutgoingDDIRulesPatternInterface',
+                $item
+            );
+        }
+
     }
 
     /**
@@ -74,7 +89,10 @@ class OutgoingDDIRuleDTO implements DataTransferObjectInterface
      */
     public function transformCollections(CollectionTransformerInterface $transformer)
     {
-
+        $this->patterns = $transformer->transform(
+            'Ivoz\\Domain\\Model\\OutgoingDDIRulesPattern\\OutgoingDDIRulesPatternInterface',
+            $this->patterns
+        );
     }
 
     /**
@@ -191,6 +209,26 @@ class OutgoingDDIRuleDTO implements DataTransferObjectInterface
     public function getForcedDDI()
     {
         return $this->forcedDDI;
+    }
+
+    /**
+     * @param array $patterns
+     *
+     * @return OutgoingDDIRuleDTO
+     */
+    public function setPatterns($patterns)
+    {
+        $this->patterns = $patterns;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPatterns()
+    {
+        return $this->patterns;
     }
 }
 

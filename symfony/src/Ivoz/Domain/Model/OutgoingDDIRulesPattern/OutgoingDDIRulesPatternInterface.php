@@ -39,52 +39,52 @@ interface OutgoingDDIRulesPatternInterface extends EntityInterface
     public function getPriority();
 
     /**
-     * Set outgoingDDIRuleId
+     * Set outgoingDDIRule
      *
-     * @param \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRuleId
+     * @param \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRule
      *
      * @return self
      */
-    public function setOutgoingDDIRuleId(\Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRuleId = null);
+    public function setOutgoingDDIRule(\Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRule = null);
 
     /**
-     * Get outgoingDDIRuleId
+     * Get outgoingDDIRule
      *
      * @return \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
      */
-    public function getOutgoingDDIRuleId();
+    public function getOutgoingDDIRule();
 
     /**
-     * Set matchListId
+     * Set matchList
      *
-     * @param \Ivoz\Domain\Model\MatchList\MatchListInterface $matchListId
+     * @param \Ivoz\Domain\Model\MatchList\MatchListInterface $matchList
      *
      * @return self
      */
-    public function setMatchListId(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchListId = null);
+    public function setMatchList(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchList = null);
 
     /**
-     * Get matchListId
+     * Get matchList
      *
      * @return \Ivoz\Domain\Model\MatchList\MatchListInterface
      */
-    public function getMatchListId();
+    public function getMatchList();
 
     /**
-     * Set forcedDDIId
+     * Set forcedDDI
      *
-     * @param \Ivoz\Domain\Model\DDI\DDIInterface $forcedDDIId
+     * @param \Ivoz\Domain\Model\DDI\DDIInterface $forcedDDI
      *
      * @return self
      */
-    public function setForcedDDIId(\Ivoz\Domain\Model\DDI\DDIInterface $forcedDDIId = null);
+    public function setForcedDDI(\Ivoz\Domain\Model\DDI\DDIInterface $forcedDDI = null);
 
     /**
-     * Get forcedDDIId
+     * Get forcedDDI
      *
      * @return \Ivoz\Domain\Model\DDI\DDIInterface
      */
-    public function getForcedDDIId();
+    public function getForcedDDI();
 
 }
 
