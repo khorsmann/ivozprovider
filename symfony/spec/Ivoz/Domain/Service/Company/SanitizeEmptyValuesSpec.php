@@ -17,9 +17,6 @@ use spec\SpecHelperTrait;
 
 class SanitizeEmptyValuesSpec extends ObjectBehavior
 {
-    use SpecHelperTrait;
-
-    protected $em;
     protected $entityPersister;
     /**
      * @var CompanyDTO
@@ -28,13 +25,11 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
     protected $entity;
 
     function let(
-        EntityManagerInterface $em,
         EntityPersisterInterface $entityPersister,
         Company $entity
     ) {
-        $this->em = $em;
         $this->entityPersister = $entityPersister;
-        $this->beConstructedWith($em, $entityPersister);
+        $this->beConstructedWith($entityPersister);
 
         $this->dto = new CompanyDTO();
         $this->entity = $entity;
@@ -74,14 +69,16 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
 
     function it_checks_whether_the_entity_is_new()
     {
-        $this->emContainsWillReturn(true);
-        $this->execute($this->entity)->shouldReturn(null);
+        $this
+            ->entity
+            ->toDTO()
+            ->shouldNotBeCalled();
+
+        $this->execute($this->entity, false);
     }
 
     function it_persist_new_entities()
     {
-        $this->emContainsWillReturn(false);
-
         $this->prepareDto();
 
         $this
@@ -89,18 +86,17 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
             ->persist($this->dto, $this->entity)
             ->shouldBeCalled();
 
-        $this->execute($this->entity);
+        $this->execute($this->entity, true);
     }
 
     function it_sets_nif_when_empty()
     {
-        $this->emContainsWillReturn(false);
         $this->prepareDto();
         $this
             ->dto
             ->setNif(null);
 
-        $this->execute($this->entity);
+        $this->execute($this->entity, true);
 
         if (!$this->dto->getNif()) {
             throw new FailureException(
@@ -111,13 +107,12 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
 
     function it_sets_postal_address_when_empty()
     {
-        $this->emContainsWillReturn(false);
         $this->prepareDto();
         $this
             ->dto
             ->setPostalAddress(null);
 
-        $this->execute($this->entity);
+        $this->execute($this->entity, true);
 
         if (!$this->dto->getPostalAddress()) {
             throw new FailureException(
@@ -128,13 +123,12 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
 
     function it_sets_postal_code_when_empty()
     {
-        $this->emContainsWillReturn(false);
         $this->prepareDto();
         $this
             ->dto
             ->setPostalCode(null);
 
-        $this->execute($this->entity);
+        $this->execute($this->entity, true);
 
         if (!$this->dto->getPostalCode()) {
             throw new FailureException(
@@ -145,13 +139,12 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
 
     function it_sets_town_when_empty()
     {
-        $this->emContainsWillReturn(false);
         $this->prepareDto();
         $this
             ->dto
             ->setTown(null);
 
-        $this->execute($this->entity);
+        $this->execute($this->entity, true);
 
         if (!$this->dto->getTown()) {
             throw new FailureException(
@@ -162,13 +155,12 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
 
     function it_sets_country_name_when_empty()
     {
-        $this->emContainsWillReturn(false);
         $this->prepareDto();
         $this
             ->dto
             ->setCountryName(null);
 
-        $this->execute($this->entity);
+        $this->execute($this->entity, true);
 
         if (!$this->dto->getCountryName()) {
             throw new FailureException(
@@ -179,13 +171,12 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
 
     function it_sets_province_when_empty()
     {
-        $this->emContainsWillReturn(false);
         $this->prepareDto();
         $this
             ->dto
             ->setProvince(null);
 
-        $this->execute($this->entity);
+        $this->execute($this->entity, true);
 
         if (!$this->dto->getProvince()) {
             throw new FailureException(
@@ -199,7 +190,6 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
         TimezoneInterface $timezone
     )
     {
-        $this->emContainsWillReturn(false);
         $this
             ->entity
             ->getBrand()
@@ -221,7 +211,7 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
             ->dto
             ->setDefaultTimezoneId(null);
 
-        $this->execute($this->entity);
+        $this->execute($this->entity, true);
 
         if (!$this->dto->getDefaultTimezoneId()) {
             throw new FailureException(
@@ -232,13 +222,12 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
 
     function it_sets_country_id_when_empty()
     {
-        $this->emContainsWillReturn(false);
         $this->prepareDto();
         $this
             ->dto
             ->setCountryId(null);
 
-        $this->execute($this->entity);
+        $this->execute($this->entity, true);
 
         if (!$this->dto->getCountryId()) {
             throw new FailureException(
@@ -252,7 +241,6 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
         LanguageInterface $language
     )
     {
-        $this->emContainsWillReturn(false);
         $this
             ->entity
             ->getBrand()
@@ -274,7 +262,7 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
             ->dto
             ->setLanguageId(null);
 
-        $this->execute($this->entity);
+        $this->execute($this->entity, true);
 
         if (!$this->dto->getLanguageId()) {
             throw new FailureException(
@@ -285,13 +273,12 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
 
     function it_sets_outbound_prefix_when_empty()
     {
-        $this->emContainsWillReturn(false);
         $this->prepareDto();
         $this
             ->dto
             ->setOutboundPrefix(null);
 
-        $this->execute($this->entity);
+        $this->execute($this->entity, true);
 
         if ($this->dto->getOutboundPrefix() !== '') {
             throw new FailureException(
@@ -302,13 +289,12 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
 
     function it_sets_media_relay_sets_when_empty()
     {
-        $this->emContainsWillReturn(false);
         $this->prepareDto();
         $this
             ->dto
             ->setMediaRelaySetsId(null);
 
-        $this->execute($this->entity);
+        $this->execute($this->entity, true);
 
         if ($this->dto->getMediaRelaySetsId() !== 0) {
             throw new FailureException(
@@ -319,13 +305,12 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
 
     function it_sets_ip_filter_when_empty()
     {
-        $this->emContainsWillReturn(false);
         $this->prepareDto();
         $this
             ->dto
             ->setIpFilter(null);
 
-        $this->execute($this->entity);
+        $this->execute($this->entity, true);
 
         if ($this->dto->getIpFilter() !== 0) {
             throw new FailureException(
@@ -336,13 +321,12 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
 
     function it_sets_on_demand_record_when_empty()
     {
-        $this->emContainsWillReturn(false);
         $this->prepareDto();
         $this
             ->dto
             ->setOnDemandRecord(null);
 
-        $this->execute($this->entity);
+        $this->execute($this->entity, true);
 
         if ($this->dto->getOnDemandRecord() !== 0) {
             throw new FailureException(
@@ -353,13 +337,12 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
 
     function it_sets_on_demand_record_code_when_empty()
     {
-        $this->emContainsWillReturn(false);
         $this->prepareDto();
         $this
             ->dto
             ->setOnDemandRecordCode(null);
 
-        $this->execute($this->entity);
+        $this->execute($this->entity, true);
 
         if ($this->dto->getOnDemandRecordCode() !== '') {
             throw new FailureException(
@@ -370,13 +353,12 @@ class SanitizeEmptyValuesSpec extends ObjectBehavior
 
     function it_sets_area_code_when_empty()
     {
-        $this->emContainsWillReturn(false);
         $this->prepareDto();
         $this
             ->dto
             ->setAreaCode(null);
 
-        $this->execute($this->entity);
+        $this->execute($this->entity, true);
 
         if ($this->dto->getAreaCode() !== '') {
             throw new FailureException(

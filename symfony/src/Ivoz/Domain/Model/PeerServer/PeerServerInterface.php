@@ -6,6 +6,17 @@ use Core\Domain\Model\EntityInterface;
 
 interface PeerServerInterface extends EntityInterface
 {
+    public function getFlags();
+
+    /**
+     * get first lcrGateways
+     *
+     * @return \Ivoz\Domain\Model\LcrGateway\LcrGatewayInterface
+     */
+    public function getLcrGateway();
+
+    public function getName();
+
     /**
      * Set ip
      *
@@ -309,6 +320,37 @@ interface PeerServerInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Brand\BrandInterface
      */
     public function getBrand();
+
+    /**
+     * Add lcrGateway
+     *
+     * @param \Ivoz\Domain\Model\LcrGateway\LcrGatewayInterface $lcrGateway
+     *
+     * @return PeerServerTrait
+     */
+    public function addLcrGateway(\Ivoz\Domain\Model\LcrGateway\LcrGatewayInterface $lcrGateway);
+
+    /**
+     * Remove lcrGateway
+     *
+     * @param \Ivoz\Domain\Model\LcrGateway\LcrGatewayInterface $lcrGateway
+     */
+    public function removeLcrGateway(\Ivoz\Domain\Model\LcrGateway\LcrGatewayInterface $lcrGateway);
+
+    /**
+     * Replace lcrGateways
+     *
+     * @param \Ivoz\Domain\Model\LcrGateway\LcrGatewayInterface[] $lcrGateways
+     * @return self
+     */
+    public function replaceLcrGateways(array $lcrGateways);
+
+    /**
+     * Get lcrGateways
+     *
+     * @return array
+     */
+    public function getLcrGateways(\Doctrine\Common\Collections\Criteria $criteria = null);
 
 }
 

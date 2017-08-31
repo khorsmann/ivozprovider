@@ -479,7 +479,7 @@ abstract class LcrRuleAbstract
      *
      * @return self
      */
-    public function setOutgoingRouting(\Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface $outgoingRouting)
+    public function setOutgoingRouting(\Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface $outgoingRouting = null)
     {
         $this->outgoingRouting = $outgoingRouting;
 

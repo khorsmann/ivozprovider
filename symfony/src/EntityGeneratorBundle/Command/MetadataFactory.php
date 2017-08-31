@@ -52,16 +52,16 @@ class MetadataFactory extends DisconnectedMetadataFactory
 
             if (!$cmf->isTransient($entity)) {
 
-                try {
+//                try {
 
                     $metadata = array($cmf->getMetadataFor($entity));
 
-                } catch (\Exception $e) {
-
-                    $disconnectedCmf = new DisconnectedClassMetadataFactory();
-                    $disconnectedCmf->setEntityManager($em);
-                    $metadata = array($disconnectedCmf->getMetadataFor($entity));
-                }
+//                } catch (\Exception $e) {
+//
+//                    $disconnectedCmf = new DisconnectedClassMetadataFactory();
+//                    $disconnectedCmf->setEntityManager($em);
+//                    $metadata = array($disconnectedCmf->getMetadataFor($entity));
+//                }
 
                 return new ClassMetadataCollection($metadata);
             }

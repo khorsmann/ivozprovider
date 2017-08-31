@@ -62,7 +62,7 @@ Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingAbstract:
       cascade: {  }
       fetch: LAZY
       mappedBy: null
-      inversedBy: null
+      inversedBy: outgoingRoutings
       joinColumns:
         peeringContractId:
           referencedColumnName: id

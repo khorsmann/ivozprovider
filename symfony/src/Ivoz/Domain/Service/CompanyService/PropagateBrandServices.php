@@ -17,11 +17,6 @@ use Ivoz\Domain\Service\Company\CompanyLifecycleEventHandlerInterface;
 class PropagateBrandServices implements CompanyLifecycleEventHandlerInterface
 {
     /**
-     * @var EntityManagerInterface
-     */
-    protected $em;
-
-    /**
      * @var EntityPersisterInterface
      */
     protected $entityPersister;
@@ -32,11 +27,9 @@ class PropagateBrandServices implements CompanyLifecycleEventHandlerInterface
     protected $brandServiceRepository;
 
     public function __construct(
-        EntityManagerInterface $em,
         EntityPersisterInterface $entityPersister,
         BrandServiceRepository $brandServiceRepository
     ) {
-        $this->em = $em;
         $this->entityPersister = $entityPersister;
         $this->brandServiceRepository = $brandServiceRepository;
     }
@@ -44,10 +37,9 @@ class PropagateBrandServices implements CompanyLifecycleEventHandlerInterface
     /**
      * @throws \Exception
      */
-    public function execute(CompanyInterface $entity)
+    public function execute(CompanyInterface $entity, $isNew)
     {
-        if (!$entity->hasChanged('id')) {
-            // Do nothing if this is not a new entity
+        if (!$isNew) {
             return;
         }
 

@@ -3,6 +3,8 @@
 namespace Ivoz\Domain\Model\PeerServer;
 
 use Core\Application\DataTransferObjectInterface;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Criteria;
 
 /**
  * PeerServerTrait
@@ -15,6 +17,11 @@ trait PeerServerTrait
      */
     protected $id;
 
+    /**
+     * @var ArrayCollection
+     */
+    protected $lcrGateways;
+
 
     /**
      * Constructor
@@ -22,7 +29,7 @@ trait PeerServerTrait
     public function __construct()
     {
         parent::__construct(...func_get_args());
-
+        $this->lcrGateways = new ArrayCollection();
     }
 
     /**
@@ -45,7 +52,9 @@ trait PeerServerTrait
          */
         $self = parent::fromDTO($dto);
 
-        return $self;
+        return $self
+            ->replaceLcrGateways($dto->getLcrGateways())
+        ;
     }
 
     /**
@@ -59,7 +68,10 @@ trait PeerServerTrait
          */
         parent::updateFromDTO($dto);
 
-        
+        $this
+            ->replaceLcrGateways($dto->getLcrGateways());
+
+
         return $this;
     }
 
@@ -70,7 +82,8 @@ trait PeerServerTrait
     {
         $dto = parent::toDTO();
         return $dto
-            ->setId($this->getId());
+            ->setId($this->getId())
+            ->setLcrGateways($this->getLcrGateways());
     }
 
     /**
@@ -92,6 +105,78 @@ trait PeerServerTrait
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Add lcrGateway
+     *
+     * @param \Ivoz\Domain\Model\LcrGateway\LcrGatewayInterface $lcrGateway
+     *
+     * @return PeerServerTrait
+     */
+    public function addLcrGateway(\Ivoz\Domain\Model\LcrGateway\LcrGatewayInterface $lcrGateway)
+    {
+        $this->lcrGateways[] = $lcrGateway;
+
+        return $this;
+    }
+
+    /**
+     * Remove lcrGateway
+     *
+     * @param \Ivoz\Domain\Model\LcrGateway\LcrGatewayInterface $lcrGateway
+     */
+    public function removeLcrGateway(\Ivoz\Domain\Model\LcrGateway\LcrGatewayInterface $lcrGateway)
+    {
+        $this->lcrGateways->removeElement($lcrGateway);
+    }
+
+    /**
+     * Replace lcrGateways
+     *
+     * @param \Ivoz\Domain\Model\LcrGateway\LcrGatewayInterface[] $lcrGateways
+     * @return self
+     */
+    public function replaceLcrGateways(array $lcrGateways)
+    {
+        $updatedEntities = [];
+        $fallBackId = -1;
+        foreach ($lcrGateways as $entity) {
+            $index = $entity->getId() ? $entity->getId() : $fallBackId--;
+            $updatedEntities[$index] = $entity;
+            $entity->setPeerServer($this);
+        }
+        $updatedEntityKeys = array_keys($updatedEntities);
+
+        foreach ($this->lcrGateways as $key => $entity) {
+            $identity = $entity->getId();
+            if (in_array($identity, $updatedEntityKeys)) {
+                $this->lcrGateways[$key] = $updatedEntities[$identity];
+            } else {
+                $this->removeLcrGateway($key);
+            }
+            unset($updatedEntities[$identity]);
+        }
+
+        foreach ($updatedEntities as $entity) {
+            $this->addLcrGateway($entity);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get lcrGateways
+     *
+     * @return array
+     */
+    public function getLcrGateways(Criteria $criteria = null)
+    {
+        if (!is_null($criteria)) {
+            return $this->lcrGateways->matching($criteria)->toArray();
+        }
+
+        return $this->lcrGateways->toArray();
     }
 
 

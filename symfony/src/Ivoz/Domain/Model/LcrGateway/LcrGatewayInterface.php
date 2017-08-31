@@ -221,7 +221,7 @@ interface LcrGatewayInterface extends EntityInterface
      *
      * @return self
      */
-    public function setPeerServer(\Ivoz\Domain\Model\PeerServer\PeerServerInterface $peerServer);
+    public function setPeerServer(\Ivoz\Domain\Model\PeerServer\PeerServerInterface $peerServer = null);
 
     /**
      * Get peerServer

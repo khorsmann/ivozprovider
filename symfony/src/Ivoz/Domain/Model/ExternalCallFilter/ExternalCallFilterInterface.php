@@ -239,6 +239,37 @@ interface ExternalCallFilterInterface extends EntityInterface
     public function getOutOfScheduleVoiceMailUser();
 
     /**
+     * Add calendar
+     *
+     * @param \Ivoz\Domain\Model\ExternalCallFilterRelCalendar\ExternalCallFilterRelCalendarInterface $calendar
+     *
+     * @return ExternalCallFilterTrait
+     */
+    public function addCalendar(\Ivoz\Domain\Model\ExternalCallFilterRelCalendar\ExternalCallFilterRelCalendarInterface $calendar);
+
+    /**
+     * Remove calendar
+     *
+     * @param \Ivoz\Domain\Model\ExternalCallFilterRelCalendar\ExternalCallFilterRelCalendarInterface $calendar
+     */
+    public function removeCalendar(\Ivoz\Domain\Model\ExternalCallFilterRelCalendar\ExternalCallFilterRelCalendarInterface $calendar);
+
+    /**
+     * Replace calendars
+     *
+     * @param \Ivoz\Domain\Model\ExternalCallFilterRelCalendar\ExternalCallFilterRelCalendarInterface[] $calendars
+     * @return self
+     */
+    public function replaceCalendars(array $calendars);
+
+    /**
+     * Get calendars
+     *
+     * @return array
+     */
+    public function getCalendars(\Doctrine\Common\Collections\Criteria $criteria = null);
+
+    /**
      * Add blackList
      *
      * @param \Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackListInterface $blackList
@@ -303,23 +334,23 @@ interface ExternalCallFilterInterface extends EntityInterface
     /**
      * Add schedule
      *
-     * @param ExternalCallFilterInterface $schedule
+     * @param \Ivoz\Domain\Model\ExternalCallFilterRelSchedule\ExternalCallFilterRelScheduleInterface $schedule
      *
      * @return ExternalCallFilterTrait
      */
-    public function addSchedule(\Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface $schedule);
+    public function addSchedule(\Ivoz\Domain\Model\ExternalCallFilterRelSchedule\ExternalCallFilterRelScheduleInterface $schedule);
 
     /**
      * Remove schedule
      *
-     * @param ExternalCallFilterInterface $schedule
+     * @param \Ivoz\Domain\Model\ExternalCallFilterRelSchedule\ExternalCallFilterRelScheduleInterface $schedule
      */
-    public function removeSchedule(\Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface $schedule);
+    public function removeSchedule(\Ivoz\Domain\Model\ExternalCallFilterRelSchedule\ExternalCallFilterRelScheduleInterface $schedule);
 
     /**
      * Replace schedules
      *
-     * @param \Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface[] $schedules
+     * @param \Ivoz\Domain\Model\ExternalCallFilterRelSchedule\ExternalCallFilterRelScheduleInterface[] $schedules
      * @return self
      */
     public function replaceSchedules(array $schedules);
@@ -330,37 +361,6 @@ interface ExternalCallFilterInterface extends EntityInterface
      * @return array
      */
     public function getSchedules(\Doctrine\Common\Collections\Criteria $criteria = null);
-
-    /**
-     * Add calendar
-     *
-     * @param \Ivoz\Domain\Model\Calendar\CalendarInterface $calendar
-     *
-     * @return ExternalCallFilterTrait
-     */
-    public function addCalendar(\Ivoz\Domain\Model\Calendar\CalendarInterface $calendar);
-
-    /**
-     * Remove calendar
-     *
-     * @param \Ivoz\Domain\Model\Calendar\CalendarInterface $calendar
-     */
-    public function removeCalendar(\Ivoz\Domain\Model\Calendar\CalendarInterface $calendar);
-
-    /**
-     * Replace calendars
-     *
-     * @param \Ivoz\Domain\Model\Calendar\CalendarInterface[] $calendars
-     * @return self
-     */
-    public function replaceCalendars(array $calendars);
-
-    /**
-     * Get calendars
-     *
-     * @return array
-     */
-    public function getCalendars(\Doctrine\Common\Collections\Criteria $criteria = null);
 
 }
 

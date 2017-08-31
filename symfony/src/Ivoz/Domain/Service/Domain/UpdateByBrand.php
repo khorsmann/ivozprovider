@@ -42,7 +42,7 @@ class UpdateByBrand implements BrandLifecycleEventHandlerInterface
         $this->domainRepository = $domainRepository;
     }
 
-    public function execute(BrandInterface $entity)
+    public function execute(BrandInterface $entity, $isNew)
     {
         $id = $entity->getId();
         $name = $entity->getDomainUsers();

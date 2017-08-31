@@ -20,6 +20,11 @@ trait ExternalCallFilterTrait
     /**
      * @var ArrayCollection
      */
+    protected $calendars;
+
+    /**
+     * @var ArrayCollection
+     */
     protected $blackLists;
 
     /**
@@ -32,11 +37,6 @@ trait ExternalCallFilterTrait
      */
     protected $schedules;
 
-    /**
-     * @var ArrayCollection
-     */
-    protected $calendars;
-
 
     /**
      * Constructor
@@ -44,10 +44,10 @@ trait ExternalCallFilterTrait
     public function __construct()
     {
         parent::__construct(...func_get_args());
+        $this->calendars = new ArrayCollection();
         $this->blackLists = new ArrayCollection();
         $this->whiteList = new ArrayCollection();
         $this->schedules = new ArrayCollection();
-        $this->calendars = new ArrayCollection();
     }
 
     /**
@@ -71,10 +71,10 @@ trait ExternalCallFilterTrait
         $self = parent::fromDTO($dto);
 
         return $self
+            ->replaceCalendars($dto->getCalendars())
             ->replaceBlackLists($dto->getBlackLists())
             ->replaceWhiteList($dto->getWhiteList())
             ->replaceSchedules($dto->getSchedules())
-            ->replaceCalendars($dto->getCalendars())
         ;
     }
 
@@ -90,10 +90,10 @@ trait ExternalCallFilterTrait
         parent::updateFromDTO($dto);
 
         $this
+            ->replaceCalendars($dto->getCalendars())
             ->replaceBlackLists($dto->getBlackLists())
             ->replaceWhiteList($dto->getWhiteList())
-            ->replaceSchedules($dto->getSchedules())
-            ->replaceCalendars($dto->getCalendars());
+            ->replaceSchedules($dto->getSchedules());
 
 
         return $this;
@@ -107,10 +107,10 @@ trait ExternalCallFilterTrait
         $dto = parent::toDTO();
         return $dto
             ->setId($this->getId())
+            ->setCalendars($this->getCalendars())
             ->setBlackLists($this->getBlackLists())
             ->setWhiteList($this->getWhiteList())
-            ->setSchedules($this->getSchedules())
-            ->setCalendars($this->getCalendars());
+            ->setSchedules($this->getSchedules());
     }
 
     /**
@@ -132,6 +132,78 @@ trait ExternalCallFilterTrait
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Add calendar
+     *
+     * @param \Ivoz\Domain\Model\ExternalCallFilterRelCalendar\ExternalCallFilterRelCalendarInterface $calendar
+     *
+     * @return ExternalCallFilterTrait
+     */
+    public function addCalendar(\Ivoz\Domain\Model\ExternalCallFilterRelCalendar\ExternalCallFilterRelCalendarInterface $calendar)
+    {
+        $this->calendars[] = $calendar;
+
+        return $this;
+    }
+
+    /**
+     * Remove calendar
+     *
+     * @param \Ivoz\Domain\Model\ExternalCallFilterRelCalendar\ExternalCallFilterRelCalendarInterface $calendar
+     */
+    public function removeCalendar(\Ivoz\Domain\Model\ExternalCallFilterRelCalendar\ExternalCallFilterRelCalendarInterface $calendar)
+    {
+        $this->calendars->removeElement($calendar);
+    }
+
+    /**
+     * Replace calendars
+     *
+     * @param \Ivoz\Domain\Model\ExternalCallFilterRelCalendar\ExternalCallFilterRelCalendarInterface[] $calendars
+     * @return self
+     */
+    public function replaceCalendars(array $calendars)
+    {
+        $updatedEntities = [];
+        $fallBackId = -1;
+        foreach ($calendars as $entity) {
+            $index = $entity->getId() ? $entity->getId() : $fallBackId--;
+            $updatedEntities[$index] = $entity;
+            $entity->setFilter($this);
+        }
+        $updatedEntityKeys = array_keys($updatedEntities);
+
+        foreach ($this->calendars as $key => $entity) {
+            $identity = $entity->getId();
+            if (in_array($identity, $updatedEntityKeys)) {
+                $this->calendars[$key] = $updatedEntities[$identity];
+            } else {
+                $this->removeCalendar($key);
+            }
+            unset($updatedEntities[$identity]);
+        }
+
+        foreach ($updatedEntities as $entity) {
+            $this->addCalendar($entity);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get calendars
+     *
+     * @return array
+     */
+    public function getCalendars(Criteria $criteria = null)
+    {
+        if (!is_null($criteria)) {
+            return $this->calendars->matching($criteria)->toArray();
+        }
+
+        return $this->calendars->toArray();
     }
 
     /**
@@ -281,11 +353,11 @@ trait ExternalCallFilterTrait
     /**
      * Add schedule
      *
-     * @param ExternalCallFilterInterface $schedule
+     * @param \Ivoz\Domain\Model\ExternalCallFilterRelSchedule\ExternalCallFilterRelScheduleInterface $schedule
      *
      * @return ExternalCallFilterTrait
      */
-    public function addSchedule(ExternalCallFilterInterface $schedule)
+    public function addSchedule(\Ivoz\Domain\Model\ExternalCallFilterRelSchedule\ExternalCallFilterRelScheduleInterface $schedule)
     {
         $this->schedules[] = $schedule;
 
@@ -295,9 +367,9 @@ trait ExternalCallFilterTrait
     /**
      * Remove schedule
      *
-     * @param ExternalCallFilterInterface $schedule
+     * @param \Ivoz\Domain\Model\ExternalCallFilterRelSchedule\ExternalCallFilterRelScheduleInterface $schedule
      */
-    public function removeSchedule(ExternalCallFilterInterface $schedule)
+    public function removeSchedule(\Ivoz\Domain\Model\ExternalCallFilterRelSchedule\ExternalCallFilterRelScheduleInterface $schedule)
     {
         $this->schedules->removeElement($schedule);
     }
@@ -305,7 +377,7 @@ trait ExternalCallFilterTrait
     /**
      * Replace schedules
      *
-     * @param \Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface[] $schedules
+     * @param \Ivoz\Domain\Model\ExternalCallFilterRelSchedule\ExternalCallFilterRelScheduleInterface[] $schedules
      * @return self
      */
     public function replaceSchedules(array $schedules)
@@ -348,78 +420,6 @@ trait ExternalCallFilterTrait
         }
 
         return $this->schedules->toArray();
-    }
-
-    /**
-     * Add calendar
-     *
-     * @param \Ivoz\Domain\Model\Calendar\CalendarInterface $calendar
-     *
-     * @return ExternalCallFilterTrait
-     */
-    public function addCalendar(\Ivoz\Domain\Model\Calendar\CalendarInterface $calendar)
-    {
-        $this->calendars[] = $calendar;
-
-        return $this;
-    }
-
-    /**
-     * Remove calendar
-     *
-     * @param \Ivoz\Domain\Model\Calendar\CalendarInterface $calendar
-     */
-    public function removeCalendar(\Ivoz\Domain\Model\Calendar\CalendarInterface $calendar)
-    {
-        $this->calendars->removeElement($calendar);
-    }
-
-    /**
-     * Replace calendars
-     *
-     * @param \Ivoz\Domain\Model\Calendar\CalendarInterface[] $calendars
-     * @return self
-     */
-    public function replaceCalendars(array $calendars)
-    {
-        $updatedEntities = [];
-        $fallBackId = -1;
-        foreach ($calendars as $entity) {
-            $index = $entity->getId() ? $entity->getId() : $fallBackId--;
-            $updatedEntities[$index] = $entity;
-            $entity->setFilter($this);
-        }
-        $updatedEntityKeys = array_keys($updatedEntities);
-
-        foreach ($this->calendars as $key => $entity) {
-            $identity = $entity->getId();
-            if (in_array($identity, $updatedEntityKeys)) {
-                $this->calendars[$key] = $updatedEntities[$identity];
-            } else {
-                $this->removeCalendar($key);
-            }
-            unset($updatedEntities[$identity]);
-        }
-
-        foreach ($updatedEntities as $entity) {
-            $this->addCalendar($entity);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Get calendars
-     *
-     * @return array
-     */
-    public function getCalendars(Criteria $criteria = null)
-    {
-        if (!is_null($criteria)) {
-            return $this->calendars->matching($criteria)->toArray();
-        }
-
-        return $this->calendars->toArray();
     }
 
 

@@ -13,7 +13,7 @@ Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrandAbstract:
       cascade: {  }
       fetch: LAZY
       mappedBy: null
-      inversedBy: featuresRels
+      inversedBy: relFeatures
       joinColumns:
         brandId:
           referencedColumnName: id

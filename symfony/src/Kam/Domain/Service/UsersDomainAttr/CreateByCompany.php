@@ -15,26 +15,19 @@ use Kam\Domain\Model\UsersDomainAttr\UsersDomainAttr;
 class CreateByCompany implements CompanyLifecycleEventHandlerInterface
 {
     /**
-     * @var EntityManagerInterface
-     */
-    protected $em;
-
-    /**
      * @var EntityPersisterInterface
      */
     protected $entityPersister;
 
     public function __construct(
-        EntityManagerInterface $em,
         EntityPersisterInterface $entityPersister
     ) {
-        $this->em = $em;
         $this->entityPersister = $entityPersister;
     }
 
-    public function execute(CompanyInterface $entity)
+    public function execute(CompanyInterface $entity, $isNew)
     {
-        if (!$entity->hasChanged('id')) {
+        if (!$isNew) {
             // Do nothing if this is not a new entity
             return;
         }

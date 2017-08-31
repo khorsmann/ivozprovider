@@ -19,10 +19,10 @@ Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilter:
       targetEntity: Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteListInterface
       mappedBy: filter
     schedules:
-      targetEntity: \Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface
+      targetEntity: Ivoz\Domain\Model\ExternalCallFilterRelSchedule\ExternalCallFilterRelScheduleInterface
       mappedBy: filter
     calendars:
-      targetEntity: \Ivoz\Domain\Model\Calendar\CalendarInterface
+      targetEntity: Ivoz\Domain\Model\ExternalCallFilterRelCalendar\ExternalCallFilterRelCalendar
       mappedBy: filter
   lifecycleCallbacks:
     postLoad:

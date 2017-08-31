@@ -82,6 +82,11 @@ class OutgoingRoutingDTO implements DataTransferObjectInterface
     private $routingPatternGroup;
 
     /**
+     * @var array|null
+     */
+    private $lcrRules = null;
+
+    /**
      * @return array
      */
     public function __toArray()
@@ -95,7 +100,8 @@ class OutgoingRoutingDTO implements DataTransferObjectInterface
             'companyId' => $this->getCompanyId(),
             'peeringContractId' => $this->getPeeringContractId(),
             'routingPatternId' => $this->getRoutingPatternId(),
-            'routingPatternGroupId' => $this->getRoutingPatternGroupId()
+            'routingPatternGroupId' => $this->getRoutingPatternGroupId(),
+            'lcrRulesId' => $this->getLcrRulesId()
         ];
     }
 
@@ -109,6 +115,15 @@ class OutgoingRoutingDTO implements DataTransferObjectInterface
         $this->peeringContract = $transformer->transform('Ivoz\\Domain\\Model\\PeeringContract\\PeeringContract', $this->getPeeringContractId());
         $this->routingPattern = $transformer->transform('Ivoz\\Domain\\Model\\RoutingPattern\\RoutingPattern', $this->getRoutingPatternId());
         $this->routingPatternGroup = $transformer->transform('Ivoz\\Domain\\Model\\RoutingPatternGroup\\RoutingPatternGroup', $this->getRoutingPatternGroupId());
+        $items = $this->getLcrRules();
+        $this->lcrRules = [];
+        foreach ($items as $item) {
+            $this->lcrRules[] = $transformer->transform(
+                'Ivoz\\Domain\\Model\\LcrRule\\LcrRule',
+                $item
+            );
+        }
+
     }
 
     /**
@@ -116,7 +131,10 @@ class OutgoingRoutingDTO implements DataTransferObjectInterface
      */
     public function transformCollections(CollectionTransformerInterface $transformer)
     {
-
+        $this->lcrRules = $transformer->transform(
+            'Ivoz\\Domain\\Model\\LcrRule\\LcrRule',
+            $this->lcrRules
+        );
     }
 
     /**
@@ -337,6 +355,26 @@ class OutgoingRoutingDTO implements DataTransferObjectInterface
     public function getRoutingPatternGroup()
     {
         return $this->routingPatternGroup;
+    }
+
+    /**
+     * @param array $lcrRules
+     *
+     * @return OutgoingRoutingDTO
+     */
+    public function setLcrRules($lcrRules)
+    {
+        $this->lcrRules = $lcrRules;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getLcrRules()
+    {
+        return $this->lcrRules;
     }
 }
 

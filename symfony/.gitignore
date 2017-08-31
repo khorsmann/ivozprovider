@@ -1,6 +1,8 @@
 /kernel/config/parameters.yml
 /build/
 /phpunit.xml
+/spec/coverage
+/spec/coverage/*
 **.php~
 /var/*
 !/var/cache

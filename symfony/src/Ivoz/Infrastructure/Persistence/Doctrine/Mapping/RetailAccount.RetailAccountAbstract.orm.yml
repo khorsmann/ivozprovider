@@ -142,8 +142,8 @@ Ivoz\Domain\Model\RetailAccount\RetailAccountAbstract:
       targetEntity: Ivoz\Domain\Model\Brand\BrandInterface
       cascade: {  }
       fetch: LAZY
-      mappedBy: retailAccounts
-      inversedBy: null
+      mappedBy: null
+      inversedBy: retailAccounts
       joinColumns:
         brandId:
           referencedColumnName: id

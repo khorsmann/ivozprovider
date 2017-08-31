@@ -94,7 +94,7 @@ Ivoz\Domain\Model\LcrGateway\LcrGatewayAbstract:
       cascade: {  }
       fetch: LAZY
       mappedBy: null
-      inversedBy: null
+      inversedBy: lcrGateways
       joinColumns:
         peerServerId:
           referencedColumnName: id

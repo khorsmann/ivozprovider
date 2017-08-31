@@ -11,6 +11,10 @@ Ivoz\Domain\Model\PeeringContract\PeeringContract:
       id: true
       generator:
         strategy: IDENTITY
+  oneToMany:
+    outgoingRoutings:
+      targetEntity: Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface
+      mappedBy: peeringContract
   lifecycleCallbacks:
     postLoad:
       - initChangelog

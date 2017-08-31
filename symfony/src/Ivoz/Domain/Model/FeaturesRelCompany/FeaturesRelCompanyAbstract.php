@@ -149,7 +149,7 @@ abstract class FeaturesRelCompanyAbstract
      *
      * @return self
      */
-    public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company)
+    public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company = null)
     {
         $this->company = $company;
 
@@ -173,7 +173,7 @@ abstract class FeaturesRelCompanyAbstract
      *
      * @return self
      */
-    public function setFeature(\Ivoz\Domain\Model\Feature\FeatureInterface $feature = null)
+    public function setFeature(\Ivoz\Domain\Model\Feature\FeatureInterface $feature)
     {
         $this->feature = $feature;
 

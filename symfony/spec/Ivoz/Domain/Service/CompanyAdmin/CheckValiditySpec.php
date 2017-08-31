@@ -2,9 +2,7 @@
 
 namespace spec\Ivoz\Domain\Service\CompanyAdmin;
 
-use Doctrine\ORM\EntityManagerInterface;
 use Ivoz\Domain\Model\Company\CompanyInterface;
-use Ivoz\Domain\Model\CompanyAdmin\CompanyAdmin;
 use Ivoz\Domain\Model\CompanyAdmin\CompanyAdminInterface;
 use Ivoz\Domain\Model\CompanyAdmin\CompanyAdminRepository;
 use Ivoz\Domain\Service\CompanyAdmin\CheckValidity;
@@ -14,22 +12,17 @@ use spec\SpecHelperTrait;
 
 class CheckValiditySpec extends ObjectBehavior
 {
-    use SpecHelperTrait;
-
-    protected $em;
     protected $companyAdminRepository;
     protected $entity;
 
     function let(
-        EntityManagerInterface $em,
         CompanyAdminRepository $companyAdminRepository,
         CompanyAdminInterface $entity
     ) {
-        $this->em = $em;
         $this->companyAdminRepository = $companyAdminRepository;
         $this->entity = $entity;
 
-        $this->beConstructedWith($em, $companyAdminRepository);
+        $this->beConstructedWith($companyAdminRepository);
     }
 
     function it_is_initializable()
@@ -39,20 +32,18 @@ class CheckValiditySpec extends ObjectBehavior
 
     function it_returns_on_already_persisted_entity()
     {
-        $this->emContainsWillReturn(true);
-
         $this
             ->entity
             ->getCompany()
             ->shouldNotBeCalled();
 
-        $this->execute($this->entity)->shouldReturn(null);
+        $this->execute($this->entity, false);
     }
 
     function it_searches_for_duplicated_company_admins(
           CompanyInterface $company
     ) {
-        $this->prepareQuery($company);
+        $this->prepareCompanyAdminQuery($company);
 
         $this
             ->companyAdminRepository
@@ -62,14 +53,14 @@ class CheckValiditySpec extends ObjectBehavior
             ])
             ->shouldBeCalled();
 
-        $this->execute($this->entity)->shouldReturn(null);
+        $this->execute($this->entity, true);
     }
 
     function it_throws_an_Exception_on_duplicated_company_admin(
         CompanyInterface $company,
         CompanyAdminInterface $aCompanyAdmin
     ) {
-        $this->prepareQuery($company);
+        $this->prepareCompanyAdminQuery($company);
 
         $this
             ->companyAdminRepository
@@ -82,16 +73,14 @@ class CheckValiditySpec extends ObjectBehavior
 
         $this
             ->shouldThrow('\Exception')
-            ->during('execute', [$this->entity]);
+            ->during('execute', [$this->entity, true]);
     }
 
     /**
      * @param CompanyInterface $company
      */
-    private function prepareQuery(CompanyInterface $company)
+    private function prepareCompanyAdminQuery(CompanyInterface $company)
     {
-        $this->emContainsWillReturn(false);
-
         $company
             ->getId()
             ->shouldBeCalled()

@@ -6,5 +6,5 @@ use Ivoz\Domain\Model\CompanyAdmin\CompanyAdminInterface;
 
 interface CompanyAdminLifecycleEventHandlerInterface
 {
-    public function execute(CompanyAdminInterface $entity);
+    public function execute(CompanyAdminInterface $entity, $isNew);
 }

@@ -10,11 +10,6 @@ use Ivoz\Domain\Service\Brand\BrandLifecycleEventHandlerInterface;
 class UpdateByBrand implements BrandLifecycleEventHandlerInterface
 {
     /**
-     * @var EntityManagerInterface
-     */
-    protected $em;
-
-    /**
      * @var EntityPersisterInterface
      */
     protected $entityPersister;
@@ -28,7 +23,6 @@ class UpdateByBrand implements BrandLifecycleEventHandlerInterface
         EntityManagerInterface $em,
         EntityPersisterInterface $entityPersister
     ) {
-        $this->em = $em;
         $this->entityPersister = $entityPersister;
     }
 

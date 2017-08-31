@@ -14,30 +14,22 @@ use Ivoz\Domain\Model\Brand\BrandInterface;
 class SanitizeEmptyValues implements BrandLifecycleEventHandlerInterface
 {
     /**
-     * @var EntityManagerInterface
-     */
-    protected $em;
-
-    /**
      * @var EntityPersisterInterface
      */
     protected $entityPersister;
 
     public function __construct(
-        EntityManagerInterface $em,
         EntityPersisterInterface $entityPersister
     ) {
-        $this->em = $em;
         $this->entityPersister = $entityPersister;
     }
 
     /**
      * @param BrandInterface $entity
      */
-    public function execute(BrandInterface $entity)
+    public function execute(BrandInterface $entity, $isNew)
     {
-        $alreadyPersisted = $this->em->contains($entity);
-        if ($alreadyPersisted) {
+        if (!$isNew) {
             return;
         }
 

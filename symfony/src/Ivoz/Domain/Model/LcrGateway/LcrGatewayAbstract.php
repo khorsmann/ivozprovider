@@ -631,7 +631,7 @@ abstract class LcrGatewayAbstract
      *
      * @return self
      */
-    public function setPeerServer(\Ivoz\Domain\Model\PeerServer\PeerServerInterface $peerServer)
+    public function setPeerServer(\Ivoz\Domain\Model\PeerServer\PeerServerInterface $peerServer = null)
     {
         $this->peerServer = $peerServer;
 

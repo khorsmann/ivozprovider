@@ -18,30 +18,22 @@ use Ivoz\Domain\Service\Company\CompanyLifecycleEventHandlerInterface;
 class PropagateBrandGenericCallACLPatterns implements CompanyLifecycleEventHandlerInterface
 {
     /**
-     * @var EntityManagerInterface
-     */
-    protected $em;
-
-    /**
      * @var EntityPersisterInterface
      */
     protected $entityPersister;
 
     public function __construct(
-        EntityManagerInterface $em,
         EntityPersisterInterface $entityPersister
     ) {
-        $this->em = $em;
         $this->entityPersister = $entityPersister;
     }
 
     /**
      * @throws \Exception
      */
-    public function execute(CompanyInterface $entity)
+    public function execute(CompanyInterface $entity, $isNew)
     {
-        $alreadyPersisted = $this->em->contains($entity);
-        if ($alreadyPersisted) {
+        if (!$isNew) {
             return;
         }
 

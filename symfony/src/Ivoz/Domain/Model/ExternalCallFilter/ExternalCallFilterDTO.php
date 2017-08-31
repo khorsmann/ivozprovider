@@ -124,6 +124,11 @@ class ExternalCallFilterDTO implements DataTransferObjectInterface
     /**
      * @var array|null
      */
+    private $calendars = null;
+
+    /**
+     * @var array|null
+     */
     private $blackLists = null;
 
     /**
@@ -135,11 +140,6 @@ class ExternalCallFilterDTO implements DataTransferObjectInterface
      * @var array|null
      */
     private $schedules = null;
-
-    /**
-     * @var array|null
-     */
-    private $calendars = null;
 
     /**
      * @return array
@@ -161,10 +161,10 @@ class ExternalCallFilterDTO implements DataTransferObjectInterface
             'outOfScheduleExtensionId' => $this->getOutOfScheduleExtensionId(),
             'holidayVoiceMailUserId' => $this->getHolidayVoiceMailUserId(),
             'outOfScheduleVoiceMailUserId' => $this->getOutOfScheduleVoiceMailUserId(),
+            'calendarsId' => $this->getCalendarsId(),
             'blackListsId' => $this->getBlackListsId(),
             'whiteListId' => $this->getWhiteListId(),
-            'schedulesId' => $this->getSchedulesId(),
-            'calendarsId' => $this->getCalendarsId()
+            'schedulesId' => $this->getSchedulesId()
         ];
     }
 
@@ -181,6 +181,15 @@ class ExternalCallFilterDTO implements DataTransferObjectInterface
         $this->outOfScheduleExtension = $transformer->transform('Ivoz\\Domain\\Model\\Extension\\Extension', $this->getOutOfScheduleExtensionId());
         $this->holidayVoiceMailUser = $transformer->transform('Ivoz\\Domain\\Model\\User\\User', $this->getHolidayVoiceMailUserId());
         $this->outOfScheduleVoiceMailUser = $transformer->transform('Ivoz\\Domain\\Model\\User\\User', $this->getOutOfScheduleVoiceMailUserId());
+        $items = $this->getCalendars();
+        $this->calendars = [];
+        foreach ($items as $item) {
+            $this->calendars[] = $transformer->transform(
+                'Ivoz\\Domain\\Model\\ExternalCallFilterRelCalendar\\ExternalCallFilterRelCalendar',
+                $item
+            );
+        }
+
         $items = $this->getBlackLists();
         $this->blackLists = [];
         foreach ($items as $item) {
@@ -203,16 +212,7 @@ class ExternalCallFilterDTO implements DataTransferObjectInterface
         $this->schedules = [];
         foreach ($items as $item) {
             $this->schedules[] = $transformer->transform(
-                'Ivoz\\Domain\\Model\\ExternalCallFilter\\ExternalCallFilter',
-                $item
-            );
-        }
-
-        $items = $this->getCalendars();
-        $this->calendars = [];
-        foreach ($items as $item) {
-            $this->calendars[] = $transformer->transform(
-                'Ivoz\\Domain\\Model\\Calendar\\Calendar',
+                'Ivoz\\Domain\\Model\\ExternalCallFilterRelSchedule\\ExternalCallFilterRelSchedule',
                 $item
             );
         }
@@ -224,6 +224,10 @@ class ExternalCallFilterDTO implements DataTransferObjectInterface
      */
     public function transformCollections(CollectionTransformerInterface $transformer)
     {
+        $this->calendars = $transformer->transform(
+            'Ivoz\\Domain\\Model\\ExternalCallFilterRelCalendar\\ExternalCallFilterRelCalendar',
+            $this->calendars
+        );
         $this->blackLists = $transformer->transform(
             'Ivoz\\Domain\\Model\\ExternalCallFilterBlackList\\ExternalCallFilterBlackList',
             $this->blackLists
@@ -233,12 +237,8 @@ class ExternalCallFilterDTO implements DataTransferObjectInterface
             $this->whiteList
         );
         $this->schedules = $transformer->transform(
-            'Ivoz\\Domain\\Model\\ExternalCallFilter\\ExternalCallFilter',
+            'Ivoz\\Domain\\Model\\ExternalCallFilterRelSchedule\\ExternalCallFilterRelSchedule',
             $this->schedules
-        );
-        $this->calendars = $transformer->transform(
-            'Ivoz\\Domain\\Model\\Calendar\\Calendar',
-            $this->calendars
         );
     }
 
@@ -587,6 +587,26 @@ class ExternalCallFilterDTO implements DataTransferObjectInterface
     }
 
     /**
+     * @param array $calendars
+     *
+     * @return ExternalCallFilterDTO
+     */
+    public function setCalendars($calendars)
+    {
+        $this->calendars = $calendars;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getCalendars()
+    {
+        return $this->calendars;
+    }
+
+    /**
      * @param array $blackLists
      *
      * @return ExternalCallFilterDTO
@@ -644,26 +664,6 @@ class ExternalCallFilterDTO implements DataTransferObjectInterface
     public function getSchedules()
     {
         return $this->schedules;
-    }
-
-    /**
-     * @param array $calendars
-     *
-     * @return ExternalCallFilterDTO
-     */
-    public function setCalendars($calendars)
-    {
-        $this->calendars = $calendars;
-
-        return $this;
-    }
-
-    /**
-     * @return array
-     */
-    public function getCalendars()
-    {
-        return $this->calendars;
     }
 }
 

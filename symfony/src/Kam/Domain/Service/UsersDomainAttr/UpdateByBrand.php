@@ -16,25 +16,18 @@ use Kam\Domain\Model\UsersDomainAttr\UsersDomainAttrDTO;
 class UpdateByBrand implements BrandLifecycleEventHandlerInterface
 {
     /**
-     * @var EntityManagerInterface
-     */
-    protected $em;
-
-    /**
      * @var DomainRepository
      */
     protected $usersDomainAttrRepository;
 
     public function __construct(
-        EntityManagerInterface $em,
         EntityPersisterInterface $entityPersister,
         UsersDomainAttrRepository $usersDomainAttrRepository
     ) {
-        $this->em = $em;
         $this->usersDomainAttrRepository = $usersDomainAttrRepository;
     }
 
-    public function execute(BrandInterface $entity)
+    public function execute(BrandInterface $entity, $isNew)
     {
         $domainName = $entity->getDomainUsers();
 

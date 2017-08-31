@@ -13,18 +13,9 @@ use Kam\Domain\Model\TrunksUacreg\TrunksUacregInterface;
  */
 class SanitizeValues implements TrunksUacregLifecycleEventHandlerInterface
 {
-    /**
-     * @var EntityManagerInterface
-     */
-    protected $em;
+    public function __construct() {}
 
-    public function __construct(
-        EntityManagerInterface $em
-    ) {
-        $this->em = $em;
-    }
-
-    public function execute(TrunksUacregInterface $entity)
+    public function execute(TrunksUacregInterface $entity, $isNew)
     {
         if (empty($entity->getAuthUsername())) {
             $entity->setAuthUsername($entity->getRUsername());
@@ -34,15 +25,13 @@ class SanitizeValues implements TrunksUacregLifecycleEventHandlerInterface
             $entity->setAuthProxy('sip:' . $entity->getRDomain());
         }
 
-        $alreadyPersisted = $this->em->contains($entity);
-
         // Multi-DDI support
         if (!$entity->getMultiDdi()) {
             return;
         }
 
-        $multiDDI_is_enabled_in_new_item = !$alreadyPersisted; # New item
-        $multiDDI_has_been_enabled = $alreadyPersisted && $entity->hasChanged('multiDDI'); # Existing item
+        $multiDDI_is_enabled_in_new_item = $isNew; # New item
+        $multiDDI_has_been_enabled = !$isNew && $entity->hasChanged('multiDDI'); # Existing item
         if ($multiDDI_has_been_enabled || $multiDDI_is_enabled_in_new_item) {
             $entity->setLUuid(round(microtime(true) * 1000));
         }

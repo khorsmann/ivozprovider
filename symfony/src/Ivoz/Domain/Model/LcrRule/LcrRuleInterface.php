@@ -6,8 +6,6 @@ use Core\Domain\Model\EntityInterface;
 
 interface LcrRuleInterface extends EntityInterface
 {
-    public function setOutgoingRouting(\Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface $outgoingRouting);
-
     public function setCondition($regexp);
 
     /**
@@ -153,6 +151,15 @@ interface LcrRuleInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\RoutingPattern\RoutingPatternInterface
      */
     public function getRoutingPattern();
+
+    /**
+     * Set outgoingRouting
+     *
+     * @param \Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface $outgoingRouting
+     *
+     * @return self
+     */
+    public function setOutgoingRouting(\Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface $outgoingRouting = null);
 
     /**
      * Get outgoingRouting

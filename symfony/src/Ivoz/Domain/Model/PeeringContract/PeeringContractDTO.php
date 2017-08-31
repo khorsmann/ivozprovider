@@ -52,6 +52,11 @@ class PeeringContractDTO implements DataTransferObjectInterface
     private $transformationRulesetGroupsTrunk;
 
     /**
+     * @var array|null
+     */
+    private $outgoingRoutings = null;
+
+    /**
      * @return array
      */
     public function __toArray()
@@ -62,7 +67,8 @@ class PeeringContractDTO implements DataTransferObjectInterface
             'externallyRated' => $this->getExternallyRated(),
             'id' => $this->getId(),
             'brandId' => $this->getBrandId(),
-            'transformationRulesetGroupsTrunkId' => $this->getTransformationRulesetGroupsTrunkId()
+            'transformationRulesetGroupsTrunkId' => $this->getTransformationRulesetGroupsTrunkId(),
+            'outgoingRoutingsId' => $this->getOutgoingRoutingsId()
         ];
     }
 
@@ -73,6 +79,15 @@ class PeeringContractDTO implements DataTransferObjectInterface
     {
         $this->brand = $transformer->transform('Ivoz\\Domain\\Model\\Brand\\Brand', $this->getBrandId());
         $this->transformationRulesetGroupsTrunk = $transformer->transform('Ivoz\\Domain\\Model\\TransformationRulesetGroupsTrunk\\TransformationRulesetGroupsTrunk', $this->getTransformationRulesetGroupsTrunkId());
+        $items = $this->getOutgoingRoutings();
+        $this->outgoingRoutings = [];
+        foreach ($items as $item) {
+            $this->outgoingRoutings[] = $transformer->transform(
+                'Ivoz\\Domain\\Model\\OutgoingRouting\\OutgoingRouting',
+                $item
+            );
+        }
+
     }
 
     /**
@@ -80,7 +95,10 @@ class PeeringContractDTO implements DataTransferObjectInterface
      */
     public function transformCollections(CollectionTransformerInterface $transformer)
     {
-
+        $this->outgoingRoutings = $transformer->transform(
+            'Ivoz\\Domain\\Model\\OutgoingRouting\\OutgoingRouting',
+            $this->outgoingRoutings
+        );
     }
 
     /**
@@ -217,6 +235,26 @@ class PeeringContractDTO implements DataTransferObjectInterface
     public function getTransformationRulesetGroupsTrunk()
     {
         return $this->transformationRulesetGroupsTrunk;
+    }
+
+    /**
+     * @param array $outgoingRoutings
+     *
+     * @return PeeringContractDTO
+     */
+    public function setOutgoingRoutings($outgoingRoutings)
+    {
+        $this->outgoingRoutings = $outgoingRoutings;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getOutgoingRoutings()
+    {
+        return $this->outgoingRoutings;
     }
 }
 

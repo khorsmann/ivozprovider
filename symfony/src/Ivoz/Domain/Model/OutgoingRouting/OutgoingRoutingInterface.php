@@ -93,7 +93,7 @@ interface OutgoingRoutingInterface extends EntityInterface
      *
      * @return self
      */
-    public function setPeeringContract(\Ivoz\Domain\Model\PeeringContract\PeeringContractInterface $peeringContract);
+    public function setPeeringContract(\Ivoz\Domain\Model\PeeringContract\PeeringContractInterface $peeringContract = null);
 
     /**
      * Get peeringContract
@@ -133,6 +133,37 @@ interface OutgoingRoutingInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\RoutingPatternGroup\RoutingPatternGroupInterface
      */
     public function getRoutingPatternGroup();
+
+    /**
+     * Add lcrRule
+     *
+     * @param \Ivoz\Domain\Model\LcrRule\LcrRuleInterface $lcrRule
+     *
+     * @return OutgoingRoutingTrait
+     */
+    public function addLcrRule(\Ivoz\Domain\Model\LcrRule\LcrRuleInterface $lcrRule);
+
+    /**
+     * Remove lcrRule
+     *
+     * @param \Ivoz\Domain\Model\LcrRule\LcrRuleInterface $lcrRule
+     */
+    public function removeLcrRule(\Ivoz\Domain\Model\LcrRule\LcrRuleInterface $lcrRule);
+
+    /**
+     * Replace lcrRules
+     *
+     * @param \Ivoz\Domain\Model\LcrRule\LcrRuleInterface[] $lcrRules
+     * @return self
+     */
+    public function replaceLcrRules(array $lcrRules);
+
+    /**
+     * Get lcrRules
+     *
+     * @return array
+     */
+    public function getLcrRules(\Doctrine\Common\Collections\Criteria $criteria = null);
 
 }
 

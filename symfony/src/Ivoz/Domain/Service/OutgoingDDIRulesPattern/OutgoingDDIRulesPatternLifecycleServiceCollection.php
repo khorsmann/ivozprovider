@@ -9,7 +9,7 @@ class OutgoingDDIRulesPatternLifecycleServiceCollection implements LifecycleServ
 {
     use LifecycleServiceCollectionTrait;
 
-    protected function addService(OutgoingDDIRulesPatternLifecycleEventHandlerInterface $service)
+    protected function addService(PeerServerLifecycleEventHandlerInterface $service, $isNew)
     {
         $this->services[] = $service;
     }

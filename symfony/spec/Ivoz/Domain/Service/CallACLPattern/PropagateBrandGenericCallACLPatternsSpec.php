@@ -14,21 +14,16 @@ use spec\SpecHelperTrait;
 
 class PropagateBrandGenericCallACLPatternsSpec extends ObjectBehavior
 {
-    use SpecHelperTrait;
-
-    protected $em;
     protected $entityPersister;
     protected $entity;
     protected $dto;
 
     function let(
-        EntityManagerInterface $em,
         EntityPersisterInterface $entityPersister,
         Company $entity
     ) {
-        $this->em = $em;
         $this->entityPersister = $entityPersister;
-        $this->beConstructedWith($em, $entityPersister);
+        $this->beConstructedWith($entityPersister);
 
         $this->dto = New CompanyDTO();
         $this->entity = $entity;
@@ -48,23 +43,26 @@ class PropagateBrandGenericCallACLPatternsSpec extends ObjectBehavior
         $this->shouldHaveType(PropagateBrandGenericCallACLPatterns::class);
     }
 
-    function it_checks_whether_the_entity_is_new() {
-        $this->emContainsWillReturn(true);
-        $this->execute($this->entity)->shouldReturn(null);
+    function it_checks_whether_the_entity_is_new()
+    {
+        $this
+            ->entity
+            ->toDTO()
+            ->shouldNotBeCalled();
+
+        $this->execute($this->entity, false);
     }
 
     function it_throws_exception_with_empty_brand()
     {
-        $this->emContainsWillReturn(false);
         $this
             ->shouldThrow('\Exception')
-            ->during('execute', [$this->entity]);
+            ->during('execute', [$this->entity, true]);
     }
 
     function it_search_for_generic_acl_patterns(
         Brand $brand
     ) {
-        $this->emContainsWillReturn(false);
         $this
             ->entity
             ->getBrand()
@@ -75,7 +73,7 @@ class PropagateBrandGenericCallACLPatternsSpec extends ObjectBehavior
             ->getGenericCallACLPatterns()
             ->willReturn([]);
 
-        $this->execute($this->entity);
+        $this->execute($this->entity, true);
     }
 
 
@@ -83,7 +81,6 @@ class PropagateBrandGenericCallACLPatternsSpec extends ObjectBehavior
         Brand $brand,
         CallACLPattern $callACLPattern
     ) {
-        $this->emContainsWillReturn(false);
         $this
             ->entity
             ->getBrand()
@@ -109,7 +106,7 @@ class PropagateBrandGenericCallACLPatternsSpec extends ObjectBehavior
             ->persist($this->dto, $this->entity)
             ->shouldBeCalled();
 
-        $this->execute($this->entity);
+        $this->execute($this->entity, true);
 
         $aclPattern = $this->dto->getCallACLPatterns();
         if ($aclPattern[0]->getName() !== 'Name') {

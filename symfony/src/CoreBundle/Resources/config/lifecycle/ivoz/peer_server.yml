@@ -1,0 +1,39 @@
+services:
+  _defaults:
+    autowire: true
+    public: false
+
+  ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\PeerServer\PeerServerLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.peer_server.service_collection:
+    '@Ivoz\Domain\Service\PeerServer\PeerServerLifecycleServiceCollection'
+
+  ##################################
+  ## pre_persist
+  ##################################
+  Ivoz\Domain\Service\PeerServer\SanitizeValues:
+    tags:
+      - { name: ivoz.lifecycle.peer_server.pre_persist, priority: 10 }
+    arguments: ~
+
+  Ivoz\Domain\Service\PeerServer\SetProxyLogic:
+    tags:
+      - { name: ivoz.lifecycle.peer_server.pre_persist, priority: 20 }
+    arguments: ~
+
+  ##################################
+  ## post_persist
+  ##################################
+  Ivoz\Domain\Service\LcrGateway\UpdateByPeerServer:
+    tags:
+      - { name: ivoz.lifecycle.peer_server.post_persist, priority: 10 }
+    arguments: ~
+
+  Ivoz\Domain\Service\OutgoingRouting\CreateByPeerServer:
+    tags:
+      - { name: ivoz.lifecycle.peer_server.post_persist, priority: 20 }
+    arguments: ~

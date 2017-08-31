@@ -17,11 +17,6 @@ use Ivoz\Domain\Model\ApplicationServer\ApplicationServerInterface;
 class UpdateByApplicationServer implements ApplicationServerLifecycleEventHandlerInterface
 {
     /**
-     * @var EntityManagerInterface
-     */
-    protected $em;
-
-    /**
      * @var EntityPersisterInterface
      */
     protected $entityPersister;
@@ -32,11 +27,9 @@ class UpdateByApplicationServer implements ApplicationServerLifecycleEventHandle
     protected $dispatcherRepository;
 
     public function __construct(
-        EntityManagerInterface $em,
         EntityPersisterInterface $entityPersister,
         KamDispatcherRepository $dispatcherRepository
     ) {
-        $this->em = $em;
         $this->entityPersister = $entityPersister;
         $this->dispatcherRepository = $dispatcherRepository;
     }

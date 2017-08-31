@@ -37,6 +37,11 @@ class DoctrineEntityPersister implements EntityPersisterInterface
         $this->entityUpdater = $entityUpdater;
     }
 
+    /**
+     * @param DataTransferObjectInterface $dto
+     * @param EntityInterface|null $entity
+     * @return EntityInterface|mixed
+     */
     public function persist(DataTransferObjectInterface $dto, EntityInterface $entity = null)
     {
         if (!$dto->getId()) {

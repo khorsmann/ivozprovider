@@ -122,6 +122,11 @@ class PeerServerDTO implements DataTransferObjectInterface
     private $brand;
 
     /**
+     * @var array|null
+     */
+    private $lcrGateways = null;
+
+    /**
      * @return array
      */
     public function __toArray()
@@ -146,7 +151,8 @@ class PeerServerDTO implements DataTransferObjectInterface
             'fromDomain' => $this->getFromDomain(),
             'id' => $this->getId(),
             'peeringContractId' => $this->getPeeringContractId(),
-            'brandId' => $this->getBrandId()
+            'brandId' => $this->getBrandId(),
+            'lcrGatewaysId' => $this->getLcrGatewaysId()
         ];
     }
 
@@ -157,6 +163,15 @@ class PeerServerDTO implements DataTransferObjectInterface
     {
         $this->peeringContract = $transformer->transform('Ivoz\\Domain\\Model\\PeeringContract\\PeeringContract', $this->getPeeringContractId());
         $this->brand = $transformer->transform('Ivoz\\Domain\\Model\\Brand\\Brand', $this->getBrandId());
+        $items = $this->getLcrGateways();
+        $this->lcrGateways = [];
+        foreach ($items as $item) {
+            $this->lcrGateways[] = $transformer->transform(
+                'Ivoz\\Domain\\Model\\LcrGateway\\LcrGateway',
+                $item
+            );
+        }
+
     }
 
     /**
@@ -164,7 +179,10 @@ class PeerServerDTO implements DataTransferObjectInterface
      */
     public function transformCollections(CollectionTransformerInterface $transformer)
     {
-
+        $this->lcrGateways = $transformer->transform(
+            'Ivoz\\Domain\\Model\\LcrGateway\\LcrGateway',
+            $this->lcrGateways
+        );
     }
 
     /**
@@ -581,6 +599,26 @@ class PeerServerDTO implements DataTransferObjectInterface
     public function getBrand()
     {
         return $this->brand;
+    }
+
+    /**
+     * @param array $lcrGateways
+     *
+     * @return PeerServerDTO
+     */
+    public function setLcrGateways($lcrGateways)
+    {
+        $this->lcrGateways = $lcrGateways;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getLcrGateways()
+    {
+        return $this->lcrGateways;
     }
 }
 

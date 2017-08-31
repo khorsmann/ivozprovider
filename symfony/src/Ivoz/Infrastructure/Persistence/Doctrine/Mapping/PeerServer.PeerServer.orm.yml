@@ -11,6 +11,10 @@ Ivoz\Domain\Model\PeerServer\PeerServer:
       id: true
       generator:
         strategy: IDENTITY
+  oneToMany:
+    lcrGateways:
+      targetEntity: Ivoz\Domain\Model\LcrGateway\LcrGatewayInterface
+      mappedBy: peerServer
   lifecycleCallbacks:
     postLoad:
       - initChangelog

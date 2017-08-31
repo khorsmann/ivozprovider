@@ -15,22 +15,19 @@ use Ivoz\Domain\Model\Company\CompanyInterface;
 class SanitizeEmptyValues implements CompanyLifecycleEventHandlerInterface
 {
     /**
-     * @var EntityManagerInterface
+     * @var EntityPersisterInterface
      */
-    protected $em;
+    protected $entityPersister;
 
     public function __construct(
-        EntityManagerInterface $em,
         EntityPersisterInterface $entityPersister
     ) {
-        $this->em = $em;
         $this->entityPersister = $entityPersister;
     }
 
-    public function execute(CompanyInterface $entity)
+    public function execute(CompanyInterface $entity, $isNew)
     {
-        $alreadyPersisted = $this->em->contains($entity);
-        if ($alreadyPersisted) {
+        if (!$isNew) {
             return;
         }
 

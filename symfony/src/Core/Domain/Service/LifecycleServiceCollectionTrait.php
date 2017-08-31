@@ -24,10 +24,13 @@ trait LifecycleServiceCollectionTrait
 
     abstract protected function addService($service);
 
-    public function execute(EntityInterface $entity)
+    /**
+     * @param EntityInterface $entity
+     */
+    public function execute(EntityInterface $entity, $isNew)
     {
         foreach ($this->services as $service) {
-            $service->execute($entity);
+            $service->execute($entity, $isNew);
         }
     }
 }

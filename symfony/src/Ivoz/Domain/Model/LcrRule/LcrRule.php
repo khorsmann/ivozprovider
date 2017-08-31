@@ -11,29 +11,31 @@ class LcrRule extends LcrRuleAbstract implements LcrRuleInterface
 {
     use LcrRuleTrait;
 
-    public function setOutgoingRouting(OutgoingRoutingInterface $outgoingRouting)
-    {
-        $brandId = $outgoingRouting->getBrand()->getId();
-        if (!is_null($outgoingRouting->getCompany())) {
-            $companyId = $outgoingRouting->getCompany()->getId();
-            $this->setFromUri(
-                sprintf(
-                    '^b%dc%d$',
-                    $brandId,
-                    $companyId
-                )
-            );
-        } else {
-            $this->setFromUri(
-                sprintf(
-                    '^b%dc[0-9]+$',
-                    $brandId
-                )
-            );
-        }
+    protected $id;
 
-        return $this;
-    }
+//    public function setOutgoingRouting(OutgoingRoutingInterface $outgoingRouting)
+//    {
+//        $brandId = $outgoingRouting->getBrand()->getId();
+//        if (!is_null($outgoingRouting->getCompany())) {
+//            $companyId = $outgoingRouting->getCompany()->getId();
+//            $this->setFromUri(
+//                sprintf(
+//                    '^b%dc%d$',
+//                    $brandId,
+//                    $companyId
+//                )
+//            );
+//        } else {
+//            $this->setFromUri(
+//                sprintf(
+//                    '^b%dc[0-9]+$',
+//                    $brandId
+//                )
+//            );
+//        }
+//
+//        return $this;
+//    }
 
     public function setCondition($regexp)
     {

@@ -806,7 +806,7 @@ abstract class RetailAccountAbstract
      *
      * @return self
      */
-    public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand)
+    public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand = null)
     {
         $this->brand = $brand;
 

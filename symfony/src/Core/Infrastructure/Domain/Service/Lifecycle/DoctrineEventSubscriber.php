@@ -51,12 +51,12 @@ class DoctrineEventSubscriber implements EventSubscriber
 
     public function prePersist(PreUpdateEventArgs $args)
     {
-        $this->run('pre_persist', $args);
+        $this->run('pre_persist', $args, true);
     }
 
     public function postPersist(LifecycleEventArgs $args)
     {
-        $this->run('post_persist', $args);
+        $this->run('post_persist', $args, true);
     }
 
     public function preUpdate(PreUpdateEventArgs $args)
@@ -79,7 +79,7 @@ class DoctrineEventSubscriber implements EventSubscriber
         $this->run('post_remove', $args);
     }
 
-    protected function run($eventName, LifecycleEventArgs $args)
+    protected function run($eventName, LifecycleEventArgs $args, $isNew = false)
     {
         $entity = $args->getObject();
         $entityClass = get_class($entity);
@@ -93,7 +93,7 @@ class DoctrineEventSubscriber implements EventSubscriber
          * @var LifecycleServiceCollectionInterface $service
          */
         $service = $this->serviceContainer->get($serviceName);
-        $service->execute($entity);
+        $service->execute($entity, $isNew);
         $this->em->flush();
     }
 

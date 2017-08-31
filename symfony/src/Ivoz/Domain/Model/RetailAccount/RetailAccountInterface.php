@@ -269,7 +269,7 @@ interface RetailAccountInterface extends EntityInterface
      *
      * @return self
      */
-    public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand);
+    public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand = null);
 
     /**
      * Get brand

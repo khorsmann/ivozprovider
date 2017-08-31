@@ -25,11 +25,6 @@ use Ivoz\Domain\Service\Company\CompanyLifecycleEventHandlerInterface;
 class UpdateByCompany implements CompanyLifecycleEventHandlerInterface
 {
     /**
-     * @var EntityManagerInterface
-     */
-    protected $em;
-
-    /**
      * @var EntityPersisterInterface
      */
     protected $entityPersister;
@@ -40,16 +35,14 @@ class UpdateByCompany implements CompanyLifecycleEventHandlerInterface
     protected $domainRepository;
 
     public function __construct(
-        EntityManagerInterface $em,
         EntityPersisterInterface $entityPersister,
         DomainRepository $domainRepository
     ) {
-        $this->em = $em;
         $this->entityPersister = $entityPersister;
         $this->domainRepository = $domainRepository;
     }
 
-    public function execute(CompanyInterface $entity)
+    public function execute(CompanyInterface $entity, $isNew)
     {
         $id = $entity->getId();
 

@@ -12,11 +12,6 @@ use Ivoz\Domain\Service\Brand\BrandLifecycleEventHandlerInterface;
 class UpdateByBrand implements BrandLifecycleEventHandlerInterface
 {
     /**
-     * @var EntityManagerInterface
-     */
-    protected $em;
-
-    /**
      * @var EntityPersisterInterface
      */
     protected $entityPersister;
@@ -27,23 +22,20 @@ class UpdateByBrand implements BrandLifecycleEventHandlerInterface
     protected $serviceRepository;
 
     public function __construct(
-        EntityManagerInterface $em,
         EntityPersisterInterface $entityPersister,
         ServiceRepository $serviceRepository
     ) {
-        $this->em = $em;
         $this->entityPersister = $entityPersister;
         $this->serviceRepository = $serviceRepository;
     }
 
-    public function execute(BrandInterface $entity)
+    public function execute(BrandInterface $entity, $isNew)
     {
-        $isNew = $this->em->contains($entity);
         if (!$isNew) {
             return;
         }
 
-        $services = $this->$this->serviceRepository->findAll();
+        $services = $this->serviceRepository->findAll();
 
         /**
          * @var Service $service

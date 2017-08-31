@@ -7,5 +7,10 @@ use Core\Domain\Model\EntityInterface;
 
 interface EntityPersisterInterface
 {
+    /**
+     * @param DataTransferObjectInterface $dto
+     * @param EntityInterface|null $entity
+     * @return EntityInterface
+     */
     public function persist(DataTransferObjectInterface $dto, EntityInterface $entity = null);
 }

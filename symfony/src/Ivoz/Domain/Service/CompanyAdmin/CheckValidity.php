@@ -15,31 +15,23 @@ use Ivoz\Domain\Service\CompanyAdmin\CompanyAdminLifecycleEventHandlerInterface;
 class CheckValidity implements CompanyAdminLifecycleEventHandlerInterface
 {
     /**
-     * @var EntityManagerInterface
-     */
-    protected $em;
-
-    /**
      * @var CompanyAdminRepository
      *
      */
     protected $companyAdminRepository;
 
     public function __construct(
-        EntityManagerInterface $em,
         CompanyAdminRepository $companyAdminRepository
     ) {
-        $this->em = $em;
         $this->companyAdminRepository = $companyAdminRepository;
     }
 
     /**
      * @throws \Exception
      */
-    public function execute(CompanyAdminInterface $entity)
+    public function execute(CompanyAdminInterface $entity, $isNew)
     {
-        $alreadyPersisted = $this->em->contains($entity);
-        if ($alreadyPersisted) {
+        if (!$isNew) {
             return;
         }
 
