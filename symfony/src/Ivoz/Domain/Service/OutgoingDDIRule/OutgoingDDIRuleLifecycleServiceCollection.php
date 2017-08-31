@@ -9,7 +9,7 @@ class OutgoingDDIRuleLifecycleServiceCollection implements LifecycleServiceColle
 {
     use LifecycleServiceCollectionTrait;
 
-    protected function addService(OutgoingDDIRulesPatternLifecycleEventHandlerInterface $service)
+    protected function addService(OutgoingDDIRuleLifecycleEventHandlerInterface $service)
     {
         $this->services[] = $service;
     }

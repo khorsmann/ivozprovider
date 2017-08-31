@@ -17,4 +17,6 @@ Ivoz\Domain\Model\RoutingPatternGroup\RoutingPatternGroup:
       mappedBy: routingPatternGroup
       orphanRemoval: true
       cascade: ['persist']
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

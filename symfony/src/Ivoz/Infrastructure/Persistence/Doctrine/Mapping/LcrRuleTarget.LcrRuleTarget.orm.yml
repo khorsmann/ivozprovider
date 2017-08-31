@@ -11,4 +11,6 @@ Ivoz\Domain\Model\LcrRuleTarget\LcrRuleTarget:
       id: true
       generator:
         strategy: IDENTITY
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

@@ -12,14 +12,14 @@ use Core\Application\DataTransferObjectInterface;
 abstract class ConditionalRoutesConditionsRelMatchlistAbstract
 {
     /**
-     * @var \Ivoz\Domain\Model\Matchlist\MatchlistInterface
-     */
-    protected $matchlist;
-
-    /**
      * @var \Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionInterface
      */
     protected $condition;
+
+    /**
+     * @var \Ivoz\Domain\Model\MatchList\MatchListInterface
+     */
+    protected $matchlist;
 
 
     /**
@@ -94,8 +94,8 @@ abstract class ConditionalRoutesConditionsRelMatchlistAbstract
         $self = new static();
 
         return $self
-            ->setMatchlist($dto->getMatchlist())
             ->setCondition($dto->getCondition())
+            ->setMatchlist($dto->getMatchlist())
         ;
     }
 
@@ -111,8 +111,8 @@ abstract class ConditionalRoutesConditionsRelMatchlistAbstract
         Assertion::isInstanceOf($dto, ConditionalRoutesConditionsRelMatchlistDTO::class);
 
         $this
-            ->setMatchlist($dto->getMatchlist())
-            ->setCondition($dto->getCondition());
+            ->setCondition($dto->getCondition())
+            ->setMatchlist($dto->getMatchlist());
 
 
         return $this;
@@ -124,8 +124,8 @@ abstract class ConditionalRoutesConditionsRelMatchlistAbstract
     public function toDTO()
     {
         return self::createDTO()
-            ->setMatchlistId($this->getMatchlist() ? $this->getMatchlist()->getId() : null)
-            ->setConditionId($this->getCondition() ? $this->getCondition()->getId() : null);
+            ->setConditionId($this->getCondition() ? $this->getCondition()->getId() : null)
+            ->setMatchlistId($this->getMatchlist() ? $this->getMatchlist()->getId() : null);
     }
 
     /**
@@ -134,37 +134,13 @@ abstract class ConditionalRoutesConditionsRelMatchlistAbstract
     protected function __toArray()
     {
         return [
-            'matchlistId' => $this->getMatchlist() ? $this->getMatchlist()->getId() : null,
-            'conditionId' => $this->getCondition() ? $this->getCondition()->getId() : null
+            'conditionId' => $this->getCondition() ? $this->getCondition()->getId() : null,
+            'matchlistId' => $this->getMatchlist() ? $this->getMatchlist()->getId() : null
         ];
     }
 
 
     // @codeCoverageIgnoreStart
-
-    /**
-     * Set matchlist
-     *
-     * @param \Ivoz\Domain\Model\Matchlist\MatchlistInterface $matchlist
-     *
-     * @return self
-     */
-    public function setMatchlist(\Ivoz\Domain\Model\Matchlist\MatchlistInterface $matchlist = null)
-    {
-        $this->matchlist = $matchlist;
-
-        return $this;
-    }
-
-    /**
-     * Get matchlist
-     *
-     * @return \Ivoz\Domain\Model\Matchlist\MatchlistInterface
-     */
-    public function getMatchlist()
-    {
-        return $this->matchlist;
-    }
 
     /**
      * Set condition
@@ -188,6 +164,30 @@ abstract class ConditionalRoutesConditionsRelMatchlistAbstract
     public function getCondition()
     {
         return $this->condition;
+    }
+
+    /**
+     * Set matchlist
+     *
+     * @param \Ivoz\Domain\Model\MatchList\MatchListInterface $matchlist
+     *
+     * @return self
+     */
+    public function setMatchlist(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchlist = null)
+    {
+        $this->matchlist = $matchlist;
+
+        return $this;
+    }
+
+    /**
+     * Get matchlist
+     *
+     * @return \Ivoz\Domain\Model\MatchList\MatchListInterface
+     */
+    public function getMatchlist()
+    {
+        return $this->matchlist;
     }
 
 

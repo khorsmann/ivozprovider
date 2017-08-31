@@ -32,14 +32,6 @@ trait HuntGroupTrait
         $this->huntGroupsRelUsers = new ArrayCollection();
     }
 
-    public function __wakeup()
-    {
-        if ($this->id) {
-            $this->initChangelog();
-        }
-        // Do nothing: Doctrines requirement
-    }
-
     /**
      * @return HuntGroupDTO
      */

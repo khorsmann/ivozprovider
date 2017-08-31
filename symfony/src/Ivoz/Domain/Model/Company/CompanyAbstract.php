@@ -59,7 +59,7 @@ abstract class CompanyAbstract
     protected $province;
 
     /**
-     * @column country_name
+     * @column country
      * @var string
      */
     protected $countryName;

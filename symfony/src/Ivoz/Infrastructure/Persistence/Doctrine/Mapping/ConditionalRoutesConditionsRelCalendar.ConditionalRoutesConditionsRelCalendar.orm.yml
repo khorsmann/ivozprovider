@@ -11,4 +11,6 @@ Ivoz\Domain\Model\ConditionalRoutesConditionsRelCalendar\ConditionalRoutesCondit
       id: true
       generator:
         strategy: IDENTITY
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

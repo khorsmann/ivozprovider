@@ -11,4 +11,6 @@ Kam\Domain\Model\UsersAcc\UsersAcc:
       id: true
       generator:
         strategy: IDENTITY
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

@@ -11,4 +11,6 @@ Kam\Domain\Model\TrunksAddres\TrunksAddres:
       id: true
       generator:
         strategy: IDENTITY
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

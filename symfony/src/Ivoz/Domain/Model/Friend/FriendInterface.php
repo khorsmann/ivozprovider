@@ -398,23 +398,23 @@ interface FriendInterface extends EntityInterface
     /**
      * Add psEndpoint
      *
-     * @param \Ast\Domain\Model\PsEndpoint\PsEndpoint $psEndpoint
+     * @param \Ast\Domain\Model\PsEndpoint\PsEndpointInterface $psEndpoint
      *
      * @return FriendTrait
      */
-    public function addPsEndpoint(\Ast\Domain\Model\PsEndpoint\PsEndpoint $psEndpoint);
+    public function addPsEndpoint(\Ast\Domain\Model\PsEndpoint\PsEndpointInterface $psEndpoint);
 
     /**
      * Remove psEndpoint
      *
-     * @param \Ast\Domain\Model\PsEndpoint\PsEndpoint $psEndpoint
+     * @param \Ast\Domain\Model\PsEndpoint\PsEndpointInterface $psEndpoint
      */
-    public function removePsEndpoint(\Ast\Domain\Model\PsEndpoint\PsEndpoint $psEndpoint);
+    public function removePsEndpoint(\Ast\Domain\Model\PsEndpoint\PsEndpointInterface $psEndpoint);
 
     /**
      * Replace psEndpoints
      *
-     * @param \Ast\Domain\Model\PsEndpoint\PsEndpoint[] $psEndpoints
+     * @param \Ast\Domain\Model\PsEndpoint\PsEndpointInterface[] $psEndpoints
      * @return self
      */
     public function replacePsEndpoints(array $psEndpoints);
@@ -429,23 +429,23 @@ interface FriendInterface extends EntityInterface
     /**
      * Add pattern
      *
-     * @param \Ivoz\Domain\Model\FriendsPattern\FriendsPattern $pattern
+     * @param \Ivoz\Domain\Model\FriendsPattern\FriendsPatternInterface $pattern
      *
      * @return FriendTrait
      */
-    public function addPattern(\Ivoz\Domain\Model\FriendsPattern\FriendsPattern $pattern);
+    public function addPattern(\Ivoz\Domain\Model\FriendsPattern\FriendsPatternInterface $pattern);
 
     /**
      * Remove pattern
      *
-     * @param \Ivoz\Domain\Model\FriendsPattern\FriendsPattern $pattern
+     * @param \Ivoz\Domain\Model\FriendsPattern\FriendsPatternInterface $pattern
      */
-    public function removePattern(\Ivoz\Domain\Model\FriendsPattern\FriendsPattern $pattern);
+    public function removePattern(\Ivoz\Domain\Model\FriendsPattern\FriendsPatternInterface $pattern);
 
     /**
      * Replace patterns
      *
-     * @param \Ivoz\Domain\Model\FriendsPattern\FriendsPattern[] $patterns
+     * @param \Ivoz\Domain\Model\FriendsPattern\FriendsPatternInterface[] $patterns
      * @return self
      */
     public function replacePatterns(array $patterns);

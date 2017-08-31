@@ -32,14 +32,6 @@ trait IvrCommonTrait
         $this->extensions = new ArrayCollection();
     }
 
-    public function __wakeup()
-    {
-        if ($this->id) {
-            $this->initChangelog();
-        }
-        // Do nothing: Doctrines requirement
-    }
-
     /**
      * @return IvrCommonDTO
      */
@@ -118,11 +110,11 @@ trait IvrCommonTrait
     /**
      * Add extension
      *
-     * @param \Ivoz\Domain\Model\Extension\Extension $extension
+     * @param \Ivoz\Domain\Model\Extension\ExtensionInterface $extension
      *
      * @return IvrCommonTrait
      */
-    public function addExtension(\Ivoz\Domain\Model\Extension\Extension $extension)
+    public function addExtension(\Ivoz\Domain\Model\Extension\ExtensionInterface $extension)
     {
         $this->extensions[] = $extension;
 
@@ -132,9 +124,9 @@ trait IvrCommonTrait
     /**
      * Remove extension
      *
-     * @param \Ivoz\Domain\Model\Extension\Extension $extension
+     * @param \Ivoz\Domain\Model\Extension\ExtensionInterface $extension
      */
-    public function removeExtension(\Ivoz\Domain\Model\Extension\Extension $extension)
+    public function removeExtension(\Ivoz\Domain\Model\Extension\ExtensionInterface $extension)
     {
         $this->extensions->removeElement($extension);
     }
@@ -142,7 +134,7 @@ trait IvrCommonTrait
     /**
      * Replace extensions
      *
-     * @param \Ivoz\Domain\Model\Extension\Extension[] $extensions
+     * @param \Ivoz\Domain\Model\Extension\ExtensionInterface[] $extensions
      * @return self
      */
     public function replaceExtensions(array $extensions)

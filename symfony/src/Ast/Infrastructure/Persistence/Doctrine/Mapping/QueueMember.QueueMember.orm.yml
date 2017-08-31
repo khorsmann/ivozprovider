@@ -12,4 +12,6 @@ Ast\Domain\Model\QueueMember\QueueMember:
       id: true
       generator:
         strategy: NONE
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

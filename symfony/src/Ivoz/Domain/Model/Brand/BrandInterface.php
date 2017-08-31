@@ -291,23 +291,23 @@ interface BrandInterface extends EntityInterface
     /**
      * Add company
      *
-     * @param \Ivoz\Domain\Model\Company\Company $company
+     * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
      * @return BrandTrait
      */
-    public function addCompany(\Ivoz\Domain\Model\Company\Company $company);
+    public function addCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company);
 
     /**
      * Remove company
      *
-     * @param \Ivoz\Domain\Model\Company\Company $company
+     * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      */
-    public function removeCompany(\Ivoz\Domain\Model\Company\Company $company);
+    public function removeCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company);
 
     /**
      * Replace companies
      *
-     * @param \Ivoz\Domain\Model\Company\Company[] $companies
+     * @param \Ivoz\Domain\Model\Company\CompanyInterface[] $companies
      * @return self
      */
     public function replaceCompanies(array $companies);
@@ -322,23 +322,23 @@ interface BrandInterface extends EntityInterface
     /**
      * Add operator
      *
-     * @param \Ivoz\Domain\Model\BrandOperator\BrandOperator $operator
+     * @param \Ivoz\Domain\Model\BrandOperator\BrandOperatorInterface $operator
      *
      * @return BrandTrait
      */
-    public function addOperator(\Ivoz\Domain\Model\BrandOperator\BrandOperator $operator);
+    public function addOperator(\Ivoz\Domain\Model\BrandOperator\BrandOperatorInterface $operator);
 
     /**
      * Remove operator
      *
-     * @param \Ivoz\Domain\Model\BrandOperator\BrandOperator $operator
+     * @param \Ivoz\Domain\Model\BrandOperator\BrandOperatorInterface $operator
      */
-    public function removeOperator(\Ivoz\Domain\Model\BrandOperator\BrandOperator $operator);
+    public function removeOperator(\Ivoz\Domain\Model\BrandOperator\BrandOperatorInterface $operator);
 
     /**
      * Replace operators
      *
-     * @param \Ivoz\Domain\Model\BrandOperator\BrandOperator[] $operators
+     * @param \Ivoz\Domain\Model\BrandOperator\BrandOperatorInterface[] $operators
      * @return self
      */
     public function replaceOperators(array $operators);
@@ -353,23 +353,23 @@ interface BrandInterface extends EntityInterface
     /**
      * Add service
      *
-     * @param \Ivoz\Domain\Model\BrandService\BrandService $service
+     * @param \Ivoz\Domain\Model\BrandService\BrandServiceInterface $service
      *
      * @return BrandTrait
      */
-    public function addService(\Ivoz\Domain\Model\BrandService\BrandService $service);
+    public function addService(\Ivoz\Domain\Model\BrandService\BrandServiceInterface $service);
 
     /**
      * Remove service
      *
-     * @param \Ivoz\Domain\Model\BrandService\BrandService $service
+     * @param \Ivoz\Domain\Model\BrandService\BrandServiceInterface $service
      */
-    public function removeService(\Ivoz\Domain\Model\BrandService\BrandService $service);
+    public function removeService(\Ivoz\Domain\Model\BrandService\BrandServiceInterface $service);
 
     /**
      * Replace services
      *
-     * @param \Ivoz\Domain\Model\BrandService\BrandService[] $services
+     * @param \Ivoz\Domain\Model\BrandService\BrandServiceInterface[] $services
      * @return self
      */
     public function replaceServices(array $services);
@@ -384,23 +384,23 @@ interface BrandInterface extends EntityInterface
     /**
      * Add url
      *
-     * @param \Ivoz\Domain\Model\BrandURL\BrandURL $url
+     * @param \Ivoz\Domain\Model\BrandURL\BrandURLInterface $url
      *
      * @return BrandTrait
      */
-    public function addUrl(\Ivoz\Domain\Model\BrandURL\BrandURL $url);
+    public function addUrl(\Ivoz\Domain\Model\BrandURL\BrandURLInterface $url);
 
     /**
      * Remove url
      *
-     * @param \Ivoz\Domain\Model\BrandURL\BrandURL $url
+     * @param \Ivoz\Domain\Model\BrandURL\BrandURLInterface $url
      */
-    public function removeUrl(\Ivoz\Domain\Model\BrandURL\BrandURL $url);
+    public function removeUrl(\Ivoz\Domain\Model\BrandURL\BrandURLInterface $url);
 
     /**
      * Replace urls
      *
-     * @param \Ivoz\Domain\Model\BrandURL\BrandURL[] $urls
+     * @param \Ivoz\Domain\Model\BrandURL\BrandURLInterface[] $urls
      * @return self
      */
     public function replaceUrls(array $urls);
@@ -415,23 +415,23 @@ interface BrandInterface extends EntityInterface
     /**
      * Add relFeature
      *
-     * @param \Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrand $relFeature
+     * @param \Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrandInterface $relFeature
      *
      * @return BrandTrait
      */
-    public function addRelFeature(\Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrand $relFeature);
+    public function addRelFeature(\Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrandInterface $relFeature);
 
     /**
      * Remove relFeature
      *
-     * @param \Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrand $relFeature
+     * @param \Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrandInterface $relFeature
      */
-    public function removeRelFeature(\Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrand $relFeature);
+    public function removeRelFeature(\Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrandInterface $relFeature);
 
     /**
      * Replace relFeatures
      *
-     * @param \Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrand[] $relFeatures
+     * @param \Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrandInterface[] $relFeatures
      * @return self
      */
     public function replaceRelFeatures(array $relFeatures);
@@ -446,23 +446,23 @@ interface BrandInterface extends EntityInterface
     /**
      * Add domain
      *
-     * @param \Ivoz\Domain\Model\Domain\Domain $domain
+     * @param \Ivoz\Domain\Model\Domain\DomainInterface $domain
      *
      * @return BrandTrait
      */
-    public function addDomain(\Ivoz\Domain\Model\Domain\Domain $domain);
+    public function addDomain(\Ivoz\Domain\Model\Domain\DomainInterface $domain);
 
     /**
      * Remove domain
      *
-     * @param \Ivoz\Domain\Model\Domain\Domain $domain
+     * @param \Ivoz\Domain\Model\Domain\DomainInterface $domain
      */
-    public function removeDomain(\Ivoz\Domain\Model\Domain\Domain $domain);
+    public function removeDomain(\Ivoz\Domain\Model\Domain\DomainInterface $domain);
 
     /**
      * Replace domains
      *
-     * @param \Ivoz\Domain\Model\Domain\Domain[] $domains
+     * @param \Ivoz\Domain\Model\Domain\DomainInterface[] $domains
      * @return self
      */
     public function replaceDomains(array $domains);
@@ -477,23 +477,23 @@ interface BrandInterface extends EntityInterface
     /**
      * Add retailAccount
      *
-     * @param \Ivoz\Domain\Model\RetailAccount\RetailAccount $retailAccount
+     * @param \Ivoz\Domain\Model\RetailAccount\RetailAccountInterface $retailAccount
      *
      * @return BrandTrait
      */
-    public function addRetailAccount(\Ivoz\Domain\Model\RetailAccount\RetailAccount $retailAccount);
+    public function addRetailAccount(\Ivoz\Domain\Model\RetailAccount\RetailAccountInterface $retailAccount);
 
     /**
      * Remove retailAccount
      *
-     * @param \Ivoz\Domain\Model\RetailAccount\RetailAccount $retailAccount
+     * @param \Ivoz\Domain\Model\RetailAccount\RetailAccountInterface $retailAccount
      */
-    public function removeRetailAccount(\Ivoz\Domain\Model\RetailAccount\RetailAccount $retailAccount);
+    public function removeRetailAccount(\Ivoz\Domain\Model\RetailAccount\RetailAccountInterface $retailAccount);
 
     /**
      * Replace retailAccounts
      *
-     * @param \Ivoz\Domain\Model\RetailAccount\RetailAccount[] $retailAccounts
+     * @param \Ivoz\Domain\Model\RetailAccount\RetailAccountInterface[] $retailAccounts
      * @return self
      */
     public function replaceRetailAccounts(array $retailAccounts);
@@ -508,23 +508,23 @@ interface BrandInterface extends EntityInterface
     /**
      * Add genericMusicsOnHold
      *
-     * @param \Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHold $genericMusicsOnHold
+     * @param \Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHoldInterface $genericMusicsOnHold
      *
      * @return BrandTrait
      */
-    public function addGenericMusicsOnHold(\Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHold $genericMusicsOnHold);
+    public function addGenericMusicsOnHold(\Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHoldInterface $genericMusicsOnHold);
 
     /**
      * Remove genericMusicsOnHold
      *
-     * @param \Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHold $genericMusicsOnHold
+     * @param \Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHoldInterface $genericMusicsOnHold
      */
-    public function removeGenericMusicsOnHold(\Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHold $genericMusicsOnHold);
+    public function removeGenericMusicsOnHold(\Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHoldInterface $genericMusicsOnHold);
 
     /**
      * Replace genericMusicsOnHold
      *
-     * @param \Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHold[] $genericMusicsOnHold
+     * @param \Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHoldInterface[] $genericMusicsOnHold
      * @return self
      */
     public function replaceGenericMusicsOnHold(array $genericMusicsOnHold);
@@ -539,23 +539,23 @@ interface BrandInterface extends EntityInterface
     /**
      * Add genericCallACLPattern
      *
-     * @param \Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPattern $genericCallACLPattern
+     * @param \Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPatternInterface $genericCallACLPattern
      *
      * @return BrandTrait
      */
-    public function addGenericCallACLPattern(\Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPattern $genericCallACLPattern);
+    public function addGenericCallACLPattern(\Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPatternInterface $genericCallACLPattern);
 
     /**
      * Remove genericCallACLPattern
      *
-     * @param \Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPattern $genericCallACLPattern
+     * @param \Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPatternInterface $genericCallACLPattern
      */
-    public function removeGenericCallACLPattern(\Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPattern $genericCallACLPattern);
+    public function removeGenericCallACLPattern(\Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPatternInterface $genericCallACLPattern);
 
     /**
      * Replace genericCallACLPatterns
      *
-     * @param \Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPattern[] $genericCallACLPatterns
+     * @param \Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPatternInterface[] $genericCallACLPatterns
      * @return self
      */
     public function replaceGenericCallACLPatterns(array $genericCallACLPatterns);

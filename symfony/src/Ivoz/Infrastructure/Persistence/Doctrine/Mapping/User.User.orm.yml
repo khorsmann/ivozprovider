@@ -11,4 +11,6 @@ Ivoz\Domain\Model\User\User:
       id: true
       generator:
         strategy: IDENTITY
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

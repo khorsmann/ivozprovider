@@ -11,4 +11,6 @@ Ast\Domain\Model\PsEndpoint\PsEndpoint:
       id: true
       generator:
         strategy: IDENTITY
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

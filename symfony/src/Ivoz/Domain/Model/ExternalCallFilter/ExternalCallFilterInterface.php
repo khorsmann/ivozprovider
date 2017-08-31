@@ -241,23 +241,23 @@ interface ExternalCallFilterInterface extends EntityInterface
     /**
      * Add blackList
      *
-     * @param \Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList $blackList
+     * @param \Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackListInterface $blackList
      *
      * @return ExternalCallFilterTrait
      */
-    public function addBlackList(\Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList $blackList);
+    public function addBlackList(\Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackListInterface $blackList);
 
     /**
      * Remove blackList
      *
-     * @param \Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList $blackList
+     * @param \Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackListInterface $blackList
      */
-    public function removeBlackList(\Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList $blackList);
+    public function removeBlackList(\Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackListInterface $blackList);
 
     /**
      * Replace blackLists
      *
-     * @param \Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList[] $blackLists
+     * @param \Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackListInterface[] $blackLists
      * @return self
      */
     public function replaceBlackLists(array $blackLists);
@@ -272,23 +272,23 @@ interface ExternalCallFilterInterface extends EntityInterface
     /**
      * Add whiteList
      *
-     * @param \Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteList $whiteList
+     * @param \Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteListInterface $whiteList
      *
      * @return ExternalCallFilterTrait
      */
-    public function addWhiteList(\Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteList $whiteList);
+    public function addWhiteList(\Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteListInterface $whiteList);
 
     /**
      * Remove whiteList
      *
-     * @param \Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteList $whiteList
+     * @param \Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteListInterface $whiteList
      */
-    public function removeWhiteList(\Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteList $whiteList);
+    public function removeWhiteList(\Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteListInterface $whiteList);
 
     /**
      * Replace whiteList
      *
-     * @param \Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteList[] $whiteList
+     * @param \Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteListInterface[] $whiteList
      * @return self
      */
     public function replaceWhiteList(array $whiteList);
@@ -303,23 +303,23 @@ interface ExternalCallFilterInterface extends EntityInterface
     /**
      * Add schedule
      *
-     * @param ExternalCallFilter $schedule
+     * @param ExternalCallFilterInterface $schedule
      *
      * @return ExternalCallFilterTrait
      */
-    public function addSchedule(\Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilter $schedule);
+    public function addSchedule(\Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface $schedule);
 
     /**
      * Remove schedule
      *
-     * @param ExternalCallFilter $schedule
+     * @param ExternalCallFilterInterface $schedule
      */
-    public function removeSchedule(\Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilter $schedule);
+    public function removeSchedule(\Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface $schedule);
 
     /**
      * Replace schedules
      *
-     * @param \Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilter[] $schedules
+     * @param \Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface[] $schedules
      * @return self
      */
     public function replaceSchedules(array $schedules);
@@ -334,23 +334,23 @@ interface ExternalCallFilterInterface extends EntityInterface
     /**
      * Add calendar
      *
-     * @param \Ivoz\Domain\Model\Calendar\Calendar $calendar
+     * @param \Ivoz\Domain\Model\Calendar\CalendarInterface $calendar
      *
      * @return ExternalCallFilterTrait
      */
-    public function addCalendar(\Ivoz\Domain\Model\Calendar\Calendar $calendar);
+    public function addCalendar(\Ivoz\Domain\Model\Calendar\CalendarInterface $calendar);
 
     /**
      * Remove calendar
      *
-     * @param \Ivoz\Domain\Model\Calendar\Calendar $calendar
+     * @param \Ivoz\Domain\Model\Calendar\CalendarInterface $calendar
      */
-    public function removeCalendar(\Ivoz\Domain\Model\Calendar\Calendar $calendar);
+    public function removeCalendar(\Ivoz\Domain\Model\Calendar\CalendarInterface $calendar);
 
     /**
      * Replace calendars
      *
-     * @param \Ivoz\Domain\Model\Calendar\Calendar[] $calendars
+     * @param \Ivoz\Domain\Model\Calendar\CalendarInterface[] $calendars
      * @return self
      */
     public function replaceCalendars(array $calendars);

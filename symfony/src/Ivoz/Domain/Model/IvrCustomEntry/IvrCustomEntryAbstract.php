@@ -17,7 +17,7 @@ abstract class IvrCustomEntryAbstract
     protected $entry;
 
     /**
-     * @comment enum:number|extension|voicemail
+     * @comment enum:number|extension|voicemail|conditional
      * @var string
      */
     protected $targetType;
@@ -46,6 +46,11 @@ abstract class IvrCustomEntryAbstract
      * @var \Ivoz\Domain\Model\User\UserInterface
      */
     protected $targetVoiceMailUser;
+
+    /**
+     * @var \Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface
+     */
+    protected $targetConditionalRoute;
 
 
     /**
@@ -128,6 +133,7 @@ abstract class IvrCustomEntryAbstract
             ->setWelcomeLocution($dto->getWelcomeLocution())
             ->setTargetExtension($dto->getTargetExtension())
             ->setTargetVoiceMailUser($dto->getTargetVoiceMailUser())
+            ->setTargetConditionalRoute($dto->getTargetConditionalRoute())
         ;
     }
 
@@ -149,7 +155,8 @@ abstract class IvrCustomEntryAbstract
             ->setIvrCustom($dto->getIvrCustom())
             ->setWelcomeLocution($dto->getWelcomeLocution())
             ->setTargetExtension($dto->getTargetExtension())
-            ->setTargetVoiceMailUser($dto->getTargetVoiceMailUser());
+            ->setTargetVoiceMailUser($dto->getTargetVoiceMailUser())
+            ->setTargetConditionalRoute($dto->getTargetConditionalRoute());
 
 
         return $this;
@@ -167,7 +174,8 @@ abstract class IvrCustomEntryAbstract
             ->setIvrCustomId($this->getIvrCustom() ? $this->getIvrCustom()->getId() : null)
             ->setWelcomeLocutionId($this->getWelcomeLocution() ? $this->getWelcomeLocution()->getId() : null)
             ->setTargetExtensionId($this->getTargetExtension() ? $this->getTargetExtension()->getId() : null)
-            ->setTargetVoiceMailUserId($this->getTargetVoiceMailUser() ? $this->getTargetVoiceMailUser()->getId() : null);
+            ->setTargetVoiceMailUserId($this->getTargetVoiceMailUser() ? $this->getTargetVoiceMailUser()->getId() : null)
+            ->setTargetConditionalRouteId($this->getTargetConditionalRoute() ? $this->getTargetConditionalRoute()->getId() : null);
     }
 
     /**
@@ -182,7 +190,8 @@ abstract class IvrCustomEntryAbstract
             'ivrCustomId' => $this->getIvrCustom() ? $this->getIvrCustom()->getId() : null,
             'welcomeLocutionId' => $this->getWelcomeLocution() ? $this->getWelcomeLocution()->getId() : null,
             'targetExtensionId' => $this->getTargetExtension() ? $this->getTargetExtension()->getId() : null,
-            'targetVoiceMailUserId' => $this->getTargetVoiceMailUser() ? $this->getTargetVoiceMailUser()->getId() : null
+            'targetVoiceMailUserId' => $this->getTargetVoiceMailUser() ? $this->getTargetVoiceMailUser()->getId() : null,
+            'targetConditionalRouteId' => $this->getTargetConditionalRoute() ? $this->getTargetConditionalRoute()->getId() : null
         ];
     }
 
@@ -231,6 +240,7 @@ abstract class IvrCustomEntryAbstract
           0 => 'number',
           1 => 'extension',
           2 => 'voicemail',
+          3 => 'conditional',
         ));
 
         $this->targetType = $targetType;
@@ -370,6 +380,30 @@ abstract class IvrCustomEntryAbstract
     public function getTargetVoiceMailUser()
     {
         return $this->targetVoiceMailUser;
+    }
+
+    /**
+     * Set targetConditionalRoute
+     *
+     * @param \Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface $targetConditionalRoute
+     *
+     * @return self
+     */
+    public function setTargetConditionalRoute(\Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface $targetConditionalRoute = null)
+    {
+        $this->targetConditionalRoute = $targetConditionalRoute;
+
+        return $this;
+    }
+
+    /**
+     * Get targetConditionalRoute
+     *
+     * @return \Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface
+     */
+    public function getTargetConditionalRoute()
+    {
+        return $this->targetConditionalRoute;
     }
 
 

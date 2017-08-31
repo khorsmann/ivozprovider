@@ -15,4 +15,6 @@ Ivoz\Domain\Model\CallACL\CallACL:
     relPatterns:
       targetEntity: Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPatternInterface
       mappedBy: callACL
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

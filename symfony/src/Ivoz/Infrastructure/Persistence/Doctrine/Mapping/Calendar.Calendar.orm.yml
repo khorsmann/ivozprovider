@@ -15,4 +15,6 @@ Ivoz\Domain\Model\Calendar\Calendar:
     holidayDates:
       targetEntity: Ivoz\Domain\Model\HolidayDate\HolidayDateInterface
       mappedBy: calendar
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

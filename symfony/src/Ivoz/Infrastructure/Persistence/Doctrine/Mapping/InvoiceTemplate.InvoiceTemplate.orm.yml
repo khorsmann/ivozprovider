@@ -11,4 +11,6 @@ Ivoz\Domain\Model\InvoiceTemplate\InvoiceTemplate:
       id: true
       generator:
         strategy: IDENTITY
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+      postLoad:
+        - initChangelog

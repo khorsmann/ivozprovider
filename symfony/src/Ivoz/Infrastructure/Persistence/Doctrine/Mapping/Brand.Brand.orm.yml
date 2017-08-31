@@ -39,4 +39,6 @@ Ivoz\Domain\Model\Brand\Brand:
     genericCallACLPatterns:
       targetEntity: Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPatternInterface
       mappedBy: brand
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

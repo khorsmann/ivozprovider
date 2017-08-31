@@ -185,23 +185,23 @@ interface TerminalInterface extends EntityInterface
     /**
      * Add astPsEndpoint
      *
-     * @param \Ast\Domain\Model\PsEndpoint\PsEndpoint $astPsEndpoint
+     * @param \Ast\Domain\Model\PsEndpoint\PsEndpointInterface $astPsEndpoint
      *
      * @return TerminalTrait
      */
-    public function addAstPsEndpoint(\Ast\Domain\Model\PsEndpoint\PsEndpoint $astPsEndpoint);
+    public function addAstPsEndpoint(\Ast\Domain\Model\PsEndpoint\PsEndpointInterface $astPsEndpoint);
 
     /**
      * Remove astPsEndpoint
      *
-     * @param \Ast\Domain\Model\PsEndpoint\PsEndpoint $astPsEndpoint
+     * @param \Ast\Domain\Model\PsEndpoint\PsEndpointInterface $astPsEndpoint
      */
-    public function removeAstPsEndpoint(\Ast\Domain\Model\PsEndpoint\PsEndpoint $astPsEndpoint);
+    public function removeAstPsEndpoint(\Ast\Domain\Model\PsEndpoint\PsEndpointInterface $astPsEndpoint);
 
     /**
      * Replace astPsEndpoints
      *
-     * @param \Ast\Domain\Model\PsEndpoint\PsEndpoint[] $astPsEndpoints
+     * @param \Ast\Domain\Model\PsEndpoint\PsEndpointInterface[] $astPsEndpoints
      * @return self
      */
     public function replaceAstPsEndpoints(array $astPsEndpoints);

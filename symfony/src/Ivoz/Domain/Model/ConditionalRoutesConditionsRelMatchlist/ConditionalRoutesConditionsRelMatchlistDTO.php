@@ -19,22 +19,22 @@ class ConditionalRoutesConditionsRelMatchlistDTO implements DataTransferObjectIn
     /**
      * @var mixed
      */
-    private $matchlistId;
-
-    /**
-     * @var mixed
-     */
     private $conditionId;
 
     /**
      * @var mixed
      */
-    private $matchlist;
+    private $matchlistId;
 
     /**
      * @var mixed
      */
     private $condition;
+
+    /**
+     * @var mixed
+     */
+    private $matchlist;
 
     /**
      * @return array
@@ -43,8 +43,8 @@ class ConditionalRoutesConditionsRelMatchlistDTO implements DataTransferObjectIn
     {
         return [
             'id' => $this->getId(),
-            'matchlistId' => $this->getMatchlistId(),
-            'conditionId' => $this->getConditionId()
+            'conditionId' => $this->getConditionId(),
+            'matchlistId' => $this->getMatchlistId()
         ];
     }
 
@@ -53,8 +53,8 @@ class ConditionalRoutesConditionsRelMatchlistDTO implements DataTransferObjectIn
      */
     public function transformForeignKeys(ForeignKeyTransformerInterface $transformer)
     {
-        $this->matchlist = $transformer->transform('Ivoz\\Domain\\Model\\Matchlist\\MatchlistInterface', $this->getMatchlistId());
         $this->condition = $transformer->transform('Ivoz\\Domain\\Model\\ConditionalRoutesCondition\\ConditionalRoutesCondition', $this->getConditionId());
+        $this->matchlist = $transformer->transform('Ivoz\\Domain\\Model\\MatchList\\MatchList', $this->getMatchlistId());
     }
 
     /**
@@ -86,34 +86,6 @@ class ConditionalRoutesConditionsRelMatchlistDTO implements DataTransferObjectIn
     }
 
     /**
-     * @param integer $matchlistId
-     *
-     * @return ConditionalRoutesConditionsRelMatchlistDTO
-     */
-    public function setMatchlistId($matchlistId)
-    {
-        $this->matchlistId = $matchlistId;
-
-        return $this;
-    }
-
-    /**
-     * @return integer
-     */
-    public function getMatchlistId()
-    {
-        return $this->matchlistId;
-    }
-
-    /**
-     * @return \Ivoz\Domain\Model\Matchlist\MatchlistInterface
-     */
-    public function getMatchlist()
-    {
-        return $this->matchlist;
-    }
-
-    /**
      * @param integer $conditionId
      *
      * @return ConditionalRoutesConditionsRelMatchlistDTO
@@ -139,6 +111,34 @@ class ConditionalRoutesConditionsRelMatchlistDTO implements DataTransferObjectIn
     public function getCondition()
     {
         return $this->condition;
+    }
+
+    /**
+     * @param integer $matchlistId
+     *
+     * @return ConditionalRoutesConditionsRelMatchlistDTO
+     */
+    public function setMatchlistId($matchlistId)
+    {
+        $this->matchlistId = $matchlistId;
+
+        return $this;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getMatchlistId()
+    {
+        return $this->matchlistId;
+    }
+
+    /**
+     * @return \Ivoz\Domain\Model\MatchList\MatchList
+     */
+    public function getMatchlist()
+    {
+        return $this->matchlist;
     }
 }
 

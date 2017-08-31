@@ -11,4 +11,6 @@ Ivoz\Domain\Model\ChangeHistory\ChangeHistory:
       id: true
       generator:
         strategy: IDENTITY
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

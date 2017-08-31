@@ -32,14 +32,6 @@ trait RoutingPatternGroupTrait
         $this->relPatterns = new ArrayCollection();
     }
 
-    public function __wakeup()
-    {
-        if ($this->id) {
-            $this->initChangelog();
-        }
-        // Do nothing: Doctrines requirement
-    }
-
     /**
      * @return RoutingPatternGroupDTO
      */
@@ -118,11 +110,11 @@ trait RoutingPatternGroupTrait
     /**
      * Add relPattern
      *
-     * @param \Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPattern $relPattern
+     * @param \Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPatternInterface $relPattern
      *
      * @return RoutingPatternGroupTrait
      */
-    public function addRelPattern(\Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPattern $relPattern)
+    public function addRelPattern(\Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPatternInterface $relPattern)
     {
         $this->relPatterns[] = $relPattern;
 
@@ -132,9 +124,9 @@ trait RoutingPatternGroupTrait
     /**
      * Remove relPattern
      *
-     * @param \Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPattern $relPattern
+     * @param \Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPatternInterface $relPattern
      */
-    public function removeRelPattern(\Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPattern $relPattern)
+    public function removeRelPattern(\Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPatternInterface $relPattern)
     {
         $this->relPatterns->removeElement($relPattern);
     }
@@ -142,7 +134,7 @@ trait RoutingPatternGroupTrait
     /**
      * Replace relPatterns
      *
-     * @param \Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPattern[] $relPatterns
+     * @param \Ivoz\Domain\Model\RoutingPatternGroupsRelPattern\RoutingPatternGroupsRelPatternInterface[] $relPatterns
      * @return self
      */
     public function replaceRelPatterns(array $relPatterns)

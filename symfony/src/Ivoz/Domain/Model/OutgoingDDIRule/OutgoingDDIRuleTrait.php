@@ -32,14 +32,6 @@ trait OutgoingDDIRuleTrait
         $this->patterns = new ArrayCollection();
     }
 
-    public function __wakeup()
-    {
-        if ($this->id) {
-            $this->initChangelog();
-        }
-        // Do nothing: Doctrines requirement
-    }
-
     /**
      * @return OutgoingDDIRuleDTO
      */

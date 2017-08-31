@@ -15,4 +15,6 @@ Ivoz\Domain\Model\HuntGroup\HuntGroup:
     huntGroupsRelUsers:
       targetEntity: Ivoz\Domain\Model\HuntGroupsRelUser\HuntGroupsRelUserInterface
       mappedBy: huntGroup
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

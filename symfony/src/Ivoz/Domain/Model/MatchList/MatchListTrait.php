@@ -32,14 +32,6 @@ trait MatchListTrait
         $this->patterns = new ArrayCollection();
     }
 
-    public function __wakeup()
-    {
-        if ($this->id) {
-            $this->initChangelog();
-        }
-        // Do nothing: Doctrines requirement
-    }
-
     /**
      * @return MatchListDTO
      */
@@ -118,11 +110,11 @@ trait MatchListTrait
     /**
      * Add pattern
      *
-     * @param \Ivoz\Domain\Model\MatchListPattern\MatchListPattern $pattern
+     * @param \Ivoz\Domain\Model\MatchListPattern\MatchListPatternInterface $pattern
      *
      * @return MatchListTrait
      */
-    public function addPattern(\Ivoz\Domain\Model\MatchListPattern\MatchListPattern $pattern)
+    public function addPattern(\Ivoz\Domain\Model\MatchListPattern\MatchListPatternInterface $pattern)
     {
         $this->patterns[] = $pattern;
 
@@ -132,9 +124,9 @@ trait MatchListTrait
     /**
      * Remove pattern
      *
-     * @param \Ivoz\Domain\Model\MatchListPattern\MatchListPattern $pattern
+     * @param \Ivoz\Domain\Model\MatchListPattern\MatchListPatternInterface $pattern
      */
-    public function removePattern(\Ivoz\Domain\Model\MatchListPattern\MatchListPattern $pattern)
+    public function removePattern(\Ivoz\Domain\Model\MatchListPattern\MatchListPatternInterface $pattern)
     {
         $this->patterns->removeElement($pattern);
     }
@@ -142,7 +134,7 @@ trait MatchListTrait
     /**
      * Replace patterns
      *
-     * @param \Ivoz\Domain\Model\MatchListPattern\MatchListPattern[] $patterns
+     * @param \Ivoz\Domain\Model\MatchListPattern\MatchListPatternInterface[] $patterns
      * @return self
      */
     public function replacePatterns(array $patterns)

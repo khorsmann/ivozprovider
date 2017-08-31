@@ -166,4 +166,6 @@ Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionAbstract:
         extensionId:
           referencedColumnName: id
       orphanRemoval: false
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

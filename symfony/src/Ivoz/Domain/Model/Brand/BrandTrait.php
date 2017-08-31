@@ -80,14 +80,6 @@ trait BrandTrait
         $this->genericCallACLPatterns = new ArrayCollection();
     }
 
-    public function __wakeup()
-    {
-        if ($this->id) {
-            $this->initChangelog();
-        }
-        // Do nothing: Doctrines requirement
-    }
-
     /**
      * @return BrandDTO
      */
@@ -190,11 +182,11 @@ trait BrandTrait
     /**
      * Add company
      *
-     * @param \Ivoz\Domain\Model\Company\Company $company
+     * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      *
      * @return BrandTrait
      */
-    public function addCompany(\Ivoz\Domain\Model\Company\Company $company)
+    public function addCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company)
     {
         $this->companies[] = $company;
 
@@ -204,9 +196,9 @@ trait BrandTrait
     /**
      * Remove company
      *
-     * @param \Ivoz\Domain\Model\Company\Company $company
+     * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
      */
-    public function removeCompany(\Ivoz\Domain\Model\Company\Company $company)
+    public function removeCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company)
     {
         $this->companies->removeElement($company);
     }
@@ -214,7 +206,7 @@ trait BrandTrait
     /**
      * Replace companies
      *
-     * @param \Ivoz\Domain\Model\Company\Company[] $companies
+     * @param \Ivoz\Domain\Model\Company\CompanyInterface[] $companies
      * @return self
      */
     public function replaceCompanies(array $companies)
@@ -262,11 +254,11 @@ trait BrandTrait
     /**
      * Add operator
      *
-     * @param \Ivoz\Domain\Model\BrandOperator\BrandOperator $operator
+     * @param \Ivoz\Domain\Model\BrandOperator\BrandOperatorInterface $operator
      *
      * @return BrandTrait
      */
-    public function addOperator(\Ivoz\Domain\Model\BrandOperator\BrandOperator $operator)
+    public function addOperator(\Ivoz\Domain\Model\BrandOperator\BrandOperatorInterface $operator)
     {
         $this->operators[] = $operator;
 
@@ -276,9 +268,9 @@ trait BrandTrait
     /**
      * Remove operator
      *
-     * @param \Ivoz\Domain\Model\BrandOperator\BrandOperator $operator
+     * @param \Ivoz\Domain\Model\BrandOperator\BrandOperatorInterface $operator
      */
-    public function removeOperator(\Ivoz\Domain\Model\BrandOperator\BrandOperator $operator)
+    public function removeOperator(\Ivoz\Domain\Model\BrandOperator\BrandOperatorInterface $operator)
     {
         $this->operators->removeElement($operator);
     }
@@ -286,7 +278,7 @@ trait BrandTrait
     /**
      * Replace operators
      *
-     * @param \Ivoz\Domain\Model\BrandOperator\BrandOperator[] $operators
+     * @param \Ivoz\Domain\Model\BrandOperator\BrandOperatorInterface[] $operators
      * @return self
      */
     public function replaceOperators(array $operators)
@@ -334,11 +326,11 @@ trait BrandTrait
     /**
      * Add service
      *
-     * @param \Ivoz\Domain\Model\BrandService\BrandService $service
+     * @param \Ivoz\Domain\Model\BrandService\BrandServiceInterface $service
      *
      * @return BrandTrait
      */
-    public function addService(\Ivoz\Domain\Model\BrandService\BrandService $service)
+    public function addService(\Ivoz\Domain\Model\BrandService\BrandServiceInterface $service)
     {
         $this->services[] = $service;
 
@@ -348,9 +340,9 @@ trait BrandTrait
     /**
      * Remove service
      *
-     * @param \Ivoz\Domain\Model\BrandService\BrandService $service
+     * @param \Ivoz\Domain\Model\BrandService\BrandServiceInterface $service
      */
-    public function removeService(\Ivoz\Domain\Model\BrandService\BrandService $service)
+    public function removeService(\Ivoz\Domain\Model\BrandService\BrandServiceInterface $service)
     {
         $this->services->removeElement($service);
     }
@@ -358,7 +350,7 @@ trait BrandTrait
     /**
      * Replace services
      *
-     * @param \Ivoz\Domain\Model\BrandService\BrandService[] $services
+     * @param \Ivoz\Domain\Model\BrandService\BrandServiceInterface[] $services
      * @return self
      */
     public function replaceServices(array $services)
@@ -406,11 +398,11 @@ trait BrandTrait
     /**
      * Add url
      *
-     * @param \Ivoz\Domain\Model\BrandURL\BrandURL $url
+     * @param \Ivoz\Domain\Model\BrandURL\BrandURLInterface $url
      *
      * @return BrandTrait
      */
-    public function addUrl(\Ivoz\Domain\Model\BrandURL\BrandURL $url)
+    public function addUrl(\Ivoz\Domain\Model\BrandURL\BrandURLInterface $url)
     {
         $this->urls[] = $url;
 
@@ -420,9 +412,9 @@ trait BrandTrait
     /**
      * Remove url
      *
-     * @param \Ivoz\Domain\Model\BrandURL\BrandURL $url
+     * @param \Ivoz\Domain\Model\BrandURL\BrandURLInterface $url
      */
-    public function removeUrl(\Ivoz\Domain\Model\BrandURL\BrandURL $url)
+    public function removeUrl(\Ivoz\Domain\Model\BrandURL\BrandURLInterface $url)
     {
         $this->urls->removeElement($url);
     }
@@ -430,7 +422,7 @@ trait BrandTrait
     /**
      * Replace urls
      *
-     * @param \Ivoz\Domain\Model\BrandURL\BrandURL[] $urls
+     * @param \Ivoz\Domain\Model\BrandURL\BrandURLInterface[] $urls
      * @return self
      */
     public function replaceUrls(array $urls)
@@ -478,11 +470,11 @@ trait BrandTrait
     /**
      * Add relFeature
      *
-     * @param \Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrand $relFeature
+     * @param \Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrandInterface $relFeature
      *
      * @return BrandTrait
      */
-    public function addRelFeature(\Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrand $relFeature)
+    public function addRelFeature(\Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrandInterface $relFeature)
     {
         $this->relFeatures[] = $relFeature;
 
@@ -492,9 +484,9 @@ trait BrandTrait
     /**
      * Remove relFeature
      *
-     * @param \Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrand $relFeature
+     * @param \Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrandInterface $relFeature
      */
-    public function removeRelFeature(\Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrand $relFeature)
+    public function removeRelFeature(\Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrandInterface $relFeature)
     {
         $this->relFeatures->removeElement($relFeature);
     }
@@ -502,7 +494,7 @@ trait BrandTrait
     /**
      * Replace relFeatures
      *
-     * @param \Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrand[] $relFeatures
+     * @param \Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrandInterface[] $relFeatures
      * @return self
      */
     public function replaceRelFeatures(array $relFeatures)
@@ -550,11 +542,11 @@ trait BrandTrait
     /**
      * Add domain
      *
-     * @param \Ivoz\Domain\Model\Domain\Domain $domain
+     * @param \Ivoz\Domain\Model\Domain\DomainInterface $domain
      *
      * @return BrandTrait
      */
-    public function addDomain(\Ivoz\Domain\Model\Domain\Domain $domain)
+    public function addDomain(\Ivoz\Domain\Model\Domain\DomainInterface $domain)
     {
         $this->domains[] = $domain;
 
@@ -564,9 +556,9 @@ trait BrandTrait
     /**
      * Remove domain
      *
-     * @param \Ivoz\Domain\Model\Domain\Domain $domain
+     * @param \Ivoz\Domain\Model\Domain\DomainInterface $domain
      */
-    public function removeDomain(\Ivoz\Domain\Model\Domain\Domain $domain)
+    public function removeDomain(\Ivoz\Domain\Model\Domain\DomainInterface $domain)
     {
         $this->domains->removeElement($domain);
     }
@@ -574,7 +566,7 @@ trait BrandTrait
     /**
      * Replace domains
      *
-     * @param \Ivoz\Domain\Model\Domain\Domain[] $domains
+     * @param \Ivoz\Domain\Model\Domain\DomainInterface[] $domains
      * @return self
      */
     public function replaceDomains(array $domains)
@@ -622,11 +614,11 @@ trait BrandTrait
     /**
      * Add retailAccount
      *
-     * @param \Ivoz\Domain\Model\RetailAccount\RetailAccount $retailAccount
+     * @param \Ivoz\Domain\Model\RetailAccount\RetailAccountInterface $retailAccount
      *
      * @return BrandTrait
      */
-    public function addRetailAccount(\Ivoz\Domain\Model\RetailAccount\RetailAccount $retailAccount)
+    public function addRetailAccount(\Ivoz\Domain\Model\RetailAccount\RetailAccountInterface $retailAccount)
     {
         $this->retailAccounts[] = $retailAccount;
 
@@ -636,9 +628,9 @@ trait BrandTrait
     /**
      * Remove retailAccount
      *
-     * @param \Ivoz\Domain\Model\RetailAccount\RetailAccount $retailAccount
+     * @param \Ivoz\Domain\Model\RetailAccount\RetailAccountInterface $retailAccount
      */
-    public function removeRetailAccount(\Ivoz\Domain\Model\RetailAccount\RetailAccount $retailAccount)
+    public function removeRetailAccount(\Ivoz\Domain\Model\RetailAccount\RetailAccountInterface $retailAccount)
     {
         $this->retailAccounts->removeElement($retailAccount);
     }
@@ -646,7 +638,7 @@ trait BrandTrait
     /**
      * Replace retailAccounts
      *
-     * @param \Ivoz\Domain\Model\RetailAccount\RetailAccount[] $retailAccounts
+     * @param \Ivoz\Domain\Model\RetailAccount\RetailAccountInterface[] $retailAccounts
      * @return self
      */
     public function replaceRetailAccounts(array $retailAccounts)
@@ -694,11 +686,11 @@ trait BrandTrait
     /**
      * Add genericMusicsOnHold
      *
-     * @param \Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHold $genericMusicsOnHold
+     * @param \Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHoldInterface $genericMusicsOnHold
      *
      * @return BrandTrait
      */
-    public function addGenericMusicsOnHold(\Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHold $genericMusicsOnHold)
+    public function addGenericMusicsOnHold(\Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHoldInterface $genericMusicsOnHold)
     {
         $this->genericMusicsOnHold[] = $genericMusicsOnHold;
 
@@ -708,9 +700,9 @@ trait BrandTrait
     /**
      * Remove genericMusicsOnHold
      *
-     * @param \Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHold $genericMusicsOnHold
+     * @param \Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHoldInterface $genericMusicsOnHold
      */
-    public function removeGenericMusicsOnHold(\Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHold $genericMusicsOnHold)
+    public function removeGenericMusicsOnHold(\Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHoldInterface $genericMusicsOnHold)
     {
         $this->genericMusicsOnHold->removeElement($genericMusicsOnHold);
     }
@@ -718,7 +710,7 @@ trait BrandTrait
     /**
      * Replace genericMusicsOnHold
      *
-     * @param \Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHold[] $genericMusicsOnHold
+     * @param \Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHoldInterface[] $genericMusicsOnHold
      * @return self
      */
     public function replaceGenericMusicsOnHold(array $genericMusicsOnHold)
@@ -766,11 +758,11 @@ trait BrandTrait
     /**
      * Add genericCallACLPattern
      *
-     * @param \Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPattern $genericCallACLPattern
+     * @param \Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPatternInterface $genericCallACLPattern
      *
      * @return BrandTrait
      */
-    public function addGenericCallACLPattern(\Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPattern $genericCallACLPattern)
+    public function addGenericCallACLPattern(\Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPatternInterface $genericCallACLPattern)
     {
         $this->genericCallACLPatterns[] = $genericCallACLPattern;
 
@@ -780,9 +772,9 @@ trait BrandTrait
     /**
      * Remove genericCallACLPattern
      *
-     * @param \Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPattern $genericCallACLPattern
+     * @param \Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPatternInterface $genericCallACLPattern
      */
-    public function removeGenericCallACLPattern(\Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPattern $genericCallACLPattern)
+    public function removeGenericCallACLPattern(\Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPatternInterface $genericCallACLPattern)
     {
         $this->genericCallACLPatterns->removeElement($genericCallACLPattern);
     }
@@ -790,7 +782,7 @@ trait BrandTrait
     /**
      * Replace genericCallACLPatterns
      *
-     * @param \Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPattern[] $genericCallACLPatterns
+     * @param \Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPatternInterface[] $genericCallACLPatterns
      * @return self
      */
     public function replaceGenericCallACLPatterns(array $genericCallACLPatterns)

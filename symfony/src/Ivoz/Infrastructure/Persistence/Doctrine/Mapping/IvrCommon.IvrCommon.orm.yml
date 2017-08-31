@@ -15,4 +15,6 @@ Ivoz\Domain\Model\IvrCommon\IvrCommon:
     extensions:
       targetEntity: Ivoz\Domain\Model\Extension\ExtensionInterface
       mappedBy: IvrCommon
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

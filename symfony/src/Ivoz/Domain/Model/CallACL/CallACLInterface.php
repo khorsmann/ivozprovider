@@ -59,23 +59,23 @@ interface CallACLInterface extends EntityInterface
     /**
      * Add relPattern
      *
-     * @param \Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPattern $relPattern
+     * @param \Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPatternInterface $relPattern
      *
      * @return CallACLTrait
      */
-    public function addRelPattern(\Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPattern $relPattern);
+    public function addRelPattern(\Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPatternInterface $relPattern);
 
     /**
      * Remove relPattern
      *
-     * @param \Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPattern $relPattern
+     * @param \Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPatternInterface $relPattern
      */
-    public function removeRelPattern(\Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPattern $relPattern);
+    public function removeRelPattern(\Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPatternInterface $relPattern);
 
     /**
      * Replace relPatterns
      *
-     * @param \Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPattern[] $relPatterns
+     * @param \Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPatternInterface[] $relPatterns
      * @return self
      */
     public function replaceRelPatterns(array $relPatterns);

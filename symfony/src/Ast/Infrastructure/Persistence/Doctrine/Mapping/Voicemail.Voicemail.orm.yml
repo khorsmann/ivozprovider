@@ -12,4 +12,6 @@ Ast\Domain\Model\Voicemail\Voicemail:
       id: true
       generator:
         strategy: IDENTITY
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

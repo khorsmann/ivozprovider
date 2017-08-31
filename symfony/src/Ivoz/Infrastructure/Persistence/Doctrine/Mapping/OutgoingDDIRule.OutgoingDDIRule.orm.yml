@@ -15,4 +15,6 @@ Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRule:
     patterns:
       targetEntity: Ivoz\Domain\Model\OutgoingDDIRulesPattern\OutgoingDDIRulesPatternInterface
       mappedBy: outgoingDDIRule
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

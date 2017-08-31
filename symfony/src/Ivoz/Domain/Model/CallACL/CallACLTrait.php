@@ -32,14 +32,6 @@ trait CallACLTrait
         $this->relPatterns = new ArrayCollection();
     }
 
-    public function __wakeup()
-    {
-        if ($this->id) {
-            $this->initChangelog();
-        }
-        // Do nothing: Doctrines requirement
-    }
-
     /**
      * @return CallACLDTO
      */
@@ -118,11 +110,11 @@ trait CallACLTrait
     /**
      * Add relPattern
      *
-     * @param \Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPattern $relPattern
+     * @param \Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPatternInterface $relPattern
      *
      * @return CallACLTrait
      */
-    public function addRelPattern(\Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPattern $relPattern)
+    public function addRelPattern(\Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPatternInterface $relPattern)
     {
         $this->relPatterns[] = $relPattern;
 
@@ -132,9 +124,9 @@ trait CallACLTrait
     /**
      * Remove relPattern
      *
-     * @param \Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPattern $relPattern
+     * @param \Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPatternInterface $relPattern
      */
-    public function removeRelPattern(\Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPattern $relPattern)
+    public function removeRelPattern(\Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPatternInterface $relPattern)
     {
         $this->relPatterns->removeElement($relPattern);
     }
@@ -142,7 +134,7 @@ trait CallACLTrait
     /**
      * Replace relPatterns
      *
-     * @param \Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPattern[] $relPatterns
+     * @param \Ivoz\Domain\Model\CallACLRelPattern\CallACLRelPatternInterface[] $relPatterns
      * @return self
      */
     public function replaceRelPatterns(array $relPatterns)

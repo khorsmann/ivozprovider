@@ -41,23 +41,23 @@ interface CalendarInterface extends EntityInterface
     /**
      * Add holidayDate
      *
-     * @param \Ivoz\Domain\Model\HolidayDate\HolidayDate $holidayDate
+     * @param \Ivoz\Domain\Model\HolidayDate\HolidayDateInterface $holidayDate
      *
      * @return CalendarTrait
      */
-    public function addHolidayDate(\Ivoz\Domain\Model\HolidayDate\HolidayDate $holidayDate);
+    public function addHolidayDate(\Ivoz\Domain\Model\HolidayDate\HolidayDateInterface $holidayDate);
 
     /**
      * Remove holidayDate
      *
-     * @param \Ivoz\Domain\Model\HolidayDate\HolidayDate $holidayDate
+     * @param \Ivoz\Domain\Model\HolidayDate\HolidayDateInterface $holidayDate
      */
-    public function removeHolidayDate(\Ivoz\Domain\Model\HolidayDate\HolidayDate $holidayDate);
+    public function removeHolidayDate(\Ivoz\Domain\Model\HolidayDate\HolidayDateInterface $holidayDate);
 
     /**
      * Replace holidayDates
      *
-     * @param \Ivoz\Domain\Model\HolidayDate\HolidayDate[] $holidayDates
+     * @param \Ivoz\Domain\Model\HolidayDate\HolidayDateInterface[] $holidayDates
      * @return self
      */
     public function replaceHolidayDates(array $holidayDates);

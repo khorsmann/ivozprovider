@@ -50,14 +50,6 @@ trait ExternalCallFilterTrait
         $this->calendars = new ArrayCollection();
     }
 
-    public function __wakeup()
-    {
-        if ($this->id) {
-            $this->initChangelog();
-        }
-        // Do nothing: Doctrines requirement
-    }
-
     /**
      * @return ExternalCallFilterDTO
      */
@@ -145,11 +137,11 @@ trait ExternalCallFilterTrait
     /**
      * Add blackList
      *
-     * @param \Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList $blackList
+     * @param \Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackListInterface $blackList
      *
      * @return ExternalCallFilterTrait
      */
-    public function addBlackList(\Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList $blackList)
+    public function addBlackList(\Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackListInterface $blackList)
     {
         $this->blackLists[] = $blackList;
 
@@ -159,9 +151,9 @@ trait ExternalCallFilterTrait
     /**
      * Remove blackList
      *
-     * @param \Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList $blackList
+     * @param \Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackListInterface $blackList
      */
-    public function removeBlackList(\Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList $blackList)
+    public function removeBlackList(\Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackListInterface $blackList)
     {
         $this->blackLists->removeElement($blackList);
     }
@@ -169,7 +161,7 @@ trait ExternalCallFilterTrait
     /**
      * Replace blackLists
      *
-     * @param \Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList[] $blackLists
+     * @param \Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackListInterface[] $blackLists
      * @return self
      */
     public function replaceBlackLists(array $blackLists)
@@ -217,11 +209,11 @@ trait ExternalCallFilterTrait
     /**
      * Add whiteList
      *
-     * @param \Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteList $whiteList
+     * @param \Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteListInterface $whiteList
      *
      * @return ExternalCallFilterTrait
      */
-    public function addWhiteList(\Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteList $whiteList)
+    public function addWhiteList(\Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteListInterface $whiteList)
     {
         $this->whiteList[] = $whiteList;
 
@@ -231,9 +223,9 @@ trait ExternalCallFilterTrait
     /**
      * Remove whiteList
      *
-     * @param \Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteList $whiteList
+     * @param \Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteListInterface $whiteList
      */
-    public function removeWhiteList(\Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteList $whiteList)
+    public function removeWhiteList(\Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteListInterface $whiteList)
     {
         $this->whiteList->removeElement($whiteList);
     }
@@ -241,7 +233,7 @@ trait ExternalCallFilterTrait
     /**
      * Replace whiteList
      *
-     * @param \Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteList[] $whiteList
+     * @param \Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteListInterface[] $whiteList
      * @return self
      */
     public function replaceWhiteList(array $whiteList)
@@ -289,11 +281,11 @@ trait ExternalCallFilterTrait
     /**
      * Add schedule
      *
-     * @param ExternalCallFilter $schedule
+     * @param ExternalCallFilterInterface $schedule
      *
      * @return ExternalCallFilterTrait
      */
-    public function addSchedule(ExternalCallFilter $schedule)
+    public function addSchedule(ExternalCallFilterInterface $schedule)
     {
         $this->schedules[] = $schedule;
 
@@ -303,9 +295,9 @@ trait ExternalCallFilterTrait
     /**
      * Remove schedule
      *
-     * @param ExternalCallFilter $schedule
+     * @param ExternalCallFilterInterface $schedule
      */
-    public function removeSchedule(ExternalCallFilter $schedule)
+    public function removeSchedule(ExternalCallFilterInterface $schedule)
     {
         $this->schedules->removeElement($schedule);
     }
@@ -313,7 +305,7 @@ trait ExternalCallFilterTrait
     /**
      * Replace schedules
      *
-     * @param \Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilter[] $schedules
+     * @param \Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilterInterface[] $schedules
      * @return self
      */
     public function replaceSchedules(array $schedules)
@@ -361,11 +353,11 @@ trait ExternalCallFilterTrait
     /**
      * Add calendar
      *
-     * @param \Ivoz\Domain\Model\Calendar\Calendar $calendar
+     * @param \Ivoz\Domain\Model\Calendar\CalendarInterface $calendar
      *
      * @return ExternalCallFilterTrait
      */
-    public function addCalendar(\Ivoz\Domain\Model\Calendar\Calendar $calendar)
+    public function addCalendar(\Ivoz\Domain\Model\Calendar\CalendarInterface $calendar)
     {
         $this->calendars[] = $calendar;
 
@@ -375,9 +367,9 @@ trait ExternalCallFilterTrait
     /**
      * Remove calendar
      *
-     * @param \Ivoz\Domain\Model\Calendar\Calendar $calendar
+     * @param \Ivoz\Domain\Model\Calendar\CalendarInterface $calendar
      */
-    public function removeCalendar(\Ivoz\Domain\Model\Calendar\Calendar $calendar)
+    public function removeCalendar(\Ivoz\Domain\Model\Calendar\CalendarInterface $calendar)
     {
         $this->calendars->removeElement($calendar);
     }
@@ -385,7 +377,7 @@ trait ExternalCallFilterTrait
     /**
      * Replace calendars
      *
-     * @param \Ivoz\Domain\Model\Calendar\Calendar[] $calendars
+     * @param \Ivoz\Domain\Model\Calendar\CalendarInterface[] $calendars
      * @return self
      */
     public function replaceCalendars(array $calendars)

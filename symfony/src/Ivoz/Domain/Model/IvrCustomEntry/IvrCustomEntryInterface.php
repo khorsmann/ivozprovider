@@ -118,5 +118,21 @@ interface IvrCustomEntryInterface extends EntityInterface
      */
     public function getTargetVoiceMailUser();
 
+    /**
+     * Set targetConditionalRoute
+     *
+     * @param \Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface $targetConditionalRoute
+     *
+     * @return self
+     */
+    public function setTargetConditionalRoute(\Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface $targetConditionalRoute = null);
+
+    /**
+     * Get targetConditionalRoute
+     *
+     * @return \Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface
+     */
+    public function getTargetConditionalRoute();
+
 }
 

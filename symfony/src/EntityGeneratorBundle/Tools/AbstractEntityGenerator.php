@@ -865,6 +865,16 @@ public function <methodName>(<criteriaArgument>)
     }
 
     /**
+     * @param ClassMetadataInfo $metadata
+     *
+     * @return string
+     */
+    protected function generateEntityLifecycleCallbackMethods(ClassMetadataInfo $metadata)
+    {
+        return '';
+    }
+
+    /**
      * {@inheritDoc}
      */
     protected function generateEntityStubMethods(ClassMetadataInfo $metadata)

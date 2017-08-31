@@ -25,14 +25,6 @@ trait PricingPlansRelTargetPatternTrait
 
     }
 
-    public function __wakeup()
-    {
-        if ($this->id) {
-            $this->initChangelog();
-        }
-        // Do nothing: Doctrines requirement
-    }
-
     /**
      * @return PricingPlansRelTargetPatternDTO
      */

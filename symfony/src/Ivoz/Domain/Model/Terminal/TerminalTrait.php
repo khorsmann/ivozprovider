@@ -32,14 +32,6 @@ trait TerminalTrait
         $this->astPsEndpoints = new ArrayCollection();
     }
 
-    public function __wakeup()
-    {
-        if ($this->id) {
-            $this->initChangelog();
-        }
-        // Do nothing: Doctrines requirement
-    }
-
     /**
      * @return TerminalDTO
      */
@@ -118,11 +110,11 @@ trait TerminalTrait
     /**
      * Add astPsEndpoint
      *
-     * @param \Ast\Domain\Model\PsEndpoint\PsEndpoint $astPsEndpoint
+     * @param \Ast\Domain\Model\PsEndpoint\PsEndpointInterface $astPsEndpoint
      *
      * @return TerminalTrait
      */
-    public function addAstPsEndpoint(\Ast\Domain\Model\PsEndpoint\PsEndpoint $astPsEndpoint)
+    public function addAstPsEndpoint(\Ast\Domain\Model\PsEndpoint\PsEndpointInterface $astPsEndpoint)
     {
         $this->astPsEndpoints[] = $astPsEndpoint;
 
@@ -132,9 +124,9 @@ trait TerminalTrait
     /**
      * Remove astPsEndpoint
      *
-     * @param \Ast\Domain\Model\PsEndpoint\PsEndpoint $astPsEndpoint
+     * @param \Ast\Domain\Model\PsEndpoint\PsEndpointInterface $astPsEndpoint
      */
-    public function removeAstPsEndpoint(\Ast\Domain\Model\PsEndpoint\PsEndpoint $astPsEndpoint)
+    public function removeAstPsEndpoint(\Ast\Domain\Model\PsEndpoint\PsEndpointInterface $astPsEndpoint)
     {
         $this->astPsEndpoints->removeElement($astPsEndpoint);
     }
@@ -142,7 +134,7 @@ trait TerminalTrait
     /**
      * Replace astPsEndpoints
      *
-     * @param \Ast\Domain\Model\PsEndpoint\PsEndpoint[] $astPsEndpoints
+     * @param \Ast\Domain\Model\PsEndpoint\PsEndpointInterface[] $astPsEndpoints
      * @return self
      */
     public function replaceAstPsEndpoints(array $astPsEndpoints)

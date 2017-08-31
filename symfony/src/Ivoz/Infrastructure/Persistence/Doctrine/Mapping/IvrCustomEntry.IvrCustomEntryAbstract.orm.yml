@@ -31,7 +31,7 @@ Ivoz\Domain\Model\IvrCustomEntry\IvrCustomEntryAbstract:
       length: 25
       options:
         fixed: false
-        comment: '[enum:number|extension|voicemail]'
+        comment: '[enum:number|extension|voicemail|conditional]'
       column: targetType
     targetNumberValue:
       type: string
@@ -80,5 +80,15 @@ Ivoz\Domain\Model\IvrCustomEntry\IvrCustomEntryAbstract:
       inversedBy: null
       joinColumns:
         targetVoiceMailUserId:
+          referencedColumnName: id
+      orphanRemoval: false
+    targetConditionalRoute:
+      targetEntity: \Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        targetConditionalRouteId:
           referencedColumnName: id
       orphanRemoval: false

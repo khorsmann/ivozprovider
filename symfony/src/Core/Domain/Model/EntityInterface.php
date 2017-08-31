@@ -50,6 +50,4 @@ interface EntityInterface
      * @return DataTransferObjectInterface
      */
     public static function createDTO();
-
-    public function __wakeup();
 }

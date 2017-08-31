@@ -45,4 +45,6 @@ Ivoz\Domain\Model\Company\Company:
     domains:
       targetEntity: Ivoz\Domain\Model\Domain\DomainInterface
       mappedBy: company
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

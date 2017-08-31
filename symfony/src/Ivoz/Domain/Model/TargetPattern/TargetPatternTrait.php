@@ -16,7 +16,7 @@ trait TargetPatternTrait
     protected $id;
 
     /**
-     * @var \Ivoz\Domain\Model\Brand\Brand
+     * @var \Ivoz\Domain\Model\Brand\BrandInterface
      */
     protected $brand;
 
@@ -28,14 +28,6 @@ trait TargetPatternTrait
     {
         parent::__construct(...func_get_args());
 
-    }
-
-    public function __wakeup()
-    {
-        if ($this->id) {
-            $this->initChangelog();
-        }
-        // Do nothing: Doctrines requirement
     }
 
     /**

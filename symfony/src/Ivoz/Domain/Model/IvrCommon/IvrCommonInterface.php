@@ -308,23 +308,23 @@ interface IvrCommonInterface extends EntityInterface
     /**
      * Add extension
      *
-     * @param \Ivoz\Domain\Model\Extension\Extension $extension
+     * @param \Ivoz\Domain\Model\Extension\ExtensionInterface $extension
      *
      * @return IvrCommonTrait
      */
-    public function addExtension(\Ivoz\Domain\Model\Extension\Extension $extension);
+    public function addExtension(\Ivoz\Domain\Model\Extension\ExtensionInterface $extension);
 
     /**
      * Remove extension
      *
-     * @param \Ivoz\Domain\Model\Extension\Extension $extension
+     * @param \Ivoz\Domain\Model\Extension\ExtensionInterface $extension
      */
-    public function removeExtension(\Ivoz\Domain\Model\Extension\Extension $extension);
+    public function removeExtension(\Ivoz\Domain\Model\Extension\ExtensionInterface $extension);
 
     /**
      * Replace extensions
      *
-     * @param \Ivoz\Domain\Model\Extension\Extension[] $extensions
+     * @param \Ivoz\Domain\Model\Extension\ExtensionInterface[] $extensions
      * @return self
      */
     public function replaceExtensions(array $extensions);

@@ -20,7 +20,7 @@ class TraitGenerator extends AbstractEntityGenerator
         $metadata->rootEntityName = $metadata->name;
         $metadata->customRepositoryClassName = null;
 
-        return $metadata;
+        return parent::transformMetadata($metadata);
     }
 
     /**
@@ -44,14 +44,6 @@ class TraitGenerator extends AbstractEntityGenerator
 public function __construct(<requiredFields>)<lineBreak>{
 <spaces>parent::__construct(...func_get_args());
 <requiredFieldsSetters><collections>
-}
-
-public function __wakeup()
-{
-    if ($this->id) {
-        $this->initChangelog();
-    }
-    // Do nothing: Doctrines requirement
 }
 
 /**

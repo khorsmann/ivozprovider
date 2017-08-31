@@ -77,7 +77,7 @@ class OutgoingDDIRuleDTO implements DataTransferObjectInterface
         $this->patterns = [];
         foreach ($items as $item) {
             $this->patterns[] = $transformer->transform(
-                'Ivoz\\Domain\\Model\\OutgoingDDIRulesPattern\\OutgoingDDIRulesPatternInterface',
+                'Ivoz\\Domain\\Model\\OutgoingDDIRulesPattern\\OutgoingDDIRulesPattern',
                 $item
             );
         }
@@ -90,7 +90,7 @@ class OutgoingDDIRuleDTO implements DataTransferObjectInterface
     public function transformCollections(CollectionTransformerInterface $transformer)
     {
         $this->patterns = $transformer->transform(
-            'Ivoz\\Domain\\Model\\OutgoingDDIRulesPattern\\OutgoingDDIRulesPatternInterface',
+            'Ivoz\\Domain\\Model\\OutgoingDDIRulesPattern\\OutgoingDDIRulesPattern',
             $this->patterns
         );
     }

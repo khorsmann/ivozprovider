@@ -92,14 +92,6 @@ trait CompanyTrait
         $this->domains = new ArrayCollection();
     }
 
-    public function __wakeup()
-    {
-        if ($this->id) {
-            $this->initChangelog();
-        }
-        // Do nothing: Doctrines requirement
-    }
-
     /**
      * @return CompanyDTO
      */
@@ -208,11 +200,11 @@ trait CompanyTrait
     /**
      * Add extension
      *
-     * @param \Ivoz\Domain\Model\Extension\Extension $extension
+     * @param \Ivoz\Domain\Model\Extension\ExtensionInterface $extension
      *
      * @return CompanyTrait
      */
-    public function addExtension(\Ivoz\Domain\Model\Extension\Extension $extension)
+    public function addExtension(\Ivoz\Domain\Model\Extension\ExtensionInterface $extension)
     {
         $this->extensions[] = $extension;
 
@@ -222,9 +214,9 @@ trait CompanyTrait
     /**
      * Remove extension
      *
-     * @param \Ivoz\Domain\Model\Extension\Extension $extension
+     * @param \Ivoz\Domain\Model\Extension\ExtensionInterface $extension
      */
-    public function removeExtension(\Ivoz\Domain\Model\Extension\Extension $extension)
+    public function removeExtension(\Ivoz\Domain\Model\Extension\ExtensionInterface $extension)
     {
         $this->extensions->removeElement($extension);
     }
@@ -232,7 +224,7 @@ trait CompanyTrait
     /**
      * Replace extensions
      *
-     * @param \Ivoz\Domain\Model\Extension\Extension[] $extensions
+     * @param \Ivoz\Domain\Model\Extension\ExtensionInterface[] $extensions
      * @return self
      */
     public function replaceExtensions(array $extensions)
@@ -280,11 +272,11 @@ trait CompanyTrait
     /**
      * Add ddi
      *
-     * @param \Ivoz\Domain\Model\DDI\DDI $ddi
+     * @param \Ivoz\Domain\Model\DDI\DDIInterface $ddi
      *
      * @return CompanyTrait
      */
-    public function addDdi(\Ivoz\Domain\Model\DDI\DDI $ddi)
+    public function addDdi(\Ivoz\Domain\Model\DDI\DDIInterface $ddi)
     {
         $this->ddis[] = $ddi;
 
@@ -294,9 +286,9 @@ trait CompanyTrait
     /**
      * Remove ddi
      *
-     * @param \Ivoz\Domain\Model\DDI\DDI $ddi
+     * @param \Ivoz\Domain\Model\DDI\DDIInterface $ddi
      */
-    public function removeDdi(\Ivoz\Domain\Model\DDI\DDI $ddi)
+    public function removeDdi(\Ivoz\Domain\Model\DDI\DDIInterface $ddi)
     {
         $this->ddis->removeElement($ddi);
     }
@@ -304,7 +296,7 @@ trait CompanyTrait
     /**
      * Replace ddis
      *
-     * @param \Ivoz\Domain\Model\DDI\DDI[] $ddis
+     * @param \Ivoz\Domain\Model\DDI\DDIInterface[] $ddis
      * @return self
      */
     public function replaceDdis(array $ddis)
@@ -352,11 +344,11 @@ trait CompanyTrait
     /**
      * Add friend
      *
-     * @param \Ivoz\Domain\Model\Friend\Friend $friend
+     * @param \Ivoz\Domain\Model\Friend\FriendInterface $friend
      *
      * @return CompanyTrait
      */
-    public function addFriend(\Ivoz\Domain\Model\Friend\Friend $friend)
+    public function addFriend(\Ivoz\Domain\Model\Friend\FriendInterface $friend)
     {
         $this->friends[] = $friend;
 
@@ -366,9 +358,9 @@ trait CompanyTrait
     /**
      * Remove friend
      *
-     * @param \Ivoz\Domain\Model\Friend\Friend $friend
+     * @param \Ivoz\Domain\Model\Friend\FriendInterface $friend
      */
-    public function removeFriend(\Ivoz\Domain\Model\Friend\Friend $friend)
+    public function removeFriend(\Ivoz\Domain\Model\Friend\FriendInterface $friend)
     {
         $this->friends->removeElement($friend);
     }
@@ -376,7 +368,7 @@ trait CompanyTrait
     /**
      * Replace friends
      *
-     * @param \Ivoz\Domain\Model\Friend\Friend[] $friends
+     * @param \Ivoz\Domain\Model\Friend\FriendInterface[] $friends
      * @return self
      */
     public function replaceFriends(array $friends)
@@ -424,11 +416,11 @@ trait CompanyTrait
     /**
      * Add companyService
      *
-     * @param \Ivoz\Domain\Model\CompanyService\CompanyService $companyService
+     * @param \Ivoz\Domain\Model\CompanyService\CompanyServiceInterface $companyService
      *
      * @return CompanyTrait
      */
-    public function addCompanyService(\Ivoz\Domain\Model\CompanyService\CompanyService $companyService)
+    public function addCompanyService(\Ivoz\Domain\Model\CompanyService\CompanyServiceInterface $companyService)
     {
         $this->companyServices[] = $companyService;
 
@@ -438,9 +430,9 @@ trait CompanyTrait
     /**
      * Remove companyService
      *
-     * @param \Ivoz\Domain\Model\CompanyService\CompanyService $companyService
+     * @param \Ivoz\Domain\Model\CompanyService\CompanyServiceInterface $companyService
      */
-    public function removeCompanyService(\Ivoz\Domain\Model\CompanyService\CompanyService $companyService)
+    public function removeCompanyService(\Ivoz\Domain\Model\CompanyService\CompanyServiceInterface $companyService)
     {
         $this->companyServices->removeElement($companyService);
     }
@@ -448,7 +440,7 @@ trait CompanyTrait
     /**
      * Replace companyServices
      *
-     * @param \Ivoz\Domain\Model\CompanyService\CompanyService[] $companyServices
+     * @param \Ivoz\Domain\Model\CompanyService\CompanyServiceInterface[] $companyServices
      * @return self
      */
     public function replaceCompanyServices(array $companyServices)
@@ -496,11 +488,11 @@ trait CompanyTrait
     /**
      * Add terminal
      *
-     * @param \Ivoz\Domain\Model\Terminal\Terminal $terminal
+     * @param \Ivoz\Domain\Model\Terminal\TerminalInterface $terminal
      *
      * @return CompanyTrait
      */
-    public function addTerminal(\Ivoz\Domain\Model\Terminal\Terminal $terminal)
+    public function addTerminal(\Ivoz\Domain\Model\Terminal\TerminalInterface $terminal)
     {
         $this->terminals[] = $terminal;
 
@@ -510,9 +502,9 @@ trait CompanyTrait
     /**
      * Remove terminal
      *
-     * @param \Ivoz\Domain\Model\Terminal\Terminal $terminal
+     * @param \Ivoz\Domain\Model\Terminal\TerminalInterface $terminal
      */
-    public function removeTerminal(\Ivoz\Domain\Model\Terminal\Terminal $terminal)
+    public function removeTerminal(\Ivoz\Domain\Model\Terminal\TerminalInterface $terminal)
     {
         $this->terminals->removeElement($terminal);
     }
@@ -520,7 +512,7 @@ trait CompanyTrait
     /**
      * Replace terminals
      *
-     * @param \Ivoz\Domain\Model\Terminal\Terminal[] $terminals
+     * @param \Ivoz\Domain\Model\Terminal\TerminalInterface[] $terminals
      * @return self
      */
     public function replaceTerminals(array $terminals)
@@ -568,11 +560,11 @@ trait CompanyTrait
     /**
      * Add relPricingPlan
      *
-     * @param \Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompany $relPricingPlan
+     * @param \Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompanyInterface $relPricingPlan
      *
      * @return CompanyTrait
      */
-    public function addRelPricingPlan(\Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompany $relPricingPlan)
+    public function addRelPricingPlan(\Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompanyInterface $relPricingPlan)
     {
         $this->relPricingPlans[] = $relPricingPlan;
 
@@ -582,9 +574,9 @@ trait CompanyTrait
     /**
      * Remove relPricingPlan
      *
-     * @param \Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompany $relPricingPlan
+     * @param \Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompanyInterface $relPricingPlan
      */
-    public function removeRelPricingPlan(\Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompany $relPricingPlan)
+    public function removeRelPricingPlan(\Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompanyInterface $relPricingPlan)
     {
         $this->relPricingPlans->removeElement($relPricingPlan);
     }
@@ -592,7 +584,7 @@ trait CompanyTrait
     /**
      * Replace relPricingPlans
      *
-     * @param \Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompany[] $relPricingPlans
+     * @param \Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompanyInterface[] $relPricingPlans
      * @return self
      */
     public function replaceRelPricingPlans(array $relPricingPlans)
@@ -640,11 +632,11 @@ trait CompanyTrait
     /**
      * Add musicsOnHold
      *
-     * @param \Ivoz\Domain\Model\MusicOnHold\MusicOnHold $musicsOnHold
+     * @param \Ivoz\Domain\Model\MusicOnHold\MusicOnHoldInterface $musicsOnHold
      *
      * @return CompanyTrait
      */
-    public function addMusicsOnHold(\Ivoz\Domain\Model\MusicOnHold\MusicOnHold $musicsOnHold)
+    public function addMusicsOnHold(\Ivoz\Domain\Model\MusicOnHold\MusicOnHoldInterface $musicsOnHold)
     {
         $this->musicsOnHold[] = $musicsOnHold;
 
@@ -654,9 +646,9 @@ trait CompanyTrait
     /**
      * Remove musicsOnHold
      *
-     * @param \Ivoz\Domain\Model\MusicOnHold\MusicOnHold $musicsOnHold
+     * @param \Ivoz\Domain\Model\MusicOnHold\MusicOnHoldInterface $musicsOnHold
      */
-    public function removeMusicsOnHold(\Ivoz\Domain\Model\MusicOnHold\MusicOnHold $musicsOnHold)
+    public function removeMusicsOnHold(\Ivoz\Domain\Model\MusicOnHold\MusicOnHoldInterface $musicsOnHold)
     {
         $this->musicsOnHold->removeElement($musicsOnHold);
     }
@@ -664,7 +656,7 @@ trait CompanyTrait
     /**
      * Replace musicsOnHold
      *
-     * @param \Ivoz\Domain\Model\MusicOnHold\MusicOnHold[] $musicsOnHold
+     * @param \Ivoz\Domain\Model\MusicOnHold\MusicOnHoldInterface[] $musicsOnHold
      * @return self
      */
     public function replaceMusicsOnHold(array $musicsOnHold)
@@ -712,11 +704,11 @@ trait CompanyTrait
     /**
      * Add recording
      *
-     * @param \Ivoz\Domain\Model\Recording\Recording $recording
+     * @param \Ivoz\Domain\Model\Recording\RecordingInterface $recording
      *
      * @return CompanyTrait
      */
-    public function addRecording(\Ivoz\Domain\Model\Recording\Recording $recording)
+    public function addRecording(\Ivoz\Domain\Model\Recording\RecordingInterface $recording)
     {
         $this->recordings[] = $recording;
 
@@ -726,9 +718,9 @@ trait CompanyTrait
     /**
      * Remove recording
      *
-     * @param \Ivoz\Domain\Model\Recording\Recording $recording
+     * @param \Ivoz\Domain\Model\Recording\RecordingInterface $recording
      */
-    public function removeRecording(\Ivoz\Domain\Model\Recording\Recording $recording)
+    public function removeRecording(\Ivoz\Domain\Model\Recording\RecordingInterface $recording)
     {
         $this->recordings->removeElement($recording);
     }
@@ -736,7 +728,7 @@ trait CompanyTrait
     /**
      * Replace recordings
      *
-     * @param \Ivoz\Domain\Model\Recording\Recording[] $recordings
+     * @param \Ivoz\Domain\Model\Recording\RecordingInterface[] $recordings
      * @return self
      */
     public function replaceRecordings(array $recordings)
@@ -784,11 +776,11 @@ trait CompanyTrait
     /**
      * Add relFeature
      *
-     * @param \Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompany $relFeature
+     * @param \Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompanyInterface $relFeature
      *
      * @return CompanyTrait
      */
-    public function addRelFeature(\Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompany $relFeature)
+    public function addRelFeature(\Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompanyInterface $relFeature)
     {
         $this->relFeatures[] = $relFeature;
 
@@ -798,9 +790,9 @@ trait CompanyTrait
     /**
      * Remove relFeature
      *
-     * @param \Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompany $relFeature
+     * @param \Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompanyInterface $relFeature
      */
-    public function removeRelFeature(\Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompany $relFeature)
+    public function removeRelFeature(\Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompanyInterface $relFeature)
     {
         $this->relFeatures->removeElement($relFeature);
     }
@@ -808,7 +800,7 @@ trait CompanyTrait
     /**
      * Replace relFeatures
      *
-     * @param \Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompany[] $relFeatures
+     * @param \Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompanyInterface[] $relFeatures
      * @return self
      */
     public function replaceRelFeatures(array $relFeatures)
@@ -856,11 +848,11 @@ trait CompanyTrait
     /**
      * Add callACLPattern
      *
-     * @param \Ivoz\Domain\Model\CallACLPattern\CallACLPattern $callACLPattern
+     * @param \Ivoz\Domain\Model\CallACLPattern\CallACLPatternInterface $callACLPattern
      *
      * @return CompanyTrait
      */
-    public function addCallACLPattern(\Ivoz\Domain\Model\CallACLPattern\CallACLPattern $callACLPattern)
+    public function addCallACLPattern(\Ivoz\Domain\Model\CallACLPattern\CallACLPatternInterface $callACLPattern)
     {
         $this->callACLPatterns[] = $callACLPattern;
 
@@ -870,9 +862,9 @@ trait CompanyTrait
     /**
      * Remove callACLPattern
      *
-     * @param \Ivoz\Domain\Model\CallACLPattern\CallACLPattern $callACLPattern
+     * @param \Ivoz\Domain\Model\CallACLPattern\CallACLPatternInterface $callACLPattern
      */
-    public function removeCallACLPattern(\Ivoz\Domain\Model\CallACLPattern\CallACLPattern $callACLPattern)
+    public function removeCallACLPattern(\Ivoz\Domain\Model\CallACLPattern\CallACLPatternInterface $callACLPattern)
     {
         $this->callACLPatterns->removeElement($callACLPattern);
     }
@@ -880,7 +872,7 @@ trait CompanyTrait
     /**
      * Replace callACLPatterns
      *
-     * @param \Ivoz\Domain\Model\CallACLPattern\CallACLPattern[] $callACLPatterns
+     * @param \Ivoz\Domain\Model\CallACLPattern\CallACLPatternInterface[] $callACLPatterns
      * @return self
      */
     public function replaceCallACLPatterns(array $callACLPatterns)
@@ -928,11 +920,11 @@ trait CompanyTrait
     /**
      * Add domain
      *
-     * @param \Ivoz\Domain\Model\Domain\Domain $domain
+     * @param \Ivoz\Domain\Model\Domain\DomainInterface $domain
      *
      * @return CompanyTrait
      */
-    public function addDomain(\Ivoz\Domain\Model\Domain\Domain $domain)
+    public function addDomain(\Ivoz\Domain\Model\Domain\DomainInterface $domain)
     {
         $this->domains[] = $domain;
 
@@ -942,9 +934,9 @@ trait CompanyTrait
     /**
      * Remove domain
      *
-     * @param \Ivoz\Domain\Model\Domain\Domain $domain
+     * @param \Ivoz\Domain\Model\Domain\DomainInterface $domain
      */
-    public function removeDomain(\Ivoz\Domain\Model\Domain\Domain $domain)
+    public function removeDomain(\Ivoz\Domain\Model\Domain\DomainInterface $domain)
     {
         $this->domains->removeElement($domain);
     }
@@ -952,7 +944,7 @@ trait CompanyTrait
     /**
      * Replace domains
      *
-     * @param \Ivoz\Domain\Model\Domain\Domain[] $domains
+     * @param \Ivoz\Domain\Model\Domain\DomainInterface[] $domains
      * @return self
      */
     public function replaceDomains(array $domains)

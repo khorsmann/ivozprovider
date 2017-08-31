@@ -11,4 +11,6 @@ Ast\Domain\Model\PsAor\PsAor:
       id: true
       generator:
       strategy: IDENTITY
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

@@ -11,4 +11,6 @@ Ast\Domain\Model\Musiconhold\Musiconhold:
       id: true
       generator:
         strategy: IDENTITY
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

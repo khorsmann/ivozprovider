@@ -28,4 +28,6 @@ Ivoz\Domain\Model\ConditionalRoutesConditionsRelCalendar\ConditionalRoutesCondit
         calendarId:
           referencedColumnName: id
       orphanRemoval: false
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

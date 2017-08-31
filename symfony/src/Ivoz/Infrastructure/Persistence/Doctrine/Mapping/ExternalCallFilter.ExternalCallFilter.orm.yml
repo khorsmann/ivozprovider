@@ -24,4 +24,6 @@ Ivoz\Domain\Model\ExternalCallFilter\ExternalCallFilter:
     calendars:
       targetEntity: \Ivoz\Domain\Model\Calendar\CalendarInterface
       mappedBy: filter
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

@@ -497,23 +497,23 @@ interface CompanyInterface extends EntityInterface
     /**
      * Add extension
      *
-     * @param \Ivoz\Domain\Model\Extension\Extension $extension
+     * @param \Ivoz\Domain\Model\Extension\ExtensionInterface $extension
      *
      * @return CompanyTrait
      */
-    public function addExtension(\Ivoz\Domain\Model\Extension\Extension $extension);
+    public function addExtension(\Ivoz\Domain\Model\Extension\ExtensionInterface $extension);
 
     /**
      * Remove extension
      *
-     * @param \Ivoz\Domain\Model\Extension\Extension $extension
+     * @param \Ivoz\Domain\Model\Extension\ExtensionInterface $extension
      */
-    public function removeExtension(\Ivoz\Domain\Model\Extension\Extension $extension);
+    public function removeExtension(\Ivoz\Domain\Model\Extension\ExtensionInterface $extension);
 
     /**
      * Replace extensions
      *
-     * @param \Ivoz\Domain\Model\Extension\Extension[] $extensions
+     * @param \Ivoz\Domain\Model\Extension\ExtensionInterface[] $extensions
      * @return self
      */
     public function replaceExtensions(array $extensions);
@@ -528,23 +528,23 @@ interface CompanyInterface extends EntityInterface
     /**
      * Add ddi
      *
-     * @param \Ivoz\Domain\Model\DDI\DDI $ddi
+     * @param \Ivoz\Domain\Model\DDI\DDIInterface $ddi
      *
      * @return CompanyTrait
      */
-    public function addDdi(\Ivoz\Domain\Model\DDI\DDI $ddi);
+    public function addDdi(\Ivoz\Domain\Model\DDI\DDIInterface $ddi);
 
     /**
      * Remove ddi
      *
-     * @param \Ivoz\Domain\Model\DDI\DDI $ddi
+     * @param \Ivoz\Domain\Model\DDI\DDIInterface $ddi
      */
-    public function removeDdi(\Ivoz\Domain\Model\DDI\DDI $ddi);
+    public function removeDdi(\Ivoz\Domain\Model\DDI\DDIInterface $ddi);
 
     /**
      * Replace ddis
      *
-     * @param \Ivoz\Domain\Model\DDI\DDI[] $ddis
+     * @param \Ivoz\Domain\Model\DDI\DDIInterface[] $ddis
      * @return self
      */
     public function replaceDdis(array $ddis);
@@ -559,23 +559,23 @@ interface CompanyInterface extends EntityInterface
     /**
      * Add friend
      *
-     * @param \Ivoz\Domain\Model\Friend\Friend $friend
+     * @param \Ivoz\Domain\Model\Friend\FriendInterface $friend
      *
      * @return CompanyTrait
      */
-    public function addFriend(\Ivoz\Domain\Model\Friend\Friend $friend);
+    public function addFriend(\Ivoz\Domain\Model\Friend\FriendInterface $friend);
 
     /**
      * Remove friend
      *
-     * @param \Ivoz\Domain\Model\Friend\Friend $friend
+     * @param \Ivoz\Domain\Model\Friend\FriendInterface $friend
      */
-    public function removeFriend(\Ivoz\Domain\Model\Friend\Friend $friend);
+    public function removeFriend(\Ivoz\Domain\Model\Friend\FriendInterface $friend);
 
     /**
      * Replace friends
      *
-     * @param \Ivoz\Domain\Model\Friend\Friend[] $friends
+     * @param \Ivoz\Domain\Model\Friend\FriendInterface[] $friends
      * @return self
      */
     public function replaceFriends(array $friends);
@@ -590,23 +590,23 @@ interface CompanyInterface extends EntityInterface
     /**
      * Add companyService
      *
-     * @param \Ivoz\Domain\Model\CompanyService\CompanyService $companyService
+     * @param \Ivoz\Domain\Model\CompanyService\CompanyServiceInterface $companyService
      *
      * @return CompanyTrait
      */
-    public function addCompanyService(\Ivoz\Domain\Model\CompanyService\CompanyService $companyService);
+    public function addCompanyService(\Ivoz\Domain\Model\CompanyService\CompanyServiceInterface $companyService);
 
     /**
      * Remove companyService
      *
-     * @param \Ivoz\Domain\Model\CompanyService\CompanyService $companyService
+     * @param \Ivoz\Domain\Model\CompanyService\CompanyServiceInterface $companyService
      */
-    public function removeCompanyService(\Ivoz\Domain\Model\CompanyService\CompanyService $companyService);
+    public function removeCompanyService(\Ivoz\Domain\Model\CompanyService\CompanyServiceInterface $companyService);
 
     /**
      * Replace companyServices
      *
-     * @param \Ivoz\Domain\Model\CompanyService\CompanyService[] $companyServices
+     * @param \Ivoz\Domain\Model\CompanyService\CompanyServiceInterface[] $companyServices
      * @return self
      */
     public function replaceCompanyServices(array $companyServices);
@@ -621,23 +621,23 @@ interface CompanyInterface extends EntityInterface
     /**
      * Add terminal
      *
-     * @param \Ivoz\Domain\Model\Terminal\Terminal $terminal
+     * @param \Ivoz\Domain\Model\Terminal\TerminalInterface $terminal
      *
      * @return CompanyTrait
      */
-    public function addTerminal(\Ivoz\Domain\Model\Terminal\Terminal $terminal);
+    public function addTerminal(\Ivoz\Domain\Model\Terminal\TerminalInterface $terminal);
 
     /**
      * Remove terminal
      *
-     * @param \Ivoz\Domain\Model\Terminal\Terminal $terminal
+     * @param \Ivoz\Domain\Model\Terminal\TerminalInterface $terminal
      */
-    public function removeTerminal(\Ivoz\Domain\Model\Terminal\Terminal $terminal);
+    public function removeTerminal(\Ivoz\Domain\Model\Terminal\TerminalInterface $terminal);
 
     /**
      * Replace terminals
      *
-     * @param \Ivoz\Domain\Model\Terminal\Terminal[] $terminals
+     * @param \Ivoz\Domain\Model\Terminal\TerminalInterface[] $terminals
      * @return self
      */
     public function replaceTerminals(array $terminals);
@@ -652,23 +652,23 @@ interface CompanyInterface extends EntityInterface
     /**
      * Add relPricingPlan
      *
-     * @param \Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompany $relPricingPlan
+     * @param \Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompanyInterface $relPricingPlan
      *
      * @return CompanyTrait
      */
-    public function addRelPricingPlan(\Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompany $relPricingPlan);
+    public function addRelPricingPlan(\Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompanyInterface $relPricingPlan);
 
     /**
      * Remove relPricingPlan
      *
-     * @param \Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompany $relPricingPlan
+     * @param \Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompanyInterface $relPricingPlan
      */
-    public function removeRelPricingPlan(\Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompany $relPricingPlan);
+    public function removeRelPricingPlan(\Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompanyInterface $relPricingPlan);
 
     /**
      * Replace relPricingPlans
      *
-     * @param \Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompany[] $relPricingPlans
+     * @param \Ivoz\Domain\Model\PricingPlansRelCompany\PricingPlansRelCompanyInterface[] $relPricingPlans
      * @return self
      */
     public function replaceRelPricingPlans(array $relPricingPlans);
@@ -683,23 +683,23 @@ interface CompanyInterface extends EntityInterface
     /**
      * Add musicsOnHold
      *
-     * @param \Ivoz\Domain\Model\MusicOnHold\MusicOnHold $musicsOnHold
+     * @param \Ivoz\Domain\Model\MusicOnHold\MusicOnHoldInterface $musicsOnHold
      *
      * @return CompanyTrait
      */
-    public function addMusicsOnHold(\Ivoz\Domain\Model\MusicOnHold\MusicOnHold $musicsOnHold);
+    public function addMusicsOnHold(\Ivoz\Domain\Model\MusicOnHold\MusicOnHoldInterface $musicsOnHold);
 
     /**
      * Remove musicsOnHold
      *
-     * @param \Ivoz\Domain\Model\MusicOnHold\MusicOnHold $musicsOnHold
+     * @param \Ivoz\Domain\Model\MusicOnHold\MusicOnHoldInterface $musicsOnHold
      */
-    public function removeMusicsOnHold(\Ivoz\Domain\Model\MusicOnHold\MusicOnHold $musicsOnHold);
+    public function removeMusicsOnHold(\Ivoz\Domain\Model\MusicOnHold\MusicOnHoldInterface $musicsOnHold);
 
     /**
      * Replace musicsOnHold
      *
-     * @param \Ivoz\Domain\Model\MusicOnHold\MusicOnHold[] $musicsOnHold
+     * @param \Ivoz\Domain\Model\MusicOnHold\MusicOnHoldInterface[] $musicsOnHold
      * @return self
      */
     public function replaceMusicsOnHold(array $musicsOnHold);
@@ -714,23 +714,23 @@ interface CompanyInterface extends EntityInterface
     /**
      * Add recording
      *
-     * @param \Ivoz\Domain\Model\Recording\Recording $recording
+     * @param \Ivoz\Domain\Model\Recording\RecordingInterface $recording
      *
      * @return CompanyTrait
      */
-    public function addRecording(\Ivoz\Domain\Model\Recording\Recording $recording);
+    public function addRecording(\Ivoz\Domain\Model\Recording\RecordingInterface $recording);
 
     /**
      * Remove recording
      *
-     * @param \Ivoz\Domain\Model\Recording\Recording $recording
+     * @param \Ivoz\Domain\Model\Recording\RecordingInterface $recording
      */
-    public function removeRecording(\Ivoz\Domain\Model\Recording\Recording $recording);
+    public function removeRecording(\Ivoz\Domain\Model\Recording\RecordingInterface $recording);
 
     /**
      * Replace recordings
      *
-     * @param \Ivoz\Domain\Model\Recording\Recording[] $recordings
+     * @param \Ivoz\Domain\Model\Recording\RecordingInterface[] $recordings
      * @return self
      */
     public function replaceRecordings(array $recordings);
@@ -745,23 +745,23 @@ interface CompanyInterface extends EntityInterface
     /**
      * Add relFeature
      *
-     * @param \Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompany $relFeature
+     * @param \Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompanyInterface $relFeature
      *
      * @return CompanyTrait
      */
-    public function addRelFeature(\Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompany $relFeature);
+    public function addRelFeature(\Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompanyInterface $relFeature);
 
     /**
      * Remove relFeature
      *
-     * @param \Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompany $relFeature
+     * @param \Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompanyInterface $relFeature
      */
-    public function removeRelFeature(\Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompany $relFeature);
+    public function removeRelFeature(\Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompanyInterface $relFeature);
 
     /**
      * Replace relFeatures
      *
-     * @param \Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompany[] $relFeatures
+     * @param \Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompanyInterface[] $relFeatures
      * @return self
      */
     public function replaceRelFeatures(array $relFeatures);
@@ -776,23 +776,23 @@ interface CompanyInterface extends EntityInterface
     /**
      * Add callACLPattern
      *
-     * @param \Ivoz\Domain\Model\CallACLPattern\CallACLPattern $callACLPattern
+     * @param \Ivoz\Domain\Model\CallACLPattern\CallACLPatternInterface $callACLPattern
      *
      * @return CompanyTrait
      */
-    public function addCallACLPattern(\Ivoz\Domain\Model\CallACLPattern\CallACLPattern $callACLPattern);
+    public function addCallACLPattern(\Ivoz\Domain\Model\CallACLPattern\CallACLPatternInterface $callACLPattern);
 
     /**
      * Remove callACLPattern
      *
-     * @param \Ivoz\Domain\Model\CallACLPattern\CallACLPattern $callACLPattern
+     * @param \Ivoz\Domain\Model\CallACLPattern\CallACLPatternInterface $callACLPattern
      */
-    public function removeCallACLPattern(\Ivoz\Domain\Model\CallACLPattern\CallACLPattern $callACLPattern);
+    public function removeCallACLPattern(\Ivoz\Domain\Model\CallACLPattern\CallACLPatternInterface $callACLPattern);
 
     /**
      * Replace callACLPatterns
      *
-     * @param \Ivoz\Domain\Model\CallACLPattern\CallACLPattern[] $callACLPatterns
+     * @param \Ivoz\Domain\Model\CallACLPattern\CallACLPatternInterface[] $callACLPatterns
      * @return self
      */
     public function replaceCallACLPatterns(array $callACLPatterns);
@@ -807,23 +807,23 @@ interface CompanyInterface extends EntityInterface
     /**
      * Add domain
      *
-     * @param \Ivoz\Domain\Model\Domain\Domain $domain
+     * @param \Ivoz\Domain\Model\Domain\DomainInterface $domain
      *
      * @return CompanyTrait
      */
-    public function addDomain(\Ivoz\Domain\Model\Domain\Domain $domain);
+    public function addDomain(\Ivoz\Domain\Model\Domain\DomainInterface $domain);
 
     /**
      * Remove domain
      *
-     * @param \Ivoz\Domain\Model\Domain\Domain $domain
+     * @param \Ivoz\Domain\Model\Domain\DomainInterface $domain
      */
-    public function removeDomain(\Ivoz\Domain\Model\Domain\Domain $domain);
+    public function removeDomain(\Ivoz\Domain\Model\Domain\DomainInterface $domain);
 
     /**
      * Replace domains
      *
-     * @param \Ivoz\Domain\Model\Domain\Domain[] $domains
+     * @param \Ivoz\Domain\Model\Domain\DomainInterface[] $domains
      * @return self
      */
     public function replaceDomains(array $domains);

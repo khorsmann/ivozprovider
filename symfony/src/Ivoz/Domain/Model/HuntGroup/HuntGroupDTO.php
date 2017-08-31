@@ -131,7 +131,7 @@ class HuntGroupDTO implements DataTransferObjectInterface
         $this->huntGroupsRelUsers = [];
         foreach ($items as $item) {
             $this->huntGroupsRelUsers[] = $transformer->transform(
-                'Ivoz\\Domain\\Model\\HuntGroupsRelUser\\HuntGroupsRelUserInterface',
+                'Ivoz\\Domain\\Model\\HuntGroupsRelUser\\HuntGroupsRelUser',
                 $item
             );
         }
@@ -144,7 +144,7 @@ class HuntGroupDTO implements DataTransferObjectInterface
     public function transformCollections(CollectionTransformerInterface $transformer)
     {
         $this->huntGroupsRelUsers = $transformer->transform(
-            'Ivoz\\Domain\\Model\\HuntGroupsRelUser\\HuntGroupsRelUserInterface',
+            'Ivoz\\Domain\\Model\\HuntGroupsRelUser\\HuntGroupsRelUser',
             $this->huntGroupsRelUsers
         );
     }

@@ -11,4 +11,6 @@ Kam\Domain\Model\Dispatcher\Dispatcher:
       id: true
       generator:
         strategy: IDENTITY
-  lifecycleCallbacks: {  }
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

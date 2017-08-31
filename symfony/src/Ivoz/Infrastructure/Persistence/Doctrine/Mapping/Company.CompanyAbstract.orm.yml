@@ -97,6 +97,7 @@ Ivoz\Domain\Model\Company\CompanyAbstract:
       length: 255
       options:
         fixed: false
+      column: country
     outboundPrefix:
       type: string
       nullable: true

@@ -1,13 +1,15 @@
 Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList:
-    type: entity
-    table: ExternalCallFilterBlackLists
+  type: entity
+  table: ExternalCallFilterBlackLists
+  id:
     id:
-        id:
-            type: integer
-            nullable: false
-            options:
-                unsigned: true
-            id: true
-            generator:
-                strategy: IDENTITY
-    lifecycleCallbacks: {  }
+      type: integer
+      nullable: false
+      options:
+        unsigned: true
+      id: true
+      generator:
+        strategy: IDENTITY
+  lifecycleCallbacks:
+    postLoad:
+      - initChangelog

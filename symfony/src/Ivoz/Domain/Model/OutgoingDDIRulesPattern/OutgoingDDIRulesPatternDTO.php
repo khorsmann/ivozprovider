@@ -76,7 +76,7 @@ class OutgoingDDIRulesPatternDTO implements DataTransferObjectInterface
      */
     public function transformForeignKeys(ForeignKeyTransformerInterface $transformer)
     {
-        $this->outgoingDDIRule = $transformer->transform('Ivoz\\Domain\\Model\\OutgoingDDIRule\\OutgoingDDIRuleInterface', $this->getOutgoingDDIRuleId());
+        $this->outgoingDDIRule = $transformer->transform('Ivoz\\Domain\\Model\\OutgoingDDIRule\\OutgoingDDIRule', $this->getOutgoingDDIRuleId());
         $this->matchList = $transformer->transform('Ivoz\\Domain\\Model\\MatchList\\MatchList', $this->getMatchListId());
         $this->forcedDDI = $transformer->transform('Ivoz\\Domain\\Model\\DDI\\DDI', $this->getForcedDDIId());
     }
@@ -170,7 +170,7 @@ class OutgoingDDIRulesPatternDTO implements DataTransferObjectInterface
     }
 
     /**
-     * @return \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
+     * @return \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRule
      */
     public function getOutgoingDDIRule()
     {

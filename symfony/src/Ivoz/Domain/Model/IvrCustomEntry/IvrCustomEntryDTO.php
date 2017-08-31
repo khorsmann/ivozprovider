@@ -54,6 +54,11 @@ class IvrCustomEntryDTO implements DataTransferObjectInterface
     /**
      * @var mixed
      */
+    private $targetConditionalRouteId;
+
+    /**
+     * @var mixed
+     */
     private $IvrCustom;
 
     /**
@@ -72,6 +77,11 @@ class IvrCustomEntryDTO implements DataTransferObjectInterface
     private $targetVoiceMailUser;
 
     /**
+     * @var mixed
+     */
+    private $targetConditionalRoute;
+
+    /**
      * @return array
      */
     public function __toArray()
@@ -84,7 +94,8 @@ class IvrCustomEntryDTO implements DataTransferObjectInterface
             'ivrCustomId' => $this->getIvrCustomId(),
             'welcomeLocutionId' => $this->getWelcomeLocutionId(),
             'targetExtensionId' => $this->getTargetExtensionId(),
-            'targetVoiceMailUserId' => $this->getTargetVoiceMailUserId()
+            'targetVoiceMailUserId' => $this->getTargetVoiceMailUserId(),
+            'targetConditionalRouteId' => $this->getTargetConditionalRouteId()
         ];
     }
 
@@ -97,6 +108,7 @@ class IvrCustomEntryDTO implements DataTransferObjectInterface
         $this->welcomeLocution = $transformer->transform('Ivoz\\Domain\\Model\\Locution\\Locution', $this->getWelcomeLocutionId());
         $this->targetExtension = $transformer->transform('Ivoz\\Domain\\Model\\Extension\\Extension', $this->getTargetExtensionId());
         $this->targetVoiceMailUser = $transformer->transform('Ivoz\\Domain\\Model\\User\\User', $this->getTargetVoiceMailUserId());
+        $this->targetConditionalRoute = $transformer->transform('Ivoz\\Domain\\Model\\ConditionalRoute\\ConditionalRoute', $this->getTargetConditionalRouteId());
     }
 
     /**
@@ -297,6 +309,34 @@ class IvrCustomEntryDTO implements DataTransferObjectInterface
     public function getTargetVoiceMailUser()
     {
         return $this->targetVoiceMailUser;
+    }
+
+    /**
+     * @param integer $targetConditionalRouteId
+     *
+     * @return IvrCustomEntryDTO
+     */
+    public function setTargetConditionalRouteId($targetConditionalRouteId)
+    {
+        $this->targetConditionalRouteId = $targetConditionalRouteId;
+
+        return $this;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getTargetConditionalRouteId()
+    {
+        return $this->targetConditionalRouteId;
+    }
+
+    /**
+     * @return \Ivoz\Domain\Model\ConditionalRoute\ConditionalRoute
+     */
+    public function getTargetConditionalRoute()
+    {
+        return $this->targetConditionalRoute;
     }
 }
 

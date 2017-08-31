@@ -32,14 +32,6 @@ trait CalendarTrait
         $this->holidayDates = new ArrayCollection();
     }
 
-    public function __wakeup()
-    {
-        if ($this->id) {
-            $this->initChangelog();
-        }
-        // Do nothing: Doctrines requirement
-    }
-
     /**
      * @return CalendarDTO
      */
@@ -118,11 +110,11 @@ trait CalendarTrait
     /**
      * Add holidayDate
      *
-     * @param \Ivoz\Domain\Model\HolidayDate\HolidayDate $holidayDate
+     * @param \Ivoz\Domain\Model\HolidayDate\HolidayDateInterface $holidayDate
      *
      * @return CalendarTrait
      */
-    public function addHolidayDate(\Ivoz\Domain\Model\HolidayDate\HolidayDate $holidayDate)
+    public function addHolidayDate(\Ivoz\Domain\Model\HolidayDate\HolidayDateInterface $holidayDate)
     {
         $this->holidayDates[] = $holidayDate;
 
@@ -132,9 +124,9 @@ trait CalendarTrait
     /**
      * Remove holidayDate
      *
-     * @param \Ivoz\Domain\Model\HolidayDate\HolidayDate $holidayDate
+     * @param \Ivoz\Domain\Model\HolidayDate\HolidayDateInterface $holidayDate
      */
-    public function removeHolidayDate(\Ivoz\Domain\Model\HolidayDate\HolidayDate $holidayDate)
+    public function removeHolidayDate(\Ivoz\Domain\Model\HolidayDate\HolidayDateInterface $holidayDate)
     {
         $this->holidayDates->removeElement($holidayDate);
     }
@@ -142,7 +134,7 @@ trait CalendarTrait
     /**
      * Replace holidayDates
      *
-     * @param \Ivoz\Domain\Model\HolidayDate\HolidayDate[] $holidayDates
+     * @param \Ivoz\Domain\Model\HolidayDate\HolidayDateInterface[] $holidayDates
      * @return self
      */
     public function replaceHolidayDates(array $holidayDates)

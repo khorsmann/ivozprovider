@@ -7,6 +7,12 @@ use Core\Domain\Model\EntityInterface;
 interface OutgoingDDIRulesPatternInterface extends EntityInterface
 {
     /**
+     * Return forced DDI for this rule pattern
+     * @return \Ivoz\Domain\Model\DDI\DDIInterface
+     */
+    public function getForcedDDI();
+
+    /**
      * Set action
      *
      * @param string $action
@@ -78,13 +84,6 @@ interface OutgoingDDIRulesPatternInterface extends EntityInterface
      * @return self
      */
     public function setForcedDDI(\Ivoz\Domain\Model\DDI\DDIInterface $forcedDDI = null);
-
-    /**
-     * Get forcedDDI
-     *
-     * @return \Ivoz\Domain\Model\DDI\DDIInterface
-     */
-    public function getForcedDDI();
 
 }
 

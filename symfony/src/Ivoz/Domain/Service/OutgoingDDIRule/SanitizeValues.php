@@ -9,7 +9,7 @@ use Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface;
  * @package Ivoz\Domain\Service\OutgoingDDIRule
  * @lifecycle pre_persist
  */
-class SanitizeValues implements OutgoingDDIRulesPatternLifecycleEventHandlerInterface
+class SanitizeValues implements OutgoingDDIRuleLifecycleEventHandlerInterface
 {
     public function __construct() {}
 

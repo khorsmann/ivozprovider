@@ -109,6 +109,10 @@ doctrine:
         Ivoz\Domain\Model\Invoice\Invoice
       Ivoz\Domain\Model\InvoiceTemplate\InvoiceTemplateInterface:
         Ivoz\Domain\Model\InvoiceTemplate\InvoiceTemplate
+      Ivoz\Domain\Model\HuntGroups\HuntGroupsInterface:
+        Ivoz\Domain\Model\HuntGroups\HuntGroupsRelUser
+      Ivoz\Domain\Model\HuntGroupsRelUser\HuntGroupsRelUserInterface:
+        Ivoz\Domain\Model\HuntGroupsRelUser\HuntGroupsRelUser
       Ivoz\Domain\Model\IvrCommon\IvrCommonInterface:
         Ivoz\Domain\Model\IvrCommon\IvrCommon
       Ivoz\Domain\Model\IvrCustomEntry\IvrCustomEntryInterface:
@@ -137,6 +141,10 @@ doctrine:
         Ivoz\Domain\Model\Musiconhold\Musiconhold
       Ivoz\Domain\Model\MusicOnHold\MusicOnHoldInterface:
         Ivoz\Domain\Model\MusicOnHold\MusicOnHold
+      Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface:
+        Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRule
+      Ivoz\Domain\Model\OutgoingDDIRulesPattern\OutgoingDDIRulesPatternInterface:
+        Ivoz\Domain\Model\OutgoingDDIRulesPattern\OutgoingDDIRulesPattern
       Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface:
         Ivoz\Domain\Model\OutgoingRouting\OutgoingRouting
       Ivoz\Domain\Model\ParsedCDR\ParsedCDRInterface:
