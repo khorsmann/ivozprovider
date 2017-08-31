@@ -13,7 +13,7 @@ interface ConditionalRoutesConditionsRelMatchlistInterface extends EntityInterfa
      *
      * @return self
      */
-    public function setCondition(\Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionInterface $condition = null);
+    public function setCondition(\Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionInterface $condition);
 
     /**
      * Get condition
@@ -29,7 +29,7 @@ interface ConditionalRoutesConditionsRelMatchlistInterface extends EntityInterfa
      *
      * @return self
      */
-    public function setMatchlist(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchlist = null);
+    public function setMatchlist(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchlist);
 
     /**
      * Get matchlist

@@ -260,7 +260,7 @@ abstract class OutgoingDDIRulesPatternAbstract
      *
      * @return self
      */
-    public function setMatchList(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchList = null)
+    public function setMatchList(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchList)
     {
         $this->matchList = $matchList;
 

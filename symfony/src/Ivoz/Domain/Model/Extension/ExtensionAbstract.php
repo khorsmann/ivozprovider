@@ -17,7 +17,7 @@ abstract class ExtensionAbstract
     protected $number;
 
     /**
-     * @comment enum:user|number|IVRCommon|IVRCustom|huntGroup|conferenceRoom|friend|queue
+     * @comment enum:user|number|IVRCommon|IVRCustom|huntGroup|conferenceRoom|friend|queue|retailAccount|conditional
      * @var string
      */
     protected $routeType;
@@ -66,6 +66,11 @@ abstract class ExtensionAbstract
      * @var \Ivoz\Domain\Model\Queue\QueueInterface
      */
     protected $queue;
+
+    /**
+     * @var \Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface
+     */
+    protected $conditionalRoute;
 
 
     /**
@@ -151,6 +156,7 @@ abstract class ExtensionAbstract
             ->setConferenceRoom($dto->getConferenceRoom())
             ->setUser($dto->getUser())
             ->setQueue($dto->getQueue())
+            ->setConditionalRoute($dto->getConditionalRoute())
         ;
     }
 
@@ -176,7 +182,8 @@ abstract class ExtensionAbstract
             ->setHuntGroup($dto->getHuntGroup())
             ->setConferenceRoom($dto->getConferenceRoom())
             ->setUser($dto->getUser())
-            ->setQueue($dto->getQueue());
+            ->setQueue($dto->getQueue())
+            ->setConditionalRoute($dto->getConditionalRoute());
 
 
         return $this;
@@ -198,7 +205,8 @@ abstract class ExtensionAbstract
             ->setHuntGroupId($this->getHuntGroup() ? $this->getHuntGroup()->getId() : null)
             ->setConferenceRoomId($this->getConferenceRoom() ? $this->getConferenceRoom()->getId() : null)
             ->setUserId($this->getUser() ? $this->getUser()->getId() : null)
-            ->setQueueId($this->getQueue() ? $this->getQueue()->getId() : null);
+            ->setQueueId($this->getQueue() ? $this->getQueue()->getId() : null)
+            ->setConditionalRouteId($this->getConditionalRoute() ? $this->getConditionalRoute()->getId() : null);
     }
 
     /**
@@ -217,7 +225,8 @@ abstract class ExtensionAbstract
             'huntGroupId' => $this->getHuntGroup() ? $this->getHuntGroup()->getId() : null,
             'conferenceRoomId' => $this->getConferenceRoom() ? $this->getConferenceRoom()->getId() : null,
             'userId' => $this->getUser() ? $this->getUser()->getId() : null,
-            'queueId' => $this->getQueue() ? $this->getQueue()->getId() : null
+            'queueId' => $this->getQueue() ? $this->getQueue()->getId() : null,
+            'conditionalRouteId' => $this->getConditionalRoute() ? $this->getConditionalRoute()->getId() : null
         ];
     }
 
@@ -271,6 +280,8 @@ abstract class ExtensionAbstract
           5 => '    conferenceRoom',
           6 => '    friend',
           7 => '    queue',
+          8 => '    retailAccount',
+          9 => '    conditional',
         ));
         }
 
@@ -511,6 +522,30 @@ abstract class ExtensionAbstract
     public function getQueue()
     {
         return $this->queue;
+    }
+
+    /**
+     * Set conditionalRoute
+     *
+     * @param \Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface $conditionalRoute
+     *
+     * @return self
+     */
+    public function setConditionalRoute(\Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface $conditionalRoute = null)
+    {
+        $this->conditionalRoute = $conditionalRoute;
+
+        return $this;
+    }
+
+    /**
+     * Get conditionalRoute
+     *
+     * @return \Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface
+     */
+    public function getConditionalRoute()
+    {
+        return $this->conditionalRoute;
     }
 
 

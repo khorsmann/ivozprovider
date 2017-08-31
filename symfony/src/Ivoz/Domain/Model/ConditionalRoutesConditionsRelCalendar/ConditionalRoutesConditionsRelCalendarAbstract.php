@@ -149,7 +149,7 @@ abstract class ConditionalRoutesConditionsRelCalendarAbstract
      *
      * @return self
      */
-    public function setCondition(\Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionInterface $condition = null)
+    public function setCondition(\Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionInterface $condition)
     {
         $this->condition = $condition;
 
@@ -173,7 +173,7 @@ abstract class ConditionalRoutesConditionsRelCalendarAbstract
      *
      * @return self
      */
-    public function setCalendar(\Ivoz\Domain\Model\Calendar\CalendarInterface $calendar = null)
+    public function setCalendar(\Ivoz\Domain\Model\Calendar\CalendarInterface $calendar)
     {
         $this->calendar = $calendar;
 

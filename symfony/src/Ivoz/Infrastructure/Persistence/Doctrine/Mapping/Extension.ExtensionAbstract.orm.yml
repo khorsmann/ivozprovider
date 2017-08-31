@@ -41,7 +41,7 @@ Ivoz\Domain\Model\Extension\ExtensionAbstract:
       length: 25
       options:
         fixed: false
-        comment: '[enum:user|number|IVRCommon|IVRCustom|huntGroup|conferenceRoom|friend|queue]'
+        comment: '[enum:user|number|IVRCommon|IVRCustom|huntGroup|conferenceRoom|friend|queue|retailAccount|conditional]'
       column: routeType
     numberValue:
       type: string
@@ -127,5 +127,15 @@ Ivoz\Domain\Model\Extension\ExtensionAbstract:
       inversedBy: null
       joinColumns:
         queueId:
+          referencedColumnName: id
+      orphanRemoval: false
+    conditionalRoute:
+      targetEntity: \Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        conditionalRouteId:
           referencedColumnName: id
       orphanRemoval: false

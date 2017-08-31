@@ -85,7 +85,7 @@ Ivoz\Domain\Model\DDI\DDIAbstract:
       length: 25
       options:
         fixed: false
-        comment: '[enum:user|IVRCommon|IVRCustom|huntGroup|fax|conferenceRoom|friend|queue|retailAccount]'
+        comment: '[enum:user|IVRCommon|IVRCustom|huntGroup|fax|conferenceRoom|friend|queue|retailAccount|conditional]'
       column: routeType
     billInboundCalls:
       type: boolean
@@ -241,5 +241,15 @@ Ivoz\Domain\Model\DDI\DDIAbstract:
       inversedBy: null
       joinColumns:
         retailAccountId:
+          referencedColumnName: id
+      orphanRemoval: false
+    conditionalRoute:
+      targetEntity: Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        conditionalRouteId:
           referencedColumnName: id
       orphanRemoval: false

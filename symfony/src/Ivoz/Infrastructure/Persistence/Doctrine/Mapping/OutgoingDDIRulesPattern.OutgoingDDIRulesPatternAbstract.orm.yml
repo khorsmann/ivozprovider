@@ -39,6 +39,7 @@ Ivoz\Domain\Model\OutgoingDDIRulesPattern\OutgoingDDIRulesPatternAbstract:
       joinColumns:
         outgoingDDIRuleId:
           referencedColumnName: id
+          nullable: false
       orphanRemoval: false
     matchList:
       targetEntity: Ivoz\Domain\Model\MatchList\MatchListInterface
@@ -49,6 +50,7 @@ Ivoz\Domain\Model\OutgoingDDIRulesPattern\OutgoingDDIRulesPatternAbstract:
       joinColumns:
         matchListId:
           referencedColumnName: id
+          nullable: false
       orphanRemoval: false
     forcedDDI:
       targetEntity: Ivoz\Domain\Model\DDI\DDIInterface

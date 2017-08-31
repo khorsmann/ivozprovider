@@ -87,6 +87,11 @@ class UserDTO implements DataTransferObjectInterface
     private $areaCode;
 
     /**
+     * @var boolean
+     */
+    private $gsQRCode = '0';
+
+    /**
      * @var integer
      */
     private $id;
@@ -139,6 +144,16 @@ class UserDTO implements DataTransferObjectInterface
     /**
      * @var mixed
      */
+    private $outgoingDDIRuleId;
+
+    /**
+     * @var mixed
+     */
+    private $voicemailLocutionId;
+
+    /**
+     * @var mixed
+     */
     private $company;
 
     /**
@@ -182,6 +197,16 @@ class UserDTO implements DataTransferObjectInterface
     private $outgoingDDI;
 
     /**
+     * @var mixed
+     */
+    private $outgoingDDIRule;
+
+    /**
+     * @var mixed
+     */
+    private $voicemailLocution;
+
+    /**
      * @return array
      */
     public function __toArray()
@@ -202,6 +227,7 @@ class UserDTO implements DataTransferObjectInterface
             'voicemailAttachSound' => $this->getVoicemailAttachSound(),
             'tokenKey' => $this->getTokenKey(),
             'areaCode' => $this->getAreaCode(),
+            'gsQRCode' => $this->getGsQRCode(),
             'id' => $this->getId(),
             'companyId' => $this->getCompanyId(),
             'callACLId' => $this->getCallACLId(),
@@ -211,7 +237,9 @@ class UserDTO implements DataTransferObjectInterface
             'terminalId' => $this->getTerminalId(),
             'extensionId' => $this->getExtensionId(),
             'timezoneId' => $this->getTimezoneId(),
-            'outgoingDDIId' => $this->getOutgoingDDIId()
+            'outgoingDDIId' => $this->getOutgoingDDIId(),
+            'outgoingDDIRuleId' => $this->getOutgoingDDIRuleId(),
+            'voicemailLocutionId' => $this->getVoicemailLocutionId()
         ];
     }
 
@@ -229,6 +257,8 @@ class UserDTO implements DataTransferObjectInterface
         $this->extension = $transformer->transform('Ivoz\\Domain\\Model\\Extension\\Extension', $this->getExtensionId());
         $this->timezone = $transformer->transform('Ivoz\\Domain\\Model\\Timezone\\Timezone', $this->getTimezoneId());
         $this->outgoingDDI = $transformer->transform('Ivoz\\Domain\\Model\\DDI\\DDI', $this->getOutgoingDDIId());
+        $this->outgoingDDIRule = $transformer->transform('Ivoz\\Domain\\Model\\OutgoingDDIRule\\OutgoingDDIRule', $this->getOutgoingDDIRuleId());
+        $this->voicemailLocution = $transformer->transform('Ivoz\\Domain\\Model\\Locution\\Locution', $this->getVoicemailLocutionId());
     }
 
     /**
@@ -540,6 +570,26 @@ class UserDTO implements DataTransferObjectInterface
     }
 
     /**
+     * @param boolean $gsQRCode
+     *
+     * @return UserDTO
+     */
+    public function setGsQRCode($gsQRCode)
+    {
+        $this->gsQRCode = $gsQRCode;
+
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getGsQRCode()
+    {
+        return $this->gsQRCode;
+    }
+
+    /**
      * @param integer $id
      *
      * @return UserDTO
@@ -809,6 +859,62 @@ class UserDTO implements DataTransferObjectInterface
     public function getOutgoingDDI()
     {
         return $this->outgoingDDI;
+    }
+
+    /**
+     * @param integer $outgoingDDIRuleId
+     *
+     * @return UserDTO
+     */
+    public function setOutgoingDDIRuleId($outgoingDDIRuleId)
+    {
+        $this->outgoingDDIRuleId = $outgoingDDIRuleId;
+
+        return $this;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getOutgoingDDIRuleId()
+    {
+        return $this->outgoingDDIRuleId;
+    }
+
+    /**
+     * @return \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRule
+     */
+    public function getOutgoingDDIRule()
+    {
+        return $this->outgoingDDIRule;
+    }
+
+    /**
+     * @param integer $voicemailLocutionId
+     *
+     * @return UserDTO
+     */
+    public function setVoicemailLocutionId($voicemailLocutionId)
+    {
+        $this->voicemailLocutionId = $voicemailLocutionId;
+
+        return $this;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getVoicemailLocutionId()
+    {
+        return $this->voicemailLocutionId;
+    }
+
+    /**
+     * @return \Ivoz\Domain\Model\Locution\Locution
+     */
+    public function getVoicemailLocution()
+    {
+        return $this->voicemailLocution;
     }
 }
 

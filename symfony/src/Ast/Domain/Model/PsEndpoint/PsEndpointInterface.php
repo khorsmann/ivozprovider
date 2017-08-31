@@ -222,22 +222,6 @@ interface PsEndpointInterface extends EntityInterface
     public function getSendPai();
 
     /**
-     * Set subscribecontext
-     *
-     * @param string $subscribecontext
-     *
-     * @return self
-     */
-    public function setSubscribecontext($subscribecontext);
-
-    /**
-     * Get subscribecontext
-     *
-     * @return string
-     */
-    public function getSubscribecontext();
-
-    /**
      * Set oneHundredRel
      *
      * @param string $oneHundredRel

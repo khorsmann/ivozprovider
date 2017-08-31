@@ -67,7 +67,7 @@ interface OutgoingDDIRulesPatternInterface extends EntityInterface
      *
      * @return self
      */
-    public function setMatchList(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchList = null);
+    public function setMatchList(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchList);
 
     /**
      * Get matchList

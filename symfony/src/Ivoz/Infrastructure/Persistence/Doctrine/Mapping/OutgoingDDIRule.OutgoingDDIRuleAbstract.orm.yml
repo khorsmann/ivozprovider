@@ -37,6 +37,7 @@ Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleAbstract:
       joinColumns:
         companyId:
           referencedColumnName: id
+          nullable: false
       orphanRemoval: false
     forcedDDI:
       targetEntity: Ivoz\Domain\Model\DDI\DDIInterface

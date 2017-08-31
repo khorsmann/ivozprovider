@@ -70,6 +70,7 @@ Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteAbstract:
       joinColumns:
         companyId:
           referencedColumnName: id
+          nullable: false
       orphanRemoval: false
     ivrCommon:
       targetEntity: Ivoz\Domain\Model\IvrCommon\IvrCommonInterface

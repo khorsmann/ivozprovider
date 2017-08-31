@@ -495,6 +495,22 @@ interface CompanyInterface extends EntityInterface
     public function getOutgoingDDI();
 
     /**
+     * Set outgoingDDIRule
+     *
+     * @param \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRule
+     *
+     * @return self
+     */
+    public function setOutgoingDDIRule(\Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRule = null);
+
+    /**
+     * Get outgoingDDIRule
+     *
+     * @return \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
+     */
+    public function getOutgoingDDIRule();
+
+    /**
      * Add extension
      *
      * @param \Ivoz\Domain\Model\Extension\ExtensionInterface $extension

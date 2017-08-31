@@ -124,6 +124,11 @@ class DDIDTO implements DataTransferObjectInterface
     /**
      * @var mixed
      */
+    private $conditionalRouteId;
+
+    /**
+     * @var mixed
+     */
     private $company;
 
     /**
@@ -192,6 +197,11 @@ class DDIDTO implements DataTransferObjectInterface
     private $retailAccount;
 
     /**
+     * @var mixed
+     */
+    private $conditionalRoute;
+
+    /**
      * @return array
      */
     public function __toArray()
@@ -218,7 +228,8 @@ class DDIDTO implements DataTransferObjectInterface
             'faxId' => $this->getFaxId(),
             'peeringContractId' => $this->getPeeringContractId(),
             'countryId' => $this->getCountryId(),
-            'retailAccountId' => $this->getRetailAccountId()
+            'retailAccountId' => $this->getRetailAccountId(),
+            'conditionalRouteId' => $this->getConditionalRouteId()
         ];
     }
 
@@ -241,6 +252,7 @@ class DDIDTO implements DataTransferObjectInterface
         $this->peeringContract = $transformer->transform('Ivoz\\Domain\\Model\\PeeringContract\\PeeringContract', $this->getPeeringContractId());
         $this->country = $transformer->transform('Ivoz\\Domain\\Model\\Country\\Country', $this->getCountryId());
         $this->retailAccount = $transformer->transform('Ivoz\\Domain\\Model\\RetailAccount\\RetailAccount', $this->getRetailAccountId());
+        $this->conditionalRoute = $transformer->transform('Ivoz\\Domain\\Model\\ConditionalRoute\\ConditionalRoute', $this->getConditionalRouteId());
     }
 
     /**
@@ -801,6 +813,34 @@ class DDIDTO implements DataTransferObjectInterface
     public function getRetailAccount()
     {
         return $this->retailAccount;
+    }
+
+    /**
+     * @param integer $conditionalRouteId
+     *
+     * @return DDIDTO
+     */
+    public function setConditionalRouteId($conditionalRouteId)
+    {
+        $this->conditionalRouteId = $conditionalRouteId;
+
+        return $this;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getConditionalRouteId()
+    {
+        return $this->conditionalRouteId;
+    }
+
+    /**
+     * @return \Ivoz\Domain\Model\ConditionalRoute\ConditionalRoute
+     */
+    public function getConditionalRoute()
+    {
+        return $this->conditionalRoute;
     }
 }
 

@@ -17,6 +17,7 @@ Ivoz\Domain\Model\ConditionalRoutesConditionsRelSchedule\ConditionalRoutesCondit
       joinColumns:
         conditionId:
           referencedColumnName: id
+          nullable: false
       orphanRemoval: false
     schedule:
       targetEntity: Ivoz\Domain\Model\Schedule\ScheduleInterface
@@ -27,6 +28,7 @@ Ivoz\Domain\Model\ConditionalRoutesConditionsRelSchedule\ConditionalRoutesCondit
       joinColumns:
         scheduleId:
           referencedColumnName: id
+          nullable: false
       orphanRemoval: false
   lifecycleCallbacks:
     postLoad:

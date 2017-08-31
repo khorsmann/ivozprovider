@@ -140,6 +140,11 @@ abstract class CompanyAbstract
      */
     protected $outgoingDDI;
 
+    /**
+     * @var \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
+     */
+    protected $outgoingDDIRule;
+
 
     /**
      * Changelog tracking purpose
@@ -255,6 +260,7 @@ abstract class CompanyAbstract
             ->setApplicationServer($dto->getApplicationServer())
             ->setCountry($dto->getCountry())
             ->setOutgoingDDI($dto->getOutgoingDDI())
+            ->setOutgoingDDIRule($dto->getOutgoingDDIRule())
         ;
     }
 
@@ -294,7 +300,8 @@ abstract class CompanyAbstract
             ->setBrand($dto->getBrand())
             ->setApplicationServer($dto->getApplicationServer())
             ->setCountry($dto->getCountry())
-            ->setOutgoingDDI($dto->getOutgoingDDI());
+            ->setOutgoingDDI($dto->getOutgoingDDI())
+            ->setOutgoingDDIRule($dto->getOutgoingDDIRule());
 
 
         return $this;
@@ -330,7 +337,8 @@ abstract class CompanyAbstract
             ->setBrandId($this->getBrand() ? $this->getBrand()->getId() : null)
             ->setApplicationServerId($this->getApplicationServer() ? $this->getApplicationServer()->getId() : null)
             ->setCountryId($this->getCountry() ? $this->getCountry()->getId() : null)
-            ->setOutgoingDDIId($this->getOutgoingDDI() ? $this->getOutgoingDDI()->getId() : null);
+            ->setOutgoingDDIId($this->getOutgoingDDI() ? $this->getOutgoingDDI()->getId() : null)
+            ->setOutgoingDDIRuleId($this->getOutgoingDDIRule() ? $this->getOutgoingDDIRule()->getId() : null);
     }
 
     /**
@@ -363,7 +371,8 @@ abstract class CompanyAbstract
             'brandId' => $this->getBrand() ? $this->getBrand()->getId() : null,
             'applicationServerId' => $this->getApplicationServer() ? $this->getApplicationServer()->getId() : null,
             'countryId' => $this->getCountry() ? $this->getCountry()->getId() : null,
-            'outgoingDDIId' => $this->getOutgoingDDI() ? $this->getOutgoingDDI()->getId() : null
+            'outgoingDDIId' => $this->getOutgoingDDI() ? $this->getOutgoingDDI()->getId() : null,
+            'outgoingDDIRuleId' => $this->getOutgoingDDIRule() ? $this->getOutgoingDDIRule()->getId() : null
         ];
     }
 
@@ -1038,6 +1047,30 @@ abstract class CompanyAbstract
     public function getOutgoingDDI()
     {
         return $this->outgoingDDI;
+    }
+
+    /**
+     * Set outgoingDDIRule
+     *
+     * @param \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRule
+     *
+     * @return self
+     */
+    public function setOutgoingDDIRule(\Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRule = null)
+    {
+        $this->outgoingDDIRule = $outgoingDDIRule;
+
+        return $this;
+    }
+
+    /**
+     * Get outgoingDDIRule
+     *
+     * @return \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
+     */
+    public function getOutgoingDDIRule()
+    {
+        return $this->outgoingDDIRule;
     }
 
 

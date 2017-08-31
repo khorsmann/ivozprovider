@@ -79,11 +79,6 @@ class PsEndpointDTO implements DataTransferObjectInterface
     /**
      * @var string
      */
-    private $subscribecontext = 'default';
-
-    /**
-     * @var string
-     */
     private $oneHundredRel = 'no';
 
     /**
@@ -150,7 +145,6 @@ class PsEndpointDTO implements DataTransferObjectInterface
             'pickupGroup' => $this->getPickupGroup(),
             'sendDiversion' => $this->getSendDiversion(),
             'sendPai' => $this->getSendPai(),
-            'subscribecontext' => $this->getSubscribecontext(),
             'oneHundredRel' => $this->getOneHundredRel(),
             'outboundProxy' => $this->getOutboundProxy(),
             'trustIdInbound' => $this->getTrustIdInbound(),
@@ -437,26 +431,6 @@ class PsEndpointDTO implements DataTransferObjectInterface
     public function getSendPai()
     {
         return $this->sendPai;
-    }
-
-    /**
-     * @param string $subscribecontext
-     *
-     * @return PsEndpointDTO
-     */
-    public function setSubscribecontext($subscribecontext)
-    {
-        $this->subscribecontext = $subscribecontext;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSubscribecontext()
-    {
-        return $this->subscribecontext;
     }
 
     /**

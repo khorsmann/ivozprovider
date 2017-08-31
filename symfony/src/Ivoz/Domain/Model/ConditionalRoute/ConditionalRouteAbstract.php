@@ -381,7 +381,7 @@ abstract class ConditionalRouteAbstract
      *
      * @return self
      */
-    public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company = null)
+    public function setCompany(\Ivoz\Domain\Model\Company\CompanyInterface $company)
     {
         $this->company = $company;
 

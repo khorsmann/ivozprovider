@@ -77,7 +77,7 @@ interface ConditionalRoutesConditionInterface extends EntityInterface
      *
      * @return self
      */
-    public function setConditionalRoute(\Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface $conditionalRoute = null);
+    public function setConditionalRoute(\Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface $conditionalRoute);
 
     /**
      * Get conditionalRoute

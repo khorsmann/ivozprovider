@@ -149,7 +149,7 @@ abstract class ConditionalRoutesConditionsRelScheduleAbstract
      *
      * @return self
      */
-    public function setCondition(\Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionInterface $condition = null)
+    public function setCondition(\Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionInterface $condition)
     {
         $this->condition = $condition;
 
@@ -173,7 +173,7 @@ abstract class ConditionalRoutesConditionsRelScheduleAbstract
      *
      * @return self
      */
-    public function setSchedule(\Ivoz\Domain\Model\Schedule\ScheduleInterface $schedule = null)
+    public function setSchedule(\Ivoz\Domain\Model\Schedule\ScheduleInterface $schedule)
     {
         $this->schedule = $schedule;
 

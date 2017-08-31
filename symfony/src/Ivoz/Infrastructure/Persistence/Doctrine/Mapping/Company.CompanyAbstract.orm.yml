@@ -223,3 +223,14 @@ Ivoz\Domain\Model\Company\CompanyAbstract:
         outgoingDDIId:
           referencedColumnName: id
       orphanRemoval: false
+    outgoingDDIRule:
+      targetEntity: \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        outgoingDDIRuleId:
+          referencedColumnName: id
+          nullable: true
+      orphanRemoval: false

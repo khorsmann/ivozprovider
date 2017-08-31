@@ -85,11 +85,6 @@ abstract class PsEndpointAbstract
     protected $sendPai = 'yes';
 
     /**
-     * @var string
-     */
-    protected $subscribecontext = 'default';
-
-    /**
      * @column 100rel
      * @var string
      */
@@ -137,14 +132,12 @@ abstract class PsEndpointAbstract
         $context,
         $disallow,
         $allow,
-        $subscribecontext,
         $oneHundredRel
     ) {
         $this->setSorceryId($sorceryId);
         $this->setContext($context);
         $this->setDisallow($disallow);
         $this->setAllow($allow);
-        $this->setSubscribecontext($subscribecontext);
         $this->setOneHundredRel($oneHundredRel);
         $this->initChangelog();
     }
@@ -208,7 +201,6 @@ abstract class PsEndpointAbstract
             $dto->getContext(),
             $dto->getDisallow(),
             $dto->getAllow(),
-            $dto->getSubscribecontext(),
             $dto->getOneHundredRel());
 
         return $self
@@ -254,7 +246,6 @@ abstract class PsEndpointAbstract
             ->setPickupGroup($dto->getPickupGroup())
             ->setSendDiversion($dto->getSendDiversion())
             ->setSendPai($dto->getSendPai())
-            ->setSubscribecontext($dto->getSubscribecontext())
             ->setOneHundredRel($dto->getOneHundredRel())
             ->setOutboundProxy($dto->getOutboundProxy())
             ->setTrustIdInbound($dto->getTrustIdInbound())
@@ -285,7 +276,6 @@ abstract class PsEndpointAbstract
             ->setPickupGroup($this->getPickupGroup())
             ->setSendDiversion($this->getSendDiversion())
             ->setSendPai($this->getSendPai())
-            ->setSubscribecontext($this->getSubscribecontext())
             ->setOneHundredRel($this->getOneHundredRel())
             ->setOutboundProxy($this->getOutboundProxy())
             ->setTrustIdInbound($this->getTrustIdInbound())
@@ -313,7 +303,6 @@ abstract class PsEndpointAbstract
             'pickupGroup' => $this->getPickupGroup(),
             'sendDiversion' => $this->getSendDiversion(),
             'sendPai' => $this->getSendPai(),
-            'subscribecontext' => $this->getSubscribecontext(),
             'oneHundredRel' => $this->getOneHundredRel(),
             'outboundProxy' => $this->getOutboundProxy(),
             'trustIdInbound' => $this->getTrustIdInbound(),
@@ -685,33 +674,6 @@ abstract class PsEndpointAbstract
     public function getSendPai()
     {
         return $this->sendPai;
-    }
-
-    /**
-     * Set subscribecontext
-     *
-     * @param string $subscribecontext
-     *
-     * @return self
-     */
-    public function setSubscribecontext($subscribecontext)
-    {
-        Assertion::notNull($subscribecontext);
-        Assertion::maxLength($subscribecontext, 40);
-
-        $this->subscribecontext = $subscribecontext;
-
-        return $this;
-    }
-
-    /**
-     * Get subscribecontext
-     *
-     * @return string
-     */
-    public function getSubscribecontext()
-    {
-        return $this->subscribecontext;
     }
 
     /**

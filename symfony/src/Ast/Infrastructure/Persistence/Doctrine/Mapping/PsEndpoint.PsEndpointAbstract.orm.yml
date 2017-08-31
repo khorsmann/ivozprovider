@@ -108,13 +108,6 @@ Ast\Domain\Model\PsEndpoint\PsEndpointAbstract:
         fixed: false
         default: 'yes'
       column: send_pai
-    subscribecontext:
-      type: string
-      nullable: false
-      length: 40
-      options:
-        fixed: false
-        default: default
     oneHundredRel:
       type: string
       nullable: false

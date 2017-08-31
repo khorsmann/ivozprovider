@@ -144,6 +144,11 @@ class CompanyDTO implements DataTransferObjectInterface
     /**
      * @var mixed
      */
+    private $outgoingDDIRuleId;
+
+    /**
+     * @var mixed
+     */
     private $language;
 
     /**
@@ -175,6 +180,11 @@ class CompanyDTO implements DataTransferObjectInterface
      * @var mixed
      */
     private $outgoingDDI;
+
+    /**
+     * @var mixed
+     */
+    private $outgoingDDIRule;
 
     /**
      * @var array|null
@@ -263,6 +273,7 @@ class CompanyDTO implements DataTransferObjectInterface
             'applicationServerId' => $this->getApplicationServerId(),
             'countryId' => $this->getCountryId(),
             'outgoingDDIId' => $this->getOutgoingDDIId(),
+            'outgoingDDIRuleId' => $this->getOutgoingDDIRuleId(),
             'extensionsId' => $this->getExtensionsId(),
             'ddisId' => $this->getDdisId(),
             'friendsId' => $this->getFriendsId(),
@@ -289,6 +300,7 @@ class CompanyDTO implements DataTransferObjectInterface
         $this->applicationServer = $transformer->transform('Ivoz\\Domain\\Model\\ApplicationServer\\ApplicationServer', $this->getApplicationServerId());
         $this->country = $transformer->transform('Ivoz\\Domain\\Model\\Country\\Country', $this->getCountryId());
         $this->outgoingDDI = $transformer->transform('Ivoz\\Domain\\Model\\DDI\\DDI', $this->getOutgoingDDIId());
+        $this->outgoingDDIRule = $transformer->transform('Ivoz\\Domain\\Model\\OutgoingDDIRule\\OutgoingDDIRule', $this->getOutgoingDDIRuleId());
         $items = $this->getExtensions();
         $this->extensions = [];
         foreach ($items as $item) {
@@ -1015,6 +1027,34 @@ class CompanyDTO implements DataTransferObjectInterface
     public function getOutgoingDDI()
     {
         return $this->outgoingDDI;
+    }
+
+    /**
+     * @param integer $outgoingDDIRuleId
+     *
+     * @return CompanyDTO
+     */
+    public function setOutgoingDDIRuleId($outgoingDDIRuleId)
+    {
+        $this->outgoingDDIRuleId = $outgoingDDIRuleId;
+
+        return $this;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getOutgoingDDIRuleId()
+    {
+        return $this->outgoingDDIRuleId;
+    }
+
+    /**
+     * @return \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRule
+     */
+    public function getOutgoingDDIRule()
+    {
+        return $this->outgoingDDIRule;
     }
 
     /**

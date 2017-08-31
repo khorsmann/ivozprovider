@@ -33,7 +33,7 @@ abstract class DDIAbstract
     protected $displayName;
 
     /**
-     * @comment enum:user|IVRCommon|IVRCustom|huntGroup|fax|conferenceRoom|friend|queue|retailAccount
+     * @comment enum:user|IVRCommon|IVRCustom|huntGroup|fax|conferenceRoom|friend|queue|retailAccount|conditional
      * @var string
      */
     protected $routeType;
@@ -117,6 +117,11 @@ abstract class DDIAbstract
      * @var \Ivoz\Domain\Model\RetailAccount\RetailAccountInterface
      */
     protected $retailAccount;
+
+    /**
+     * @var \Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface
+     */
+    protected $conditionalRoute;
 
 
     /**
@@ -214,6 +219,7 @@ abstract class DDIAbstract
             ->setPeeringContract($dto->getPeeringContract())
             ->setCountry($dto->getCountry())
             ->setRetailAccount($dto->getRetailAccount())
+            ->setConditionalRoute($dto->getConditionalRoute())
         ;
     }
 
@@ -249,7 +255,8 @@ abstract class DDIAbstract
             ->setFax($dto->getFax())
             ->setPeeringContract($dto->getPeeringContract())
             ->setCountry($dto->getCountry())
-            ->setRetailAccount($dto->getRetailAccount());
+            ->setRetailAccount($dto->getRetailAccount())
+            ->setConditionalRoute($dto->getConditionalRoute());
 
 
         return $this;
@@ -281,7 +288,8 @@ abstract class DDIAbstract
             ->setFaxId($this->getFax() ? $this->getFax()->getId() : null)
             ->setPeeringContractId($this->getPeeringContract() ? $this->getPeeringContract()->getId() : null)
             ->setCountryId($this->getCountry() ? $this->getCountry()->getId() : null)
-            ->setRetailAccountId($this->getRetailAccount() ? $this->getRetailAccount()->getId() : null);
+            ->setRetailAccountId($this->getRetailAccount() ? $this->getRetailAccount()->getId() : null)
+            ->setConditionalRouteId($this->getConditionalRoute() ? $this->getConditionalRoute()->getId() : null);
     }
 
     /**
@@ -310,7 +318,8 @@ abstract class DDIAbstract
             'faxId' => $this->getFax() ? $this->getFax()->getId() : null,
             'peeringContractId' => $this->getPeeringContract() ? $this->getPeeringContract()->getId() : null,
             'countryId' => $this->getCountry() ? $this->getCountry()->getId() : null,
-            'retailAccountId' => $this->getRetailAccount() ? $this->getRetailAccount()->getId() : null
+            'retailAccountId' => $this->getRetailAccount() ? $this->getRetailAccount()->getId() : null,
+            'conditionalRouteId' => $this->getConditionalRoute() ? $this->getConditionalRoute()->getId() : null
         ];
     }
 
@@ -454,6 +463,7 @@ abstract class DDIAbstract
           6 => '    friend',
           7 => '    queue',
           8 => '    retailAccount',
+          9 => '    conditional',
         ));
         }
 
@@ -861,6 +871,30 @@ abstract class DDIAbstract
     public function getRetailAccount()
     {
         return $this->retailAccount;
+    }
+
+    /**
+     * Set conditionalRoute
+     *
+     * @param \Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface $conditionalRoute
+     *
+     * @return self
+     */
+    public function setConditionalRoute(\Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface $conditionalRoute = null)
+    {
+        $this->conditionalRoute = $conditionalRoute;
+
+        return $this;
+    }
+
+    /**
+     * Get conditionalRoute
+     *
+     * @return \Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface
+     */
+    public function getConditionalRoute()
+    {
+        return $this->conditionalRoute;
     }
 
 

@@ -137,6 +137,13 @@ Ivoz\Domain\Model\User\UserAbstract:
       options:
         fixed: false
       column: areaCode
+    gsQRCode:
+      type: boolean
+      nullable: false
+      options:
+        default: '0'
+        unsigned: true
+      column: gsQRCode
   manyToOne:
     company:
       targetEntity: \Ivoz\Domain\Model\Company\CompanyInterface
@@ -227,5 +234,25 @@ Ivoz\Domain\Model\User\UserAbstract:
       inversedBy: null
       joinColumns:
         outgoingDDIId:
+          referencedColumnName: id
+      orphanRemoval: false
+    outgoingDDIRule:
+      targetEntity: \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        outgoingDDIRuleId:
+          referencedColumnName: id
+      orphanRemoval: false
+    voicemailLocution:
+      targetEntity: \Ivoz\Domain\Model\Locution\LocutionInterface
+      cascade: {  }
+      fetch: LAZY
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        voicemailLocutionId:
           referencedColumnName: id
       orphanRemoval: false

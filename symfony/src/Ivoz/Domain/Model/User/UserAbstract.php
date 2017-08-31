@@ -89,6 +89,11 @@ abstract class UserAbstract
     protected $areaCode;
 
     /**
+     * @var boolean
+     */
+    protected $gsQRCode = '0';
+
+    /**
      * @var \Ivoz\Domain\Model\Company\CompanyInterface
      */
     protected $company;
@@ -133,6 +138,16 @@ abstract class UserAbstract
      */
     protected $outgoingDDI;
 
+    /**
+     * @var \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
+     */
+    protected $outgoingDDIRule;
+
+    /**
+     * @var \Ivoz\Domain\Model\Locution\LocutionInterface
+     */
+    protected $voicemailLocution;
+
 
     /**
      * Changelog tracking purpose
@@ -153,7 +168,8 @@ abstract class UserAbstract
         $externalIpCalls,
         $voicemailEnabled,
         $voicemailSendMail,
-        $voicemailAttachSound
+        $voicemailAttachSound,
+        $gsQRCode
     ) {
         $this->setName($name);
         $this->setLastname($lastname);
@@ -165,6 +181,7 @@ abstract class UserAbstract
         $this->setVoicemailEnabled($voicemailEnabled);
         $this->setVoicemailSendMail($voicemailSendMail);
         $this->setVoicemailAttachSound($voicemailAttachSound);
+        $this->setGsQRCode($gsQRCode);
         $this->initChangelog();
     }
 
@@ -232,7 +249,8 @@ abstract class UserAbstract
             $dto->getExternalIpCalls(),
             $dto->getVoicemailEnabled(),
             $dto->getVoicemailSendMail(),
-            $dto->getVoicemailAttachSound());
+            $dto->getVoicemailAttachSound(),
+            $dto->getGsQRCode());
 
         return $self
             ->setEmail($dto->getEmail())
@@ -249,6 +267,8 @@ abstract class UserAbstract
             ->setExtension($dto->getExtension())
             ->setTimezone($dto->getTimezone())
             ->setOutgoingDDI($dto->getOutgoingDDI())
+            ->setOutgoingDDIRule($dto->getOutgoingDDIRule())
+            ->setVoicemailLocution($dto->getVoicemailLocution())
         ;
     }
 
@@ -279,6 +299,7 @@ abstract class UserAbstract
             ->setVoicemailAttachSound($dto->getVoicemailAttachSound())
             ->setTokenKey($dto->getTokenKey())
             ->setAreaCode($dto->getAreaCode())
+            ->setGsQRCode($dto->getGsQRCode())
             ->setCompany($dto->getCompany())
             ->setCallACL($dto->getCallACL())
             ->setBossAssistant($dto->getBossAssistant())
@@ -287,7 +308,9 @@ abstract class UserAbstract
             ->setTerminal($dto->getTerminal())
             ->setExtension($dto->getExtension())
             ->setTimezone($dto->getTimezone())
-            ->setOutgoingDDI($dto->getOutgoingDDI());
+            ->setOutgoingDDI($dto->getOutgoingDDI())
+            ->setOutgoingDDIRule($dto->getOutgoingDDIRule())
+            ->setVoicemailLocution($dto->getVoicemailLocution());
 
 
         return $this;
@@ -314,6 +337,7 @@ abstract class UserAbstract
             ->setVoicemailAttachSound($this->getVoicemailAttachSound())
             ->setTokenKey($this->getTokenKey())
             ->setAreaCode($this->getAreaCode())
+            ->setGsQRCode($this->getGsQRCode())
             ->setCompanyId($this->getCompany() ? $this->getCompany()->getId() : null)
             ->setCallACLId($this->getCallACL() ? $this->getCallACL()->getId() : null)
             ->setBossAssistantId($this->getBossAssistant() ? $this->getBossAssistant()->getId() : null)
@@ -322,7 +346,9 @@ abstract class UserAbstract
             ->setTerminalId($this->getTerminal() ? $this->getTerminal()->getId() : null)
             ->setExtensionId($this->getExtension() ? $this->getExtension()->getId() : null)
             ->setTimezoneId($this->getTimezone() ? $this->getTimezone()->getId() : null)
-            ->setOutgoingDDIId($this->getOutgoingDDI() ? $this->getOutgoingDDI()->getId() : null);
+            ->setOutgoingDDIId($this->getOutgoingDDI() ? $this->getOutgoingDDI()->getId() : null)
+            ->setOutgoingDDIRuleId($this->getOutgoingDDIRule() ? $this->getOutgoingDDIRule()->getId() : null)
+            ->setVoicemailLocutionId($this->getVoicemailLocution() ? $this->getVoicemailLocution()->getId() : null);
     }
 
     /**
@@ -346,6 +372,7 @@ abstract class UserAbstract
             'voicemailAttachSound' => $this->getVoicemailAttachSound(),
             'tokenKey' => $this->getTokenKey(),
             'areaCode' => $this->getAreaCode(),
+            'gsQRCode' => $this->getGsQRCode(),
             'companyId' => $this->getCompany() ? $this->getCompany()->getId() : null,
             'callACLId' => $this->getCallACL() ? $this->getCallACL()->getId() : null,
             'bossAssistantId' => $this->getBossAssistant() ? $this->getBossAssistant()->getId() : null,
@@ -354,7 +381,9 @@ abstract class UserAbstract
             'terminalId' => $this->getTerminal() ? $this->getTerminal()->getId() : null,
             'extensionId' => $this->getExtension() ? $this->getExtension()->getId() : null,
             'timezoneId' => $this->getTimezone() ? $this->getTimezone()->getId() : null,
-            'outgoingDDIId' => $this->getOutgoingDDI() ? $this->getOutgoingDDI()->getId() : null
+            'outgoingDDIId' => $this->getOutgoingDDI() ? $this->getOutgoingDDI()->getId() : null,
+            'outgoingDDIRuleId' => $this->getOutgoingDDIRule() ? $this->getOutgoingDDIRule()->getId() : null,
+            'voicemailLocutionId' => $this->getVoicemailLocution() ? $this->getVoicemailLocution()->getId() : null
         ];
     }
 
@@ -779,6 +808,33 @@ abstract class UserAbstract
     }
 
     /**
+     * Set gsQRCode
+     *
+     * @param boolean $gsQRCode
+     *
+     * @return self
+     */
+    public function setGsQRCode($gsQRCode)
+    {
+        Assertion::notNull($gsQRCode);
+        Assertion::between(intval($gsQRCode), 0, 1);
+
+        $this->gsQRCode = $gsQRCode;
+
+        return $this;
+    }
+
+    /**
+     * Get gsQRCode
+     *
+     * @return boolean
+     */
+    public function getGsQRCode()
+    {
+        return $this->gsQRCode;
+    }
+
+    /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
@@ -992,6 +1048,54 @@ abstract class UserAbstract
     public function getOutgoingDDI()
     {
         return $this->outgoingDDI;
+    }
+
+    /**
+     * Set outgoingDDIRule
+     *
+     * @param \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRule
+     *
+     * @return self
+     */
+    public function setOutgoingDDIRule(\Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRule = null)
+    {
+        $this->outgoingDDIRule = $outgoingDDIRule;
+
+        return $this;
+    }
+
+    /**
+     * Get outgoingDDIRule
+     *
+     * @return \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
+     */
+    public function getOutgoingDDIRule()
+    {
+        return $this->outgoingDDIRule;
+    }
+
+    /**
+     * Set voicemailLocution
+     *
+     * @param \Ivoz\Domain\Model\Locution\LocutionInterface $voicemailLocution
+     *
+     * @return self
+     */
+    public function setVoicemailLocution(\Ivoz\Domain\Model\Locution\LocutionInterface $voicemailLocution = null)
+    {
+        $this->voicemailLocution = $voicemailLocution;
+
+        return $this;
+    }
+
+    /**
+     * Get voicemailLocution
+     *
+     * @return \Ivoz\Domain\Model\Locution\LocutionInterface
+     */
+    public function getVoicemailLocution()
+    {
+        return $this->voicemailLocution;
     }
 
 

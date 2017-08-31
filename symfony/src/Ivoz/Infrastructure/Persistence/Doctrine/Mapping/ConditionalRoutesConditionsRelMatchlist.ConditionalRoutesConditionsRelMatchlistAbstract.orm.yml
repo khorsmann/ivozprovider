@@ -17,6 +17,7 @@ Ivoz\Domain\Model\ConditionalRoutesConditionsRelMatchlist\ConditionalRoutesCondi
       joinColumns:
         conditionId:
           referencedColumnName: id
+          nullable: false
       orphanRemoval: false
     matchlist:
       targetEntity: Ivoz\Domain\Model\MatchList\MatchListInterface
@@ -27,6 +28,7 @@ Ivoz\Domain\Model\ConditionalRoutesConditionsRelMatchlist\ConditionalRoutesCondi
       joinColumns:
         matchListId:
           referencedColumnName: id
+          nullable: false
       orphanRemoval: false
   lifecycleCallbacks:
     postLoad:

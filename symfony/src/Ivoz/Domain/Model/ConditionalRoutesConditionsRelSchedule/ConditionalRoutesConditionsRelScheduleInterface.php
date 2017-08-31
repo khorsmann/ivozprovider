@@ -13,7 +13,7 @@ interface ConditionalRoutesConditionsRelScheduleInterface extends EntityInterfac
      *
      * @return self
      */
-    public function setCondition(\Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionInterface $condition = null);
+    public function setCondition(\Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionInterface $condition);
 
     /**
      * Get condition
@@ -29,7 +29,7 @@ interface ConditionalRoutesConditionsRelScheduleInterface extends EntityInterfac
      *
      * @return self
      */
-    public function setSchedule(\Ivoz\Domain\Model\Schedule\ScheduleInterface $schedule = null);
+    public function setSchedule(\Ivoz\Domain\Model\Schedule\ScheduleInterface $schedule);
 
     /**
      * Get schedule

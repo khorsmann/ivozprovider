@@ -13,7 +13,7 @@ interface ConditionalRoutesConditionsRelCalendarInterface extends EntityInterfac
      *
      * @return self
      */
-    public function setCondition(\Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionInterface $condition = null);
+    public function setCondition(\Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionInterface $condition);
 
     /**
      * Get condition
@@ -29,7 +29,7 @@ interface ConditionalRoutesConditionsRelCalendarInterface extends EntityInterfac
      *
      * @return self
      */
-    public function setCalendar(\Ivoz\Domain\Model\Calendar\CalendarInterface $calendar = null);
+    public function setCalendar(\Ivoz\Domain\Model\Calendar\CalendarInterface $calendar);
 
     /**
      * Get calendar

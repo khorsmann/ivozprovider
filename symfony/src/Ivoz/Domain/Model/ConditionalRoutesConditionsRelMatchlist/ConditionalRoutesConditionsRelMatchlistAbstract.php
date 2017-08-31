@@ -149,7 +149,7 @@ abstract class ConditionalRoutesConditionsRelMatchlistAbstract
      *
      * @return self
      */
-    public function setCondition(\Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionInterface $condition = null)
+    public function setCondition(\Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionInterface $condition)
     {
         $this->condition = $condition;
 
@@ -173,7 +173,7 @@ abstract class ConditionalRoutesConditionsRelMatchlistAbstract
      *
      * @return self
      */
-    public function setMatchlist(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchlist = null)
+    public function setMatchlist(\Ivoz\Domain\Model\MatchList\MatchListInterface $matchlist)
     {
         $this->matchlist = $matchlist;
 

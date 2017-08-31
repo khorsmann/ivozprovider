@@ -184,5 +184,21 @@ interface ExtensionInterface extends EntityInterface
      */
     public function getQueue();
 
+    /**
+     * Set conditionalRoute
+     *
+     * @param \Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface $conditionalRoute
+     *
+     * @return self
+     */
+    public function setConditionalRoute(\Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface $conditionalRoute = null);
+
+    /**
+     * Get conditionalRoute
+     *
+     * @return \Ivoz\Domain\Model\ConditionalRoute\ConditionalRouteInterface
+     */
+    public function getConditionalRoute();
+
 }
 

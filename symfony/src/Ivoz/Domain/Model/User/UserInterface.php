@@ -247,6 +247,22 @@ interface UserInterface extends EntityInterface
     public function getAreaCode();
 
     /**
+     * Set gsQRCode
+     *
+     * @param boolean $gsQRCode
+     *
+     * @return self
+     */
+    public function setGsQRCode($gsQRCode);
+
+    /**
+     * Get gsQRCode
+     *
+     * @return boolean
+     */
+    public function getGsQRCode();
+
+    /**
      * Set company
      *
      * @param \Ivoz\Domain\Model\Company\CompanyInterface $company
@@ -389,6 +405,38 @@ interface UserInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\DDI\DDIInterface
      */
     public function getOutgoingDDI();
+
+    /**
+     * Set outgoingDDIRule
+     *
+     * @param \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRule
+     *
+     * @return self
+     */
+    public function setOutgoingDDIRule(\Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRule = null);
+
+    /**
+     * Get outgoingDDIRule
+     *
+     * @return \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
+     */
+    public function getOutgoingDDIRule();
+
+    /**
+     * Set voicemailLocution
+     *
+     * @param \Ivoz\Domain\Model\Locution\LocutionInterface $voicemailLocution
+     *
+     * @return self
+     */
+    public function setVoicemailLocution(\Ivoz\Domain\Model\Locution\LocutionInterface $voicemailLocution = null);
+
+    /**
+     * Get voicemailLocution
+     *
+     * @return \Ivoz\Domain\Model\Locution\LocutionInterface
+     */
+    public function getVoicemailLocution();
 
 }
 

@@ -75,6 +75,7 @@ Ivoz\Domain\Model\ConditionalRoutesCondition\ConditionalRoutesConditionAbstract:
       joinColumns:
         conditionalRouteId:
           referencedColumnName: id
+          nullable: false
       orphanRemoval: false
     ivrCommon:
       targetEntity: Ivoz\Domain\Model\IvrCommon\IvrCommonInterface
