@@ -1,0 +1,44 @@
+services:
+  _defaults:
+    autowire: true
+    public: false
+
+  ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\OutgoingRouting\OutgoingRoutingLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.outgoing_routing.service_collection:
+    '@Ivoz\Domain\Service\OutgoingRouting\OutgoingRoutingLifecycleServiceCollection'
+
+  ##################################
+  ## pre_persist
+  ##################################
+  Ivoz\Domain\Service\OutgoingRouting\SanitizeValues:
+    tags:
+      - { name: ivoz.lifecycle.outgoing_routing.pre_persist, priority: 10 }
+    arguments: ~
+
+  ##################################
+  ## post_persist
+  ##################################
+  Ivoz\Domain\Service\OutgoingRouting\UpdateLcrEntities:
+    tags:
+      - { name: ivoz.lifecycle.outgoing_routing.post_persist, priority: 10 }
+    arguments:
+      $updateLcrRuleByOutgoingRouting:
+        '@Ivoz\Domain\Service\LcrRule\UpdateByOutgoingRouting'
+      $createLcrGatewayByOutgoingRouting:
+        '@Ivoz\Domain\Service\LcrGateway\CreateByOutgoingRouting'
+
+  Ivoz\Infrastructure\OutgoingRouting\Service\OutgoingRouting\PersistedSendXmlRpc:
+    tags:
+      - { name: ivoz.lifecycle.outgoing_routing.post_persist, priority: 20 }
+
+  ##################################
+  ## post_remove
+  ##################################
+  Ivoz\Infrastructure\OutgoingRouting\Service\OutgoingRouting\RemovedSendXmlRpc:
+    tags:
+      - { name: ivoz.lifecycle.outgoing_routing.post_remove, priority: 10 }

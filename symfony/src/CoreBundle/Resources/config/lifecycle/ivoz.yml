@@ -25,5 +25,20 @@ imports:
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/music_on_hold.yml" }
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/outgoing_ddi_rule.yml" }
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/outgoing_ddi_rules_pattern.yml" }
+  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/outgoing_routing.yml" }
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/peer_server.yml" }
 
+services:
+  _defaults:
+    autowire: true
+    public: false
+
+  Ivoz\Domain\Service\LcrRule\UpdateByOutgoingRouting:
+    arguments:
+      $entityPersister:
+        '@Core\Infrastructure\Domain\Service\DoctrineEntityPersister'
+
+  Ivoz\Domain\Service\LcrGateway\CreateByOutgoingRouting:
+    arguments:
+      $entityPersister:
+        '@Core\Infrastructure\Domain\Service\DoctrineEntityPersister'

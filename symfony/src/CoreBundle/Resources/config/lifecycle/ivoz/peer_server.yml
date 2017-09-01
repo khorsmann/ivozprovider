@@ -35,12 +35,12 @@ services:
       $entityPersister:
         '@Core\Infrastructure\Domain\Service\DoctrineEntityPersister'
 
-  Ivoz\Domain\Service\OutgoingRouting\CreateByPeerServer:
+  Ivoz\Domain\Service\PeerServer\UpdateLcrEntities:
     tags:
       - { name: ivoz.lifecycle.peer_server.post_persist, priority: 20 }
     arguments:
-      $entityPersister:
-        '@Core\Infrastructure\Domain\Service\DoctrineEntityPersister'
+      $updateLcrEntitiesByOutgoingRouting:
+        '@Ivoz\Domain\Service\OutgoingRouting\UpdateLcrEntities'
 
   Ivoz\Infrastructure\PeerServer\Service\PeerServer\PersistedSendXmlRpc:
     tags:

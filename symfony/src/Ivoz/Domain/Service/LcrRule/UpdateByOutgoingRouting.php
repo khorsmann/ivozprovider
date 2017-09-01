@@ -1,22 +1,17 @@
 <?php
-namespace Ivoz\Domain\Service\OutgoingRouting;
+namespace Ivoz\Domain\Service\LcrRule;
 
 use Core\Domain\Service\EntityPersisterInterface;
-use Ivoz\Domain\Model\LcrGateway\LcrGatewayInterface;
 use Ivoz\Domain\Model\LcrRule\LcrRule;
 use Ivoz\Domain\Model\LcrRule\LcrRuleInterface;
-use Ivoz\Domain\Model\LcrRuleTarget\LcrRuleTarget;
 use Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface;
-use Ivoz\Domain\Model\PeerServer\PeerServerInterface;
 use Ivoz\Domain\Model\RoutingPattern\RoutingPatternInterface;
-use Ivoz\Domain\Service\PeerServer\PeerServerLifecycleEventHandlerInterface;
 
 /**
- * Class CreateByPeerServer
- * @package Ivoz\Domain\Service\OutgoingRouting
- * @lifecycle post_persist
+ * Class UpdateByOutgoingRouting
+ * @package Ivoz\Domain\Service\LcrRule
  */
-class CreateByPeerServer implements PeerServerLifecycleEventHandlerInterface
+class UpdateByOutgoingRouting
 {
     /**
      * @var EntityPersisterInterface
@@ -29,46 +24,12 @@ class CreateByPeerServer implements PeerServerLifecycleEventHandlerInterface
         $this->entityPersister = $this->entityPersister;
     }
 
-    public function execute(PeerServerInterface $entity, $isNew)
-    {
-        if (!$isNew) {
-            return;
-        }
-
-        $outgoingRoutings = $entity
-            ->getPeeringContract()
-            ->getOutgoingRoutings();
-
-        foreach ($outgoingRoutings as $outgoingRouting) {
-            $this->updateLCRPerOutgoingRouting($outgoingRouting);
-        }
-    }
-
-    protected function updateLCRPerOutgoingRouting(OutgoingRoutingInterface $outgoingRouting)
+    public function execute(OutgoingRoutingInterface $outgoingRouting)
     {
         // If edit, delete everything and fresh-start
         $lcrRules = $outgoingRouting->getLcrRules();
         foreach ($lcrRules as $lcrRule) {
             $this->entityPersister->remove($lcrRule);
-        }
-
-        $peeringContract = $outgoingRouting->getPeeringContract();
-        if (empty($peeringContract)) {
-            throw new \Exception('Peering Contract not found');
-        }
-
-        $peerServers = $peeringContract->getPeerServers();
-
-        /**
-         * @var LcrGatewayInterface[] $lcrGateways
-         */
-        $lcrGateways = array();
-
-        /**
-         * @var PeerServerInterface $peerServer
-         */
-        foreach ($peerServers as $peerServer) {
-            $lcrGateways = array_merge($lcrGateways, $peerServer->getLcrGateways());
         }
 
         /**
@@ -97,23 +58,8 @@ class CreateByPeerServer implements PeerServerLifecycleEventHandlerInterface
             );
             array_push($lcrRules, $lcrRule);
         } else {
+
             throw new \Exception('Incorrect Outgoing Routing Type');
-        }
-
-        // Create n x m LcrRuleTargets (n LcrRules; m LcrGateways)
-        foreach ($lcrRules as $lcrRule) {
-            foreach ($lcrGateways as $lcrGateway) {
-                $lcrRuleTargetDto = LcrRuleTarget::createDTO();
-
-                $lcrRuleTargetDto
-                    ->setRuleId($lcrRule->getId())
-                    ->setGwId($lcrGateway->getId())
-                    ->setPriority($outgoingRouting->getPriority())
-                    ->setWeight($outgoingRouting->getWeight())
-                    ->setOutgoingRoutingId($outgoingRouting->getId());
-
-                $this->entityPersister->persist($lcrRuleTargetDto);
-            }
         }
     }
 
