@@ -33,18 +33,3 @@ services:
   _defaults:
     autowire: true
     public: false
-
-  Ast\Domain\Service\PsEndpoint\UpdatePickupGroupByUser:
-    arguments:
-      $entityPersister:
-        '@Core\Infrastructure\Domain\Service\DoctrineEntityPersister'
-
-  Ivoz\Domain\Service\LcrRule\UpdateByOutgoingRouting:
-    arguments:
-      $entityPersister:
-        '@Core\Infrastructure\Domain\Service\DoctrineEntityPersister'
-
-  Ivoz\Domain\Service\LcrGateway\CreateByOutgoingRouting:
-    arguments:
-      $entityPersister:
-        '@Core\Infrastructure\Domain\Service\DoctrineEntityPersister'
