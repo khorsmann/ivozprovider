@@ -15,6 +15,9 @@ Ivoz\Domain\Model\PeeringContract\PeeringContract:
     outgoingRoutings:
       targetEntity: Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface
       mappedBy: peeringContract
+    peerServers:
+      targetEntity: Ivoz\Domain\Model\PeerServer\PeerServerInterface
+      mappedBy: peeringContract
   lifecycleCallbacks:
     postLoad:
       - initChangelog

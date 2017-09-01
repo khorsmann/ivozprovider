@@ -13,4 +13,10 @@ interface EntityPersisterInterface
      * @return EntityInterface
      */
     public function persist(DataTransferObjectInterface $dto, EntityInterface $entity = null);
+
+    /**
+     * @param EntityInterface $entity
+     * @return void
+     */
+    public function remove(EntityInterface $entity);
 }

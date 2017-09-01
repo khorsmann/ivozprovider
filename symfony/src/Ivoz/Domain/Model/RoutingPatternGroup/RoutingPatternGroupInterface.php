@@ -7,6 +7,11 @@ use Core\Domain\Model\EntityInterface;
 interface RoutingPatternGroupInterface extends EntityInterface
 {
     /**
+     * @return \Ivoz\Domain\Model\RoutingPattern\RoutingPatternInterface[]
+     */
+    public function getRoutingPatterns();
+
+    /**
      * Set name
      *
      * @param string $name

@@ -31,9 +31,24 @@ services:
   Ivoz\Domain\Service\LcrGateway\UpdateByPeerServer:
     tags:
       - { name: ivoz.lifecycle.peer_server.post_persist, priority: 10 }
-    arguments: ~
+    arguments:
+      $entityPersister:
+        '@Core\Infrastructure\Domain\Service\DoctrineEntityPersister'
 
   Ivoz\Domain\Service\OutgoingRouting\CreateByPeerServer:
     tags:
       - { name: ivoz.lifecycle.peer_server.post_persist, priority: 20 }
-    arguments: ~
+    arguments:
+      $entityPersister:
+        '@Core\Infrastructure\Domain\Service\DoctrineEntityPersister'
+
+  Ivoz\Infrastructure\PeerServer\Service\PeerServer\PersistedSendXmlRpc:
+    tags:
+      - { name: ivoz.lifecycle.peer_server.post_persist, priority: 30 }
+
+  ##################################
+  ## post_remove
+  ##################################
+  Ivoz\Infrastructure\PeerServer\Service\PeerServer\RemovedSendXmlRpc:
+    tags:
+      - { name: ivoz.lifecycle.peer_server.post_remove, priority: 10 }

@@ -123,7 +123,7 @@ Ivoz\Domain\Model\PeerServer\PeerServerAbstract:
       cascade: {  }
       fetch: LAZY
       mappedBy: null
-      inversedBy: null
+      inversedBy: peerServers
       joinColumns:
         peeringContractId:
           referencedColumnName: id

@@ -56,4 +56,14 @@ class DoctrineEntityPersister implements EntityPersisterInterface
 
         return $entity;
     }
+
+    /**
+     * @param EntityInterface $entity
+     * @return void
+     */
+    public function remove(EntityInterface $entity)
+    {
+        $this->em->remove($entity);
+
+    }
 }

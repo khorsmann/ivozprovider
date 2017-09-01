@@ -20,7 +20,7 @@ abstract class AbstractSendXmlRpc implements BrandLifecycleEventHandlerInterface
         $this->domainReload = $domainReload;
     }
 
-    public function execute(BrandInterface $entity)
+    public function execute(BrandInterface $entity, $isNew)
     {
         $this->xmlRpcService->send();
         $this->domainReload->send();

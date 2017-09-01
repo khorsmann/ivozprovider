@@ -787,7 +787,7 @@ abstract class PeerServerAbstract
      *
      * @return self
      */
-    public function setPeeringContract(\Ivoz\Domain\Model\PeeringContract\PeeringContractInterface $peeringContract)
+    public function setPeeringContract(\Ivoz\Domain\Model\PeeringContract\PeeringContractInterface $peeringContract = null)
     {
         $this->peeringContract = $peeringContract;
 

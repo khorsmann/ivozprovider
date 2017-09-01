@@ -57,6 +57,11 @@ class PeeringContractDTO implements DataTransferObjectInterface
     private $outgoingRoutings = null;
 
     /**
+     * @var array|null
+     */
+    private $peerServers = null;
+
+    /**
      * @return array
      */
     public function __toArray()
@@ -68,7 +73,8 @@ class PeeringContractDTO implements DataTransferObjectInterface
             'id' => $this->getId(),
             'brandId' => $this->getBrandId(),
             'transformationRulesetGroupsTrunkId' => $this->getTransformationRulesetGroupsTrunkId(),
-            'outgoingRoutingsId' => $this->getOutgoingRoutingsId()
+            'outgoingRoutingsId' => $this->getOutgoingRoutingsId(),
+            'peerServersId' => $this->getPeerServersId()
         ];
     }
 
@@ -88,6 +94,15 @@ class PeeringContractDTO implements DataTransferObjectInterface
             );
         }
 
+        $items = $this->getPeerServers();
+        $this->peerServers = [];
+        foreach ($items as $item) {
+            $this->peerServers[] = $transformer->transform(
+                'Ivoz\\Domain\\Model\\PeerServer\\PeerServer',
+                $item
+            );
+        }
+
     }
 
     /**
@@ -98,6 +113,10 @@ class PeeringContractDTO implements DataTransferObjectInterface
         $this->outgoingRoutings = $transformer->transform(
             'Ivoz\\Domain\\Model\\OutgoingRouting\\OutgoingRouting',
             $this->outgoingRoutings
+        );
+        $this->peerServers = $transformer->transform(
+            'Ivoz\\Domain\\Model\\PeerServer\\PeerServer',
+            $this->peerServers
         );
     }
 
@@ -255,6 +274,26 @@ class PeeringContractDTO implements DataTransferObjectInterface
     public function getOutgoingRoutings()
     {
         return $this->outgoingRoutings;
+    }
+
+    /**
+     * @param array $peerServers
+     *
+     * @return PeeringContractDTO
+     */
+    public function setPeerServers($peerServers)
+    {
+        $this->peerServers = $peerServers;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPeerServers()
+    {
+        return $this->peerServers;
     }
 }
 

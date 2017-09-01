@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for target in Ast Kam Ivoz
+for target in "$@"
 do
     php ./bin/console provider:generate:entities:abstract $target && \
     php ./bin/console provider:generate:traits $target && \

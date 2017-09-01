@@ -296,7 +296,7 @@ interface PeerServerInterface extends EntityInterface
      *
      * @return self
      */
-    public function setPeeringContract(\Ivoz\Domain\Model\PeeringContract\PeeringContractInterface $peeringContract);
+    public function setPeeringContract(\Ivoz\Domain\Model\PeeringContract\PeeringContractInterface $peeringContract = null);
 
     /**
      * Get peeringContract

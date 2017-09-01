@@ -24,7 +24,7 @@ abstract class AbstractSendXmlRpc implements CompanyLifecycleEventHandlerInterfa
         $this->addressReload = $addressReload;
     }
 
-    public function execute(CompanyInterface $entity)
+    public function execute(CompanyInterface $entity, $isNew)
     {
         $this->xmlRpcService->send();
         $this->domainReload->send();

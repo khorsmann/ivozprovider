@@ -117,5 +117,36 @@ interface PeeringContractInterface extends EntityInterface
      */
     public function getOutgoingRoutings(\Doctrine\Common\Collections\Criteria $criteria = null);
 
+    /**
+     * Add peerServer
+     *
+     * @param \Ivoz\Domain\Model\PeerServer\PeerServerInterface $peerServer
+     *
+     * @return PeeringContractTrait
+     */
+    public function addPeerServer(\Ivoz\Domain\Model\PeerServer\PeerServerInterface $peerServer);
+
+    /**
+     * Remove peerServer
+     *
+     * @param \Ivoz\Domain\Model\PeerServer\PeerServerInterface $peerServer
+     */
+    public function removePeerServer(\Ivoz\Domain\Model\PeerServer\PeerServerInterface $peerServer);
+
+    /**
+     * Replace peerServers
+     *
+     * @param \Ivoz\Domain\Model\PeerServer\PeerServerInterface[] $peerServers
+     * @return self
+     */
+    public function replacePeerServers(array $peerServers);
+
+    /**
+     * Get peerServers
+     *
+     * @return array
+     */
+    public function getPeerServers(\Doctrine\Common\Collections\Criteria $criteria = null);
+
 }
 

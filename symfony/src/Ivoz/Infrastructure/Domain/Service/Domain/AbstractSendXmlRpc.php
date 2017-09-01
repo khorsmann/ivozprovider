@@ -16,7 +16,7 @@ abstract class AbstractSendXmlRpc implements ApplicationServerLifecycleEventHand
         $this->domainReload = $domainReload;
     }
 
-    public function execute(DomainInterface $entity)
+    public function execute(DomainInterface $entity, $isNew)
     {
         $this->domainReload->send();
     }
