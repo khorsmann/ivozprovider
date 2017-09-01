@@ -7,6 +7,13 @@ use Core\Domain\Model\EntityInterface;
 interface UserInterface extends EntityInterface
 {
     /**
+     * return associated endpoint with the user
+     *
+     * @return \Ast\Domain\Model\PsEndpoint\PsEndpointInterface
+     */
+    public function getEndpoint();
+
+    /**
      * Set name
      *
      * @param string $name

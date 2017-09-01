@@ -1,0 +1,26 @@
+services:
+  _defaults:
+    autowire: true
+    public: false
+
+  ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\PickUpRelUser\PickUpRelUserLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.pick_up_rel_user.service_collection:
+    '@Ivoz\Domain\Service\PickUpRelUser\PickUpRelUserLifecycleServiceCollection'
+
+  ##################################
+  ## post_persist & post_remove
+  ##################################
+  Ivoz\Domain\Service\PickUpRelUser\UpdateEndpointGroups:
+    tags:
+      - { name: ivoz.lifecycle.pick_up_rel_user.post_persist, priority: 10 }
+      - { name: ivoz.lifecycle.pick_up_rel_user.post_remove, priority: 10 }
+    arguments:
+      $updatePickupGroupByUser:
+        '@Ast\Domain\Service\PsEndpoint\UpdatePickupGroupByUser'
+
+
