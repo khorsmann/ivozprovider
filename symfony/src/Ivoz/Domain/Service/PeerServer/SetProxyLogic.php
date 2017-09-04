@@ -9,7 +9,7 @@ use Ivoz\Domain\Model\PeerServer\PeerServerInterface;
  * @package Ivoz\Domain\Service\PeerServer
  * @lifecycle pre_persist
  */
-class SetProxyLogic implements PeerServerLifecycleEventHandlerInterface
+class SetProxyLogic implements QueueLifecycleEventHandlerInterface
 {
     public function __construct() {}
 

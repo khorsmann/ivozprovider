@@ -3,14 +3,14 @@ namespace Ivoz\Domain\Service\LcrGateway;
 
 use Core\Domain\Service\EntityPersisterInterface;
 use Ivoz\Domain\Model\PeerServer\PeerServerInterface;
-use Ivoz\Domain\Service\PeerServer\PeerServerLifecycleEventHandlerInterface;
+use Ivoz\Domain\Service\PeerServer\QueueLifecycleEventHandlerInterface;
 
 /**
  * Class UpdateByPeerServer
  * @package Ivoz\Domain\Service\LcrGateway
  * @lifecycle post_persist
  */
-class UpdateByPeerServer implements PeerServerLifecycleEventHandlerInterface
+class UpdateByPeerServer implements QueueLifecycleEventHandlerInterface
 {
     /**
      * @var EntityPersisterInterface

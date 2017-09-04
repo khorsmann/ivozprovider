@@ -10,7 +10,7 @@ use \Ivoz\Domain\Service\OutgoingRouting\UpdateLcrEntities as OutgoingRoutingUpd
  * @package Ivoz\Domain\Service\PeerServer
  * @lifecycle post_persist
  */
-class UpdateLcrEntities implements PeerServerLifecycleEventHandlerInterface
+class UpdateLcrEntities implements QueueLifecycleEventHandlerInterface
 {
     /**
      * @var UpdateLcrEntities

@@ -1,11 +1,11 @@
 <?php
 
-namespace Ivoz\Domain\Service\PeerServer;
+namespace Ivoz\Domain\Service\Queue;
 
 use Core\Domain\Service\LifecycleServiceCollectionInterface;
 use Core\Domain\Service\LifecycleServiceCollectionTrait;
 
-class PeerServerLifecycleServiceCollection implements LifecycleServiceCollectionInterface
+class QueueLifecycleServiceCollection implements LifecycleServiceCollectionInterface
 {
     use LifecycleServiceCollectionTrait;
 
