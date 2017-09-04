@@ -1,11 +1,11 @@
 <?php
 
-namespace Ivoz\Domain\Service\PickUpRelUser;
+namespace Ivoz\Domain\Service\QueueMember;
 
 use Core\Domain\Service\LifecycleServiceCollectionInterface;
 use Core\Domain\Service\LifecycleServiceCollectionTrait;
 
-class PickUpRelUserLifecycleServiceCollection implements LifecycleServiceCollectionInterface
+class QueueMemberLifecycleServiceCollection implements LifecycleServiceCollectionInterface
 {
     use LifecycleServiceCollectionTrait;
 

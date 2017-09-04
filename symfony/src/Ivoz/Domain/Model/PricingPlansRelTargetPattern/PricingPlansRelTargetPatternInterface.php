@@ -6,6 +6,8 @@ use Core\Domain\Model\EntityInterface;
 
 interface PricingPlansRelTargetPatternInterface extends EntityInterface
 {
+    public function getCost($duration = null);
+
     /**
      * Set connectionCharge
      *

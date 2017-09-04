@@ -28,6 +28,7 @@ imports:
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/outgoing_routing.yml" }
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/peer_server.yml" }
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/pick_up_rel_user.yml" }
+  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/queue_member.yml" }
 
 services:
   _defaults:

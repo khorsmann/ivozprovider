@@ -6,6 +6,8 @@ use Core\Domain\Model\EntityInterface;
 
 interface QueueInterface extends EntityInterface
 {
+    public function getAstQueueName();
+
     /**
      * Set name
      *
