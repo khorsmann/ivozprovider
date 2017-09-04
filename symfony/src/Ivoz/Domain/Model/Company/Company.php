@@ -339,6 +339,10 @@ class Company extends CompanyAbstract implements CompanyInterface
         return $this->getAreaCode();
     }
 
+    /**
+     * @param $number
+     * @return string
+     */
     public function removeOutboundPrefix($number)
     {
         /**
@@ -349,6 +353,10 @@ class Company extends CompanyAbstract implements CompanyInterface
         return preg_replace("/^$outboundPrefix/", "", $number);
     }
 
+    /**
+     * @param $number
+     * @return string
+     */
     public function addOutboundPrefix($number)
     {
         /**

@@ -26,7 +26,7 @@ class UpdateByBrand implements BrandLifecycleEventHandlerInterface
         $this->entityPersister = $entityPersister;
     }
 
-    public function execute(BrandInterface $entity)
+    public function execute(BrandInterface $entity, $isNew)
     {
         $retails = $entity->getRetailAccounts();
         foreach ($retails as $retail) {

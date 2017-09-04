@@ -9,7 +9,7 @@ use Ivoz\Domain\Model\PeerServer\PeerServerInterface;
  * @package Ivoz\Domain\Service\PeerServer
  * @lifecycle pre_persist
  */
-class SanitizeValues implements QueueLifecycleEventHandlerInterface
+class SanitizeValues implements PeerServerLifecycleEventHandlerInterface
 {
     public function __construct() {}
 

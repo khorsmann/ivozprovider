@@ -78,8 +78,16 @@ interface CompanyInterface extends EntityInterface
      */
     public function getAreaCodeValue();
 
+    /**
+     * @param $number
+     * @return string
+     */
     public function removeOutboundPrefix($number);
 
+    /**
+     * @param $number
+     * @return string
+     */
     public function addOutboundPrefix($number);
 
     public function getOutgoingRoutings();

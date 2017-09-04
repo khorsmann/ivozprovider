@@ -147,6 +147,16 @@ class RetailAccountDTO implements DataTransferObjectInterface
     private $language;
 
     /**
+     * @var array|null
+     */
+    private $psEndpoints = null;
+
+    /**
+     * @var array|null
+     */
+    private $DDIs = null;
+
+    /**
      * @return array
      */
     public function __toArray()
@@ -173,7 +183,9 @@ class RetailAccountDTO implements DataTransferObjectInterface
             'companyId' => $this->getCompanyId(),
             'countryId' => $this->getCountryId(),
             'outgoingDDIId' => $this->getOutgoingDDIId(),
-            'languageId' => $this->getLanguageId()
+            'languageId' => $this->getLanguageId(),
+            'psEndpointsId' => $this->getPsEndpointsId(),
+            'dDIsId' => $this->getDDIsId()
         ];
     }
 
@@ -187,6 +199,24 @@ class RetailAccountDTO implements DataTransferObjectInterface
         $this->country = $transformer->transform('Ivoz\\Domain\\Model\\Country\\Country', $this->getCountryId());
         $this->outgoingDDI = $transformer->transform('Ivoz\\Domain\\Model\\DDI\\DDI', $this->getOutgoingDDIId());
         $this->language = $transformer->transform('Ivoz\\Domain\\Model\\Language\\Language', $this->getLanguageId());
+        $items = $this->getPsEndpoints();
+        $this->psEndpoints = [];
+        foreach ($items as $item) {
+            $this->psEndpoints[] = $transformer->transform(
+                'Ast\\Domain\\Model\\PsEndpoint\\PsEndpoint',
+                $item
+            );
+        }
+
+        $items = $this->getDDIs();
+        $this->dDIs = [];
+        foreach ($items as $item) {
+            $this->dDIs[] = $transformer->transform(
+                'Ivoz\\Domain\\Model\\DDI\\DDI',
+                $item
+            );
+        }
+
     }
 
     /**
@@ -194,7 +224,14 @@ class RetailAccountDTO implements DataTransferObjectInterface
      */
     public function transformCollections(CollectionTransformerInterface $transformer)
     {
-
+        $this->psEndpoints = $transformer->transform(
+            'Ast\\Domain\\Model\\PsEndpoint\\PsEndpoint',
+            $this->psEndpoints
+        );
+        $this->dDIs = $transformer->transform(
+            'Ivoz\\Domain\\Model\\DDI\\DDI',
+            $this->dDIs
+        );
     }
 
     /**
@@ -675,6 +712,46 @@ class RetailAccountDTO implements DataTransferObjectInterface
     public function getLanguage()
     {
         return $this->language;
+    }
+
+    /**
+     * @param array $psEndpoints
+     *
+     * @return RetailAccountDTO
+     */
+    public function setPsEndpoints($psEndpoints)
+    {
+        $this->psEndpoints = $psEndpoints;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPsEndpoints()
+    {
+        return $this->psEndpoints;
+    }
+
+    /**
+     * @param array $dDIs
+     *
+     * @return RetailAccountDTO
+     */
+    public function setDDIs($dDIs)
+    {
+        $this->DDIs = $dDIs;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getDDIs()
+    {
+        return $this->DDIs;
     }
 }
 

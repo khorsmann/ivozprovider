@@ -156,7 +156,7 @@ Ast\Domain\Model\PsEndpoint\PsEndpointAbstract:
       cascade: {  }
       fetch: LAZY
       mappedBy: null
-      inversedBy: null
+      inversedBy: psEndpoints
       joinColumns:
         retailAccountId:
           referencedColumnName: id

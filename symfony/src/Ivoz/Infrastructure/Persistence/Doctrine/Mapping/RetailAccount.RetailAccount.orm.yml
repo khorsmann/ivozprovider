@@ -11,6 +11,13 @@ Ivoz\Domain\Model\RetailAccount\RetailAccount:
       id: true
       generator:
         strategy: IDENTITY
+  oneToMany:
+    psEndpoints:
+      targetEntity: Ast\Domain\Model\PsEndpoint\PsEndpointInterface
+      mappedBy: retailAccount
+    DDIs:
+      targetEntity: Ivoz\Domain\Model\DDI\DDIInterface
+      mappedBy: retailAccount
   lifecycleCallbacks:
     postLoad:
       - initChangelog

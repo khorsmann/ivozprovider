@@ -7,6 +7,74 @@ use Core\Domain\Model\EntityInterface;
 interface RetailAccountInterface extends EntityInterface
 {
     /**
+     * @return string
+     */
+    public function getContact();
+
+    /**
+     * @return string
+     */
+    public function getSorcery();
+
+    /**
+     * @brief Return Retail Account country or company if null
+     * @return CountryInterface
+     */
+    public function getCountry();
+
+    /**
+     * @deprecated use getCountry instead
+     */
+    public function getCountries();
+
+    /**
+     * Convert a user dialed number to E164 form
+     *
+     * @param string $number
+     * @return string number in E164
+     */
+    public function preferredToE164($prefnumber);
+
+    /**
+     * Convert a received number to User prefered format
+     *
+     * @param number $number
+     */
+    public function E164ToPreferred($e164number);
+
+    /**
+     * Obtain content for X-Info-Retail header
+     *
+     * @param mixed $callee
+     * @return string
+     */
+    public function getRequestUri($callee);
+
+    /**
+     * @param $callee
+     * @return string
+     */
+    public function getRequestDirectUri($callee);
+
+    public function getAstPsEndpoint();
+
+    public function getLanguageCode();
+
+    /**
+     * Get Retail Account outgoingDDI
+     * If no DDI is assigned, retrieve company's default DDI
+     * @return \IvozProvider\Model\Raw\DDIs or NULL
+     */
+    public function getOutgoingDDI();
+
+    /**
+     * Get DDI associated with this retail Account
+     *
+     * @return DDIInterface
+     */
+    public function getDDI($ddieE164);
+
+    /**
      * Set name
      *
      * @param string $name
@@ -304,13 +372,6 @@ interface RetailAccountInterface extends EntityInterface
     public function setCountry(\Ivoz\Domain\Model\Country\CountryInterface $country = null);
 
     /**
-     * Get country
-     *
-     * @return \Ivoz\Domain\Model\Country\CountryInterface
-     */
-    public function getCountry();
-
-    /**
      * Set outgoingDDI
      *
      * @param \Ivoz\Domain\Model\DDI\DDIInterface $outgoingDDI
@@ -318,13 +379,6 @@ interface RetailAccountInterface extends EntityInterface
      * @return self
      */
     public function setOutgoingDDI(\Ivoz\Domain\Model\DDI\DDIInterface $outgoingDDI = null);
-
-    /**
-     * Get outgoingDDI
-     *
-     * @return \Ivoz\Domain\Model\DDI\DDIInterface
-     */
-    public function getOutgoingDDI();
 
     /**
      * Set language
@@ -341,6 +395,68 @@ interface RetailAccountInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Language\LanguageInterface
      */
     public function getLanguage();
+
+    /**
+     * Add psEndpoint
+     *
+     * @param \Ast\Domain\Model\PsEndpoint\PsEndpointInterface $psEndpoint
+     *
+     * @return RetailAccountTrait
+     */
+    public function addPsEndpoint(\Ast\Domain\Model\PsEndpoint\PsEndpointInterface $psEndpoint);
+
+    /**
+     * Remove psEndpoint
+     *
+     * @param \Ast\Domain\Model\PsEndpoint\PsEndpointInterface $psEndpoint
+     */
+    public function removePsEndpoint(\Ast\Domain\Model\PsEndpoint\PsEndpointInterface $psEndpoint);
+
+    /**
+     * Replace psEndpoints
+     *
+     * @param \Ast\Domain\Model\PsEndpoint\PsEndpointInterface[] $psEndpoints
+     * @return self
+     */
+    public function replacePsEndpoints(array $psEndpoints);
+
+    /**
+     * Get psEndpoints
+     *
+     * @return array
+     */
+    public function getPsEndpoints(\Doctrine\Common\Collections\Criteria $criteria = null);
+
+    /**
+     * Add dDI
+     *
+     * @param \Ivoz\Domain\Model\DDI\DDIInterface $dDI
+     *
+     * @return RetailAccountTrait
+     */
+    public function addDDI(\Ivoz\Domain\Model\DDI\DDIInterface $dDI);
+
+    /**
+     * Remove dDI
+     *
+     * @param \Ivoz\Domain\Model\DDI\DDIInterface $dDI
+     */
+    public function removeDDI(\Ivoz\Domain\Model\DDI\DDIInterface $dDI);
+
+    /**
+     * Replace dDIs
+     *
+     * @param \Ivoz\Domain\Model\DDI\DDIInterface[] $dDIs
+     * @return self
+     */
+    public function replaceDDIs(array $dDIs);
+
+    /**
+     * Get dDIs
+     *
+     * @return array
+     */
+    public function getDDIs(\Doctrine\Common\Collections\Criteria $criteria = null);
 
 }
 

@@ -238,7 +238,7 @@ Ivoz\Domain\Model\DDI\DDIAbstract:
       cascade: {  }
       fetch: LAZY
       mappedBy: null
-      inversedBy: null
+      inversedBy: DDIs
       joinColumns:
         retailAccountId:
           referencedColumnName: id
