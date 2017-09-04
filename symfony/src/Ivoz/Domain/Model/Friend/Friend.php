@@ -15,7 +15,9 @@ class Friend extends FriendAbstract implements FriendInterface
 {
     use FriendTrait;
 
-
+    /**
+     * @return string
+     */
     public function getContact()
     {
         return sprintf("sip:%s@%s",
@@ -23,6 +25,9 @@ class Friend extends FriendAbstract implements FriendInterface
             $this->getDomain());
     }
 
+    /**
+     * @return string
+     */
     public function getSorcery()
     {
         return sprintf(
@@ -37,6 +42,10 @@ class Friend extends FriendAbstract implements FriendInterface
         );
     }
 
+    /**
+     * @param $exten
+     * @return bool
+     */
     public function checkExtension($exten)
     {
         $patterns = $this->getPatterns();

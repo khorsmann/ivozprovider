@@ -22,6 +22,11 @@ trait TerminalTrait
      */
     protected $astPsEndpoints;
 
+    /**
+     * @var ArrayCollection
+     */
+    protected $users;
+
 
     /**
      * Constructor
@@ -30,6 +35,7 @@ trait TerminalTrait
     {
         parent::__construct(...func_get_args());
         $this->astPsEndpoints = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     /**
@@ -54,6 +60,7 @@ trait TerminalTrait
 
         return $self
             ->replaceAstPsEndpoints($dto->getAstPsEndpoints())
+            ->replaceUsers($dto->getUsers())
         ;
     }
 
@@ -69,7 +76,8 @@ trait TerminalTrait
         parent::updateFromDTO($dto);
 
         $this
-            ->replaceAstPsEndpoints($dto->getAstPsEndpoints());
+            ->replaceAstPsEndpoints($dto->getAstPsEndpoints())
+            ->replaceUsers($dto->getUsers());
 
 
         return $this;
@@ -83,7 +91,8 @@ trait TerminalTrait
         $dto = parent::toDTO();
         return $dto
             ->setId($this->getId())
-            ->setAstPsEndpoints($this->getAstPsEndpoints());
+            ->setAstPsEndpoints($this->getAstPsEndpoints())
+            ->setUsers($this->getUsers());
     }
 
     /**
@@ -177,6 +186,78 @@ trait TerminalTrait
         }
 
         return $this->astPsEndpoints->toArray();
+    }
+
+    /**
+     * Add user
+     *
+     * @param \Ivoz\Domain\Model\User\UserInterface $user
+     *
+     * @return TerminalTrait
+     */
+    public function addUser(\Ivoz\Domain\Model\User\UserInterface $user)
+    {
+        $this->users[] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \Ivoz\Domain\Model\User\UserInterface $user
+     */
+    public function removeUser(\Ivoz\Domain\Model\User\UserInterface $user)
+    {
+        $this->users->removeElement($user);
+    }
+
+    /**
+     * Replace users
+     *
+     * @param \Ivoz\Domain\Model\User\UserInterface[] $users
+     * @return self
+     */
+    public function replaceUsers(array $users)
+    {
+        $updatedEntities = [];
+        $fallBackId = -1;
+        foreach ($users as $entity) {
+            $index = $entity->getId() ? $entity->getId() : $fallBackId--;
+            $updatedEntities[$index] = $entity;
+            $entity->setTerminal($this);
+        }
+        $updatedEntityKeys = array_keys($updatedEntities);
+
+        foreach ($this->users as $key => $entity) {
+            $identity = $entity->getId();
+            if (in_array($identity, $updatedEntityKeys)) {
+                $this->users[$key] = $updatedEntities[$identity];
+            } else {
+                $this->removeUser($key);
+            }
+            unset($updatedEntities[$identity]);
+        }
+
+        foreach ($updatedEntities as $entity) {
+            $this->addUser($entity);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get users
+     *
+     * @return array
+     */
+    public function getUsers(Criteria $criteria = null)
+    {
+        if (!is_null($criteria)) {
+            return $this->users->matching($criteria)->toArray();
+        }
+
+        return $this->users->toArray();
     }
 
 

@@ -7,6 +7,16 @@ use Core\Domain\Model\EntityInterface;
 interface TerminalModelInterface extends EntityInterface
 {
     /**
+     * {@inheritdoc}
+     */
+    public function setGenericTemplate($genericTemplate = null);
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setSpecificTemplate($specificTemplate = null);
+
+    /**
      * Set iden
      *
      * @param string $iden
@@ -55,29 +65,11 @@ interface TerminalModelInterface extends EntityInterface
     public function getDescription();
 
     /**
-     * Set genericTemplate
-     *
-     * @param string $genericTemplate
-     *
-     * @return self
-     */
-    public function setGenericTemplate($genericTemplate = null);
-
-    /**
      * Get genericTemplate
      *
      * @return string
      */
     public function getGenericTemplate();
-
-    /**
-     * Set specificTemplate
-     *
-     * @param string $specificTemplate
-     *
-     * @return self
-     */
-    public function setSpecificTemplate($specificTemplate = null);
 
     /**
      * Get specificTemplate

@@ -87,6 +87,11 @@ class TerminalDTO implements DataTransferObjectInterface
     private $astPsEndpoints = null;
 
     /**
+     * @var array|null
+     */
+    private $users = null;
+
+    /**
      * @return array
      */
     public function __toArray()
@@ -104,7 +109,8 @@ class TerminalDTO implements DataTransferObjectInterface
             'id' => $this->getId(),
             'companyId' => $this->getCompanyId(),
             'terminalModelId' => $this->getTerminalModelId(),
-            'astPsEndpointsId' => $this->getAstPsEndpointsId()
+            'astPsEndpointsId' => $this->getAstPsEndpointsId(),
+            'usersId' => $this->getUsersId()
         ];
     }
 
@@ -124,6 +130,15 @@ class TerminalDTO implements DataTransferObjectInterface
             );
         }
 
+        $items = $this->getUsers();
+        $this->users = [];
+        foreach ($items as $item) {
+            $this->users[] = $transformer->transform(
+                'Ivoz\\Domain\\Model\\User\\User',
+                $item
+            );
+        }
+
     }
 
     /**
@@ -134,6 +149,10 @@ class TerminalDTO implements DataTransferObjectInterface
         $this->astPsEndpoints = $transformer->transform(
             'Ast\\Domain\\Model\\PsEndpoint\\PsEndpoint',
             $this->astPsEndpoints
+        );
+        $this->users = $transformer->transform(
+            'Ivoz\\Domain\\Model\\User\\User',
+            $this->users
         );
     }
 
@@ -411,6 +430,26 @@ class TerminalDTO implements DataTransferObjectInterface
     public function getAstPsEndpoints()
     {
         return $this->astPsEndpoints;
+    }
+
+    /**
+     * @param array $users
+     *
+     * @return TerminalDTO
+     */
+    public function setUsers($users)
+    {
+        $this->users = $users;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getUsers()
+    {
+        return $this->users;
     }
 }
 

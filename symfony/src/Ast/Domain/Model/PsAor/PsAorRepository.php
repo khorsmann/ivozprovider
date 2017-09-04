@@ -2,7 +2,10 @@
 
 namespace Ast\Domain\Model\PsAor;
 
-interface PsAorRepository
+use Doctrine\Common\Collections\Selectable;
+use Doctrine\Common\Persistence\ObjectRepository;
+
+interface PsAorRepository extends ObjectRepository, Selectable
 {
     public function getSorceryByContact($contact);
 }

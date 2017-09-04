@@ -6,6 +6,10 @@ use Core\Domain\Model\EntityInterface;
 
 interface ScheduleInterface extends EntityInterface
 {
+    public function checkIsOnTimeRange($dayOfTheWeek, \DateTime $time, \DateTimeZone $timeZone);
+
+    public function isOnSchedule(\DateTime $time);
+
     /**
      * Set name
      *

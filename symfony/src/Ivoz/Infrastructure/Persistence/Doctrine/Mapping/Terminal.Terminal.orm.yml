@@ -15,6 +15,9 @@ Ivoz\Domain\Model\Terminal\Terminal:
     astPsEndpoints:
       targetEntity: Ast\Domain\Model\PsEndpoint\PsEndpointInterface
       mappedBy: terminal
+    users:
+      targetEntity: Ivoz\Domain\Model\User\UserInterface
+      mappedBy: terminal
   lifecycleCallbacks:
     postLoad:
       - initChangelog

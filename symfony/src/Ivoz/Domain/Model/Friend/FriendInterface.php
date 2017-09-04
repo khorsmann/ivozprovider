@@ -6,10 +6,20 @@ use Core\Domain\Model\EntityInterface;
 
 interface FriendInterface extends EntityInterface
 {
+    /**
+     * @return string
+     */
     public function getContact();
 
+    /**
+     * @return string
+     */
     public function getSorcery();
 
+    /**
+     * @param $exten
+     * @return bool
+     */
     public function checkExtension($exten);
 
     /**

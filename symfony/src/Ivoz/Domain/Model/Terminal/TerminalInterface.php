@@ -6,6 +6,28 @@ use Core\Domain\Model\EntityInterface;
 
 interface TerminalInterface extends EntityInterface
 {
+    public function getUser();
+
+    /**
+     * @return string
+     */
+    public function getContact();
+
+    /**
+     * @return string
+     */
+    public function getSorcery();
+
+    /**
+     * @return string
+     */
+    public function getAllow();
+
+    /**
+     * @return PsEndpointInterface
+     */
+    public function getAstPsEndpoint();
+
     /**
      * Set name
      *
@@ -212,6 +234,37 @@ interface TerminalInterface extends EntityInterface
      * @return array
      */
     public function getAstPsEndpoints(\Doctrine\Common\Collections\Criteria $criteria = null);
+
+    /**
+     * Add user
+     *
+     * @param \Ivoz\Domain\Model\User\UserInterface $user
+     *
+     * @return TerminalTrait
+     */
+    public function addUser(\Ivoz\Domain\Model\User\UserInterface $user);
+
+    /**
+     * Remove user
+     *
+     * @param \Ivoz\Domain\Model\User\UserInterface $user
+     */
+    public function removeUser(\Ivoz\Domain\Model\User\UserInterface $user);
+
+    /**
+     * Replace users
+     *
+     * @param \Ivoz\Domain\Model\User\UserInterface[] $users
+     * @return self
+     */
+    public function replaceUsers(array $users);
+
+    /**
+     * Get users
+     *
+     * @return array
+     */
+    public function getUsers(\Doctrine\Common\Collections\Criteria $criteria = null);
 
 }
 

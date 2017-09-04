@@ -201,7 +201,7 @@ Ivoz\Domain\Model\User\UserAbstract:
       cascade: {  }
       fetch: LAZY
       mappedBy: null
-      inversedBy: null
+      inversedBy: users
       joinColumns:
         terminalId:
           referencedColumnName: id
