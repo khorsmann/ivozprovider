@@ -90,5 +90,36 @@ interface RoutingPatternGroupInterface extends EntityInterface
      */
     public function getRelPatterns(\Doctrine\Common\Collections\Criteria $criteria = null);
 
+    /**
+     * Add outgoingRouting
+     *
+     * @param \Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface $outgoingRouting
+     *
+     * @return RoutingPatternGroupTrait
+     */
+    public function addOutgoingRouting(\Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface $outgoingRouting);
+
+    /**
+     * Remove outgoingRouting
+     *
+     * @param \Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface $outgoingRouting
+     */
+    public function removeOutgoingRouting(\Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface $outgoingRouting);
+
+    /**
+     * Replace outgoingRoutings
+     *
+     * @param \Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface[] $outgoingRoutings
+     * @return self
+     */
+    public function replaceOutgoingRoutings(array $outgoingRoutings);
+
+    /**
+     * Get outgoingRoutings
+     *
+     * @return array
+     */
+    public function getOutgoingRoutings(\Doctrine\Common\Collections\Criteria $criteria = null);
+
 }
 

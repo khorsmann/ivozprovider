@@ -42,6 +42,11 @@ class RoutingPatternGroupDTO implements DataTransferObjectInterface
     private $relPatterns = null;
 
     /**
+     * @var array|null
+     */
+    private $outgoingRoutings = null;
+
+    /**
      * @return array
      */
     public function __toArray()
@@ -51,7 +56,8 @@ class RoutingPatternGroupDTO implements DataTransferObjectInterface
             'description' => $this->getDescription(),
             'id' => $this->getId(),
             'brandId' => $this->getBrandId(),
-            'relPatternsId' => $this->getRelPatternsId()
+            'relPatternsId' => $this->getRelPatternsId(),
+            'outgoingRoutingsId' => $this->getOutgoingRoutingsId()
         ];
     }
 
@@ -70,6 +76,15 @@ class RoutingPatternGroupDTO implements DataTransferObjectInterface
             );
         }
 
+        $items = $this->getOutgoingRoutings();
+        $this->outgoingRoutings = [];
+        foreach ($items as $item) {
+            $this->outgoingRoutings[] = $transformer->transform(
+                'Ivoz\\Domain\\Model\\OutgoingRouting\\OutgoingRouting',
+                $item
+            );
+        }
+
     }
 
     /**
@@ -80,6 +95,10 @@ class RoutingPatternGroupDTO implements DataTransferObjectInterface
         $this->relPatterns = $transformer->transform(
             'Ivoz\\Domain\\Model\\RoutingPatternGroupsRelPattern\\RoutingPatternGroupsRelPattern',
             $this->relPatterns
+        );
+        $this->outgoingRoutings = $transformer->transform(
+            'Ivoz\\Domain\\Model\\OutgoingRouting\\OutgoingRouting',
+            $this->outgoingRoutings
         );
     }
 
@@ -189,6 +208,26 @@ class RoutingPatternGroupDTO implements DataTransferObjectInterface
     public function getRelPatterns()
     {
         return $this->relPatterns;
+    }
+
+    /**
+     * @param array $outgoingRoutings
+     *
+     * @return RoutingPatternGroupDTO
+     */
+    public function setOutgoingRoutings($outgoingRoutings)
+    {
+        $this->outgoingRoutings = $outgoingRoutings;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getOutgoingRoutings()
+    {
+        return $this->outgoingRoutings;
     }
 }
 

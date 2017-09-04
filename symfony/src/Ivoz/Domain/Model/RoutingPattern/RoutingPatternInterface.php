@@ -70,5 +70,36 @@ interface RoutingPatternInterface extends EntityInterface
      */
     public function getDescription();
 
+    /**
+     * Add lcrRule
+     *
+     * @param \Ivoz\Domain\Model\LcrRule\LcrRuleInterface $lcrRule
+     *
+     * @return RoutingPatternTrait
+     */
+    public function addLcrRule(\Ivoz\Domain\Model\LcrRule\LcrRuleInterface $lcrRule);
+
+    /**
+     * Remove lcrRule
+     *
+     * @param \Ivoz\Domain\Model\LcrRule\LcrRuleInterface $lcrRule
+     */
+    public function removeLcrRule(\Ivoz\Domain\Model\LcrRule\LcrRuleInterface $lcrRule);
+
+    /**
+     * Replace lcrRules
+     *
+     * @param \Ivoz\Domain\Model\LcrRule\LcrRuleInterface[] $lcrRules
+     * @return self
+     */
+    public function replaceLcrRules(array $lcrRules);
+
+    /**
+     * Get lcrRules
+     *
+     * @return array
+     */
+    public function getLcrRules(\Doctrine\Common\Collections\Criteria $criteria = null);
+
 }
 

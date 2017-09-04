@@ -11,6 +11,10 @@ Ivoz\Domain\Model\RoutingPattern\RoutingPattern:
       id: true
       generator:
         strategy: IDENTITY
+  oneToMany:
+    lcrRules:
+      targetEntity: Ivoz\Domain\Model\LcrRule\LcrRuleInterface
+      mappedBy: routingPattern
   lifecycleCallbacks:
     postLoad:
       - initChangelog

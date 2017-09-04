@@ -62,6 +62,11 @@ class RoutingPatternDTO implements DataTransferObjectInterface
     private $brand;
 
     /**
+     * @var array|null
+     */
+    private $lcrRules = null;
+
+    /**
      * @return array
      */
     public function __toArray()
@@ -75,7 +80,8 @@ class RoutingPatternDTO implements DataTransferObjectInterface
             'descriptionDescription' => $this->getDescriptionDescription(),
             'descriptionEn' => $this->getDescriptionEn(),
             'descriptionEs' => $this->getDescriptionEs(),
-            'brandId' => $this->getBrandId()
+            'brandId' => $this->getBrandId(),
+            'lcrRulesId' => $this->getLcrRulesId()
         ];
     }
 
@@ -85,6 +91,15 @@ class RoutingPatternDTO implements DataTransferObjectInterface
     public function transformForeignKeys(ForeignKeyTransformerInterface $transformer)
     {
         $this->brand = $transformer->transform('Ivoz\\Domain\\Model\\Brand\\Brand', $this->getBrandId());
+        $items = $this->getLcrRules();
+        $this->lcrRules = [];
+        foreach ($items as $item) {
+            $this->lcrRules[] = $transformer->transform(
+                'Ivoz\\Domain\\Model\\LcrRule\\LcrRule',
+                $item
+            );
+        }
+
     }
 
     /**
@@ -92,7 +107,10 @@ class RoutingPatternDTO implements DataTransferObjectInterface
      */
     public function transformCollections(CollectionTransformerInterface $transformer)
     {
-
+        $this->lcrRules = $transformer->transform(
+            'Ivoz\\Domain\\Model\\LcrRule\\LcrRule',
+            $this->lcrRules
+        );
     }
 
     /**
@@ -281,6 +299,26 @@ class RoutingPatternDTO implements DataTransferObjectInterface
     public function getBrand()
     {
         return $this->brand;
+    }
+
+    /**
+     * @param array $lcrRules
+     *
+     * @return RoutingPatternDTO
+     */
+    public function setLcrRules($lcrRules)
+    {
+        $this->lcrRules = $lcrRules;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getLcrRules()
+    {
+        return $this->lcrRules;
     }
 }
 

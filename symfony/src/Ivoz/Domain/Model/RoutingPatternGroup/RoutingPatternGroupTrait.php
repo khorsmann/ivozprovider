@@ -22,6 +22,11 @@ trait RoutingPatternGroupTrait
      */
     protected $relPatterns;
 
+    /**
+     * @var ArrayCollection
+     */
+    protected $outgoingRoutings;
+
 
     /**
      * Constructor
@@ -30,6 +35,7 @@ trait RoutingPatternGroupTrait
     {
         parent::__construct(...func_get_args());
         $this->relPatterns = new ArrayCollection();
+        $this->outgoingRoutings = new ArrayCollection();
     }
 
     /**
@@ -54,6 +60,7 @@ trait RoutingPatternGroupTrait
 
         return $self
             ->replaceRelPatterns($dto->getRelPatterns())
+            ->replaceOutgoingRoutings($dto->getOutgoingRoutings())
         ;
     }
 
@@ -69,7 +76,8 @@ trait RoutingPatternGroupTrait
         parent::updateFromDTO($dto);
 
         $this
-            ->replaceRelPatterns($dto->getRelPatterns());
+            ->replaceRelPatterns($dto->getRelPatterns())
+            ->replaceOutgoingRoutings($dto->getOutgoingRoutings());
 
 
         return $this;
@@ -83,7 +91,8 @@ trait RoutingPatternGroupTrait
         $dto = parent::toDTO();
         return $dto
             ->setId($this->getId())
-            ->setRelPatterns($this->getRelPatterns());
+            ->setRelPatterns($this->getRelPatterns())
+            ->setOutgoingRoutings($this->getOutgoingRoutings());
     }
 
     /**
@@ -177,6 +186,78 @@ trait RoutingPatternGroupTrait
         }
 
         return $this->relPatterns->toArray();
+    }
+
+    /**
+     * Add outgoingRouting
+     *
+     * @param \Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface $outgoingRouting
+     *
+     * @return RoutingPatternGroupTrait
+     */
+    public function addOutgoingRouting(\Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface $outgoingRouting)
+    {
+        $this->outgoingRoutings[] = $outgoingRouting;
+
+        return $this;
+    }
+
+    /**
+     * Remove outgoingRouting
+     *
+     * @param \Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface $outgoingRouting
+     */
+    public function removeOutgoingRouting(\Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface $outgoingRouting)
+    {
+        $this->outgoingRoutings->removeElement($outgoingRouting);
+    }
+
+    /**
+     * Replace outgoingRoutings
+     *
+     * @param \Ivoz\Domain\Model\OutgoingRouting\OutgoingRoutingInterface[] $outgoingRoutings
+     * @return self
+     */
+    public function replaceOutgoingRoutings(array $outgoingRoutings)
+    {
+        $updatedEntities = [];
+        $fallBackId = -1;
+        foreach ($outgoingRoutings as $entity) {
+            $index = $entity->getId() ? $entity->getId() : $fallBackId--;
+            $updatedEntities[$index] = $entity;
+            $entity->setRoutingPatternGroup($this);
+        }
+        $updatedEntityKeys = array_keys($updatedEntities);
+
+        foreach ($this->outgoingRoutings as $key => $entity) {
+            $identity = $entity->getId();
+            if (in_array($identity, $updatedEntityKeys)) {
+                $this->outgoingRoutings[$key] = $updatedEntities[$identity];
+            } else {
+                $this->removeOutgoingRouting($key);
+            }
+            unset($updatedEntities[$identity]);
+        }
+
+        foreach ($updatedEntities as $entity) {
+            $this->addOutgoingRouting($entity);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get outgoingRoutings
+     *
+     * @return array
+     */
+    public function getOutgoingRoutings(Criteria $criteria = null)
+    {
+        if (!is_null($criteria)) {
+            return $this->outgoingRoutings->matching($criteria)->toArray();
+        }
+
+        return $this->outgoingRoutings->toArray();
     }
 
 

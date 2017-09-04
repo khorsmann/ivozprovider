@@ -1,0 +1,33 @@
+services:
+  _defaults:
+    autowire: true
+    public: false
+
+  ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\RoutingPatternGroup\RoutingPatternGroupLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.routing_pattern_group.service_collection:
+    '@Ivoz\Domain\Service\RoutingPatternGroup\RoutingPatternGroupLifecycleServiceCollection'
+
+  ##################################
+  ## post_persist
+  ##################################
+  Ivoz\Domain\Service\RoutingPatternGroup\UpdateLcrEntities:
+    tags:
+      - { name: ivoz.lifecycle.routing_pattern_group.post_persist, priority: 10}
+    arguments: ~
+
+  Ivoz\Infrastructure\Domain\Service\RoutingPatternGroup\PersistedSendXmlRpc:
+    tags:
+      - { name: ivoz.lifecycle.routing_pattern_group.post_persist, priority: 20 }
+
+  ##################################
+  ## post_remove
+  ##################################
+
+  Ivoz\Infrastructure\Domain\Service\RoutingPatternGroup\RemovedSendXmlRpc:
+    tags:
+      - { name: ivoz.lifecycle.routing_pattern_group.post_remove, priority: 10 }

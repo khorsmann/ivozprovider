@@ -69,7 +69,7 @@ Ivoz\Domain\Model\LcrRule\LcrRuleAbstract:
       cascade: {  }
       fetch: LAZY
       mappedBy: null
-      inversedBy: null
+      inversedBy: lcrRules
       joinColumns:
         routingPatternId:
           referencedColumnName: id

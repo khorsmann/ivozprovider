@@ -5,11 +5,11 @@ namespace Ast\Domain\Service\PsEndpoint;
 use Ast\Domain\Model\PsEndpoint\PsEndpointRepository;
 use Core\Domain\Service\EntityPersisterInterface;
 use Ivoz\Domain\Model\RetailAccount\RetailAccountInterface;
-use Ivoz\Domain\Service\RetailAccount\RetailAccountLifecycleEventHandlerInterface;
+use Ivoz\Domain\Service\RetailAccount\RoutingPatternGroupLifecycleEventHandlerInterface;
 use Ast\Domain\Model\PsEndpoint\PsEndpoint;
 use Ast\Domain\Model\PsEndpoint\PsEndpointInterface;
 
-class UpdateByRetailAccount implements RetailAccountLifecycleEventHandlerInterface
+class UpdateByRoutingPatternGroup implements RoutingPatternGroupLifecycleEventHandlerInterface
 {
     /**
      * @var EntityPersisterInterface

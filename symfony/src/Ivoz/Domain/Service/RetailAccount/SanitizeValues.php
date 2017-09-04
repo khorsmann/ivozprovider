@@ -10,7 +10,7 @@ use Ivoz\Domain\Model\RetailAccount\RetailAccountInterface;
  * @package Ivoz\Domain\Service\RetailAccount
  * @lifecycle pre_persist
  */
-class SanitizeValues implements RetailAccountLifecycleEventHandlerInterface
+class SanitizeValues implements RoutingPatternGroupLifecycleEventHandlerInterface
 {
     public function __construct() {}
 

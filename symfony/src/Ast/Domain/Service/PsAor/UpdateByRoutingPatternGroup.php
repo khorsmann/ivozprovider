@@ -6,11 +6,11 @@ use Ast\Domain\Model\PsAor\PsAorRepository;
 use Ast\Domain\Model\PsEndpoint\PsEndpointInterface;
 use Core\Domain\Service\EntityPersisterInterface;
 use Ivoz\Domain\Model\RetailAccount\RetailAccountInterface;
-use Ivoz\Domain\Service\RetailAccount\RetailAccountLifecycleEventHandlerInterface;
+use Ivoz\Domain\Service\RetailAccount\RoutingPatternGroupLifecycleEventHandlerInterface;
 use Ast\Domain\Model\PsAor\PsAor;
 use Ast\Domain\Model\PsAor\PsAorInterface;
 
-class UpdateByRetailAccount implements RetailAccountLifecycleEventHandlerInterface
+class UpdateByRoutingPatternGroup implements RoutingPatternGroupLifecycleEventHandlerInterface
 {
     /**
      * @var EntityPersisterInterface
