@@ -1,11 +1,11 @@
 <?php
 
-namespace Ivoz\Domain\Service\RoutingPattern;
+namespace Ivoz\Domain\Service\TerminalModel;
 
 use Core\Domain\Service\LifecycleServiceCollectionInterface;
 use Core\Domain\Service\LifecycleServiceCollectionTrait;
 
-class RoutingPatternLifecycleServiceCollection implements LifecycleServiceCollectionInterface
+class TerminalModelLifecycleServiceCollection implements LifecycleServiceCollectionInterface
 {
     use LifecycleServiceCollectionTrait;
 

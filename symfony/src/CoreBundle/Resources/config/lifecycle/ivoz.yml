@@ -32,6 +32,7 @@ imports:
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/queue.yml" }
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/routing_pattern_group.yml" }
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/routing_pattern.yml" }
+  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/terminal_model.yml" }
 
 
 services:

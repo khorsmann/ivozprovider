@@ -11,7 +11,7 @@ use Ivoz\Domain\Service\LcrGateway\CreateByOutgoingRouting;
  * @package Ivoz\Domain\Service\RoutingPatternGroup
  * @lifecycle post_persist
  */
-class UpdateLcrEntities implements RoutingPatternLifecycleEventHandlerInterface
+class UpdateLcrEntities implements RoutingPatternGroupLifecycleEventHandlerInterface
 {
     /**
      * @var UpdateByOutgoingRouting

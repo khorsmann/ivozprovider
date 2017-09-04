@@ -1,0 +1,8 @@
+parameters:
+  Fso:
+    localStoragePath: "/opt/irontec/ivozprovider/storage"
+    chmod: "0777"
+    adapters:
+      storagePathResolver:
+        musicOnHold: '\IvozProvider\Model\Fso\Adapter\StoragePathResolver\MusicOnHold'
+        genericMusicOnHold: '\IvozProvider\Model\Fso\Adapter\StoragePathResolver\MusicOnHold'
