@@ -34,6 +34,9 @@ imports:
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/routing_pattern.yml" }
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/terminal_model.yml" }
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/terminal.yml" }
+  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/transformation_ruleset_groups_trunk.yml" }
+
+
 
 
 services:
