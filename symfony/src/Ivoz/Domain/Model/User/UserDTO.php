@@ -212,6 +212,11 @@ class UserDTO implements DataTransferObjectInterface
     private $pickUpRelUsers = null;
 
     /**
+     * @var array|null
+     */
+    private $queueMembers = null;
+
+    /**
      * @return array
      */
     public function __toArray()
@@ -245,7 +250,8 @@ class UserDTO implements DataTransferObjectInterface
             'outgoingDDIId' => $this->getOutgoingDDIId(),
             'outgoingDDIRuleId' => $this->getOutgoingDDIRuleId(),
             'voicemailLocutionId' => $this->getVoicemailLocutionId(),
-            'pickUpRelUsersId' => $this->getPickUpRelUsersId()
+            'pickUpRelUsersId' => $this->getPickUpRelUsersId(),
+            'queueMembersId' => $this->getQueueMembersId()
         ];
     }
 
@@ -274,6 +280,15 @@ class UserDTO implements DataTransferObjectInterface
             );
         }
 
+        $items = $this->getQueueMembers();
+        $this->queueMembers = [];
+        foreach ($items as $item) {
+            $this->queueMembers[] = $transformer->transform(
+                'Ivoz\\Domain\\Model\\QueueMember\\QueueMember',
+                $item
+            );
+        }
+
     }
 
     /**
@@ -284,6 +299,10 @@ class UserDTO implements DataTransferObjectInterface
         $this->pickUpRelUsers = $transformer->transform(
             'Ivoz\\Domain\\Model\\PickUpRelUser\\PickUpRelUser',
             $this->pickUpRelUsers
+        );
+        $this->queueMembers = $transformer->transform(
+            'Ivoz\\Domain\\Model\\QueueMember\\QueueMember',
+            $this->queueMembers
         );
     }
 
@@ -953,6 +972,26 @@ class UserDTO implements DataTransferObjectInterface
     public function getPickUpRelUsers()
     {
         return $this->pickUpRelUsers;
+    }
+
+    /**
+     * @param array $queueMembers
+     *
+     * @return UserDTO
+     */
+    public function setQueueMembers($queueMembers)
+    {
+        $this->queueMembers = $queueMembers;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getQueueMembers()
+    {
+        return $this->queueMembers;
     }
 }
 

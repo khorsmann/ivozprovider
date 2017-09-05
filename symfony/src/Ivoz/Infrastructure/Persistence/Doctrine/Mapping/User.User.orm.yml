@@ -15,7 +15,9 @@ Ivoz\Domain\Model\User\User:
     pickUpRelUsers:
       targetEntity: Ivoz\Domain\Model\PickUpRelUser\PickUpRelUserInterface
       mappedBy: user
-
+    queueMembers:
+      targetEntity: Ivoz\Domain\Model\QueueMember\QueueMemberInterface
+      mappedBy: user
   lifecycleCallbacks:
     postLoad:
       - initChangelog

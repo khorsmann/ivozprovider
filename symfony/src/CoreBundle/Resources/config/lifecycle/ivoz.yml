@@ -35,6 +35,7 @@ imports:
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/terminal_model.yml" }
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/terminal.yml" }
   - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/transformation_ruleset_groups_trunk.yml" }
+  - { resource: "@CoreBundle/Resources/config/lifecycle/ivoz/user.yml" }
 
 
 

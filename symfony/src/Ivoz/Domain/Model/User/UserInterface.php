@@ -577,5 +577,36 @@ interface UserInterface extends EntityInterface
      */
     public function getPickUpRelUsers(\Doctrine\Common\Collections\Criteria $criteria = null);
 
+    /**
+     * Add queueMember
+     *
+     * @param \Ivoz\Domain\Model\QueueMember\QueueMemberInterface $queueMember
+     *
+     * @return UserTrait
+     */
+    public function addQueueMember(\Ivoz\Domain\Model\QueueMember\QueueMemberInterface $queueMember);
+
+    /**
+     * Remove queueMember
+     *
+     * @param \Ivoz\Domain\Model\QueueMember\QueueMemberInterface $queueMember
+     */
+    public function removeQueueMember(\Ivoz\Domain\Model\QueueMember\QueueMemberInterface $queueMember);
+
+    /**
+     * Replace queueMembers
+     *
+     * @param \Ivoz\Domain\Model\QueueMember\QueueMemberInterface[] $queueMembers
+     * @return self
+     */
+    public function replaceQueueMembers(array $queueMembers);
+
+    /**
+     * Get queueMembers
+     *
+     * @return array
+     */
+    public function getQueueMembers(\Doctrine\Common\Collections\Criteria $criteria = null);
+
 }
 

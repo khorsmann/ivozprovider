@@ -94,7 +94,20 @@ class DoctrineEventSubscriber implements EventSubscriber
          */
         $service = $this->serviceContainer->get($serviceName);
         $service->execute($entity, $isNew);
-        $this->em->flush();
+
+        try {
+            $this->em->flush();
+        } catch (\Exception $exception) {
+
+            $errorHandlerName = $this->getServiceName($entityClass, 'error_handler');
+            if (!$this->serviceContainer->has($errorHandlerName)) {
+                throw $exception;
+            }
+
+            $errorHandler = $this->serviceContainer->get($errorHandlerName);
+            $errorHandler->handle($exception);
+        }
+
     }
 
 }

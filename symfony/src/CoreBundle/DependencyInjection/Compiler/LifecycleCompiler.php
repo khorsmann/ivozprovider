@@ -7,6 +7,7 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 use Core\Domain\Service\LifecycleEventListener;
+use Core\Domain\Service\PersistErrorHandlerServiceCollection;
 
 class LifecycleCompiler implements CompilerPassInterface
 {
@@ -19,18 +20,33 @@ class LifecycleCompiler implements CompilerPassInterface
     {
         $this->container = $container;
 
-        $events = $this->getLifecycleServices();
-        foreach ($events as $tag => $services) {
+        $this->buildService(
+            $this->getLifecycleServices()
+        );
 
-            $lifeCycleCollectionClassName = $this->getLifeCycleCollectionClass($tag);
-            $lifeCycleCollection = $this->container->autowire($tag, $lifeCycleCollectionClassName);
-            $lifeCycleCollection->setPublic(true);
+        $this->buildService(
+            $this->getErrorHandlerServices(),
+            PersistErrorHandlerServiceCollection::class
+        );
+    }
+
+    protected function buildService(array $serviceCollection, $collectionClassName = null)
+    {
+        foreach ($serviceCollection as $tag => $services) {
+
+            if (!$collectionClassName) {
+                $collectionClassName = $this->getLifeCycleCollectionClass($tag);
+            }
+
+            $collection = $this->container->autowire($tag, $collectionClassName);
+            $collection->setPublic(true);
+
 
             foreach ($services as $key => $class) {
                 $services[$key] = new Reference($class);
             }
 
-            $lifeCycleCollection->addMethodCall('setServices', [$services]);
+            $collection->addMethodCall('setServices', [$services]);
         }
     }
 
@@ -56,7 +72,52 @@ class LifecycleCompiler implements CompilerPassInterface
         foreach ($servicesDefinitions as $definition) {
 
             $tags = array_filter($definition->getTags(), function ($key) {
-                return (strpos($key, '.lifecycle.') !== false);
+
+                if (strpos($key, '.lifecycle.') === false) {
+                    return false;
+                }
+
+                if (strpos($key, '.error_handler') !== false) {
+                    return false;
+                }
+
+                return true;
+
+            }, ARRAY_FILTER_USE_KEY);
+
+            if (empty($tags)) {
+                continue;
+            }
+
+            foreach ($tags as $name => $arguments) {
+                if (!array_key_exists($name, $services)) {
+                    $services[$name] = array();
+                }
+                $services[$name] = $this->getServicesByTag($name);
+            }
+        }
+
+        return $services;
+    }
+
+    protected function getErrorHandlerServices()
+    {
+        $services = [];
+        $servicesDefinitions = $this->container->getDefinitions();
+
+        /**
+         * @var Definition $definition
+         */
+        foreach ($servicesDefinitions as $definition) {
+
+            $tags = array_filter($definition->getTags(), function ($key) {
+
+                if (strpos($key, '.lifecycle.') === false) {
+                    return false;
+                }
+
+                return (strpos($key, '.error_handler') !== false);
+
             }, ARRAY_FILTER_USE_KEY);
 
             if (empty($tags)) {

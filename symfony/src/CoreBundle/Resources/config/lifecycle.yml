@@ -14,6 +14,9 @@ services:
       tags:
         - { name: doctrine.event_subscriber }
 
+  Core\Domain\Service\PersistErrorHandlerServiceCollection:
+    public: true
+
   Core\Domain\Service\LifecycleEventListener:
     public: true
 

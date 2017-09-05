@@ -29,7 +29,7 @@ Ivoz\Domain\Model\QueueMember\QueueMemberAbstract:
       cascade: {  }
       fetch: LAZY
       mappedBy: null
-      inversedBy: null
+      inversedBy: queueMembers
       joinColumns:
         userId:
           referencedColumnName: id

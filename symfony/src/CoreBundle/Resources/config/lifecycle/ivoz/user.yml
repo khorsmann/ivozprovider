@@ -1,0 +1,76 @@
+services:
+  _defaults:
+    autowire: true
+    public: false
+
+  ##################################
+  ## Service collection
+  ##################################
+  Ivoz\Domain\Service\User\UserLifecycleServiceCollection:
+    public: true
+
+  ivoz.lifecycle.user.service_collection:
+    '@Ivoz\Domain\Service\User\UserLifecycleServiceCollection'
+
+  ##################################
+  ## error_handler
+  ##################################
+  Ivoz\Domain\Service\User\PersistErrorHandler:
+    tags:
+      - { name: ivoz.lifecycle.user.error_handler, priority: 10 }
+    arguments: ~
+
+  ##################################
+  ## pre_persist
+  ##################################
+  Ivoz\Domain\Service\User\SanitizeValues:
+    tags:
+      - { name: ivoz.lifecycle.user.pre_persist, priority: 10 }
+    arguments: ~
+
+  Ivoz\Domain\Service\User\CryptPass:
+    tags:
+      - { name: ivoz.lifecycle.user.pre_persist, priority: 20 }
+    arguments: ~
+
+  Ivoz\Domain\Service\User\UnsetBossAssistant:
+    tags:
+      - { name: ivoz.lifecycle.user.pre_persist, priority: 30 }
+    arguments:
+      $entityPersister:
+        '@Core\Infrastructure\Domain\Service\DoctrineEntityPersister'
+
+  Ivoz\Domain\Service\User\UpdateUserEndpoint:
+    tags:
+      - { name: ivoz.lifecycle.user.pre_persist, priority: 40 }
+    arguments: ~
+
+  ##################################
+  ## post_persist
+  ##################################
+  Ast\Domain\Service\Voicemail\UpdateByUser:
+    tags:
+      - { name: ivoz.lifecycle.user.post_persist, priority: 10 }
+    arguments:
+      $entityPersister:
+        '@Core\Infrastructure\Domain\Service\DoctrineEntityPersister'
+
+  Ivoz\Domain\Service\Extension\UpdateByUser:
+    tags:
+      - { name: ivoz.lifecycle.user.post_persist, priority: 20 }
+    arguments: ~
+
+  Ast\Domain\Service\QueueMember\UpdateByUser:
+    tags:
+      - { name: ivoz.lifecycle.user.post_persist, priority: 30 }
+    arguments:
+      $updateByIvozQueueMember:
+        '@Ast\Domain\Service\QueueMember\UpdateByIvozQueueMember'
+
+  ##################################
+  ## post_remove
+  ##################################
+  Ivoz\Domain\Service\User\UpdateUserEndpoint:
+    tags:
+      - { name: ivoz.lifecycle.user.pre_remove, priority: 40 }
+    arguments: ~

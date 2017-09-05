@@ -22,6 +22,11 @@ trait UserTrait
      */
     protected $pickUpRelUsers;
 
+    /**
+     * @var ArrayCollection
+     */
+    protected $queueMembers;
+
 
     /**
      * Constructor
@@ -30,6 +35,7 @@ trait UserTrait
     {
         parent::__construct(...func_get_args());
         $this->pickUpRelUsers = new ArrayCollection();
+        $this->queueMembers = new ArrayCollection();
     }
 
     /**
@@ -54,6 +60,7 @@ trait UserTrait
 
         return $self
             ->replacePickUpRelUsers($dto->getPickUpRelUsers())
+            ->replaceQueueMembers($dto->getQueueMembers())
         ;
     }
 
@@ -69,7 +76,8 @@ trait UserTrait
         parent::updateFromDTO($dto);
 
         $this
-            ->replacePickUpRelUsers($dto->getPickUpRelUsers());
+            ->replacePickUpRelUsers($dto->getPickUpRelUsers())
+            ->replaceQueueMembers($dto->getQueueMembers());
 
 
         return $this;
@@ -83,7 +91,8 @@ trait UserTrait
         $dto = parent::toDTO();
         return $dto
             ->setId($this->getId())
-            ->setPickUpRelUsers($this->getPickUpRelUsers());
+            ->setPickUpRelUsers($this->getPickUpRelUsers())
+            ->setQueueMembers($this->getQueueMembers());
     }
 
     /**
@@ -177,6 +186,78 @@ trait UserTrait
         }
 
         return $this->pickUpRelUsers->toArray();
+    }
+
+    /**
+     * Add queueMember
+     *
+     * @param \Ivoz\Domain\Model\QueueMember\QueueMemberInterface $queueMember
+     *
+     * @return UserTrait
+     */
+    public function addQueueMember(\Ivoz\Domain\Model\QueueMember\QueueMemberInterface $queueMember)
+    {
+        $this->queueMembers[] = $queueMember;
+
+        return $this;
+    }
+
+    /**
+     * Remove queueMember
+     *
+     * @param \Ivoz\Domain\Model\QueueMember\QueueMemberInterface $queueMember
+     */
+    public function removeQueueMember(\Ivoz\Domain\Model\QueueMember\QueueMemberInterface $queueMember)
+    {
+        $this->queueMembers->removeElement($queueMember);
+    }
+
+    /**
+     * Replace queueMembers
+     *
+     * @param \Ivoz\Domain\Model\QueueMember\QueueMemberInterface[] $queueMembers
+     * @return self
+     */
+    public function replaceQueueMembers(array $queueMembers)
+    {
+        $updatedEntities = [];
+        $fallBackId = -1;
+        foreach ($queueMembers as $entity) {
+            $index = $entity->getId() ? $entity->getId() : $fallBackId--;
+            $updatedEntities[$index] = $entity;
+            $entity->setUser($this);
+        }
+        $updatedEntityKeys = array_keys($updatedEntities);
+
+        foreach ($this->queueMembers as $key => $entity) {
+            $identity = $entity->getId();
+            if (in_array($identity, $updatedEntityKeys)) {
+                $this->queueMembers[$key] = $updatedEntities[$identity];
+            } else {
+                $this->removeQueueMember($key);
+            }
+            unset($updatedEntities[$identity]);
+        }
+
+        foreach ($updatedEntities as $entity) {
+            $this->addQueueMember($entity);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get queueMembers
+     *
+     * @return array
+     */
+    public function getQueueMembers(Criteria $criteria = null)
+    {
+        if (!is_null($criteria)) {
+            return $this->queueMembers->matching($criteria)->toArray();
+        }
+
+        return $this->queueMembers->toArray();
     }
 
 
