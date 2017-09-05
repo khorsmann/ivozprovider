@@ -16,7 +16,7 @@ abstract class AbstractSendXmlRpc implements OutgoingRoutingLifecycleEventHandle
         $this->trunksLcrReload = $trunksLcrReload;
     }
 
-    public function execute(OutgoingRoutingInterface $entity)
+    public function execute(OutgoingRoutingInterface $entity, $isNew)
     {
         $this->trunksLcrReload->send();
     }

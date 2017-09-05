@@ -33,7 +33,7 @@ class UpdateByFriend implements FriendLifecycleEventHandlerInterface
     /**
      * @param Friend $entity
      */
-    public function execute(FriendInterface $entity)
+    public function execute(FriendInterface $entity, $isNew)
     {
         // Replicate Terminal into ast_ps_endpoint
         /**

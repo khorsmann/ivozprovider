@@ -6,5 +6,5 @@ use Ivoz\Domain\Model\IvrCommon\IvrCommonInterface;
 
 interface IvrCommonLifecycleEventHandlerInterface
 {
-    public function execute(IvrCommonInterface $entity);
+    public function execute(IvrCommonInterface $entity, $isNew);
 }

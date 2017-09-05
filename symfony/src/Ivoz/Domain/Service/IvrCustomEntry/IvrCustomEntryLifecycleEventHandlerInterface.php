@@ -6,5 +6,5 @@ use Ivoz\Domain\Model\IvrCustomEntry\IvrCustomEntryInterface;
 
 interface IvrCustomEntryLifecycleEventHandlerInterface
 {
-    public function execute(IvrCustomEntryInterface $entity);
+    public function execute(IvrCustomEntryInterface $entity, $isNew);
 }

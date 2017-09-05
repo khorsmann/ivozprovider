@@ -33,7 +33,7 @@ class UpdateByTerminal implements TerminalLifecycleEventHandlerInterface
     /**
      * @param Friend $entity
      */
-    public function execute(TerminalInterface $entity)
+    public function execute(TerminalInterface $entity, $isNew)
     {
         // Replicate Terminal into ast_ps_endpoint
         /**

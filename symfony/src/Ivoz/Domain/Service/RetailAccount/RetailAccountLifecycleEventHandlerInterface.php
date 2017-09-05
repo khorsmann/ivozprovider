@@ -6,5 +6,5 @@ use Ivoz\Domain\Model\RetailAccount\RetailAccountInterface;
 
 interface RetailAccountLifecycleEventHandlerInterface
 {
-    public function execute(RetailAccountInterface $entity);
+    public function execute(RetailAccountInterface $entity, $isNew);
 }

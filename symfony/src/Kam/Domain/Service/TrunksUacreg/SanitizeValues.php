@@ -3,7 +3,6 @@
 namespace Kam\Domain\Service\TrunksUacreg;
 
 use Core\Domain\Service\LifecycleEventHandlerInterface;
-use Doctrine\ORM\EntityManagerInterface;
 use Kam\Domain\Model\TrunksUacreg\TrunksUacregInterface;
 
 /**

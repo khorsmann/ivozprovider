@@ -7,7 +7,6 @@ use Ast\Domain\Model\PsAor\PsAorRepository;
 use Ast\Domain\Model\PsEndpoint\PsEndpoint;
 use Ast\Domain\Model\PsEndpoint\PsEndpointRepository;
 use Core\Domain\Service\EntityPersisterInterface;
-use Ivoz\Domain\Model\Friend\Friend;
 use Ivoz\Domain\Model\Friend\FriendInterface;
 use Ivoz\Domain\Service\Friend\FriendLifecycleEventHandlerInterface;
 
@@ -38,7 +37,7 @@ class UpdateByFriend implements FriendLifecycleEventHandlerInterface
         $this->psAorRepository = $psAorRepository;
     }
 
-    public function execute(FriendInterface $entity)
+    public function execute(FriendInterface $entity, $isNew)
     {
         // Replicate Terminal into ast_ps_endpoint
         /**

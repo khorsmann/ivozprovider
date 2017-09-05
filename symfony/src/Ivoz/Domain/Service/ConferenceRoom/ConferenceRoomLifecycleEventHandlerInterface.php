@@ -6,5 +6,5 @@ use Ivoz\Domain\Model\ConferenceRoom\ConferenceRoomInterface;
 
 interface ConferenceRoomLifecycleEventHandlerInterface
 {
-    public function execute(ConferenceRoomInterface $entity);
+    public function execute(ConferenceRoomInterface $entity, $isNew);
 }

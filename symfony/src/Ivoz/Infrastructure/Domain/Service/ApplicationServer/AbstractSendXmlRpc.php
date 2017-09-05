@@ -20,7 +20,7 @@ abstract class AbstractSendXmlRpc implements ApplicationServerLifecycleEventHand
         $this->usersDispatcherReload = $usersDispatcherReload;
     }
 
-    public function execute(ApplicationServerInterface $entity)
+    public function execute(ApplicationServerInterface $entity, $isNew)
     {
         $this->trunksDispatcherReload->send();
         $this->usersDispatcherReload->send();

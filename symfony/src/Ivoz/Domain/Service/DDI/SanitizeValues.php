@@ -17,7 +17,7 @@ class SanitizeValues implements DDILifecycleEventHandlerInterface
     /**
      * @throws \Exception
      */
-    public function execute(DDIInterface $entity)
+    public function execute(DDIInterface $entity, $isNew)
     {
         /**
          * @todo review this

@@ -29,7 +29,7 @@ class UpdateByTerminal implements TerminalLifecycleEventHandlerInterface
         $this->psAorRepository = $psAorRepository;
     }
 
-    public function execute(TerminalInterface $entity)
+    public function execute(TerminalInterface $entity, $isNew)
     {
         $endpoint = $entity->getAstPsEndpoint();
 

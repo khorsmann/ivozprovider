@@ -6,5 +6,5 @@ use Ivoz\Domain\Model\Fax\FaxInterface;
 
 interface FaxLifecycleEventHandlerInterface
 {
-    public function execute(FaxInterface $entity);
+    public function execute(FaxInterface $entity, $isNew);
 }

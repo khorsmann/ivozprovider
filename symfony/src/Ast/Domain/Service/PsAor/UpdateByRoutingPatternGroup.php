@@ -6,11 +6,13 @@ use Ast\Domain\Model\PsAor\PsAorRepository;
 use Ast\Domain\Model\PsEndpoint\PsEndpointInterface;
 use Core\Domain\Service\EntityPersisterInterface;
 use Ivoz\Domain\Model\RetailAccount\RetailAccountInterface;
+use Ivoz\Domain\Model\RoutingPattern\RoutingPatternInterface;
 use Ivoz\Domain\Service\RetailAccount\RoutingPatternGroupLifecycleEventHandlerInterface;
 use Ast\Domain\Model\PsAor\PsAor;
 use Ast\Domain\Model\PsAor\PsAorInterface;
+use Ivoz\Domain\Service\RoutingPattern\RoutingPatternLifecycleEventHandlerInterface;
 
-class UpdateByRoutingPatternGroup implements RoutingPatternGroupLifecycleEventHandlerInterface
+class UpdateByRoutingPatternGroup implements RoutingPatternLifecycleEventHandlerInterface
 {
     /**
      * @var EntityPersisterInterface
@@ -40,7 +42,7 @@ class UpdateByRoutingPatternGroup implements RoutingPatternGroupLifecycleEventHa
     /**
      * @param RetailAccountInterface $entity
      */
-    public function execute(RetailAccountInterface $entity)
+    public function execute(RoutingPatternInterface $entity, $isNew)
     {
         /**
          * @var PsAorInterface $aor

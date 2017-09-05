@@ -25,7 +25,7 @@ class SanitizeValues implements ExtensionLifecycleEventHandlerInterface
     /**
      * @throws \Exception
      */
-    public function execute(ExtensionInterface $entity)
+    public function execute(ExtensionInterface $entity, $isNew)
     {
         $nullableFields = array(
             "IvrCommon"     => "IvrCommon",

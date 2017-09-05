@@ -22,7 +22,7 @@ class UpdateEndpointGroups implements PickUpRelUserLifecycleEventHandlerInterfac
         $this->updatePickupGroupByUser = $updatePickupGroupByUser;
     }
 
-    public function execute(PickUpRelUserInterface $entity)
+    public function execute(PickUpRelUserInterface $entity, $isNew)
     {
         $this->updatePickupGroupByUser->execute(
             $entity->getUser()

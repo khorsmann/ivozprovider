@@ -32,7 +32,7 @@ class UpdateByRoutingPatternGroup implements RoutingPatternGroupLifecycleEventHa
     /**
      * @param RetailAccountInterface $entity
      */
-    public function execute(RetailAccountInterface $entity)
+    public function execute(RetailAccountInterface $entity, $isNew)
     {
         /**
          * @var PsEndpointInterface $endpoint

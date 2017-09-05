@@ -6,5 +6,5 @@ use Ivoz\Domain\Model\MatchListPattern\MatchListPatternInterface;
 
 interface MatchListPatternLifecycleEventHandlerInterface
 {
-    public function execute(MatchListPatternInterface $entity);
+    public function execute(MatchListPatternInterface $entity, $isNew);
 }

@@ -6,7 +6,6 @@ use Core\Domain\Service\EntityPersisterInterface;
 use Ivoz\Domain\Service\ApplicationServer\ApplicationServerLifecycleEventHandlerInterface;
 use Kam\Domain\Model\Dispatcher\Dispatcher as KamDispatcher;
 use Kam\Domain\Model\Dispatcher\DispatcherRepository as KamDispatcherRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Ivoz\Domain\Model\ApplicationServer\ApplicationServerInterface;
 
 /**
@@ -34,7 +33,7 @@ class UpdateByApplicationServer implements ApplicationServerLifecycleEventHandle
         $this->dispatcherRepository = $dispatcherRepository;
     }
 
-    public function execute(ApplicationServerInterface $entity)
+    public function execute(ApplicationServerInterface $entity, $isNew)
     {
         /**
          * Replicate ApplicationServer IP into kam_dispatcher

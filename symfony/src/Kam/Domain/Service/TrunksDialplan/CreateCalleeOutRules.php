@@ -29,6 +29,7 @@ class CreateCalleeOutRules implements TransformationRulesetGroupsTrunkLifecycleE
         $cc = $entity
             ->getCountry()
             ->getCallingCode();
+
         $intcode = $entity->getInternationalCode();
 
         $dto = $this->createDialplanRuleDtoByTransformationRulesetGroupsTrunk(

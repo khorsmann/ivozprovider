@@ -13,7 +13,7 @@ class SanitizeValues implements FaxLifecycleEventHandlerInterface
 {
     public function __construct() {}
 
-    public function execute(FaxInterface $entity)
+    public function execute(FaxInterface $entity, $isNew)
     {
         // @todo move this to the entity
         if ($entity->getSendByEmail() == 0) {

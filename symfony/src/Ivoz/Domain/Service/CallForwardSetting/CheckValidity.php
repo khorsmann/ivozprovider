@@ -27,7 +27,7 @@ class CheckValidity implements CallForwardSettingLifecycleEventHandlerInterface
     /**
      * @throws \Exception
      */
-    public function execute(CallForwardSettingInterface $entity)
+    public function execute(CallForwardSettingInterface $entity, $isNew)
     {
         $callTypeFilterConditions = array(
             $entity->getCallTypeFilter()

@@ -3,7 +3,6 @@
 namespace Ast\Domain\Service\QueueMember;
 
 use Core\Domain\Service\EntityPersisterInterface;
-use Ivoz\Domain\Model\Friend\Friend;
 use Ivoz\Domain\Service\QueueMember\QueueMemberLifecycleEventHandlerInterface
     as IvozQueueMemberLifecycleEventHandlerInterface;
 use Ivoz\Domain\Model\QueueMember\QueueMemberInterface as IvozQueueMemberInterface;
@@ -31,7 +30,7 @@ class UpdateByIvozQueueMember implements IvozQueueMemberLifecycleEventHandlerInt
         $this->astQueueMemberRepository = $astQueueMemberRepository;
     }
 
-    public function execute(IvozQueueMemberInterface $entity)
+    public function execute(IvozQueueMemberInterface $entity, $isNew)
     {
         $user = $entity->getUser();
         $userEndpointName = $user

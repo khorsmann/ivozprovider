@@ -14,7 +14,7 @@ class SanitizeValues implements ConferenceRoomLifecycleEventHandlerInterface
 {
     public function __construct() {}
 
-    public function execute(ConferenceRoomInterface $entity)
+    public function execute(ConferenceRoomInterface $entity, $isNew)
     {
         if (!$entity->getPinProtected()) {
             $entity->setPinCode(null);

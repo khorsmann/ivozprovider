@@ -1,7 +1,6 @@
 <?php
 namespace Kam\Domain\Service\UsersDomainAttr;
 
-use Doctrine\ORM\EntityManagerInterface;
 use Ivoz\Domain\Model\Brand\BrandInterface;
 use Ivoz\Domain\Service\Brand\BrandLifecycleEventHandlerInterface;
 use Kam\Domain\Model\UsersDomainAttr\UsersDomainAttrRepository;

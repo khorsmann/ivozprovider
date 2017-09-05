@@ -14,7 +14,7 @@ class SanitizeValues implements IvrCustomLifecycleEventHandlerInterface
 {
     public function __construct() {}
 
-    public function execute(IvrCustomInterface $entity)
+    public function execute(IvrCustomInterface $entity, $isNew)
     {
         $nullableFields =[
             'number' => 'timeoutNumberValue',

@@ -2,7 +2,6 @@
 
 namespace Kam\Domain\Service\UsersDomainAttr;
 
-use Doctrine\ORM\EntityManagerInterface;
 use Ivoz\Domain\Model\Company\CompanyInterface;
 use Ivoz\Domain\Service\Company\CompanyLifecycleEventHandlerInterface;
 use Kam\Domain\Model\UsersDomainAttr\UsersDomainAttr;

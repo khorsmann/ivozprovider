@@ -14,7 +14,7 @@ class SanitizeValues implements TerminalLifecycleEventHandlerInterface
 {
     public function __construct() {}
 
-    public function execute(TerminalInterface $entity)
+    public function execute(TerminalInterface $entity, $isNew)
     {
         $mac = $entity->getMac();
         $mac = strtolower($mac);

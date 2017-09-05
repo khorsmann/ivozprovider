@@ -6,5 +6,5 @@ use Ivoz\Domain\Model\Terminal\TerminalInterface;
 
 interface TerminalLifecycleEventHandlerInterface
 {
-    public function execute(TerminalInterface $entity);
+    public function execute(TerminalInterface $entity, $isNew);
 }

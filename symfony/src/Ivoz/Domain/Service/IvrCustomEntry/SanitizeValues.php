@@ -13,7 +13,7 @@ class SanitizeValues implements IvrCustomEntryLifecycleEventHandlerInterface
 {
     public function __construct() {}
 
-    public function execute(IvrCustomEntryInterface $entity)
+    public function execute(IvrCustomEntryInterface $entity, $isNew)
     {
         /**
          * @todo move this into the entity

@@ -2,7 +2,6 @@
 namespace Ivoz\Domain\Service\Service;
 
 use Core\Domain\Service\EntityPersisterInterface;
-use Doctrine\ORM\EntityManagerInterface;
 use Ivoz\Domain\Model\Brand\BrandInterface;
 use Ivoz\Domain\Model\Service\Service;
 use Ivoz\Domain\Model\BrandService\BrandService;

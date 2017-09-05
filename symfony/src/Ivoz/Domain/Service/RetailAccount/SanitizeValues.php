@@ -14,7 +14,7 @@ class SanitizeValues implements RoutingPatternGroupLifecycleEventHandlerInterfac
 {
     public function __construct() {}
 
-    public function execute(RetailAccountInterface $entity)
+    public function execute(RetailAccountInterface $entity, $isNew)
     {
         /**
          * @todo rewrite this

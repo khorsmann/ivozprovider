@@ -13,7 +13,7 @@ class SanitizeValues implements MatchListPatternLifecycleEventHandlerInterface
 {
     public function __construct() {}
 
-    public function execute(MatchListPatternInterface $entity)
+    public function execute(MatchListPatternInterface $entity, $isNew)
     {
         $nullableFields = [
             'number' => 'numberValue',

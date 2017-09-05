@@ -6,5 +6,5 @@ use Ivoz\Domain\Model\DDI\DDIInterface;
 
 interface DDILifecycleEventHandlerInterface
 {
-    public function execute(DDIInterface $entity);
+    public function execute(DDIInterface $entity, $isNew);
 }

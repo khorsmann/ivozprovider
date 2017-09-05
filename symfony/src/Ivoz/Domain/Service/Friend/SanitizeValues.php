@@ -13,7 +13,7 @@ class SanitizeValues implements FriendLifecycleEventHandlerInterface
 {
     public function __construct() {}
 
-    public function execute(FriendInterface $entity)
+    public function execute(FriendInterface $entity, $isNew)
     {
         $entity->setDomain(
             $entity
