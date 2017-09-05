@@ -29,7 +29,7 @@ interface PickUpRelUserInterface extends EntityInterface
      *
      * @return self
      */
-    public function setUser(\Ivoz\Domain\Model\User\UserInterface $user);
+    public function setUser(\Ivoz\Domain\Model\User\UserInterface $user = null);
 
     /**
      * Get user

@@ -6,6 +6,10 @@ use Core\Domain\Model\EntityInterface;
 
 interface CallACLInterface extends EntityInterface
 {
+    /**
+     * @param $dst
+     * @return bool
+     */
     public function dstIsCallable($dst);
 
     /**

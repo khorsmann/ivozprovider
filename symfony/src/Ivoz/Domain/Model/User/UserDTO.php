@@ -207,6 +207,11 @@ class UserDTO implements DataTransferObjectInterface
     private $voicemailLocution;
 
     /**
+     * @var array|null
+     */
+    private $pickUpRelUsers = null;
+
+    /**
      * @return array
      */
     public function __toArray()
@@ -239,7 +244,8 @@ class UserDTO implements DataTransferObjectInterface
             'timezoneId' => $this->getTimezoneId(),
             'outgoingDDIId' => $this->getOutgoingDDIId(),
             'outgoingDDIRuleId' => $this->getOutgoingDDIRuleId(),
-            'voicemailLocutionId' => $this->getVoicemailLocutionId()
+            'voicemailLocutionId' => $this->getVoicemailLocutionId(),
+            'pickUpRelUsersId' => $this->getPickUpRelUsersId()
         ];
     }
 
@@ -259,6 +265,15 @@ class UserDTO implements DataTransferObjectInterface
         $this->outgoingDDI = $transformer->transform('Ivoz\\Domain\\Model\\DDI\\DDI', $this->getOutgoingDDIId());
         $this->outgoingDDIRule = $transformer->transform('Ivoz\\Domain\\Model\\OutgoingDDIRule\\OutgoingDDIRule', $this->getOutgoingDDIRuleId());
         $this->voicemailLocution = $transformer->transform('Ivoz\\Domain\\Model\\Locution\\Locution', $this->getVoicemailLocutionId());
+        $items = $this->getPickUpRelUsers();
+        $this->pickUpRelUsers = [];
+        foreach ($items as $item) {
+            $this->pickUpRelUsers[] = $transformer->transform(
+                'Ivoz\\Domain\\Model\\PickUpRelUser\\PickUpRelUser',
+                $item
+            );
+        }
+
     }
 
     /**
@@ -266,7 +281,10 @@ class UserDTO implements DataTransferObjectInterface
      */
     public function transformCollections(CollectionTransformerInterface $transformer)
     {
-
+        $this->pickUpRelUsers = $transformer->transform(
+            'Ivoz\\Domain\\Model\\PickUpRelUser\\PickUpRelUser',
+            $this->pickUpRelUsers
+        );
     }
 
     /**
@@ -915,6 +933,26 @@ class UserDTO implements DataTransferObjectInterface
     public function getVoicemailLocution()
     {
         return $this->voicemailLocution;
+    }
+
+    /**
+     * @param array $pickUpRelUsers
+     *
+     * @return UserDTO
+     */
+    public function setPickUpRelUsers($pickUpRelUsers)
+    {
+        $this->pickUpRelUsers = $pickUpRelUsers;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPickUpRelUsers()
+    {
+        return $this->pickUpRelUsers;
     }
 }
 

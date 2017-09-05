@@ -14,6 +14,135 @@ interface UserInterface extends EntityInterface
     public function getEndpoint();
 
     /**
+     * @return string or null
+     */
+    public function getUserTerminalInterface();
+
+    /**
+     * Update this user endpoint with current model data
+     */
+    public function updateEndpoint();
+
+    /**
+     * @return string with the voicemail
+     */
+    public function getVoiceMail();
+
+    /**
+     * @return string with the voicemail user
+     */
+    public function getVoiceMailUser();
+
+    /**
+     * @return string with the voicemail context
+     */
+    public function getVoiceMailContext();
+
+    /**
+     * @return string
+     */
+    public function getOutgoingDDINumber($valueIfEmpty = 'anonimo');
+
+    /**
+     * Get User outgoingDDI
+     * If no DDI is assigned, retrieve company's default DDI
+     * @return \Ivoz\Domain\Model\DDI\DDIInterface
+     */
+    public function getOutgoingDDI();
+
+    /**
+     * Get User outgoingDDIRule
+     * If no OutgoingDDIRule is assigned, retrieve company's default OutgoingDDIRule
+     * @return \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface or null
+     */
+    public function getOutgoingDDIRule();
+
+    /**
+     * @return string
+     */
+    public function getExtensionNumber();
+
+    /**
+     * @todo this is probably dead code
+     * @return string or null
+     */
+    public function getDomain();
+
+    /**
+     * @param string $exten
+     * @return bool canCall
+     */
+    public function isAllowedToCall($exten);
+
+    /**
+     * @return \Ivoz\Domain\Model\PickUpGroup\PickUpGroupInterface[]
+     */
+    public function getPickUpGroups();
+
+    /**
+     * @return string comma separated pickup group ids
+     */
+    public function getPickUpGroupsIds();
+
+    /**
+     * @return string
+     */
+    public function getFullName();
+
+    /**
+     * @return array
+     */
+    public function toArrayPortalForm();
+
+    /**
+     * @return bool
+     */
+    public function canBeCalled();
+
+    /**
+     * Get user language
+     * returns company language if wmpty
+     * @return \Ivoz\Domain\Model\Language\LanguageInterface
+     */
+    public function getLanguage();
+
+    /**
+     * Get User language code.
+     * If not set, get the company language code
+     * @return string
+     */
+    public function getLanguageCode();
+
+    /**
+     * Get User country
+     * return company country if empty
+     * @return \Ivoz\Domain\Model\Country\CountryInterface
+     */
+    public function getCountry();
+
+    /**
+     * Convert a user dialed number to E164 form
+     *
+     * @param string $prefNumber
+     * @return string number in E164
+     */
+    public function preferredToE164($prefNumber);
+
+    /**
+     * Convert a received number to User prefered format
+     *
+     * @param string $number
+     */
+    public function E164ToPreferred($e164number);
+
+    /**
+     * Gets user Area Code. returns company area code if empty
+     *
+     * @return string
+     */
+    public function getAreaCodeValue();
+
+    /**
      * Set name
      *
      * @param string $name
@@ -327,13 +456,6 @@ interface UserInterface extends EntityInterface
     public function setCountry(\Ivoz\Domain\Model\Country\CountryInterface $country = null);
 
     /**
-     * Get country
-     *
-     * @return \Ivoz\Domain\Model\Country\CountryInterface
-     */
-    public function getCountry();
-
-    /**
      * Set language
      *
      * @param \Ivoz\Domain\Model\Language\LanguageInterface $language
@@ -341,13 +463,6 @@ interface UserInterface extends EntityInterface
      * @return self
      */
     public function setLanguage(\Ivoz\Domain\Model\Language\LanguageInterface $language = null);
-
-    /**
-     * Get language
-     *
-     * @return \Ivoz\Domain\Model\Language\LanguageInterface
-     */
-    public function getLanguage();
 
     /**
      * Set terminal
@@ -407,13 +522,6 @@ interface UserInterface extends EntityInterface
     public function setOutgoingDDI(\Ivoz\Domain\Model\DDI\DDIInterface $outgoingDDI = null);
 
     /**
-     * Get outgoingDDI
-     *
-     * @return \Ivoz\Domain\Model\DDI\DDIInterface
-     */
-    public function getOutgoingDDI();
-
-    /**
      * Set outgoingDDIRule
      *
      * @param \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRule
@@ -421,13 +529,6 @@ interface UserInterface extends EntityInterface
      * @return self
      */
     public function setOutgoingDDIRule(\Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface $outgoingDDIRule = null);
-
-    /**
-     * Get outgoingDDIRule
-     *
-     * @return \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRuleInterface
-     */
-    public function getOutgoingDDIRule();
 
     /**
      * Set voicemailLocution
@@ -444,6 +545,37 @@ interface UserInterface extends EntityInterface
      * @return \Ivoz\Domain\Model\Locution\LocutionInterface
      */
     public function getVoicemailLocution();
+
+    /**
+     * Add pickUpRelUser
+     *
+     * @param \Ivoz\Domain\Model\PickUpRelUser\PickUpRelUserInterface $pickUpRelUser
+     *
+     * @return UserTrait
+     */
+    public function addPickUpRelUser(\Ivoz\Domain\Model\PickUpRelUser\PickUpRelUserInterface $pickUpRelUser);
+
+    /**
+     * Remove pickUpRelUser
+     *
+     * @param \Ivoz\Domain\Model\PickUpRelUser\PickUpRelUserInterface $pickUpRelUser
+     */
+    public function removePickUpRelUser(\Ivoz\Domain\Model\PickUpRelUser\PickUpRelUserInterface $pickUpRelUser);
+
+    /**
+     * Replace pickUpRelUsers
+     *
+     * @param \Ivoz\Domain\Model\PickUpRelUser\PickUpRelUserInterface[] $pickUpRelUsers
+     * @return self
+     */
+    public function replacePickUpRelUsers(array $pickUpRelUsers);
+
+    /**
+     * Get pickUpRelUsers
+     *
+     * @return array
+     */
+    public function getPickUpRelUsers(\Doctrine\Common\Collections\Criteria $criteria = null);
 
 }
 

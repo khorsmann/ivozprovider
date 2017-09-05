@@ -11,6 +11,11 @@ Ivoz\Domain\Model\User\User:
       id: true
       generator:
         strategy: IDENTITY
+  oneToMany:
+    pickUpRelUsers:
+      targetEntity: Ivoz\Domain\Model\PickUpRelUser\PickUpRelUserInterface
+      mappedBy: user
+
   lifecycleCallbacks:
     postLoad:
       - initChangelog

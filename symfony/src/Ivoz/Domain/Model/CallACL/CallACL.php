@@ -9,6 +9,10 @@ class CallACL extends CallACLAbstract implements CallACLInterface
 {
     use CallACLTrait;
 
+    /**
+     * @param $dst
+     * @return bool
+     */
     public function dstIsCallable($dst)
     {
         /**

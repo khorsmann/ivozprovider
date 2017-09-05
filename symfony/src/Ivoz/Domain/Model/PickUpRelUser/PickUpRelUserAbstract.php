@@ -173,7 +173,7 @@ abstract class PickUpRelUserAbstract
      *
      * @return self
      */
-    public function setUser(\Ivoz\Domain\Model\User\UserInterface $user)
+    public function setUser(\Ivoz\Domain\Model\User\UserInterface $user = null)
     {
         $this->user = $user;
 

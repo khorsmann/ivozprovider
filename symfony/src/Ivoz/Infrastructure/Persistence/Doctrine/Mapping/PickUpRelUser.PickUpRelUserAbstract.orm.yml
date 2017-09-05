@@ -24,7 +24,7 @@ Ivoz\Domain\Model\PickUpRelUser\PickUpRelUserAbstract:
       cascade: {  }
       fetch: LAZY
       mappedBy: null
-      inversedBy: null
+      inversedBy: pickUpRelUsers
       joinColumns:
         userId:
           referencedColumnName: id
