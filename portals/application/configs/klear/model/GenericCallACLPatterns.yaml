@@ -2,7 +2,7 @@ production:
   class: \IvozProvider\Model\GenericCallACLPatterns
   entity: Ivoz\Domain\Model\GenericCallACLPattern\GenericCallACLPattern
   fields: 
-    brand:
+    brandId:
       title: ngettext('Brand', 'Brands', 1)
       type: select
       required: true

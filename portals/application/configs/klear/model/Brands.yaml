@@ -201,8 +201,8 @@ production:
           related: \Ivoz\Domain\Model\Feature\Feature
           relatedFieldName:
             fields:
-              - name
-            template: '%name%'
+              - name${lang}
+            template: '%name${lang}%'
           order:
             Feature.name: asc
 staging:

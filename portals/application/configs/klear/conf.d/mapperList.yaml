@@ -531,7 +531,7 @@ mappers:
     }
   - &TrunksDialplan {
         mapper: \IvozProvider\Mapper\Sql\KamTrunksDialplan,
-        modelFile: TrunksDialplan,
+        modelFile: KamTrunksDialplan,
         entity: 'Ivoz\\Domain\\Model\\TrunksDialplan\\TrunksDialplan'
     }
   - &KamTrunksDomain {
@@ -544,15 +544,15 @@ mappers:
         modelFile: KamTrunksDomainAttrs,
         entity: 'Kam\\Model\\TrunksDomainAttr\\TrunksDomainAttr'
     }
-  - &TrunksHtable {
-        mapper: \IvozProvider\Mapper\Sql\KamTrunksHtable,
-        modelFile: TrunksHtable,
-        entity: 'Ivoz\\Domain\\Model\\TrunksHtable\\TrunksHtable'
-    }
-  - &TrunksUacreg {
+#  - &TrunksHtable {
+#        mapper: \IvozProvider\Mapper\Sql\KamTrunksHtable,
+#        modelFile: TrunksHtable,
+#        entity: 'Kam\\Domain\\Model\\TrunksHtable\\TrunksHtable'
+#    }
+  - &KamTrunksUacreg {
         mapper: \IvozProvider\Mapper\Sql\KamTrunksUacreg,
-        modelFile: TrunksUacreg,
-        entity: 'Ivoz\\Domain\\Model\\TrunksUacreg\\TrunksUacreg'
+        modelFile: KamTrunksUacreg,
+        entity: 'Kam\\Domain\\Model\\TrunksUacreg\\TrunksUacreg'
     }
   - &KamUsers {
         mapper: \IvozProvider\Mapper\Sql\KamUsers,

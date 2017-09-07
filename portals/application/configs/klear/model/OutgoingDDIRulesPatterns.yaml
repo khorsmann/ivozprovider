@@ -23,7 +23,8 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\MatchLists
+#          mapperName: \IvozProvider\Mapper\Sql\MatchLists
+          entity:  \Ivoz\Domain\Model\MatchList\MatchList
           filterClass: IvozProvider_Klear_Filter_Company
           fieldName:
             fields:
@@ -53,7 +54,8 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\DDIs
+#          mapperName: \IvozProvider\Mapper\Sql\DDIs
+          entity:  \Ivoz\Domain\Model\DDI\DDI
           filterClass: IvozProvider_Klear_Filter_Company
           fieldName:
             fields:

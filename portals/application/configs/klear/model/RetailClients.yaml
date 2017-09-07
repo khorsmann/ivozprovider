@@ -183,7 +183,7 @@ production:
               - name
             template: '%name%'
           order:
-            Language.name: asc
+            Language.name.${lang}: asc
     mediaRelaySets:
       title: _('Media relay Set')
       type: select

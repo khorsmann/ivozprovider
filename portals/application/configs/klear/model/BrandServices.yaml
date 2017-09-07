@@ -2,7 +2,7 @@ production:
   class: \IvozProvider\Model\BrandServices
   entity: Ivoz\Domain\Model\BrandService\BrandService
   fields: 
-    service:
+    serviceId:
       title: ngettext('Service', 'Services', 1)
       type: select
       required: true
@@ -14,12 +14,12 @@ production:
           filterclass: IvozProvider_Klear_Filter_BrandServices
           fieldName: 
             fields: 
-              - name
-            template: '%name%'
+              - name${lang}
+            template: '%name${lang}%'
           order:
             Service.name.${lang}: asc
       default: true
-    brand:
+    brandId:
       title: ngettext('Brand', 'Brands', 1)
       type: select
       required: true

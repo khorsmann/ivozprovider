@@ -67,6 +67,7 @@ production:
       message: _("%s successfully deleted.", ngettext('Service', 'Services', 1))
       multiItem: 1
       labelOnList: 1
+
 staging:
   _extends: production
 testing:

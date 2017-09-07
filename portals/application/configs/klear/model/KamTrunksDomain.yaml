@@ -14,7 +14,7 @@ production:
       type: text
       trim: both
       maxLength: 64
-    domain:
+    domainId:
       title: _('Domain id')
       type: select
       source: 

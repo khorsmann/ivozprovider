@@ -19,7 +19,7 @@ class IvozProvider_Klear_Ghost_DomainsScope extends KlearMatrix_Model_Field_Ghos
             if ($GLOBALS['sf']) {
 
                 $dataGateway = \Zend_Registry::get('data_gateway');
-                $company = $dataGateway->find('Core:Company\\Company', $model->getCompanyId());
+                $company = $dataGateway->find('Ivoz\\Domain\\Model\\Company\\Company', $model->getCompanyId());
                 $companyName = $company->getName() . ' (company)';
 
             } else if (!$GLOBALS['sf']) {
@@ -32,7 +32,7 @@ class IvozProvider_Klear_Ghost_DomainsScope extends KlearMatrix_Model_Field_Ghos
             if ($GLOBALS['sf']) {
 
                 $dataGateway = \Zend_Registry::get('data_gateway');
-                $brand = $dataGateway->find('Core:Brand\\Brand', $model->getBrandId());
+                $brand = $dataGateway->find('Ivoz\\Domain\\Model\\Brand\\Brand', $model->getBrandId());
                 $brandName = $brand->getName() . ' (company)';
 
             } else if (!$GLOBALS['sf']) {

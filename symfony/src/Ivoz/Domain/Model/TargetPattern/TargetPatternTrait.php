@@ -15,11 +15,6 @@ trait TargetPatternTrait
      */
     protected $id;
 
-    /**
-     * @var \Ivoz\Domain\Model\Brand\BrandInterface
-     */
-    protected $brand;
-
 
     /**
      * Constructor
@@ -50,9 +45,7 @@ trait TargetPatternTrait
          */
         $self = parent::fromDTO($dto);
 
-        return $self
-            ->setBrand($dto->getBrand())
-        ;
+        return $self;
     }
 
     /**
@@ -66,10 +59,7 @@ trait TargetPatternTrait
          */
         parent::updateFromDTO($dto);
 
-        $this
-            ->setBrand($dto->getBrand());
-
-
+        
         return $this;
     }
 
@@ -80,8 +70,7 @@ trait TargetPatternTrait
     {
         $dto = parent::toDTO();
         return $dto
-            ->setId($this->getId())
-            ->setBrandId($this->getBrand() ? $this->getBrand()->getId() : null);
+            ->setId($this->getId());
     }
 
     /**
@@ -90,8 +79,7 @@ trait TargetPatternTrait
     protected function __toArray()
     {
         return parent::__toArray() + [
-            'id' => $this->getId(),
-            'brandId' => $this->getBrand() ? $this->getBrand()->getId() : null
+            'id' => $this->getId()
         ];
     }
 

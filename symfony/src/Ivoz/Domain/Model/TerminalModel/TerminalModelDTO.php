@@ -54,12 +54,12 @@ class TerminalModelDTO implements DataTransferObjectInterface
     /**
      * @var mixed
      */
-    private $TerminalManufacturerId;
+    private $terminalManufacturerId;
 
     /**
      * @var mixed
      */
-    private $TerminalManufacturer;
+    private $terminalManufacturer;
 
     /**
      * @return array
@@ -262,7 +262,7 @@ class TerminalModelDTO implements DataTransferObjectInterface
      */
     public function setTerminalManufacturerId($terminalManufacturerId)
     {
-        $this->TerminalManufacturerId = $terminalManufacturerId;
+        $this->terminalManufacturerId = $terminalManufacturerId;
 
         return $this;
     }
@@ -272,7 +272,7 @@ class TerminalModelDTO implements DataTransferObjectInterface
      */
     public function getTerminalManufacturerId()
     {
-        return $this->TerminalManufacturerId;
+        return $this->terminalManufacturerId;
     }
 
     /**
@@ -280,7 +280,7 @@ class TerminalModelDTO implements DataTransferObjectInterface
      */
     public function getTerminalManufacturer()
     {
-        return $this->TerminalManufacturer;
+        return $this->terminalManufacturer;
     }
 }
 

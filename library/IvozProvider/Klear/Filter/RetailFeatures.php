@@ -8,6 +8,8 @@ class IvozProvider_Klear_Filter_RetailFeatures implements KlearMatrix_Model_Fiel
 
     public function setRouteDispatcher(KlearMatrix_Model_RouteDispatcher $routeDispatcher)
     {
+        throw new \Exception('Not implemented yet');
+
         $auth = Zend_Auth::getInstance();
         if (!$auth->hasIdentity()) {
             throw new Klear_Exception_Default("No company/brand emulated");
@@ -15,7 +17,7 @@ class IvozProvider_Klear_Filter_RetailFeatures implements KlearMatrix_Model_Fiel
         $currentBrandId = $auth->getIdentity()->brandId;
 
         $mapper = new \IvozProvider\Mapper\Sql\FeaturesRelBrands();
-        $rels = $mapper->fetchList("brandId='" . $currentBrandId . "'");
+        $rels = $mapper->fetchList("brand = '" . $currentBrandId . "'");
 
         $excludedFeatures = array(
             Features::QUEUES,
@@ -48,7 +50,7 @@ class IvozProvider_Klear_Filter_RetailFeatures implements KlearMatrix_Model_Fiel
     public function getCondition()
     {
         if (count($this->_condition) > 0) {
-            return '(' . implode(" AND ", $this->_condition) . ')';
+            return ['(' . implode(" AND ", $this->_condition) . ')'];
         }
         return;
     }

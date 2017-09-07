@@ -2,7 +2,7 @@ production:
   class: \IvozProvider\Model\Users
   entity: Ivoz\Domain\Model\User\User
   fields:
-    company:
+    companyId:
       title: ngettext('Company', 'Companies', 1)
       type: select
       required: true
@@ -60,7 +60,7 @@ production:
             visualFilter:
               show: ["username", "pass"]
               hide: []
-    timezone:
+    timezoneId:
       title: _('Timezone')
       type: select
       defaultValue: 145
@@ -75,7 +75,7 @@ production:
             template: '%tz%'
           order:
             Timezone.tz: asc
-    terminal:
+    terminalId:
       title: _('Terminal')
       type: select
       source:
@@ -91,7 +91,7 @@ production:
           order:
             Terminal.name: asc
         'null': _("Unassigned")
-    extension:
+    extensionId:
       title: _('Screen Extension')
       type: select
       source:
@@ -130,13 +130,15 @@ production:
         data: mapper
         config:
           # todo
-          mapperName: \IvozProvider\Mapper\Sql\OutgoingDDIRules
+#          mapperName: \IvozProvider\Mapper\Sql\OutgoingDDIRules
+          entity:  \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRule
           filterClass: IvozProvider_Klear_Filter_Company
           fieldName:
             fields:
               - name
             template: '%name%'
-          order: name
+          order:
+            OutgoingDDIRule.name: asc
         'null': _("Company's default")
       info:
         type: box
@@ -144,7 +146,7 @@ production:
         icon: help
         text: _("Rules to manipulate outgoingDDI when user directly calls to external numbers.")
         label: _("Need help?")
-    callACL:
+    callACLId:
       title: ngettext('Call ACL', 'Call ACLs', 1)
       type: select
       source:
@@ -188,7 +190,7 @@ production:
             visualFilter:
               show: ["bossAssistantId", "exceptionBoosAssistantRegExp"]
               hide: []
-    bossAssistant:
+    bossAssistantId:
       title: _('Assistant')
       type: select
       source:
@@ -252,13 +254,15 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Locutions
+#          mapperName: \IvozProvider\Mapper\Sql\Locutions
+          entity:  \Ivoz\Domain\Model\Locution\Locution
           filterClass: IvozProvider_Klear_Filter_Company
           fieldName:
             fields:
               - name
             template: '%name%'
-          order: name
+          order:
+            Locution.name: asc
         'null': _("Unassigned")
     voicemailSendMail:
       title: _('Voicemail send mail')
@@ -302,7 +306,7 @@ production:
           related: \Ivoz\Domain\Model\PickUpGroup\PickUpGroup
           relatedFieldName: name
           filterclass: IvozProvider_Klear_Filter_Company
-    country:
+    countryId:
       title: _('Country code')
       type: select
       source:
@@ -316,7 +320,7 @@ production:
               - callingCode
             template: '%name% (+%callingCode%)'
           order:
-            Country.name${ucLang}: asc
+            Country.name.${lang}: asc
         'null': _("Company's default")
     areaCode:
       title: _('Area code')
@@ -338,7 +342,7 @@ production:
       config:
 #        mapperName: \IvozProvider\Mapper\Sql\HuntGroupsRelUsers
         entity: \Ivoz\Domain\Model\HuntGroupsRelUser\HuntGroupsRelUser
-        filterField: HuntGroupsRelUser.User
+        filterField: HuntGroupsRelUser.user
         showAsTable: true
         fieldName:
           fields:
@@ -362,7 +366,7 @@ production:
       options:
         screens:
           huntGroupsRelUsersNew_screen: true
-    language:
+    languageId:
       title: _('Language')
       type: select
       defaultValue: 1
@@ -376,7 +380,7 @@ production:
               - name
             template: '%name%'
           order:
-            Language.name: asc
+            Language.name.${lang}: asc
         'null': _("Company's default")
     externalIpCalls:
       title: _('Calls from non-granted IPs')

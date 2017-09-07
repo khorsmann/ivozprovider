@@ -8,7 +8,7 @@ production:
       title: ngettext('Id', 'Ids', 1)
       required: false
       readonly: true
-    brand:
+    brandId:
       title: ngettext('Brand', 'Brands', 1)
       type: select
       required: true
@@ -40,7 +40,7 @@ production:
       type: text
       trim: both
       required: true
-    defaultTimezone:
+    defaultTimezoneId:
       title: _('Default timezone')
       type: select
       defaultValue: 145
@@ -56,7 +56,7 @@ production:
             template: '%tz%'
           order:
             Timezone.tz: asc
-    applicationServer:
+    applicationServerId:
       title: ngettext('Application Server', 'Application Servers', 1)
       type: select
       source:
@@ -117,7 +117,7 @@ production:
       title: _('Outbound prefix')
       type: text
       trim: both
-    country:
+    countryId:
       title: _('Country code')
       type: select
       defaultValue: 70
@@ -129,9 +129,9 @@ production:
           entity: \Ivoz\Domain\Model\Country\Country
           fieldName:
             fields:
-              - name
+              - name${lang}
               - callingCode
-            template: '%name% (+%callingCode%)'
+            template: '%name${lang}% (+%callingCode%)'
           order:
             Country.code: asc
         'null': _("Unassigned")
@@ -145,7 +145,7 @@ production:
         icon: help
         text: _("Default Area code for users in this company")
         label: _("Need help?")
-    outgoingDDI:
+    outgoingDDIId:
       title: _('Outgoing DDI')
       type: select
       source:
@@ -162,18 +162,19 @@ production:
             DDI.ddie164: asc
         'null': _("Unassigned")
     outgoingDDIRuleId:
-      title: ngettext('Outgoing DDI Rule', 'Outgoing DDI Rules', 1)
       type: select
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\OutgoingDDIRules
+#          mapperName: \IvozProvider\Mapper\Sql\OutgoingDDIRules
+          entity: \Ivoz\Domain\Model\OutgoingDDIRule\OutgoingDDIRule
           filterClass: IvozProvider_Klear_Filter_OutgoingDDIRules
           fieldName:
             fields:
               - name
             template: '%name%'
-          order: name
+          order:
+            OutgoingDDIRule.name: asc
         'null': _("Unassigned")
       info:
         type: box
@@ -181,7 +182,7 @@ production:
         icon: help
         text: _("Default outgoing DDI. This can be overriden in caller's edit screen.")
         label: _("Need help?")
-    language:
+    languageId:
       title: _('Language')
       type: select
       defaultValue: 1
@@ -192,11 +193,11 @@ production:
           entity: \Ivoz\Domain\Model\Language\Language
           fieldName:
             fields:
-              - name
-            template: '%name%'
+              - name${lang}
+            template: '%name${lang}%'
           order:
-            Language.name: asc
-    mediaRelaySets:
+            Language.name.${lang}: asc
+    mediaRelaySetsId:
       title: _('Media relay Set')
       type: select
       source:
@@ -304,8 +305,8 @@ production:
           filterclass: IvozProvider_Klear_Filter_Features
           relatedFieldName:
             fields:
-              - name
-            template: '%name%'
+              - name${lang}
+            template: '%name${lang}%'
           order: name
 staging:
   _extends: production

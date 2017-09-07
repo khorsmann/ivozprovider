@@ -212,7 +212,7 @@ production:
           order:
             User.name: asc
         'null': _("Unassigned")
-    ExternalCallFilterRelSchedule:
+    ExternalCallFilterRelSchedules:
       title: ngettext('Schedule', 'Schedules', 0)
       type: multiselect
       source:
@@ -224,7 +224,7 @@ production:
           related: \Ivoz\Domain\Model\Schedule\Schedule
           filterclass: IvozProvider_Klear_Filter_Company
           relatedFieldName: name
-    ExternalCallFilterRelCalendarId:
+    ExternalCallFilterRelCalendars:
       title: ngettext('Calendar', 'Calendars', 0)
       type: multiselect
       source:
@@ -254,11 +254,12 @@ production:
       source:
         data: mapper
         config:
-          relationMapper: \IvozProvider\Mapper\Sql\ExternalCallFilterWhiteLists
-          relatedMapperName: \IvozProvider\Mapper\Sql\MatchLists
-          relatedFieldName: name
+          relation: \Ivoz\Domain\Model\ExternalCallFilterWhiteList\ExternalCallFilterWhiteList
           relationProperty: MatchList
-          filterClass: IvozProvider_Klear_Filter_Company
+          relatedProperty: matchList
+          related: \Ivoz\Domain\Model\MatchList\MatchList
+          relatedFieldName: name
+          filterClass: \IvozProvider_Klear_Filter_Company
       info:
         type: box
         text: _("Incoming numbers that match this lists will be always ACCEPTED without checking this filter configuration.")
@@ -269,10 +270,11 @@ production:
       source:
         data: mapper
         config:
-          relationMapper: \IvozProvider\Mapper\Sql\ExternalCallFilterBlackLists
-          relatedMapperName: \IvozProvider\Mapper\Sql\MatchLists
-          relatedFieldName: name
+          relation: \Ivoz\Domain\Model\ExternalCallFilterBlackList\ExternalCallFilterBlackList
           relationProperty: MatchList
+          relatedProperty: matchList
+          related: \Ivoz\Domain\Model\MatchList\MatchList
+          relatedFieldName: name
           filterClass: IvozProvider_Klear_Filter_Company
       info:
         type: box

@@ -15,7 +15,7 @@ production:
           - AccCdr.brand
           - AccCdr.company
         type: desc
-      rawCondition: "AccCdr.peeringcontractid IS NOT NULL AND AccCdr.peeringcontractid != ''"
+      rawCondition: "AccCdr.peeringContractId IS NOT NULL AND AccCdr.peeringContractId != ''"
       pagination: 
         items: 25
       <<: *KamAccCdrs
@@ -29,8 +29,8 @@ production:
           default: kamAccCdrsView_screen
         blacklist:
           proxy: true
-          start_time: true
-          end_time: true
+          startTime: true
+          endTime: true
           referee: true
           referrer: true
           diversion: true
@@ -44,7 +44,7 @@ production:
           reMeteringDate: true
           externallyRated: true
           callidHash: true
-          end_time_utc: true
+          endTimeUtc: true
           pricingPlan: true
           pricingPlanName: true
           targetPattern: true
@@ -54,16 +54,16 @@ production:
           metered: true
           pricingPlan: true
         order:
-          start_time_utc: true
-          brand: true
-          company: true
+          startTimeUtc: true
+          brandId: true
+          companyId: true
           direction: true
           caller: true
           callee: true
           duration: true
           price: true
-          peeringContract: true
-          invoice: true
+          peeringContractId: true
+          invoiceId: true
     kamAccCdrsView_screen: &kamAccCdrsView_screenLink
       <<: *KamAccCdrs
       controller: edit
@@ -75,8 +75,8 @@ production:
       fields:
         blacklist:
           proxy: true
-          start_time: true
-          end_time: true
+          startTime: true
+          endTime: true
           referee: true
           referrer: true
           diversion: true
@@ -87,7 +87,7 @@ production:
           reMeteringDate: true
           pricingPlanDetails: true
           callidHash: true
-          end_time_utc: true
+          endTimeUtc: true
           pricingPlan: true
           pricingPlanName: true
           targetPattern: true
@@ -103,7 +103,7 @@ production:
           price: 1
           peeringContract: 1
           pricingPlan: 1
-          invoice: 1
+          invoiceId: 1
           metered: 1
           externallyRated: 1
           callid: 1
@@ -129,7 +129,7 @@ production:
             targetPattern: 6
             pricingPlan: 6
             direction: 6
-            invoice: 6
+            invoiceId: 6
         group2:
           label: _("Troubleshooting details")
           colsPerRow: 12

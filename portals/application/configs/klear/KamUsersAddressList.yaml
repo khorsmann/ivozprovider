@@ -17,7 +17,7 @@ production:
       fields: &kamUsersAddress_fieldsLink
         blacklist: &kamUsersAddress_blacklistLink
           grp: true
-          ip_addr: true
+          ipAddr: true
           mask: true
           port: true
           tag: true

@@ -2,7 +2,7 @@ production:
   class: \IvozProvider\Model\GenericMusicOnHold
   entity: Ivoz\Domain\Model\GenericMusicOnHold\GenericMusicOnHold
   fields: 
-    brand:
+    brandId:
       title: ngettext('Brand', 'Brands', 1)
       type: select
       required: true

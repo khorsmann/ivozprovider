@@ -1,10 +1,10 @@
 <?php
 
-namespace Kam\Domain\Model\UsersAddres;
+namespace Kam\Domain\Model\UsersAddress;
 
 use Core\Domain\Model\EntityInterface;
 
-interface UsersAddresInterface extends EntityInterface
+interface UsersAddressInterface extends EntityInterface
 {
     /**
      * Set sourceAddress

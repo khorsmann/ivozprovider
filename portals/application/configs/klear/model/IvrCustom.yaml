@@ -2,7 +2,7 @@ production:
   class: \IvozProvider\Model\IVRCustom
   entity: Ivoz\Domain\Model\IvrCustom\IvrCustom
   fields:
-    company:
+    companyId:
       title: ngettext('Company', 'Companies', 1)
       type: select
       required: true
@@ -23,7 +23,7 @@ production:
       trim: both
       required: true
       default: true
-    welcomeLocution:
+    welcomeLocutionId:
       title: _('Welcome locution')
       type: select
       required: true
@@ -39,7 +39,7 @@ production:
             template: '%name%'
           order:
             Locution.name: asc
-    noAnswerLocution:
+    noAnswerLocutionId:
       title: _('No answer locution')
       type: select
       source:
@@ -55,7 +55,7 @@ production:
           order:
             Locution.name: asc
         'null': _("Unassigned")
-    errorLocution:
+    errorLocutionId:
       title: ngettext('Locution', 'Locutions', 1)
       type: select
       source:
@@ -71,7 +71,7 @@ production:
           order:
             Locution.name: asc
         'null': _("Unassigned")
-    successLocution:
+    successLocutionId:
       title: _('Success locution')
       type: select
       source:
@@ -152,7 +152,7 @@ production:
       type: text
       trim: both
       required: true
-    timeoutExtension:
+    timeoutExtensionId:
       title: ngettext('Extension', 'Extensions', 1)
       type: select
       required: true
@@ -169,7 +169,7 @@ production:
           order:
             Extension.number: asc
         'null': _("Unassigned")
-    timeoutVoiceMailUser:
+    timeoutVoiceMailUserId:
       title: ngettext('Voicemail', 'Voicemails', 1)
       type: select
       required: true
@@ -217,7 +217,7 @@ production:
       type: text
       trim: both
       required: true
-    errorExtension:
+    errorExtensionId:
       title: ngettext('Extension', 'Extensions', 1)
       type: select
       required: true
@@ -234,7 +234,7 @@ production:
           order:
             Extension.number: asc
         'null': _("Unassigned")
-    errorVoiceMailUser:
+    errorVoiceMailUserId:
       title: ngettext('Voicemail', 'Voicemails', 1)
       type: select
       required: true

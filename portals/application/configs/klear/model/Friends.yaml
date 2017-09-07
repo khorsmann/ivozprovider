@@ -5,7 +5,7 @@ production:
   class: \IvozProvider\Model\Friends
   entity: Ivoz\Domain\Model\Friend\Friend
   fields:
-    company:
+    companyId:
       title: ngettext('Company', 'Companies', 1)
       type: select
       required: true
@@ -96,7 +96,7 @@ production:
       options:
         commands:
           generatePassword_command: true
-    callACL:
+    callACLId:
       title: _('Call ACL')
       type: select
       source:
@@ -112,7 +112,7 @@ production:
           order:
             CallACL.name: asc
         'null': _("Allow all outgoing calls")
-    country:
+    countryId:
       title: _('Country code')
       type: select
       source:
@@ -122,11 +122,11 @@ production:
           entity: \Ivoz\Domain\Model\Country\Country
           fieldName:
             fields:
-              - name
+              - name${lang}
               - callingCode
-            template: '%name% (+%callingCode%)'
+            template: '%name${lang}% (+%callingCode%)'
           order:
-            Country.name_${lang}: asc
+            Country.name.${lang}: asc
         'null': _("Company's default")
       info:
         type: box
@@ -144,7 +144,7 @@ production:
         icon: help
         text: _("Outgoing calls coming from Friend must have this area code format")
         label: _("Need help?")
-    outgoingDDI:
+    outgoingDDIId:
       title: _('Fallback Outgoing DDI')
       type: select
       source:
@@ -254,7 +254,7 @@ production:
             visualFilter:
               hide: ["ip", "port", "transport", "auth_needed"]
               show: ["password"]
-    language:
+    languageId:
       title: _('Language')
       type: select
       source:
@@ -267,7 +267,7 @@ production:
               - name
             template: '%name%'
           order:
-            Language.name: asc
+            Language.name.${lang}: asc
         'null': _("Company's default")
     status:
       title: _('Status')

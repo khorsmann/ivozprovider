@@ -6,6 +6,8 @@ class IvozProvider_Klear_Filter_KamDialplanCallerIn implements KlearMatrix_Model
 
     public function setRouteDispatcher(KlearMatrix_Model_RouteDispatcher $routeDispatcher)
     {
+        throw new \Exception('Not implemented yet');
+
         //Get Action
         $currentAction = $routeDispatcher->getActionName();
 
@@ -20,7 +22,7 @@ class IvozProvider_Klear_Filter_KamDialplanCallerIn implements KlearMatrix_Model
             case "transformationRulesetGroupsTrunksList_screen":
             case "kamTrunksDialplan_caller_inList_screen":
                 if ($GLOBALS['sf']) {
-                    $entity = 'Core:TransformationRulesetGroupsTrunk\\TransformationRulesetGroupsTrunk';
+                    $entity = 'Ivoz\\Domain\\Model\\TransformationRulesetGroupsTrunk\\TransformationRulesetGroupsTrunk';
                 } else if (!$GLOBALS['sf']) {
                     $mapper = new \IvozProvider\Mapper\Sql\TransformationRulesetGroupsTrunks();
                 }
@@ -56,9 +58,9 @@ class IvozProvider_Klear_Filter_KamDialplanCallerIn implements KlearMatrix_Model
     public function getCondition()
     {
         if (count($this->_condition) > 0) {
-            return '(' . implode(" AND ", $this->_condition) . ')';
+            return ['(' . implode(" AND ", $this->_condition) . ')'];
         }
-        return ;
+        return null;
     }
 
 }

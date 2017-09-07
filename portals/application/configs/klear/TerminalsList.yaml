@@ -20,7 +20,7 @@ production:
       fields:
         blacklist:
           password: true
-          direct_media_method: true
+          directMediaMethod: true
           lastProvisionDate: true
           disallow: true
         options:
@@ -35,8 +35,8 @@ production:
           domain: true
           TerminalModel: true
           mac: true
-          allow_audio: true
-          allow_video: true
+          allowAudio: true
+          allowVideo: true
           lastProvisionDate: true
       options:
         title: _("Options")
@@ -63,9 +63,9 @@ production:
         order:
           name: true
           password: true
-          allow_audio: true
-          allow_video: true
-          direct_media_method: true
+          allowAudio: true
+          allowVideo: true
+          directMediaMethod: true
           TerminalModel: true
           mac: true
           lastProvisionDate: true
@@ -86,9 +86,9 @@ production:
           label: _("Connection Info")
           colsPerRow: 12
           fields:
-            allow_audio: 4
-            allow_video: 4
-            direct_media_method: 4
+            allowAudio: 4
+            allowVideo: 4
+            directMediaMethod: 4
         group2:
           label: _("Provisioning Info")
           colsPerRow: 12
@@ -117,9 +117,9 @@ production:
         order:
           name: true
           password: true
-          allow_audio: true
-          allow_video: true
-          direct_media_method: true
+          allowAudio: true
+          allowVideo: true
+          directMediaMethod: true
           TerminalModel: true
           mac: true
           lastProvisionDate: true

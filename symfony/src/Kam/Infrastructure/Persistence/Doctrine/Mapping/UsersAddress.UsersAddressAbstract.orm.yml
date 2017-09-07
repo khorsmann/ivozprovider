@@ -1,4 +1,4 @@
-Kam\Domain\Model\UsersAddres\UsersAddresAbstract:
+Kam\Domain\Model\UsersAddress\UsersAddressAbstract:
   type: mappedSuperclass
   indexes:
     companyId:

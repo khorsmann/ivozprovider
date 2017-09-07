@@ -2,7 +2,7 @@ production:
   class: \IvozProvider\Model\Faxes
   entity: Ivoz\Domain\Model\Fax\Fax
   fields: 
-    company:
+    companyId:
       title: ngettext('Company', 'Companies', 1)
       type: select
       required: true
@@ -46,7 +46,7 @@ production:
             title: _("Yes")
             visualFilter:
               show: ["email"]
-    outgoingDDI:
+    outgoingDDIId:
       title: _('Outgoing DDI')
       type: select
       source:

@@ -2,7 +2,7 @@ production:
   class: \IvozProvider\Model\Recordings
   entity: Ivoz\Domain\Model\Recording\Recording
   fields: 
-    company:
+    companyId:
       title: ngettext('Company', 'Companies', 1)
       type: select
       required: true

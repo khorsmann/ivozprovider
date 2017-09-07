@@ -11,18 +11,6 @@ Ivoz\Domain\Model\TargetPattern\TargetPattern:
       id: true
       generator:
         strategy: IDENTITY
-  manyToOne:
-    brand:
-      targetEntity: \Ivoz\Domain\Model\Brand\BrandInterface
-      cascade: {  }
-      fetch: LAZY
-      mappedBy: null
-      inversedBy: null
-      joinColumns:
-        brandId:
-          referencedColumnName: id
-          nullable: false
-      orphanRemoval: false
   lifecycleCallbacks:
     postLoad:
       - initChangelog

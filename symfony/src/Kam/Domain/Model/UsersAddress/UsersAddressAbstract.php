@@ -1,15 +1,15 @@
 <?php
 
-namespace Kam\Domain\Model\UsersAddres;
+namespace Kam\Domain\Model\UsersAddress;
 
 use Assert\Assertion;
 use Core\Application\DataTransferObjectInterface;
 
 /**
- * UsersAddresAbstract
+ * UsersAddressAbstract
  * @codeCoverageIgnore
  */
-abstract class UsersAddresAbstract
+abstract class UsersAddressAbstract
 {
     /**
      * @column source_address
@@ -101,11 +101,11 @@ abstract class UsersAddresAbstract
     }
 
     /**
-     * @return UsersAddresDTO
+     * @return UsersAddressDTO
      */
     public static function createDTO()
     {
-        return new UsersAddresDTO();
+        return new UsersAddressDTO();
     }
 
     /**
@@ -116,9 +116,9 @@ abstract class UsersAddresAbstract
     public static function fromDTO(DataTransferObjectInterface $dto)
     {
         /**
-         * @var $dto UsersAddresDTO
+         * @var $dto UsersAddressDTO
          */
-        Assertion::isInstanceOf($dto, UsersAddresDTO::class);
+        Assertion::isInstanceOf($dto, UsersAddressDTO::class);
 
         $self = new static(
             $dto->getSourceAddress(),
@@ -140,9 +140,9 @@ abstract class UsersAddresAbstract
     public function updateFromDTO(DataTransferObjectInterface $dto)
     {
         /**
-         * @var $dto UsersAddresDTO
+         * @var $dto UsersAddressDTO
          */
-        Assertion::isInstanceOf($dto, UsersAddresDTO::class);
+        Assertion::isInstanceOf($dto, UsersAddressDTO::class);
 
         $this
             ->setSourceAddress($dto->getSourceAddress())
@@ -158,7 +158,7 @@ abstract class UsersAddresAbstract
     }
 
     /**
-     * @return UsersAddresDTO
+     * @return UsersAddressDTO
      */
     public function toDTO()
     {

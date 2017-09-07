@@ -16,6 +16,8 @@ class IvozProvider_Klear_Filter_RouteTypes implements KlearMatrix_Model_Field_Se
      */
     public function getCondition()
     {
+        throw new \Exception('Not implemented yet');
+
         $auth = Zend_Auth::getInstance();
         $user = $auth->getIdentity();
 

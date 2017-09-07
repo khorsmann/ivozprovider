@@ -79,7 +79,7 @@ class AccCdrDTO implements DataTransferObjectInterface
     /**
      * @var string
      */
-    private $callidhash;
+    private $callidHash;
 
     /**
      * @var string
@@ -99,7 +99,7 @@ class AccCdrDTO implements DataTransferObjectInterface
     /**
      * @var string
      */
-    private $peeringcontractid;
+    private $peeringContractId;
 
     /**
      * @var string
@@ -109,7 +109,7 @@ class AccCdrDTO implements DataTransferObjectInterface
     /**
      * @var boolean
      */
-    private $externallyrated;
+    private $externallyRated;
 
     /**
      * @var boolean
@@ -119,17 +119,17 @@ class AccCdrDTO implements DataTransferObjectInterface
     /**
      * @var \DateTime
      */
-    private $meteringdate = '0000-00-00 00:00:00';
+    private $meteringDate = '0000-00-00 00:00:00';
 
     /**
      * @var string
      */
-    private $pricingplanname;
+    private $pricingPlanName;
 
     /**
      * @var string
      */
-    private $targetpatternname;
+    private $targetPatternName;
 
     /**
      * @var string
@@ -139,7 +139,7 @@ class AccCdrDTO implements DataTransferObjectInterface
     /**
      * @var string
      */
-    private $pricingplandetails;
+    private $pricingPlanDetails;
 
     /**
      * @var string
@@ -149,7 +149,7 @@ class AccCdrDTO implements DataTransferObjectInterface
     /**
      * @var \DateTime
      */
-    private $remeteringdate;
+    private $reMeteringDate;
 
     /**
      * @var integer
@@ -225,21 +225,21 @@ class AccCdrDTO implements DataTransferObjectInterface
             'asiden' => $this->getAsiden(),
             'asaddress' => $this->getAsaddress(),
             'callid' => $this->getCallid(),
-            'callidhash' => $this->getCallidhash(),
+            'callidHash' => $this->getCallidHash(),
             'xcallid' => $this->getXcallid(),
             'parsed' => $this->getParsed(),
             'diversion' => $this->getDiversion(),
-            'peeringcontractid' => $this->getPeeringcontractid(),
+            'peeringContractId' => $this->getPeeringContractId(),
             'bounced' => $this->getBounced(),
-            'externallyrated' => $this->getExternallyrated(),
+            'externallyRated' => $this->getExternallyRated(),
             'metered' => $this->getMetered(),
-            'meteringdate' => $this->getMeteringdate(),
-            'pricingplanname' => $this->getPricingplanname(),
-            'targetpatternname' => $this->getTargetpatternname(),
+            'meteringDate' => $this->getMeteringDate(),
+            'pricingPlanName' => $this->getPricingPlanName(),
+            'targetPatternName' => $this->getTargetPatternName(),
             'price' => $this->getPrice(),
-            'pricingplandetails' => $this->getPricingplandetails(),
+            'pricingPlanDetails' => $this->getPricingPlanDetails(),
             'direction' => $this->getDirection(),
-            'remeteringdate' => $this->getRemeteringdate(),
+            'reMeteringDate' => $this->getReMeteringDate(),
             'id' => $this->getId(),
             'pricingPlanId' => $this->getPricingPlanId(),
             'targetPatternId' => $this->getTargetPatternId(),
@@ -530,13 +530,13 @@ class AccCdrDTO implements DataTransferObjectInterface
     }
 
     /**
-     * @param string $callidhash
+     * @param string $callidHash
      *
      * @return AccCdrDTO
      */
-    public function setCallidhash($callidhash = null)
+    public function setCallidHash($callidHash = null)
     {
-        $this->callidhash = $callidhash;
+        $this->callidHash = $callidHash;
 
         return $this;
     }
@@ -544,9 +544,9 @@ class AccCdrDTO implements DataTransferObjectInterface
     /**
      * @return string
      */
-    public function getCallidhash()
+    public function getCallidHash()
     {
-        return $this->callidhash;
+        return $this->callidHash;
     }
 
     /**
@@ -610,13 +610,13 @@ class AccCdrDTO implements DataTransferObjectInterface
     }
 
     /**
-     * @param string $peeringcontractid
+     * @param string $peeringContractId
      *
      * @return AccCdrDTO
      */
-    public function setPeeringcontractid($peeringcontractid = null)
+    public function setPeeringContractId($peeringContractId = null)
     {
-        $this->peeringcontractid = $peeringcontractid;
+        $this->peeringContractId = $peeringContractId;
 
         return $this;
     }
@@ -624,9 +624,9 @@ class AccCdrDTO implements DataTransferObjectInterface
     /**
      * @return string
      */
-    public function getPeeringcontractid()
+    public function getPeeringContractId()
     {
-        return $this->peeringcontractid;
+        return $this->peeringContractId;
     }
 
     /**
@@ -650,13 +650,13 @@ class AccCdrDTO implements DataTransferObjectInterface
     }
 
     /**
-     * @param boolean $externallyrated
+     * @param boolean $externallyRated
      *
      * @return AccCdrDTO
      */
-    public function setExternallyrated($externallyrated = null)
+    public function setExternallyRated($externallyRated = null)
     {
-        $this->externallyrated = $externallyrated;
+        $this->externallyRated = $externallyRated;
 
         return $this;
     }
@@ -664,9 +664,9 @@ class AccCdrDTO implements DataTransferObjectInterface
     /**
      * @return boolean
      */
-    public function getExternallyrated()
+    public function getExternallyRated()
     {
-        return $this->externallyrated;
+        return $this->externallyRated;
     }
 
     /**
@@ -690,13 +690,13 @@ class AccCdrDTO implements DataTransferObjectInterface
     }
 
     /**
-     * @param \DateTime $meteringdate
+     * @param \DateTime $meteringDate
      *
      * @return AccCdrDTO
      */
-    public function setMeteringdate($meteringdate = null)
+    public function setMeteringDate($meteringDate = null)
     {
-        $this->meteringdate = $meteringdate;
+        $this->meteringDate = $meteringDate;
 
         return $this;
     }
@@ -704,19 +704,19 @@ class AccCdrDTO implements DataTransferObjectInterface
     /**
      * @return \DateTime
      */
-    public function getMeteringdate()
+    public function getMeteringDate()
     {
-        return $this->meteringdate;
+        return $this->meteringDate;
     }
 
     /**
-     * @param string $pricingplanname
+     * @param string $pricingPlanName
      *
      * @return AccCdrDTO
      */
-    public function setPricingplanname($pricingplanname = null)
+    public function setPricingPlanName($pricingPlanName = null)
     {
-        $this->pricingplanname = $pricingplanname;
+        $this->pricingPlanName = $pricingPlanName;
 
         return $this;
     }
@@ -724,19 +724,19 @@ class AccCdrDTO implements DataTransferObjectInterface
     /**
      * @return string
      */
-    public function getPricingplanname()
+    public function getPricingPlanName()
     {
-        return $this->pricingplanname;
+        return $this->pricingPlanName;
     }
 
     /**
-     * @param string $targetpatternname
+     * @param string $targetPatternName
      *
      * @return AccCdrDTO
      */
-    public function setTargetpatternname($targetpatternname = null)
+    public function setTargetPatternName($targetPatternName = null)
     {
-        $this->targetpatternname = $targetpatternname;
+        $this->targetPatternName = $targetPatternName;
 
         return $this;
     }
@@ -744,9 +744,9 @@ class AccCdrDTO implements DataTransferObjectInterface
     /**
      * @return string
      */
-    public function getTargetpatternname()
+    public function getTargetPatternName()
     {
-        return $this->targetpatternname;
+        return $this->targetPatternName;
     }
 
     /**
@@ -770,13 +770,13 @@ class AccCdrDTO implements DataTransferObjectInterface
     }
 
     /**
-     * @param string $pricingplandetails
+     * @param string $pricingPlanDetails
      *
      * @return AccCdrDTO
      */
-    public function setPricingplandetails($pricingplandetails = null)
+    public function setPricingPlanDetails($pricingPlanDetails = null)
     {
-        $this->pricingplandetails = $pricingplandetails;
+        $this->pricingPlanDetails = $pricingPlanDetails;
 
         return $this;
     }
@@ -784,9 +784,9 @@ class AccCdrDTO implements DataTransferObjectInterface
     /**
      * @return string
      */
-    public function getPricingplandetails()
+    public function getPricingPlanDetails()
     {
-        return $this->pricingplandetails;
+        return $this->pricingPlanDetails;
     }
 
     /**
@@ -810,13 +810,13 @@ class AccCdrDTO implements DataTransferObjectInterface
     }
 
     /**
-     * @param \DateTime $remeteringdate
+     * @param \DateTime $reMeteringDate
      *
      * @return AccCdrDTO
      */
-    public function setRemeteringdate($remeteringdate = null)
+    public function setReMeteringDate($reMeteringDate = null)
     {
-        $this->remeteringdate = $remeteringdate;
+        $this->reMeteringDate = $reMeteringDate;
 
         return $this;
     }
@@ -824,9 +824,9 @@ class AccCdrDTO implements DataTransferObjectInterface
     /**
      * @return \DateTime
      */
-    public function getRemeteringdate()
+    public function getReMeteringDate()
     {
-        return $this->remeteringdate;
+        return $this->reMeteringDate;
     }
 
     /**

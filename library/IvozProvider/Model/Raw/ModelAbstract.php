@@ -241,10 +241,10 @@ abstract class ModelAbstract implements \IteratorAggregate
     protected function _getCurrentLanguage($language = null)
     {
         if ($language) {
+            return $language;
             if (!in_array($language, $this->getAvailableLangs())) {
                 throw new \Exception($language . " is not an available language");
             }
-            return $language;
         }
 
         return $this->getDefaultUserLanguage();

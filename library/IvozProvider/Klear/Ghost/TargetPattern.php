@@ -1,5 +1,6 @@
 <?php
-use Core\Application\DTO\PricingPlansRelTargetPatternDTO;
+
+use \Ivoz\Domain\Model\PricingPlansRelTargetPattern\PricingPlansRelTargetPatternDTO;
 
 class IvozProvider_Klear_Ghost_TargetPattern extends KlearMatrix_Model_Field_Ghost_Abstract {
 
@@ -19,7 +20,7 @@ class IvozProvider_Klear_Ghost_TargetPattern extends KlearMatrix_Model_Field_Gho
 
             if ($model->getTargetPatternId()) {
                 $dataGateway = \Zend_Registry::get('data_gateway');
-                $pattern = $dataGateway->find('Core\\Model\\TargetPattern\\TargetPattern', $model->getTargetPatternId());
+                $pattern = $dataGateway->find('Ivoz\\Domain\Model\\TargetPattern\\TargetPattern', $model->getTargetPatternId());
             }
 
             if (isset($pattern)) {

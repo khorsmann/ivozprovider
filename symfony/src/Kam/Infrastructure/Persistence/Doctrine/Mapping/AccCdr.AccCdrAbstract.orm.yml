@@ -113,7 +113,7 @@ Kam\Domain\Model\AccCdr\AccCdrAbstract:
       length: 255
       options:
         fixed: false
-    callidhash:
+    callidHash:
       type: string
       nullable: true
       length: 128
@@ -139,7 +139,7 @@ Kam\Domain\Model\AccCdr\AccCdrAbstract:
       length: 64
       options:
         fixed: false
-    peeringcontractid:
+    peeringContractId:
       type: string
       nullable: true
       length: 64
@@ -153,7 +153,7 @@ Kam\Domain\Model\AccCdr\AccCdrAbstract:
       options:
         fixed: false
         default: 'no'
-    externallyrated:
+    externallyRated:
       type: boolean
       nullable: true
       column: externallyRated
@@ -162,20 +162,20 @@ Kam\Domain\Model\AccCdr\AccCdrAbstract:
       nullable: true
       options:
         default: '0'
-    meteringdate:
+    meteringDate:
       type: datetime
       nullable: true
       options:
         default: '0000-00-00 00:00:00'
       column: meteringDate
-    pricingplanname:
+    pricingPlanName:
       type: string
       nullable: true
       length: 55
       options:
         fixed: false
       column: pricingPlanName
-    targetpatternname:
+    targetPatternName:
       type: string
       nullable: true
       length: 55
@@ -187,7 +187,7 @@ Kam\Domain\Model\AccCdr\AccCdrAbstract:
       nullable: true
       precision: 10
       scale: 4
-    pricingplandetails:
+    pricingPlanDetails:
       type: text
       nullable: true
       length: 65535
@@ -200,7 +200,7 @@ Kam\Domain\Model\AccCdr\AccCdrAbstract:
       length: null
       options:
         fixed: false
-    remeteringdate:
+    reMeteringDate:
       type: datetime
       nullable: true
       column: reMeteringDate

@@ -6,6 +6,7 @@ class IvozProvider_Klear_Filter_KamDialplanCalleeOut implements KlearMatrix_Mode
 
     public function setRouteDispatcher(KlearMatrix_Model_RouteDispatcher $routeDispatcher)
     {
+        throw new \Exception('Not implemented yet');
         //Get Action
         $currentAction = $routeDispatcher->getActionName();
 
@@ -20,7 +21,7 @@ class IvozProvider_Klear_Filter_KamDialplanCalleeOut implements KlearMatrix_Mode
             case "transformationRulesetGroupsTrunksList_screen":
             case "kamTrunksDialplan_callee_outList_screen":
                 if ($GLOBALS['sf']) {
-                    $entity = 'Core:TransformationRulesetGroupsTrunk\\TransformationRulesetGroupsTrunk';
+                    $entity = 'Ivoz\\Domain\\Model\\TransformationRulesetGroupsTrunk\\TransformationRulesetGroupsTrunk';
                 } else if (!$GLOBALS['sf']) {
                     $mapper = new \IvozProvider\Mapper\Sql\TransformationRulesetGroupsTrunks();
                 }
@@ -43,9 +44,9 @@ class IvozProvider_Klear_Filter_KamDialplanCalleeOut implements KlearMatrix_Mode
         }
 
         $filterValue = $transformationRulesetGroupModel->getCalleeOut();
-        $condition = "TrunksDialplan.dpid = ".$filterValue;
+        $condition = "dpid = ".$filterValue;
         if (is_null($filterValue)) {
-            $condition = "TrunksDialplan.dpid is null";
+            $condition = "dpid is null";
         }
 
         $this->_condition[] = $condition;
@@ -56,9 +57,9 @@ class IvozProvider_Klear_Filter_KamDialplanCalleeOut implements KlearMatrix_Mode
     public function getCondition()
     {
         if (count($this->_condition) > 0) {
-            return '(' . implode(" AND ", $this->_condition) . ')';
+            return ['(' . implode(" AND ", $this->_condition) . ')'];
         }
-        return ;
+        return null;
     }
 
 }

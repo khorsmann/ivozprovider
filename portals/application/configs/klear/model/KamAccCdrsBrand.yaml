@@ -7,7 +7,7 @@ production:
       type: text
       maxLength: 64
       default: true
-    start_time_utc:
+    startTimeUtc:
       title: _('Calldate')
       type: picker
       defaultValue: 2000-01-01 00:00:00
@@ -15,7 +15,7 @@ production:
         control: datetime
         settings:
           disabled: 'false'
-    end_time_utc:
+    endTimeUtc:
       title: _('End time utc')
       type: picker
       defaultValue: CURRENT_TIMESTAMP
@@ -23,7 +23,7 @@ production:
         control: datetime
         settings:
           disabled: 'false'
-    start_time:
+    startTime:
       title: _('Start time')
       type: picker
       defaultValue: 2000-01-01 00:00:00
@@ -31,7 +31,7 @@ production:
         control: datetime
         settings:
           disabled: 'false'
-    end_time:
+    endTime:
       title: _('End time')
       type: picker
       defaultValue: 2000-01-01 00:00:00

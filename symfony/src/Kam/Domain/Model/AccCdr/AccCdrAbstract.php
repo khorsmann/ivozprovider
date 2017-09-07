@@ -83,7 +83,7 @@ abstract class AccCdrAbstract
     /**
      * @var string
      */
-    protected $callidhash;
+    protected $callidHash;
 
     /**
      * @var string
@@ -103,7 +103,7 @@ abstract class AccCdrAbstract
     /**
      * @var string
      */
-    protected $peeringcontractid;
+    protected $peeringContractId;
 
     /**
      * @var string
@@ -113,7 +113,7 @@ abstract class AccCdrAbstract
     /**
      * @var boolean
      */
-    protected $externallyrated;
+    protected $externallyRated;
 
     /**
      * @var boolean
@@ -123,17 +123,17 @@ abstract class AccCdrAbstract
     /**
      * @var \DateTime
      */
-    protected $meteringdate = '0000-00-00 00:00:00';
+    protected $meteringDate = '0000-00-00 00:00:00';
 
     /**
      * @var string
      */
-    protected $pricingplanname;
+    protected $pricingPlanName;
 
     /**
      * @var string
      */
-    protected $targetpatternname;
+    protected $targetPatternName;
 
     /**
      * @var string
@@ -143,7 +143,7 @@ abstract class AccCdrAbstract
     /**
      * @var string
      */
-    protected $pricingplandetails;
+    protected $pricingPlanDetails;
 
     /**
      * @var string
@@ -153,7 +153,7 @@ abstract class AccCdrAbstract
     /**
      * @var \DateTime
      */
-    protected $remeteringdate;
+    protected $reMeteringDate;
 
     /**
      * @var \Ivoz\Domain\Model\PricingPlan\PricingPlanInterface
@@ -278,20 +278,20 @@ abstract class AccCdrAbstract
             ->setAsiden($dto->getAsiden())
             ->setAsaddress($dto->getAsaddress())
             ->setCallid($dto->getCallid())
-            ->setCallidhash($dto->getCallidhash())
+            ->setCallidHash($dto->getCallidHash())
             ->setXcallid($dto->getXcallid())
             ->setParsed($dto->getParsed())
             ->setDiversion($dto->getDiversion())
-            ->setPeeringcontractid($dto->getPeeringcontractid())
-            ->setExternallyrated($dto->getExternallyrated())
+            ->setPeeringContractId($dto->getPeeringContractId())
+            ->setExternallyRated($dto->getExternallyRated())
             ->setMetered($dto->getMetered())
-            ->setMeteringdate($dto->getMeteringdate())
-            ->setPricingplanname($dto->getPricingplanname())
-            ->setTargetpatternname($dto->getTargetpatternname())
+            ->setMeteringDate($dto->getMeteringDate())
+            ->setPricingPlanName($dto->getPricingPlanName())
+            ->setTargetPatternName($dto->getTargetPatternName())
             ->setPrice($dto->getPrice())
-            ->setPricingplandetails($dto->getPricingplandetails())
+            ->setPricingPlanDetails($dto->getPricingPlanDetails())
             ->setDirection($dto->getDirection())
-            ->setRemeteringdate($dto->getRemeteringdate())
+            ->setReMeteringDate($dto->getReMeteringDate())
             ->setPricingPlan($dto->getPricingPlan())
             ->setTargetPattern($dto->getTargetPattern())
             ->setInvoice($dto->getInvoice())
@@ -325,21 +325,21 @@ abstract class AccCdrAbstract
             ->setAsiden($dto->getAsiden())
             ->setAsaddress($dto->getAsaddress())
             ->setCallid($dto->getCallid())
-            ->setCallidhash($dto->getCallidhash())
+            ->setCallidHash($dto->getCallidHash())
             ->setXcallid($dto->getXcallid())
             ->setParsed($dto->getParsed())
             ->setDiversion($dto->getDiversion())
-            ->setPeeringcontractid($dto->getPeeringcontractid())
+            ->setPeeringContractId($dto->getPeeringContractId())
             ->setBounced($dto->getBounced())
-            ->setExternallyrated($dto->getExternallyrated())
+            ->setExternallyRated($dto->getExternallyRated())
             ->setMetered($dto->getMetered())
-            ->setMeteringdate($dto->getMeteringdate())
-            ->setPricingplanname($dto->getPricingplanname())
-            ->setTargetpatternname($dto->getTargetpatternname())
+            ->setMeteringDate($dto->getMeteringDate())
+            ->setPricingPlanName($dto->getPricingPlanName())
+            ->setTargetPatternName($dto->getTargetPatternName())
             ->setPrice($dto->getPrice())
-            ->setPricingplandetails($dto->getPricingplandetails())
+            ->setPricingPlanDetails($dto->getPricingPlanDetails())
             ->setDirection($dto->getDirection())
-            ->setRemeteringdate($dto->getRemeteringdate())
+            ->setReMeteringDate($dto->getReMeteringDate())
             ->setPricingPlan($dto->getPricingPlan())
             ->setTargetPattern($dto->getTargetPattern())
             ->setInvoice($dto->getInvoice())
@@ -369,21 +369,21 @@ abstract class AccCdrAbstract
             ->setAsiden($this->getAsiden())
             ->setAsaddress($this->getAsaddress())
             ->setCallid($this->getCallid())
-            ->setCallidhash($this->getCallidhash())
+            ->setCallidHash($this->getCallidHash())
             ->setXcallid($this->getXcallid())
             ->setParsed($this->getParsed())
             ->setDiversion($this->getDiversion())
-            ->setPeeringcontractid($this->getPeeringcontractid())
+            ->setPeeringContractId($this->getPeeringContractId())
             ->setBounced($this->getBounced())
-            ->setExternallyrated($this->getExternallyrated())
+            ->setExternallyRated($this->getExternallyRated())
             ->setMetered($this->getMetered())
-            ->setMeteringdate($this->getMeteringdate())
-            ->setPricingplanname($this->getPricingplanname())
-            ->setTargetpatternname($this->getTargetpatternname())
+            ->setMeteringDate($this->getMeteringDate())
+            ->setPricingPlanName($this->getPricingPlanName())
+            ->setTargetPatternName($this->getTargetPatternName())
             ->setPrice($this->getPrice())
-            ->setPricingplandetails($this->getPricingplandetails())
+            ->setPricingPlanDetails($this->getPricingPlanDetails())
             ->setDirection($this->getDirection())
-            ->setRemeteringdate($this->getRemeteringdate())
+            ->setReMeteringDate($this->getReMeteringDate())
             ->setPricingPlanId($this->getPricingPlan() ? $this->getPricingPlan()->getId() : null)
             ->setTargetPatternId($this->getTargetPattern() ? $this->getTargetPattern()->getId() : null)
             ->setInvoiceId($this->getInvoice() ? $this->getInvoice()->getId() : null)
@@ -410,21 +410,21 @@ abstract class AccCdrAbstract
             'asiden' => $this->getAsiden(),
             'asaddress' => $this->getAsaddress(),
             'callid' => $this->getCallid(),
-            'callidhash' => $this->getCallidhash(),
+            'callidHash' => $this->getCallidHash(),
             'xcallid' => $this->getXcallid(),
             'parsed' => $this->getParsed(),
             'diversion' => $this->getDiversion(),
-            'peeringcontractid' => $this->getPeeringcontractid(),
+            'peeringContractId' => $this->getPeeringContractId(),
             'bounced' => $this->getBounced(),
-            'externallyrated' => $this->getExternallyrated(),
+            'externallyRated' => $this->getExternallyRated(),
             'metered' => $this->getMetered(),
-            'meteringdate' => $this->getMeteringdate(),
-            'pricingplanname' => $this->getPricingplanname(),
-            'targetpatternname' => $this->getTargetpatternname(),
+            'meteringDate' => $this->getMeteringDate(),
+            'pricingPlanName' => $this->getPricingPlanName(),
+            'targetPatternName' => $this->getTargetPatternName(),
             'price' => $this->getPrice(),
-            'pricingplandetails' => $this->getPricingplandetails(),
+            'pricingPlanDetails' => $this->getPricingPlanDetails(),
             'direction' => $this->getDirection(),
-            'remeteringdate' => $this->getRemeteringdate(),
+            'reMeteringDate' => $this->getReMeteringDate(),
             'pricingPlanId' => $this->getPricingPlan() ? $this->getPricingPlan()->getId() : null,
             'targetPatternId' => $this->getTargetPattern() ? $this->getTargetPattern()->getId() : null,
             'invoiceId' => $this->getInvoice() ? $this->getInvoice()->getId() : null,
@@ -792,31 +792,31 @@ abstract class AccCdrAbstract
     }
 
     /**
-     * Set callidhash
+     * Set callidHash
      *
-     * @param string $callidhash
+     * @param string $callidHash
      *
      * @return self
      */
-    public function setCallidhash($callidhash = null)
+    public function setCallidHash($callidHash = null)
     {
-        if (!is_null($callidhash)) {
-            Assertion::maxLength($callidhash, 128);
+        if (!is_null($callidHash)) {
+            Assertion::maxLength($callidHash, 128);
         }
 
-        $this->callidhash = $callidhash;
+        $this->callidHash = $callidHash;
 
         return $this;
     }
 
     /**
-     * Get callidhash
+     * Get callidHash
      *
      * @return string
      */
-    public function getCallidhash()
+    public function getCallidHash()
     {
-        return $this->callidhash;
+        return $this->callidHash;
     }
 
     /**
@@ -903,31 +903,31 @@ abstract class AccCdrAbstract
     }
 
     /**
-     * Set peeringcontractid
+     * Set peeringContractId
      *
-     * @param string $peeringcontractid
+     * @param string $peeringContractId
      *
      * @return self
      */
-    public function setPeeringcontractid($peeringcontractid = null)
+    public function setPeeringContractId($peeringContractId = null)
     {
-        if (!is_null($peeringcontractid)) {
-            Assertion::maxLength($peeringcontractid, 64);
+        if (!is_null($peeringContractId)) {
+            Assertion::maxLength($peeringContractId, 64);
         }
 
-        $this->peeringcontractid = $peeringcontractid;
+        $this->peeringContractId = $peeringContractId;
 
         return $this;
     }
 
     /**
-     * Get peeringcontractid
+     * Get peeringContractId
      *
      * @return string
      */
-    public function getPeeringcontractid()
+    public function getPeeringContractId()
     {
-        return $this->peeringcontractid;
+        return $this->peeringContractId;
     }
 
     /**
@@ -957,31 +957,31 @@ abstract class AccCdrAbstract
     }
 
     /**
-     * Set externallyrated
+     * Set externallyRated
      *
-     * @param boolean $externallyrated
+     * @param boolean $externallyRated
      *
      * @return self
      */
-    public function setExternallyrated($externallyrated = null)
+    public function setExternallyRated($externallyRated = null)
     {
-        if (!is_null($externallyrated)) {
-            Assertion::between(intval($externallyrated), 0, 1);
+        if (!is_null($externallyRated)) {
+            Assertion::between(intval($externallyRated), 0, 1);
         }
 
-        $this->externallyrated = $externallyrated;
+        $this->externallyRated = $externallyRated;
 
         return $this;
     }
 
     /**
-     * Get externallyrated
+     * Get externallyRated
      *
      * @return boolean
      */
-    public function getExternallyrated()
+    public function getExternallyRated()
     {
-        return $this->externallyrated;
+        return $this->externallyRated;
     }
 
     /**
@@ -1013,86 +1013,86 @@ abstract class AccCdrAbstract
     }
 
     /**
-     * Set meteringdate
+     * Set meteringDate
      *
-     * @param \DateTime $meteringdate
+     * @param \DateTime $meteringDate
      *
      * @return self
      */
-    public function setMeteringdate($meteringdate = null)
+    public function setMeteringDate($meteringDate = null)
     {
-        if (!is_null($meteringdate)) {
+        if (!is_null($meteringDate)) {
         }
 
-        $this->meteringdate = $meteringdate;
+        $this->meteringDate = $meteringDate;
 
         return $this;
     }
 
     /**
-     * Get meteringdate
+     * Get meteringDate
      *
      * @return \DateTime
      */
-    public function getMeteringdate()
+    public function getMeteringDate()
     {
-        return $this->meteringdate;
+        return $this->meteringDate;
     }
 
     /**
-     * Set pricingplanname
+     * Set pricingPlanName
      *
-     * @param string $pricingplanname
+     * @param string $pricingPlanName
      *
      * @return self
      */
-    public function setPricingplanname($pricingplanname = null)
+    public function setPricingPlanName($pricingPlanName = null)
     {
-        if (!is_null($pricingplanname)) {
-            Assertion::maxLength($pricingplanname, 55);
+        if (!is_null($pricingPlanName)) {
+            Assertion::maxLength($pricingPlanName, 55);
         }
 
-        $this->pricingplanname = $pricingplanname;
+        $this->pricingPlanName = $pricingPlanName;
 
         return $this;
     }
 
     /**
-     * Get pricingplanname
+     * Get pricingPlanName
      *
      * @return string
      */
-    public function getPricingplanname()
+    public function getPricingPlanName()
     {
-        return $this->pricingplanname;
+        return $this->pricingPlanName;
     }
 
     /**
-     * Set targetpatternname
+     * Set targetPatternName
      *
-     * @param string $targetpatternname
+     * @param string $targetPatternName
      *
      * @return self
      */
-    public function setTargetpatternname($targetpatternname = null)
+    public function setTargetPatternName($targetPatternName = null)
     {
-        if (!is_null($targetpatternname)) {
-            Assertion::maxLength($targetpatternname, 55);
+        if (!is_null($targetPatternName)) {
+            Assertion::maxLength($targetPatternName, 55);
         }
 
-        $this->targetpatternname = $targetpatternname;
+        $this->targetPatternName = $targetPatternName;
 
         return $this;
     }
 
     /**
-     * Get targetpatternname
+     * Get targetPatternName
      *
      * @return string
      */
-    public function getTargetpatternname()
+    public function getTargetPatternName()
     {
-        return $this->targetpatternname;
+        return $this->targetPatternName;
     }
 
     /**
@@ -1126,31 +1126,31 @@ abstract class AccCdrAbstract
     }
 
     /**
-     * Set pricingplandetails
+     * Set pricingPlanDetails
      *
-     * @param string $pricingplandetails
+     * @param string $pricingPlanDetails
      *
      * @return self
      */
-    public function setPricingplandetails($pricingplandetails = null)
+    public function setPricingPlanDetails($pricingPlanDetails = null)
     {
-        if (!is_null($pricingplandetails)) {
-            Assertion::maxLength($pricingplandetails, 65535);
+        if (!is_null($pricingPlanDetails)) {
+            Assertion::maxLength($pricingPlanDetails, 65535);
         }
 
-        $this->pricingplandetails = $pricingplandetails;
+        $this->pricingPlanDetails = $pricingPlanDetails;
 
         return $this;
     }
 
     /**
-     * Get pricingplandetails
+     * Get pricingPlanDetails
      *
      * @return string
      */
-    public function getPricingplandetails()
+    public function getPricingPlanDetails()
     {
-        return $this->pricingplandetails;
+        return $this->pricingPlanDetails;
     }
 
     /**
@@ -1181,30 +1181,30 @@ abstract class AccCdrAbstract
     }
 
     /**
-     * Set remeteringdate
+     * Set reMeteringDate
      *
-     * @param \DateTime $remeteringdate
+     * @param \DateTime $reMeteringDate
      *
      * @return self
      */
-    public function setRemeteringdate($remeteringdate = null)
+    public function setReMeteringDate($reMeteringDate = null)
     {
-        if (!is_null($remeteringdate)) {
+        if (!is_null($reMeteringDate)) {
         }
 
-        $this->remeteringdate = $remeteringdate;
+        $this->reMeteringDate = $reMeteringDate;
 
         return $this;
     }
 
     /**
-     * Get remeteringdate
+     * Get reMeteringDate
      *
      * @return \DateTime
      */
-    public function getRemeteringdate()
+    public function getReMeteringDate()
     {
-        return $this->remeteringdate;
+        return $this->reMeteringDate;
     }
 
     /**

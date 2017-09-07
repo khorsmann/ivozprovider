@@ -49,7 +49,7 @@ abstract class TerminalModelAbstract
     /**
      * @var \Ivoz\Domain\Model\TerminalManufacturer\TerminalManufacturerInterface
      */
-    protected $TerminalManufacturer;
+    protected $terminalManufacturer;
 
 
     /**
@@ -400,7 +400,7 @@ abstract class TerminalModelAbstract
      */
     public function setTerminalManufacturer(\Ivoz\Domain\Model\TerminalManufacturer\TerminalManufacturerInterface $terminalManufacturer)
     {
-        $this->TerminalManufacturer = $terminalManufacturer;
+        $this->terminalManufacturer = $terminalManufacturer;
 
         return $this;
     }
@@ -412,7 +412,7 @@ abstract class TerminalModelAbstract
      */
     public function getTerminalManufacturer()
     {
-        return $this->TerminalManufacturer;
+        return $this->terminalManufacturer;
     }
 
 

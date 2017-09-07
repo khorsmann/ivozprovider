@@ -2,7 +2,7 @@ production:
   class: \IvozProvider\Model\Timezones
   entity: Ivoz\Domain\Model\Timezone\Timezone
   fields: 
-    country:
+    countryId:
       title: _('Country id')
       type: select
       source: 

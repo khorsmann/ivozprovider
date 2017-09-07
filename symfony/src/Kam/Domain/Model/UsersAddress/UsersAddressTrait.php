@@ -1,14 +1,14 @@
 <?php
 
-namespace Kam\Domain\Model\UsersAddres;
+namespace Kam\Domain\Model\UsersAddress;
 
 use Core\Application\DataTransferObjectInterface;
 
 /**
- * UsersAddresTrait
+ * UsersAddressTrait
  * @codeCoverageIgnore
  */
-trait UsersAddresTrait
+trait UsersAddressTrait
 {
     /**
      * @var integer
@@ -26,11 +26,11 @@ trait UsersAddresTrait
     }
 
     /**
-     * @return UsersAddresDTO
+     * @return UsersAddressDTO
      */
     public static function createDTO()
     {
-        return new UsersAddresDTO();
+        return new UsersAddressDTO();
     }
 
     /**
@@ -41,7 +41,7 @@ trait UsersAddresTrait
     public static function fromDTO(DataTransferObjectInterface $dto)
     {
         /**
-         * @var $dto UsersAddresDTO
+         * @var $dto UsersAddressDTO
          */
         $self = parent::fromDTO($dto);
 
@@ -55,7 +55,7 @@ trait UsersAddresTrait
     public function updateFromDTO(DataTransferObjectInterface $dto)
     {
         /**
-         * @var $dto UsersAddresDTO
+         * @var $dto UsersAddressDTO
          */
         parent::updateFromDTO($dto);
 
@@ -64,7 +64,7 @@ trait UsersAddresTrait
     }
 
     /**
-     * @return UsersAddresDTO
+     * @return UsersAddressDTO
      */
     public function toDTO()
     {

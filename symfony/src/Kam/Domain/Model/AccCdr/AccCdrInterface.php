@@ -231,20 +231,20 @@ interface AccCdrInterface extends EntityInterface
     public function getCallid();
 
     /**
-     * Set callidhash
+     * Set callidHash
      *
-     * @param string $callidhash
+     * @param string $callidHash
      *
      * @return self
      */
-    public function setCallidhash($callidhash = null);
+    public function setCallidHash($callidHash = null);
 
     /**
-     * Get callidhash
+     * Get callidHash
      *
      * @return string
      */
-    public function getCallidhash();
+    public function getCallidHash();
 
     /**
      * Set xcallid
@@ -295,20 +295,20 @@ interface AccCdrInterface extends EntityInterface
     public function getDiversion();
 
     /**
-     * Set peeringcontractid
+     * Set peeringContractId
      *
-     * @param string $peeringcontractid
+     * @param string $peeringContractId
      *
      * @return self
      */
-    public function setPeeringcontractid($peeringcontractid = null);
+    public function setPeeringContractId($peeringContractId = null);
 
     /**
-     * Get peeringcontractid
+     * Get peeringContractId
      *
      * @return string
      */
-    public function getPeeringcontractid();
+    public function getPeeringContractId();
 
     /**
      * Set bounced
@@ -327,20 +327,20 @@ interface AccCdrInterface extends EntityInterface
     public function getBounced();
 
     /**
-     * Set externallyrated
+     * Set externallyRated
      *
-     * @param boolean $externallyrated
+     * @param boolean $externallyRated
      *
      * @return self
      */
-    public function setExternallyrated($externallyrated = null);
+    public function setExternallyRated($externallyRated = null);
 
     /**
-     * Get externallyrated
+     * Get externallyRated
      *
      * @return boolean
      */
-    public function getExternallyrated();
+    public function getExternallyRated();
 
     /**
      * Set metered
@@ -359,52 +359,52 @@ interface AccCdrInterface extends EntityInterface
     public function getMetered();
 
     /**
-     * Set meteringdate
+     * Set meteringDate
      *
-     * @param \DateTime $meteringdate
+     * @param \DateTime $meteringDate
      *
      * @return self
      */
-    public function setMeteringdate($meteringdate = null);
+    public function setMeteringDate($meteringDate = null);
 
     /**
-     * Get meteringdate
+     * Get meteringDate
      *
      * @return \DateTime
      */
-    public function getMeteringdate();
+    public function getMeteringDate();
 
     /**
-     * Set pricingplanname
+     * Set pricingPlanName
      *
-     * @param string $pricingplanname
+     * @param string $pricingPlanName
      *
      * @return self
      */
-    public function setPricingplanname($pricingplanname = null);
+    public function setPricingPlanName($pricingPlanName = null);
 
     /**
-     * Get pricingplanname
+     * Get pricingPlanName
      *
      * @return string
      */
-    public function getPricingplanname();
+    public function getPricingPlanName();
 
     /**
-     * Set targetpatternname
+     * Set targetPatternName
      *
-     * @param string $targetpatternname
+     * @param string $targetPatternName
      *
      * @return self
      */
-    public function setTargetpatternname($targetpatternname = null);
+    public function setTargetPatternName($targetPatternName = null);
 
     /**
-     * Get targetpatternname
+     * Get targetPatternName
      *
      * @return string
      */
-    public function getTargetpatternname();
+    public function getTargetPatternName();
 
     /**
      * Set price
@@ -423,20 +423,20 @@ interface AccCdrInterface extends EntityInterface
     public function getPrice();
 
     /**
-     * Set pricingplandetails
+     * Set pricingPlanDetails
      *
-     * @param string $pricingplandetails
+     * @param string $pricingPlanDetails
      *
      * @return self
      */
-    public function setPricingplandetails($pricingplandetails = null);
+    public function setPricingPlanDetails($pricingPlanDetails = null);
 
     /**
-     * Get pricingplandetails
+     * Get pricingPlanDetails
      *
      * @return string
      */
-    public function getPricingplandetails();
+    public function getPricingPlanDetails();
 
     /**
      * Set direction
@@ -455,20 +455,20 @@ interface AccCdrInterface extends EntityInterface
     public function getDirection();
 
     /**
-     * Set remeteringdate
+     * Set reMeteringDate
      *
-     * @param \DateTime $remeteringdate
+     * @param \DateTime $reMeteringDate
      *
      * @return self
      */
-    public function setRemeteringdate($remeteringdate = null);
+    public function setReMeteringDate($reMeteringDate = null);
 
     /**
-     * Get remeteringdate
+     * Get reMeteringDate
      *
      * @return \DateTime
      */
-    public function getRemeteringdate();
+    public function getReMeteringDate();
 
     /**
      * Set pricingPlan

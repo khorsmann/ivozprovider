@@ -26,6 +26,11 @@ abstract class TargetPatternAbstract
      */
     protected $description;
 
+    /**
+     * @var \Ivoz\Domain\Model\Brand\BrandInterface
+     */
+    protected $brand;
+
 
     /**
      * Changelog tracking purpose
@@ -119,7 +124,9 @@ abstract class TargetPatternAbstract
             $description
         );
 
-        return $self;
+        return $self
+            ->setBrand($dto->getBrand())
+        ;
     }
 
     /**
@@ -148,7 +155,8 @@ abstract class TargetPatternAbstract
         $this
             ->setRegExp($dto->getRegExp())
             ->setName($name)
-            ->setDescription($description);
+            ->setDescription($description)
+            ->setBrand($dto->getBrand());
 
 
         return $this;
@@ -166,7 +174,8 @@ abstract class TargetPatternAbstract
             ->setNameEs($this->getName()->getEs())
             ->setDescription($this->getDescription()->getDescription())
             ->setDescriptionEn($this->getDescription()->getEn())
-            ->setDescriptionEs($this->getDescription()->getEs());
+            ->setDescriptionEs($this->getDescription()->getEs())
+            ->setBrandId($this->getBrand() ? $this->getBrand()->getId() : null);
     }
 
     /**
@@ -181,7 +190,8 @@ abstract class TargetPatternAbstract
             'es' => $this->getName()->getEs(),
             'description' => $this->getDescription()->getDescription(),
             'en' => $this->getDescription()->getEn(),
-            'es' => $this->getDescription()->getEs()
+            'es' => $this->getDescription()->getEs(),
+            'brandId' => $this->getBrand() ? $this->getBrand()->getId() : null
         ];
     }
 
@@ -213,6 +223,30 @@ abstract class TargetPatternAbstract
     public function getRegExp()
     {
         return $this->regExp;
+    }
+
+    /**
+     * Set brand
+     *
+     * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
+     *
+     * @return self
+     */
+    public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand)
+    {
+        $this->brand = $brand;
+
+        return $this;
+    }
+
+    /**
+     * Get brand
+     *
+     * @return \Ivoz\Domain\Model\Brand\BrandInterface
+     */
+    public function getBrand()
+    {
+        return $this->brand;
     }
 
     /**

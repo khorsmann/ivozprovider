@@ -30,10 +30,11 @@ production:
       source:
         data: mapper
         config:
-          relationMapper: \IvozProvider\Mapper\Sql\ConditionalRoutesConditionsRelMatchLists
-          relatedMapperName: \IvozProvider\Mapper\Sql\MatchLists
-          relatedFieldName: name
+          relation: \Ivoz\Domain\Model\ConditionalRoutesConditionsRelMatchList\ConditionalRoutesConditionsRelMatchList
           relationProperty: MatchList
+          relatedProperty: matchList
+          related: \Ivoz\Domain\Model\MatchList\MatchList
+          relatedFieldName: name
           filterClass: IvozProvider_Klear_Filter_Company
     ConditionalRoutesConditionsRelSchedules:
       title: ngettext('Schedule', 'Schedules', 0)
@@ -41,10 +42,11 @@ production:
       source:
         data: mapper
         config:
-          relationMapper: \IvozProvider\Mapper\Sql\ConditionalRoutesConditionsRelSchedules
-          relatedMapperName: \IvozProvider\Mapper\Sql\Schedules
-          relatedFieldName: name
+          relation: \Ivoz\Domain\Model\ConditionalRoutesConditionsRelSchedule\ConditionalRoutesConditionsRelSchedule
           relationProperty: Schedule
+          relatedProperty: schedule
+          related: \Ivoz\Domain\Model\Schedule\Schedule
+          relatedFieldName: name
           filterClass: IvozProvider_Klear_Filter_Company
     ConditionalRoutesConditionsRelCalendars:
       title: ngettext('Calendar', 'Calendars', 0)
@@ -52,10 +54,11 @@ production:
       source:
         data: mapper
         config:
-          relationMapper: \IvozProvider\Mapper\Sql\ConditionalRoutesConditionsRelCalendars
-          relatedMapperName: \IvozProvider\Mapper\Sql\Calendars
-          relatedFieldName: name
+          relation: \Ivoz\Domain\Model\ConditionalRoutesConditionsRelCalendars\ConditionalRoutesConditionsRelCalendars
           relationProperty: Calendar
+          relationProperty: calendar
+          related: \Ivoz\Domain\Model\Calendar\Calendar
+          relatedFieldName: name
           filterClass: IvozProvider_Klear_Filter_Company
     ConditionMatch:
       title: _('Match')
@@ -69,7 +72,8 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Locutions
+#          mapperName: \IvozProvider\Mapper\Sql\Locutions
+          entity:  \Ivoz\Domain\Model\Locution\Locution
           filterClass: IvozProvider_Klear_Filter_Company
           fieldName:
             fields:
@@ -190,7 +194,8 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\IVRCommon
+#          mapperName: \IvozProvider\Mapper\Sql\IVRCommon
+          entity:  \Ivoz\Domain\Model\IVRCommon\IVRCommon
           filterClass: IvozProvider_Klear_Filter_Company
           fieldName:
             fields:
@@ -205,7 +210,8 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\IVRCustom
+#          mapperName: \IvozProvider\Mapper\Sql\IVRCustom
+          entity:  \Ivoz\Domain\Model\IVRCustom\IVRCustom
           filterClass: IvozProvider_Klear_Filter_Company
           fieldName:
             fields:
@@ -220,7 +226,8 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\HuntGroups
+#          mapperName: \IvozProvider\Mapper\Sql\HuntGroups
+          entity:  \Ivoz\Domain\Model\HuntGroups\HuntGroups
           filterClass: IvozProvider_Klear_Filter_Company
           fieldName:
             fields:
@@ -235,7 +242,8 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Users
+#          mapperName: \IvozProvider\Mapper\Sql\Users
+          entity:  \Ivoz\Domain\Model\User\User
           filterClass: IvozProvider_Klear_Filter_Company
           fieldName:
             fields: [ name, lastname ]
@@ -249,7 +257,8 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Users
+#          mapperName: \IvozProvider\Mapper\Sql\Users
+          entity:  \Ivoz\Domain\Model\User\User
           filterClass: IvozProvider_Klear_Filter_Company
           fieldName:
             fields: [ name, lastname ]
@@ -273,7 +282,8 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Queues
+#          mapperName: \IvozProvider\Mapper\Sql\Queues
+          entity:  \Ivoz\Domain\Model\Queue\Queue
           filterClass: IvozProvider_Klear_Filter_Company
           fieldName:
             fields:
@@ -288,7 +298,8 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\ConferenceRooms
+#          mapperName: \IvozProvider\Mapper\Sql\ConferenceRooms
+          entity:  \Ivoz\Domain\Model\ConferenceRoom\ConferenceRoom
           filterClass: IvozProvider_Klear_Filter_Company
           fieldName:
             fields:
@@ -303,7 +314,8 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\Extensions
+#          mapperName: \IvozProvider\Mapper\Sql\Extensions
+          entity:  \Ivoz\Domain\Model\Extension\Extension
           filterClass: IvozProvider_Klear_Filter_Company
           fieldName:
             fields:

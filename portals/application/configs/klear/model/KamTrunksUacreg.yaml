@@ -102,7 +102,7 @@ production:
       source:
         control: Spinner
       required: true
-    brand:
+    brandId:
       title: ngettext('Brand', 'Brands', 1)
       type: select
       required: true

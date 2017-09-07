@@ -36,4 +36,13 @@ class CryptPass implements UserLifecycleEventHandlerInterface
             }
         }
     }
+
+    protected function _salt()
+    {
+        return substr(
+            md5(mt_rand(), false),
+            0,
+            8
+        );
+    }
 }

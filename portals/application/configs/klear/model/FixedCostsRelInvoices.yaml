@@ -26,7 +26,7 @@ production:
         data: mapper
         config:
 #          mapperName: \IvozProvider\Mapper\Sql\FixedCosts
-          entity: \Ivoz\Domain\Model\FixedCostsRelInvoice\FixedCostsRelInvoice
+          entity: \Ivoz\Domain\Model\FixedCost\FixedCost
           filterclass: IvozProvider_Klear_Filter_Brand
           fieldName: 
             fields:
@@ -34,7 +34,7 @@ production:
               - cost
             template: '%name% - %cost% €'
           order:
-            FixedCostsRelInvoice.description: asc
+            FixedCost.description: asc
     invoice:
       title: ngettext('Invoice', 'Invoices', 1)
       type: select

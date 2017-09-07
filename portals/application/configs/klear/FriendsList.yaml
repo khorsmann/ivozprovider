@@ -21,25 +21,25 @@ production:
         blacklist: &friends_blacklistLink
           domain: true
           transport: true
-          auth_needed: true
+          authNeeded: true
           password: true
           areaCode: true
-          country: true
+          countryId: true
           allow: true
           disallow: true
-          direct_media_method: true
-          update_callerid: true
-          from_domain: true
-          callerid_update_header: true
+          directMediaMethod: true
+          updateCaller: true
+          fromDomain: true
+          calleridUpdateHeader: true
           directConnectivity: true
           ip: true
           port: true
-          language: true
+          languageId: true
         order:
           name: true
           description: true
-          callACL: true
-          outgoingDDI: true
+          callACLId: true
+          outgoingDDIId: true
           priority: true
           status: true
         options:
@@ -72,10 +72,10 @@ production:
       fields:
         blacklist: &friends_blacklistLink
           domain: true
-          direct_media_method: true
-          update_callerid: true
-          callerid_update_header: true
-          auth_needed: true
+          directMediaMethod: true
+          updateCaller: true
+          calleridUpdateHeader: true
+          authNeeded: true
           disallow: true
           status: true
         order: &friends_orderLink
@@ -92,7 +92,7 @@ production:
           areaCode: true
           outgoingDDI: true
           allow: true
-          from_domain: true
+          fromDomain: true
       fixedPositions: &friends_FixedPositionsLink
         group0:
           label: _("Basic Configuration")
@@ -111,17 +111,17 @@ production:
           label: _("Outgoing Configuration")
           colsPerRow: 12
           fields:
-            callACL: 5
-            outgoingDDI: 5
-            country: 5
+            callACLId: 5
+            outgoingDDIId: 5
+            countryId: 5
             areaCode: 5
         group2:
           label: _("Advanced Configuration")
           colsPerRow: 6
           fields:
             allow: 2
-            from_domain: 2
-            language: 2
+            fromDomain: 2
+            languageId: 2
       shortcutOption: N
       postActionOptions:
         screens:

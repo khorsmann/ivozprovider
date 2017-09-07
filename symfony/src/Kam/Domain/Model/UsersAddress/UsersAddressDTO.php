@@ -1,6 +1,6 @@
 <?php
 
-namespace Kam\Domain\Model\UsersAddres;
+namespace Kam\Domain\Model\UsersAddress;
 
 use Core\Application\DataTransferObjectInterface;
 use Core\Application\ForeignKeyTransformerInterface;
@@ -9,7 +9,7 @@ use Core\Application\CollectionTransformerInterface;
 /**
  * @codeCoverageIgnore
  */
-class UsersAddresDTO implements DataTransferObjectInterface
+class UsersAddressDTO implements DataTransferObjectInterface
 {
     /**
      * @var string
@@ -92,7 +92,7 @@ class UsersAddresDTO implements DataTransferObjectInterface
     /**
      * @param string $sourceAddress
      *
-     * @return UsersAddresDTO
+     * @return UsersAddressDTO
      */
     public function setSourceAddress($sourceAddress)
     {
@@ -112,7 +112,7 @@ class UsersAddresDTO implements DataTransferObjectInterface
     /**
      * @param string $ipAddr
      *
-     * @return UsersAddresDTO
+     * @return UsersAddressDTO
      */
     public function setIpAddr($ipAddr = null)
     {
@@ -132,7 +132,7 @@ class UsersAddresDTO implements DataTransferObjectInterface
     /**
      * @param integer $mask
      *
-     * @return UsersAddresDTO
+     * @return UsersAddressDTO
      */
     public function setMask($mask)
     {
@@ -152,7 +152,7 @@ class UsersAddresDTO implements DataTransferObjectInterface
     /**
      * @param integer $port
      *
-     * @return UsersAddresDTO
+     * @return UsersAddressDTO
      */
     public function setPort($port)
     {
@@ -172,7 +172,7 @@ class UsersAddresDTO implements DataTransferObjectInterface
     /**
      * @param string $tag
      *
-     * @return UsersAddresDTO
+     * @return UsersAddressDTO
      */
     public function setTag($tag = null)
     {
@@ -192,7 +192,7 @@ class UsersAddresDTO implements DataTransferObjectInterface
     /**
      * @param string $description
      *
-     * @return UsersAddresDTO
+     * @return UsersAddressDTO
      */
     public function setDescription($description = null)
     {
@@ -212,7 +212,7 @@ class UsersAddresDTO implements DataTransferObjectInterface
     /**
      * @param integer $id
      *
-     * @return UsersAddresDTO
+     * @return UsersAddressDTO
      */
     public function setId($id)
     {
@@ -232,7 +232,7 @@ class UsersAddresDTO implements DataTransferObjectInterface
     /**
      * @param integer $companyId
      *
-     * @return UsersAddresDTO
+     * @return UsersAddressDTO
      */
     public function setCompanyId($companyId)
     {

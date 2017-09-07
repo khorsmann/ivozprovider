@@ -2,7 +2,7 @@ production:
   class: \IvozProvider\Model\FeaturesRelBrands
   entity: Ivoz\Domain\Model\FeaturesRelBrand\FeaturesRelBrand
   fields: 
-    brand:
+    brandId:
       title: _('Brandid')
       type: select
       required: true
@@ -18,7 +18,7 @@ production:
           order:
             Brand.name: asc
       default: true
-    feature:
+    featureId:
       title: _('Featureid')
       type: select
       required: true

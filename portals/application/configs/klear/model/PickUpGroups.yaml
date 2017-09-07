@@ -8,7 +8,7 @@ production:
       trim: both
       required: true
       default: true
-    company:
+    companyId:
       title: ngettext('Company', 'Companies', 0)
       type: select
       required: true
@@ -23,7 +23,7 @@ production:
             template: '%name%'
           order:
             Company.name: asc
-    PickUpRelUser:
+    PickUpRelUserId:
       title: ngettext('User', 'Users', 1)
       type: multiselect
       source:

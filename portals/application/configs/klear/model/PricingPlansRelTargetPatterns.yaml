@@ -68,7 +68,7 @@ production:
               - name
             template: '%name%'
           order:
-            PricingPlan.name: asc
+            PricingPlan.name.${lang}: asc
     targetPatternId:
       title: _('Price pattern')
       type: select
@@ -89,7 +89,7 @@ production:
       decorators:
         autocomplete:
             command: targetPatternautocomplete_command
-    brand:
+    brandId:
       title: ngettext('Brand', 'Brands', 1)
       type: number
       required: true

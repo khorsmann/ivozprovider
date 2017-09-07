@@ -14,6 +14,11 @@ interface PsEndpointInterface extends EntityInterface
     public function getAstPsAor();
 
     /**
+     * Update this user endpoint with current model data
+     */
+    public function updateByUser(\Ivoz\Domain\Model\User\UserInterface $user);
+
+    /**
      * Set sorceryId
      *
      * @param string $sorceryId

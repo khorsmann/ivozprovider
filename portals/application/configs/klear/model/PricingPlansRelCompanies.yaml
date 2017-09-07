@@ -17,7 +17,7 @@ production:
               - name
             template: '%name%'
           order:
-            PricingPlan.name: asc
+            PricingPlan.name.${lang}: asc
       default: true
     companyId:
       title: ngettext('Company', 'Companies', 1)

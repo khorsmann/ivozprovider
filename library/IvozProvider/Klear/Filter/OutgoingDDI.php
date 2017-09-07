@@ -16,23 +16,16 @@ class IvozProvider_Klear_Filter_OutgoingDDI implements KlearMatrix_Model_Field_S
             return true;
         }
 
-//      $this->_condition[] = "`companyId` = '" . $pk . "'";
         $this->_condition = [
-            'DDI.company = :pk',
+            'company = :pk',
             ['pk' => $pk ? $pk  : '']
         ];
 
-        $this->_condition[] = "`companyId` = '" . $pk . "'";
         return true;
     }
 
     public function getCondition()
     {
         return $this->_condition;
-//        if (count($this->_condition) > 0) {
-//            return '(' . implode(" AND ", $this->_condition) . ')';
-//        }
-//        return;
     }
-
 }

@@ -30,7 +30,7 @@ production:
         icon: help
         text: _("Prefix must be numeric-only")
         label: _("Need help?")
-    brand:
+    brandId:
       title: ngettext('Brand', 'Brands', 1)
       type: select
       required: true

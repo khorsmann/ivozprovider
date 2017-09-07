@@ -2,7 +2,7 @@ production:
   class: \IvozProvider\Model\IVRCustomEntries
   entity: Ivoz\Domain\Model\IvrCustomEntry\IvrCustomEntry
   fields:
-    IvrCustom:
+    IvrCustomId:
       title: ngettext('IVR Custom', 'IVRs Custom', 1)
       type: select
       required: true
@@ -29,7 +29,7 @@ production:
         icon: help
         text: _("You can use regular expressions to define values this entry will match.")
         label: _("Need help?")
-    welcomeLocution:
+    welcomeLocutionId:
       title: _('Welcome locution')
       type: select
       source:
@@ -77,7 +77,7 @@ production:
       type: text
       trim: both
       required: true
-    targetExtension:
+    targetExtensionId:
       title: ngettext('Extension', 'Extensions', 1)
       type: select
       required: true
@@ -94,7 +94,7 @@ production:
           order:
             Extension.number: asc
         'null': _("Unassigned")
-    targetVoiceMailUser:
+    targetVoiceMailUserId:
       title: ngettext('Voicemail', 'Voicemails', 1)
       type: select
       required: true
@@ -119,7 +119,8 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\ConditionalRoutes
+#          mapperName: \IvozProvider\Mapper\Sql\ConditionalRoutes
+          entity:  \Ivoz\Domain\Model\ConditionalRoute\ConditionalRoute
           filterClass: IvozProvider_Klear_Filter_Company
           fieldName:
             fields: [ name ]

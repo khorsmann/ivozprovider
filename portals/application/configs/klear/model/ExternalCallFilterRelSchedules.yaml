@@ -2,7 +2,7 @@ production:
   class: \IvozProvider\Model\ExternalCallFilterRelSchedules
   entity: Ivoz\Domain\Model\ExternalCallFilterRelSchedule\ExternalCallFilterRelSchedule
   fields: 
-    filter:
+    filterId:
       title: _('Filter id')
       type: select
       required: true
@@ -18,7 +18,7 @@ production:
           order:
             ExternalCallFilter.name: asc
       default: true
-    schedule:
+    scheduleId:
       title: _('Schedule id')
       type: select
       required: true

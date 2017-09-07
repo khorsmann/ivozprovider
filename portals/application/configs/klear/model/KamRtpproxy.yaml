@@ -1,5 +1,5 @@
 production:
-  class: \IvozProvider\Model\Rtpproxy
+  class: \IvozProvider\Model\KamRtpproxy
   entity: Kam\Domain\Model\Rtpproxy\Rtpproxy
   fields: 
     id:
@@ -48,7 +48,7 @@ production:
         text: _("0 disables if more available, 2 gets double calls than 1, 3 gets triple calls than 1, etc.")
         label: _("Need help?")
     description:
-            title: _('Description')
+      title: _('Description')
       type: text
       trim: both
       maxLength: 200

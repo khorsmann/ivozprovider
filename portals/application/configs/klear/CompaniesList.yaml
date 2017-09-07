@@ -5,7 +5,6 @@
 #include OutgoingRoutingList.yaml
 #include KamUsersAddressList.yaml
 
-
 production:
   main:
     module: klearMatrix
@@ -46,25 +45,25 @@ production:
           outgoingDDIRuleId: true
           registryData: true
           externalMaxCalls: true
-          defaultTimezone: true
-          applicationServer: true
-          mediaRelaySets: true
+          defaultTimezoneId: true
+          applicationServerId: true
+          mediaRelaySetsId: true
           ipFilter: true
-          language: true
-          outbound_prefix: true
+          languageId: true
+          outboundPrefix: true
           onDemandRecord: true
           onDemandRecordCode: true
           recordingsLimitMB: true
           recordingsLimitEmail: true
           externallyExtraOpts: true
-          type: true
+#          type: true
           recordingsDiskUsage: ${auth.brand.recordings.disabled}
         order:
           name: true
           nif: true
-          outbound_prefix: true
-          country: true
-          domain_users: true
+          outboundPrefix: true
+          countryId: true
+          domainUsers: true
           recordingsDiskUsage: true
       options:
         title: _("Options")
@@ -244,7 +243,7 @@ production:
       filterField: Company
     companyAdminsEdit_screen:
       <<: *companyAdminsEdit_screenLink
-      filterField: Company
+      filterField: companyId
 
     #pricingPlansRelCompanies:
     <<: *pricingPlansRelCompanies_screensLink

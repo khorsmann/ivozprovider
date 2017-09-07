@@ -32,7 +32,7 @@ production:
             usersDel_dialog: true
           default: usersEdit_screen
         order: &Users_orderLink
-          company: true
+          companyId: true
           name: true
           lastname: true
           email: true
@@ -40,14 +40,14 @@ production:
           pass: true
           gsQRCode: true
           doNotDisturb: true
-          timezone: true
-          extension: true
-          terminal: true
-          outgoingDDI: true
-          callACL: true
+          timezoneId: true
+          extensionId: true
+          terminalId: true
+          outgoingDDIId: true
+          callACLId: true
           voicemailEnabled: true
           isBoss: true
-          bossAssistant: true
+          bossAssistantId: true
           exceptionBoosAssistantRegExp: true
           PickUpRelUsers: true
         blacklist:
@@ -57,9 +57,9 @@ production:
           doNotDisturb: true
           pass: true
           gsQRCode: true
-          timezone: true
-          callACL: true
-          bossAssistant: true
+          timezoneId: true
+          callACLId: true
+          bossAssistantId: true
           exceptionBoosAssistantRegExp: true
           HuntGroupsRelUsers: true
           PickUpRelUsers: true
@@ -67,13 +67,13 @@ production:
           isBoss: true
           maxCalls: true
           tokenKey: true
-          country: true
+          countryId: true
           areaCode: true
           voicemailEnabled: true
           voicemailLocutionId: true
           voicemailAttachSound: true
           voicemailSendMail: true
-          language: true
+          languageId: true
           externalIpCalls: true
           outgoingDDIRuleId: true
       options:
@@ -104,23 +104,22 @@ production:
           doNotDisturb: true
           pass: true
           gsQRCode: true
-          timezone: true
-          callACL: true
-          bossAssistant: true
+          timezoneId: true
+          callACLId: true
+          bossAssistantId: true
           exceptionBoosAssistantRegExp: true
-          HuntGroupsRelUsers: true
           PickUpRelUsers: true
           timeout: true
           isBoss: true
           maxCalls: true
           tokenKey: true
-          country: true
+          countryId: true
           areaCode: true
           voicemailEnabled: true
           voicemailLocutionId: true
           voicemailAttachSound: true
           voicemailSendMail: true
-          language: true
+          languageId: true
           externalIpCalls: true
       fixedPositions: &UsersFixedPositions_link
         group0:
@@ -134,10 +133,10 @@ production:
           label: _("Basic Configuration")
           colsPerRow: 6
           fields:
-            terminal: 2
-            extension: 2
-            outgoingDDI: 3
-            outgoingDDIRule: 3
+            terminalId: 2
+            extensionId: 2
+            outgoingDDIId: 3
+            outgoingDDIRuleId: 3
     usersEdit_screen: &usersEdit_screenLink
       <<: *Users
       controller: edit
@@ -160,10 +159,10 @@ production:
             name: 4
             lastname: 4
             email: 4
-            country: 5
+            countryId: 5
             areaCode: 5
-            language: 5
-            timezone: 5
+            languageId: 5
+            timezoneId: 5
         group1:
           label: _("Login Info")
           colsPerRow: 3
@@ -176,17 +175,17 @@ production:
           colsPerRow: 12
           fields:
             isBoss: 4
-            bossAssistant: 8
+            bossAssistantId: 8
             exceptionBoosAssistantRegExp: 12
         group3:
           label: _("Basic Configuration")
           colsPerRow: 12
           fields:
-            terminal: 6
-            extension: 6
-            outgoingDDI: 6
-            outgoingDDIRule: 6
-            callACL: 6
+            terminalId: 6
+            extensionId: 6
+            outgoingDDIId: 6
+            outgoingDDIRuleId: 6
+            callACLId: 6
             doNotDisturb: 6
             maxCalls: 6
             externalIpCalls: 6

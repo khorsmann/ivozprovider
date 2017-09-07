@@ -2,7 +2,7 @@ production:
   class: \IvozProvider\Model\FriendsPatterns
   entity: Ivoz\Domain\Model\FriendsPattern\FriendsPattern
   fields: 
-    friend:
+    friendId:
       title: ngettext('Friend', 'Friends', 1)
       type: select
       required: true

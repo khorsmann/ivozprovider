@@ -14,7 +14,8 @@ production:
             fields:
               - type
             template: '%type%'
-          order: type
+          order:
+            type: asc
       default: true
     name:
       title: _('Name')
@@ -44,13 +45,15 @@ production:
       source:
         data: mapper
         config:
-          mapperName: \IvozProvider\Mapper\Sql\DDIs
+#          mapperName: \IvozProvider\Mapper\Sql\DDIs
+          entity:  \Ivoz\Domain\Model\DDI\DDI
           filterClass: IvozProvider_Klear_Filter_Company
           fieldName:
             fields:
-              - DDIE164
-            template: '+%DDIE164%'
-          order: DDIE164
+              - ddie164
+            template: '+%ddie164%'
+          order:
+            DDI.ddie164: asc
         'null': _("Company's default")
     forcedDDI:
       title: _('Forced DDI')

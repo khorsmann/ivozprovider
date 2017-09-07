@@ -23,6 +23,22 @@ interface TargetPatternInterface extends EntityInterface
     public function getRegExp();
 
     /**
+     * Set brand
+     *
+     * @param \Ivoz\Domain\Model\Brand\BrandInterface $brand
+     *
+     * @return self
+     */
+    public function setBrand(\Ivoz\Domain\Model\Brand\BrandInterface $brand);
+
+    /**
+     * Get brand
+     *
+     * @return \Ivoz\Domain\Model\Brand\BrandInterface
+     */
+    public function getBrand();
+
+    /**
      * Set name
      *
      * @param Name $name

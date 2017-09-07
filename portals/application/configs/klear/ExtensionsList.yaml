@@ -11,7 +11,7 @@ production:
       pagination:
         items: 25
       order:
-        field: number
+          number: true
       <<: *Extensions
       title: _("List of %s %2s", ngettext('Extension', 'Extensions', 0), "[format| (%parent%)]")
       class: ui-silk-book-open

@@ -2,7 +2,7 @@ production:
   class: \IvozProvider\Model\FeaturesRelCompanies
   entity: Ivoz\Domain\Model\FeaturesRelCompany\FeaturesRelCompany
   fields: 
-    company:
+    companyId:
       title: _('Companyid')
       type: select
       required: true
@@ -18,7 +18,7 @@ production:
           order:
             Company.name: asc
       default: true
-    feature:
+    featureId:
       title: _('Featureid')
       type: select
       required: true

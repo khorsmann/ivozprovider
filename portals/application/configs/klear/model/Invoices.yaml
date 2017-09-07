@@ -45,20 +45,6 @@ production:
       type: text
       trim: both
       sufix: "€"
-#    language:
-#      title: _('Language')
-#      type: select
-#      required: true
-#      source: 
-#        data: mapper
-#        config: 
-#          mapperName: \IvozProvider\Mapper\Sql\Languages
-#          fieldName: 
-#            fields: 
-#              - name
-#            template: '%name%'
-#          order: iden
-#        'null': _("Unassigned")
     status:
       title: _('Status')
       type: select
@@ -138,7 +124,7 @@ production:
           order:
             InvoiceTemplate.name: asc
         'null': _("Unassigned")
-    FixedCostsRelInvoices:
+    FixedCostsRelInvoicesId:
       title: ngettext('Fixed cost', 'Fixed costs', 1)
       searchable: false
       type: ghost

@@ -179,7 +179,7 @@ production:
         control: datetime
         settings:
           disabled: 'false'
-    pricingPlanId:
+    pricingPlan:
       title: ngettext('Pricing plan', 'Pricing plans', 1)
       type: select
       source:
@@ -194,7 +194,7 @@ production:
           order:
             PricingPlan.name${ucLang}: asc
         'null': _("Unassigned")
-    targetPatternId:
+    targetPattern:
       title: _('Target pattern')
       type: select
       source:

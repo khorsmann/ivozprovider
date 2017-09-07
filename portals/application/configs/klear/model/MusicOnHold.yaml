@@ -2,7 +2,7 @@ production:
   class: \IvozProvider\Model\MusicOnHold
   entity: Ivoz\Domain\Model\MusicOnHold\MusicOnHold
   fields: 
-    company:
+    companyId:
       title: ngettext('Company', 'Companies', 1)
       type: select
       required: true

@@ -2,7 +2,7 @@ production:
   class: \IvozProvider\Model\UsersAddress
   entity: Kam\Domain\Model\UsersAddress\UsersAddress
   fields: 
-    company:
+    companyId:
       title: ngettext('Company', 'Companies', 1)
       type: select
       required: true

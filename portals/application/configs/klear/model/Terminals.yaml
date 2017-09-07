@@ -44,7 +44,7 @@ production:
       defaultValue: all
       maxLength: 100
       <<: *codecsHelp
-    allow_audio:
+    allowAudio:
       title: _('Allowed audio codecs')
       type: select
       trim: both
@@ -62,7 +62,7 @@ production:
             'g729': 'g729 - G.729A'
             'ilbc': 'ilbc - iLBC'
             'opus': 'opus - Opus codec'
-    allow_video:
+    allowVideo:
       title: _('Allowed video codecs')
       type: select
       trim: both
@@ -72,7 +72,7 @@ production:
         values:
             'h264': 'h264 - H.264'
         'null': _("Disabled")
-    direct_media_method:
+    directMediaMethod:
       title: _('CallerID update method')
       type: select
       defaultValue: invite

@@ -2,7 +2,7 @@ production:
   class: \IvozProvider\Model\Locutions
   entity: Ivoz\Domain\Model\Locution\Locution
   fields: 
-    company:
+    companyId:
       title: ngettext('Company', 'Companies', 1)
       type: select
       required: true
